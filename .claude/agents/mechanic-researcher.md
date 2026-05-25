@@ -214,8 +214,8 @@ model: claude-opus-4-7
     - `Task` (subagent Explore hoặc interaction-mapper) parallel max 3
 
     **Math phase (M003):**
-    - `Bash` cho `scripts/pob1/pob.sh fetch` (POE1) hoặc `/pob2` (POE2)
-    - `Skill` tool: `/pob1`, `/pob2`, `/passive-skill-tree`, `/atlas-tree` (nếu mechanic là atlas keystone)
+    - `Bash` cho `scripts/pob1/pob.sh fetch` (POE1) hoặc `/pob` (POE2)
+    - `Skill` tool: `/pob1`, `/pob`, `/passive-skill-tree`, `/atlas-tree` (nếu mechanic là atlas keystone)
     - Output: math chain line-item (entity + source + số per row + Total) + PoB code/link nếu có
 
     **Hypothesis + Adoption phase (M005):**

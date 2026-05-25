@@ -1,7 +1,7 @@
 import { test, expect } from 'bun:test';
 import { specToXml } from '../spec-to-xml';
 import { encode } from '../encode';
-import { PobClient } from '../../../pob2/scripts/pob-client';
+import { PobClient } from '../../../pob/scripts/pob-client';
 
 // Oracle: round-trip the emitted XML through the real pipeline
 // (specToXml → encode → PobClient.decodeBuild) and assert the decoder

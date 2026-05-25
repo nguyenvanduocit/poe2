@@ -109,14 +109,14 @@ Mobalytics builds include a `pobCode` field containing the Path of Building expo
 grep "pobCode:" build.yaml | sed 's/pobCode: //' > pob-code.txt
 
 # 3. Analyze with POB skill
-.claude/skills/pob2/.claude/skills/pob2/scripts/pob-cli.sh calc @pob-code.txt
+.claude/skills/pob/.claude/skills/pob/scripts/pob-cli.sh calc @pob-code.txt
 ```
 
 **Or in one pipeline:**
 ```bash
 .claude/skills/mobalytics/scripts/fetch.sh "bear-druid-build" | \
   grep "pobCode:" | sed 's/pobCode: //' | \
-  xargs -I {} .claude/skills/pob2/.claude/skills/pob2/scripts/pob-cli.sh calc "{}"
+  xargs -I {} .claude/skills/pob/.claude/skills/pob/scripts/pob-cli.sh calc "{}"
 ```
 
 **What POB adds:**

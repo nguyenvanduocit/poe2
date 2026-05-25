@@ -26,9 +26,9 @@
   - Spirit Walker chi tiết: `content/mechanics/spirit-walker-companion-beast-hunt.md`
   - Items mới: The Auspex, Facebreaker (POE2 version), v.v.
 - **Workflow POE2:** 
-  - Phân tích build: `.claude/skills/pob2/scripts/scripts/analyze.sh "https://poe.ninja/poe2/..."` hoặc mobalytics poe-2 URL (xem skill `/pob2`)
+  - Phân tích build: `.claude/skills/pob/scripts/scripts/analyze.sh "https://poe.ninja/poe2/..."` hoặc mobalytics poe-2 URL (xem skill `/pob`)
   - Tra cứu: `:wiki-link{url="https://www.poe2wiki.net/wiki/Remnant"}` (tự động dùng poe2wiki.net)
-  - Release note: `./.claude/skills/poewiki2/scripts/release-notes/fetch.sh`
+  - Release note: `./.claude/skills/poewiki/scripts/release-notes/fetch.sh`
 
 **POE1 Archive — Mirage League (đã hoàn thành giai đoạn chính)**
 
@@ -62,34 +62,34 @@ Local data: content/characters/the-leader-a.json (jq via Bash)
 
 **POE2 (0.5+):**
 ```
-.claude/skills/pob2/scripts/scripts/analyze.sh "https://poe.ninja/poe2/builds/<league>/character/<account>/<charname>"
+.claude/skills/pob/scripts/scripts/analyze.sh "https://poe.ninja/poe2/builds/<league>/character/<account>/<charname>"
   # hoặc mobalytics.gg/poe-2/builds/... hoặc pobb.in link
-  → stats, gear, gems, keystones (xem skill /pob2)
+  → stats, gear, gems, keystones (xem skill /pob)
 ```
 Lưu ý: POE2 hiện chủ yếu dùng poe.ninja snapshot / pobb.in / mobalytics (chưa có fetch trực tiếp bằng tên character như POE1).
 
 ### Analyze a build
 - **POE1:** `/pob1 <url>` (pobb.in, mobalytics.gg/poe/..., poe.ninja/poe1/...)
-- **POE2:** `/pob2 <url>` hoặc `.claude/skills/pob2/scripts/scripts/analyze.sh <url>` (mobalytics.gg/poe-2/..., poe.ninja/poe2/..., pobb.in)
+- **POE2:** `/pob <url>` hoặc `.claude/skills/pob/scripts/scripts/analyze.sh <url>` (mobalytics.gg/poe-2/..., poe.ninja/poe2/..., pobb.in)
 
 ### Look up game mechanics
 ```
 /poewiki1 <query>          → search POE1 wiki mirror (poewiki.net)
-/poewiki2 <query>          → search POE2 wiki mirror (poe2wiki.net)
+/poewiki <query>          → search POE2 wiki mirror (poe2wiki.net)
 /poedb1 <patch>            → POE1 database mirror (poedb.tw) per patch
-/poedb2 <patch>            → POE2 database mirror (poe2db.tw) per patch
+/poedb <patch>            → POE2 database mirror (poe2db.tw) per patch
 /passive-skill-tree1       → POE1 passive nodes, paths, stats
-/passive-skill-tree2       → POE2 passive nodes, paths, stats (0.5+)
+/passive-skill-tree       → POE2 passive nodes, paths, stats (0.5+)
 /atlas-tree1               → POE1 atlas passive tree
-/atlas-tree2               → POE2 atlas passive tree (0.5+)
+/atlas-tree               → POE2 atlas passive tree (0.5+)
 ```
 
 ### Fetch latest release notes / patch notes (POE1 & POE2)
 ```
 ./.claude/skills/poewiki1/scripts/release-notes/fetch.sh                    # latest POE1 (auto-detect from Version_history)
-./.claude/skills/poewiki2/scripts/release-notes/fetch.sh                    # latest POE2
+./.claude/skills/poewiki/scripts/release-notes/fetch.sh                    # latest POE2
 ./.claude/skills/poewiki1/scripts/release-notes/fetch.sh 3.27.0             # specific POE1 version
-./.claude/skills/poewiki2/scripts/release-notes/fetch.sh 0.5.0              # specific POE2 version
+./.claude/skills/poewiki/scripts/release-notes/fetch.sh 0.5.0              # specific POE2 version
 ```
 
 - Lightweight fetch via `markitdown` → clean text-only Markdown (no hundreds of icons/images).
@@ -127,7 +127,7 @@ discord https://discord.com/channels/645607528297922560/1143637598313652344
 - **Persisted download data** — Mọi blob persistent (wiki mirror, release notes, database dump, GGG static export, code-dep clone, market snapshot, cached corpus...) đặt vào `data/<category>/`. **Scripts vẫn sống trong `.claude/skills/<skill>/scripts/`** — chỉ data persistent move ra `data/`. KHÔNG skill nào được giữ `data/` hoặc `raw-data/` con bên trong skill folder. Canonical layout:
   - **Canonical naming pattern**: phần lớn category dùng nested split `data/<category>/poe{1,2}/...`. Exception: wiki mirror dùng game-prefix top-level (`poe1-wiki/`, `poe2-wiki/`) vì size lớn (91M + 255M) và goscrape config riêng — pragmatic.
   - `data/poe1-wiki/`, `data/poe2-wiki/` — wiki mirror (goscrape)
-  - `data/poedb1/<patch>/`, `data/poedb2/<patch>/` — database mirror (poedb.tw / poe2db.tw), organize theo patch number (vì raw numbers đổi theo patch — `./.claude/skills/poedb1/scripts/download.sh 3.28.0` hoặc `poedb2/.../download.sh 0.5.0`). Schema khớp GGG skilltree-export — `/passive-skill-tree*` + `/poe-auth` cùng đọc từ đây, không có folder riêng.
+  - `data/poedb1/<patch>/`, `data/poedb/<patch>/` — database mirror (poedb.tw / poe2db.tw), organize theo patch number (vì raw numbers đổi theo patch — `./.claude/skills/poedb1/scripts/download.sh 3.28.0` hoặc `poedb/.../download.sh 0.5.0`). Schema khớp GGG skilltree-export — `/passive-skill-tree*` + `/poe-auth` cùng đọc từ đây, không có folder riêng.
   - `data/release-notes/poe{1,2}/Version_X.Y.Z.md` — patch notes (kèm `latest.md` symlink)
   - `data/atlas-tree/poe{1,2}/atlas-tree.json` — GGG atlastree-export blob
   - `data/poe-ninja/poe{1,2}/<league>/{latest,trends}.json + snapshots/` — economy snapshot. League cũ archive sang `<league>/../archive/<league>/` khi league mới launch.
@@ -135,7 +135,7 @@ discord https://discord.com/channels/645607528297922560/1143637598313652344
   - `data/map-mods/poe{1,2}/<corpus>-mods-X.Y.json` — waystone/tablet mod corpus cho `/map-mod-filter*`
   - `data/trade-static/poe{1,2}/` — GGG trade static (filters/items/stats catalog), **gitignored** (refreshable từ API)
   - `data/character-exports/` — per-character export JSON, **gitignored** (instance data, file naming `export-<charname>.json`)
-  - `data/pob-source/poe{1,2}/` — git clone của PathOfBuildingCommunity (~572M cho PoE2), **gitignored**, fetch qua `./.claude/skills/pob2/scripts/scripts/fetch-poe2-data.sh`
+  - `data/pob-source/poe{1,2}/` — git clone của PathOfBuildingCommunity (~572M cho PoE2), **gitignored**, fetch qua `./.claude/skills/pob/scripts/scripts/fetch-poe2-data.sh`
   - Script trong skill resolve canonical path bằng cách climb relative từ `import.meta.url` (TS) hoặc `dirname "$0"` (sh) — pattern `../../../../data/<category>/poe{1,2}/` từ `.claude/skills/<skill>/scripts/<file>`.
 - **NEVER call GGG APIs directly** — Do NOT make direct HTTP requests (curl, fetch, WebFetch) to pathofexile.com endpoints. Use CDP Relay (`cdp.evaluate_async(fetch(...))`) for trade/stash API calls — runs inside browser context with existing auth. For character data, use `/pob1 fetch`. Account was previously flagged — respect rate limits (max 3 search/5s).
 - **Playwriter + POE trade site** — Khi dùng `playwriter` để interact với trade site (pathofexile.com/trade, pathofexile.com/trade2), LUÔN sleep 1-2s giữa mỗi action (click, type, navigate, fill form) để tránh bị flag/ban. Account đã từng bị flag → ưu tiên an toàn hơn tốc độ. Nếu cần nhiều action liên tục, batch chúng và sleep giữa mỗi batch.
@@ -229,7 +229,7 @@ Recommendation "tăng X% attack speed sẽ tăng Y% DPS" → kiểm breakpoint t
 Currency / item price stale rất nhanh (Mageblood swing 50 div trong tuần). Mọi price quote kèm timestamp:
 
 - Snapshot reference: `data/poe-ninja/poe{1,2}/<league>/snapshots/<YYYY-MM-DD>.json`
-- Hoặc trade query date (khi fetch live qua `/trade1` / `/trade2`)
+- Hoặc trade query date (khi fetch live qua `/trade1` / `/trade`)
 
 Snapshot > 7 ngày → re-fetch trước khi quote trong build/farming note. Chat advice dùng giá > 7 ngày OK nếu flag "giá tháng X, có thể đã đổi".
 
@@ -249,7 +249,7 @@ Note thiếu Failure Modes section = note chưa xong. Đây là dấu hiệu pap
 
 POE2 PoB2 community fork trễ patch hơn POE1 PoB. Khi quote DPS/EHP từ PoB2:
 
-- Build dùng league-mới mechanic (companion AI, Runeforging, Runic Ward, Kalguuran skill, Spirit Walker scaling, Martial Artist mechanic) → flag `pob2_coverage: PARTIAL` ở frontmatter build note
+- Build dùng league-mới mechanic (companion AI, Runeforging, Runic Ward, Kalguuran skill, Spirit Walker scaling, Martial Artist mechanic) → flag `pob_coverage: PARTIAL` ở frontmatter build note
 - List assumption chưa simulate được (vd: "companion uptime giả 80%, AI behavior chưa modeled trong PoB2 v0.5.x")
 - Log empirical data khi vào league → update note sau khi materialize character
 

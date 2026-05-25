@@ -4,7 +4,7 @@ const LATEST_TREE_VERSION = '0_4';
 
 /**
  * Deterministic emitter: BuildSpec → Path of Building XML.
- * Inverse of the parse logic in pob2/scripts/pob-client.ts.
+ * Inverse of the parse logic in pob/scripts/pob-client.ts.
  */
 export function specToXml(spec: BuildSpec): string {
   const ascend = spec.ascendClassName ? ` ascendClassName="${spec.ascendClassName}"` : '';

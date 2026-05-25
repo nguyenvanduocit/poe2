@@ -178,7 +178,7 @@ model: claude-opus-4-7
     - `Skill` tool: `superpowers:brainstorming` (OPTIONAL — skip nếu subroutine hoặc clear pairwise question)
     - `Skill` tool: `/poewiki` cho mirror refresh nếu miss
     - `WebFetch` cho cross-source poe2db.tw / forum thread / community video transcript
-    - `Skill` tool: `/pob1`, `/pob2` cho math verify nếu pair affect damage chain
+    - `Skill` tool: `/pob1`, `/pob` cho math verify nếu pair affect damage chain
     - `Skill` tool: `/write-mechanic-tutorial` — STANDALONE mode only, invoke ngay sau Phase 2 pass với sub-class `interactions`
     - **KHÔNG** ultragoal/autoresearch (workflow lighter, 3 phase trực tiếp).
     - **KHÔNG** delegate `interaction-mapper` recursively (infinite loop risk). Spawn `Explore` parallel cho read-only verify thay vì delegate.

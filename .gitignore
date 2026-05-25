@@ -89,7 +89,6 @@ tmp/*
 # Large generated reference mirrors (wiki scrapes, DB dumps, PoB source) — do not commit full data
 data/poe1-wiki/
 data/poe2-wiki/
-data/poedb1/
-data/poedb2/
+data/poedb/
 raw-data/
 data/pob-source/
