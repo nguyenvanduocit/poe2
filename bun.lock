@@ -12,6 +12,7 @@
         "@nuxt/content": "^3.12.0",
         "@nuxtjs/i18n": "^10.4.0",
         "@nuxtjs/tailwindcss": "^6.14.0",
+        "andy-note-nuxt": "^0.2.2",
         "nuxt": "^4.3.1",
         "rehype-raw": "^7.0.0",
         "vue": "^3.5.29",
@@ -745,6 +746,8 @@
     "ajv": ["ajv@6.15.0", "", { "dependencies": { "fast-deep-equal": "^3.1.1", "fast-json-stable-stringify": "^2.0.0", "json-schema-traverse": "^0.4.1", "uri-js": "^4.2.2" } }, "sha512-fgFx7Hfoq60ytK2c7DhnF8jIvzYgOMxfugjLOSMHjLIPgenqa7S7oaagATUq99mV6IYvN2tRmC0wnTYX6iPbMw=="],
 
     "alien-signals": ["alien-signals@3.1.2", "", {}, "sha512-d9dYqZTS90WLiU0I5c6DHj/HcKkF8ZyGN3G5x8wSbslulz70KOxaqCT0hQCo9KOyhVqzqGojvNdJXoTumZOtcw=="],
+
+    "andy-note-nuxt": ["andy-note-nuxt@0.2.2", "", { "dependencies": { "@floating-ui/vue": "^1.1.11", "@fontsource/literata": "^5.2.8", "@fontsource/space-grotesk": "^5.2.10", "@nuxt/content": "^3.12.0", "@nuxtjs/tailwindcss": "^6.14.0", "nuxt": "^4.3.1", "rehype-raw": "^7.0.0", "vue": "^3.5.29", "vue-router": "^4.6.4", "vue-sonner": "^2.0.9" } }, "sha512-ITBaL8ufh/GPaUd5HJOffpzwhBJDP8bgOsugSRiy255JYje2QPNwkWFnY0gm/F3fRUOzJo1Ou4SOjxX72fx1Vg=="],
 
     "ansi-regex": ["ansi-regex@6.2.2", "", {}, "sha512-Bq3SmSpyFHaWjPk8If9yc6svM8c56dB5BAtW4Qbw5jHTwwXXcTLoRMkpDJp6VL0XzlWaCHTXrkFURMYmD0sLqg=="],
 

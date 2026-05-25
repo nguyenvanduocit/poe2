@@ -2,10 +2,11 @@
 //
 // This site EXTENDS the `andy-note-nuxt` theme layer.
 //
-// Layer source: `github:nguyenvanduocit/andy-note-nuxt` (resolved via giget,
-// cached at ~/.cache/giget — refreshes when github HEAD changes). Same path
-// for local dev AND Cloudflare Pages: a single source of truth, no env-driven
-// branching that can drift between machines.
+// Layer source: the published npm package `andy-note-nuxt` (a real dependency
+// in package.json, resolved from node_modules). Pinned by the lockfile, so the
+// build is reproducible across local dev and Cloudflare Pages — no giget cache
+// drift between machines, and the layer's own deps (vue-sonner, etc.) install
+// transitively instead of needing to be re-declared here.
 
 import { execSync } from 'node:child_process'
 import { mkdirSync, readdirSync, writeFileSync } from 'node:fs'
@@ -39,7 +40,7 @@ function enumerateLocaleRoutes(locale: string): string[] {
 
 const enRoutes = enumerateLocaleRoutes('en')
 
-const layerSource = 'github:nguyenvanduocit/andy-note-nuxt'
+const layerSource = 'andy-note-nuxt'
 
 // Build provenance. Two sources, neither a fallback for the other — each is
 // canonical for its environment:
