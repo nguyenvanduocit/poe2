@@ -87,3 +87,6 @@ tmp/*
 .claude/settings.local.json
 .claude/scheduled_tasks.lock
 .gitnexus
+
+# Embedded git repo (Path of Building source) — read locally by build scripts, not shipped
+data/pob-source/
