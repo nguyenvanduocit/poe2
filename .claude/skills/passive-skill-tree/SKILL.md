@@ -21,7 +21,7 @@ allowed-tools: Bash(bun scripts/passive-skill-tree:*
 - User muốn suggest cho allocation tối ưu
 - Improving POE2 character's passive tree build
 
-**Use POE1 skill `/passive-skill-tree1`** khi user nói về POE1 (Mirage league, etc.). Hai skill tách biệt vì class roster + ascendancy + node id space khác nhau.
+**Use POE1 skill `/passive-skill-tree`** khi user nói về POE1 (Mirage league, etc.). Hai skill tách biệt vì class roster + ascendancy + node id space khác nhau.
 
 ## Commands
 
@@ -40,7 +40,7 @@ bun .claude/skills/passive-skill-tree/scripts/analyze.ts ascendancies <class>
 bun .claude/skills/passive-skill-tree/scripts/analyze.ts export
 ```
 
-Command surface matches `/passive-skill-tree1` byte-for-byte; only the underlying class roster + node id space differ.
+Command surface matches `/passive-skill-tree` byte-for-byte; only the underlying class roster + node id space differ.
 
 **`analyze`** does real stat aggregation: it parses the number out of every stat line, sums lines that share the same wording (template), and groups totals by category (life / energy shield / mana / spirit / resistance / defence / attributes / damage / critical / speed / recovery). It is additive bucketing, not a multiplicative damage engine — for true DPS/EHP use `/pob`.
 

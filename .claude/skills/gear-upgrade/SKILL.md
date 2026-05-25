@@ -27,7 +27,7 @@ End-to-end pipeline: analyze POE2 character → identify weak slots → search t
 2. Attribute audit:     check Str/Dex/Int vs requirements + Spirit reservation
 3. Map attribute sources: which gear provides which attributes? Which provides spirit?
 4. Identify weak slots: analyze equipment mods, resistances, life, ES
-5. Search trade2:        CDP Relay cdp.evaluate_async(fetch(...)) for MULTIPLE slots
+5. Search trade:        CDP Relay cdp.evaluate_async(fetch(...)) for MULTIPLE slots
 6. Evaluate combos:     calculate NET change across all slots
 7. Simulate in PoB2:     .claude/skills/pob/scripts/scripts/analyze.sh re-run với new gear in build
 8. Present plan:        show combo table to user, wait for confirmation

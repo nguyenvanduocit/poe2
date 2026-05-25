@@ -6,7 +6,6 @@ status: draft
 author: duocnv
 created: '2026-05-24'
 updated: '2026-05-24'
-game: poe2
 league: '0.5'
 patch: 0.5.0
 tags:
@@ -17,7 +16,7 @@ tags:
   - endgame-overhaul
 ---
 
-These are the official patch notes for Path of Exile 2 — Content Update 0.5.0 "Return of the Ancients", posted by Grinding Gear Games (Stacey_GGG) on 21/05/2026 at [pathofexile2.com/ancients](https://www.pathofexile2.com/ancients), with a supplemental update on 22/05/2026. This is the full changelog, copied line for line for reference — game terms are kept in English. The original file lives in the repo at `data/release-notes/poe2/Version_0.5.0.md`. The orientation summary (keeping only the changes big enough to alter how you play) is at [Return of the Ancients](/mechanics/leagues/return-of-the-ancients).
+These are the official patch notes for Path of Exile 2 — Content Update 0.5.0 "Return of the Ancients", posted by Grinding Gear Games (Stacey_GGG) on 21/05/2026 at [pathofexile2.com/ancients](https://www.pathofexile2.com/ancients), with a supplemental update on 22/05/2026. This is the full changelog, copied line for line for reference — game terms are kept in English. The original file lives in the repo at `data/release-notes/Version_0.5.0.md`. The orientation summary (keeping only the changes big enough to alter how you play) is at [Return of the Ancients](/mechanics/leagues/return-of-the-ancients).
 
 The **Return of the Ancients** expansion brings a new league, a complete overhaul of the entire Path of Exile 2 Endgame, with six new Endgame storylines and 2 new Ascendancy classes, along with a massive amount of other content.
 

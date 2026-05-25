@@ -6,7 +6,6 @@ status: published
 author: duocnv
 created: '2026-05-22'
 updated: '2026-05-22'
-game: poe2
 league: '0.4'
 patch: 0.4.0
 tags:
@@ -14,7 +13,7 @@ tags:
   - meta-analysis
   - builds
   - vaal
-  - 0.4
+  - '0.4'
   - fate-of-the-vaal
   - top-builds
   - pathfinder
@@ -130,7 +129,7 @@ When starting Runes of Aldur, the top priorities should be:
 - Experiment with Spirit Walker companions early.
 - Don't blindly copy a 0.4 build (especially minion ignite) without retesting it.
 
-Detailed data: `data/poe-ninja/poe2/archive/vaal/latest.json` and the daily snapshots in the same folder (archived when 0.5 Runes of Aldur launched).
+Detailed data: `data/poe-ninja/archive/vaal/latest.json` and the daily snapshots in the same folder (archived when 0.5 Runes of Aldur launched).
 
 ---
 

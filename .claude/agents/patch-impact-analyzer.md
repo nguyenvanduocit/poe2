@@ -288,7 +288,7 @@ model: claude-opus-4-7
     <Good>
       **Input**: "Patch impact analysis POE1 3.29"
       
-      **Phase 0**: Fetch `./scripts/release-notes/fetch.sh poe1 3.29` → `data/release-notes/poe1/Version_3.29.md`. Verify file exists.
+      **Phase 0**: Fetch `./scripts/release-notes/fetch.sh poe1 3.29` → `data/release-notes/Version_3.29.md`. Verify file exists.
       
       **Phase 1**: Brainstorm — ask user (a) scope full vs focus TheLeader_A build, (b) auto-trigger downstream nếu HIGH confidence, (c) time budget.
       

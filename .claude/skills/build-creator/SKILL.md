@@ -23,8 +23,8 @@ This is the **write** counterpart to `/pob` (which only reads/analyzes builds).
 
 1. **Gather references.** Pull the relevant POE2 data before designing:
    - Top builds of the archetype from poe.ninja (use `/pob` analyze on a poe.ninja/poe2 URL) — for tree/gear/gem ideas, NOT to fork.
-   - Skill/gem data: `data/pob-source/poe2/src/Data/Gems.lua` (gem `name`, `variantId`, `grantedEffectId`/skillId, `gemId` metadata path).
-   - Uniques: `data/pob-source/poe2/src/Data/Uniques/` for real item text.
+   - Skill/gem data: `data/pob-source/src/Data/Gems.lua` (gem `name`, `variantId`, `grantedEffectId`/skillId, `gemId` metadata path).
+   - Uniques: `data/pob-source/src/Data/Uniques/` for real item text.
    - Passive nodes: `/passive-skill-tree` for node ids + the class's `classId`.
 2. **Propose the build in chat** (owner voice, prose): class/ascendancy, main skill + supports, key uniques, tree notable plan, expected stats + reasoning. Let the user steer BEFORE materializing.
 3. **Materialize → verify loop.** Build a `BuildSpec`, run the pipeline, read POB2 stats, compare to targets, adjust the spec, re-verify. Bounded (~5 passes); if you can't hit the bar, report best-effort + the gap honestly.
@@ -74,7 +74,7 @@ didn't parse — fix it (ground item text in real `Uniques/` / poedb exports).
 
 ### One-time env setup
 
-POB2 headless runs on `luajit` against `data/pob-source/poe2`. Native lua deps:
+POB2 headless runs on `luajit` against `data/pob-source`. Native lua deps:
 
 ```bash
 luarocks --lua-version=5.1 --lua-dir=/opt/homebrew/opt/luajit install luautf8 luafilesystem lua-zlib
@@ -93,7 +93,7 @@ luarocks --lua-version=5.1 --lua-dir=/opt/homebrew/opt/luajit install luautf8 lu
 
 ## Caveats
 
-- `data/pob-source/poe2` is POE2 0.4-era. After 0.5 launch (2026-05-29) refresh it
+- `data/pob-source` is POE2 0.4-era. After 0.5 launch (2026-05-29) refresh it
   (`/pob` `fetch-poe2-data.sh`); node ids / gems / item bases shift, `treeVersion` → `0_5`.
 - Jewels socketed into tree sockets are not emitted yet (needs `<Sockets>` in `<Spec>`) — v1.1.
 - "Optimized" = per-request targets the user sets; the verify loop is the judge, not vibes.

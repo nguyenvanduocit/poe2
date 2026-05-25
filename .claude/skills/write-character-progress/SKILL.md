@@ -1,6 +1,6 @@
 ---
 name: write-character-progress
-description: Viết hoặc update character progress note trong content/characters/ — ghi lại snapshot, goal, gear, log theo phong cách project owner voice (tiếng Việt, prose-first, số thật từ pob1.sh fetch). Trigger — "update character progress", "log character", "ghi tiến độ character", "write character note", "character tracker", "update progress log".
+description: Viết hoặc update character progress note trong content/characters/ — ghi lại snapshot, goal, gear, log theo phong cách project owner voice (tiếng Việt, prose-first, số thật từ pob.sh fetch). Trigger — "update character progress", "log character", "ghi tiến độ character", "write character note", "character tracker", "update progress log".
 allowed-tools:
   - Read
   - Write
@@ -11,7 +11,7 @@ allowed-tools:
   - Bash(ls:*)
   - Bash(jq:*)
   - Bash(bun:*)
-  - Bash(.claude/skills/pob1/scripts/pob.sh:*)
+  - Bash(.claude/skills/pob/scripts/pob.sh:*)
 when_to_use: Use when user asks to write, update, or polish a character progress note in content/characters/. Triggers — "update character progress", "log character", "ghi tiến độ character X", "write character note", "character tracker", "update progress log", "thêm log session cho character", "snapshot character".
 argument-hint: "<topic | content/characters/file.md>"
 arguments:
@@ -35,7 +35,7 @@ File `.md` trong `content/characters/` với:
 
 - Frontmatter pass `bun run validate --path <file>` zero CRITICAL.
 - 6 H2 section theo đúng thứ tự (Snapshot, Goals, Priority Actions, Gear Summary, Challenge Tracking, Progress Log).
-- **Snapshot section** lấy số live từ `.claude/skills/pob1/scripts/pob.sh fetch "<charname>" [--spectre "<name>"]`. Số mặc kệ là current state, KHÔNG static từ frontmatter.
+- **Snapshot section** lấy số live từ `.claude/skills/pob/scripts/pob.sh fetch "<charname>" [--spectre "<name>"]`. Số mặc kệ là current state, KHÔNG static từ frontmatter.
 - **Progress Log** cập nhật entry mới ở TOP với format `### YYYY-MM-DD` (reverse-chrono).
 - 100% voice rule tuân thủ.
 
@@ -43,7 +43,7 @@ File `.md` trong `content/characters/` với:
 
 1. **Owner voice** — đây là note của character mình tự chơi, KHÔNG ai khác chơi character này. CẤM third-person summary: "character này được build với...", "owner đã chọn...". Dùng first-person hoặc direct: *"đã transition từ life sang CI ngày 2026-04-15 vì..."*, *"Wretched Defiler chọn vì scale lightning qua Doryani's"*.
 2. **Prose-first** — Goal section, Priority Actions, Progress Log entry đều prose narrative. Bullet chỉ cho (a) gear list (item slot có structure), (b) numbered priority actions (≥3 ngang hàng), (c) defense stat dump trong Snapshot.
-3. **Số thật, không cache cũ** — Snapshot section LUÔN fetch live qua `.claude/skills/pob1/scripts/pob.sh fetch`. Frontmatter `level:`, `current_progress:`, PoB stats có thể stale → fetch lại trước khi viết. Cite số kèm timestamp ("snapshot 2026-05-10").
+3. **Số thật, không cache cũ** — Snapshot section LUÔN fetch live qua `.claude/skills/pob/scripts/pob.sh fetch`. Frontmatter `level:`, `current_progress:`, PoB stats có thể stale → fetch lại trước khi viết. Cite số kèm timestamp ("snapshot 2026-05-10").
 4. **Game term linking** — Mọi item / skill / spectre type / unique / currency drop → `:wiki-link{url="https://www.poewiki.net/wiki/Exact_Name"}`.
 
    ```md
@@ -100,8 +100,8 @@ Replace bằng character-specific:
 ## Pre-write checklist
 
 1. **Target file path** xác định.
-2. **Character name chính xác** từ frontmatter `character_name:` — phải match exact với in-game name (case-sensitive cho pob1.sh).
-3. **Spectre type** (nếu summon build) — pob1.sh cần `--spectre "<Type>"` để tính minion DPS đúng. Xem CLAUDE.md cho character hiện tại (vd TheLeader_A → Wretched Defiler).
+2. **Character name chính xác** từ frontmatter `character_name:` — phải match exact với in-game name (case-sensitive cho pob.sh).
+3. **Spectre type** (nếu summon build) — pob.sh cần `--spectre "<Type>"` để tính minion DPS đúng. Xem CLAUDE.md cho character hiện tại (vd TheLeader_A → Wretched Defiler).
 4. **Mode**: full update (rewrite tất cả 6 section) hay log-only (chỉ append entry vào Progress Log)? Hỏi user nếu mơ hồ.
 
 ## Steps
@@ -120,7 +120,7 @@ Hỏi user (hoặc infer từ `$topic_or_path` syntax):
 **Success criteria**: Mode rõ ràng.
 
 ### 3. Live PoB fetch (full update / snapshot-only)
-Run `.claude/skills/pob1/scripts/pob.sh fetch "<character_name>" [--spectre "<spectre>"]`. Output → `content/characters/<slug>.json` + `<slug>.summary.json` + `<slug>-pob.txt`. Dùng `jq` để extract số cho Snapshot section.
+Run `.claude/skills/pob/scripts/pob.sh fetch "<character_name>" [--spectre "<spectre>"]`. Output → `content/characters/<slug>.json` + `<slug>.summary.json` + `<slug>-pob.txt`. Dùng `jq` để extract số cho Snapshot section.
 
 **Success criteria**: JSON file timestamp = today, ≥10 stat fields readable.
 

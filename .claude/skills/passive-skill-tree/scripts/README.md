@@ -1,6 +1,6 @@
 # passive-skill-tree/scripts — data layer notes
 
-**Trạng thái: LIVE.** `analyze.ts` đã implement đầy đủ và đọc data từ poedb mirror — cùng command surface với `/passive-skill-tree1`. Không còn là scaffold.
+**Trạng thái: LIVE.** `analyze.ts` đã implement đầy đủ và đọc data từ poedb mirror — cùng command surface với `/passive-skill-tree`. Không còn là scaffold.
 
 ## Nguồn data
 
@@ -42,7 +42,7 @@ Các ascendancy còn lại (Lich, Infernalist, Deadeye, Titan, Stormweaver, Invo
 
 ## Reference
 
-- POE1 sibling (cùng logic, khác data): `.claude/skills/passive-skill-tree1/scripts/analyze.ts`
+- POE1 sibling (cùng logic, khác data): `.claude/skills/passive-skill-tree/scripts/analyze.ts`
 - poedb mirror downloader: `.claude/skills/poedb/scripts/download.sh`
-- POE2 0.5 patch notes: `data/release-notes/poe2/Version_0.5.0.md`
+- POE2 0.5 patch notes: `data/release-notes/Version_0.5.0.md`
 - Last fetch evidence: `data/poedb/0.5.0/passive-skill-tree/meta.json`

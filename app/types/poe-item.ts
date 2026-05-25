@@ -1,7 +1,7 @@
 // Shared types for the price-aware UI layer.
 //
-// `ItemType` enumerates the categories that `.claude/skills/price-forecast1/scripts/collect.py`
-// currently emits into `data/price-history/poe1/price-history.json` — currency &
+// `ItemType` enumerates the categories that `.claude/skills/price-forecast/scripts/collect.py`
+// currently emits into `data/price-history/price-history.json` — currency &
 // consumables. Uniques are NOT collected; widening this union must wait until
 // the collector is extended.
 

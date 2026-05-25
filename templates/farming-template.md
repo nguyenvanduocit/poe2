@@ -6,7 +6,7 @@ sections:
   - relationships
 fields:
   $path:
-    pattern: "^content/farming/.+\\.md$"
+    pattern: "^content/(en/)?farming/.+\\.md$"
   template:
     required: true
     pattern: "^templates/farming-template\\.md$"
@@ -41,9 +41,6 @@ fields:
   confidence_level:
     required: true
     enum: [High, Medium, Low]
-  game:
-    required: true
-    enum: [poe1, poe2]
 ---
 
 # [Strategy Name]
@@ -52,7 +49,7 @@ fields:
 Farming strategy template — viết theo skill /write-farming-tutorial.
 Voice: tiếng Việt, owner-voice, prose-first, số có timestamp.
 Title KHÔNG kèm league/patch.
-Scarab/atlas keystone/map base → /wiki/poe1/atlas/<slug> (KHÔNG /items/).
+Waystone/tablet/atlas keystone/unique → `:wiki-link{url="https://www.poe2wiki.net/wiki/<page>"}` MDC component (auto link ra wiki + price tooltip).
 Cross-link → section ## Relationships ở cuối, mỗi dòng: - **predicate** [Title](/route) — reason.
 -->
 
@@ -96,7 +93,7 @@ expected_profit_per_hour =
   − opportunity_cost (atlas points, sustain time)
 ```
 
-**Số có timestamp** — "tính đến YYYY-MM-DD, [item] sells X per unit, map yields Y units → Z div/map". Reference snapshot file `data/poe-ninja/poe{1,2}/<league>/snapshots/<date>.json` hoặc trade query date. Snapshot > 7 ngày → re-fetch trước khi quote. Xem **Market Data Freshness** trong CLAUDE.md.)
+**Số có timestamp** — "tính đến YYYY-MM-DD, [item] sells X per unit, map yields Y units → Z div/map". Reference snapshot file `data/poe-ninja/<league>/snapshots/<date>.json` hoặc trade query date. Snapshot > 7 ngày → re-fetch trước khi quote. Xem **Market Data Freshness** trong CLAUDE.md.)
 
 ## Market Context & Risk
 
@@ -123,7 +120,7 @@ Prose 1-2 đoạn cover risk thực tế nhất. Xem **Failure Mode / Devil's Ad
 
 ## Data & Testing
 
-(Evidence cho profit claim. Personal sample size + condition. Source link — poe.ninja, /trade1 output. Market data recency.)
+(Evidence cho profit claim. Personal sample size + condition. Source link — poe.ninja, /trade output. Market data recency.)
 
 ## Summary
 

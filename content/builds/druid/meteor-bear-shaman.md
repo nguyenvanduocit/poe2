@@ -5,7 +5,6 @@ document_type: build
 title: Meteor Bear Shaman - Walking Calamity
 class: Druid
 ascendancy: Shaman
-game: poe2
 league: '0.4'
 patch: 0.4.0
 status: published

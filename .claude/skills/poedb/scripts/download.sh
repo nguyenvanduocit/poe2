@@ -17,7 +17,7 @@
 #     ./download.sh 0.5.0 --url-file /tmp/new-uniques.txt
 #
 #   Build a --url-file straight from patch notes, e.g. the new uniques of 0.5.0:
-#     rg -o 'Unique item mới: (.+)' -r '$1' data/release-notes/poe2/Version_0.5.0.md \
+#     rg -o 'Unique item mới: (.+)' -r '$1' data/release-notes/Version_0.5.0.md \
 #       | sed 's/\.$//' | tr ',' '\n' | sed 's/^ *//;s/ *$//' | grep -v '^$' \
 #       | sed "s/['’]//g; s/ /_/g; s#^#https://poe2db.tw/us/#" > /tmp/new-uniques.txt
 #     ./download.sh 0.5.0 --url-file /tmp/new-uniques.txt

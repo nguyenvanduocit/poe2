@@ -8,7 +8,6 @@ created: '2026-05-18'
 updated: '2026-06-13'
 class: Monk
 ascendancy: Acolyte of Chayula
-game: poe2
 league: '0.5'
 patch: 0.5.0
 budget_tier: medium-budget

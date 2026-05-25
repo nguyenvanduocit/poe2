@@ -159,7 +159,7 @@ model: claude-opus-4-7
   <Tool_Usage>
 
     **Read-heavy phase (F001-F002):**
-    - `Bash`: `find data/poe1-wiki -iname "*scarab*"`, `rg "Scarab of Doubling" data/poe1-wiki/`
+    - `Bash`: `find data/wiki -iname "*scarab*"`, `rg "Scarab of Doubling" data/wiki/`
     - `Read` mirror files
     - `Skill` tool: `superpowers:brainstorming`, `oh-my-claudecode:ultragoal`, `oh-my-claudecode:autoresearch`
     - `Task` (Explore subagent) parallel max 3
@@ -175,7 +175,7 @@ model: claude-opus-4-7
     - Optional: PoB nếu strategy require build verify
 
     **Loop phase (F005):**
-    - `Bash` cho query `data/poe1-wiki` về atlas keystone wording
+    - `Bash` cho query `data/wiki` về atlas keystone wording
     - `Skill` tool: `/lootfilter` nếu loop cần custom filter (vd Harvest plot priority filter)
     - `Skill` tool: `/atlas-tree` cho atlas keystone path analysis
 

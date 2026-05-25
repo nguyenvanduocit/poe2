@@ -1,5 +1,5 @@
 #!/bin/bash
-# Fetch full PathOfBuilding-PoE2 repository to <project-root>/data/pob-source/poe2/
+# Fetch full PathOfBuilding-PoE2 repository to <project-root>/data/pob-source/
 # Used for querying game data (skills, items, etc.)
 # Scripts stay inside skill; the 572M PoB2 fork lives under project-wide data/.
 
@@ -10,7 +10,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../../../.." && pwd)"
 
 REPO_URL="https://github.com/PathOfBuildingCommunity/PathOfBuilding-PoE2.git"
-TARGET_DIR="$PROJECT_ROOT/data/pob-source/poe2"
+TARGET_DIR="$PROJECT_ROOT/data/pob-source"
 
 if [ -d "$TARGET_DIR/.git" ]; then
     echo "Repository exists, pulling latest changes..."

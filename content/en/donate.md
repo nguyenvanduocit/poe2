@@ -1,7 +1,6 @@
 ---
 title: "Donate"
 description: "Why I built this site, and how to donate divine or items if you want to support it"
-game: "poe2"
 created: 2026-05-08
 updated: 2026-05-08
 ---

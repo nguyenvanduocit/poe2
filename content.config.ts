@@ -79,7 +79,17 @@ export default defineContentConfig({
     // /en pages mixed into the Vietnamese index.
     content: defineCollection({
       type: 'page',
-      source: { include: '**', exclude: ['en/**'] },
+      // Exclude colocated binaries:
+      //   - `**/assets/**` — build notes colocate media (frames, transcripts)
+      //     next to index.md; served as static files via the public asset
+      //     pipeline, not parsed as content pages.
+      //   - `**/*.txt` / `**/*.jpg` — PoB exports (e.g.
+      //     content/characters/*-pob.txt) and frame screenshots aren't parseable
+      //     as Nuxt Content pages; without this, Nuxt warns on every file.
+      source: {
+        include: '**',
+        exclude: ['en/**', '**/assets/**', '**/*.txt', '**/*.jpg', '**/*.jpeg', '**/*.png'],
+      },
       schema: contentSchema,
     }),
     // English: `prefix: ''` strips the en/ folder so stored paths are locale-
@@ -87,7 +97,11 @@ export default defineContentConfig({
     // by i18n's prefix_except_default strategy at routing time, not baked here.
     content_en: defineCollection({
       type: 'page',
-      source: { include: 'en/**', prefix: '' },
+      source: {
+        include: 'en/**',
+        prefix: '',
+        exclude: ['**/assets/**', '**/*.txt', '**/*.jpg', '**/*.jpeg', '**/*.png'],
+      },
       schema: contentSchema,
     }),
   },

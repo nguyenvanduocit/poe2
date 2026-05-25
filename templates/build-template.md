@@ -6,7 +6,7 @@ sections:
   - relationships
 fields:
   $path:
-    pattern: "^content/builds/[^/]+/.+\\.md$"
+    pattern: "^content/(en/)?builds/[^/]+/.+\\.md$"
   template:
     required: true
     pattern: "^templates/build-template\\.md$"
@@ -29,9 +29,6 @@ fields:
     enum: [Marauder, Duelist, Ranger, Shadow, Witch, Templar, Scion, Warrior, Mercenary, Monk, Sorceress, Huntress, Druid]
   ascendancy:
     required: true
-  game:
-    required: true
-    enum: [poe1, poe2]
   league:
     required: true
     pattern: "^\\d+\\.\\d+(\\.\\d+)?$"
@@ -43,7 +40,7 @@ fields:
   confidence_level:
     required: false
     enum: [HIGH, MEDIUM, LOW]
-  pob2_coverage:
+  pob_coverage:
     required: false
     enum: [FULL, PARTIAL, NA]
 ---
@@ -86,7 +83,7 @@ Cross-link → section ## Relationships ở cuối, mỗi dòng: - **predicate**
 
 ## Stat Priorities & Defenses
 
-(Số thật từ PoB hoặc character file. Bullet OK đây vì purely data points. DPS claim ≥ 100k và EHP claim phải có PoB link bên dưới — không quote raw number không reference. POE1 EHP layer order: armor → evasion → block/spell-block → suppress → max res → ES/Life pool → recovery rate. POE2 0.5+ thêm **Runic Ward** sau Life pool. Xem **Math Chain Bắt Buộc cho Big Number** trong CLAUDE.md.)
+(Số thật từ PoB hoặc character file. Bullet OK đây vì purely data points. DPS claim ≥ 100k và EHP claim phải có PoB link bên dưới — không quote raw number không reference. EHP layer order (0.5+): armor → evasion → block → max res → ES/Life pool → **Runic Ward** → recovery rate. Xem **Math Chain Bắt Buộc cho Big Number** trong CLAUDE.md.)
 
 - **ES / Life:** X
 - **Armour / Evasion:** X / X

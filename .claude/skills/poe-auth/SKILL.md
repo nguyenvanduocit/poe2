@@ -96,11 +96,11 @@ Writes `POESESSID` and `CF_CLEARANCE` to `.env.poe` in current directory.
 
 ## Integration with Other Skills
 
-**Note:** For trade operations, prefer using `/trade1` (CDP Relay-based) which uses your browser's existing session — no POESESSID extraction needed. CDP Relay's `cdp.evaluate_async(fetch(...))` automatically uses browser cookies.
+**Note:** For trade operations, prefer using `/trade` (CDP Relay-based) which uses your browser's existing session — no POESESSID extraction needed. CDP Relay's `cdp.evaluate_async(fetch(...))` automatically uses browser cookies.
 
 This skill is still useful for:
 - `/stash` - Stash tab management (TypeScript CLI, needs POESESSID)
-- `/pob1 fetch` - Character fetching (needs POESESSID)
+- `/pob fetch` - Character fetching (needs POESESSID)
 - Any non-CDP-Relay script that calls `pathofexile.com/api/*`
 
 ## Supported Browsers

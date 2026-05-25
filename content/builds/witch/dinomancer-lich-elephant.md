@@ -8,7 +8,6 @@ created: '2026-05-13'
 updated: '2026-05-19'
 class: Witch
 ascendancy: Lich
-game: poe2
 league: '0.5'
 patch: 0.5.0
 budget_tier: league-starter
@@ -436,7 +435,7 @@ Leveling path đã được test bởi Oscrix (build creator) và jungroan (7 gi
 - Added "Damage scaling ROI checklist" caveat block trong Strengths & Limitations với PoB toggle falsifier explicit (delta ≤10% confirm, ≥30% refute).
 
 ### 2026-05-19 (verification pass)
-- Verified mọi gem text + item mod + ascendancy node với POE2 wiki mirror snapshot 2026-05-18 (`data/poe2-wiki/`). 
+- Verified mọi gem text + item mod + ascendancy node với POE2 wiki mirror snapshot 2026-05-18 (`data/wiki/`). 
 - Gem name corrections: Bind Spectre thay cho POE1 Raise Spectre; Skeletal Warrior/Sniper/Arsonist (singular, không "Summon" prefix); Tame Beast → Summon Beast: Elephant Tortoise account-bound; Infernal Legion III tier 5 explicit.
 - Ascendancy section rewrite: bỏ trial-cluster framework, dùng flat notable list (Soulless Form + Eternal Life cho low-life pillar; Rupture the Soul + Incessant Cacophony cho curse explode pillar; Crystalline Phylactery option). Verbatim node text từ Lich wiki entry.
 - Glancing Blows reasoning: POE2 0.5 keystone = "Chance to Evade Unlucky, Chance to Deflect Lucky" — build CI không stack evasion nên skip vì irrelevant, không phải vì block penalty.

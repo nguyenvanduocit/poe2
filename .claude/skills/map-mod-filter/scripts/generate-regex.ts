@@ -3,7 +3,7 @@
  * POE2 Waystone / Tablet Mod Regex Generator
  *
  * Implements the hawolt/poe-regex algorithm for POE2:
- *   1. Load mod corpus (waystone or tablet) from <project-root>/data/map-mods/poe2/
+ *   1. Load mod corpus (waystone or tablet) from <project-root>/data/map-mods/
  *   2. For each selected mod, find the shortest substring that is UNIQUE
  *      within the corpus (matches selected mod, no other unselected mod)
  *   3. Fall back to predefined fallback regex if no unique substring exists
@@ -15,7 +15,7 @@
  *   bun scripts/generate-regex.ts --corpus tablet --include "breach,delirium"
  *
  * Status: WORKING STUB. Algorithm is wired; corpus data file is the TODO.
- * See <project-root>/data/map-mods/poe2/README.md for the fetch-from-wiki recipe.
+ * See <project-root>/data/map-mods/README.md for the fetch-from-wiki recipe.
  */
 
 import { readFileSync, existsSync } from 'fs'
@@ -41,12 +41,12 @@ interface ParsedArgs {
 // ────────────────────────────────────────────────────────────────────────────
 
 function loadCorpus(corpus: 'waystone' | 'tablet'): ModEntry[] {
-  // Canonical corpus path: <project-root>/data/map-mods/poe2/<corpus>-mods-0.5.json
+  // Canonical corpus path: <project-root>/data/map-mods/<corpus>-mods-0.5.json
   // Script lives at .claude/skills/map-mod-filter/scripts/generate-regex.ts — climb ../../../../
-  const path = resolve(__dirname, `../../../../data/map-mods/poe2/${corpus}-mods-0.5.json`)
+  const path = resolve(__dirname, `../../../../data/map-mods/${corpus}-mods-0.5.json`)
   if (!existsSync(path)) {
     console.error(`[generate-regex] Corpus missing: ${path}`)
-    console.error(`[generate-regex] See <project-root>/data/map-mods/poe2/README.md for fetch recipe.`)
+    console.error(`[generate-regex] See <project-root>/data/map-mods/README.md for fetch recipe.`)
     console.error(`[generate-regex] Falling back to BUILT-IN minimal sample corpus (incomplete — for smoke test only).`)
     return BUILTIN_SAMPLE_CORPUS[corpus]
   }
@@ -55,7 +55,7 @@ function loadCorpus(corpus: 'waystone' | 'tablet'): ModEntry[] {
 }
 
 // Minimal handwritten sample (replaces real corpus until data/ is populated)
-// Mods sourced from data/poe2-wiki/List_of_modifiers_for_waystones_(high_tier).md
+// Mods sourced from data/wiki/List_of_modifiers_for_waystones_(high_tier).md
 const BUILTIN_SAMPLE_CORPUS: Record<'waystone' | 'tablet', ModEntry[]> = {
   waystone: [
     { id: 'infernal', text: 'monsters deal 26-30% of damage as extra fire' },
@@ -202,7 +202,7 @@ Output is a single quoted regex ready to paste into a POE2 stash tab search fiel
 (50-character limit per field).
 
 Status: STUB. Real 0.5 mod corpus not yet bundled — using a small built-in sample.
-See <project-root>/data/map-mods/poe2/README.md for the TODO to fetch the live 0.5 corpus.`)
+See <project-root>/data/map-mods/README.md for the TODO to fetch the live 0.5 corpus.`)
 }
 
 if (import.meta.main) {

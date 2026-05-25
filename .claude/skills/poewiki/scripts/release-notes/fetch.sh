@@ -9,15 +9,15 @@
 #   ./.claude/skills/poewiki/scripts/release-notes/fetch.sh 0.5.0          # specific version
 #
 # Output:
-#   data/release-notes/poe2/Version_0.5.0.md
-#   data/release-notes/poe2/latest.md  → symlink
+#   data/release-notes/Version_0.5.0.md
+#   data/release-notes/latest.md  → symlink
 
 set -euo pipefail
 
 # release-notes/fetch.sh → ../../../../.. = project root
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "${SCRIPT_DIR}/../../../../.." && pwd)"
-OUTPUT_DIR="${ROOT_DIR}/data/release-notes/poe2"
+OUTPUT_DIR="${ROOT_DIR}/data/release-notes"
 
 MARKITDOWN_BIN="/Library/Frameworks/Python.framework/Versions/3.12/bin/markitdown"
 TARGET_HOST="www.poe2wiki.net"

@@ -3,7 +3,6 @@ document_type: build
 title: Shield Wall
 class: Warrior
 ascendancy: Warbringer
-game: poe2
 league: '0.4'
 patch: 0.4.0
 status: draft

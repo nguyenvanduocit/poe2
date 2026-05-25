@@ -96,13 +96,13 @@ Tương tự POE1 — class/skill/item/keystone distribution. POE2 đặc trưng
 python3 .claude/skills/poe-ninja/scripts/collect-builds.py
 ```
 
-Auto-detects current POE2 main softcore league (POE2 ONLY — POE1 không touch). Snapshots build data + computes trends + builds top-DPS/EHP lists. Output vào `data/poe-ninja/poe2/<league>/`:
+Auto-detects current POE2 main softcore league (POE2 ONLY — POE1 không touch). Snapshots build data + computes trends + builds top-DPS/EHP lists. Output vào `data/poe-ninja/<league>/`:
 
 - `latest.json` — newest snapshot (overwrite)
 - `snapshots/<YYYY-MM-DD>.json` — daily snapshot (idempotent rerun overwrites same date)
 - `trends.json` — top rising/falling distributions vs. league day-1 / week-1 baselines
 
-**Note:** poe-ninja skill POE1 sibling đã handle CẢ poe1 + poe2 trong cùng script (`GAMES = ("poe1", "poe2")`). Script này là POE2-only version cho khi user muốn fetch chỉ POE2 nhanh hơn. Output structure giống nhau (`data/poe-ninja/poe2/...`) nên không xung đột.
+**Note:** poe-ninja skill POE1 sibling đã handle CẢ poe1 + poe2 trong cùng script (`GAMES = ("poe1", "poe2")`). Script này là POE2-only version cho khi user muốn fetch chỉ POE2 nhanh hơn. Output structure giống nhau (`data/poe-ninja/...`) nên không xung đột.
 
 ### Snapshot schema (`latest.json`)
 
@@ -173,7 +173,7 @@ POE2 item type list khác POE1 — Remnant, BattleAlloy, Verisium category thêm
 ├── builds-api.sh          # CLI cho POE2 builds protobuf API
 └── collect-builds.py      # Daily snapshot crawler POE2-only
 
-data/poe-ninja/poe2/<league>/
+data/poe-ninja/<league>/
 ├── latest.json            # Newest snapshot mirror
 ├── trends.json            # Top rising/falling vs. baselines
 └── snapshots/<date>.json  # Daily idempotent snapshot
@@ -191,4 +191,4 @@ data/poe-ninja/poe2/<league>/
 
 ## Cross-reference
 
-POE1 sibling: `.claude/skills/poe-ninja1/SKILL.md`. Khi cần data CẢ poe1 + poe2 cùng lúc, dùng `python3 .claude/skills/poe-ninja1/scripts/collect-builds.py` (script đó loop qua `GAMES = ("poe1", "poe2")`).
+POE1 sibling: `.claude/skills/poe-ninja/SKILL.md`. Khi cần data CẢ poe1 + poe2 cùng lúc, dùng `python3 .claude/skills/poe-ninja/scripts/collect-builds.py` (script đó loop qua `GAMES = ("poe1", "poe2")`).

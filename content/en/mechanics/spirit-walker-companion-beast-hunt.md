@@ -6,7 +6,6 @@ status: draft
 author: duocnv
 created: '2026-05-20'
 updated: '2026-05-20'
-game: poe2
 league: '0.5'
 patch: 0.5.0
 tags:

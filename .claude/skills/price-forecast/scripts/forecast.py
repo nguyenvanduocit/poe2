@@ -2,7 +2,7 @@
 """
 POE2 Price Forecaster using Amazon Chronos-2.
 
-Reads collected POE2 price history từ data/price-history/poe2/master.json,
+Reads collected POE2 price history từ data/price-history/master.json,
 runs Chronos-2 time-series model on ALL items, outputs BUY/SELL/HOLD recommendations.
 
 Usage:
@@ -333,7 +333,7 @@ def main():
     except FileNotFoundError:
         print(f"No data file found at {DATA_FILE}")
         print(
-            "Run collect.py first: python .claude/skills/price-forecast1/scripts/collect.py"
+            "Run collect.py first: python .claude/skills/price-forecast/scripts/collect.py"
         )
         return
 

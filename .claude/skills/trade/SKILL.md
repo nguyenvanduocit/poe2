@@ -314,4 +314,4 @@ Khi verify xong các item trên, update snippet `LEAGUE = "..."` và type exampl
 |------|---------|
 | playwriter | `npm install -g playwriter@latest` |
 | CDP Relay scripts | `/Users/firegroup/.claude/plugins/marketplaces/aiocean-plugins/plugins/aio-cdp-relay/skills/aio-cdp-relay/scripts` |
-| `.claude/skills/trade1/SKILL.md` | POE1 sibling — cross-reference cho pattern + gotcha không đổi |
+| `.claude/skills/trade/SKILL.md` | POE1 sibling — cross-reference cho pattern + gotcha không đổi |

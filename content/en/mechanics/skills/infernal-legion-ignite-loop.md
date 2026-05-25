@@ -6,7 +6,6 @@ status: draft
 author: duocnv
 created: '2026-05-19'
 updated: '2026-05-19'
-game: poe2
 league: '0.5'
 patch: 0.5.0
 sub_class: skills

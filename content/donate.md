@@ -1,7 +1,6 @@
 ---
 title: "Donate"
 description: "Vì sao mình làm trang này, và cách donate divine hoặc item nếu bạn muốn ủng hộ"
-game: "poe2"
 created: 2026-05-08
 updated: 2026-05-08
 ---

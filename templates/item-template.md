@@ -6,7 +6,7 @@ sections:
   - relationships
 fields:
   $path:
-    pattern: "^content/mechanics/items/.+\\.md$"
+    pattern: "^content/(en/)?mechanics/items/.+\\.md$"
   template:
     required: true
     pattern: "^templates/item-template\\.md$"
@@ -29,9 +29,6 @@ fields:
     enum: [unique, rare-base, currency, divination-card, jewel, flask, system]
   item_class:
     required: true
-  game:
-    required: true
-    enum: [poe1, poe2]
   league:
     required: true
     pattern: "^\\d+\\.\\d+(\\.\\d+)?$"

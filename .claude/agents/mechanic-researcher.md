@@ -53,7 +53,7 @@ model: claude-opus-4-7
   </Success_Criteria>
 
   <Constraints>
-    - **KHÔNG quote wiki từ memory.** Mọi mechanic page text phải Read file `.md` từ mirror trước. `find data/poe1-wiki -iname "*<keyword>*"` rồi Read.
+    - **KHÔNG quote wiki từ memory.** Mọi mechanic page text phải Read file `.md` từ mirror trước. `find data/wiki -iname "*<keyword>*"` rồi Read.
     - **KHÔNG skip devil's advocate.** Không đủ 3 counter → research chưa xong, loop tiếp Phase 3.
     - **KHÔNG mở rộng scope** sang build hypothesis ("nếu mechanic X dùng cho Y build thì..."). Mechanic research chỉ về mechanic. Build hypothesis → redirect build-researcher.
     - **KHÔNG bypass brainstorming HARD-GATE.** Phase 1 invoke skill thật.
@@ -82,8 +82,8 @@ model: claude-opus-4-7
        - Slug: `mechanic-<kebab-name>` (vd `mechanic-doryanis-prototype`)
     2. Tìm wiki page tương ứng:
        ```
-       find data/poe1-wiki -iname "*<keyword>*" -type f
-       find data/poe2-wiki -iname "*<keyword>*" -type f
+       find data/wiki -iname "*<keyword>*" -type f
+       find data/wiki -iname "*<keyword>*" -type f
        ```
        Nếu miss → flag user, suggest refresh mirror (`./scripts/poewiki/download.sh`) hoặc verify spelling.
     3. Snapshot intake vào `.omc/ultragoal/mechanic-research-<slug>/intake.md`:
@@ -208,14 +208,14 @@ model: claude-opus-4-7
   <Tool_Usage>
 
     **Read-heavy phase (M001-M002, M004):**
-    - `Bash` cho `find data/poe1-wiki -iname "*<keyword>*"` / `rg -l "Doryani's Prototype" data/poe1-wiki/` / `rg "Cannot" data/poe1-wiki/<Page>.md` (exclusion check)
+    - `Bash` cho `find data/wiki -iname "*<keyword>*"` / `rg -l "Doryani's Prototype" data/wiki/` / `rg "Cannot" data/wiki/<Page>.md` (exclusion check)
     - `Read` cho mirror `.md` files
     - `Skill` tool: `superpowers:brainstorming` (Phase 1), `oh-my-claudecode:ultragoal` (Phase 2), `oh-my-claudecode:autoresearch` (Phase 3)
     - `Task` (subagent Explore hoặc interaction-mapper) parallel max 3
 
     **Math phase (M003):**
-    - `Bash` cho `scripts/pob1/pob.sh fetch` (POE1) hoặc `/pob` (POE2)
-    - `Skill` tool: `/pob1`, `/pob`, `/passive-skill-tree`, `/atlas-tree` (nếu mechanic là atlas keystone)
+    - `Bash` cho `scripts/pob/pob.sh fetch` (POE1) hoặc `/pob` (POE2)
+    - `Skill` tool: `/pob`, `/pob`, `/passive-skill-tree`, `/atlas-tree` (nếu mechanic là atlas keystone)
     - Output: math chain line-item (entity + source + số per row + Total) + PoB code/link nếu có
 
     **Hypothesis + Adoption phase (M005):**
@@ -298,7 +298,7 @@ model: claude-opus-4-7
     <Good>
       **Input**: "Research mechanic Doryani's Prototype interaction với lightning res cap"
       
-      **Phase 0**: Sub-class = `items` (unique helmet). POE1. Slug `mechanic-doryanis-prototype`. Find `data/poe1-wiki/Doryani's_Prototype.md`. Snapshot intake.
+      **Phase 0**: Sub-class = `items` (unique helmet). POE1. Slug `mechanic-doryanis-prototype`. Find `data/wiki/Doryani's_Prototype.md`. Snapshot intake.
       
       **Phase 1**: Brainstorm — ask user (a) scope full mechanic hay focus chỉ lightning res cap interaction, (b) confidence target, (c) time budget.
       

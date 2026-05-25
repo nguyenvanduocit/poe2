@@ -2,7 +2,6 @@
 document_type: mechanic
 title: Talisman Crafting — Budget to Min-Max
 mechanic_type: Crafting
-game: poe2
 league: '0.4'
 patch: 0.4.0
 status: published

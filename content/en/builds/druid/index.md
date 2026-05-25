@@ -4,7 +4,6 @@ type: "index"
 description: "POE2 Druid — shapeshift, totem, minion, nature magic."
 weight: 11
 class: "Druid"
-game: "poe2"
 created: '2025-11-16'
 updated: '2026-05-11'
 ---

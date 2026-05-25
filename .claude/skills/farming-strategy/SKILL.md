@@ -11,7 +11,7 @@ context: inline
 
 **TOOL SKILL** — analyze POE2 economy (0.5 Runes of Aldur trở đi), determine optimal farming strategies, và generate comprehensive strategy doc trong `content/farming/`. POE2 version của POE1 `farming-strategy` skill.
 
-Dùng `/farming-strategy1` (no `2`) cho POE1. POE2 economy khác POE1 cốt lõi — đừng port strategy POE1 trực tiếp.
+Dùng `/farming-strategy` (no `2`) cho POE1. POE2 economy khác POE1 cốt lõi — đừng port strategy POE1 trực tiếp.
 
 ## When to Use
 
@@ -36,8 +36,8 @@ Khi adapt strategy thinking từ POE1, hold giùm những khác biệt sau:
 
 **Không có poe.watch.** poe.watch API hiện chỉ support POE1. POE2 economy data lấy từ:
 - **poe.ninja/poe2** — overview giá, trending, currency rate
-- **trade2 API** (pathofexile.com/trade2) — current listing, demand indicator — dùng qua skill `/trade2` hoặc CDP Relay
-- **poe-ninja skill** đã support POE2 (xem `/poe-ninja1` README)
+- **trade API** (pathofexile.com/trade2) — current listing, demand indicator — dùng qua skill `/trade` hoặc CDP Relay
+- **poe-ninja skill** đã support POE2 (xem `/poe-ninja` README)
 
 **Crafting endgame là Remnant + Runic Recipe.** Mỗi area Runes of Aldur có Remnant với 2–10 slot. Mỗi Runeshape khắc thêm tăng wave + runic modifier monster. Slot count cao → hiếm hơn → craft được item hiếm hơn. Đây là wave-encounter risk-vs-reward loop — equivalent gần nhất với "scarab loop" của POE1 về mặt input/output economics.
 
@@ -239,7 +239,7 @@ bun .claude/skills/farming-strategy/scripts/analyze.ts --strategy <best> --maps-
 # Step 4: Research community
 # - YouTube transcript (yt-dlp) — POE2 creator: Ben_, Mathil, Goratha (POE2 content), Empyriangaming, Fubgun (POE2 league)
 # - Reddit r/PathOfExile2 + r/PathOfExile2Builds
-# - poe.ninja/poe2 build data (/poe-ninja1 skill — đã support POE2)
+# - poe.ninja/poe2 build data (/poe-ninja skill — đã support POE2)
 
 # Step 5: Generate strategy doc
 # Tạo trong content/farming/ với template templates/farming-template.md (qua /vault.new)
@@ -264,7 +264,7 @@ bun .claude/skills/farming-strategy/scripts/analyze.ts --strategy <best> --maps-
 - **DarthMicrotransaction**: POE2 build + endgame
 
 ### Market Data
-- **poe.ninja/poe2** — trending + currency rate POE2 (via `/poe-ninja1` skill)
+- **poe.ninja/poe2** — trending + currency rate POE2 (via `/poe-ninja` skill)
 - **Trade2 API** — current listing POE2 (via `/trade` skill, CDP Relay)
 - **NOT poe.watch** — POE1 only
 

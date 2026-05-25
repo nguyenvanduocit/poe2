@@ -7,8 +7,8 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 # .claude/skills/build-creator/scripts → climb 4 to repo root
 REPO_ROOT="$(cd "$SCRIPT_DIR/../../../.." && pwd)"
-POB2_SRC="$REPO_ROOT/data/pob-source/poe2/src"
-RT="$REPO_ROOT/data/pob-source/poe2/runtime/lua"
+POB2_SRC="$REPO_ROOT/data/pob-source/src"
+RT="$REPO_ROOT/data/pob-source/runtime/lua"
 LR="$HOME/.luarocks"
 
 XML_FILE="${1:?verify.sh: missing xml file arg}"

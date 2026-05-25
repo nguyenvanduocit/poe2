@@ -88,7 +88,7 @@ Trước khi viết, đảm bảo có:
 2. **Frontmatter values** từ file: class, ascendancy, primary_skill, budget_tier — biết để align nội dung.
 3. **Số thật**:
    - Build dựa trên character `content/characters/*.json` → đọc qua `jq`.
-   - Build dựa trên PoB external → user cung cấp PoB code/URL → `/pob1` analyze.
+   - Build dựa trên PoB external → user cung cấp PoB code/URL → `/pob` analyze.
    - Chưa có data → placeholder `<!-- TODO: số thật từ PoB -->`, flag user.
 4. **Reference build cùng class** — đọc 1-2 file `content/builds/<class>/` để align voice + spot existing `:wiki-link` usage.
 
@@ -105,7 +105,7 @@ Read target file. Đọc 1-2 build file cùng class. Nếu link tới character 
 **Success criteria**: Nắm class, ascendancy, primary_skill, budget_tier, key items/numbers.
 
 ### 3. Source data
-Frontmatter `pob_link` chưa fetch → run `/pob1 <pob_link>`. Build trên character realtime → run `.claude/skills/pob1/scripts/pob.sh fetch "<charname>" --spectre "<spectre>"` (xem CLAUDE.md).
+Frontmatter `pob_link` chưa fetch → run `/pob <pob_link>`. Build trên character realtime → run `.claude/skills/pob/scripts/pob.sh fetch "<charname>" --spectre "<spectre>"` (xem CLAUDE.md).
 
 **Success criteria**: ≥5 số thật sẵn sàng cite (ES, EHP, Block %, Res cap, DPS).
 

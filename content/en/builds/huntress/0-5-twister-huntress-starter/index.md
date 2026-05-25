@@ -8,7 +8,6 @@ created: '2026-05-19'
 updated: '2026-05-25'
 class: Huntress
 ascendancy: Spirit Walker
-game: poe2
 league: '0.5'
 patch: 0.5.0
 budget_tier: league-starter
@@ -252,7 +251,7 @@ For Twister mechanic details see the [Twister mechanic doc](/mechanics/skills/tw
 - **POE2 Wiki Twister:** https://www.poe2wiki.net/wiki/Twister
 - **POE2 Wiki Spirit Walker:** https://www.poe2wiki.net/wiki/Spirit_Walker
 - **POE2 Wiki Ice-Tipped Arrows:** https://www.poe2wiki.net/wiki/Ice-Tipped_Arrows
-- **Patch 0.5.0 notes (local):** data/release-notes/poe2/Version_0.5.0.md
+- **Patch 0.5.0 notes (local):** data/release-notes/Version_0.5.0.md
 
 ## Changelog
 

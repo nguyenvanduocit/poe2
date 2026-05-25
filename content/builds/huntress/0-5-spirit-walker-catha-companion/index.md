@@ -8,7 +8,6 @@ created: '2026-05-25'
 updated: '2026-05-25'
 class: Huntress
 ascendancy: Spirit Walker
-game: poe2
 league: '0.5'
 patch: 0.5.0
 budget_tier: medium-budget

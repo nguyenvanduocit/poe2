@@ -7,7 +7,7 @@ description: Fetch PoE 1 or PoE 2 build data from mobalytics.gg. Use when user p
 
 Fetches PoE 1 and PoE 2 build data from mobalytics.gg.
 - **PoE 2:** Full YAML output via GraphQL (equipment, skills, passive tree, guide text)
-- **PoE 1:** Extracts pobCode from page HTML for use with pob1 skill
+- **PoE 1:** Extracts pobCode from page HTML for use with pob skill
 
 ## Quick start
 

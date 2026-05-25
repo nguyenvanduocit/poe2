@@ -6,7 +6,7 @@
  * and generates wiki-links.generated.ts for the popover.
  */
 
-import { glob } from 'bun:fs'
+import { Glob } from 'bun'
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 
@@ -25,7 +25,7 @@ interface WikiItemData {
 async function main() {
   console.log('🔍 Scanning for :wiki-link usages...')
 
-  const files = await Array.fromAsync(glob('**/*.md', { cwd: CONTENT_DIR, absolute: true }))
+  const files = await Array.fromAsync(new Glob('**/*.md').scan({ cwd: CONTENT_DIR, absolute: true }))
 
   const urls = new Set<string>()
 
@@ -46,18 +46,19 @@ async function main() {
   for (const url of urls) {
     // Convert URL to local mirror path (flat layout — no /wiki/ subfolder
     // since goscrape v0.5.0 + download.sh post-scrape flatten).
-    // Example: https://www.poe2wiki.net/wiki/The_Hollow_Mask -> data/poe2-wiki/The_Hollow_Mask.md
+    // Example: https://www.poe2wiki.net/wiki/The_Hollow_Mask -> data/wiki/The_Hollow_Mask.md
     const match = url.match(/https:\/\/www\.(poe2?wiki\.net)\/wiki\/(.+)/)
     if (!match) {
       console.warn(`  ⚠️  Skipping invalid wiki URL: ${url}`)
       continue
     }
 
-    const dataDir = match[1] === 'poe2wiki.net' ? 'poe2-wiki' : 'poe1-wiki'
+    // Workspace hosts one wiki (POE1 in poe1/, POE2 in poe2/) at data/wiki/.
+    // Cross-game URLs (vd POE2 note referencing poewiki.net) skip with warning.
     // URL-encoded slugs (Xoph%27s_Pyre, The_M%C3%B3rrigan...) — filesystem
     // stores raw chars (Xoph's_Pyre, The_Mórrigan...) per MediaWiki convention.
     const page = decodeURIComponent(match[2])
-    const localPath = resolve(process.cwd(), `data/${dataDir}/${page}.md`)
+    const localPath = resolve(process.cwd(), `data/wiki/${page}.md`)
 
     if (!existsSync(localPath)) {
       console.warn(`  ⚠️  Markdown not found for ${url} at ${localPath}`)
@@ -141,4 +142,3 @@ function parseWikiMarkdown(content: string): WikiItemData | null {
 import { existsSync } from 'node:fs'
 
 main().catch(console.error)
-```

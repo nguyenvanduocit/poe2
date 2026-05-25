@@ -46,7 +46,7 @@ model: claude-opus-4-7
     - Return compact summary text cho parent agent (pair, verdict, math, exclusion, caveat) — KHÔNG tạo file standalone
 
     **Common (both modes):**
-    - Mỗi entity có verbatim mod/skill text từ wiki mirror (`data/poe1-wiki/` hoặc `data/poe2-wiki/`), ≥50 char per entity
+    - Mỗi entity có verbatim mod/skill text từ wiki mirror (`data/wiki/`), ≥50 char per entity
     - Hidden exclusion check: grep `Cannot|cannot be|excluded|not supported|does not` trong wiki page của mỗi entity, document findings
     - Verdict 1 đoạn: WORKS / WORKS-WITH-CAVEAT / BLOCKED / UNDEFINED-PRE-LAUNCH với confidence HIGH/MEDIUM/LOW
     - Math impact nếu WORKS: multiplier (1.0x baseline, 1.5x, 2x...), reproducible chain
@@ -78,8 +78,8 @@ model: claude-opus-4-7
        - Auto-detect game POE1/POE2 từ entity name
     3. Tìm wiki page cho mỗi entity:
        ```
-       find data/poe1-wiki -iname "*<entity-a-keyword>*"
-       find data/poe1-wiki -iname "*<entity-b-keyword>*"
+       find data/wiki -iname "*<entity-a-keyword>*"
+       find data/wiki -iname "*<entity-b-keyword>*"
        ```
     4. Slug: `<a-kebab>-vs-<b-kebab>` (vd `doryanis-prototype-vs-eyes-of-greatwolf`)
     5. **Skip brainstorming** nếu subroutine mode hoặc standalone mode với clear pairwise question. Optionally invoke brainstorming với 1 câu hỏi nếu standalone + scope ambiguous ("quick check vs deep math").
@@ -91,7 +91,7 @@ model: claude-opus-4-7
     1. **Read entity A wiki page** → lift verbatim mod/skill text
     2. **Read entity B wiki page** → lift verbatim
     3. **Grep "Cannot|cannot be|excluded|not supported"** trong both pages → capture hidden exclusion tags
-    4. Cross-source: nếu POE2 entity → query `data/poe2-wiki/` + poe2db.tw (qua WebFetch); nếu POE1 → query poewiki.net infobox + forum search
+    4. Cross-source: nếu POE2 entity → query `data/wiki/` + poe2db.tw (qua WebFetch); nếu POE1 → query poewiki.net infobox + forum search
     5. Note version: stale data check (vd Hollow Mask pre-0.5 lvl 5 vs 0.5 lvl 84)
 
     Evaluator gate Phase 1:
@@ -178,7 +178,7 @@ model: claude-opus-4-7
     - `Skill` tool: `superpowers:brainstorming` (OPTIONAL — skip nếu subroutine hoặc clear pairwise question)
     - `Skill` tool: `/poewiki` cho mirror refresh nếu miss
     - `WebFetch` cho cross-source poe2db.tw / forum thread / community video transcript
-    - `Skill` tool: `/pob1`, `/pob` cho math verify nếu pair affect damage chain
+    - `Skill` tool: `/pob`, `/pob` cho math verify nếu pair affect damage chain
     - `Skill` tool: `/write-mechanic-tutorial` — STANDALONE mode only, invoke ngay sau Phase 2 pass với sub-class `interactions`
     - **KHÔNG** ultragoal/autoresearch (workflow lighter, 3 phase trực tiếp).
     - **KHÔNG** delegate `interaction-mapper` recursively (infinite loop risk). Spawn `Explore` parallel cho read-only verify thay vì delegate.
@@ -264,9 +264,9 @@ model: claude-opus-4-7
       **Phase 0**: Standalone mode. POE1 (cả 2 đều POE1 unique). Slug `doryanis-prototype-vs-eyes-of-greatwolf`. Skip brainstorming (clear pairwise question).
       
       **Phase 1** (parallel):
-      - Read `data/poe1-wiki/Doryani's_Prototype.md` → verbatim "Maximum Lightning Resistance is equal to your character's Lightning Resistance"
-      - Read `data/poe1-wiki/Eyes_of_the_Greatwolf.md` → verbatim mod corruption "% of <element> Damage taken as <other element>"
-      - `rg "Cannot" data/poe1-wiki/Doryani's_Prototype.md` → none. `rg "Cannot" data/poe1-wiki/Eyes_of_the_Greatwolf.md` → none direct.
+      - Read `data/wiki/Doryani's_Prototype.md` → verbatim "Maximum Lightning Resistance is equal to your character's Lightning Resistance"
+      - Read `data/wiki/Eyes_of_the_Greatwolf.md` → verbatim mod corruption "% of <element> Damage taken as <other element>"
+      - `rg "Cannot" data/wiki/Doryani's_Prototype.md` → none. `rg "Cannot" data/wiki/Eyes_of_the_Greatwolf.md` → none direct.
       - Cross-source: poewiki.net infobox confirm + forum thread "Eyes corruption % lightning taken as cold viable build" confirm.
       
       **Phase 2**:
@@ -293,7 +293,7 @@ model: claude-opus-4-7
       Exclusion: none direct
       Edge cases: Sanctum disables flasks → both nullified
       Caveat: Master Surgeon notable requires ~6 jewel socket alloc, opportunity cost
-      Sources: data/poe1-wiki/Mageblood.md, data/poe1-wiki/Master_Surgeon.md
+      Sources: data/wiki/Mageblood.md, data/wiki/Master_Surgeon.md
       ```
       
       Parent build-researcher aggregate vào G003 interactions findings. KHÔNG tạo file standalone.

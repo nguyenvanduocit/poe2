@@ -1,6 +1,6 @@
 ---
 name: poedb
-description: Access Path of Exile 2 database (poe2db.tw) via local goscrape mirror — patch-versioned snapshots of item base stats, modifier rolls, skill numerical data, monster info. POE2 ONLY. For POE2 wiki use /poewiki; for POE1 database use /poedb1.
+description: Access Path of Exile 2 database (poe2db.tw) via local goscrape mirror — patch-versioned snapshots of item base stats, modifier rolls, skill numerical data, monster info. POE2 ONLY. For POE2 wiki use /poewiki; for POE1 database use /poedb.
 version: 1.0.0
 tags: [database, data, research, poe2]
 ---
@@ -18,7 +18,7 @@ poe2db.tw là **database site** cho POE2 (khác với wiki) — chuyên item bas
 
 **KHÔNG dùng skill này khi:**
 - Wiki-style description (mechanic explanation, lore) → `/poewiki`
-- POE1 database → `/poedb1` (poedb.tw)
+- POE1 database → `/poedb` (poedb.tw)
 - Live price → `/poe-ninja`
 - Build calc → `/pob` hoặc `/mobalytics`
 
@@ -64,7 +64,7 @@ Cơ chế: `goscrape --no-follow` chỉ tải đúng các page được nêu (+ 
 Dựng `--url-file` thẳng từ patch notes — ví dụ toàn bộ unique mới của 0.5.0:
 
 ```bash
-rg -o 'Unique item mới: (.+)' -r '$1' data/release-notes/poe2/Version_0.5.0.md \
+rg -o 'Unique item mới: (.+)' -r '$1' data/release-notes/Version_0.5.0.md \
   | sed 's/\.$//' | tr ',' '\n' | sed 's/^ *//;s/ *$//' | grep -v '^$' \
   | sed "s/['’]//g; s/ /_/g; s#^#https://poe2db.tw/us/#" > /tmp/new-uniques.txt
 ./.claude/skills/poedb/scripts/download.sh 0.5.0 --url-file /tmp/new-uniques.txt

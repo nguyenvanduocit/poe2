@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Download local mirror of poe2wiki.net (POE2 wiki) as Markdown via goscrape (>= v0.5.0).
 #
-# Output: ./data/poe2-wiki/<Page_Name>.md  (flat — no nested wiki/ subfolder)
+# Output: ./data/wiki/<Page_Name>.md  (flat — no nested wiki/ subfolder)
 #
 # Skips three categories of noise:
 #   1. MediaWiki page actions (edit, history, raw, diff, oldid, ...)
@@ -17,7 +17,7 @@ set -euo pipefail
 # scripts/download.sh → ../../../.. = project root
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "${SCRIPT_DIR}/../../../.." && pwd)"
-OUTPUT_DIR="${ROOT_DIR}/data/poe2-wiki"
+OUTPUT_DIR="${ROOT_DIR}/data/wiki"
 TARGET_URL="https://www.poe2wiki.net/wiki/Path_of_Exile_2_Wiki"
 ERROR_LOG="${SCRIPT_DIR}/goscrape-errors.log"
 

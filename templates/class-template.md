@@ -6,7 +6,7 @@ sections:
   - relationships
 fields:
   $path:
-    pattern: "^content/mechanics/classes/.+\\.md$"
+    pattern: "^content/(en/)?mechanics/classes/.+\\.md$"
   template:
     required: true
     pattern: "^templates/class-template\\.md$"
@@ -33,9 +33,6 @@ fields:
   accessibility:
     required: true
     enum: [beginner-friendly, intermediate, advanced, all-content]
-  game:
-    required: true
-    enum: [poe1, poe2]
   league:
     required: true
     pattern: "^\\d+\\.\\d+(\\.\\d+)?$"

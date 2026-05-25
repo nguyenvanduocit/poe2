@@ -6,7 +6,7 @@ sections:
   - relationships
 fields:
   $path:
-    pattern: "^content/guides/.+\\.md$"
+    pattern: "^content/(en/)?guides/.+\\.md$"
   template:
     required: true
     pattern: "^templates/guide-template\\.md$"
@@ -24,9 +24,6 @@ fields:
   updated:
     required: true
     pattern: "^\\d{4}-\\d{2}-\\d{2}$"
-  game:
-    required: true
-    enum: [poe1, poe2]
   league:
     required: true
     pattern: "^\\d+\\.\\d+(\\.\\d+)?$"

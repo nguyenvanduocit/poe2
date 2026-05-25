@@ -1,13 +1,13 @@
 ---
 name: poewiki
-description: Access Path of Exile 2 wiki data via local goscrape mirror — search, read, and reference scraped wiki pages from ./data/poe2-wiki/. POE2 ONLY (poe2wiki.net). For POE1 use /poewiki1; for POE2 database use /poedb.
+description: Access Path of Exile 2 wiki data via local goscrape mirror — search, read, and reference scraped wiki pages from ./data/wiki/. POE2 ONLY (poe2wiki.net). For POE1 use /poewiki; for POE2 database use /poedb.
 version: 1.0.0
 tags: [wiki, data, research, poe2]
 ---
 
 # PoE 2 Wiki Tools (Local Mirror — poe2wiki.net)
 
-POE2 wiki được mirror về local qua `goscrape --markdown`. Mọi query đi qua filesystem (`rg`/`grep`/`find`/`Read`) trên thư mục `./data/poe2-wiki/`, không gọi API live.
+POE2 wiki được mirror về local qua `goscrape --markdown`. Mọi query đi qua filesystem (`rg`/`grep`/`find`/`Read`) trên thư mục `./data/wiki/`, không gọi API live.
 
 **Khi nào dùng skill này:**
 - User hỏi về POE2 mechanic / item / skill / monster / atlas / league system
@@ -15,7 +15,7 @@ POE2 wiki được mirror về local qua `goscrape --markdown`. Mọi query đi 
 - Lookup unique item POE2 (The Hollow Mask, Reverie, Facebreaker POE2, v.v.)
 
 **KHÔNG dùng skill này khi:**
-- POE1 → dùng `/poewiki1` (poewiki.net mirror)
+- POE1 → dùng `/poewiki` (poewiki.net mirror)
 - POE2 database / item base stats / atlas tool / passive tree editor → dùng `/poedb` (poe2db.tw)
 - Live price → `/poe-ninja`
 - Build calc → `/pob` hoặc `/mobalytics`
@@ -23,14 +23,14 @@ POE2 wiki được mirror về local qua `goscrape --markdown`. Mọi query đi 
 ## Mirror Location
 
 ```
-data/poe2-wiki/
+data/wiki/
 ├── <Page_Title>.md     # MediaWiki slug, _ thay space, case-sensitive
 └── ...
 ```
 
 Layout flat — không có `wiki/` subfolder. `download.sh` flatten tự động sau khi scrape (goscrape v0.5.0+ đã fix host-wrapper bug + script post-process flatten URL path).
 
-Ví dụ: `data/poe2-wiki/The_Hollow_Mask.md`, `data/poe2-wiki/Remnant.md`, `data/poe2-wiki/Spirit_Walker.md`.
+Ví dụ: `data/wiki/The_Hollow_Mask.md`, `data/wiki/Remnant.md`, `data/wiki/Spirit_Walker.md`.
 
 ## Refresh Mirror
 
@@ -44,11 +44,11 @@ Flags hữu ích nếu cần partial refresh:
 
 ```bash
 # Limit depth
-goscrape --markdown --depth 2 -o ./data/poe2-wiki https://www.poe2wiki.net
+goscrape --markdown --depth 2 -o ./data/wiki https://www.poe2wiki.net
 
 # Chỉ unique items hay dùng
 goscrape --markdown --include '/wiki/(The_Hollow_Mask|Reverie|Mageblood|.*Voidstone)' \
-  -o ./data/poe2-wiki https://www.poe2wiki.net
+  -o ./data/wiki https://www.poe2wiki.net
 ```
 
 ## Release Notes / Patch Notes Fetcher
@@ -58,39 +58,39 @@ goscrape --markdown --include '/wiki/(The_Hollow_Mask|Reverie|Mageblood|.*Voidst
 ./.claude/skills/poewiki/scripts/release-notes/fetch.sh 0.5.0          # version cụ thể
 ```
 
-Dùng `markitdown` → clean text-only Markdown (no icons/images). Output `data/release-notes/poe2/Version_X.Y.Z.md` + symlink `latest.md`.
+Dùng `markitdown` → clean text-only Markdown (no icons/images). Output `data/release-notes/Version_X.Y.Z.md` + symlink `latest.md`.
 
-> **POE2 0.5 "Runes of Aldur"** patch notes nằm tại `data/release-notes/poe2/Version_0.5.0.md`. Đây là source verbatim cho mọi note về Remnant / Runic Recipe / Ocean Exploring / Spirit Walker / Martial Artist / Atlas Endgame rewrite.
+> **POE2 0.5 "Runes of Aldur"** patch notes nằm tại `data/release-notes/Version_0.5.0.md`. Đây là source verbatim cho mọi note về Remnant / Runic Recipe / Ocean Exploring / Spirit Walker / Martial Artist / Atlas Endgame rewrite.
 
 ## Query Workflows
 
 ### Tìm page theo title
 
 ```bash
-find data/poe2-wiki -name "The_Hollow_Mask.md"
-find data/poe2-wiki -iname "*remnant*"
+find data/wiki -name "The_Hollow_Mask.md"
+find data/wiki -iname "*remnant*"
 ```
 
 ### Search nội dung
 
 ```bash
 # Page nhắc tới một mechanic
-rg -l "Runic Ward" data/poe2-wiki/
+rg -l "Runic Ward" data/wiki/
 
 # Context xung quanh keyword
-rg -C 2 "Verisium" data/poe2-wiki/
+rg -C 2 "Verisium" data/wiki/
 
 # Search trong folder cụ thể
-rg "companion.*hunt" data/poe2-wiki/
+rg "companion.*hunt" data/wiki/
 ```
 
 ### Đọc page
 
-Dùng tool Read với path tuyệt đối, vd `data/poe2-wiki/The_Hollow_Mask.md`.
+Dùng tool Read với path tuyệt đối, vd `data/wiki/The_Hollow_Mask.md`.
 
 ## Importing Wiki Content vào content/
 
-1. **Locate**: `rg`/`find` trong `data/poe2-wiki/`.
+1. **Locate**: `rg`/`find` trong `data/wiki/`.
 2. **Read** file `.md`.
 3. **Decide folder** (mechanics / guides / farming / builds / characters — xem `CLAUDE.md`).
 4. **Scaffold** via `/vault.new`.

@@ -35,7 +35,7 @@ python .claude/skills/price-forecast/scripts/collect.py --leagues "Runes of Aldu
 python .claude/skills/price-forecast/scripts/collect.py --items "Divine Orb,Mageblood"
 ```
 
-Output: `data/price-history/poe2/master.json` + `daily/<date>.json` snapshots.
+Output: `data/price-history/master.json` + `daily/<date>.json` snapshots.
 
 ### 2. Forecast (`forecast.py`)
 
@@ -130,7 +130,7 @@ pip install torch chronos-forecasting
 1. **Collect** history first if no recent data: `python .claude/skills/price-forecast/scripts/collect.py`
 2. **Forecast**: `python .claude/skills/price-forecast/scripts/forecast.py`
 3. Interpret results — BUY items predicted to rise >5%, SELL items predicted to drop >5%
-4. Cross-reference với `/farming-strategy1` cho farming-relevant items
+4. Cross-reference với `/farming-strategy` cho farming-relevant items
 5. Check `/trade` cho actual current listings trước khi acting
 
 ## POE2 League Timeline
@@ -158,4 +158,4 @@ curl -sL "https://poe.ninja/poe2/api/data/index-state" | python3 -m json.tool | 
 
 ## Cross-reference
 
-POE1 sibling: `.claude/skills/price-forecast1/SKILL.md`. Cấu trúc identical, chỉ khác endpoint + currency unit. Khi cần forecast cả POE1 + POE2 cùng lúc, run cả 2 collect scripts (output không xung đột: `data/price-history/poe1/` vs `data/price-history/poe2/`).
+POE1 sibling: `.claude/skills/price-forecast/SKILL.md`. Cấu trúc identical, chỉ khác endpoint + currency unit. Khi cần forecast cả POE1 + POE2 cùng lúc, run cả 2 collect scripts (output không xung đột: `data/price-history/` vs `data/price-history/`).

@@ -10,18 +10,18 @@ import * as fs from 'fs';
 // Passive tree cache utilities
 // ---------------------------------------------------------------------------
 //
-// Shared canonical cache with `/passive-skill-tree1`: patch-versioned poedb.tw mirror at
-// <project-root>/data/poedb1/<patch>/passive-skill-tree/data_us.json. Schema = grindinggear
+// Shared canonical cache with `/passive-skill-tree`: patch-versioned poedb.tw mirror at
+// <project-root>/data/poedb/<patch>/passive-skill-tree/data_us.json. Schema = grindinggear
 // unified export. poedb publishes immutable per-patch snapshots, so staleness here means
 // "no patch folder exists yet" rather than "timestamp expired" — refresh by running the
-// poedb1 download script or `/passive-skill-tree1 --force-update`.
+// poedb download script or `/passive-skill-tree --force-update`.
 // poe-utils.ts lives in .claude/skills/poe-auth/ggg/ → ../../../../data climbs to project root.
-const POEDB_ROOT = new URL('../../../../data/poedb1/', import.meta.url).pathname;
-const POEDB_URL_TEMPLATE = 'https://poedb.tw/data/passive-skill-tree/{ver}/data_us.json';
-// Fallback patch used when nothing exists under data/poedb1/ — current POE1 league. Bump on new league.
-const DEFAULT_POE1_PATCH = '3.28.0';
+const POEDB_ROOT = new URL('../../../../data/poedb/', import.meta.url).pathname;
+const POEDB_URL_TEMPLATE = 'https://poe2db.tw/data/passive-skill-tree/{ver}/data_us.json';
+// Fallback patch used when nothing exists under data/poedb/ — current POE2 league. Bump on new league.
+const DEFAULT_PATCH = '0.5.0';
 
-// Resolve newest semver patch dir under data/poedb1/. Returns null if dir missing or empty.
+// Resolve newest semver patch dir under data/poedb/. Returns null if dir missing or empty.
 function findLatestPatch(): string | null {
   if (!fs.existsSync(POEDB_ROOT)) return null;
   const entries = fs.readdirSync(POEDB_ROOT, { withFileTypes: true })
@@ -87,8 +87,8 @@ export interface PassiveTree {
  * Returns true when no usable passive-tree mirror exists locally.
  * Patch-versioned semantics: poedb publishes immutable per-patch snapshots, so staleness
  * means "no tree data on disk for any patch" rather than "timestamp expired".
- * For explicit refresh, run `./.claude/skills/poedb1/scripts/download.sh <patch>`
- * or `bun .claude/skills/passive-skill-tree1/scripts/analyze.ts <cmd> --force-update`.
+ * For explicit refresh, run `./.claude/skills/poedb/scripts/download.sh <patch>`
+ * or `bun .claude/skills/passive-skill-tree/scripts/analyze.ts <cmd> --force-update`.
  */
 export function isCacheStale(): boolean {
   const patch = findLatestPatch();
@@ -98,7 +98,7 @@ export function isCacheStale(): boolean {
 
 /**
  * Ensures a passive-tree mirror exists locally.
- * If nothing is found under data/poedb1/, downloads the DEFAULT_POE1_PATCH snapshot
+ * If nothing is found under data/poedb/, downloads the DEFAULT_PATCH snapshot
  * from poedb.tw and saves it to the canonical patch-versioned path.
  */
 export async function checkAndUpdatePassiveCache(): Promise<void> {
@@ -106,7 +106,7 @@ export async function checkAndUpdatePassiveCache(): Promise<void> {
     return;
   }
 
-  const patch = DEFAULT_POE1_PATCH;
+  const patch = DEFAULT_PATCH;
   const cachePath = dataPathForPatch(patch);
   const url = POEDB_URL_TEMPLATE.replace('{ver}', patchToUrlVersion(patch));
 
@@ -125,13 +125,13 @@ export async function checkAndUpdatePassiveCache(): Promise<void> {
 
 /**
  * Loads the passive tree from disk cache, downloading if necessary.
- * Always reads the newest patch folder under data/poedb1/.
+ * Always reads the newest patch folder under data/poedb/.
  */
 export async function loadPassiveTree(): Promise<PassiveTree> {
   await checkAndUpdatePassiveCache();
   const patch = findLatestPatch();
   if (!patch) {
-    throw new Error('No passive-tree patch data found under data/poedb1/ after cache update.');
+    throw new Error('No passive-tree patch data found under data/poedb/ after cache update.');
   }
   const raw = fs.readFileSync(dataPathForPatch(patch), 'utf-8');
   const parsed = JSON.parse(raw);

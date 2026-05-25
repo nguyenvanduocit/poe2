@@ -4,7 +4,6 @@ type: "index"
 description: "POE2 Warrior — armour, block, warcry, heavy melee."
 weight: 10
 class: "Warrior"
-game: "poe2"
 created: '2025-11-16'
 updated: '2026-05-11'
 ---

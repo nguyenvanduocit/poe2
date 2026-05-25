@@ -4,14 +4,14 @@ poe.ninja POE2 builds crawler — auto-detect current POE2 league và snapshot b
 distribution + character list ra JSON, kèm computed trends để biết build nào đang
 lên ngôi / chìm xuống.
 
-POE2-only variant. POE1 sibling (.claude/skills/poe-ninja1/scripts/collect-builds.py)
+POE2-only variant. POE1 sibling (.claude/skills/poe-ninja/scripts/collect-builds.py)
 đã loop CẢ poe1 + poe2 trong cùng script — chạy script này khi user chỉ cần POE2
 nhanh hơn (skip POE1 fetch). Output structure giống nhau, không xung đột file path.
 
 Output (per league):
-  data/poe-ninja/poe2/<league>/latest.json            — snapshot mới nhất (overwrite)
-  data/poe-ninja/poe2/<league>/snapshots/<date>.json  — 1 file/ngày, idempotent
-  data/poe-ninja/poe2/<league>/trends.json            — top rising/falling 1d & 7d
+  data/poe-ninja/<league>/latest.json            — snapshot mới nhất (overwrite)
+  data/poe-ninja/<league>/snapshots/<date>.json  — 1 file/ngày, idempotent
+  data/poe-ninja/<league>/trends.json            — top rising/falling 1d & 7d
 
 Yêu cầu runtime:
   - python3 (stdlib only)
@@ -105,9 +105,9 @@ def parse_display_value(s: str | None) -> int | None:
 
 
 BASE = "https://poe.ninja"
-# POE2-only variant. POE1 sibling (.claude/skills/poe-ninja1/scripts/collect-builds.py)
+# POE2-only variant. POE1 sibling (.claude/skills/poe-ninja/scripts/collect-builds.py)
 # already loops cả poe1 + poe2 trong cùng script — chạy script này khi chỉ cần POE2
-# nhanh hơn (skip POE1 fetch). Output structure identical: data/poe-ninja/poe2/<league>/.
+# nhanh hơn (skip POE1 fetch). Output structure identical: data/poe-ninja/<league>/.
 GAMES = ("poe2",)
 
 # Sanity threshold — POE2 player base nhỏ hơn POE1; main SC POE2 league có ~500-2000

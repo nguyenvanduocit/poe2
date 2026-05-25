@@ -6,7 +6,6 @@ status: draft
 author: duocnv
 created: '2026-05-10'
 updated: '2026-05-10'
-game: poe2
 league: '0.5'
 tags:
   - rune

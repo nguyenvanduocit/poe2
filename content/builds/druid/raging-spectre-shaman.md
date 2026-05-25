@@ -3,7 +3,6 @@ document_type: build
 title: Raging Spectre Shaman - Cocaine Wasps
 class: Druid
 ascendancy: Shaman
-game: poe2
 league: '0.4'
 patch: 0.4.0
 status: published

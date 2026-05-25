@@ -4,7 +4,6 @@ type: "index"
 description: "POE2 Sorceress — spell, minion, elemental, chaos."
 weight: 12
 class: "Sorceress"
-game: "poe2"
 created: '2025-11-16'
 updated: '2026-05-11'
 ---

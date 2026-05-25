@@ -4,13 +4,13 @@ Script POE2 chưa implement. Đây là plan + assumption để khi POE2 0.5 laun
 
 ## Why scaffold instead of port?
 
-POE1 version (`.claude/skills/farming-strategy1/scripts/`) dùng `poe-watch` API qua import:
+POE1 version (`.claude/skills/farming-strategy/scripts/`) dùng `poe-watch` API qua import:
 
 ```ts
 import { fetchAPI, getCurrentLeague, type ItemData } from "../poe-watch/poe-watch";
 ```
 
-**poe.watch hiện chỉ support POE1.** Port 1:1 sẽ fail ngay import. POE2 data source phải đổi sang **poe.ninja/poe2** + **trade2 API** — schema, endpoint, rate limit khác.
+**poe.watch hiện chỉ support POE1.** Port 1:1 sẽ fail ngay import. POE2 data source phải đổi sang **poe.ninja/poe2** + **trade API** — schema, endpoint, rate limit khác.
 
 Cũng không nên copy `analyze.ts` rồi find-replace category name. `STRATEGIES` record POE1 (delirium/essence/harvest/scarab/expedition/bossing) reference POE1 mechanic không tồn tại POE2 (scarab category, deliriumOrb category, Vivid/Wild/Primal Lifeforce). Phải re-author STRATEGIES từ archetype list trong SKILL.md.
 
@@ -19,7 +19,7 @@ Cũng không nên copy `analyze.ts` rồi find-replace category name. `STRATEGIE
 **Goal:** equivalent của `farming-strategy/scripts/market-snapshot.ts` nhưng cho POE2 economy.
 
 **Data source decision:**
-- **Primary:** poe.ninja/poe2 protobuf endpoint. Skill `/poe-ninja1` (root project skill) đã có infrastructure POE2 — read `.claude/skills/poe-ninja1/SKILL.md` để xem helper hiện có.
+- **Primary:** poe.ninja/poe2 protobuf endpoint. Skill `/poe-ninja` (root project skill) đã có infrastructure POE2 — read `.claude/skills/poe-ninja/SKILL.md` để xem helper hiện có.
 - **Fallback / cross-check:** trade API qua CDP Relay (xem `/trade` skill). Trade2 cho real-time listing nhưng rate-limit chặt — chỉ dùng cho spot-check không cho bulk snapshot.
 
 **Schema diff vs POE1:**
@@ -32,7 +32,7 @@ Cũng không nên copy `analyze.ts` rồi find-replace category name. `STRATEGIE
 **Currency baseline:** POE2 = Exalted, NOT Chaos. POE1 helper `divine_in_chaos` / `exalt_in_chaos` cần đổi thành `divine_in_exalted` / `chaos_in_exalted` / `mirror_in_divine`.
 
 **Meta signal heuristic POE2 0.5 (replace POE1 "Delirium meta / scarab spike"):**
-- **Atlas Master meta shift** — node distribution của top build qua `/poe-ninja1` cho Master allocation
+- **Atlas Master meta shift** — node distribution của top build qua `/poe-ninja` cho Master allocation
 - **Pinnacle boss key surge** — Olroth-key, Tul+Esh-key, Head of the King price spike
 - **Remnant slot tier shift** — supply curve 2-slot vs 6-slot vs 10-slot
 - **Build guide effect** — Kalguuran Skill/Support spike khi creator drop guide
@@ -89,7 +89,7 @@ bun .claude/skills/farming-strategy/scripts/analyze.ts --strategy remnant-runic 
 
 ## Wire-up checklist khi league live
 
-1. [ ] Verify poe.ninja/poe2 endpoint stable + schema fields (price, change, volume, lowConfidence) — read `/poe-ninja1` skill SKILL.md cho helper hiện có.
+1. [ ] Verify poe.ninja/poe2 endpoint stable + schema fields (price, change, volume, lowConfidence) — read `/poe-ninja` skill SKILL.md cho helper hiện có.
 2. [ ] Verify list category thực tế trên poe.ninja/poe2 — confirm hoặc adjust category map ở TODO 1.
 3. [ ] Implement `market-snapshot.ts` reference POE1 `farming-strategy/scripts/market-snapshot.ts` cho code structure (cùng pattern: fetch → trending → categorize → meta-signal → output formatter).
 4. [ ] Implement `analyze.ts` reference POE1 `farming-strategy/scripts/analyze.ts` cho code structure (cùng pattern: STRATEGIES record → priceStrategy() → calculateProfit() → format output / compare table).

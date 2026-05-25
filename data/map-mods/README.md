@@ -29,9 +29,9 @@ The regex generator (`../generate-regex.ts`) needs JSON corpora of all POE2 0.5 
 ## Fetch Recipe (at 0.5 launch / 2026-05-29)
 
 Source pages exist in the local wiki mirror:
-- `data/poe2-wiki/wiki/List_of_modifiers_for_waystones_(low_tier).md`
-- `data/poe2-wiki/wiki/List_of_modifiers_for_waystones_(mid_tier).md`
-- `data/poe2-wiki/wiki/List_of_modifiers_for_waystones_(high_tier).md`
+- `data/wiki/wiki/List_of_modifiers_for_waystones_(low_tier).md`
+- `data/wiki/wiki/List_of_modifiers_for_waystones_(mid_tier).md`
+- `data/wiki/wiki/List_of_modifiers_for_waystones_(high_tier).md`
 
 Refresh from upstream first to get 0.5 mods:
 

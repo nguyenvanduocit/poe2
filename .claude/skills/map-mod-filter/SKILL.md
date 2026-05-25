@@ -62,7 +62,7 @@ The algorithm is identical between POE1 and POE2 — what differs is the **mod t
 
 ### Common POE2 Waystone Mod Regex Fragments (high tier)
 
-Source: `data/poe2-wiki/List_of_modifiers_for_waystones_(high_tier).md`
+Source: `data/wiki/List_of_modifiers_for_waystones_(high_tier).md`
 
 | Fragment | Mod text (POE2) | Why dangerous / desired |
 |----------|----------------|------------------------|
@@ -135,7 +135,7 @@ When a TFT POE2 post says "buy 100 T15 waystones with regex filter":
 
 ### Trade API Note (POE2)
 
-POE2 trade lives at `/api/trade2/` (NOT `/api/trade/` — that's POE1). Use the project's `trade2` skill for actual trade interaction. Direct API calls should go through CDP Relay per project rules — never raw curl to pathofexile.com from this environment.
+POE2 trade lives at `/api/trade2/` (NOT `/api/trade/` — that's POE1). Use the project's `trade` skill for actual trade interaction. Direct API calls should go through CDP Relay per project rules — never raw curl to pathofexile.com from this environment.
 
 Reference shape (do **not** run with curl per project rules — use CDP Relay):
 
@@ -195,8 +195,8 @@ bun scripts/generate-regex.ts --include "pack size,quantity,rarity"
 
 ## TODOs at 0.5 Launch (2026-05-29)
 
-- [ ] Fetch the live POE2 0.5 waystone mod list from poe2wiki.net (`List_of_modifiers_for_waystones_(high_tier)`, `(mid_tier)`, `(low_tier)`) and bundle into `data/map-mods/poe2/waystone-mods-0.5.json`
-- [ ] Fetch the live POE2 0.5 tablet mod list from poe2wiki.net and bundle into `data/map-mods/poe2/tablet-mods-0.5.json`
+- [ ] Fetch the live POE2 0.5 waystone mod list from poe2wiki.net (`List_of_modifiers_for_waystones_(high_tier)`, `(mid_tier)`, `(low_tier)`) and bundle into `data/map-mods/waystone-mods-0.5.json`
+- [ ] Fetch the live POE2 0.5 tablet mod list from poe2wiki.net and bundle into `data/map-mods/tablet-mods-0.5.json`
 - [ ] Re-validate the "common fragments" table above — 0.5 may shift unique-substring boundaries if any new mod shares text with an existing one
 - [ ] Check if 0.5 adds **Remnant-specific waystone mods** (none announced in patch notes — but Remnants drop *inside* maps, so waystone mod pool likely unchanged)
 - [ ] Validate `pathofexile.com/trade2` API endpoint shape didn't change in 0.5 (last verified 0.4)
@@ -209,7 +209,7 @@ bun scripts/generate-regex.ts --include "pack size,quantity,rarity"
 - [POE2 Wiki — List of modifiers for waystones (high tier)](https://www.poe2wiki.net/wiki/List_of_modifiers_for_waystones_(high_tier))
 - [POE2 Wiki — Waystone](https://www.poe2wiki.net/wiki/Waystone)
 - [POE2 Wiki — Precursor Tablet](https://www.poe2wiki.net/wiki/Precursor_tablet)
-- Local POE2 wiki mirror: `data/poe2-wiki/`
-- POE2 0.5 patch notes: `data/release-notes/poe2/Version_0.5.0.md`
+- Local POE2 wiki mirror: `data/wiki/`
+- POE2 0.5 patch notes: `data/release-notes/Version_0.5.0.md`
 - Project skill `/trade` — for actual POE2 trade search via CDP Relay
 - Project skill `/lootfilter` — companion POE2 loot filter skill

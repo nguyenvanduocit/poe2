@@ -16,7 +16,7 @@ SKILL_DIR="$(dirname "$SCRIPT_DIR")"
 # PoB2 fork lives in project-wide data/, not inside skill (572M git clone — kept out of skill tree).
 # SCRIPT_DIR = <root>/.claude/skills/pob/scripts/scripts → climb 5 to reach project root.
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../../../.." && pwd)"
-POB2_DIR="$PROJECT_ROOT/data/pob-source/poe2"
+POB2_DIR="$PROJECT_ROOT/data/pob-source"
 MOBALYTICS_DIR="$SKILL_DIR/../mobalytics"
 
 INPUT="$1"

@@ -114,16 +114,16 @@ Fetch the PathOfBuilding-PoE2 repository for local game data access.
 ```
 
 **What it does:**
-- Clones or updates PathOfBuilding-PoE2 repository to `<project-root>/data/pob-source/poe2/`
+- Clones or updates PathOfBuilding-PoE2 repository to `<project-root>/data/pob-source/`
 - Provides local access to game data (skills, items, gems, mods, minions)
 - 572M git clone — kept out of skill tree so cloning the repo doesn't pull a Lua fork inside `.claude/skills/`.
 
 **Key data locations:**
-- `data/pob-source/poe2/src/Data/Skills/` - All skill definitions
-- `data/pob-source/poe2/src/Data/Gems.lua` - Gem data
-- `data/pob-source/poe2/src/Data/Uniques/` - Unique items
-- `data/pob-source/poe2/src/Data/Minions.lua` - Minion data
-- `data/pob-source/poe2/src/Data/Mod*.lua` - Item modifiers
+- `data/pob-source/src/Data/Skills/` - All skill definitions
+- `data/pob-source/src/Data/Gems.lua` - Gem data
+- `data/pob-source/src/Data/Uniques/` - Unique items
+- `data/pob-source/src/Data/Minions.lua` - Minion data
+- `data/pob-source/src/Data/Mod*.lua` - Item modifiers
 
 **Use when:**
 - Need to query game data programmatically

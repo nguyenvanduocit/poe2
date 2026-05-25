@@ -70,11 +70,13 @@ __pycache__/
 references/PathOfBuilding/
 references/PathOfBuilding2/
 
-# Per-skill persisted data — moved to data/ in 2026-05-24 refactor.
-# Cache + instance data (refreshable from API or per-character), not source-of-truth.
-data/pob-source/         # PathOfBuilding git clones per game (has own .git/, ~572M for PoE2)
-data/trade-static/       # poe-filters.json + poe-static-cache.json, refreshable
-data/character-exports/  # character export JSON (instance, per-account)
+# Persisted data — refreshable / instance / large mirrors. Not source-of-truth.
+data/wiki/               # poe2wiki.net goscrape mirror
+data/poedb/              # poe2db.tw mirror per patch
+data/pob-source/         # PathOfBuildingCommunity POE2 clone (has own .git/, ~572M)
+data/trade-static/       # GGG trade catalog (refreshable from API)
+data/character-exports/  # per-character export JSON (instance data)
+raw-data/
 tmp/*
 !tmp/.gitkeep
 
@@ -85,10 +87,3 @@ tmp/*
 .claude/settings.local.json
 .claude/scheduled_tasks.lock
 .gitnexus
-
-# Large generated reference mirrors (wiki scrapes, DB dumps, PoB source) — do not commit full data
-data/poe1-wiki/
-data/poe2-wiki/
-data/poedb/
-raw-data/
-data/pob-source/

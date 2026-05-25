@@ -6,7 +6,7 @@ sections:
   - relationships
 fields:
   $path:
-    pattern: "^content/mechanics/skills/.+\\.md$"
+    pattern: "^content/(en/)?mechanics/skills/.+\\.md$"
   template:
     required: true
     pattern: "^templates/skill-template\\.md$"
@@ -30,9 +30,6 @@ fields:
   skill_type:
     required: true
     enum: [active, support, "exceptional support", trigger, vaal]
-  game:
-    required: true
-    enum: [poe1, poe2]
   league:
     required: true
     pattern: "^\\d+\\.\\d+(\\.\\d+)?$"

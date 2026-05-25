@@ -6,7 +6,6 @@ status: draft
 author: duocnv
 created: '2026-05-24'
 updated: '2026-05-24'
-game: poe2
 league: '0.5'
 patch: 0.5.0
 tags:
@@ -17,7 +16,7 @@ tags:
   - endgame-overhaul
 ---
 
-Đây là patch note chính thức của Path of Exile 2 — Content Update 0.5.0 "Return of the Ancients", do Grinding Gear Games (Stacey_GGG) đăng ngày 21/05/2026 tại [pathofexile2.com/ancients](https://www.pathofexile2.com/ancients), kèm bản cập nhật bổ sung ngày 22/05/2026. Đây là changelog đầy đủ, chép nguyên văn từng dòng để tra cứu — thuật ngữ game giữ nguyên tiếng Anh. File gốc nằm trong repo tại `data/release-notes/poe2/Version_0.5.0.md`. Bản tóm tắt định hướng (chỉ giữ thay đổi đủ lớn để đổi cách chơi) ở [Return of the Ancients](/mechanics/leagues/return-of-the-ancients).
+Đây là patch note chính thức của Path of Exile 2 — Content Update 0.5.0 "Return of the Ancients", do Grinding Gear Games (Stacey_GGG) đăng ngày 21/05/2026 tại [pathofexile2.com/ancients](https://www.pathofexile2.com/ancients), kèm bản cập nhật bổ sung ngày 22/05/2026. Đây là changelog đầy đủ, chép nguyên văn từng dòng để tra cứu — thuật ngữ game giữ nguyên tiếng Anh. File gốc nằm trong repo tại `data/release-notes/Version_0.5.0.md`. Bản tóm tắt định hướng (chỉ giữ thay đổi đủ lớn để đổi cách chơi) ở [Return of the Ancients](/mechanics/leagues/return-of-the-ancients).
 
 Expansion **Return of the Ancients** mang đến một league mới, một cuộc đại tu toàn bộ Endgame của Path of Exile 2, với sáu storyline Endgame mới và 2 Ascendancy class mới, cùng một lượng nội dung khổng lồ khác.
 

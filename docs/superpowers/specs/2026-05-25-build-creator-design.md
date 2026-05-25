@@ -8,7 +8,7 @@
 
 Author một POE2 build optimized từ yêu cầu ngôn ngữ tự nhiên + target do user đặt per-request, materialize thành PoB2 import code hợp lệ, verify stats bằng POB2 headless, lặp tới khi đạt bar, rồi publish lên poe.ninja/poe2/pob trả về link xem được.
 
-Đây là skill **mới, tách biệt** khỏi `pob2` (pob2 giữ vai trò decode/analyze; build-creator là chiều ngược lại: author + encode + publish).
+Đây là skill **mới, tách biệt** khỏi `pob` (pob giữ vai trò decode/analyze; build-creator là chiều ngược lại: author + encode + publish).
 
 ## Requirements đã chốt (qua brainstorming)
 
@@ -31,9 +31,9 @@ Các số liệu dưới đây đã verify thực tế, dùng làm nền impleme
   // response.text() = URL để window.location.assign() → poe.ninja/poe2/pob/<id>
   ```
   Curl headless luôn nhận `400 application/problem+json` từ ASP.NET kể cả khi gửi đúng endpoint/field/content-type + đủ `Sec-Fetch-*` headers (test với cả code hợp lệ lẫn dummy `code=hello`). Field `code` *có* bind (dummy không ra "code required") nhưng app gate request → cần TLS/browser fingerprint thật. Giải pháp: chạy fetch trong page context qua **playwriter** (đúng pattern repo dùng cho pathofexile.com trade API).
-- **Endpoint reference khác** (`data/pob-source/poe2/src/Modules/BuildSiteTools.lua:10-32`): Maxroll `POST maxroll.gg/poe2/api/pob` field `pobCode=`; poe2db.tw `POST poe2db.tw/pob/api/gen`. Để dành nếu cần thêm fallback.
-- **POB2 headless chưa cài** (HIGH). `data/pob-source/poe2/src/` có sẵn (đã grep được) gồm HeadlessWrapper.lua. `luajit`, `luarocks` có sẵn trên máy.
-- **`pob2/scripts/pob-cli.sh` MẤT TÍCH** (HIGH). `setup.sh:128` copy từ file không tồn tại → setup.sh hiện gãy. build-creator **không fix** cái này; thay vào đó viết driver Lua riêng gọi thẳng `luajit ... HeadlessWrapper.lua` (theo gợi ý advisor, tránh yak-shave).
+- **Endpoint reference khác** (`data/pob-source/src/Modules/BuildSiteTools.lua:10-32`): Maxroll `POST maxroll.gg/poe2/api/pob` field `pobCode=`; poe2db.tw `POST poe2db.tw/pob/api/gen`. Để dành nếu cần thêm fallback.
+- **POB2 headless chưa cài** (HIGH). `data/pob-source/src/` có sẵn (đã grep được) gồm HeadlessWrapper.lua. `luajit`, `luarocks` có sẵn trên máy.
+- **`pob/scripts/pob-cli.sh` MẤT TÍCH** (HIGH). `setup.sh:128` copy từ file không tồn tại → setup.sh hiện gãy. build-creator **không fix** cái này; thay vào đó viết driver Lua riêng gọi thẳng `luajit ... HeadlessWrapper.lua` (theo gợi ý advisor, tránh yak-shave).
 
 ## Architecture & components
 
@@ -43,7 +43,7 @@ Tất cả ở `.claude/skills/build-creator/`:
 - `scripts/spec.ts` — type của build spec: `class`, `ascendancy`, `treeNodes[]`, `items[]` (mỗi item có raw mod text tường minh + slot), `skillGroups[]` (gem + supports + slot), `flasks[]`, `jewels[]`, `targets` (dps/ehp/res...).
 - `scripts/spec-to-xml.ts` — emitter **deterministic** spec → PoB2 XML, đảo ngược logic parse của `pob-client.ts`: `<Build>` attrs (level/className/ascendClassName), `<Skills>/<Skill slot>/<Gem>`, `<Items>/<Item id> raw text` + `<Slot name itemId>`, `<Tree>/<Spec nodes="id,id,...">` + `<URL>`.
 - `scripts/encode.ts` — `base64(deflateSync(xml))` → PoB code. Pure TS.
-- `scripts/verify.lua` + `scripts/verify.sh` — driver tối thiểu: `luajit` chạy HeadlessWrapper từ `data/pob-source/poe2`, patch `Deflate/Inflate` (như `setup.sh:60-123`), load code → calc → in stats JSON (dps, ehp, life, es, res, attribute/spirit requirements).
+- `scripts/verify.lua` + `scripts/verify.sh` — driver tối thiểu: `luajit` chạy HeadlessWrapper từ `data/pob-source`, patch `Deflate/Inflate` (như `setup.sh:60-123`), load code → calc → in stats JSON (dps, ehp, life, es, res, attribute/spirit requirements).
 - `scripts/publish-poeninja.ts` — playwriter snippet: navigate poe.ninja/poe2/pob, eval `fetch(...)` trong page context, bắt URL redirect. Fallback `publish-pobbin.ts` (headless curl, đã proven).
 
 ## Data flow
@@ -78,10 +78,10 @@ request + targets
 
 ## Scope boundaries (YAGNI)
 
-- KHÔNG budget/pricing (v2 — nối trade2/poe-ninja sau).
+- KHÔNG budget/pricing (v2 — nối trade/poe-ninja sau).
 - poe.ninja publish chính; pobb.in + raw paste là fallback.
 - Conversational; một archetype mỗi request.
-- KHÔNG fix CLI gãy của skill `pob2` (out of scope; build-creator tự lo verify driver).
+- KHÔNG fix CLI gãy của skill `pob` (out of scope; build-creator tự lo verify driver).
 
 ## Rejected alternatives
 

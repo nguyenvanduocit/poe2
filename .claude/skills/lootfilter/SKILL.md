@@ -652,5 +652,5 @@ writeFileSync('filter/MyFilter.filter', newFilterContent)
 - [FilterBlade](https://www.filterblade.xyz/) — also covers POE2 (separate POE2 mode)
 - [NeverSink Filter for PoE2 syntax reference](https://deepwiki.com/NeverSinkDev/NeverSink-Filter-for-PoE2/6.3-filter-syntax-reference)
 - [POE2 Wiki — Item filter](https://www.poe2wiki.net/wiki/Item_filter)
-- Local POE2 wiki mirror: `data/poe2-wiki/`
-- POE2 0.5 patch notes: `data/release-notes/poe2/Version_0.5.0.md`
+- Local POE2 wiki mirror: `data/wiki/`
+- POE2 0.5 patch notes: `data/release-notes/Version_0.5.0.md`

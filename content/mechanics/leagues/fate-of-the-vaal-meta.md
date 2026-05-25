@@ -6,7 +6,6 @@ status: published
 author: duocnv
 created: '2026-05-22'
 updated: '2026-05-22'
-game: poe2
 league: '0.4'
 patch: 0.4.0
 tags:
@@ -14,7 +13,7 @@ tags:
   - meta-analysis
   - builds
   - vaal
-  - 0.4
+  - '0.4'
   - fate-of-the-vaal
   - top-builds
   - pathfinder
@@ -130,7 +129,7 @@ Khi bắt đầu Runes of Aldur, ưu tiên hàng đầu nên là:
 - Thử nghiệm Spirit Walker companion sớm.
 - Không mù quáng copy 0.4 build (đặc biệt minion ignite) mà không test lại.
 
-Dữ liệu chi tiết: `data/poe-ninja/poe2/archive/vaal/latest.json` và các snapshot hàng ngày trong cùng thư mục (đã archive khi 0.5 Runes of Aldur launch).
+Dữ liệu chi tiết: `data/poe-ninja/archive/vaal/latest.json` và các snapshot hàng ngày trong cùng thư mục (đã archive khi 0.5 Runes of Aldur launch).
 
 ---
 

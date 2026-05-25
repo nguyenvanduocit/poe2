@@ -96,6 +96,15 @@ export default defineNuxtConfig({
   i18n: {
     defaultLocale: 'vi',
     strategy: 'prefix_except_default',
+    // Required by @nuxtjs/i18n to emit valid <link rel="canonical"> + hreflang
+    // tags. Without it, the module logs `I18n baseUrl is required to generate
+    // valid SEO tag links` on every navigation and ships relative-only URLs
+    // — which crawlers treat as ambiguous between en/vi variants. Hardcoded
+    // to the production custom domain (see .claude/skills/deploy/SKILL.md);
+    // preview deploys on *.pages.dev will emit canonical URLs pointing at
+    // the production host, which is the desired SEO behavior (no preview
+    // dupes in the index).
+    baseUrl: 'https://poe.aiocean.io',
     locales: [
       { code: 'vi', language: 'vi-VN', name: 'Tiếng Việt' },
       { code: 'en', language: 'en-US', name: 'English' },
@@ -115,9 +124,34 @@ export default defineNuxtConfig({
     },
   },
 
+  // Site config + menu moved here from `app/app.config.ts`. Nuxt 5 / Nitro 3
+  // removes the `app.config.ts` / `defineAppConfig` / `useAppConfig` surface,
+  // so the andy-note-nuxt layer (≥ 0.3.0) ships defaults under
+  // `runtimeConfig.public.site` instead. Nuxt deep-merges layer + consumer
+  // public runtimeConfig field-by-field, same merge behavior as the old
+  // app.config.ts. Read via `useRuntimeConfig().public.site` / `.menu`.
   runtimeConfig: {
     public: {
       buildInfo,
+      site: {
+        title: 'PoE',
+        description: 'Path of Exile builds, guides, and mechanics documentation',
+        tagline: 'Everything you need to dominate Wraeclast',
+        author: 'POE AIO',
+        themeColor: '#af6025',
+        logo: '/logo.png',
+        currentLeague: 'Mirage',
+        currentPatch: '3.28',
+        ign: 'dngdfkj',
+      },
+      menu: [
+        { name: 'Builds', url: '/builds', weight: 1 },
+        { name: 'Characters', url: '/characters', weight: 2 },
+        { name: 'Mechanics', url: '/mechanics', weight: 3 },
+        { name: 'Farming', url: '/farming', weight: 4 },
+        { name: 'Skill Tree', url: '/skilltree', weight: 5 },
+        { name: 'Donate', url: '/donate', weight: 6 },
+      ],
     },
   },
 

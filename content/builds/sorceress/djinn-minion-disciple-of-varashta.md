@@ -3,7 +3,6 @@ document_type: build
 title: Djinn Minion Disciple of Varashta
 class: Sorceress
 ascendancy: Disciple of Varashta
-game: poe2
 league: '0.4'
 patch: 0.4.0
 status: published

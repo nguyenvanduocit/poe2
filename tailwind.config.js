@@ -1,64 +1,21 @@
 /**
- * Brutalist terminal palette — ported from onepercentplus.
- * Warm dark base + lime accent + 4px-offset stamp shadows are the visual signature.
+ * POE2 site — inherit toàn bộ theme từ `andy-note-nuxt` layer.
  *
- * Note: kept as `.js` (not `.ts`) because @nuxtjs/tailwindcss's generated
- * postcss.mjs hardcodes `tailwind.config.js` as the import target. A `.ts`
- * file is silently skipped by Vite's resolver and the custom theme is lost.
+ * Theme (palette, fontFamily, stamp shadows, borderWidth, letterSpacing) +
+ * content scan paths đều đến từ `node_modules/andy-note-nuxt/tailwind.config.js`
+ * qua @nuxtjs/tailwindcss layer auto-merge (module.mjs:399 — `_layers.flatMap(
+ * ...resolveConfigs)` + `configMerger` deep merge). Content paths của layer
+ * resolve relative to CWD (POE2 root) — không phải relative to layer file dir —
+ * vì Tailwind chỉ relative-to-config khi `content.relative: true` (xem
+ * `node_modules/tailwindcss/src/lib/content.js:115-135`); @nuxtjs/tailwindcss
+ * không bật flag đó. Bonus: module tự inject `app/components/**`, `app/pages/**`,
+ * `app/layouts/**`, `app/app.vue` qua `resolveContentConfig` (module.mjs:349)
+ * dựa trên Nuxt srcDir của POE2 — nên không cần khai báo `content` local nào cả.
+ *
+ * File này tồn tại chỉ để (a) làm anchor cho @nuxtjs/tailwindcss postcss.mjs
+ * (nó hardcode tên `tailwind.config.js` — `.ts` bị Vite resolver bỏ qua, theme
+ * mất), và (b) chỗ để add POE2-specific override sau này nếu cần.
  *
  * @type {import('tailwindcss').Config}
  */
-export default {
-  content: [
-    './app/components/**/*.{vue,js,ts}',
-    './app/layouts/**/*.vue',
-    './app/pages/**/*.vue',
-    './app/app.vue',
-  ],
-  theme: {
-    extend: {
-      colors: {
-        primary: '#d4ff00',
-        terminal: {
-          bg: '#2a2a28',
-          'bg-light': '#323330',
-          text: '#d5cfc5',
-          'text-secondary': '#c0b8a8',
-          'text-muted': '#a8a298',
-          'text-faint': '#8a857c',
-          accent: '#d4ff00',
-          'accent-hover': '#e8ff4d',
-          border: '#474541',
-          'border-strong': '#5a5854',
-          surface: {
-            0: '#2e2f2c',
-            1: '#3b3c39',
-            2: '#444541',
-            elevated: '#4d4e4b',
-          },
-        },
-      },
-      fontFamily: {
-        display: ['Space Grotesk', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        prose: ['Literata', 'Georgia', 'serif'],
-        mono: ['SF Mono', 'Monaco', 'Consolas', 'ui-monospace', 'monospace'],
-      },
-      // Stamp shadows — flat 0-blur offsets are the brutalist signature.
-      // Use `shadow-stamp` on cards/buttons; `shadow-stamp-accent` for hover/active.
-      boxShadow: {
-        stamp: '4px 4px 0px 0px #474541',
-        'stamp-sm': '2px 2px 0px 0px #474541',
-        'stamp-lg': '6px 6px 0px 0px #474541',
-        'stamp-accent': '4px 4px 0px 0px #d4ff00',
-        'stamp-accent-sm': '2px 2px 0px 0px #d4ff00',
-      },
-      borderWidth: {
-        3: '3px',
-      },
-      letterSpacing: {
-        'widest-lg': '0.15em',
-      },
-    },
-  },
-  plugins: [],
-}
+export default {}

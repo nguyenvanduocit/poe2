@@ -6,7 +6,7 @@ sections:
   - relationships
 fields:
   $path:
-    pattern: "^content/characters/.+\\.md$"
+    pattern: "^content/(en/)?characters/.+\\.md$"
   template:
     required: true
     pattern: "^templates/character-progress-template\\.md$"
@@ -31,9 +31,6 @@ fields:
     enum: [Marauder, Duelist, Ranger, Shadow, Witch, Templar, Scion, Warrior, Mercenary, Monk, Sorceress, Huntress, Druid]
   ascendancy:
     required: true
-  game:
-    required: true
-    enum: [poe1, poe2]
   league:
     required: true
     pattern: "^\\d+\\.\\d+(\\.\\d+)?$"
@@ -47,7 +44,7 @@ fields:
 <!--
 Character progress note — viết theo skill /write-character-progress.
 Voice: tiếng Việt, owner-voice (first-person hoặc direct, KHÔNG third-person summary).
-Snapshot LUÔN từ live fetch `.claude/skills/pob1/scripts/pob.sh fetch "<charname>" [--spectre "<type>"]`.
+Snapshot LUÔN từ live fetch `.claude/skills/pob/scripts/pob.sh fetch "<charname>" [--spectre "<type>"]`.
 Title KHÔNG kèm league/patch.
 Đây KHÔNG phải tutorial — là live tracking note.
 Cross-link → section ## Relationships ở cuối, mỗi dòng: - **predicate** [Title](/route) — reason.
@@ -58,8 +55,8 @@ Cross-link → section ## Relationships ở cuối, mỗi dòng: - **predicate**
 ## Snapshot
 
 <!-- Bullet OK đây vì purely data points. Refetch live trước khi update.
-**Fetch timestamp BẮT BUỘC** ngay dưới heading: "Last fetch: YYYY-MM-DD via .claude/skills/pob1/scripts/pob.sh fetch <charname> [--spectre <type>]".
-DPS quote ≥ 100k kèm derivation (PoB chain hoặc PoB link). EHP layer order: armor → evasion → block → suppress → max res → ES/Life → (POE2 0.5+: Runic Ward) → recovery rate. -->
+**Fetch timestamp BẮT BUỘC** ngay dưới heading: "Last fetch: YYYY-MM-DD via .claude/skills/pob/scripts/pob.sh fetch <charname> [--spectre <type>]".
+DPS quote ≥ 100k kèm derivation (PoB chain hoặc PoB link). EHP layer order (0.5+): armor → evasion → block → max res → ES/Life → **Runic Ward** → recovery rate. -->
 
 - **ES / Life:** X
 - **Armour / Evasion / ES (def):** X / X / X

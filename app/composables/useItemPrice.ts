@@ -1,7 +1,7 @@
 // Singleton lookup wrapper around the build-time price index.
 //
 // The index lives at `app/composables/data/prices.generated.ts` and is rebuilt
-// whenever `data/price-history/poe1/price-history.json` changes (see
+// whenever `data/price-history/price-history.json` changes (see
 // `.claude/skills/nuxt/scripts/build-prices/build.ts` and `.github/workflows/collect-prices.yml`).
 // Reads here are O(1) object access — no I/O, no SQLite, no reactivity.
 

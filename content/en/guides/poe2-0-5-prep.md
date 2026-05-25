@@ -6,13 +6,12 @@ status: draft
 author: duocnv
 created: '2026-05-23'
 updated: '2026-05-24'
-game: poe2
 league: '0.5'
 patch: 0.5.0
 guide_type: league-prep
 tags:
   - poe2
-  - 0.5
+  - '0.5'
   - return-of-the-ancients
   - runes-of-aldur
   - spirit-walker

@@ -75,7 +75,7 @@ File `.md` trong `content/farming/` với:
 6. **## Market Context & Risk** — Price trend (rising/falling), saturation risk, patch nerf risk, league phase (early/mid/late). Honest về sustainability.
 7. **## Profit Optimization** — Advanced tip: atlas node upgrade path từ B → A tier, craft combo, bulk vs individual sale, fleet use. Prose.
 8. **## Alternatives & Variations** — Strategy cạnh tranh + when to switch. Variant strategy (vd add Delirium overlay).
-9. **## Data & Testing** — Evidence cho profit claim. Personal sample size, source link (poe.ninja, /trade1), market data recency.
+9. **## Data & Testing** — Evidence cho profit claim. Personal sample size, source link (poe.ninja, /trade), market data recency.
 10. **## Summary** — 3-5 bullet recap (chỗ duy nhất bullet thoải mái).
 11. **## Quick Reference Card** — Setup cost / Profit / Time / Map / Atlas nodes / Scarabs / Fragments. Đây là chỗ definition list được khuyến khích.
 12. **## Changelog** — `### YYYY-MM-DD` reverse-chrono.
@@ -85,10 +85,10 @@ File `.md` trong `content/farming/` với:
 1. **Target file path** xác định (đã tồn tại).
 2. **Frontmatter values** read: `strategy_tier`, `investment_tier`, `profit_per_hour`, `league_phase`, `confidence_level`. Strategy tier B mà profit claim 50div/hour = inconsistent → flag user.
 3. **Số thật**:
-   - poe.ninja currency price → user fetch hoặc skill gợi ý `/poe-ninja1`.
-   - Bulk price → `/trade1` qua CDP relay (KHÔNG curl direct GGG API per CLAUDE.md).
+   - poe.ninja currency price → user fetch hoặc skill gợi ý `/poe-ninja`.
+   - Bulk price → `/trade` qua CDP relay (KHÔNG curl direct GGG API per CLAUDE.md).
    - Personal testing → user cung cấp sample size + map count.
-   - Số chưa có → placeholder `<!-- TODO: profit data, run /trade1 -->`, flag.
+   - Số chưa có → placeholder `<!-- TODO: profit data, run /trade -->`, flag.
 4. **Reference farming doc** — đọc 1-2 file `content/farming/` để align voice + spot existing `:wiki-link` usage.
 
 ## Steps
@@ -104,8 +104,8 @@ Read target file. Đọc 1-2 farming doc khác. Đọc atlas tree mechanic doc n
 **Success criteria**: Nắm tier, content type, key scarabs.
 
 ### 3. Source data
-- Currency price → user run `/poe-ninja1` hoặc cung cấp manually.
-- Trade bulk → user run `/trade1 <query>`.
+- Currency price → user run `/poe-ninja` hoặc cung cấp manually.
+- Trade bulk → user run `/trade <query>`.
 - Personal experience → ask user sample size.
 
 **Success criteria**: Profit claim có ≥1 evidence với timestamp.
@@ -132,6 +132,6 @@ Follow Voice rules + Section structure. Atlas tree section: prose + image link n
 **Success criteria**: Exit 0.
 
 ### 7. Summary cho user
-Báo file path, H2 status, `:wiki-link` count, validate result. Gợi ý next: `/poe-ninja1` để fact-check số, `/heal-links` cho relationships, commit.
+Báo file path, H2 status, `:wiki-link` count, validate result. Gợi ý next: `/poe-ninja` để fact-check số, `/heal-links` cho relationships, commit.
 
 **Success criteria**: User biết next step.
