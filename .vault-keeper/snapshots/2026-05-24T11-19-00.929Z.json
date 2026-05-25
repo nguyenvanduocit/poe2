@@ -1,0 +1,2374 @@
+{
+  "schema_version": 1,
+  "measured_at": "2026-05-24T11:19:00.929Z",
+  "vault_root": "/Users/firegroup/projects/poeai",
+  "git_head": "4dc5b5c9",
+  "overall_score": 74,
+  "dimensions": {
+    "schema": {
+      "score": 100,
+      "details": {
+        "perTemplate": {
+          "templates/build-template.md": {
+            "fields": {
+              "$path": {
+                "expected": "any",
+                "value_distribution": {},
+                "distinct_values": 0,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "template": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "document_type": {
+                "expected": "enum[build]",
+                "value_distribution": {
+                  "build": 34
+                },
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "title": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 34,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "status": {
+                "expected": "enum[draft,review,published,outdated,archived]",
+                "value_distribution": {
+                  "published": 26,
+                  "draft": 6,
+                  "outdated": 1,
+                  "review": 1
+                },
+                "distinct_values": 4,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 0.518419543037003
+              },
+              "created": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 15,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "updated": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 16,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "class": {
+                "expected": "enum[Marauder,Duelist,Ranger,Shadow,Witch,Templar,Scion,Warrior,Mercenary,Monk,Sorceress,Huntress,Druid]",
+                "value_distribution": {
+                  "Druid": 3,
+                  "Duelist": 3,
+                  "Huntress": 1,
+                  "Marauder": 5,
+                  "Monk": 1,
+                  "Ranger": 3,
+                  "Shadow": 2,
+                  "Sorceress": 2,
+                  "Templar": 3,
+                  "Warrior": 1,
+                  "Witch": 10
+                },
+                "distinct_values": 11,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 0.8937651917101807
+              },
+              "ascendancy": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 18,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "game": {
+                "expected": "enum[poe1,poe2]",
+                "value_distribution": {
+                  "poe2": 9,
+                  "poe1": 25
+                },
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 0.833764907210665
+              },
+              "league": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 4,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "patch": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 5,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "budget_tier": {
+                "expected": "enum[league-starter,low-budget,medium-budget,high-budget,mirror-tier]",
+                "value_distribution": {
+                  "league-starter": 26,
+                  "medium-budget": 5,
+                  "low-budget": 2,
+                  "high-budget": 1
+                },
+                "distinct_values": 4,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 0.5463626978883285
+              }
+            }
+          },
+          "templates/character-progress-template.md": {
+            "fields": {
+              "$path": {
+                "expected": "any",
+                "value_distribution": {},
+                "distinct_values": 0,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "template": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "document_type": {
+                "expected": "enum[character-progress]",
+                "value_distribution": {
+                  "character-progress": 2
+                },
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "title": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "status": {
+                "expected": "enum[leveling,mapping,endgame,retired,rerolled]",
+                "value_distribution": {
+                  "mapping": 1,
+                  "endgame": 1
+                },
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 1
+              },
+              "created": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "updated": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "character_name": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "character_class": {
+                "expected": "enum[Marauder,Duelist,Ranger,Shadow,Witch,Templar,Scion,Warrior,Mercenary,Monk,Sorceress,Huntress,Druid]",
+                "value_distribution": {
+                  "Witch": 2
+                },
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "ascendancy": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "game": {
+                "expected": "enum[poe1,poe2]",
+                "value_distribution": {
+                  "poe1": 2
+                },
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "league": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "current_progress": {
+                "expected": "enum[campaign,white-maps,yellow-maps,red-maps,t16-farming,endgame-bosses,uber-content]",
+                "value_distribution": {
+                  "red-maps": 1,
+                  "uber-content": 1
+                },
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 1
+              }
+            }
+          },
+          "templates/farming-template.md": {
+            "fields": {
+              "$path": {
+                "expected": "any",
+                "value_distribution": {},
+                "distinct_values": 0,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "template": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "document_type": {
+                "expected": "enum[farming-strategy]",
+                "value_distribution": {
+                  "farming-strategy": 16
+                },
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "title": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 16,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "status": {
+                "expected": "enum[draft,active,outdated,archived]",
+                "value_distribution": {
+                  "draft": 8,
+                  "active": 7,
+                  "archived": 1
+                },
+                "distinct_values": 3,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 0.8024052436705214
+              },
+              "created": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 11,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "updated": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 8,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "strategy_tier": {
+                "expected": "enum[S,A,B,C,Niche,Experimental]",
+                "value_distribution": {
+                  "A": 8,
+                  "Niche": 3,
+                  "B": 3,
+                  "S": 2
+                },
+                "distinct_values": 4,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 0.8903195311147832
+              },
+              "investment_tier": {
+                "expected": "enum[Low,Medium,High,Variable]",
+                "value_distribution": {
+                  "Medium": 4,
+                  "High": 3,
+                  "Variable": 4,
+                  "Low": 5
+                },
+                "distinct_values": 4,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 0.9886085007312412
+              },
+              "league": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "patch": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 3,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "league_phase": {
+                "expected": "enum[Early,Mid,Late,End]",
+                "value_distribution": {
+                  "Late": 9,
+                  "Mid": 6,
+                  "Early": 1
+                },
+                "distinct_values": 3,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 0.7871203566965334
+              },
+              "confidence_level": {
+                "expected": "enum[High,Medium,Low]",
+                "value_distribution": {
+                  "Medium": 9,
+                  "High": 7
+                },
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 0.9886994082884974
+              },
+              "game": {
+                "expected": "enum[poe1,poe2]",
+                "value_distribution": {
+                  "poe1": 16
+                },
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              }
+            }
+          },
+          "templates/guide-template.md": {
+            "fields": {
+              "$path": {
+                "expected": "any",
+                "value_distribution": {},
+                "distinct_values": 0,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "template": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "document_type": {
+                "expected": "enum[guide]",
+                "value_distribution": {
+                  "guide": 10
+                },
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "title": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 10,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "status": {
+                "expected": "enum[draft,review,published,outdated]",
+                "value_distribution": {
+                  "draft": 5,
+                  "published": 5
+                },
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 1
+              },
+              "created": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 7,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "updated": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 5,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "game": {
+                "expected": "enum[poe1,poe2]",
+                "value_distribution": {
+                  "poe1": 8,
+                  "poe2": 2
+                },
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 0.7219280948873623
+              },
+              "league": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 3,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              }
+            }
+          },
+          "templates/mechanic-template.md": {
+            "fields": {
+              "$path": {
+                "expected": "any",
+                "value_distribution": {},
+                "distinct_values": 0,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "template": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "document_type": {
+                "expected": "enum[mechanic]",
+                "value_distribution": {
+                  "mechanic": 14
+                },
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "title": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 14,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "status": {
+                "expected": "enum[draft,review,published,outdated,archived]",
+                "value_distribution": {
+                  "draft": 10,
+                  "published": 4
+                },
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 0.863120568566631
+              },
+              "created": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 8,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "updated": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 7,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "game": {
+                "expected": "enum[poe1,poe2]",
+                "value_distribution": {
+                  "poe1": 7,
+                  "poe2": 7
+                },
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 1
+              },
+              "league": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 3,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              }
+            }
+          },
+          "templates/class-template.md": {
+            "fields": {
+              "$path": {
+                "expected": "any",
+                "value_distribution": {},
+                "distinct_values": 0,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "template": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "document_type": {
+                "expected": "enum[class]",
+                "value_distribution": {
+                  "class": 2
+                },
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "title": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "status": {
+                "expected": "enum[draft,review,published,outdated,archived]",
+                "value_distribution": {
+                  "published": 2
+                },
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "created": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "updated": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "class_type": {
+                "expected": "enum[Str,Dex,Int,Str/Dex Hybrid,Str/Int Hybrid,Dex/Int Hybrid,Tri-attribute Hybrid]",
+                "value_distribution": {
+                  "Str/Dex Hybrid": 1,
+                  "Tri-attribute Hybrid": 1
+                },
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 1
+              },
+              "complexity": {
+                "expected": "enum[low,medium,high,Low,Medium,High]",
+                "value_distribution": {
+                  "Medium": 1,
+                  "high": 1
+                },
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 1
+              },
+              "accessibility": {
+                "expected": "enum[beginner-friendly,intermediate,advanced,All Content,Beginner,Intermediate,Advanced]",
+                "value_distribution": {
+                  "All Content": 1,
+                  "advanced": 1
+                },
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 1
+              },
+              "game": {
+                "expected": "enum[poe1,poe2]",
+                "value_distribution": {
+                  "poe1": 2
+                },
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "league": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              }
+            }
+          },
+          "templates/item-template.md": {
+            "fields": {
+              "$path": {
+                "expected": "any",
+                "value_distribution": {},
+                "distinct_values": 0,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "template": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "document_type": {
+                "expected": "enum[item]",
+                "value_distribution": {
+                  "item": 4
+                },
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "title": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 4,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "status": {
+                "expected": "enum[draft,review,published,outdated,archived]",
+                "value_distribution": {
+                  "published": 1,
+                  "draft": 3
+                },
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 0.8112781244591328
+              },
+              "created": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 3,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "updated": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 3,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "rarity": {
+                "expected": "enum[unique,rare-base,currency,divination-card,jewel,flask,system]",
+                "value_distribution": {
+                  "system": 1,
+                  "unique": 3
+                },
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 0.8112781244591328
+              },
+              "item_class": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 4,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "game": {
+                "expected": "enum[poe1,poe2]",
+                "value_distribution": {
+                  "poe1": 2,
+                  "poe2": 2
+                },
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 1
+              },
+              "league": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              }
+            }
+          },
+          "templates/skill-template.md": {
+            "fields": {
+              "$path": {
+                "expected": "any",
+                "value_distribution": {},
+                "distinct_values": 0,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "template": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "document_type": {
+                "expected": "enum[skill]",
+                "value_distribution": {
+                  "skill": 29
+                },
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "title": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 29,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "status": {
+                "expected": "enum[draft,review,published,outdated,archived]",
+                "value_distribution": {
+                  "published": 24,
+                  "draft": 5
+                },
+                "distinct_values": 2,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 0.6631968402398287
+              },
+              "created": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 7,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "updated": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 7,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "gem_color": {
+                "expected": "enum[red,green,blue,white,prismatic]",
+                "value_distribution": {
+                  "blue": 13,
+                  "red": 12,
+                  "green": 3,
+                  "prismatic": 1
+                },
+                "distinct_values": 4,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 0.7758843967594492
+              },
+              "skill_type": {
+                "expected": "enum[active,support,exceptional support,trigger,vaal]",
+                "value_distribution": {
+                  "active": 24,
+                  "support": 4,
+                  "exceptional support": 1
+                },
+                "distinct_values": 3,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": 0.496962673292849
+              },
+              "game": {
+                "expected": "enum[poe1,poe2]",
+                "value_distribution": {
+                  "poe1": 29
+                },
+                "distinct_values": 1,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              },
+              "league": {
+                "expected": "any (required)",
+                "value_distribution": {},
+                "distinct_values": 3,
+                "drift_score": 0,
+                "orphan_values": [],
+                "entropy_norm": null
+              }
+            }
+          }
+        },
+        "global_drift_score": 0
+      }
+    },
+    "vocab": {
+      "score": 100,
+      "details": {
+        "tag_clusters": [],
+        "link_clusters": [],
+        "fuzzy_suggestions": {
+          "tags": [
+            {
+              "members": [
+                "TheLeader_A",
+                "the-leader-a"
+              ],
+              "canonical_hint": "TheLeader_A",
+              "max_pairwise_distance": 0.16666666666666666,
+              "kind": "fuzzy"
+            },
+            {
+              "members": [
+                "a-tier",
+                "s-tier"
+              ],
+              "canonical_hint": "s-tier",
+              "max_pairwise_distance": 0.16666666666666666,
+              "kind": "fuzzy"
+            },
+            {
+              "members": [
+                "bulk-strategy",
+                "bundle-strategy"
+              ],
+              "canonical_hint": "bulk-strategy",
+              "max_pairwise_distance": 0.2,
+              "kind": "fuzzy"
+            },
+            {
+              "members": [
+                "challenge",
+                "challenges"
+              ],
+              "canonical_hint": "challenges",
+              "max_pairwise_distance": 0.1,
+              "kind": "fuzzy"
+            },
+            {
+              "members": [
+                "league-start",
+                "league-starter"
+              ],
+              "canonical_hint": "league-start",
+              "max_pairwise_distance": 0.14285714285714285,
+              "kind": "fuzzy"
+            },
+            {
+              "members": [
+                "life-stack",
+                "side-stack"
+              ],
+              "canonical_hint": "life-stack",
+              "max_pairwise_distance": 0.2,
+              "kind": "fuzzy"
+            },
+            {
+              "members": [
+                "mine",
+                "miner"
+              ],
+              "canonical_hint": "mine",
+              "max_pairwise_distance": 0.2,
+              "kind": "fuzzy"
+            },
+            {
+              "members": [
+                "minion",
+                "minions"
+              ],
+              "canonical_hint": "minion",
+              "max_pairwise_distance": 0.14285714285714285,
+              "kind": "fuzzy"
+            },
+            {
+              "members": [
+                "projectile",
+                "projection"
+              ],
+              "canonical_hint": "projectile",
+              "max_pairwise_distance": 0.2,
+              "kind": "fuzzy"
+            },
+            {
+              "members": [
+                "ranged",
+                "ranger"
+              ],
+              "canonical_hint": "ranged",
+              "max_pairwise_distance": 0.16666666666666666,
+              "kind": "fuzzy"
+            },
+            {
+              "members": [
+                "slam",
+                "slams"
+              ],
+              "canonical_hint": "slam",
+              "max_pairwise_distance": 0.2,
+              "kind": "fuzzy"
+            },
+            {
+              "members": [
+                "spectre",
+                "spectres"
+              ],
+              "canonical_hint": "spectre",
+              "max_pairwise_distance": 0.125,
+              "kind": "fuzzy"
+            }
+          ],
+          "links": []
+        },
+        "drift_score": 0
+      }
+    },
+    "lifecycle": {
+      "score": 23,
+      "details": {
+        "stale_docs": [],
+        "orphan_docs": [
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/druid/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/druid/meteor-bear-shaman.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/druid/raging-spectre-shaman.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/druid/spectre-shaman.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/duelist/bleed-slams-slayer.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/duelist/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/duelist/lacerate-bleed-gladiator.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/duelist/shockwave-cyclone-slayer.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/marauder/cws-chieftain.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/marauder/cyclone-of-tumult-ancestral-commander.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/marauder/generals-cry-holy-sweep-juggernaut.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/marauder/holy-hammers-chieftain.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/marauder/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/marauder/righteous-fire-chieftain.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/ranger/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/ranger/kinetic-blast-deadeye.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/ranger/lightning-arrow-deadeye.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/ranger/poisonous-concoction-pathfinder.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/scion/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/shadow/blight-of-contagion-trickster.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/shadow/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/shadow/self-chill-soulthirst-spark-trickster.md",
+            "incoming_links": 0,
+            "days_since_created": 42
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/sorceress/djinn-commander-dook.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/sorceress/djinn-minion-disciple-of-varashta.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/sorceress/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/templar/dominating-blow-guardian.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/templar/holy-absolution-guardian.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/templar/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/templar/kinetic-fusillade-hierophant.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/warrior/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/warrior/shield-wall-warbringer.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/witch/dominating-blow-necromancer.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/witch/forged-frostbearer-spectre-necromancer.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/witch/glacial-cascade-miner-elementalist.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/witch/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/witch/necromancer-campaign-leveling.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/witch/skeleton-mage-necromancer.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/witch/summon-raging-spirit-necromancer.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/witch/sunder-ignite-elementalist.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/witch/wretched-defilers-necromancer-for-delve.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/builds/witch/wretched-defilers-necromancer.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/characters/bitch-my-bad.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/characters/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/characters/the-leader-a.md",
+            "incoming_links": 0,
+            "days_since_created": 65
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/donate.md",
+            "incoming_links": 0,
+            "days_since_created": 15
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/farming/3-28-breach-final.md",
+            "incoming_links": 0,
+            "days_since_created": 16
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/farming/3-28-conqueror-boss-rush.md",
+            "incoming_links": 0,
+            "days_since_created": 16
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/farming/3-28-late-league-pivot.md",
+            "incoming_links": 0,
+            "days_since_created": 16
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/farming/3-28-mirage-farming-overview.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/farming/beast-farming-late-league.md",
+            "incoming_links": 0,
+            "days_since_created": 51
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/farming/delve-fossil-farming.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/farming/harvest-rush.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/farming/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/atlas/3-28-atlas-rework.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/atlas/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/atlas/maven-invitation-the-forgotten.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/atlas/maven-invitation-the-remembered.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/atlas/maven-invitation-the-twisted.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/classes/duelist.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/classes/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/classes/scion-reliquarian.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/crafting/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/crafting/talisman-crafting.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/delve.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/items/congregation-support.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/items/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/items/screams-of-the-desiccated.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/leagues/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/leagues/mirage-wish-system.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/shield-crush-chieftain-mechanics-analysis.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/absolution.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/animate-guardian.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/blessed-call-support.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/blight-of-contagion.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/charged-dash-of-projection.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/creeping-frost-of-floes.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/desecrate.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/divine-blast.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/exceptional-support-gems.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/excommunicate-support.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/exemplar-support.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/flamethrower-trap-of-stability.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/hallow-support.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/holy-hammers.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/holy-strike.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/holy-sweep.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/kinetic-fusillade-of-detonation.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/orb-of-storms-of-squalls.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/raise-spectre.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/raise-zombie.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/righteous-fire.md",
+            "incoming_links": 0,
+            "days_since_created": 15
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/searing-bond-of-detonation.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/shield-of-light.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/shock-nova-of-procession.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/shockwave-totem-of-authority.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/siphoning-trap-of-pain.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/static-strike-of-gathering-lightning.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/storm-brand.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/mechanics/skills/storm-burst-of-repulsion.md",
+            "incoming_links": 0,
+            "days_since_created": 77
+          },
+          {
+            "path": "/Users/firegroup/projects/poeai/content/skilltree/index.md",
+            "incoming_links": 0,
+            "days_since_created": 78
+          }
+        ],
+        "zombie_docs": [],
+        "decay_score": 0.7703703703703704
+      }
+    },
+    "distribution": {
+      "score": 82,
+      "details": {
+        "template_usage": {
+          "counts": {
+            "templates/build-template.md": 34,
+            "templates/character-progress-template.md": 2,
+            "templates/farming-template.md": 16,
+            "templates/guide-template.md": 10,
+            "templates/mechanic-template.md": 14,
+            "templates/class-template.md": 2,
+            "templates/item-template.md": 4,
+            "templates/skill-template.md": 29
+          },
+          "gini": 0.44932432432432434,
+          "verdict": "healthy_pareto"
+        },
+        "folder_distribution": {
+          "counts": {
+            "content/builds/druid": 4,
+            "content/builds/duelist": 4,
+            "content/builds/huntress/0-5-twister-huntress-starter": 1,
+            "content/builds": 1,
+            "content/builds/marauder": 6,
+            "content/builds/monk": 1,
+            "content/builds/ranger": 4,
+            "content/builds/scion": 1,
+            "content/builds/shadow": 3,
+            "content/builds/sorceress": 3,
+            "content/builds/templar": 4,
+            "content/builds/warrior": 2,
+            "content/builds/witch": 11,
+            "content/characters": 3,
+            "content": 2,
+            "content/farming": 17,
+            "content/guides": 11,
+            "content/mechanics/atlas": 5,
+            "content/mechanics/classes": 3,
+            "content/mechanics/crafting": 2,
+            "content/mechanics": 5,
+            "content/mechanics/items": 5,
+            "content/mechanics/leagues": 4,
+            "content/mechanics/skills": 32,
+            "content/skilltree": 1
+          },
+          "gini": 0.49896296296296294
+        },
+        "untemplated": {
+          "count": 24,
+          "ratio": 0.17777777777777778
+        },
+        "compression": {
+          "raw_bytes": 64793,
+          "gzip_bytes": 11404,
+          "global_ratio": 0.17600666738690907
+        },
+        "distribution_score": 0.17777777777777778
+      }
+    }
+  },
+  "emergence": {
+    "field_candidates": [
+      {
+        "template": "templates/build-template.md",
+        "field": "author",
+        "appearances": 34,
+        "total_docs": 34,
+        "value_samples": [
+          "CaptainLance9 (Primary) / NickTew / Palsteron / Carnarius",
+          "GhazzyTV",
+          "Travic (guide), poe-aio (enhanced)",
+          "KOSX_01",
+          "ronarray",
+          "duocnv",
+          "emiracle",
+          "poe.ninja data / Mobalytics (fgkorbyn21)",
+          "poe-aio",
+          "Pohx (consolidated by poe-aio)"
+        ],
+        "promote_confidence": 1,
+        "suggested_primitive": "string"
+      },
+      {
+        "template": "templates/build-template.md",
+        "field": "build_tags",
+        "appearances": 34,
+        "total_docs": 34,
+        "value_samples": [
+          "[object Object]"
+        ],
+        "promote_confidence": 1,
+        "suggested_primitive": "enum"
+      },
+      {
+        "template": "templates/build-template.md",
+        "field": "tags",
+        "appearances": 34,
+        "total_docs": 34,
+        "value_samples": [
+          "poe2,druid,shaman,bear,walking-calamity,meteor,rampage,furious-slam,rage,fire,elemental,auto-bomber,league-starter,beginner-friendly",
+          "poe2,spectre,minion,shaman,druid,rage,warcry,gargantuan-wasp,death-knight,cocaine-wasps,weapon-swap",
+          "raise-spectre,shaman,druid,minion,summoner,vulgard,powered-zealots,league-starter,beginner-friendly,poe2,patch-0.4",
+          "bleed,slams,slayer,physical,melee,league-start,bossing,3.28,mirage",
+          "lacerate,bleed,gladiator,melee,physical,block,league-start",
+          "cyclone,shockwave,slayer,physical,melee,league-start,beginner-friendly,generals-cry",
+          "twister,huntress,spirit-walker,ice-tipped-arrow,0.5,starter,leveling,poe2",
+          "cast-when-stunned,chieftain,fire,ignite,tank,ultimatum,simulacrum,afk-farming,league-start",
+          "poe1,marauder,ancestral-commander,cyclone,physical,melee,league-starter,phrecia,impale,staff,tank,block,endurance",
+          "holy-sweep,juggernaut,warcry,melee,physical,bossing,warbringer,generals-cry,marauder,3.28,poe1"
+        ],
+        "promote_confidence": 1,
+        "suggested_primitive": "string"
+      },
+      {
+        "template": "templates/farming-template.md",
+        "field": "author",
+        "appearances": 16,
+        "total_docs": 16,
+        "value_samples": [
+          "POE AIO",
+          "TheLeader_A",
+          "POE AIO (transcribed from Vascor)"
+        ],
+        "promote_confidence": 1,
+        "suggested_primitive": "enum"
+      },
+      {
+        "template": "templates/farming-template.md",
+        "field": "league_name",
+        "appearances": 16,
+        "total_docs": 16,
+        "value_samples": [
+          "Mirage",
+          "Keepers of the Flame"
+        ],
+        "promote_confidence": 1,
+        "suggested_primitive": "enum"
+      },
+      {
+        "template": "templates/farming-template.md",
+        "field": "tags",
+        "appearances": 16,
+        "total_docs": 16,
+        "value_samples": [
+          "farming,strategy,delirium,maven,astrolabe,synthesis,mirage,chisels,late-league",
+          "farming,boss-farming,mirage,saresh,screams-of-the-desiccated,high-investment,consumable",
+          "farming,strategy,currency,blight,blight-ravaged,oil,tower-defense,side-stack,stranglegasp,niche",
+          "farming,strategy,currency,breach,mirage,a-tier,late-league,delirium,atlas-tree,sinistral,cross-validated",
+          "farming,boss-farming,mirage,conqueror,boss-rush,city-square,TheLeader_A,execution-playbook,low-investment,self-sustain",
+          "farming,strategy,currency,delirium,beyond,ambush,strongbox,low-budget,mirage,volatile-valorb,refractive-fog,vault-region,diviner-strongbox",
+          "farming,strategy,delirium,boss,awakening-scarab,invitation,maven-chisel,mirage,multi-stream,t16,challenge-compound,40-40-push,astrolabe-rotation",
+          "farming,strategy,currency,harvest,life-force,astrolabe,mirage,s-tier,late-league,8-mod-maps,endgame",
+          "farming,crafting,gem-crafting,imbuing,djinn-coins,coin-of-power,coin-of-skill,coin-of-knowledge,low-effort,late-league,bulk-strategy",
+          "farming,ultimatum,currency-doubling,low-investment,consumable,ci-friendly,spectre-necromancer"
+        ],
+        "promote_confidence": 1,
+        "suggested_primitive": "string"
+      },
+      {
+        "template": "templates/farming-template.md",
+        "field": "archetype_version",
+        "appearances": 8,
+        "total_docs": 16,
+        "value_samples": [
+          "1.0.0"
+        ],
+        "promote_confidence": 0.5,
+        "suggested_primitive": "enum"
+      },
+      {
+        "template": "templates/farming-template.md",
+        "field": "next_review_date",
+        "appearances": 5,
+        "total_docs": 16,
+        "value_samples": [
+          "2026-05-26",
+          "2026-05-19",
+          "2026-05-24",
+          "2026-05-18"
+        ],
+        "promote_confidence": 0.3125,
+        "suggested_primitive": "string"
+      },
+      {
+        "template": "templates/guide-template.md",
+        "field": "author",
+        "appearances": 10,
+        "total_docs": 10,
+        "value_samples": [
+          "Jorgen (via poe-aio)",
+          "POE AIO",
+          "poe-aio",
+          "duocnv",
+          "ronarray"
+        ],
+        "promote_confidence": 1,
+        "suggested_primitive": "string"
+      },
+      {
+        "template": "templates/guide-template.md",
+        "field": "patch",
+        "appearances": 10,
+        "total_docs": 10,
+        "value_samples": [
+          "3.28.0",
+          "0.5.0",
+          "0.4.0"
+        ],
+        "promote_confidence": 1,
+        "suggested_primitive": "enum"
+      },
+      {
+        "template": "templates/guide-template.md",
+        "field": "guide_type",
+        "appearances": 8,
+        "total_docs": 10,
+        "value_samples": [
+          "atlas",
+          "challenge",
+          "atlas-acquisition",
+          "essay",
+          "league-overview",
+          "league-prep"
+        ],
+        "promote_confidence": 0.8,
+        "suggested_primitive": "string"
+      },
+      {
+        "template": "templates/guide-template.md",
+        "field": "tags",
+        "appearances": 10,
+        "total_docs": 10,
+        "value_samples": [
+          "atlas,delve,mapping,league-start,3.28,mirage",
+          "mirage,challenges,36-40,execution-plan,the-leader-a,endgame",
+          "atlas,voidstone,decayed-voidstone,shaper,elder,uber-elder,3.28,mirage,boss-fight,endgame",
+          "intro,essay,meta,poe-overview,89ngayviet",
+          "leveling,campaign,minion,summoner,beginner,spectre,absolution",
+          "mirage,challenges,bundle-strategy,40-40,beginner-guide,astrolabe,shaped-region",
+          "league,challenge,mirage,djinn,varashta,astral-realm,wishes,3.28",
+          "poe2,0.5,return-of-the-ancients,runes-of-aldur,spirit-walker,twister,companion,league-start,community,prep",
+          "poe2,0.4,0.5,youtuber,content-creator,league-start,fate-of-the-vaal,runes-of-aldur,spirit-walker,companion",
+          "spectres,animate-guardian,minion,absolution,necromancer,guardian,buffs"
+        ],
+        "promote_confidence": 1,
+        "suggested_primitive": "string"
+      },
+      {
+        "template": "templates/mechanic-template.md",
+        "field": "mechanic_type",
+        "appearances": 8,
+        "total_docs": 14,
+        "value_samples": [
+          "Atlas",
+          "Crafting",
+          "Core",
+          "League",
+          "Combat"
+        ],
+        "promote_confidence": 0.5714285714285714,
+        "suggested_primitive": "string"
+      },
+      {
+        "template": "templates/mechanic-template.md",
+        "field": "patch",
+        "appearances": 13,
+        "total_docs": 14,
+        "value_samples": [
+          "3.28.0",
+          "0.4.0",
+          "0.5.0"
+        ],
+        "promote_confidence": 0.9285714285714286,
+        "suggested_primitive": "enum"
+      },
+      {
+        "template": "templates/mechanic-template.md",
+        "field": "author",
+        "appearances": 14,
+        "total_docs": 14,
+        "value_samples": [
+          "poe-aio",
+          "CaptainLance9 (Synthesized)",
+          "duocnv"
+        ],
+        "promote_confidence": 1,
+        "suggested_primitive": "enum"
+      },
+      {
+        "template": "templates/mechanic-template.md",
+        "field": "tags",
+        "appearances": 14,
+        "total_docs": 14,
+        "value_samples": [
+          "atlas,mechanic,3.28,mirage,astrolabe,voidstone,nightmare-maps,endgame,mapping",
+          "maven,invitation,the-forgotten,synthesis,endgame,atlas,boss-fight,cortex,poe1",
+          "maven,invitation,the-remembered,memory-thread,endgame,atlas,boss-fight,poe1",
+          "maven,invitation,the-twisted,elder-guardians,endgame,atlas,boss-fight,poe1",
+          "poe2,crafting,talisman,physical-damage,guide,druid,shaman,budget,endgame",
+          "delve,mechanic,core,azurite,fossil,resonator,3.28,mirage",
+          "poe2,meta-analysis,builds,vaal,0.4,fate-of-the-vaal,top-builds,pathfinder,oracle,blood-mage",
+          "mirage,wish,djinn,coin,imbued-gem,league-mechanic,3.28",
+          "poe2,patch-overview,endgame-overhaul,runes-of-aldur,origins-of-divinity,masters-of-the-atlas,pre-launch",
+          "rune,unique,crafting,preview,orof,calguran,ezomite"
+        ],
+        "promote_confidence": 1,
+        "suggested_primitive": "string"
+      },
+      {
+        "template": "templates/skill-template.md",
+        "field": "damage_type",
+        "appearances": 29,
+        "total_docs": 29,
+        "value_samples": [
+          "Mixed",
+          "Physical",
+          "None",
+          "Chaos",
+          "Lightning",
+          "Cold",
+          "Fire",
+          "fire"
+        ],
+        "promote_confidence": 1,
+        "suggested_primitive": "enum"
+      },
+      {
+        "template": "templates/skill-template.md",
+        "field": "level_requirement",
+        "appearances": 29,
+        "total_docs": 29,
+        "value_samples": [
+          "12",
+          "28",
+          "31",
+          "1",
+          "3",
+          "70",
+          "18",
+          "16"
+        ],
+        "promote_confidence": 1,
+        "suggested_primitive": "enum"
+      },
+      {
+        "template": "templates/skill-template.md",
+        "field": "attribute_requirement",
+        "appearances": 28,
+        "total_docs": 29,
+        "value_samples": [
+          "[object Object]"
+        ],
+        "promote_confidence": 0.9655172413793104,
+        "suggested_primitive": "enum"
+      },
+      {
+        "template": "templates/skill-template.md",
+        "field": "patch",
+        "appearances": 28,
+        "total_docs": 29,
+        "value_samples": [
+          "3.28.0",
+          "3.27.0",
+          "3.26.0"
+        ],
+        "promote_confidence": 0.9655172413793104,
+        "suggested_primitive": "enum"
+      },
+      {
+        "template": "templates/skill-template.md",
+        "field": "author",
+        "appearances": 29,
+        "total_docs": 29,
+        "value_samples": [
+          "poe-aio Research Team",
+          "System",
+          "poe-aio",
+          "poewiki-import",
+          "Wiki Import"
+        ],
+        "promote_confidence": 1,
+        "suggested_primitive": "enum"
+      },
+      {
+        "template": "templates/skill-template.md",
+        "field": "skill_tags",
+        "appearances": 28,
+        "total_docs": 29,
+        "value_samples": [
+          "Spell,Minion,Duration,Physical,Lightning,AoE",
+          "Minion,Spell",
+          "Support,Warcry,Duration",
+          "Spell,Chaos,AoE,Channelling,Duration",
+          "Attack,AoE,Movement,Channelling,Lightning",
+          "Spell,AoE,Cold,Duration,Projectile",
+          "Spell,AoE,Duration,Chaos",
+          "Spell,AoE,Fire,Duration",
+          "Lightning,Fire,Physical,Support,Melee,Attack,Duration",
+          "Support,Minion,Critical"
+        ],
+        "promote_confidence": 0.9655172413793104,
+        "suggested_primitive": "string"
+      },
+      {
+        "template": "templates/skill-template.md",
+        "field": "meta_tags",
+        "appearances": 27,
+        "total_docs": 29,
+        "value_samples": [
+          "summoner,guardian,necromancer,league-starter",
+          "summoner,support,utility",
+          "new-gem,3.28,consecrated-ground,defensive",
+          "transfigured,top-tier,league-starter,clear-speed",
+          "transfigured,channelling,movement,projection,lightning,3.28",
+          "transfigured,3.28",
+          "summoner,utility",
+          "new-skill,3.28,shield-skill",
+          "new-gem,3.28,anti-chaos,holy-family",
+          "new-gem,3.28,minion-crit"
+        ],
+        "promote_confidence": 0.9310344827586207,
+        "suggested_primitive": "string"
+      },
+      {
+        "template": "templates/skill-template.md",
+        "field": "tags",
+        "appearances": 29,
+        "total_docs": 29,
+        "value_samples": [
+          "absolution,minion,summoner,physical,lightning,guardian,sentinel,league-starter",
+          "animate-guardian,minion,summoner,support,utility",
+          "support,blessed-call-support,warcry,consecrated-ground,defensive,sustain,3.28,poe1",
+          "skill,blight-of-contagion,chaos,dot,channelling,trickster,contagion,transfigured,league-starter,3.28,poe1",
+          "skill,charged-dash,movement,channelling,lightning,attack,aoe,transfigured,projection,3.28,poe1",
+          "skill,creeping-frost,cold,projectile,chilling-ground,transfigured,3.28,poe1",
+          "desecrate,corpse,summoner,utility",
+          "skill,divine-blast,spell,aoe,fire,shield,holy,3.28,poe1",
+          "exceptional-support,support-gem,endgame,atlas-boss,3.28,mirage,build-diversity",
+          "support,excommunicate-support,melee,physical,fire,lightning,anti-chaos,3.28,poe1"
+        ],
+        "promote_confidence": 1,
+        "suggested_primitive": "string"
+      }
+    ],
+    "section_candidates": [
+      {
+        "template": "templates/build-template.md",
+        "heading": "Skill Gems & Links",
+        "appearances": 34,
+        "total_docs": 34,
+        "promote_confidence": 1
+      },
+      {
+        "template": "templates/build-template.md",
+        "heading": "Passive Tree & Mastery",
+        "appearances": 33,
+        "total_docs": 34,
+        "promote_confidence": 0.9705882352941176
+      },
+      {
+        "template": "templates/build-template.md",
+        "heading": "Stat Priorities & Defenses",
+        "appearances": 34,
+        "total_docs": 34,
+        "promote_confidence": 1
+      },
+      {
+        "template": "templates/build-template.md",
+        "heading": "Pantheon & Bandits",
+        "appearances": 34,
+        "total_docs": 34,
+        "promote_confidence": 1
+      },
+      {
+        "template": "templates/build-template.md",
+        "heading": "Budget & Investment",
+        "appearances": 34,
+        "total_docs": 34,
+        "promote_confidence": 1
+      },
+      {
+        "template": "templates/build-template.md",
+        "heading": "Strengths & Limitations",
+        "appearances": 34,
+        "total_docs": 34,
+        "promote_confidence": 1
+      },
+      {
+        "template": "templates/build-template.md",
+        "heading": "Performance Ratings",
+        "appearances": 32,
+        "total_docs": 34,
+        "promote_confidence": 0.9411764705882353
+      },
+      {
+        "template": "templates/build-template.md",
+        "heading": "Resources",
+        "appearances": 14,
+        "total_docs": 34,
+        "promote_confidence": 0.4117647058823529
+      },
+      {
+        "template": "templates/build-template.md",
+        "heading": "Relationships",
+        "appearances": 26,
+        "total_docs": 34,
+        "promote_confidence": 0.7647058823529411
+      },
+      {
+        "template": "templates/build-template.md",
+        "heading": "Changelog",
+        "appearances": 32,
+        "total_docs": 34,
+        "promote_confidence": 0.9411764705882353
+      },
+      {
+        "template": "templates/build-template.md",
+        "heading": "Build Overview",
+        "appearances": 17,
+        "total_docs": 34,
+        "promote_confidence": 0.5
+      },
+      {
+        "template": "templates/build-template.md",
+        "heading": "Performance Matrix",
+        "appearances": 15,
+        "total_docs": 34,
+        "promote_confidence": 0.4411764705882353
+      },
+      {
+        "template": "templates/build-template.md",
+        "heading": "Skills & Tree",
+        "appearances": 14,
+        "total_docs": 34,
+        "promote_confidence": 0.4117647058823529
+      },
+      {
+        "template": "templates/build-template.md",
+        "heading": "Gear Roadmap",
+        "appearances": 20,
+        "total_docs": 34,
+        "promote_confidence": 0.5882352941176471
+      },
+      {
+        "template": "templates/build-template.md",
+        "heading": "Leveling Path",
+        "appearances": 11,
+        "total_docs": 34,
+        "promote_confidence": 0.3235294117647059
+      },
+      {
+        "template": "templates/build-template.md",
+        "heading": "FAQ & Resources",
+        "appearances": 11,
+        "total_docs": 34,
+        "promote_confidence": 0.3235294117647059
+      },
+      {
+        "template": "templates/farming-template.md",
+        "heading": "Strategy Overview",
+        "appearances": 10,
+        "total_docs": 16,
+        "promote_confidence": 0.625
+      },
+      {
+        "template": "templates/farming-template.md",
+        "heading": "Setup",
+        "appearances": 12,
+        "total_docs": 16,
+        "promote_confidence": 0.75
+      },
+      {
+        "template": "templates/farming-template.md",
+        "heading": "Gameplay",
+        "appearances": 10,
+        "total_docs": 16,
+        "promote_confidence": 0.625
+      },
+      {
+        "template": "templates/farming-template.md",
+        "heading": "Loot Breakdown & Economic Analysis",
+        "appearances": 16,
+        "total_docs": 16,
+        "promote_confidence": 1
+      },
+      {
+        "template": "templates/farming-template.md",
+        "heading": "Market Context & Risk",
+        "appearances": 16,
+        "total_docs": 16,
+        "promote_confidence": 1
+      },
+      {
+        "template": "templates/farming-template.md",
+        "heading": "Profit Optimization",
+        "appearances": 9,
+        "total_docs": 16,
+        "promote_confidence": 0.5625
+      },
+      {
+        "template": "templates/farming-template.md",
+        "heading": "Alternatives & Variations",
+        "appearances": 16,
+        "total_docs": 16,
+        "promote_confidence": 1
+      },
+      {
+        "template": "templates/farming-template.md",
+        "heading": "Data & Testing",
+        "appearances": 16,
+        "total_docs": 16,
+        "promote_confidence": 1
+      },
+      {
+        "template": "templates/farming-template.md",
+        "heading": "Summary",
+        "appearances": 6,
+        "total_docs": 16,
+        "promote_confidence": 0.375
+      },
+      {
+        "template": "templates/farming-template.md",
+        "heading": "Quick Reference Card",
+        "appearances": 16,
+        "total_docs": 16,
+        "promote_confidence": 1
+      },
+      {
+        "template": "templates/farming-template.md",
+        "heading": "Changelog",
+        "appearances": 8,
+        "total_docs": 16,
+        "promote_confidence": 0.5
+      },
+      {
+        "template": "templates/farming-template.md",
+        "heading": "Relationships",
+        "appearances": 10,
+        "total_docs": 16,
+        "promote_confidence": 0.625
+      },
+      {
+        "template": "templates/guide-template.md",
+        "heading": "Overview",
+        "appearances": 6,
+        "total_docs": 10,
+        "promote_confidence": 0.6
+      },
+      {
+        "template": "templates/guide-template.md",
+        "heading": "Tips & Pitfalls",
+        "appearances": 8,
+        "total_docs": 10,
+        "promote_confidence": 0.8
+      },
+      {
+        "template": "templates/guide-template.md",
+        "heading": "Changelog",
+        "appearances": 4,
+        "total_docs": 10,
+        "promote_confidence": 0.4
+      },
+      {
+        "template": "templates/guide-template.md",
+        "heading": "Relationships",
+        "appearances": 8,
+        "total_docs": 10,
+        "promote_confidence": 0.8
+      },
+      {
+        "template": "templates/mechanic-template.md",
+        "heading": "Overview",
+        "appearances": 6,
+        "total_docs": 14,
+        "promote_confidence": 0.42857142857142855
+      },
+      {
+        "template": "templates/mechanic-template.md",
+        "heading": "How It Works",
+        "appearances": 12,
+        "total_docs": 14,
+        "promote_confidence": 0.8571428571428571
+      },
+      {
+        "template": "templates/mechanic-template.md",
+        "heading": "Strategy & Tips",
+        "appearances": 6,
+        "total_docs": 14,
+        "promote_confidence": 0.42857142857142855
+      },
+      {
+        "template": "templates/mechanic-template.md",
+        "heading": "Related Content",
+        "appearances": 6,
+        "total_docs": 14,
+        "promote_confidence": 0.42857142857142855
+      },
+      {
+        "template": "templates/mechanic-template.md",
+        "heading": "Changelog",
+        "appearances": 7,
+        "total_docs": 14,
+        "promote_confidence": 0.5
+      },
+      {
+        "template": "templates/mechanic-template.md",
+        "heading": "Interactions with Other Content",
+        "appearances": 10,
+        "total_docs": 14,
+        "promote_confidence": 0.7142857142857143
+      },
+      {
+        "template": "templates/mechanic-template.md",
+        "heading": "What Doesn't Work",
+        "appearances": 12,
+        "total_docs": 14,
+        "promote_confidence": 0.8571428571428571
+      },
+      {
+        "template": "templates/mechanic-template.md",
+        "heading": "Relationships",
+        "appearances": 13,
+        "total_docs": 14,
+        "promote_confidence": 0.9285714285714286
+      },
+      {
+        "template": "templates/mechanic-template.md",
+        "heading": "Version History",
+        "appearances": 5,
+        "total_docs": 14,
+        "promote_confidence": 0.35714285714285715
+      },
+      {
+        "template": "templates/skill-template.md",
+        "heading": "Overview",
+        "appearances": 27,
+        "total_docs": 29,
+        "promote_confidence": 0.9310344827586207
+      },
+      {
+        "template": "templates/skill-template.md",
+        "heading": "How It Works",
+        "appearances": 22,
+        "total_docs": 29,
+        "promote_confidence": 0.7586206896551724
+      },
+      {
+        "template": "templates/skill-template.md",
+        "heading": "Gem Stats",
+        "appearances": 9,
+        "total_docs": 29,
+        "promote_confidence": 0.3103448275862069
+      },
+      {
+        "template": "templates/skill-template.md",
+        "heading": "Best Use Cases",
+        "appearances": 20,
+        "total_docs": 29,
+        "promote_confidence": 0.6896551724137931
+      },
+      {
+        "template": "templates/skill-template.md",
+        "heading": "Changelog",
+        "appearances": 28,
+        "total_docs": 29,
+        "promote_confidence": 0.9655172413793104
+      },
+      {
+        "template": "templates/skill-template.md",
+        "heading": "Relationships",
+        "appearances": 22,
+        "total_docs": 29,
+        "promote_confidence": 0.7586206896551724
+      },
+      {
+        "template": "templates/skill-template.md",
+        "heading": "Ascendancy Compatibility",
+        "appearances": 10,
+        "total_docs": 29,
+        "promote_confidence": 0.3448275862068966
+      },
+      {
+        "template": "templates/skill-template.md",
+        "heading": "Sources",
+        "appearances": 19,
+        "total_docs": 29,
+        "promote_confidence": 0.6551724137931034
+      },
+      {
+        "template": "templates/skill-template.md",
+        "heading": "Scaling Vectors",
+        "appearances": 13,
+        "total_docs": 29,
+        "promote_confidence": 0.4482758620689655
+      },
+      {
+        "template": "templates/skill-template.md",
+        "heading": "Gem Links & Synergies",
+        "appearances": 9,
+        "total_docs": 29,
+        "promote_confidence": 0.3103448275862069
+      }
+    ],
+    "skipped": [
+      "templates/character-progress-template.md",
+      "templates/class-template.md",
+      "templates/item-template.md"
+    ]
+  },
+  "stats": {
+    "total_docs": 135,
+    "total_templates": 8,
+    "scan_duration_ms": 672
+  },
+  "health_flags": {
+    "missing_templates": []
+  }
+}

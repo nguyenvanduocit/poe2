@@ -1,0 +1,783 @@
+{
+  "exportedAt": "2026-05-11T13:22:57Z",
+  "info": {
+    "ascendancy": "Necromancer",
+    "bandit": "None",
+    "class": "Witch",
+    "level": 97
+  },
+  "status": "ok",
+  "keystones": [
+    "Chaos Inoculation",
+    "Ghost Dance",
+    "Ghost Reaver",
+    "Lethe Shade",
+    "Zealot's Oath"
+  ],
+  "defenses": {
+    "life": 1,
+    "energyShield": 7987,
+    "mana": 998,
+    "armour": 63111,
+    "evasion": 35,
+    "fireRes": 90,
+    "coldRes": 90,
+    "lightningRes": -200,
+    "chaosRes": -30,
+    "blockChance": 73,
+    "spellBlockChance": 75,
+    "totalEHP": 410262.75890954
+  },
+  "offense": {
+    "totalDPS": 0,
+    "combinedDPS": 0,
+    "speed": 1.9529411764706,
+    "castSpeed": null
+  },
+  "minions": {
+    "totalDPS": 2320860.672,
+    "combinedDPS": 2320860.672,
+    "speed": 4.3,
+    "life": 143647,
+    "energyShield": 57746,
+    "spectreLimit": 10,
+    "minionLimit": 10,
+    "estimatedTotalDPS": 23208606.72
+  },
+  "equipment": [
+    {
+      "slot": "Belt",
+      "name": "Mageblood",
+      "baseName": "Heavy Belt",
+      "rarity": "RELIC",
+      "type": "Belt",
+      "itemLevel": 75,
+      "quality": null,
+      "implicitLines": [
+        "+37 to Strength"
+      ],
+      "explicitLines": [
+        "+57 to Dexterity",
+        "+24% to Fire Resistance",
+        "+23% to Cold Resistance",
+        "Magic Utility Flasks cannot be Used",
+        "Leftmost 4 Magic Utility Flasks constantly apply their Flask Effects to you",
+        "Magic Utility Flask Effects cannot be removed"
+      ],
+      "enchantLines": null,
+      "sockets": ""
+    },
+    {
+      "slot": "Jewel 61419",
+      "name": "Unending Hunger",
+      "baseName": "Cobalt Jewel",
+      "rarity": "UNIQUE",
+      "type": "Jewel",
+      "itemLevel": 85,
+      "quality": null,
+      "implicitLines": {},
+      "explicitLines": [
+        "Minions have 8% increased Area of Effect",
+        "With at least 40 Intelligence in Radius, Raised Spectres have a 50% chance to gain Soul Eater for 20 seconds on Kill"
+      ],
+      "enchantLines": null,
+      "sockets": ""
+    },
+    {
+      "slot": "Jewel 61834",
+      "name": "Elegant Hubris",
+      "baseName": "Timeless Jewel",
+      "rarity": "UNIQUE",
+      "type": "Jewel",
+      "itemLevel": 84,
+      "quality": null,
+      "implicitLines": {},
+      "explicitLines": [
+        "Commissioned 27540 coins to commemorate Caspiro",
+        "Passives in radius are Conquered by the Eternal Empire",
+        "Historic"
+      ],
+      "enchantLines": null,
+      "sockets": ""
+    },
+    {
+      "slot": "Jewel 64583",
+      "name": "Forbidden Flame",
+      "baseName": "Crimson Jewel",
+      "rarity": "UNIQUE",
+      "type": "Jewel",
+      "itemLevel": 86,
+      "quality": null,
+      "implicitLines": {},
+      "explicitLines": [
+        "Allocates Vile Bastion if you have the matching modifier on Forbidden Flesh"
+      ],
+      "enchantLines": null,
+      "sockets": ""
+    },
+    {
+      "slot": "Flask 1",
+      "name": "Bottled Faith",
+      "baseName": "Sulphur Flask",
+      "rarity": "UNIQUE",
+      "type": "Flask",
+      "itemLevel": 88,
+      "quality": 20,
+      "implicitLines": [
+        "Creates Consecrated Ground on Use"
+      ],
+      "explicitLines": [
+        "27% reduced Duration",
+        "Consecrated Ground created by this Flask has Tripled Radius",
+        "Consecrated Ground created during Effect applies 7% increased Damage taken to Enemies",
+        "141% increased Critical Strike Chance against Enemies on Consecrated Ground during Effect"
+      ],
+      "enchantLines": [
+        "Used when Charges reach full"
+      ],
+      "sockets": ""
+    },
+    {
+      "slot": "Flask 2",
+      "name": "Alchemist's Quicksilver Flask of the Rainbow",
+      "baseName": "Quicksilver Flask",
+      "rarity": "MAGIC",
+      "type": "Flask",
+      "itemLevel": 85,
+      "quality": 20,
+      "implicitLines": {},
+      "explicitLines": [
+        "24% reduced Duration",
+        "25% increased effect",
+        "20% additional Elemental Resistances during Effect"
+      ],
+      "enchantLines": [
+        "70% increased effect",
+        "Gains no Charges during Effect"
+      ],
+      "sockets": ""
+    },
+    {
+      "slot": "Flask 3",
+      "name": "Allocated Basalt Flask of the Armadillo",
+      "baseName": "Basalt Flask",
+      "rarity": "MAGIC",
+      "type": "Flask",
+      "itemLevel": 84,
+      "quality": 20,
+      "implicitLines": [
+        "Taunts nearby Enemies on use"
+      ],
+      "explicitLines": [
+        "58% increased Charge Recovery",
+        "25% reduced effect",
+        "60% increased Armour during Effect"
+      ],
+      "enchantLines": [
+        "70% increased effect",
+        "Gains no Charges during Effect"
+      ],
+      "sockets": ""
+    },
+    {
+      "slot": "Flask 4",
+      "name": "Alchemist's Granite Flask of Craft",
+      "baseName": "Granite Flask",
+      "rarity": "MAGIC",
+      "type": "Flask",
+      "itemLevel": 85,
+      "quality": 20,
+      "implicitLines": {},
+      "explicitLines": [
+        "25% reduced Duration",
+        "25% increased effect",
+        "Regenerate 3% of Life per second during Effect"
+      ],
+      "enchantLines": [
+        "70% increased effect",
+        "Gains no Charges during Effect"
+      ],
+      "sockets": ""
+    },
+    {
+      "slot": "Flask 5",
+      "name": "Dabbler's Sapphire Flask of Plume Moss",
+      "baseName": "Sapphire Flask",
+      "rarity": "MAGIC",
+      "type": "Flask",
+      "itemLevel": 83,
+      "quality": 0,
+      "implicitLines": {},
+      "explicitLines": [
+        "30% reduced Duration",
+        "25% increased effect",
+        "50% chance to Avoid being Shocked during Effect"
+      ],
+      "enchantLines": [
+        "70% increased effect",
+        "Gains no Charges during Effect"
+      ],
+      "sockets": ""
+    },
+    {
+      "slot": "Weapon 1",
+      "name": "Foe Goad",
+      "baseName": "Convoking Wand",
+      "rarity": "RARE",
+      "type": "Wand",
+      "itemLevel": 83,
+      "quality": 0,
+      "implicitLines": [
+        "Minions deal 30% increased Damage"
+      ],
+      "explicitLines": [
+        "Minions are Aggressive",
+        "+1 to Level of all Spell Skill Gems",
+        "+1 to Level of all Minion Skill Gems",
+        "Minions deal 68% increased Damage",
+        "Minions have 17% increased Attack and Cast Speed",
+        "Minions have +15% to Critical Strike Multiplier"
+      ],
+      "enchantLines": null,
+      "sockets": "B-B-G"
+    },
+    {
+      "slot": "Amulet",
+      "name": "Eyes of the Greatwolf",
+      "baseName": "Greatwolf Talisman",
+      "rarity": "UNIQUE",
+      "type": "Amulet",
+      "itemLevel": 83,
+      "quality": null,
+      "implicitLines": [
+        "34% increased Global Defences",
+        "100% of Lightning Damage from Hits taken as Fire Damage"
+      ],
+      "explicitLines": [
+        "Implicit Modifier magnitudes are doubled"
+      ],
+      "enchantLines": [
+        "Allocates Death Attunement"
+      ],
+      "sockets": ""
+    },
+    {
+      "slot": "Helmet",
+      "name": "The Dark Monarch",
+      "baseName": "Lich's Circlet",
+      "rarity": "UNIQUE",
+      "type": "Helmet",
+      "itemLevel": 86,
+      "quality": 20,
+      "implicitLines": [
+        "+2 to Level of Socketed Duration Gems",
+        "0.5% of Fire Damage Leeched as Life"
+      ],
+      "explicitLines": [
+        "+99 to maximum Energy Shield",
+        "+1 to Level of all Minion Skill Gems",
+        "+30% to Chaos Resistance",
+        "50% reduced Light Radius",
+        "Maximum number of Raised Spectres is Doubled",
+        "Cannot have Minions other than Raised Spectres"
+      ],
+      "enchantLines": null,
+      "sockets": "B-W-W-W"
+    },
+    {
+      "slot": "Weapon 2",
+      "name": "Bitterbind Point",
+      "baseName": "Titanium Spirit Shield",
+      "rarity": "UNIQUE",
+      "type": "Shield",
+      "itemLevel": 85,
+      "quality": 0,
+      "implicitLines": {},
+      "explicitLines": [
+        "215% increased Energy Shield",
+        "Raised Spectres have 67% increased maximum Life",
+        "+1 to maximum number of Spectres",
+        "Gain Arcane Surge when you deal a Critical Strike",
+        "Your Raised Spectres also gain Arcane Surge when you do",
+        "66% increased Spell Critical Strike Chance per Raised Spectre"
+      ],
+      "enchantLines": null,
+      "sockets": "W-B-B"
+    },
+    {
+      "slot": "Body Armour",
+      "name": "Doryani's Prototype",
+      "baseName": "Saint's Hauberk",
+      "rarity": "UNIQUE",
+      "type": "Body Armour",
+      "itemLevel": 83,
+      "quality": 20,
+      "implicitLines": [
+        "+1 to Level of Socketed Gems"
+      ],
+      "explicitLines": [
+        "192% increased Armour and Energy Shield",
+        "+88 to maximum Life",
+        "Deal no Non-Lightning Damage",
+        "Armour also applies to Lightning Damage taken from Hits",
+        "Lightning Resistance does not affect Lightning Damage taken",
+        "Nearby Enemies have Lightning Resistance equal to yours"
+      ],
+      "enchantLines": null,
+      "sockets": "G-B-B-R-B-B"
+    },
+    {
+      "slot": "Gloves",
+      "name": "Apocalypse Mitts",
+      "baseName": "Warlock Gloves",
+      "rarity": "RARE",
+      "type": "Gloves",
+      "itemLevel": 86,
+      "quality": 20,
+      "implicitLines": [
+        "+7% chance to Suppress Spell Damage",
+        "Minions deal 22% increased Damage"
+      ],
+      "explicitLines": [
+        "80% increased Energy Shield",
+        "+36 to maximum Energy Shield",
+        "Regenerate 4.2 Life per second",
+        "+47% to Fire Resistance",
+        "Minions deal 30% increased Damage",
+        "+20% to Fire and Cold Resistances"
+      ],
+      "enchantLines": null,
+      "sockets": "B-W-W-W"
+    },
+    {
+      "slot": "Boots",
+      "name": "Glyph Tread",
+      "baseName": "Warlock Boots",
+      "rarity": "RARE",
+      "type": "Boots",
+      "itemLevel": 84,
+      "quality": 26,
+      "implicitLines": {},
+      "explicitLines": [
+        "74% increased Energy Shield",
+        "+2 to Level of all Raise Spectre Gems",
+        "+28% to Fire Resistance",
+        "+41% to Cold Resistance",
+        "27% increased Movement Speed",
+        "10% increased Movement Speed if you haven't been Hit Recently",
+        "+22 to maximum Energy Shield"
+      ],
+      "enchantLines": null,
+      "sockets": "W-W-B-W"
+    },
+    {
+      "slot": "Ring 1",
+      "name": "Apocalypse Coil",
+      "baseName": "Bone Ring",
+      "rarity": "RARE",
+      "type": "Ring",
+      "itemLevel": 83,
+      "quality": null,
+      "implicitLines": [
+        "Minions have +12% to all Elemental Resistances"
+      ],
+      "explicitLines": [
+        "-81 to Intelligence",
+        "Adds 21 to 44 Fire Damage to Attacks",
+        "-175 to maximum Life",
+        "-76% to Lightning Resistance",
+        "Minions deal 70% increased Damage",
+        "Minions have 23% increased Attack and Cast Speed"
+      ],
+      "enchantLines": null,
+      "sockets": ""
+    },
+    {
+      "slot": "Ring 2",
+      "name": "Kalandra's Touch",
+      "baseName": "Ring",
+      "rarity": "UNIQUE",
+      "type": "Ring",
+      "itemLevel": 85,
+      "quality": null,
+      "implicitLines": {},
+      "explicitLines": [
+        "Reflects opposite Ring"
+      ],
+      "enchantLines": null,
+      "sockets": ""
+    },
+    {
+      "slot": "Weapon 1 Swap",
+      "name": "Phoenix Song",
+      "baseName": "Convening Wand",
+      "rarity": "RARE",
+      "type": "Wand",
+      "itemLevel": 64,
+      "quality": 0,
+      "implicitLines": [
+        "Minions deal 20% increased Damage"
+      ],
+      "explicitLines": [
+        "22% increased Lightning Damage",
+        "Adds 15 to 31 Fire Damage to Spells",
+        "Minions have 18% increased Attack and Cast Speed",
+        "Minions have +30% to Critical Strike Multiplier"
+      ],
+      "enchantLines": null,
+      "sockets": "R-G-B"
+    },
+    {
+      "slot": "Weapon 2 Swap",
+      "name": "Convening Wand",
+      "baseName": "Convening Wand",
+      "rarity": "NORMAL",
+      "type": "Wand",
+      "itemLevel": 58,
+      "quality": 0,
+      "implicitLines": [
+        "Minions deal 24% increased Damage"
+      ],
+      "explicitLines": {},
+      "enchantLines": null,
+      "sockets": "B-G-G"
+    },
+    {
+      "slot": "Jewel 7960",
+      "name": "Dragon Vessel",
+      "baseName": "Large Cluster Jewel",
+      "rarity": "RARE",
+      "type": "Jewel",
+      "itemLevel": 85,
+      "quality": null,
+      "implicitLines": {},
+      "explicitLines": [
+        "Added Small Passive Skills also grant: +10 to Maximum Energy Shield",
+        "Added Small Passive Skills also grant: +6% to Fire Resistance",
+        "Added Small Passive Skills also grant: Minions have 3% increased Attack and Cast Speed",
+        "Added Small Passive Skills have 35% increased Effect"
+      ],
+      "enchantLines": [
+        "Adds 12 Passive Skills",
+        "2 Added Passive Skills are Jewel Sockets",
+        "Added Small Passive Skills grant: Minions deal 10% increased Damage"
+      ],
+      "sockets": ""
+    },
+    {
+      "slot": "Jewel 9408",
+      "name": "Foe Desire",
+      "baseName": "Crimson Jewel",
+      "rarity": "RARE",
+      "type": "Jewel",
+      "itemLevel": 73,
+      "quality": null,
+      "implicitLines": [
+        "5% increased Elemental Damage"
+      ],
+      "explicitLines": [
+        "+3% Chance to Block Spell Damage while holding a Shield",
+        "14% increased Armour",
+        "+2% to maximum Cold Resistance",
+        "5% chance to Knock Enemies Back on hit"
+      ],
+      "enchantLines": null,
+      "sockets": ""
+    },
+    {
+      "slot": "Jewel 13170",
+      "name": "Forbidden Flesh",
+      "baseName": "Cobalt Jewel",
+      "rarity": "UNIQUE",
+      "type": "Jewel",
+      "itemLevel": 86,
+      "quality": null,
+      "implicitLines": {},
+      "explicitLines": [
+        "Allocates Vile Bastion if you have the matching modifier on Forbidden Flame"
+      ],
+      "enchantLines": null,
+      "sockets": ""
+    },
+    {
+      "slot": "Jewel 21984",
+      "name": "Kraken Solace",
+      "baseName": "Large Cluster Jewel",
+      "rarity": "RARE",
+      "type": "Jewel",
+      "itemLevel": 84,
+      "quality": null,
+      "implicitLines": {},
+      "explicitLines": [
+        "Added Small Passive Skills have 35% increased Effect",
+        "Added Small Passive Skills also grant: +2% to Cold Resistance",
+        "Added Small Passive Skills also grant: +11 to Maximum Energy Shield",
+        "Added Small Passive Skills also grant: Minions have 3% increased Attack and Cast Speed"
+      ],
+      "enchantLines": [
+        "Adds 12 Passive Skills",
+        "2 Added Passive Skills are Jewel Sockets",
+        "Added Small Passive Skills grant: Minions deal 10% increased Damage"
+      ],
+      "sockets": ""
+    },
+    {
+      "slot": "Jewel 26196",
+      "name": "Melding of the Flesh",
+      "baseName": "Cobalt Jewel",
+      "rarity": "UNIQUE",
+      "type": "Jewel",
+      "itemLevel": 86,
+      "quality": null,
+      "implicitLines": {},
+      "explicitLines": [
+        "-71% to all Elemental Resistances",
+        "-4% to all maximum Elemental Resistances",
+        "Elemental Resistances are capped by your highest Maximum Elemental Resistance instead"
+      ],
+      "enchantLines": null,
+      "sockets": ""
+    },
+    {
+      "slot": "Jewel 29712",
+      "name": "Stormshroud",
+      "baseName": "Viridian Jewel",
+      "rarity": "UNIQUE",
+      "type": "Jewel",
+      "itemLevel": 83,
+      "quality": null,
+      "implicitLines": {},
+      "explicitLines": [
+        "+11% to Lightning Resistance",
+        "Modifiers to Chance to Avoid being Shocked apply to all Elemental Ailments"
+      ],
+      "enchantLines": null,
+      "sockets": ""
+    },
+    {
+      "slot": "Jewel 36634",
+      "name": "Watcher's Eye",
+      "baseName": "Prismatic Jewel",
+      "rarity": "UNIQUE",
+      "type": "Jewel",
+      "itemLevel": 85,
+      "quality": null,
+      "implicitLines": {},
+      "explicitLines": [
+        "6% increased maximum Energy Shield",
+        "6% increased maximum Life",
+        "6% increased maximum Mana",
+        "+908 to Armour while affected by Determination",
+        "+8% Chance to Block Attack Damage while affected by Determination"
+      ],
+      "enchantLines": null,
+      "sockets": ""
+    },
+    {
+      "slot": "Jewel 41263",
+      "name": "Impossible Escape",
+      "baseName": "Viridian Jewel",
+      "rarity": "UNIQUE",
+      "type": "Jewel",
+      "itemLevel": 87,
+      "quality": null,
+      "implicitLines": {},
+      "explicitLines": [
+        "Passive Skills in Radius of Ghost Dance can be Allocated\nwithout being connected to your tree",
+        "Passage"
+      ],
+      "enchantLines": null,
+      "sockets": ""
+    }
+  ],
+  "gemLinks": [
+    {
+      "slot": "Boots",
+      "active": "Sniper's Mark",
+      "gems": [
+        {
+          "name": "Sniper's Mark",
+          "level": 20,
+          "quality": 20
+        },
+        {
+          "name": "Faster Attacks",
+          "level": 20,
+          "quality": 15
+        },
+        {
+          "name": "Flame Dash",
+          "level": 20,
+          "quality": 20
+        },
+        {
+          "name": "Tempest Shield",
+          "level": 20,
+          "quality": 0
+        }
+      ]
+    },
+    {
+      "slot": "Weapon 1",
+      "active": "Bone Offering",
+      "gems": [
+        {
+          "name": "Bone Offering",
+          "level": 20,
+          "quality": 20
+        },
+        {
+          "name": "Faster Casting",
+          "level": 20,
+          "quality": 20
+        },
+        {
+          "name": "Desecrate",
+          "level": 20,
+          "quality": 20
+        }
+      ]
+    },
+    {
+      "slot": "Weapon 1 Swap",
+      "active": "Wrath",
+      "gems": [
+        {
+          "name": "Wrath",
+          "level": 20,
+          "quality": 0
+        }
+      ]
+    },
+    {
+      "slot": "Weapon 2 Swap",
+      "active": "Conductivity",
+      "gems": [
+        {
+          "name": "Conductivity",
+          "level": 20,
+          "quality": 0
+        },
+        {
+          "name": "Returning Projectiles",
+          "level": 20,
+          "quality": 0
+        },
+        {
+          "name": "Pierce",
+          "level": 20,
+          "quality": 0
+        }
+      ]
+    },
+    {
+      "slot": "Helmet",
+      "active": "Automation",
+      "gems": [
+        {
+          "name": "Automation",
+          "level": 20,
+          "quality": 20
+        },
+        {
+          "name": "More Duration",
+          "level": 21,
+          "quality": 0
+        },
+        {
+          "name": "Molten Shell",
+          "level": 21,
+          "quality": 20
+        },
+        {
+          "name": "Convocation",
+          "level": 1,
+          "quality": 20
+        }
+      ]
+    },
+    {
+      "slot": "Gloves",
+      "active": "Vaal Impurity of Ice",
+      "gems": [
+        {
+          "name": "Vaal Impurity of Ice",
+          "level": 20,
+          "quality": 21
+        },
+        {
+          "name": "Awakened Enlighten",
+          "level": 4,
+          "quality": 23
+        },
+        {
+          "name": "Discipline",
+          "level": 20,
+          "quality": 0
+        },
+        {
+          "name": "Determination",
+          "level": 21,
+          "quality": 23
+        }
+      ]
+    },
+    {
+      "slot": "Body Armour",
+      "active": "Raise Spectre",
+      "gems": [
+        {
+          "name": "Raise Spectre",
+          "level": 20,
+          "quality": 0
+        },
+        {
+          "name": "Pierce",
+          "level": 20,
+          "quality": 20
+        },
+        {
+          "name": "Greater Spell Echo",
+          "level": 4,
+          "quality": 14
+        },
+        {
+          "name": "Controlled Destruction",
+          "level": 20,
+          "quality": 20
+        },
+        {
+          "name": "Empower",
+          "level": 4,
+          "quality": 20
+        },
+        {
+          "name": "Minion Damage",
+          "level": 20,
+          "quality": 7
+        }
+      ]
+    },
+    {
+      "slot": "Weapon 2",
+      "active": "Raise Spectre",
+      "gems": [
+        {
+          "name": "Raise Spectre",
+          "level": 20,
+          "quality": 20
+        },
+        {
+          "name": "Congregation",
+          "level": 4,
+          "quality": 0
+        },
+        {
+          "name": "Elemental Army",
+          "level": 20,
+          "quality": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,582 @@
+.poe-wiki-scope {
+  --stylized-font: Fontin,Verdana,Arial,Helvetica,sans-serif;
+  --stylized-smallcaps-font: FontinSmallCaps,Verdana,Arial,Helvetica,sans-serif;
+}
+
+.poe-wiki-scope {
+  --poe-color-default: rgb(127,127,127);
+  --poe-color-valuedefault: rgb(255,255,255);
+  --poe-color-fire: rgb(150,0,0);
+  --poe-color-cold: rgb(54,100,146);
+  --poe-color-lightning: rgb(255,215,0);
+  --poe-color-chaos: rgb(208,32,144);
+  --poe-color-augmented: rgb(136,136,255);
+  --poe-color-crafted: rgb(184,218,242);
+  --poe-color-fractured: rgb(162,145,98);
+  --poe-color-enchanted: rgb(184,218,242);
+  --poe-color-hellscaped: rgb(255,110,37);
+  --poe-color-brequelmutated: rgb(205,34,133);
+  --poe-color-allocatedcruciblemod: rgb(255,115,57);
+  --poe-color-unmet: rgb(210,0,0);
+  --poe-color-uniqueitem: rgb(175,96,37);
+  --poe-color-unique: rgb(175,96,37);
+  --poe-color-rareitem: rgb(255,255,119);
+  --poe-color-rare: rgb(255,255,119);
+  --poe-color-magicitem: rgb(136,136,255);
+  --poe-color-magic: rgb(136,136,255);
+  --poe-color-whiteitem: rgb(200,200,200);
+  --poe-color-normal: rgb(200,200,200);
+  --poe-color-gemitem: rgb(27,162,155);
+  --poe-color-gem: rgb(27,162,155);
+  --poe-color-currencyitem: rgb(170,158,130);
+  --poe-color-currency: rgb(170,158,130);
+  --poe-color-questitem: rgb(74,230,58);
+  --poe-color-quest: rgb(74,230,58);
+  --poe-color-nemesismod: rgb(255,200,0);
+  --poe-color-nemesismodoutline: rgb(219,34,0);
+  --poe-color-talismanmod: rgb(141,241,79);
+  --poe-color-talismanmodoutline: rgb(0,0,0);
+  --poe-color-title: rgb(231,180,120);
+  --poe-color-corrupted: rgb(210,0,0);
+  --poe-color-favour: rgb(170,158,130);
+  --poe-color-supporterpacknewitem: rgb(180,96,0);
+  --poe-color-supporterpackitem: rgb(163,141,109);
+  --poe-color-supporterpackincludes: rgb(242,162,47);
+  --poe-color-bloodlinemod: rgb(210,0,220);
+  --poe-color-bloodlinemodoutline: rgb(58,0,125);
+  --poe-color-tormentmod: rgb(50,230,100);
+  --poe-color-tormentmodoutline: rgb(0,78,117);
+  --poe-color-canttradeormodify: rgb(210,0,0);
+  --poe-color-lockedtoaccount: rgb(136,136,255);
+  --poe-color-divination: rgb(14,186,255);
+  --poe-color-prophecy: rgb(181,75,255);
+  --poe-color-essencemod: rgb(164,210,255);
+  --poe-color-essencemodoutline: rgb(0,41,82);
+  --poe-color-premiumchat: rgb(253,242,126);
+  --poe-color-premiumchatoutline: rgb(209,46,46);
+  --poe-color-uniquefoil: rgb(130,173,106);
+  --poe-color-legacy: rgb(212,145,63);
+  --poe-color-bestiarymod: rgb(255,255,255);
+  --poe-color-bestiarymodoutline: rgb(219,34,0);
+  --poe-color-blightmod: rgb(255,255,255);
+  --poe-color-blightmodoutline: rgb(215,0,0);
+  --poe-color-afflictionmod: rgb(22,25,28);
+  --poe-color-afflictionmodoutline: rgb(151,164,181);
+  --poe-color-necropolisupside: rgb(255,204,27);
+  --poe-color-necropolisdownside: rgb(175,181,203);
+  --poe-color-necropolisoutline: rgb(0,0,0);
+  --poe-color-necropoliscraftbook: rgb(33,32,31);
+  --poe-color-stackitemlevel: rgb(255,255,255);
+  --poe-color-harvestprimary: rgb(100,111,73);
+  --poe-color-harvestsecondary: rgb(83,130,161);
+  --poe-color-craftingcaster: rgb(179,248,254);
+  --poe-color-craftingphysical: rgb(199,157,147);
+  --poe-color-craftingfire: rgb(255,154,119);
+  --poe-color-craftingcold: rgb(147,216,255);
+  --poe-color-craftinglightning: rgb(248,203,118);
+  --poe-color-craftingchaos: rgb(216,167,211);
+  --poe-color-craftingspeed: rgb(207,238,165);
+  --poe-color-craftingcrit: rgb(178,167,214);
+  --poe-color-craftingred: rgb(200,103,110);
+  --poe-color-craftingblue: rgb(162,207,251);
+  --poe-color-craftinggreen: rgb(134,189,163);
+  --poe-color-craftinglife: rgb(201,110,110);
+  --poe-color-craftingdefences: rgb(168,143,103);
+  --poe-color-craftingattack: rgb(218,129,77);
+  --poe-color-heist: rgb(25,30,25);
+  --poe-color-heiststolenitem: rgb(210,0,0);
+  --poe-color-atlasmaven: rgb(182,12,169);
+  --poe-color-ultimatumnumber: rgb(254,92,81);
+  --poe-color-incursionunreachable: rgb(90,90,90);
+  --poe-color-lockedinplaceitem: rgb(127,127,127);
+  --poe-color-craftaffectremove: rgb(254,153,0);
+  --poe-color-craftaffectwarning: rgb(235,200,80);
+  --poe-color-craftaffectreroll: rgb(254,153,0);
+  --poe-color-craftaffectpropertyremove: rgb(254,51,0);
+  --poe-color-skillpopuptitle: rgb(249,230,202);
+  --poe-color-disabledstats: rgb(150,150,167);
+  --poe-color-skillextrainfo: rgb(255,192,119);
+  --poe-color-fakeitemcount: rgb(200,200,200);
+  --poe-color-atlasunlocktext: rgb(175,108,25);
+  --poe-color-atlasskillstitle: rgb(110,132,149);
+  --poe-color-archnemesisitem: rgb(170,158,130);
+  --poe-color-mavenfightpopuptitle: rgb(0,143,206);
+  --poe-color-mavenfightpopupglow: rgb(30,30,94);
+  --poe-color-sentinelsnapshotwarning: rgb(200,103,110);
+  --poe-color-lakeofkalandrareachable: rgb(136,136,255);
+  --poe-color-lakeofkalandraunreachable: rgb(90,90,90);
+  --poe-color-harvestmonstertier1: rgb(127,127,127);
+  --poe-color-harvestmonstertier2: rgb(200,200,200);
+  --poe-color-harvestmonstertier3: rgb(184,218,242);
+  --poe-color-harvestmonstertier4: rgb(175,96,37);
+  --poe-color-sanctumboon: rgb(181,168,144);
+  --poe-color-sanctumcurse: rgb(160,109,202);
+  --poe-color-sanctumpact: rgb(171,139,173);
+  --poe-color-ancestralprimary: rgb(212,208,204);
+  --poe-color-ancestralsecondary: rgb(158,151,143);
+  --poe-color-ancestralblue: rgb(134,178,195);
+  --poe-color-azmerigreen: rgb(179,192,129);
+  --poe-color-descendancygrey: rgb(188,204,187);
+  --poe-color-kalguurblack: rgb(25,30,25);
+  --poe-color-kalguurgrey: rgb(65,65,65);
+  --poe-color-kalguurlightgrey: rgb(216,200,185);
+  --poe-color-kalguurred: rgb(99,0,0);
+  --poe-color-goldname: rgb(170,161,132);
+  --poe-color-goldvalue: rgb(188,162,83);
+  --poe-color-goldchanged: rgb(220,200,139);
+  --poe-color-brequelwarning: rgb(255,55,55);
+}
+
+.poe-wiki-scope .hoverbox { display: inline-block; }
+
+.poe-wiki-scope .hoverbox__display { display: block; visibility: hidden; opacity: 0; position: absolute; padding: 8px; transition: opacity 0.25s; }
+
+.poe-wiki-scope .hoverbox__display.is-visible { visibility: visible; opacity: 1; }
+
+.poe-wiki-scope .hoverbox__activator { display: inline; }
+
+.poe-wiki-scope .hoverbox__icon { vertical-align: -0.125em; }
+
+.poe-wiki-scope .hoverbox-display-container { position: fixed; z-index: 9999; width: 100%; }
+
+.poe-wiki-scope .tc { font-style: normal; }
+
+.poe-wiki-scope em.tc { font-style: normal; }
+
+.poe-wiki-scope .tc a { color: inherit !important; }
+
+.poe-wiki-scope .tc abbr { color: inherit; }
+
+.poe-wiki-scope .tc.-mod { font-family: var(--stylized-smallcaps-font); font-variant-ligatures: none; color: var(--poe-color-augmented); }
+
+.poe-wiki-scope .tc.-default, .poe-wiki-scope .tc.-stat { color: var(--poe-color-default); }
+
+.poe-wiki-scope .tc.-valuedefault, .poe-wiki-scope .tc.-value { color: var(--poe-color-valuedefault); }
+
+.poe-wiki-scope .tc.-fire { color: var(--poe-color-fire); }
+
+.poe-wiki-scope .tc.-cold { color: var(--poe-color-cold); }
+
+.poe-wiki-scope .tc.-lightning { color: var(--poe-color-lightning); }
+
+.poe-wiki-scope .tc.-chaos { color: var(--poe-color-chaos); }
+
+.poe-wiki-scope .tc.-augmented { color: var(--poe-color-augmented); }
+
+.poe-wiki-scope .tc.-crafted, .poe-wiki-scope .tc.-craft { color: var(--poe-color-crafted); }
+
+.poe-wiki-scope .tc.-fractured { color: var(--poe-color-fractured); }
+
+.poe-wiki-scope .tc.-enchanted { color: var(--poe-color-enchanted); }
+
+.poe-wiki-scope .tc.-unmet { color: var(--poe-color-unmet); }
+
+.poe-wiki-scope .tc.-uniqueitem { color: var(--poe-color-uniqueitem); }
+
+.poe-wiki-scope .tc.-unique { color: var(--poe-color-unique); }
+
+.poe-wiki-scope .tc.-rareitem { color: var(--poe-color-rareitem); }
+
+.poe-wiki-scope .tc.-rare { color: var(--poe-color-rare); }
+
+.poe-wiki-scope .tc.-magicitem { color: var(--poe-color-magicitem); }
+
+.poe-wiki-scope .tc.-magic { color: var(--poe-color-magic); }
+
+.poe-wiki-scope .tc.-whiteitem, .poe-wiki-scope .tc.-white { color: var(--poe-color-whiteitem); }
+
+.poe-wiki-scope .tc.-normal { color: var(--poe-color-normal); }
+
+.poe-wiki-scope .tc.-gemitem { color: var(--poe-color-gemitem); }
+
+.poe-wiki-scope .tc.-gem, .poe-wiki-scope .tc.-gemdesc { color: var(--poe-color-gem); }
+
+.poe-wiki-scope .tc.-currencyitem { color: var(--poe-color-currencyitem); }
+
+.poe-wiki-scope .tc.-currency, .poe-wiki-scope .tc.-cosmetic { color: var(--poe-color-currency); }
+
+.poe-wiki-scope .tc.-questitem { color: var(--poe-color-questitem); }
+
+.poe-wiki-scope .tc.-quest { color: var(--poe-color-quest); }
+
+.poe-wiki-scope .tc.-nemesismod, .poe-wiki-scope .tc.-nemesis { font-weight: bold; color: var(--poe-color-nemesismod); text-shadow: -1px -1px 0 var(--poe-color-nemesismodoutline),1px -1px 0 var(--poe-color-nemesismodoutline),-1px 1px 0 var(--poe-color-nemesismodoutline),1px 1px 0 var(--poe-color-nemesismodoutline); }
+
+.poe-wiki-scope .tc.-talismanmod { font-weight: bold; color: var(--poe-color-talismanmod); text-shadow: -1px -1px 0 var(--poe-color-talismanmodoutline),1px -1px 0 var(--poe-color-talismanmodoutline),-1px 1px 0 var(--poe-color-talismanmodoutline),1px 1px 0 var(--poe-color-talismanmodoutline); }
+
+.poe-wiki-scope .tc.-title { color: var(--poe-color-title); }
+
+.poe-wiki-scope .tc.-corrupted { color: var(--poe-color-corrupted); }
+
+.poe-wiki-scope .tc.-favour { color: var(--poe-color-favour); }
+
+.poe-wiki-scope .tc.-supporterpacknewitem { color: var(--poe-color-supporterpacknewitem); }
+
+.poe-wiki-scope .tc.-supporterpackitem { color: var(--poe-color-supporterpackitem); }
+
+.poe-wiki-scope .tc.-bloodlinemod, .poe-wiki-scope .tc.-bloodline { font-weight: bold; color: var(--poe-color-bloodlinemod); text-shadow: -1px -1px 0 var(--poe-color-bloodlinemodoutline),1px -1px 0 var(--poe-color-bloodlinemodoutline),-1px 1px 0 var(--poe-color-bloodlinemodoutline),1px 1px 0 var(--poe-color-bloodlinemodoutline); }
+
+.poe-wiki-scope .tc.-tormentmod, .poe-wiki-scope .tc.-torment { font-weight: bold; color: var(--poe-color-tormentmod); text-shadow: -1px -1px 0 var(--poe-color-tormentmodoutline),1px -1px 0 var(--poe-color-tormentmodoutline),-1px 1px 0 var(--poe-color-tormentmodoutline),1px 1px 0 var(--poe-color-tormentmodoutline); }
+
+.poe-wiki-scope .tc.-canttradeormodify { color: var(--poe-color-canttradeormodify); }
+
+.poe-wiki-scope .tc.-lockedtoaccount { color: var(--poe-color-lockedtoaccount); }
+
+.poe-wiki-scope .tc.-divination, .poe-wiki-scope .tc.-card { color: var(--poe-color-divination); }
+
+.poe-wiki-scope .tc.-prophecy { color: var(--poe-color-prophecy); }
+
+.poe-wiki-scope .tc.-essencemod, .poe-wiki-scope .tc.-essence { font-weight: bold; color: var(--poe-color-essencemod); text-shadow: -1px -1px 0 var(--poe-color-essencemodoutline),1px -1px 0 var(--poe-color-essencemodoutline),-1px 1px 0 var(--poe-color-essencemodoutline),1px 1px 0 var(--poe-color-essencemodoutline); }
+
+.poe-wiki-scope .tc.-uniquefoil, .poe-wiki-scope .tc.-foil { color: var(--poe-color-uniquefoil); }
+
+.poe-wiki-scope .tc.-legacy { color: var(--poe-color-legacy); }
+
+.poe-wiki-scope .tc.-bestiarymod, .poe-wiki-scope .tc.-bestiary { font-weight: bold; color: var(--poe-color-bestiarymod); text-shadow: -1px -1px 0 var(--poe-color-bestiarymodoutline),1px -1px 0 var(--poe-color-bestiarymodoutline),-1px 1px 0 var(--poe-color-bestiarymodoutline),1px 1px 0 var(--poe-color-bestiarymodoutline); }
+
+.poe-wiki-scope .tc.-blightmod, .poe-wiki-scope .tc.-blight { font-weight: bold; color: var(--poe-color-blightmod); text-shadow: -1px -1px 0 var(--poe-color-blightmodoutline),1px -1px 0 var(--poe-color-blightmodoutline),-1px 1px 0 var(--poe-color-blightmodoutline),1px 1px 0 var(--poe-color-blightmodoutline); }
+
+.poe-wiki-scope .tc.-afflictionmod, .poe-wiki-scope .tc.-deliriummod, .poe-wiki-scope .tc.-delirium { font-weight: bold; color: var(--poe-color-afflictionmod); text-shadow: -1px -1px 0 var(--poe-color-afflictionmodoutline),1px -1px 0 var(--poe-color-afflictionmodoutline),-1px 1px 0 var(--poe-color-afflictionmodoutline),1px 1px 0 var(--poe-color-afflictionmodoutline); }
+
+.poe-wiki-scope .tc.-stackitemlevel { color: var(--poe-color-stackitemlevel); }
+
+.poe-wiki-scope .tc.-harvestprimary { color: var(--poe-color-harvestprimary); }
+
+.poe-wiki-scope .tc.-harvestsecondary { color: var(--poe-color-harvestsecondary); }
+
+.poe-wiki-scope .tc.-craftingcaster { color: var(--poe-color-craftingcaster); }
+
+.poe-wiki-scope .tc.-craftingphysical { color: var(--poe-color-craftingphysical); }
+
+.poe-wiki-scope .tc.-craftingfire { color: var(--poe-color-craftingfire); }
+
+.poe-wiki-scope .tc.-craftingcold { color: var(--poe-color-craftingcold); }
+
+.poe-wiki-scope .tc.-craftinglightning { color: var(--poe-color-craftinglightning); }
+
+.poe-wiki-scope .tc.-craftingchaos { color: var(--poe-color-craftingchaos); }
+
+.poe-wiki-scope .tc.-craftingspeed { color: var(--poe-color-craftingspeed); }
+
+.poe-wiki-scope .tc.-craftingcrit { color: var(--poe-color-craftingcrit); }
+
+.poe-wiki-scope .tc.-craftingred { color: var(--poe-color-craftingred); }
+
+.poe-wiki-scope .tc.-craftingblue { color: var(--poe-color-craftingblue); }
+
+.poe-wiki-scope .tc.-craftinggreen { color: var(--poe-color-craftinggreen); }
+
+.poe-wiki-scope .tc.-craftinglife { color: var(--poe-color-craftinglife); }
+
+.poe-wiki-scope .tc.-craftingdefences { color: var(--poe-color-craftingdefences); }
+
+.poe-wiki-scope .tc.-craftingattack { color: var(--poe-color-craftingattack); }
+
+.poe-wiki-scope .tc.-help { font-style: italic; color: var(--poe-color-default); }
+
+.poe-wiki-scope .tc.-flavour { font-style: italic; color: var(--poe-color-unique); }
+
+.poe-wiki-scope .tc.-hellscaped, .poe-wiki-scope .tc.-scourge { color: var(--poe-color-hellscaped); }
+
+.poe-wiki-scope .tc.-brequelmutated, .poe-wiki-scope .tc.-foulborn { color: var(--poe-color-brequelmutated); }
+
+.poe-wiki-scope .tc.-primal { color: cyan; }
+
+.poe-wiki-scope .tc.-vivid { color: yellow; }
+
+.poe-wiki-scope .tc.-wild { color: magenta; }
+
+.poe-wiki-scope .tc.-not { text-decoration: line-through; color: var(--poe-color-default); }
+
+.poe-wiki-scope .item-box { margin-bottom: 1em; }
+
+.poe-wiki-scope .item-box { display: inline-block; box-sizing: border-box; border-width: 1px; border-style: solid; padding: 2px; min-width: 220px; max-width: 520px; text-align: center; font-family: var(--stylized-smallcaps-font); font-size: 15px; line-height: 1.265; font-weight: normal; font-style: normal; font-variant-ligatures: none; color: var(--poe-color-default); background-color: rgb(0, 0, 0); }
+
+.poe-wiki-scope .item-box a, .poe-wiki-scope .item-box a:visited, .poe-wiki-scope .item-box a:active { color: unset; }
+
+.poe-wiki-scope .item-box.-normal { border-color: var(--poe-color-normal); }
+
+.poe-wiki-scope .item-box.-magic { border-color: var(--poe-color-magic); }
+
+.poe-wiki-scope .item-box.-rare { border-color: var(--poe-color-rare); }
+
+.poe-wiki-scope .item-box.-unique { border-color: var(--poe-color-unique); }
+
+.poe-wiki-scope .item-box.-currency { border-color: var(--poe-color-currency); }
+
+.poe-wiki-scope .item-box.-gem { border-color: var(--poe-color-gem); }
+
+.poe-wiki-scope .item-box.-quest { border-color: var(--poe-color-quest); }
+
+.poe-wiki-scope .item-box.-prophecy { border-color: var(--poe-color-prophecy); }
+
+.poe-wiki-scope .item-box.-foil { border-color: var(--poe-color-uniquefoil); }
+
+.poe-wiki-scope .item-box.-necropolis { border-color: rgb(52, 58, 64); }
+
+.poe-wiki-scope .item-box > .header { display: block; overflow: hidden; position: relative; text-overflow: ellipsis; white-space: nowrap; font-size: 20px; background-repeat: no-repeat, no-repeat, repeat-x; }
+
+.poe-wiki-scope .item-box > .header > .symbol { content: ""; display: block; position: absolute; top: 0px; background-position: center center; background-repeat: no-repeat; }
+
+.poe-wiki-scope .item-box > .header > .symbol:first-child { left: 0px; }
+
+.poe-wiki-scope .item-box > .header > .symbol:last-child { right: 0px; }
+
+.poe-wiki-scope .item-box > .header > .symbol.-shaper { background-image: url("https://www.poewiki.net/w/images/5/55/Shaper-item-symbol.png"); }
+
+.poe-wiki-scope .item-box > .header > .symbol.-elder { background-image: url("https://www.poewiki.net/w/images/1/1b/Elder-item-symbol.png"); }
+
+.poe-wiki-scope .item-box > .header > .symbol.-crusader { background-image: url("https://www.poewiki.net/w/images/d/d1/Crusader-item-symbol.png"); }
+
+.poe-wiki-scope .item-box > .header > .symbol.-redeemer { background-image: url("https://www.poewiki.net/w/images/9/9c/Redeemer-item-symbol.png"); }
+
+.poe-wiki-scope .item-box > .header > .symbol.-hunter { background-image: url("https://www.poewiki.net/w/images/a/a8/Hunter-item-symbol.png"); }
+
+.poe-wiki-scope .item-box > .header > .symbol.-warlord { background-image: url("https://www.poewiki.net/w/images/f/f1/Warlord-item-symbol.png"); }
+
+.poe-wiki-scope .item-box > .header > .symbol.-veiled { background-image: url("https://www.poewiki.net/w/images/f/fd/Veiled-item-symbol.png"); }
+
+.poe-wiki-scope .item-box > .header > .symbol.-fractured { background-image: url("https://www.poewiki.net/w/images/9/97/Fractured-item-symbol.png"); }
+
+.poe-wiki-scope .item-box > .header > .symbol.-synthesised { background-image: url("https://www.poewiki.net/w/images/4/4c/Synthesised-item-symbol.png"); }
+
+.poe-wiki-scope .item-box > .header > .symbol.-searingexarch { background-image: url("https://www.poewiki.net/w/images/c/c2/Searing-exarch-item-symbol.png"); }
+
+.poe-wiki-scope .item-box > .header > .symbol.-eaterofworlds { background-image: url("https://www.poewiki.net/w/images/a/a2/Eater-of-worlds-item-symbol.png"); }
+
+.poe-wiki-scope .item-box > .header > .symbol.-replica { background-image: url("https://www.poewiki.net/w/images/5/50/Replica-item-symbol.png"); }
+
+.poe-wiki-scope .item-box.-normal > .header { color: var(--poe-color-normal); }
+
+.poe-wiki-scope .item-box.-magic > .header { color: var(--poe-color-magic); }
+
+.poe-wiki-scope .item-box.-rare > .header { color: var(--poe-color-rare); }
+
+.poe-wiki-scope .item-box.-unique > .header { color: var(--poe-color-unique); }
+
+.poe-wiki-scope .item-box.-currency > .header { color: var(--poe-color-currency); }
+
+.poe-wiki-scope .item-box.-gem > .header { color: var(--poe-color-gem); }
+
+.poe-wiki-scope .item-box.-quest > .header { color: var(--poe-color-quest); }
+
+.poe-wiki-scope .item-box.-prophecy > .header { color: var(--poe-color-prophecy); }
+
+.poe-wiki-scope .item-box.-foil > .header { color: var(--poe-color-uniquefoil); }
+
+.poe-wiki-scope .item-box.-necropolis > .header { color: rgb(181, 168, 144); }
+
+.poe-wiki-scope .item-box > .header.-single { background-image: url("/images/poe-ui/header-single.png"), url("/images/poe-ui/header-single.png"), url("/images/poe-ui/header-single.png"); }
+
+.poe-wiki-scope .item-box > .header.-single { padding: 3px 32px; height: 28px; line-height: 25px; }
+
+.poe-wiki-scope .item-box > .header.-single > .symbol { width: 32px; height: 34px; }
+
+.poe-wiki-scope .item-box.-normal > .header.-single { background-position: left 0px, right -68px, center -34px; }
+
+.poe-wiki-scope .item-box.-magic > .header.-single { background-position: left -102px, right -170px, center -136px; }
+
+.poe-wiki-scope .item-box.-currency > .header.-single { background-position: left -204px, right -272px, center -238px; }
+
+.poe-wiki-scope .item-box.-gem > .header.-single { background-position: left -306px, right -374px, center -340px; }
+
+.poe-wiki-scope .item-box.-quest > .header.-single { background-position: left -408px, right -476px, center -442px; }
+
+.poe-wiki-scope .item-box.-prophecy > .header.-single { background-position: left -510px, right -578px, center -544px; }
+
+.poe-wiki-scope .item-box.-necropolis > .header.-single { margin: -5px -14px 0px; padding: 0px 40px; height: 45px; line-height: 42px; background-image: url("https://www.poewiki.net/w/images/a/a0/Item-ui-header-necropolis.png"), url("https://www.poewiki.net/w/images/a/a0/Item-ui-header-necropolis.png"), url("https://www.poewiki.net/w/images/a/a0/Item-ui-header-necropolis.png"); background-position: left 0px, right -90px, center -45px; background-clip: border-box, border-box, content-box; }
+
+.poe-wiki-scope .item-box > .header.-double { background-image: url("/images/poe-ui/header-double.png"), url("/images/poe-ui/header-double.png"), url("/images/poe-ui/header-double.png"); }
+
+.poe-wiki-scope .item-box > .header.-double { padding: 3px 44px; height: 48px; line-height: 23px; }
+
+.poe-wiki-scope .item-box > .header.-double > .symbol { width: 32px; height: 54px; }
+
+.poe-wiki-scope .item-box.-rare > .header.-double { background-position: left 0px, right -108px, center -54px; }
+
+.poe-wiki-scope .item-box.-unique > .header.-double { background-position: left -162px, right -270px, center -216px; }
+
+.poe-wiki-scope .item-stats { display: block; padding: 9px 22px; margin: 0px auto; }
+
+.poe-wiki-scope .item-stats.-nopad { padding: 0px; }
+
+.poe-wiki-scope .item-stats > .group { display: block; margin: 0px auto; }
+
+.poe-wiki-scope .item-stats > .group:nth-last-child(n+2)::after, .poe-wiki-scope .item-stat-separator::before { display: block; margin: 5px auto; width: auto; height: 3px; background-image: url("/images/poe-ui/separators.png"); background-position: center 0px; background-repeat: no-repeat; content: ""; }
+
+.poe-wiki-scope .item-box.-magic > .item-stats > .group::after, .poe-wiki-scope .item-stat-separator.-magic::before { background-position: center -3px; }
+
+.poe-wiki-scope .item-box.-rare > .item-stats > .group::after, .poe-wiki-scope .item-stat-separator.-rare::before { background-position: center -6px; }
+
+.poe-wiki-scope .item-box.-unique > .item-stats > .group::after, .poe-wiki-scope .item-stat-separator.-unique::before { background-position: center -9px; }
+
+.poe-wiki-scope .item-box.-currency > .item-stats > .group::after, .poe-wiki-scope .item-stat-separator.-currency::before, .poe-wiki-scope .item-box.-divicard > .item-stats > .group::after, .poe-wiki-scope .item-stat-separator.-divicard::before { background-position: center -12px; }
+
+.poe-wiki-scope .item-box.-gem > .item-stats > .group::after, .poe-wiki-scope .item-stat-separator.-gem::before { background-position: center -15px; }
+
+.poe-wiki-scope .item-box.-quest > .item-stats > .group::after, .poe-wiki-scope .item-stat-separator.-quest::before { background-position: center -18px; }
+
+.poe-wiki-scope .item-box.-prophecy > .item-stats > .group::after, .poe-wiki-scope .item-stat-separator.-prophecy::before { background-position: center -21px; }
+
+.poe-wiki-scope .item-box.-foil > .item-stats > .group::after, .poe-wiki-scope .item-stat-separator.-foil::before { background-position: center -24px; }
+
+.poe-wiki-scope .item-box.-necropolis > .item-stats > .group::after, .poe-wiki-scope .item-stat-separator.-necropolis::before { height: 5px; background-image: url("https://www.poewiki.net/w/images/a/af/Item-ui-separator-necropolis.png"); }
+
+/* Skill gem item-box có 2 image siblings: <span.mw-default-size> (full art) và
+   <span.images> (inventory icon). Render inline-block để 2 icon nằm cùng 1 dòng
+   và align center (parent .item-box đã có text-align:center). */
+.poe-wiki-scope .item-box { text-align: center; }
+.poe-wiki-scope .item-box > .mw-default-size,
+.poe-wiki-scope .item-box > .images {
+  display: inline-block;
+  max-width: calc(100% - 24px);
+  padding: 7px 6px;
+  vertical-align: middle;
+}
+.poe-wiki-scope .item-box > .mw-default-size img,
+.poe-wiki-scope .item-box > .images img {
+  display: block;
+  max-width: min(220px, 100%);
+  max-height: 160px;
+  height: auto;
+  object-fit: contain;
+}
+
+.poe-wiki-scope .item-box.-divicard { border-color: var(--poe-color-divination); }
+
+.poe-wiki-scope .item-box.-divicard:first-child { border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; padding: 0px; background: none; }
+
+.poe-wiki-scope .divicard-wrapper {
+  display: block;
+  position: relative;
+  container-type: inline-size;
+  width: min(440px, calc(100vw - 24px));
+  aspect-ratio: 440 / 668;
+  overflow: hidden;
+  font-family: var(--stylized-smallcaps-font);
+  text-align: center;
+}
+
+.poe-wiki-scope .divicard-background,
+.poe-wiki-scope .divicard-art,
+.poe-wiki-scope .divicard-artlink {
+  display: block;
+  position: absolute;
+  top: 8.383%;
+  left: 5.909%;
+  width: 88.636%;
+  height: 41.916%;
+  overflow: hidden;
+}
+
+.poe-wiki-scope .divicard-background { background-color: #161618; }
+
+.poe-wiki-scope .divicard-background video {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.poe-wiki-scope .divicard-art a { display: none; }
+
+.poe-wiki-scope .divicard-art img {
+  width: 100%;
+  height: 100%;
+}
+
+.poe-wiki-scope .divicard-artlink a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.poe-wiki-scope .divicard-artlink img {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.poe-wiki-scope .divicard-frame {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://www.poewiki.net/w/images/e/ec/Divination_card_frame.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.poe-wiki-scope .divicard-header {
+  display: block;
+  position: absolute;
+  top: 2.096%;
+  left: 0;
+  width: 100%;
+  font-size: clamp(14px, 4.545cqw, 20px);
+  line-height: 6.587cqw;
+  color: #030301;
+}
+
+.poe-wiki-scope .divicard-header a,
+.poe-wiki-scope .divicard-header .selflink {
+  font-weight: normal;
+}
+
+.poe-wiki-scope .divicard-stack {
+  display: block;
+  position: absolute;
+  top: 46.257%;
+  left: 9.545%;
+  width: 15.909%;
+  font-size: clamp(12px, 3.636cqw, 16px);
+  line-height: 5.688cqw;
+  color: #fff;
+}
+
+.poe-wiki-scope .divicard-face {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 50%;
+  left: 7.955%;
+  width: 85%;
+  height: 45.21%;
+}
+
+.poe-wiki-scope .divicard-face::after {
+  display: block;
+  order: 1;
+  margin: 3px auto;
+  width: 68.449%;
+  height: 3px;
+  background: url("https://www.poewiki.net/w/images/a/a5/Divination_card_separator.png") no-repeat center;
+  background-size: 100% 3px;
+  content: "";
+}
+
+.poe-wiki-scope .divicard-reward {
+  display: block;
+  order: 0;
+  font-size: clamp(12px, 3.636cqw, 16px);
+}
+
+.poe-wiki-scope .divicard-flavour {
+  display: block;
+  order: 2;
+  font-size: clamp(12px, 3.636cqw, 16px);
+  font-style: italic;
+  color: var(--poe-color-unique);
+}
+
+.poe-wiki-scope .divicard-reward img,
+.poe-wiki-scope .divicard-flavour img {
+  display: inline-block;
+  max-width: 1em;
+  max-height: 1em;
+  vertical-align: -0.125em;
+}
+/* Hide wiki hoverboxes inside popover */
+.poe-wiki-scope .hoverbox__display { display: none !important; }
+.poe-wiki-scope .item-box { box-sizing: content-box; }
+.poe-wiki-scope .item-box * { box-sizing: content-box; }

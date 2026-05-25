@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "ai-annotator": {
+      "command": "npx",
+      "args": [
+        "vite-plugin-ai-annotator",
+        "mcp",
+        "-s",
+        "http://127.0.0.1:7318"
+      ]
+    }
+  }
+}

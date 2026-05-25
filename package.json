@@ -1,0 +1,37 @@
+{
+  "name": "poe2-site",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "build:wiki": "bun .claude/skills/nuxt/scripts/build-wiki-links/index.ts",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "install:local": "bun install --config bunfig.local.toml",
+    "install:ci": "bun install --frozen-lockfile --config bunfig.toml",
+    "validate": "vault-keeper validate --root .",
+    "validate:json": "vault-keeper validate --root . --json",
+    "validate:strict": "vault-keeper validate --root . --strict",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@floating-ui/vue": "^1.1.11",
+    "@fontsource/literata": "^5.2.8",
+    "@fontsource/merriweather": "^5.2.11",
+    "@fontsource/space-grotesk": "^5.2.10",
+    "@nuxt/content": "^3.12.0",
+    "@nuxtjs/i18n": "^10.4.0",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "nuxt": "^4.3.1",
+    "rehype-raw": "^7.0.0",
+    "vue": "^3.5.29",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "claude-code-vault-keeper": "github:nguyenvanduocit/claude-code-vault-keeper",
+    "tailwindcss": "^3",
+    "vite-plugin-ai-annotator": "^1.14.13"
+  },
+  "packageManager": "bun@1.3.14"
+}

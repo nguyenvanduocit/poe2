@@ -1,0 +1,3494 @@
+{
+  "game": "poe2",
+  "league_url": "vaal",
+  "league_name": "Fate of the Vaal",
+  "snapshot_version": "0540-20260515-06589",
+  "snapshot_name": "fate-of-the-vaal",
+  "snapshot_type": null,
+  "fetched_at": "2026-05-15T07:01:01Z",
+  "total_characters": 124131,
+  "distributions": {
+    "class": [
+      {
+        "name": "Blood Mage",
+        "count": 21325,
+        "pct": 17.18
+      },
+      {
+        "name": "Oracle",
+        "count": 19842,
+        "pct": 15.98
+      },
+      {
+        "name": "Pathfinder",
+        "count": 15212,
+        "pct": 12.25
+      },
+      {
+        "name": "Shaman",
+        "count": 9768,
+        "pct": 7.87
+      },
+      {
+        "name": "Titan",
+        "count": 7210,
+        "pct": 5.81
+      },
+      {
+        "name": "Invoker",
+        "count": 6391,
+        "pct": 5.15
+      },
+      {
+        "name": "Stormweaver",
+        "count": 6320,
+        "pct": 5.09
+      },
+      {
+        "name": "Disciple of Varashta",
+        "count": 6005,
+        "pct": 4.84
+      },
+      {
+        "name": "Amazon",
+        "count": 5150,
+        "pct": 4.15
+      },
+      {
+        "name": "Ritualist",
+        "count": 5032,
+        "pct": 4.05
+      },
+      {
+        "name": "Witchhunter",
+        "count": 4279,
+        "pct": 3.45
+      },
+      {
+        "name": "Deadeye",
+        "count": 3960,
+        "pct": 3.19
+      },
+      {
+        "name": "Lich",
+        "count": 2918,
+        "pct": 2.35
+      },
+      {
+        "name": "Smith of Kitava",
+        "count": 1945,
+        "pct": 1.57
+      },
+      {
+        "name": "Tactician",
+        "count": 1907,
+        "pct": 1.54
+      },
+      {
+        "name": "Acolyte of Chayula",
+        "count": 1890,
+        "pct": 1.52
+      },
+      {
+        "name": "Warbringer",
+        "count": 1403,
+        "pct": 1.13
+      },
+      {
+        "name": "Abyssal Lich",
+        "count": 1130,
+        "pct": 0.91
+      },
+      {
+        "name": "Monk",
+        "count": 958,
+        "pct": 0.77
+      },
+      {
+        "name": "Chronomancer",
+        "count": 899,
+        "pct": 0.72
+      },
+      {
+        "name": "Gemling Legionnaire",
+        "count": 381,
+        "pct": 0.31
+      },
+      {
+        "name": "Ranger",
+        "count": 50,
+        "pct": 0.04
+      },
+      {
+        "name": "Sorceress",
+        "count": 31,
+        "pct": 0.02
+      },
+      {
+        "name": "Mercenary",
+        "count": 26,
+        "pct": 0.02
+      },
+      {
+        "name": "Warrior",
+        "count": 26,
+        "pct": 0.02
+      },
+      {
+        "name": "Druid",
+        "count": 21,
+        "pct": 0.02
+      },
+      {
+        "name": "Huntress",
+        "count": 19,
+        "pct": 0.02
+      },
+      {
+        "name": "#28",
+        "count": 18,
+        "pct": 0.01
+      },
+      {
+        "name": "Witch",
+        "count": 15,
+        "pct": 0.01
+      }
+    ],
+    "weaponmode": [
+      {
+        "name": "Staff",
+        "count": 18959,
+        "pct": 15.27
+      },
+      {
+        "name": "Bow / Quiver",
+        "count": 17139,
+        "pct": 13.81
+      },
+      {
+        "name": "Wand / Focus",
+        "count": 13360,
+        "pct": 10.76
+      },
+      {
+        "name": "Talisman",
+        "count": 12996,
+        "pct": 10.47
+      },
+      {
+        "name": "Wand / Sceptre",
+        "count": 11687,
+        "pct": 9.42
+      },
+      {
+        "name": "Quarterstaff",
+        "count": 8334,
+        "pct": 6.71
+      },
+      {
+        "name": "Crossbow",
+        "count": 7993,
+        "pct": 6.44
+      },
+      {
+        "name": "Sceptre / Focus",
+        "count": 6666,
+        "pct": 5.37
+      },
+      {
+        "name": "Talisman / Sceptre",
+        "count": 3925,
+        "pct": 3.16
+      },
+      {
+        "name": "Spear / Sceptre",
+        "count": 3572,
+        "pct": 2.88
+      },
+      {
+        "name": "Staff / Focus",
+        "count": 3534,
+        "pct": 2.85
+      },
+      {
+        "name": "Mace / Shield",
+        "count": 2431,
+        "pct": 1.96
+      },
+      {
+        "name": "Sceptre / Shield",
+        "count": 2141,
+        "pct": 1.72
+      },
+      {
+        "name": "Spear",
+        "count": 2098,
+        "pct": 1.69
+      },
+      {
+        "name": "Two Handed Mace / Shield",
+        "count": 1729,
+        "pct": 1.39
+      },
+      {
+        "name": "Spear / Shield",
+        "count": 998,
+        "pct": 0.8
+      },
+      {
+        "name": "Unarmed",
+        "count": 915,
+        "pct": 0.74
+      },
+      {
+        "name": "Spear / Buckler",
+        "count": 698,
+        "pct": 0.56
+      },
+      {
+        "name": "Mace / Sceptre",
+        "count": 692,
+        "pct": 0.56
+      },
+      {
+        "name": "Sceptre",
+        "count": 564,
+        "pct": 0.45
+      },
+      {
+        "name": "Two Handed Mace",
+        "count": 547,
+        "pct": 0.44
+      },
+      {
+        "name": "Mace",
+        "count": 530,
+        "pct": 0.43
+      },
+      {
+        "name": "Two Handed Mace / Sceptre",
+        "count": 461,
+        "pct": 0.37
+      },
+      {
+        "name": "Wand / Buckler",
+        "count": 270,
+        "pct": 0.22
+      },
+      {
+        "name": "Dual Two Handed Mace",
+        "count": 270,
+        "pct": 0.22
+      },
+      {
+        "name": "Wand",
+        "count": 245,
+        "pct": 0.2
+      },
+      {
+        "name": "Sceptre / Buckler",
+        "count": 234,
+        "pct": 0.19
+      },
+      {
+        "name": "Wand / Shield",
+        "count": 218,
+        "pct": 0.18
+      },
+      {
+        "name": "Bow",
+        "count": 216,
+        "pct": 0.17
+      },
+      {
+        "name": "Dual Mace",
+        "count": 208,
+        "pct": 0.17
+      },
+      {
+        "name": "Spear / Focus",
+        "count": 193,
+        "pct": 0.16
+      },
+      {
+        "name": "Two Handed Mace / Focus",
+        "count": 97,
+        "pct": 0.08
+      },
+      {
+        "name": "Unarmed / Shield",
+        "count": 54,
+        "pct": 0.04
+      },
+      {
+        "name": "Unarmed / Quiver",
+        "count": 50,
+        "pct": 0.04
+      },
+      {
+        "name": "Unarmed / Focus",
+        "count": 32,
+        "pct": 0.03
+      },
+      {
+        "name": "Mace / Focus",
+        "count": 23,
+        "pct": 0.02
+      },
+      {
+        "name": "Mace / Buckler",
+        "count": 19,
+        "pct": 0.02
+      },
+      {
+        "name": "Two Handed Mace / Buckler",
+        "count": 12,
+        "pct": 0.01
+      },
+      {
+        "name": "Unarmed / Buckler",
+        "count": 11,
+        "pct": 0.01
+      },
+      {
+        "name": "Two Handed Mace / Mace",
+        "count": 6,
+        "pct": 0.0
+      },
+      {
+        "name": "Mace / Two Handed Mace",
+        "count": 2,
+        "pct": 0.0
+      },
+      {
+        "name": "Unarmed / Two Handed Mace",
+        "count": 1,
+        "pct": 0.0
+      },
+      {
+        "name": "Unarmed / Sceptre",
+        "count": 1,
+        "pct": 0.0
+      }
+    ],
+    "items": [
+      {
+        "name": "Rare Ring",
+        "count": 114099,
+        "pct": 91.92
+      },
+      {
+        "name": "Rare Boots",
+        "count": 113776,
+        "pct": 91.66
+      },
+      {
+        "name": "Rare Jewel",
+        "count": 112847,
+        "pct": 90.91
+      },
+      {
+        "name": "Magic Flask",
+        "count": 109955,
+        "pct": 88.58
+      },
+      {
+        "name": "Rare Amulet",
+        "count": 108380,
+        "pct": 87.31
+      },
+      {
+        "name": "Magic Charm",
+        "count": 75812,
+        "pct": 61.07
+      },
+      {
+        "name": "Rare Gloves",
+        "count": 71439,
+        "pct": 57.55
+      },
+      {
+        "name": "Rare Helmet",
+        "count": 67534,
+        "pct": 54.41
+      },
+      {
+        "name": "Rare Body Armour",
+        "count": 66490,
+        "pct": 53.56
+      },
+      {
+        "name": "Heart of the Well",
+        "count": 61360,
+        "pct": 49.43
+      },
+      {
+        "name": "Headhunter",
+        "count": 59279,
+        "pct": 47.76
+      },
+      {
+        "name": "Nascent Hope",
+        "count": 52996,
+        "pct": 42.69
+      },
+      {
+        "name": "Lavianga's Spirits",
+        "count": 47269,
+        "pct": 38.08
+      },
+      {
+        "name": "Rare Belt",
+        "count": 36423,
+        "pct": 29.34
+      },
+      {
+        "name": "The Fall of the Axe",
+        "count": 33676,
+        "pct": 27.13
+      },
+      {
+        "name": "Rare Staff",
+        "count": 32564,
+        "pct": 26.23
+      },
+      {
+        "name": "The Vertex",
+        "count": 32269,
+        "pct": 26.0
+      },
+      {
+        "name": "From Nothing",
+        "count": 31787,
+        "pct": 25.61
+      },
+      {
+        "name": "Kalandra's Touch",
+        "count": 30825,
+        "pct": 24.83
+      },
+      {
+        "name": "Rare Wand",
+        "count": 26827,
+        "pct": 21.61
+      },
+      {
+        "name": "Beira's Anguish",
+        "count": 26343,
+        "pct": 21.22
+      },
+      {
+        "name": "Rare Focus",
+        "count": 21555,
+        "pct": 17.36
+      },
+      {
+        "name": "Rare Sceptre",
+        "count": 21272,
+        "pct": 17.14
+      },
+      {
+        "name": "Rite of Passage",
+        "count": 20667,
+        "pct": 16.65
+      },
+      {
+        "name": "Rare Talisman",
+        "count": 19474,
+        "pct": 15.69
+      },
+      {
+        "name": "Rare Bow",
+        "count": 17847,
+        "pct": 14.38
+      },
+      {
+        "name": "Magic Jewel",
+        "count": 16523,
+        "pct": 13.31
+      },
+      {
+        "name": "Rare Quiver",
+        "count": 15298,
+        "pct": 12.32
+      },
+      {
+        "name": "For Utopia",
+        "count": 14178,
+        "pct": 11.42
+      },
+      {
+        "name": "Against the Darkness",
+        "count": 13636,
+        "pct": 10.99
+      },
+      {
+        "name": "Olroth's Resolve",
+        "count": 12789,
+        "pct": 10.3
+      },
+      {
+        "name": "Sands of Silk",
+        "count": 12705,
+        "pct": 10.24
+      },
+      {
+        "name": "Hyrri's Ire",
+        "count": 12219,
+        "pct": 9.84
+      },
+      {
+        "name": "Dream Fragments",
+        "count": 11945,
+        "pct": 9.62
+      },
+      {
+        "name": "Thrillsteel",
+        "count": 11819,
+        "pct": 9.52
+      },
+      {
+        "name": "Rare Quarterstaff",
+        "count": 11662,
+        "pct": 9.39
+      },
+      {
+        "name": "Morior Invictus",
+        "count": 11284,
+        "pct": 9.09
+      },
+      {
+        "name": "Megalomaniac",
+        "count": 11051,
+        "pct": 8.9
+      },
+      {
+        "name": "Lightning Coil",
+        "count": 10365,
+        "pct": 8.35
+      },
+      {
+        "name": "Plaguefinger",
+        "count": 10234,
+        "pct": 8.24
+      },
+      {
+        "name": "The Covenant",
+        "count": 9278,
+        "pct": 7.47
+      },
+      {
+        "name": "Normal Vaal Body Part",
+        "count": 8896,
+        "pct": 7.17
+      },
+      {
+        "name": "Atziri's Splendour",
+        "count": 8724,
+        "pct": 7.03
+      },
+      {
+        "name": "The Searing Touch",
+        "count": 8342,
+        "pct": 6.72
+      },
+      {
+        "name": "Normal Flask",
+        "count": 8053,
+        "pct": 6.49
+      },
+      {
+        "name": "The Hammer of Faith",
+        "count": 7839,
+        "pct": 6.32
+      },
+      {
+        "name": "Bones of Ullr",
+        "count": 7050,
+        "pct": 5.68
+      },
+      {
+        "name": "Maligaro's Virtuosity",
+        "count": 6886,
+        "pct": 5.55
+      },
+      {
+        "name": "Powertread",
+        "count": 6594,
+        "pct": 5.31
+      },
+      {
+        "name": "Choir of the Storm",
+        "count": 6295,
+        "pct": 5.07
+      }
+    ],
+    "skills": [
+      {
+        "name": "Spellslinger",
+        "count": 33570,
+        "pct": 27.04
+      },
+      {
+        "name": "Arctic Armour",
+        "count": 31282,
+        "pct": 25.2
+      },
+      {
+        "name": "Herald of Ice",
+        "count": 25217,
+        "pct": 20.31
+      },
+      {
+        "name": "Flame Wall",
+        "count": 23430,
+        "pct": 18.88
+      },
+      {
+        "name": "Frost Wall",
+        "count": 23166,
+        "pct": 18.66
+      },
+      {
+        "name": "Wind Dancer",
+        "count": 22257,
+        "pct": 17.93
+      },
+      {
+        "name": "Electrocuting Arrow",
+        "count": 19359,
+        "pct": 15.6
+      },
+      {
+        "name": "Ice Nova",
+        "count": 19219,
+        "pct": 15.48
+      },
+      {
+        "name": "Soul Offering",
+        "count": 18996,
+        "pct": 15.3
+      },
+      {
+        "name": "Pounce",
+        "count": 16300,
+        "pct": 13.13
+      },
+      {
+        "name": "Vitality I",
+        "count": 14939,
+        "pct": 12.03
+      },
+      {
+        "name": "Herald of Blood",
+        "count": 12942,
+        "pct": 10.43
+      },
+      {
+        "name": "Freezing Shards",
+        "count": 12890,
+        "pct": 10.38
+      },
+      {
+        "name": "Arc",
+        "count": 12588,
+        "pct": 10.14
+      },
+      {
+        "name": "Elemental Weakness",
+        "count": 12519,
+        "pct": 10.09
+      },
+      {
+        "name": "Cast on Critical",
+        "count": 12197,
+        "pct": 9.83
+      },
+      {
+        "name": "Life Remnants",
+        "count": 11868,
+        "pct": 9.56
+      },
+      {
+        "name": "Poisonburst Arrow",
+        "count": 10903,
+        "pct": 8.78
+      },
+      {
+        "name": "Toxic Growth",
+        "count": 10886,
+        "pct": 8.77
+      },
+      {
+        "name": "Comet",
+        "count": 10825,
+        "pct": 8.72
+      },
+      {
+        "name": "Gas Arrow",
+        "count": 10627,
+        "pct": 8.56
+      },
+      {
+        "name": "Rigwald's Ferocity",
+        "count": 10540,
+        "pct": 8.49
+      },
+      {
+        "name": "Zarokh's Refrain",
+        "count": 9792,
+        "pct": 7.89
+      },
+      {
+        "name": "Tornado Shot",
+        "count": 9337,
+        "pct": 7.52
+      },
+      {
+        "name": "Vine Arrow",
+        "count": 9298,
+        "pct": 7.49
+      },
+      {
+        "name": "Magnified Area I",
+        "count": 9207,
+        "pct": 7.42
+      },
+      {
+        "name": "Lunar Blessing",
+        "count": 8405,
+        "pct": 6.77
+      },
+      {
+        "name": "Cross Slash",
+        "count": 7593,
+        "pct": 6.12
+      },
+      {
+        "name": "Bonestorm",
+        "count": 7008,
+        "pct": 5.65
+      },
+      {
+        "name": "Lunar Assault",
+        "count": 6948,
+        "pct": 5.6
+      },
+      {
+        "name": "Whirling Assault",
+        "count": 6936,
+        "pct": 5.59
+      },
+      {
+        "name": "Profane Ritual",
+        "count": 6804,
+        "pct": 5.48
+      },
+      {
+        "name": "Ferocious Roar",
+        "count": 6692,
+        "pct": 5.39
+      },
+      {
+        "name": "Life Leech III",
+        "count": 6506,
+        "pct": 5.24
+      },
+      {
+        "name": "Walking Calamity",
+        "count": 6412,
+        "pct": 5.17
+      },
+      {
+        "name": "Sigil of Power",
+        "count": 6266,
+        "pct": 5.05
+      },
+      {
+        "name": "Hand of Chayula",
+        "count": 6126,
+        "pct": 4.94
+      },
+      {
+        "name": "Armour Demolisher I",
+        "count": 6022,
+        "pct": 4.85
+      },
+      {
+        "name": "Pinpoint Critical",
+        "count": 5875,
+        "pct": 4.73
+      },
+      {
+        "name": "Vulnerability",
+        "count": 5831,
+        "pct": 4.7
+      },
+      {
+        "name": "Maul",
+        "count": 5784,
+        "pct": 4.66
+      },
+      {
+        "name": "Blink",
+        "count": 5661,
+        "pct": 4.56
+      },
+      {
+        "name": "Galvanic Field",
+        "count": 5592,
+        "pct": 4.5
+      },
+      {
+        "name": "Mark for Death",
+        "count": 5387,
+        "pct": 4.34
+      },
+      {
+        "name": "Herald of Thunder",
+        "count": 5375,
+        "pct": 4.33
+      },
+      {
+        "name": "Freezing Mark",
+        "count": 5370,
+        "pct": 4.33
+      },
+      {
+        "name": "Furious Slam",
+        "count": 5199,
+        "pct": 4.19
+      },
+      {
+        "name": "Fulmination",
+        "count": 5079,
+        "pct": 4.09
+      },
+      {
+        "name": "Rampage",
+        "count": 4957,
+        "pct": 3.99
+      },
+      {
+        "name": "Icestorm",
+        "count": 4935,
+        "pct": 3.98
+      }
+    ],
+    "skillmodes": [
+      {
+        "name": "Normal",
+        "count": 123428,
+        "pct": 99.43
+      },
+      {
+        "name": "Triggered",
+        "count": 50145,
+        "pct": 40.4
+      }
+    ],
+    "keypassives": [
+      {
+        "name": "Mind Over Matter",
+        "count": 24955,
+        "pct": 20.1
+      },
+      {
+        "name": "Sanguimancy",
+        "count": 21300,
+        "pct": 17.16
+      },
+      {
+        "name": "Chaos Inoculation",
+        "count": 21077,
+        "pct": 16.98
+      },
+      {
+        "name": "Grasping Wounds",
+        "count": 20602,
+        "pct": 16.6
+      },
+      {
+        "name": "The Unseen Path",
+        "count": 19588,
+        "pct": 15.78
+      },
+      {
+        "name": "The Lesser Harm",
+        "count": 19484,
+        "pct": 15.7
+      },
+      {
+        "name": "Sunder the Flesh",
+        "count": 19408,
+        "pct": 15.64
+      },
+      {
+        "name": "Vitality Siphon",
+        "count": 19277,
+        "pct": 15.53
+      },
+      {
+        "name": "Forced Outcome",
+        "count": 18458,
+        "pct": 14.87
+      },
+      {
+        "name": "Entwined Realities",
+        "count": 18162,
+        "pct": 14.63
+      },
+      {
+        "name": "Eldritch Battery",
+        "count": 17812,
+        "pct": 14.35
+      },
+      {
+        "name": "Crimson Power",
+        "count": 17359,
+        "pct": 13.98
+      },
+      {
+        "name": "Blood Magic",
+        "count": 15317,
+        "pct": 12.34
+      },
+      {
+        "name": "Relentless Pursuit",
+        "count": 14599,
+        "pct": 11.76
+      },
+      {
+        "name": "Path Seeker",
+        "count": 14174,
+        "pct": 11.42
+      },
+      {
+        "name": "Wildsurge Incantation",
+        "count": 13839,
+        "pct": 11.15
+      },
+      {
+        "name": "Running Assault",
+        "count": 12738,
+        "pct": 10.26
+      },
+      {
+        "name": "Elemental Equilibrium",
+        "count": 11790,
+        "pct": 9.5
+      },
+      {
+        "name": "Path of the Sorceress",
+        "count": 11360,
+        "pct": 9.15
+      },
+      {
+        "name": "Overwhelming Toxicity",
+        "count": 11043,
+        "pct": 8.9
+      },
+      {
+        "name": "Whispers of Doom",
+        "count": 8472,
+        "pct": 6.83
+      },
+      {
+        "name": "Reactive Growth",
+        "count": 8236,
+        "pct": 6.63
+      },
+      {
+        "name": "Blackflame Covenant",
+        "count": 8161,
+        "pct": 6.57
+      },
+      {
+        "name": "Colossal Capacity",
+        "count": 6978,
+        "pct": 5.62
+      },
+      {
+        "name": "Hulking Form",
+        "count": 6918,
+        "pct": 5.57
+      },
+      {
+        "name": "Druidic Champion",
+        "count": 6303,
+        "pct": 5.08
+      },
+      {
+        "name": "Furious Wellspring",
+        "count": 6094,
+        "pct": 4.91
+      },
+      {
+        "name": "Eternal Life",
+        "count": 6061,
+        "pct": 4.88
+      },
+      {
+        "name": "I am the Blizzard...",
+        "count": 5957,
+        "pct": 4.8
+      },
+      {
+        "name": "Resonance",
+        "count": 5886,
+        "pct": 4.74
+      },
+      {
+        "name": "Baryanic Leylines",
+        "count": 5768,
+        "pct": 4.65
+      },
+      {
+        "name": "Barya of Navira",
+        "count": 5606,
+        "pct": 4.52
+      },
+      {
+        "name": "Scarred Faith",
+        "count": 5462,
+        "pct": 4.4
+      },
+      {
+        "name": "Instruments of Power",
+        "count": 5068,
+        "pct": 4.08
+      },
+      {
+        "name": "Unfurled Finger",
+        "count": 5013,
+        "pct": 4.04
+      },
+      {
+        "name": "Mystic Attunement",
+        "count": 4940,
+        "pct": 3.98
+      },
+      {
+        "name": "Critical Strike",
+        "count": 4892,
+        "pct": 3.94
+      },
+      {
+        "name": "Wisdom of the Maji",
+        "count": 4861,
+        "pct": 3.92
+      },
+      {
+        "name": "Lord of the Wilds",
+        "count": 4692,
+        "pct": 3.78
+      },
+      {
+        "name": "Predatory Instinct",
+        "count": 4661,
+        "pct": 3.75
+      },
+      {
+        "name": "Conduit",
+        "count": 4420,
+        "pct": 3.56
+      },
+      {
+        "name": "Mysterious Lineage",
+        "count": 4385,
+        "pct": 3.53
+      },
+      {
+        "name": "Zealot's Oath",
+        "count": 4254,
+        "pct": 3.43
+      },
+      {
+        "name": "Traveller's Wisdom",
+        "count": 4024,
+        "pct": 3.24
+      },
+      {
+        "name": "Iron Reflexes",
+        "count": 3922,
+        "pct": 3.16
+      },
+      {
+        "name": "Ceremonial Ablution",
+        "count": 3918,
+        "pct": 3.16
+      },
+      {
+        "name": "Storm's Recollection",
+        "count": 3909,
+        "pct": 3.15
+      },
+      {
+        "name": "Black Scythe Training",
+        "count": 3759,
+        "pct": 3.03
+      },
+      {
+        "name": "Navira's Well",
+        "count": 3728,
+        "pct": 3.0
+      },
+      {
+        "name": "Avatar of Evolution",
+        "count": 3672,
+        "pct": 2.96
+      }
+    ],
+    "anointed": [
+      {
+        "name": "Fast Metabolism",
+        "count": 21960,
+        "pct": 17.69
+      },
+      {
+        "name": "Lasting Trauma",
+        "count": 6326,
+        "pct": 5.1
+      },
+      {
+        "name": "Warlord Leader",
+        "count": 4712,
+        "pct": 3.8
+      },
+      {
+        "name": "Overwhelming Strike",
+        "count": 3563,
+        "pct": 2.87
+      },
+      {
+        "name": "Cooked",
+        "count": 3400,
+        "pct": 2.74
+      },
+      {
+        "name": "Subterfuge Mask",
+        "count": 2333,
+        "pct": 1.88
+      },
+      {
+        "name": "Energise",
+        "count": 2277,
+        "pct": 1.83
+      },
+      {
+        "name": "Shredding Contraptions",
+        "count": 2251,
+        "pct": 1.81
+      },
+      {
+        "name": "Barbaric Strength",
+        "count": 2247,
+        "pct": 1.81
+      },
+      {
+        "name": "Ancient Aegis",
+        "count": 2120,
+        "pct": 1.71
+      },
+      {
+        "name": "Acceleration",
+        "count": 2078,
+        "pct": 1.67
+      },
+      {
+        "name": "Patient Barrier",
+        "count": 1760,
+        "pct": 1.42
+      },
+      {
+        "name": "Leeching Toxins",
+        "count": 1334,
+        "pct": 1.07
+      },
+      {
+        "name": "Exploit the Elements",
+        "count": 1275,
+        "pct": 1.03
+      },
+      {
+        "name": "Licking Wounds",
+        "count": 1240,
+        "pct": 1.0
+      },
+      {
+        "name": "Stimulants",
+        "count": 1153,
+        "pct": 0.93
+      },
+      {
+        "name": "Tribal Fury",
+        "count": 1101,
+        "pct": 0.89
+      },
+      {
+        "name": "Vulgar Methods",
+        "count": 1063,
+        "pct": 0.86
+      },
+      {
+        "name": "Distracted Target",
+        "count": 996,
+        "pct": 0.8
+      },
+      {
+        "name": "Lingering Horror",
+        "count": 873,
+        "pct": 0.7
+      },
+      {
+        "name": "Feathered Fletching",
+        "count": 846,
+        "pct": 0.68
+      },
+      {
+        "name": "Final Barrage",
+        "count": 827,
+        "pct": 0.67
+      },
+      {
+        "name": "Multitasking",
+        "count": 797,
+        "pct": 0.64
+      },
+      {
+        "name": "Adrenaline Rush",
+        "count": 770,
+        "pct": 0.62
+      },
+      {
+        "name": "Captivating Companionship",
+        "count": 750,
+        "pct": 0.6
+      },
+      {
+        "name": "Gem Enthusiast",
+        "count": 685,
+        "pct": 0.55
+      },
+      {
+        "name": "Greatest Defence",
+        "count": 666,
+        "pct": 0.54
+      },
+      {
+        "name": "Mental Alacrity",
+        "count": 662,
+        "pct": 0.53
+      },
+      {
+        "name": "Beastial Skin",
+        "count": 620,
+        "pct": 0.5
+      },
+      {
+        "name": "Battle Trance",
+        "count": 617,
+        "pct": 0.5
+      },
+      {
+        "name": "Doomsayer",
+        "count": 571,
+        "pct": 0.46
+      },
+      {
+        "name": "Killer Instinct",
+        "count": 527,
+        "pct": 0.42
+      },
+      {
+        "name": "Electric Blood",
+        "count": 511,
+        "pct": 0.41
+      },
+      {
+        "name": "Efficient Casting",
+        "count": 507,
+        "pct": 0.41
+      },
+      {
+        "name": "Perpetual Freeze",
+        "count": 494,
+        "pct": 0.4
+      },
+      {
+        "name": "Hidden Barb",
+        "count": 487,
+        "pct": 0.39
+      },
+      {
+        "name": "Efficient Inscriptions",
+        "count": 482,
+        "pct": 0.39
+      },
+      {
+        "name": "Heatproof",
+        "count": 478,
+        "pct": 0.39
+      },
+      {
+        "name": "Throatseeker",
+        "count": 477,
+        "pct": 0.38
+      },
+      {
+        "name": "Enveloping Presence",
+        "count": 471,
+        "pct": 0.38
+      },
+      {
+        "name": "Kite Runner",
+        "count": 466,
+        "pct": 0.38
+      },
+      {
+        "name": "Breakage",
+        "count": 459,
+        "pct": 0.37
+      },
+      {
+        "name": "Careful Assassin",
+        "count": 443,
+        "pct": 0.36
+      },
+      {
+        "name": "Cut to the Bone",
+        "count": 415,
+        "pct": 0.33
+      },
+      {
+        "name": "Invocated Efficiency",
+        "count": 402,
+        "pct": 0.32
+      },
+      {
+        "name": "Piercing Shot",
+        "count": 392,
+        "pct": 0.32
+      },
+      {
+        "name": "Lightning Rod",
+        "count": 385,
+        "pct": 0.31
+      },
+      {
+        "name": "Splinters",
+        "count": 372,
+        "pct": 0.3
+      },
+      {
+        "name": "Maiming Strike",
+        "count": 365,
+        "pct": 0.29
+      },
+      {
+        "name": "Mind Eraser",
+        "count": 358,
+        "pct": 0.29
+      }
+    ]
+  },
+  "top_characters": [
+    {
+      "name": "drubringer",
+      "account": "methanman-2640"
+    },
+    {
+      "name": "ResurrectTwiceAgain",
+      "account": "heygyus-0416"
+    },
+    {
+      "name": "xxxTheWizardOfOsu",
+      "account": "Prec0cious-1317"
+    },
+    {
+      "name": "peakAengus",
+      "account": null
+    },
+    {
+      "name": "FOV_CuAniu",
+      "account": "쿠아뉴-1147"
+    },
+    {
+      "name": "三角是只小阿比逼站",
+      "account": "chuckzjj-2689"
+    },
+    {
+      "name": "바알_라벨리아",
+      "account": "alsyddll-6970"
+    },
+    {
+      "name": "TempestLevels",
+      "account": "Tempest-2044"
+    },
+    {
+      "name": "TimmortalFive",
+      "account": "Timmortal-2396"
+    },
+    {
+      "name": "싸먼늑드루",
+      "account": "Chaos_W-2442"
+    },
+    {
+      "name": "Asmo_CarryDeluxe",
+      "account": "AsmodeusPOE-0579"
+    },
+    {
+      "name": "SYDMoreLadderAbuse",
+      "account": "sydtko-1525"
+    },
+    {
+      "name": "CUTEASIANGIRL",
+      "account": "mileycyrus143-6439"
+    },
+    {
+      "name": "sotsunakuPFfov",
+      "account": "BansheesVeil-4479"
+    },
+    {
+      "name": "MASTER_VIET_I",
+      "account": "masterviet-3827"
+    },
+    {
+      "name": "あむよん",
+      "account": "amrita0612-3170"
+    },
+    {
+      "name": "YashaTekhnikVaal",
+      "account": "Cortisol322-4333"
+    },
+    {
+      "name": "블메_다래리",
+      "account": "니우트-6957"
+    },
+    {
+      "name": "看看你的牛子",
+      "account": "Whiteyang123456-2065"
+    },
+    {
+      "name": "長毛種の猫",
+      "account": "samo-4927"
+    },
+    {
+      "name": "CosmoPathfinder_FotV",
+      "account": "CosmoFairly-4143"
+    },
+    {
+      "name": "Kajean",
+      "account": "Kajean-2088"
+    },
+    {
+      "name": "ttv_RsFearless",
+      "account": "RsFearless-1355"
+    },
+    {
+      "name": "Matatan",
+      "account": "Matatan-8827"
+    },
+    {
+      "name": "Ithaax",
+      "account": "Ithax-6772"
+    },
+    {
+      "name": "微醺的小法啊",
+      "account": "daxiong-3966"
+    },
+    {
+      "name": "morlox_iv",
+      "account": "morloxIC-1573"
+    },
+    {
+      "name": "Venomuuhs",
+      "account": "Lohock-1361"
+    },
+    {
+      "name": "madaraloh",
+      "account": "ысвафыамфыав-5377"
+    },
+    {
+      "name": "SkouanePWNZ",
+      "account": "VSL1337Warrior-5660"
+    },
+    {
+      "name": "IronPathFinder",
+      "account": "huangwb-8517"
+    },
+    {
+      "name": "SoaStinkyTemple",
+      "account": "Soanoa-1177"
+    },
+    {
+      "name": "MatJoeDaiki",
+      "account": "JoeDaiki-2729"
+    },
+    {
+      "name": "WhereTempleBuffs",
+      "account": "DongQuong-5114"
+    },
+    {
+      "name": "freavate_ices",
+      "account": "freavate-5770"
+    },
+    {
+      "name": "Tvent",
+      "account": "FlxDda-9538"
+    },
+    {
+      "name": "pebzdruid",
+      "account": "peerbaza-5894"
+    },
+    {
+      "name": "WooPathfinder",
+      "account": null
+    },
+    {
+      "name": "Nippyflips",
+      "account": "Nippyflips-5045"
+    },
+    {
+      "name": "TheMissingTit",
+      "account": "SirfreeforallPoE-5480"
+    },
+    {
+      "name": "Ash_ABOBATUHBASEG",
+      "account": "demeter94-5208"
+    },
+    {
+      "name": "Tika_GuguGaga",
+      "account": "Leelanarong-0302"
+    },
+    {
+      "name": "BringAfflictionBack",
+      "account": "gustavotejo-0628"
+    },
+    {
+      "name": "GodFatherOZZY",
+      "account": "AC_AC-6244"
+    },
+    {
+      "name": "ChillaMaggiTTVfan",
+      "account": "olleyDE-4339"
+    },
+    {
+      "name": "KassaBezDeneg",
+      "account": "Adverlolka-8983"
+    },
+    {
+      "name": "LyAtziriAtziri",
+      "account": "LyraelEyrie-5765"
+    },
+    {
+      "name": "LargeBoobaEnjoyer",
+      "account": "adamantine-3598"
+    },
+    {
+      "name": "Bhongskiiiiiiii",
+      "account": "Bhongskii-1846"
+    },
+    {
+      "name": "Wercfamaz",
+      "account": "Psih225-6389"
+    },
+    {
+      "name": "PlantsAreBoring",
+      "account": "SunsGess-1376"
+    },
+    {
+      "name": "JonathanHolten",
+      "account": "ShahanThai-3893"
+    },
+    {
+      "name": "KainmirTwo",
+      "account": "Grartrok88-7287"
+    },
+    {
+      "name": "THE_DEMON_OF_ATZOATL___",
+      "account": "puckorwin-6941"
+    },
+    {
+      "name": "futanariloverboy",
+      "account": "Baku125-2788"
+    },
+    {
+      "name": "ObosralsyaJidko",
+      "account": "MegaMan223-9192"
+    },
+    {
+      "name": "anhdaucook",
+      "account": "anhdaubep2212-7693"
+    },
+    {
+      "name": "RageOfTheVaal",
+      "account": "RageRushing-5685"
+    },
+    {
+      "name": "UzbekNasralbek",
+      "account": "LowArbalet1-7148"
+    },
+    {
+      "name": "NalralbekVnishete",
+      "account": null
+    },
+    {
+      "name": "HateAbuse",
+      "account": null
+    },
+    {
+      "name": "MidnightFate",
+      "account": "Moonlight666X-7266"
+    },
+    {
+      "name": "favnp",
+      "account": "favnnn-5094"
+    },
+    {
+      "name": "WescoastPoison",
+      "account": "cameltotemm-4570"
+    },
+    {
+      "name": "path_vaall",
+      "account": "hoangpoe2k23-5374"
+    },
+    {
+      "name": "FubgunWait",
+      "account": "fubgun-1755"
+    },
+    {
+      "name": "No_PoE",
+      "account": "lZlobin-5242"
+    },
+    {
+      "name": "YPE",
+      "account": "Phamhannii-0530"
+    },
+    {
+      "name": "SKYRAY_VAAL",
+      "account": "skyrayfox-6806"
+    },
+    {
+      "name": "Sera_SB_Supremacy",
+      "account": "nongfurt-0644"
+    },
+    {
+      "name": "SnipeOrWipe",
+      "account": "deXed12-3293"
+    },
+    {
+      "name": "Vaal_ddungs",
+      "account": "meddung-3840"
+    },
+    {
+      "name": "MimosaThienAnLocXoay",
+      "account": "Huynhthienan365-4014"
+    },
+    {
+      "name": "ritualisthai",
+      "account": "sinhpoe-7522"
+    },
+    {
+      "name": "CHAYNHANHVAILONTSUNAMII",
+      "account": "tsunami2805-0994"
+    },
+    {
+      "name": "zelimhanBezKaCcbl",
+      "account": "lokamana2-8086"
+    },
+    {
+      "name": "Fate_Smile_yo",
+      "account": "월아마운틴-5564"
+    },
+    {
+      "name": "ToTuongQuan",
+      "account": "datshin-7800"
+    },
+    {
+      "name": "nayaaa",
+      "account": "Wanelol-2942"
+    },
+    {
+      "name": "Pofind",
+      "account": "PoroExile-6982"
+    },
+    {
+      "name": "Smitoos",
+      "account": "smite6-3985"
+    },
+    {
+      "name": "穿越化腾",
+      "account": "l767965778-4770"
+    },
+    {
+      "name": "ritualistmot",
+      "account": "myle39-5644"
+    },
+    {
+      "name": "svinopitekus_hru",
+      "account": "kirashiro1-3788"
+    },
+    {
+      "name": "Flagingo",
+      "account": "halotya2-4879"
+    },
+    {
+      "name": "PathToRitual",
+      "account": "Rimalia-1369"
+    },
+    {
+      "name": "meteorbomb",
+      "account": "zxc8326473-9988"
+    },
+    {
+      "name": "MrPainCil",
+      "account": "LightningAndThunder-4923"
+    },
+    {
+      "name": "echpochmakLEHA",
+      "account": "temnayatema-6133"
+    },
+    {
+      "name": "carreervaal",
+      "account": null
+    },
+    {
+      "name": "Fubgooner_one",
+      "account": "jordanchien-0666"
+    },
+    {
+      "name": "Megatron",
+      "account": "CuteDog_-0896"
+    },
+    {
+      "name": "DixInMyAz",
+      "account": "DefaultLogin-2018"
+    },
+    {
+      "name": "Badabimbadabum",
+      "account": "liarsonfiree-6673"
+    },
+    {
+      "name": "Chrysospeir",
+      "account": "Zb02ny-2579"
+    },
+    {
+      "name": "SerpentAmazon",
+      "account": "Serpent804-9275"
+    },
+    {
+      "name": "ASdfghaqwq",
+      "account": "shuba91-7926"
+    },
+    {
+      "name": "瓦爾命途_嘆氣亞馬",
+      "account": "o0931060781-1022"
+    },
+    {
+      "name": "BaitadoPelaAmazonLixo",
+      "account": null
+    }
+  ],
+  "top_lists": {
+    "sample_size": 99,
+    "with_dps_count": 89,
+    "with_ehp_count": 98,
+    "top_overall_dps": [
+      {
+        "name": "Ithaax",
+        "account": "Ithax-6772",
+        "class": "Oracle",
+        "level": 100,
+        "life": 1734,
+        "es": null,
+        "ehp": 19000,
+        "ehp_display": "19k",
+        "dps": 116000000,
+        "dps_display": "116M",
+        "main_skill": "Spellslinger"
+      },
+      {
+        "name": "peakAengus",
+        "account": null,
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 1527,
+        "es": 5712,
+        "ehp": 34000,
+        "ehp_display": "34k",
+        "dps": 27000000,
+        "dps_display": "27M",
+        "main_skill": "Poisonburst Arrow"
+      },
+      {
+        "name": "KainmirTwo",
+        "account": "Grartrok88-7287",
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 1454,
+        "es": 394,
+        "ehp": 7000,
+        "ehp_display": "7.0k",
+        "dps": 5700000,
+        "dps_display": "5.7M",
+        "main_skill": "Poisonburst Arrow"
+      },
+      {
+        "name": "meteorbomb",
+        "account": "zxc8326473-9988",
+        "class": "Blood Mage",
+        "level": 100,
+        "life": 3012,
+        "es": null,
+        "ehp": 24000,
+        "ehp_display": "24k",
+        "dps": 3200000,
+        "dps_display": "3.2M",
+        "main_skill": "Spellslinger"
+      },
+      {
+        "name": "BaitadoPelaAmazonLixo",
+        "account": null,
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 1629,
+        "es": 1524,
+        "ehp": 15000,
+        "ehp_display": "15k",
+        "dps": 2700000,
+        "dps_display": "2.7M",
+        "main_skill": "Poisonburst Arrow"
+      },
+      {
+        "name": "瓦爾命途_嘆氣亞馬",
+        "account": "o0931060781-1022",
+        "class": "Amazon",
+        "level": 100,
+        "life": 1,
+        "es": 2768,
+        "ehp": 7600,
+        "ehp_display": "7.6k",
+        "dps": 2600000,
+        "dps_display": "2.6M",
+        "main_skill": "Chaotic Freeze"
+      },
+      {
+        "name": "SoaStinkyTemple",
+        "account": "Soanoa-1177",
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 1535,
+        "es": 2141,
+        "ehp": 19000,
+        "ehp_display": "19k",
+        "dps": 2500000,
+        "dps_display": "2.5M",
+        "main_skill": "Poisonburst Arrow"
+      },
+      {
+        "name": "DixInMyAz",
+        "account": "DefaultLogin-2018",
+        "class": "Disciple of Varashta",
+        "level": 100,
+        "life": 1,
+        "es": 8144,
+        "ehp": 19000,
+        "ehp_display": "19k",
+        "dps": 2400000,
+        "dps_display": "2.4M",
+        "main_skill": "Spellslinger"
+      },
+      {
+        "name": "Venomuuhs",
+        "account": "Lohock-1361",
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 1524,
+        "es": 1325,
+        "ehp": 9300,
+        "ehp_display": "9.3k",
+        "dps": 2200000,
+        "dps_display": "2.2M",
+        "main_skill": "Poisonburst Arrow"
+      },
+      {
+        "name": "Tvent",
+        "account": "FlxDda-9538",
+        "class": "Ritualist",
+        "level": 100,
+        "life": 1594,
+        "es": 1766,
+        "ehp": 11000,
+        "ehp_display": "11k",
+        "dps": 2000000,
+        "dps_display": "2.0M",
+        "main_skill": "Herald of Ash"
+      },
+      {
+        "name": "MidnightFate",
+        "account": "Moonlight666X-7266",
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 1957,
+        "es": 7062,
+        "ehp": 19000,
+        "ehp_display": "19k",
+        "dps": 1900000,
+        "dps_display": "1.9M",
+        "main_skill": "Spellslinger"
+      },
+      {
+        "name": "nayaaa",
+        "account": "Wanelol-2942",
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 1739,
+        "es": 2122,
+        "ehp": 25000,
+        "ehp_display": "25k",
+        "dps": 1800000,
+        "dps_display": "1.8M",
+        "main_skill": "Poisonburst Arrow"
+      },
+      {
+        "name": "PathToRitual",
+        "account": "Rimalia-1369",
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 1542,
+        "es": 1550,
+        "ehp": 14000,
+        "ehp_display": "14k",
+        "dps": 1500000,
+        "dps_display": "1.5M",
+        "main_skill": "Cannibalism II"
+      },
+      {
+        "name": "ChillaMaggiTTVfan",
+        "account": "olleyDE-4339",
+        "class": "Deadeye",
+        "level": 100,
+        "life": 1498,
+        "es": 3139,
+        "ehp": 17000,
+        "ehp_display": "17k",
+        "dps": 1100000,
+        "dps_display": "1.1M",
+        "main_skill": "Herald of Ash"
+      },
+      {
+        "name": "ttv_RsFearless",
+        "account": "RsFearless-1355",
+        "class": "Blood Mage",
+        "level": 100,
+        "life": 3134,
+        "es": 7802,
+        "ehp": 28000,
+        "ehp_display": "28k",
+        "dps": 1000000,
+        "dps_display": "1.0M",
+        "main_skill": "Armour Demolisher I"
+      },
+      {
+        "name": "Nippyflips",
+        "account": "Nippyflips-5045",
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 1687,
+        "es": 2401,
+        "ehp": 24000,
+        "ehp_display": "24k",
+        "dps": 1000000,
+        "dps_display": "1.0M",
+        "main_skill": "Poisonburst Arrow"
+      },
+      {
+        "name": "LargeBoobaEnjoyer",
+        "account": "adamantine-3598",
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 1656,
+        "es": 2920,
+        "ehp": 34000,
+        "ehp_display": "34k",
+        "dps": 954000,
+        "dps_display": "954k",
+        "main_skill": "Poisonburst Arrow"
+      },
+      {
+        "name": "drubringer",
+        "account": "methanman-2640",
+        "class": null,
+        "level": 100,
+        "life": 3627,
+        "es": null,
+        "ehp": 29000,
+        "ehp_display": "29k",
+        "dps": 813000,
+        "dps_display": "813k",
+        "main_skill": "Furious Slam"
+      },
+      {
+        "name": "BringAfflictionBack",
+        "account": "gustavotejo-0628",
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 1555,
+        "es": 2778,
+        "ehp": 26000,
+        "ehp_display": "26k",
+        "dps": 803000,
+        "dps_display": "803k",
+        "main_skill": "Poisonburst Arrow"
+      },
+      {
+        "name": "svinopitekus_hru",
+        "account": "kirashiro1-3788",
+        "class": "Amazon",
+        "level": 100,
+        "life": 1,
+        "es": 4120,
+        "ehp": 10000,
+        "ehp_display": "10.0k",
+        "dps": 779000,
+        "dps_display": "779k",
+        "main_skill": "Mark for Death"
+      },
+      {
+        "name": "YashaTekhnikVaal",
+        "account": "Cortisol322-4333",
+        "class": "Ritualist",
+        "level": 100,
+        "life": 1628,
+        "es": 1108,
+        "ehp": 14000,
+        "ehp_display": "14k",
+        "dps": 656000,
+        "dps_display": "656k",
+        "main_skill": "Projectile Acceleration III"
+      },
+      {
+        "name": "TempestLevels",
+        "account": "Tempest-2044",
+        "class": "Ritualist",
+        "level": 100,
+        "life": 1697,
+        "es": 509,
+        "ehp": 14000,
+        "ehp_display": "14k",
+        "dps": 639000,
+        "dps_display": "639k",
+        "main_skill": "Spellslinger"
+      },
+      {
+        "name": "SnipeOrWipe",
+        "account": "deXed12-3293",
+        "class": "Amazon",
+        "level": 100,
+        "life": 1,
+        "es": 5068,
+        "ehp": 19000,
+        "ehp_display": "19k",
+        "dps": 637000,
+        "dps_display": "637k",
+        "main_skill": "Mark for Death"
+      },
+      {
+        "name": "FubgunWait",
+        "account": "fubgun-1755",
+        "class": "Blood Mage",
+        "level": 100,
+        "life": 2385,
+        "es": 3307,
+        "ehp": 13000,
+        "ehp_display": "13k",
+        "dps": 575000,
+        "dps_display": "575k",
+        "main_skill": "Spellslinger"
+      },
+      {
+        "name": "SKYRAY_VAAL",
+        "account": "skyrayfox-6806",
+        "class": "Blood Mage",
+        "level": 100,
+        "life": 2684,
+        "es": 9461,
+        "ehp": 29000,
+        "ehp_display": "29k",
+        "dps": 555000,
+        "dps_display": "555k",
+        "main_skill": "Spellslinger"
+      }
+    ],
+    "top_overall_ehp": [
+      {
+        "name": "xxxTheWizardOfOsu",
+        "account": "Prec0cious-1317",
+        "class": "Smith of Kitava",
+        "level": 100,
+        "life": 3645,
+        "es": null,
+        "ehp": 86000,
+        "ehp_display": "86k",
+        "dps": 33000,
+        "dps_display": "33k",
+        "main_skill": "Shield Wall"
+      },
+      {
+        "name": "あむよん",
+        "account": "amrita0612-3170",
+        "class": "Amazon",
+        "level": 100,
+        "life": 1890,
+        "es": 2323,
+        "ehp": 50000,
+        "ehp_display": "50k",
+        "dps": 113000,
+        "dps_display": "113k",
+        "main_skill": "Impurity"
+      },
+      {
+        "name": "CUTEASIANGIRL",
+        "account": "mileycyrus143-6439",
+        "class": null,
+        "level": 100,
+        "life": 3912,
+        "es": null,
+        "ehp": 48000,
+        "ehp_display": "48k",
+        "dps": 23000,
+        "dps_display": "23k",
+        "main_skill": "Shield Wall"
+      },
+      {
+        "name": "Matatan",
+        "account": "Matatan-8827",
+        "class": "Shaman",
+        "level": 100,
+        "life": 1607,
+        "es": 4395,
+        "ehp": 42000,
+        "ehp_display": "42k",
+        "dps": 105000,
+        "dps_display": "105k",
+        "main_skill": "Demon Form"
+      },
+      {
+        "name": "peakAengus",
+        "account": null,
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 1527,
+        "es": 5712,
+        "ehp": 34000,
+        "ehp_display": "34k",
+        "dps": 27000000,
+        "dps_display": "27M",
+        "main_skill": "Poisonburst Arrow"
+      },
+      {
+        "name": "LargeBoobaEnjoyer",
+        "account": "adamantine-3598",
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 1656,
+        "es": 2920,
+        "ehp": 34000,
+        "ehp_display": "34k",
+        "dps": 954000,
+        "dps_display": "954k",
+        "main_skill": "Poisonburst Arrow"
+      },
+      {
+        "name": "NalralbekVnishete",
+        "account": null,
+        "class": "Ritualist",
+        "level": 100,
+        "life": 2235,
+        "es": 11781,
+        "ehp": 34000,
+        "ehp_display": "34k",
+        "dps": null,
+        "dps_display": null,
+        "main_skill": null
+      },
+      {
+        "name": "CHAYNHANHVAILONTSUNAMII",
+        "account": "tsunami2805-0994",
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 1563,
+        "es": 3446,
+        "ehp": 33000,
+        "ehp_display": "33k",
+        "dps": 329000,
+        "dps_display": "329k",
+        "main_skill": "Poisonburst Arrow"
+      },
+      {
+        "name": "Badabimbadabum",
+        "account": "liarsonfiree-6673",
+        "class": "Tactician",
+        "level": 100,
+        "life": 3057,
+        "es": 767,
+        "ehp": 33000,
+        "ehp_display": "33k",
+        "dps": null,
+        "dps_display": null,
+        "main_skill": null
+      },
+      {
+        "name": "CosmoPathfinder_FotV",
+        "account": "CosmoFairly-4143",
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 2038,
+        "es": 1605,
+        "ehp": 31000,
+        "ehp_display": "31k",
+        "dps": 204000,
+        "dps_display": "204k",
+        "main_skill": "Poisonburst Arrow"
+      },
+      {
+        "name": "ObosralsyaJidko",
+        "account": "MegaMan223-9192",
+        "class": "Ritualist",
+        "level": 100,
+        "life": 1,
+        "es": 12629,
+        "ehp": 31000,
+        "ehp_display": "31k",
+        "dps": 100,
+        "dps_display": "0.1k",
+        "main_skill": "Falling Thunder"
+      },
+      {
+        "name": "No_PoE",
+        "account": "lZlobin-5242",
+        "class": "Disciple of Varashta",
+        "level": 100,
+        "life": 1,
+        "es": 10221,
+        "ehp": 31000,
+        "ehp_display": "31k",
+        "dps": 219000,
+        "dps_display": "219k",
+        "main_skill": "Icestorm"
+      },
+      {
+        "name": "drubringer",
+        "account": "methanman-2640",
+        "class": null,
+        "level": 100,
+        "life": 3627,
+        "es": null,
+        "ehp": 29000,
+        "ehp_display": "29k",
+        "dps": 813000,
+        "dps_display": "813k",
+        "main_skill": "Furious Slam"
+      },
+      {
+        "name": "SKYRAY_VAAL",
+        "account": "skyrayfox-6806",
+        "class": "Blood Mage",
+        "level": 100,
+        "life": 2684,
+        "es": 9461,
+        "ehp": 29000,
+        "ehp_display": "29k",
+        "dps": 555000,
+        "dps_display": "555k",
+        "main_skill": "Spellslinger"
+      },
+      {
+        "name": "바알_라벨리아",
+        "account": "alsyddll-6970",
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 1484,
+        "es": 3823,
+        "ehp": 28000,
+        "ehp_display": "28k",
+        "dps": 274000,
+        "dps_display": "274k",
+        "main_skill": "Poisonburst Arrow"
+      },
+      {
+        "name": "ttv_RsFearless",
+        "account": "RsFearless-1355",
+        "class": "Blood Mage",
+        "level": 100,
+        "life": 3134,
+        "es": 7802,
+        "ehp": 28000,
+        "ehp_display": "28k",
+        "dps": 1000000,
+        "dps_display": "1.0M",
+        "main_skill": "Armour Demolisher I"
+      },
+      {
+        "name": "Sera_SB_Supremacy",
+        "account": "nongfurt-0644",
+        "class": "Ritualist",
+        "level": 100,
+        "life": 1,
+        "es": 9561,
+        "ehp": 28000,
+        "ehp_display": "28k",
+        "dps": 100,
+        "dps_display": "0.1k",
+        "main_skill": "Ice Nova"
+      },
+      {
+        "name": "carreervaal",
+        "account": null,
+        "class": "Deadeye",
+        "level": 100,
+        "life": 1,
+        "es": 11654,
+        "ehp": 28000,
+        "ehp_display": "28k",
+        "dps": null,
+        "dps_display": null,
+        "main_skill": "Falling Thunder"
+      },
+      {
+        "name": "BringAfflictionBack",
+        "account": "gustavotejo-0628",
+        "class": "Pathfinder",
+        "level": 100,
+        "life": 1555,
+        "es": 2778,
+        "ehp": 26000,
+        "ehp_display": "26k",
+        "dps": 803000,
+        "dps_display": "803k",
+        "main_skill": "Poisonburst Arrow"
+      },
+      {
+        "name": "GodFatherOZZY",
+        "account": "AC_AC-6244",
+        "class": null,
+        "level": 100,
+        "life": 3767,
+        "es": 454,
+        "ehp": 26000,
+        "ehp_display": "26k",
+        "dps": 446000,
+        "dps_display": "446k",
+        "main_skill": "Exploit Weakness"
+      },
+      {
+        "name": "ritualistmot",
+        "account": "myle39-5644",
+        "class": "Ritualist",
+        "level": 100,
+        "life": 1,
+        "es": 10213,
+        "ehp": 26000,
+        "ehp_display": "26k",
+        "dps": 300,
+        "dps_display": "0.3k",
+        "main_skill": "Falling Thunder"
+      },
+      {
+        "name": "Flagingo",
+        "account": "halotya2-4879",
+        "class": "Tactician",
+        "level": 100,
+        "life": 3010,
+        "es": 344,
+        "ehp": 26000,
+        "ehp_display": "26k",
+        "dps": null,
+        "dps_display": null,
+        "main_skill": null
+      },
+      {
+        "name": "싸먼늑드루",
+        "account": "Chaos_W-2442",
+        "class": "Shaman",
+        "level": 100,
+        "life": 2619,
+        "es": 1116,
+        "ehp": 25000,
+        "ehp_display": "25k",
+        "dps": 136000,
+        "dps_display": "136k",
+        "main_skill": "Lunar Blessing"
+      },
+      {
+        "name": "Ash_ABOBATUHBASEG",
+        "account": "demeter94-5208",
+        "class": "Stormweaver",
+        "level": 100,
+        "life": 1,
+        "es": 10215,
+        "ehp": 25000,
+        "ehp_display": "25k",
+        "dps": 98000,
+        "dps_display": "98k",
+        "main_skill": "Spellslinger"
+      },
+      {
+        "name": "LyAtziriAtziri",
+        "account": "LyraelEyrie-5765",
+        "class": "Oracle",
+        "level": 100,
+        "life": 1,
+        "es": 10432,
+        "ehp": 25000,
+        "ehp_display": "25k",
+        "dps": 68000,
+        "dps_display": "68k",
+        "main_skill": "Spellslinger"
+      }
+    ],
+    "by_skill": {
+      "Spellslinger": {
+        "char_count": 20,
+        "top_dps": [
+          {
+            "name": "Ithaax",
+            "account": "Ithax-6772",
+            "class": "Oracle",
+            "level": 100,
+            "life": 1734,
+            "es": null,
+            "ehp": 19000,
+            "ehp_display": "19k",
+            "dps": 116000000,
+            "dps_display": "116M",
+            "main_skill": "Spellslinger"
+          },
+          {
+            "name": "meteorbomb",
+            "account": "zxc8326473-9988",
+            "class": "Blood Mage",
+            "level": 100,
+            "life": 3012,
+            "es": null,
+            "ehp": 24000,
+            "ehp_display": "24k",
+            "dps": 3200000,
+            "dps_display": "3.2M",
+            "main_skill": "Spellslinger"
+          },
+          {
+            "name": "DixInMyAz",
+            "account": "DefaultLogin-2018",
+            "class": "Disciple of Varashta",
+            "level": 100,
+            "life": 1,
+            "es": 8144,
+            "ehp": 19000,
+            "ehp_display": "19k",
+            "dps": 2400000,
+            "dps_display": "2.4M",
+            "main_skill": "Spellslinger"
+          },
+          {
+            "name": "MidnightFate",
+            "account": "Moonlight666X-7266",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1957,
+            "es": 7062,
+            "ehp": 19000,
+            "ehp_display": "19k",
+            "dps": 1900000,
+            "dps_display": "1.9M",
+            "main_skill": "Spellslinger"
+          },
+          {
+            "name": "TempestLevels",
+            "account": "Tempest-2044",
+            "class": "Ritualist",
+            "level": 100,
+            "life": 1697,
+            "es": 509,
+            "ehp": 14000,
+            "ehp_display": "14k",
+            "dps": 639000,
+            "dps_display": "639k",
+            "main_skill": "Spellslinger"
+          }
+        ],
+        "top_ehp": [
+          {
+            "name": "SKYRAY_VAAL",
+            "account": "skyrayfox-6806",
+            "class": "Blood Mage",
+            "level": 100,
+            "life": 2684,
+            "es": 9461,
+            "ehp": 29000,
+            "ehp_display": "29k",
+            "dps": 555000,
+            "dps_display": "555k",
+            "main_skill": "Spellslinger"
+          },
+          {
+            "name": "Ash_ABOBATUHBASEG",
+            "account": "demeter94-5208",
+            "class": "Stormweaver",
+            "level": 100,
+            "life": 1,
+            "es": 10215,
+            "ehp": 25000,
+            "ehp_display": "25k",
+            "dps": 98000,
+            "dps_display": "98k",
+            "main_skill": "Spellslinger"
+          },
+          {
+            "name": "LyAtziriAtziri",
+            "account": "LyraelEyrie-5765",
+            "class": "Oracle",
+            "level": 100,
+            "life": 1,
+            "es": 10432,
+            "ehp": 25000,
+            "ehp_display": "25k",
+            "dps": 68000,
+            "dps_display": "68k",
+            "main_skill": "Spellslinger"
+          },
+          {
+            "name": "meteorbomb",
+            "account": "zxc8326473-9988",
+            "class": "Blood Mage",
+            "level": 100,
+            "life": 3012,
+            "es": null,
+            "ehp": 24000,
+            "ehp_display": "24k",
+            "dps": 3200000,
+            "dps_display": "3.2M",
+            "main_skill": "Spellslinger"
+          },
+          {
+            "name": "sotsunakuPFfov",
+            "account": "BansheesVeil-4479",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1561,
+            "es": 9077,
+            "ehp": 23000,
+            "ehp_display": "23k",
+            "dps": 378000,
+            "dps_display": "378k",
+            "main_skill": "Spellslinger"
+          }
+        ]
+      },
+      "Poisonburst Arrow": {
+        "char_count": 17,
+        "top_dps": [
+          {
+            "name": "peakAengus",
+            "account": null,
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1527,
+            "es": 5712,
+            "ehp": 34000,
+            "ehp_display": "34k",
+            "dps": 27000000,
+            "dps_display": "27M",
+            "main_skill": "Poisonburst Arrow"
+          },
+          {
+            "name": "KainmirTwo",
+            "account": "Grartrok88-7287",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1454,
+            "es": 394,
+            "ehp": 7000,
+            "ehp_display": "7.0k",
+            "dps": 5700000,
+            "dps_display": "5.7M",
+            "main_skill": "Poisonburst Arrow"
+          },
+          {
+            "name": "BaitadoPelaAmazonLixo",
+            "account": null,
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1629,
+            "es": 1524,
+            "ehp": 15000,
+            "ehp_display": "15k",
+            "dps": 2700000,
+            "dps_display": "2.7M",
+            "main_skill": "Poisonburst Arrow"
+          },
+          {
+            "name": "SoaStinkyTemple",
+            "account": "Soanoa-1177",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1535,
+            "es": 2141,
+            "ehp": 19000,
+            "ehp_display": "19k",
+            "dps": 2500000,
+            "dps_display": "2.5M",
+            "main_skill": "Poisonburst Arrow"
+          },
+          {
+            "name": "Venomuuhs",
+            "account": "Lohock-1361",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1524,
+            "es": 1325,
+            "ehp": 9300,
+            "ehp_display": "9.3k",
+            "dps": 2200000,
+            "dps_display": "2.2M",
+            "main_skill": "Poisonburst Arrow"
+          }
+        ],
+        "top_ehp": [
+          {
+            "name": "peakAengus",
+            "account": null,
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1527,
+            "es": 5712,
+            "ehp": 34000,
+            "ehp_display": "34k",
+            "dps": 27000000,
+            "dps_display": "27M",
+            "main_skill": "Poisonburst Arrow"
+          },
+          {
+            "name": "LargeBoobaEnjoyer",
+            "account": "adamantine-3598",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1656,
+            "es": 2920,
+            "ehp": 34000,
+            "ehp_display": "34k",
+            "dps": 954000,
+            "dps_display": "954k",
+            "main_skill": "Poisonburst Arrow"
+          },
+          {
+            "name": "CHAYNHANHVAILONTSUNAMII",
+            "account": "tsunami2805-0994",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1563,
+            "es": 3446,
+            "ehp": 33000,
+            "ehp_display": "33k",
+            "dps": 329000,
+            "dps_display": "329k",
+            "main_skill": "Poisonburst Arrow"
+          },
+          {
+            "name": "CosmoPathfinder_FotV",
+            "account": "CosmoFairly-4143",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 2038,
+            "es": 1605,
+            "ehp": 31000,
+            "ehp_display": "31k",
+            "dps": 204000,
+            "dps_display": "204k",
+            "main_skill": "Poisonburst Arrow"
+          },
+          {
+            "name": "바알_라벨리아",
+            "account": "alsyddll-6970",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1484,
+            "es": 3823,
+            "ehp": 28000,
+            "ehp_display": "28k",
+            "dps": 274000,
+            "dps_display": "274k",
+            "main_skill": "Poisonburst Arrow"
+          }
+        ]
+      },
+      "Mark for Death": {
+        "char_count": 10,
+        "top_dps": [
+          {
+            "name": "svinopitekus_hru",
+            "account": "kirashiro1-3788",
+            "class": "Amazon",
+            "level": 100,
+            "life": 1,
+            "es": 4120,
+            "ehp": 10000,
+            "ehp_display": "10.0k",
+            "dps": 779000,
+            "dps_display": "779k",
+            "main_skill": "Mark for Death"
+          },
+          {
+            "name": "SnipeOrWipe",
+            "account": "deXed12-3293",
+            "class": "Amazon",
+            "level": 100,
+            "life": 1,
+            "es": 5068,
+            "ehp": 19000,
+            "ehp_display": "19k",
+            "dps": 637000,
+            "dps_display": "637k",
+            "main_skill": "Mark for Death"
+          },
+          {
+            "name": "freavate_ices",
+            "account": "freavate-5770",
+            "class": "Ritualist",
+            "level": 100,
+            "life": 1,
+            "es": 4582,
+            "ehp": 10000,
+            "ehp_display": "10k",
+            "dps": 532000,
+            "dps_display": "532k",
+            "main_skill": "Mark for Death"
+          },
+          {
+            "name": "Wercfamaz",
+            "account": "Psih225-6389",
+            "class": "Ritualist",
+            "level": 100,
+            "life": 1898,
+            "es": 672,
+            "ehp": 8400,
+            "ehp_display": "8.4k",
+            "dps": 488000,
+            "dps_display": "488k",
+            "main_skill": "Mark for Death"
+          },
+          {
+            "name": "SkouanePWNZ",
+            "account": "VSL1337Warrior-5660",
+            "class": "Amazon",
+            "level": 100,
+            "life": 1,
+            "es": 7527,
+            "ehp": 18000,
+            "ehp_display": "18k",
+            "dps": 469000,
+            "dps_display": "469k",
+            "main_skill": "Mark for Death"
+          }
+        ],
+        "top_ehp": [
+          {
+            "name": "MASTER_VIET_I",
+            "account": "masterviet-3827",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 2421,
+            "es": 325,
+            "ehp": 19000,
+            "ehp_display": "19k",
+            "dps": 105000,
+            "dps_display": "105k",
+            "main_skill": "Mark for Death"
+          },
+          {
+            "name": "SnipeOrWipe",
+            "account": "deXed12-3293",
+            "class": "Amazon",
+            "level": 100,
+            "life": 1,
+            "es": 5068,
+            "ehp": 19000,
+            "ehp_display": "19k",
+            "dps": 637000,
+            "dps_display": "637k",
+            "main_skill": "Mark for Death"
+          },
+          {
+            "name": "SkouanePWNZ",
+            "account": "VSL1337Warrior-5660",
+            "class": "Amazon",
+            "level": 100,
+            "life": 1,
+            "es": 7527,
+            "ehp": 18000,
+            "ehp_display": "18k",
+            "dps": 469000,
+            "dps_display": "469k",
+            "main_skill": "Mark for Death"
+          },
+          {
+            "name": "HateAbuse",
+            "account": null,
+            "class": "Ritualist",
+            "level": 100,
+            "life": 1,
+            "es": 6166,
+            "ehp": 16000,
+            "ehp_display": "16k",
+            "dps": 330000,
+            "dps_display": "330k",
+            "main_skill": "Mark for Death"
+          },
+          {
+            "name": "MrPainCil",
+            "account": "LightningAndThunder-4923",
+            "class": "Deadeye",
+            "level": 100,
+            "life": 1797,
+            "es": 1411,
+            "ehp": 15000,
+            "ehp_display": "15k",
+            "dps": 450000,
+            "dps_display": "450k",
+            "main_skill": "Mark for Death"
+          }
+        ]
+      },
+      "Falling Thunder": {
+        "char_count": 5,
+        "top_dps": [
+          {
+            "name": "path_vaall",
+            "account": "hoangpoe2k23-5374",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1,
+            "es": 6678,
+            "ehp": 16000,
+            "ehp_display": "16k",
+            "dps": 600,
+            "dps_display": "0.6k",
+            "main_skill": "Falling Thunder"
+          },
+          {
+            "name": "anhdaucook",
+            "account": "anhdaubep2212-7693",
+            "class": "Lich",
+            "level": 100,
+            "life": 1,
+            "es": 9619,
+            "ehp": 24000,
+            "ehp_display": "24k",
+            "dps": 300,
+            "dps_display": "0.3k",
+            "main_skill": "Falling Thunder"
+          },
+          {
+            "name": "ritualistmot",
+            "account": "myle39-5644",
+            "class": "Ritualist",
+            "level": 100,
+            "life": 1,
+            "es": 10213,
+            "ehp": 26000,
+            "ehp_display": "26k",
+            "dps": 300,
+            "dps_display": "0.3k",
+            "main_skill": "Falling Thunder"
+          },
+          {
+            "name": "ObosralsyaJidko",
+            "account": "MegaMan223-9192",
+            "class": "Ritualist",
+            "level": 100,
+            "life": 1,
+            "es": 12629,
+            "ehp": 31000,
+            "ehp_display": "31k",
+            "dps": 100,
+            "dps_display": "0.1k",
+            "main_skill": "Falling Thunder"
+          },
+          {
+            "name": "zelimhanBezKaCcbl",
+            "account": "lokamana2-8086",
+            "class": "Lich",
+            "level": 100,
+            "life": 1,
+            "es": 10699,
+            "ehp": 22000,
+            "ehp_display": "22k",
+            "dps": 100,
+            "dps_display": "0.1k",
+            "main_skill": "Falling Thunder"
+          }
+        ],
+        "top_ehp": [
+          {
+            "name": "ObosralsyaJidko",
+            "account": "MegaMan223-9192",
+            "class": "Ritualist",
+            "level": 100,
+            "life": 1,
+            "es": 12629,
+            "ehp": 31000,
+            "ehp_display": "31k",
+            "dps": 100,
+            "dps_display": "0.1k",
+            "main_skill": "Falling Thunder"
+          },
+          {
+            "name": "ritualistmot",
+            "account": "myle39-5644",
+            "class": "Ritualist",
+            "level": 100,
+            "life": 1,
+            "es": 10213,
+            "ehp": 26000,
+            "ehp_display": "26k",
+            "dps": 300,
+            "dps_display": "0.3k",
+            "main_skill": "Falling Thunder"
+          },
+          {
+            "name": "anhdaucook",
+            "account": "anhdaubep2212-7693",
+            "class": "Lich",
+            "level": 100,
+            "life": 1,
+            "es": 9619,
+            "ehp": 24000,
+            "ehp_display": "24k",
+            "dps": 300,
+            "dps_display": "0.3k",
+            "main_skill": "Falling Thunder"
+          },
+          {
+            "name": "zelimhanBezKaCcbl",
+            "account": "lokamana2-8086",
+            "class": "Lich",
+            "level": 100,
+            "life": 1,
+            "es": 10699,
+            "ehp": 22000,
+            "ehp_display": "22k",
+            "dps": 100,
+            "dps_display": "0.1k",
+            "main_skill": "Falling Thunder"
+          },
+          {
+            "name": "path_vaall",
+            "account": "hoangpoe2k23-5374",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1,
+            "es": 6678,
+            "ehp": 16000,
+            "ehp_display": "16k",
+            "dps": 600,
+            "dps_display": "0.6k",
+            "main_skill": "Falling Thunder"
+          }
+        ]
+      },
+      "Herald of Ash": {
+        "char_count": 4,
+        "top_dps": [
+          {
+            "name": "Tvent",
+            "account": "FlxDda-9538",
+            "class": "Ritualist",
+            "level": 100,
+            "life": 1594,
+            "es": 1766,
+            "ehp": 11000,
+            "ehp_display": "11k",
+            "dps": 2000000,
+            "dps_display": "2.0M",
+            "main_skill": "Herald of Ash"
+          },
+          {
+            "name": "ChillaMaggiTTVfan",
+            "account": "olleyDE-4339",
+            "class": "Deadeye",
+            "level": 100,
+            "life": 1498,
+            "es": 3139,
+            "ehp": 17000,
+            "ehp_display": "17k",
+            "dps": 1100000,
+            "dps_display": "1.1M",
+            "main_skill": "Herald of Ash"
+          },
+          {
+            "name": "Smitoos",
+            "account": "smite6-3985",
+            "class": "Deadeye",
+            "level": 100,
+            "life": 1522,
+            "es": 1144,
+            "ehp": 6000,
+            "ehp_display": "6.0k",
+            "dps": 263000,
+            "dps_display": "263k",
+            "main_skill": "Herald of Ash"
+          },
+          {
+            "name": "SYDMoreLadderAbuse",
+            "account": "sydtko-1525",
+            "class": "Ritualist",
+            "level": 100,
+            "life": 1645,
+            "es": 2488,
+            "ehp": 21000,
+            "ehp_display": "21k",
+            "dps": 258000,
+            "dps_display": "258k",
+            "main_skill": "Herald of Ash"
+          }
+        ],
+        "top_ehp": [
+          {
+            "name": "SYDMoreLadderAbuse",
+            "account": "sydtko-1525",
+            "class": "Ritualist",
+            "level": 100,
+            "life": 1645,
+            "es": 2488,
+            "ehp": 21000,
+            "ehp_display": "21k",
+            "dps": 258000,
+            "dps_display": "258k",
+            "main_skill": "Herald of Ash"
+          },
+          {
+            "name": "ChillaMaggiTTVfan",
+            "account": "olleyDE-4339",
+            "class": "Deadeye",
+            "level": 100,
+            "life": 1498,
+            "es": 3139,
+            "ehp": 17000,
+            "ehp_display": "17k",
+            "dps": 1100000,
+            "dps_display": "1.1M",
+            "main_skill": "Herald of Ash"
+          },
+          {
+            "name": "Tvent",
+            "account": "FlxDda-9538",
+            "class": "Ritualist",
+            "level": 100,
+            "life": 1594,
+            "es": 1766,
+            "ehp": 11000,
+            "ehp_display": "11k",
+            "dps": 2000000,
+            "dps_display": "2.0M",
+            "main_skill": "Herald of Ash"
+          },
+          {
+            "name": "Smitoos",
+            "account": "smite6-3985",
+            "class": "Deadeye",
+            "level": 100,
+            "life": 1522,
+            "es": 1144,
+            "ehp": 6000,
+            "ehp_display": "6.0k",
+            "dps": 263000,
+            "dps_display": "263k",
+            "main_skill": "Herald of Ash"
+          }
+        ]
+      },
+      "Shield Wall": {
+        "char_count": 3,
+        "top_dps": [
+          {
+            "name": "futanariloverboy",
+            "account": "Baku125-2788",
+            "class": "Warbringer",
+            "level": 100,
+            "life": 2994,
+            "es": null,
+            "ehp": 17000,
+            "ehp_display": "17k",
+            "dps": 162000,
+            "dps_display": "162k",
+            "main_skill": "Shield Wall"
+          },
+          {
+            "name": "xxxTheWizardOfOsu",
+            "account": "Prec0cious-1317",
+            "class": "Smith of Kitava",
+            "level": 100,
+            "life": 3645,
+            "es": null,
+            "ehp": 86000,
+            "ehp_display": "86k",
+            "dps": 33000,
+            "dps_display": "33k",
+            "main_skill": "Shield Wall"
+          },
+          {
+            "name": "CUTEASIANGIRL",
+            "account": "mileycyrus143-6439",
+            "class": null,
+            "level": 100,
+            "life": 3912,
+            "es": null,
+            "ehp": 48000,
+            "ehp_display": "48k",
+            "dps": 23000,
+            "dps_display": "23k",
+            "main_skill": "Shield Wall"
+          }
+        ],
+        "top_ehp": [
+          {
+            "name": "xxxTheWizardOfOsu",
+            "account": "Prec0cious-1317",
+            "class": "Smith of Kitava",
+            "level": 100,
+            "life": 3645,
+            "es": null,
+            "ehp": 86000,
+            "ehp_display": "86k",
+            "dps": 33000,
+            "dps_display": "33k",
+            "main_skill": "Shield Wall"
+          },
+          {
+            "name": "CUTEASIANGIRL",
+            "account": "mileycyrus143-6439",
+            "class": null,
+            "level": 100,
+            "life": 3912,
+            "es": null,
+            "ehp": 48000,
+            "ehp_display": "48k",
+            "dps": 23000,
+            "dps_display": "23k",
+            "main_skill": "Shield Wall"
+          },
+          {
+            "name": "futanariloverboy",
+            "account": "Baku125-2788",
+            "class": "Warbringer",
+            "level": 100,
+            "life": 2994,
+            "es": null,
+            "ehp": 17000,
+            "ehp_display": "17k",
+            "dps": 162000,
+            "dps_display": "162k",
+            "main_skill": "Shield Wall"
+          }
+        ]
+      },
+      "Arc": {
+        "char_count": 2,
+        "top_dps": [
+          {
+            "name": "Asmo_CarryDeluxe",
+            "account": "AsmodeusPOE-0579",
+            "class": "Blood Mage",
+            "level": 100,
+            "life": 3525,
+            "es": 5709,
+            "ehp": 23000,
+            "ehp_display": "23k",
+            "dps": 170000,
+            "dps_display": "170k",
+            "main_skill": "Arc"
+          },
+          {
+            "name": "長毛種の猫",
+            "account": "samo-4927",
+            "class": "Disciple of Varashta",
+            "level": 100,
+            "life": 1,
+            "es": 9411,
+            "ehp": 23000,
+            "ehp_display": "23k",
+            "dps": 156000,
+            "dps_display": "156k",
+            "main_skill": "Arc"
+          }
+        ],
+        "top_ehp": [
+          {
+            "name": "Asmo_CarryDeluxe",
+            "account": "AsmodeusPOE-0579",
+            "class": "Blood Mage",
+            "level": 100,
+            "life": 3525,
+            "es": 5709,
+            "ehp": 23000,
+            "ehp_display": "23k",
+            "dps": 170000,
+            "dps_display": "170k",
+            "main_skill": "Arc"
+          },
+          {
+            "name": "長毛種の猫",
+            "account": "samo-4927",
+            "class": "Disciple of Varashta",
+            "level": 100,
+            "life": 1,
+            "es": 9411,
+            "ehp": 23000,
+            "ehp_display": "23k",
+            "dps": 156000,
+            "dps_display": "156k",
+            "main_skill": "Arc"
+          }
+        ]
+      },
+      "Armour Demolisher I": {
+        "char_count": 2,
+        "top_dps": [
+          {
+            "name": "ttv_RsFearless",
+            "account": "RsFearless-1355",
+            "class": "Blood Mage",
+            "level": 100,
+            "life": 3134,
+            "es": 7802,
+            "ehp": 28000,
+            "ehp_display": "28k",
+            "dps": 1000000,
+            "dps_display": "1.0M",
+            "main_skill": "Armour Demolisher I"
+          },
+          {
+            "name": "微醺的小法啊",
+            "account": "daxiong-3966",
+            "class": "Blood Mage",
+            "level": 100,
+            "life": 3018,
+            "es": null,
+            "ehp": 22000,
+            "ehp_display": "22k",
+            "dps": 433000,
+            "dps_display": "433k",
+            "main_skill": "Armour Demolisher I"
+          }
+        ],
+        "top_ehp": [
+          {
+            "name": "ttv_RsFearless",
+            "account": "RsFearless-1355",
+            "class": "Blood Mage",
+            "level": 100,
+            "life": 3134,
+            "es": 7802,
+            "ehp": 28000,
+            "ehp_display": "28k",
+            "dps": 1000000,
+            "dps_display": "1.0M",
+            "main_skill": "Armour Demolisher I"
+          },
+          {
+            "name": "微醺的小法啊",
+            "account": "daxiong-3966",
+            "class": "Blood Mage",
+            "level": 100,
+            "life": 3018,
+            "es": null,
+            "ehp": 22000,
+            "ehp_display": "22k",
+            "dps": 433000,
+            "dps_display": "433k",
+            "main_skill": "Armour Demolisher I"
+          }
+        ]
+      },
+      "Nimble Reload": {
+        "char_count": 2,
+        "top_dps": [
+          {
+            "name": "IronPathFinder",
+            "account": "huangwb-8517",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1688,
+            "es": 3267,
+            "ehp": 20000,
+            "ehp_display": "20k",
+            "dps": 150000,
+            "dps_display": "150k",
+            "main_skill": "Nimble Reload"
+          },
+          {
+            "name": "WooPathfinder",
+            "account": null,
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1560,
+            "es": 3026,
+            "ehp": 19000,
+            "ehp_display": "19k",
+            "dps": 63000,
+            "dps_display": "63k",
+            "main_skill": "Nimble Reload"
+          }
+        ],
+        "top_ehp": [
+          {
+            "name": "IronPathFinder",
+            "account": "huangwb-8517",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1688,
+            "es": 3267,
+            "ehp": 20000,
+            "ehp_display": "20k",
+            "dps": 150000,
+            "dps_display": "150k",
+            "main_skill": "Nimble Reload"
+          },
+          {
+            "name": "WooPathfinder",
+            "account": null,
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1560,
+            "es": 3026,
+            "ehp": 19000,
+            "ehp_display": "19k",
+            "dps": 63000,
+            "dps_display": "63k",
+            "main_skill": "Nimble Reload"
+          }
+        ]
+      },
+      "Cannibalism II": {
+        "char_count": 2,
+        "top_dps": [
+          {
+            "name": "PathToRitual",
+            "account": "Rimalia-1369",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1542,
+            "es": 1550,
+            "ehp": 14000,
+            "ehp_display": "14k",
+            "dps": 1500000,
+            "dps_display": "1.5M",
+            "main_skill": "Cannibalism II"
+          },
+          {
+            "name": "MimosaThienAnLocXoay",
+            "account": "Huynhthienan365-4014",
+            "class": "Deadeye",
+            "level": 100,
+            "life": 1672,
+            "es": 3516,
+            "ehp": 16000,
+            "ehp_display": "16k",
+            "dps": 75000,
+            "dps_display": "75k",
+            "main_skill": "Cannibalism II"
+          }
+        ],
+        "top_ehp": [
+          {
+            "name": "MimosaThienAnLocXoay",
+            "account": "Huynhthienan365-4014",
+            "class": "Deadeye",
+            "level": 100,
+            "life": 1672,
+            "es": 3516,
+            "ehp": 16000,
+            "ehp_display": "16k",
+            "dps": 75000,
+            "dps_display": "75k",
+            "main_skill": "Cannibalism II"
+          },
+          {
+            "name": "PathToRitual",
+            "account": "Rimalia-1369",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1542,
+            "es": 1550,
+            "ehp": 14000,
+            "ehp_display": "14k",
+            "dps": 1500000,
+            "dps_display": "1.5M",
+            "main_skill": "Cannibalism II"
+          }
+        ]
+      },
+      "Profane Ritual": {
+        "char_count": 2,
+        "top_dps": [
+          {
+            "name": "Pofind",
+            "account": "PoroExile-6982",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1746,
+            "es": 2875,
+            "ehp": 19000,
+            "ehp_display": "19k",
+            "dps": 238000,
+            "dps_display": "238k",
+            "main_skill": "Profane Ritual"
+          },
+          {
+            "name": "穿越化腾",
+            "account": "l767965778-4770",
+            "class": "Invoker",
+            "level": 100,
+            "life": 1458,
+            "es": 1946,
+            "ehp": 11000,
+            "ehp_display": "11k",
+            "dps": 132000,
+            "dps_display": "132k",
+            "main_skill": "Profane Ritual"
+          }
+        ],
+        "top_ehp": [
+          {
+            "name": "Pofind",
+            "account": "PoroExile-6982",
+            "class": "Pathfinder",
+            "level": 100,
+            "life": 1746,
+            "es": 2875,
+            "ehp": 19000,
+            "ehp_display": "19k",
+            "dps": 238000,
+            "dps_display": "238k",
+            "main_skill": "Profane Ritual"
+          },
+          {
+            "name": "穿越化腾",
+            "account": "l767965778-4770",
+            "class": "Invoker",
+            "level": 100,
+            "life": 1458,
+            "es": 1946,
+            "ehp": 11000,
+            "ehp_display": "11k",
+            "dps": 132000,
+            "dps_display": "132k",
+            "main_skill": "Profane Ritual"
+          }
+        ]
+      }
+    }
+  }
+}

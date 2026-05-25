@@ -1,0 +1,20 @@
+{
+  "vaultRoot": "content",
+  "vaultFolders": ["content"],
+  "excludePatterns": [
+    "**/README.md",
+    "**/CLAUDE.md",
+    "**/CLAUDE.local.md",
+    "**/node_modules/**",
+    "**/.nuxt/**",
+    "**/.output/**",
+    "**/dist/**",
+    "content/index.md",
+    "content/donate.md",
+    "content/*/index.md",
+    "content/mechanics/*/index.md",
+    "content/builds/*/index.md",
+    "**/*.json",
+    "**/*.txt"
+  ]
+}

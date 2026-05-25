@@ -1,0 +1,95 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Scraped reference site (538MB, not source code) — allow only app-owned assets
+public/*
+!public/images/
+public/images/*
+!public/images/poe-ui/
+.envrc
+
+# AI agent folders
+.adal
+.augment
+.codebuddy
+.commandcode
+.continue
+.crush
+.factory
+.goose
+.junie
+.kilocode
+.kode
+.mcpjam
+.mux
+.neovate
+.openhands
+.pi
+.pochi
+.qoder
+.qwen
+.roo
+.trae
+.vibe
+.windsurf
+.zencoder
+
+# CocoIndex
+.cocoindex/.env
+.venv-cocoindex/
+__pycache__/
+
+# POE scripts — generated node_modules (legacy pob1 clone location)
+.claude/skills/pob1/scripts/pob1/
+.claude/skills/lootfilter/parser/node_modules/
+
+# Local PoB upstream clones used as reference only (not part of the site).
+# Tracked previously as broken gitlinks (no .gitmodules) → CF clone failed.
+references/PathOfBuilding/
+references/PathOfBuilding2/
+
+# Per-skill persisted data — moved to data/ in 2026-05-24 refactor.
+# Cache + instance data (refreshable from API or per-character), not source-of-truth.
+data/pob-source/         # PathOfBuilding git clones per game (has own .git/, ~572M for PoE2)
+data/trade-static/       # poe-filters.json + poe-static-cache.json, refreshable
+data/character-exports/  # character export JSON (instance, per-account)
+tmp/*
+!tmp/.gitkeep
+
+# Cloudflare Wrangler cache
+.wrangler/
+
+# Claude Code local/runtime files (commit settings.json + skills/, ignore the rest)
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+.gitnexus
+
+# Large generated reference mirrors (wiki scrapes, DB dumps, PoB source) — do not commit full data
+data/poe1-wiki/
+data/poe2-wiki/
+data/poedb1/
+data/poedb2/
+raw-data/
+data/pob-source/

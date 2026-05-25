@@ -1,0 +1,128 @@
+name: Collect PoE Prices
+
+# Daily snapshot from poe.ninja → price-history.json (time series for the
+# Chronos-2 forecast skill) → prices.generated.ts (lookup index served to the
+# `:item-badge` MDC component on the site). CF Pages auto-deploys when the
+# index file lands on `main`, so a successful run = fresh prices on the site
+# within minutes.
+on:
+  schedule:
+    # Every 3 hours UTC — 8 runs/day (00, 03, 06, 09, 12, 15, 18, 21).
+    # Intraday merge: collect.py dedupes by (item, date) with NEW wins, so
+    # repeated crawls within the same day refresh the day's record without
+    # duplicating it. master.json grows by ~1 record/item/day on average.
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 're-fetch all items even if already collected today (--force)'
+        type: boolean
+        default: false
+
+# Two simultaneous runs would race the commit step and one would lose its
+# changes. Queue them instead — the queued run picks up the latest data.
+concurrency:
+  group: collect-prices
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+# Opt into Node.js 24 runtime for JS-based actions (checkout, setup-python,
+# setup-bun). Node 20 is deprecated and will be removed from runners in
+# September 2026. Setting this now silences the deprecation warning and
+# matches the post-default-flip behavior so CI stays stable across cutover.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python deps
+        # `certifi` lets collect.py use a verified SSL context. Without it the
+        # script logs a warning and falls back to unverified — works but noisy.
+        run: pip install --quiet --no-cache-dir certifi
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          # Pin to a stable major so build:prices output stays deterministic.
+          # Bump intentionally when we want a new Bun feature.
+          bun-version: '1.2'
+
+      - name: Install JS deps for typecheck step
+        # `--frozen-lockfile` rejects lockfile drift between commits and CI.
+        # Triggers `postinstall: nuxt prepare` which generates the .nuxt/
+        # tsconfig references that vue-tsc needs.
+        run: bun install --frozen-lockfile
+
+      - name: Collect prices from poe.ninja
+        # Progressive merge mode by default — collected items today are skipped.
+        # `force` rewrites everything (use sparingly; existing history is kept
+        # for items still in the response, but variants that drop out vanish).
+        run: |
+          set -euo pipefail
+          if [ "${{ inputs.force }}" = "true" ]; then
+            python scripts/price-forecast/collect.py --force
+          else
+            python scripts/price-forecast/collect.py
+          fi
+
+      - name: Build site price index
+        run: bun run build:prices
+
+      - name: Sanity-check generated index
+        # Catches silent collector regressions: poe.ninja deprecating an
+        # endpoint, the unique categories reverting to 404, etc. Hard fail
+        # rather than commit a degraded index that would replace good data on
+        # CF Pages within minutes.
+        run: |
+          set -euo pipefail
+          INDEX=app/composables/data/prices.generated.ts
+          for key in '"mageblood":' '"divine-orb":' '"doryani-s-prototype":'; do
+            if ! grep -F "$key" "$INDEX" > /dev/null; then
+              echo "::error::Sanity check failed — '$key' missing from $INDEX"
+              exit 1
+            fi
+          done
+          count=$(grep -cE '^    "' "$INDEX")
+          echo "Generated index has $count items"
+          if [ "$count" -lt 1000 ]; then
+            echo "::error::Index has only $count items (expected ≥1000) — collector likely partially failed"
+            exit 1
+          fi
+
+      - name: Typecheck generated index
+        # The build script emits TypeScript with embedded JSON. A bad escape
+        # or schema drift would only surface here, not at commit time.
+        run: bunx vue-tsc --noEmit --skipLibCheck
+
+      - name: Commit & push
+        # Stages master.json (badge source), daily/ snapshots (audit), and
+        # the rebuilt prices.generated.ts. Pull --rebase before push to
+        # survive races against the parallel build-data workflow.
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add \
+            data/price-history/master.json \
+            data/price-history/daily/ \
+            app/composables/data/prices.generated.ts
+          if git diff --cached --quiet; then
+            echo "No new data — skipping commit"
+            exit 0
+          fi
+          ITEMS=$(grep -cE '^    "' app/composables/data/prices.generated.ts)
+          DIVINE=$(grep -oE 'divine_chaos: [0-9.]+' app/composables/data/prices.generated.ts | head -1 | grep -oE '[0-9.]+')
+          git commit -m "data: price snapshot $(date -u +%Y-%m-%dT%H:%M) (${ITEMS} items, divine ${DIVINE}c)"
+          git pull --rebase --autostash origin main || true
+          git push

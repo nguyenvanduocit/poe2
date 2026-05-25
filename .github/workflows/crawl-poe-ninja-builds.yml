@@ -1,0 +1,45 @@
+name: Crawl PoE.ninja Builds
+
+on:
+  schedule:
+    # 06:00 UTC daily = 13:00 Vietnam. Sau snapshot poe.ninja (~12h cycle), tách
+    # khỏi job collect-prices (12 UTC) để giảm contention khi commit cùng lúc.
+    - cron: '0 6 * * *'
+  workflow_dispatch: {}
+
+# Opt into Node.js 24 — see collect-prices.yml for rationale.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install protoc
+        # collect-builds.py shell-out ra `protoc --decode_raw` để parse protobuf.
+        # Ubuntu runner mặc định không có sẵn binary này.
+        run: sudo apt-get update && sudo apt-get install -y protobuf-compiler
+
+      - name: Crawl POE1 + POE2 build snapshots
+        run: python3 scripts/poe-ninja/collect-builds.py
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/poe-ninja/
+          if git diff --cached --quiet; then
+            echo "No new build data"
+          else
+            git commit -m "data: poe.ninja build snapshot $(date -u +%Y-%m-%d)"
+            git push
+          fi

@@ -1,0 +1,3 @@
+# PoB2 monster identifier "EAAVaalGoliathLivingDestabiliser" matches the
+# algolia-api-key regex by coincidence — it's a spectre ID string, not a secret.
+raw-data/pob-poe2/src/Data/Spectres.lua:algolia-api-key:10485
