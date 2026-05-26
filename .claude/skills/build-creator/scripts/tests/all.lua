@@ -10,7 +10,7 @@ local TEST_FILES = {
   "tests.construct_test",
   "tests.cli_test",
   "tests.optimize_test",
-  -- appended as tasks land:
+  "tests.publish_test",
   -- "tests.cli_test", "tests.optimize_test", "tests.publish_test",
 }
 
