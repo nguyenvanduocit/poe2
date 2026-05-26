@@ -46,14 +46,12 @@ local function climbSwaps(target, swaps)
       gem.nameSpec = name or sw.gem
       gem.level = tonumber(lvl) or gem.level
       gem.quality = tonumber(q) or gem.quality
-      build.buildFlag = true
-      engine.commit()
+      engine.commit()  -- engine.commit() forces build.buildFlag for the recalc
       local after = metric(target)
       if after >= before + EPS then
         kept[#kept + 1] = sw
       else
         gem.nameSpec, gem.level, gem.quality = prev.nameSpec, prev.level, prev.quality
-        build.buildFlag = true
         engine.commit()
       end
     end

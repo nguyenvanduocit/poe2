@@ -19,9 +19,16 @@ end
 
 function engine.newBuild() newBuild() end
 
--- runCallback recomputes the build; mainOutput is replaced each frame so we
--- never cache it — callers go through engine.stats()/engine.out().
-function engine.commit() runCallback("OnFrame") end
+-- Recompute the build. Forces build.buildFlag so OnFrame actually re-runs the
+-- calc — PassiveSpec:AllocNode and friends mutate state WITHOUT setting the flag
+-- (Build.lua:OnFrame early-outs when it is false), so a commit after a tree/gem
+-- mutation would otherwise be a no-op and every optimizer candidate would read a
+-- stale metric and get rejected. mainOutput is replaced each frame, so callers
+-- must re-read it via engine.stats()/engine.out() after commit — never cache it.
+function engine.commit()
+  build.buildFlag = true
+  runCallback("OnFrame")
+end
 
 function engine.out() return build.calcsTab.mainOutput or {} end
 
