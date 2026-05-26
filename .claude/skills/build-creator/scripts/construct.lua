@@ -9,6 +9,19 @@ local function ascendIdByName(name)
   return nil
 end
 
+local function pasteSkillGroup(group)
+  local lines = {}
+  if group.label and group.label ~= "" then
+    lines[#lines + 1] = "Label: " .. group.label
+  end
+  for _, gem in ipairs(group.gems or {}) do
+    -- gem is "Name level/quality"; PasteSocketGroup wants a trailing count.
+    -- Append "  1" (double space = empty state token, 1 = count).
+    lines[#lines + 1] = gem .. "  1"
+  end
+  build.skillsTab:PasteSocketGroup(table.concat(lines, "\n") .. "\n")
+end
+
 -- Build the full character from a decoded spec table. Returns nothing; the
 -- result lives in the global `build`. Raises on any unresolved name.
 function construct.build(spec)
@@ -27,7 +40,14 @@ function construct.build(spec)
 
   if spec.level then engine.setLevel(spec.level) end
 
-  -- skills / items / tree are layered in by later tasks.
+  if spec.skills then
+    for _, group in ipairs(spec.skills) do
+      pasteSkillGroup(group)
+    end
+    if spec.skills[1] then build.mainSocketGroup = 1 end
+  end
+
+  -- items / tree are layered in by later tasks.
 
   engine.commit()
   engine.assertClass(spec.class)
