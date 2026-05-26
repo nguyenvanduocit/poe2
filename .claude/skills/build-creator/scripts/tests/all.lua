@@ -7,8 +7,8 @@ local TEST_FILES = {
   "tests.smoke_test",
   "tests.engine_test",
   "tests.export_test",
+  "tests.construct_test",
   -- appended as tasks land:
-  -- "tests.construct_test",
   -- "tests.cli_test", "tests.optimize_test", "tests.publish_test",
 }
 
