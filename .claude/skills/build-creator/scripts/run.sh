@@ -13,5 +13,10 @@ LR="$HOME/.luarocks"
 export LUA_PATH="$POB/src/?.lua;$RT/?.lua;$RT/?/init.lua;$LR/share/lua/5.1/?.lua;$LR/share/lua/5.1/?/init.lua;./?.lua;./?/init.lua;;"
 export LUA_CPATH="$LR/lib/lua/5.1/?.so;;"
 
+# Preserve the caller's cwd so main.lua can resolve relative spec paths — we
+# cd into the PoB src dir (required for HeadlessWrapper's relative loads).
+BC_INVOKE_DIR="$(pwd)"
+export BC_INVOKE_DIR
+
 cd "$POB/src"
-exec luajit "$SCRIPT_DIR/cli.lua" "$@"
+exec luajit "$SCRIPT_DIR/main.lua" "$@"

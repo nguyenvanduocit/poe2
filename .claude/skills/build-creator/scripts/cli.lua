@@ -1,13 +1,30 @@
--- build-creator CLI. Run via run.sh (sets cwd = pob src + LUA paths).
+-- build-creator library. Pure module — no process side effects, so tests and
+-- main.lua can require it freely. Process dispatch lives in main.lua.
 local SCRIPT_DIR = (arg and arg[0] or ""):match("(.*/)") or "./"
 package.path = SCRIPT_DIR .. "?.lua;" .. SCRIPT_DIR .. "lib/?.lua;" .. package.path
 
-local function die(msg) io.stderr:write(msg .. "\n"); os.exit(1) end
+local engine = require("engine")
+local construct = require("construct")
+local export = require("export")
 
-local cmd = arg[1]
-if cmd == "test" then
-  dofile(SCRIPT_DIR .. "tests/all.lua")
-  return
+local M = {}
+
+function M.runBuild(spec)
+  engine.init()
+  construct.build(spec)
+  return { stats = engine.stats(), code = export.toCode() }
 end
 
-die("usage: run.sh test    (more commands land in later tasks)")
+function M.runAnalyze(code)
+  engine.init()
+  local xml = export.decode(code)
+  loadBuildFromXML(xml, "analyze")
+  engine.commit()
+  return {
+    stats = engine.stats(),
+    class = build.spec and build.spec.curClassName,
+    level = build.characterLevel,
+  }
+end
+
+return M
