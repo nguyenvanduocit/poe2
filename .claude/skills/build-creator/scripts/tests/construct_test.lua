@@ -39,4 +39,31 @@ return {
     local item = build.itemsTab.items[slot.selItemId]
     H.truthy(item and item.baseName, "equipped item resolved a base")
   end,
+  ["tree nodes allocate (count increases beyond class start)"] = function()
+    engine.init()
+    -- Discover real allocatable node ids adjacent to the Witch start node,
+    -- so the test is data-version independent.
+    construct.build({ level = 80, class = "Witch", ascendancy = "Infernalist" })
+    local startId = build.spec.curClass.startNodeId
+    local picks = {}
+    for _, n in ipairs(build.spec.nodes[startId].linked or {}) do
+      if n.id and not n.isAscendancyStart and n.type ~= "ClassStart" then
+        picks[#picks + 1] = n.id
+        if #picks >= 2 then break end
+      end
+    end
+    H.truthy(#picks >= 1, "found at least one adjacent node to allocate")
+
+    local before = 0
+    for _ in pairs(build.spec.allocNodes) do before = before + 1 end
+
+    construct.build({
+      level = 80, class = "Witch", ascendancy = "Infernalist",
+      tree = { nodes = picks },
+    })
+
+    local after = 0
+    for _ in pairs(build.spec.allocNodes) do after = after + 1 end
+    H.truthy(after > before, "allocNodes grew after allocating tree nodes")
+  end,
 }

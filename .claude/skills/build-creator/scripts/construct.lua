@@ -37,6 +37,18 @@ local function equipItem(entry)
   slot:SetSelItemId(item.id)
 end
 
+local function allocNodes(ids)
+  for _, id in ipairs(ids) do
+    local node = build.spec.nodes[id]
+    if node then
+      build.spec:AllocNode(node)
+    else
+      io.stderr:write("construct: warning — unknown node id " .. tostring(id) .. "\n")
+    end
+  end
+  build.spec:BuildAllDependsAndPaths()
+end
+
 -- Build the full character from a decoded spec table. Returns nothing; the
 -- result lives in the global `build`. Raises on any unresolved name.
 function construct.build(spec)
@@ -67,7 +79,9 @@ function construct.build(spec)
     build.itemsTab:PopulateSlots()
   end
 
-  -- tree is layered in by a later task.
+  if spec.tree and spec.tree.nodes then
+    allocNodes(spec.tree.nodes)
+  end
 
   engine.commit()
   engine.assertClass(spec.class)
