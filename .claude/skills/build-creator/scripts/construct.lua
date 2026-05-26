@@ -22,6 +22,21 @@ local function pasteSkillGroup(group)
   build.skillsTab:PasteSocketGroup(table.concat(lines, "\n") .. "\n")
 end
 
+local function equipItem(entry)
+  local item = new("Item", entry.text)
+  if not item.base then
+    error("construct: item text did not resolve a base for slot '" .. tostring(entry.slot) .. "'")
+  end
+  item:NormaliseQuality()
+  item:BuildModList()
+  build.itemsTab:AddItem(item, true)  -- noAutoEquip; assigns item.id
+  local slot = build.itemsTab.slots[entry.slot]
+  if not slot then
+    error("construct: unknown item slot '" .. tostring(entry.slot) .. "'")
+  end
+  slot:SetSelItemId(item.id)
+end
+
 -- Build the full character from a decoded spec table. Returns nothing; the
 -- result lives in the global `build`. Raises on any unresolved name.
 function construct.build(spec)
@@ -47,7 +62,12 @@ function construct.build(spec)
     if spec.skills[1] then build.mainSocketGroup = 1 end
   end
 
-  -- items / tree are layered in by later tasks.
+  if spec.items then
+    for _, entry in ipairs(spec.items) do equipItem(entry) end
+    build.itemsTab:PopulateSlots()
+  end
+
+  -- tree is layered in by a later task.
 
   engine.commit()
   engine.assertClass(spec.class)

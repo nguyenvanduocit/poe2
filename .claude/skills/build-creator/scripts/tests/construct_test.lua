@@ -27,4 +27,16 @@ return {
     H.eq(groups[1].gemList[1].level, 20, "gem level parsed")
     H.eq(groups[1].gemList[1].quality, 20, "gem quality parsed")
   end,
+  ["item is created and equipped to its named slot"] = function()
+    engine.init()
+    construct.build({
+      level = 80, class = "Witch", ascendancy = "Infernalist",
+      items = { { slot = "Helmet",
+        text = "Rarity: NORMAL\nRusted Greathelm\nRusted Greathelm" } },
+    })
+    local slot = build.itemsTab.slots["Helmet"]
+    H.truthy(slot and slot.selItemId and slot.selItemId > 0, "helmet slot has an item")
+    local item = build.itemsTab.items[slot.selItemId]
+    H.truthy(item and item.baseName, "equipped item resolved a base")
+  end,
 }
