@@ -5,9 +5,11 @@
 #   api.sh leagues                              List leagues for poe2 realm
 #   api.sh categories [league]                  List currency + unique categories
 #   api.sh list <category> [league] [top]       List items in a category (sorted by price desc)
-#   api.sh item <name-or-apiid> [league]        Lookup one item with full price + 7d history + volume
+#   api.sh item <name-or-apiid> [league]        Lookup item with full history (24h cache, live fetch on miss)
+#   api.sh history <name-or-apiid> [league]     Force-refresh single item history (bypass cache)
+#   api.sh trends [league]                      Opt-in: pull all histories + multi-window trends (slow ~15 min)
 #   api.sh reference [league]                   Reference currency rates (chaos/divine/exalted)
-#   api.sh snapshot [league]                    Bulk dump all categories + compute trends (shells to snapshot.ts)
+#   api.sh snapshot [league]                    Fast catalog snapshot only (~30s, no rate-limit)
 #
 # Env overrides:
 #   POE2SCOUT_LEAGUE   Default league slug (otherwise auto-detect IsCurrent softcore)
@@ -113,24 +115,59 @@ fetch_all_category() {
   echo "$out"
 }
 
-# Pretty print a single item (null-safe for sparse Uniques PriceLogs)
-print_item_detail() {
-  local item_json="$1"
-  echo "$item_json" | jq -r '
-    ((.PriceLogs // []) | map(select(. != null))) as $pl |
-    "- **\(.Text)** (`\(.ApiId)`)"
-    + (if .Type then " — \(.Type)" else "" end)
-    + "\n  - Current: **\(.CurrentPrice // 0 | tostring | .[0:10])** · listed now: \(.CurrentQuantity // 0)"
-    + (if ($pl | length) > 0 then
-        "\n  - History (last \($pl | length)d):" +
-        ($pl | reverse | map(
-          "\n    · \(.Time[0:10]) — \(.Price | tostring | .[0:10]) (vol \(.Quantity))"
-        ) | join(""))
-      else "\n  - History: none" end)
-    + (if ($pl | length) >= 2 and ($pl[-1].Price // 0) > 0 then
-        ($pl[0].Price as $cur | $pl[-1].Price as $old |
-          "\n  - Δ7d: " + ((($cur - $old) / $old * 100) | tostring | .[0:6]) + "%")
-      else "" end)
+# Pretty print rich item history from wrapped cache file (see _wrap_item).
+# $1 = wrapped JSON  ({itemId, apiId, text, categoryApiId, kind, baseCurrencyText, dailyStats, ...})
+print_item_history() {
+  local wrapped="$1"
+  jq -nr --argjson c "$wrapped" '
+    ($c.dailyStats // []) as $stats |
+    ($stats | length) as $n |
+    "- **\($c.text)** (`\($c.apiId)`)"
+    + (if $c.type then " — \($c.type)" else "" end)
+    + "\n  - Category: \($c.categoryApiId) (\($c.kind))"
+    + "\n  - Current: **\($c.currentPrice | tostring | .[0:10])** \($c.baseCurrencyText // "") · listed now: \($c.currentQuantity)"
+    + (if $n == 0 then "\n  - History: none"
+       else
+         # Freshness flag — last data point relative to today
+         ((now | strftime("%Y-%m-%d")) as $today |
+          ((($today | strptime("%Y-%m-%d") | mktime) -
+            ($stats[-1].Time | strptime("%Y-%m-%d") | mktime)) / 86400 | floor) as $stale_days |
+          "\n  - History: \($n) days, \($stats[0].Time) → \($stats[-1].Time)"
+          + (if $stale_days > 7 then " ⚠️ last data \($stale_days)d ago (stale)" else "" end))
+         + (
+           # Compute deltas at 7d / 30d / league windows from end of series
+           ($stats[-1]) as $cur |
+           ($stats[0]) as $oldL |
+           (($cur.Average // $cur.Close) as $cp |
+            ($oldL.Average // $oldL.Close) as $op |
+            (if $op > 0 then "\n  - Δ league (\($n)d): \((($cp - $op) / $op * 100) | tostring | .[0:7])%" else "" end))
+           +
+           (if $n >= 7 then
+              ($stats[-7]) as $o |
+              ($cur.Average // $cur.Close) as $cp |
+              ($o.Average // $o.Close) as $op |
+              (if $op > 0 then "\n  - Δ 7d:  \((($cp - $op) / $op * 100) | tostring | .[0:7])%" else "" end)
+            else "" end)
+           +
+           (if $n >= 30 then
+              ($stats[-30]) as $o |
+              ($cur.Average // $cur.Close) as $cp |
+              ($o.Average // $o.Close) as $op |
+              (if $op > 0 then "\n  - Δ 30d: \((($cp - $op) / $op * 100) | tostring | .[0:7])%" else "" end)
+            else "" end)
+         )
+         + (
+           # Volume summary (avg over last 7 days of data)
+           ($stats | (if length > 7 then .[length-7:] else . end)) as $recent |
+           (($recent | map(.Volume // 0) | add) / ($recent | length)) as $avgv |
+           "\n  - Volume avg (last \($recent | length)d): \($avgv | tostring | .[0:8])"
+         )
+         + "\n  - Recent OHLC (last 10d):"
+         + ($stats | (if length > 10 then .[length-10:] else . end) | reverse
+             | map("\n    · \(.Time)  avg \(.Average | tostring | .[0:10])  H \(.High | tostring | .[0:10])  L \(.Low | tostring | .[0:10])  vol \(.Volume)")
+             | join(""))
+       end
+     )
   '
 }
 
@@ -164,67 +201,175 @@ cmd_list() {
       '
 }
 
+# Resolve item by query → catalog entry (catalog.json local OR live scan as fallback)
+# Echoes the catalog JSON object on stdout; returns 1 if not found.
+resolve_item() {
+  local league="$1" query="$2"
+  local catalog="$DATA_DIR/$league/catalog.json"
+  local lc_query; lc_query="$(echo "$query" | tr '[:upper:]' '[:lower:]')"
+
+  if [[ -f "$catalog" ]]; then
+    local hit
+    hit="$(jq -c --arg q "$lc_query" '
+      [.items | to_entries[] | .value
+        | select(
+            (.text // "" | ascii_downcase | contains($q)) or
+            (.apiId // "" | ascii_downcase | contains($q)) or
+            (.name // "" | ascii_downcase | contains($q))
+          )]
+      | sort_by(-(.currentPrice // 0)) | first // null
+    ' "$catalog")"
+    if [[ -n "$hit" && "$hit" != "null" ]]; then echo "$hit"; return 0; fi
+  fi
+  return 1
+}
+
+# Wrap raw DailyStatsHistory response + catalog metadata → unified item JSON
+# $1 = catalog item JSON  $2 = raw DailyStatsHistory response JSON
+_wrap_item() {
+  local cat_json="$1" hist_json="$2"
+  jq -nc --argjson c "$cat_json" --argjson h "$hist_json" '{
+    itemId: $c.itemId,
+    apiId: $c.apiId,
+    text: $c.text,
+    categoryApiId: $c.categoryApiId,
+    kind: $c.kind,
+    currentPrice: ($c.currentPrice // 0),
+    currentQuantity: ($c.currentQuantity // 0),
+    name: $c.name,
+    type: $c.type,
+    iconUrl: $c.iconUrl,
+    baseCurrencyApiId: $h.BaseCurrencyApiId,
+    baseCurrencyText: $h.BaseCurrencyText,
+    fetched_at: (now | todate),
+    dailyStats: ($h.DailyStats // [])
+  }'
+}
+
+# Fetch item history (with optional cache).
+# $1=league $2=itemId $3=cat_json $4=ttl_seconds (0=force refetch)
+# Writes wrapped JSON to items/<id>.json and echoes wrapped JSON to stdout.
+_fetch_item_history() {
+  local league="$1" item_id="$2" cat_json="$3" ttl="${4:-86400}"
+  local items_dir="$DATA_DIR/$league/items"
+  local cache="$items_dir/${item_id}.json"
+  mkdir -p "$items_dir"
+
+  if (( ttl > 0 )) && [[ -f "$cache" ]]; then
+    local age
+    age=$(( $(date +%s) - $(stat -f%m "$cache" 2>/dev/null || stat -c%Y "$cache" 2>/dev/null || echo 0) ))
+    if (( age < ttl )); then
+      # Cache hit — but refresh `currentPrice/Quantity` from catalog (catalog is fresher than items/ TTL)
+      jq -c --argjson cat "$cat_json" '
+        .currentPrice = ($cat.currentPrice // 0)
+        | .currentQuantity = ($cat.currentQuantity // 0)
+      ' "$cache"
+      return
+    fi
+  fi
+
+  # Cache miss / expired — live fetch
+  local hist_json
+  hist_json="$(http_get "$BASE_URL/$REALM/Leagues/$league/Items/$item_id/DailyStatsHistory?DayCount=365")"
+  local wrapped
+  wrapped="$(_wrap_item "$cat_json" "$hist_json")"
+  echo "$wrapped" | jq -S . > "$cache.tmp"
+  mv "$cache.tmp" "$cache"
+  echo "$wrapped"
+}
+
 cmd_item() {
   local query="${1:-}"; shift || true
   [[ -z "$query" ]] && die "Usage: api.sh item <name-or-apiid> [league]"
   local league; league="$(resolve_league "${1:-}")"
 
-  # Prefer cached snapshot if exists (much faster — avoids fetching all categories)
-  local snap="$DATA_DIR/$league/latest.json"
-  local lc_query
-  lc_query="$(echo "$query" | tr '[:upper:]' '[:lower:]')"
+  local cat_json
+  if cat_json="$(resolve_item "$league" "$query")"; then
+    echo "## Item match (catalog hit, history fetched live)"
+  else
+    # No catalog → do live scan via ByCategory then synthesize a minimal catalog entry
+    echo "## Item match (live scan — run \`api.sh snapshot\` for instant lookups)"
+    local cats; cats="$(http_get "$BASE_URL/$REALM/Leagues/$league/Items/Categories")"
+    local lc_query; lc_query="$(echo "$query" | tr '[:upper:]' '[:lower:]')"
+    local found=""
 
-  if [[ -f "$snap" ]]; then
-    local hit
-    hit="$(jq -c --arg q "$lc_query" '
-      .items // []
-      | map(select(
-          (.Text // "" | ascii_downcase | contains($q)) or
-          (.ApiId // "" | ascii_downcase | contains($q))
-        ))
-      | sort_by(-.CurrentPrice) | first
-    ' "$snap")"
-    if [[ -n "$hit" && "$hit" != "null" ]]; then
-      echo "## Item match (from snapshot)"
-      echo ""
-      print_item_detail "$hit"
-      return
-    fi
-  fi
-
-  # Live fallback — scan all categories
-  echo "## Item match (live scan — slow, run snapshot for instant lookups)"
-  echo ""
-  local cats; cats="$(http_get "$BASE_URL/$REALM/Leagues/$league/Items/Categories")"
-
-  local found=""
-  while read -r cat; do
-    local items; items="$(fetch_all_category "$league" "Currencies" "$cat")"
-    local hit
-    hit="$(echo "$items" | jq -c --arg q "$lc_query" '
-      map(select((.Text // "" | ascii_downcase | contains($q)) or
-                 (.ApiId // "" | ascii_downcase | contains($q))))
-      | sort_by(-.CurrentPrice) | first
-    ')"
-    if [[ "$hit" != "null" && -n "$hit" ]]; then found="$hit"; break; fi
-  done < <(echo "$cats" | jq -r '.CurrencyCategories[].ApiId')
-
-  if [[ -z "$found" ]]; then
     while read -r cat; do
-      local items; items="$(fetch_all_category "$league" "Uniques" "$cat")"
+      local items; items="$(fetch_all_category "$league" "Currencies" "$cat")"
       local hit
       hit="$(echo "$items" | jq -c --arg q "$lc_query" '
         map(select((.Text // "" | ascii_downcase | contains($q)) or
-                   (.Name // "" | ascii_downcase | contains($q)) or
                    (.ApiId // "" | ascii_downcase | contains($q))))
         | sort_by(-(.CurrentPrice // 0)) | first
       ')"
       if [[ "$hit" != "null" && -n "$hit" ]]; then found="$hit"; break; fi
-    done < <(echo "$cats" | jq -r '.UniqueCategories[].ApiId')
+    done < <(echo "$cats" | jq -r '.CurrencyCategories[].ApiId')
+
+    if [[ -z "$found" ]]; then
+      while read -r cat; do
+        local items; items="$(fetch_all_category "$league" "Uniques" "$cat")"
+        local hit
+        hit="$(echo "$items" | jq -c --arg q "$lc_query" '
+          map(select((.Text // "" | ascii_downcase | contains($q)) or
+                     (.Name // "" | ascii_downcase | contains($q)) or
+                     (.ApiId // "" | ascii_downcase | contains($q))))
+          | sort_by(-(.CurrentPrice // 0)) | first
+        ')"
+        if [[ "$hit" != "null" && -n "$hit" ]]; then found="$hit"; break; fi
+      done < <(echo "$cats" | jq -r '.UniqueCategories[].ApiId')
+    fi
+
+    [[ -z "$found" ]] && die "No item matching '$query' in league=$league"
+    # Synthesize catalog-style JSON from ByCategory row.
+    # Uniques have no .ApiId — use itemId as fallback slug for display.
+    cat_json="$(jq -c '{
+      itemId: .ItemId,
+      apiId: (.ApiId // (.ItemId | tostring)),
+      text: .Text,
+      categoryApiId: .CategoryApiId,
+      kind: (if .Name then "Unique" else "Currency" end),
+      iconUrl: .IconUrl,
+      currentPrice: (.CurrentPrice // 0),
+      currentQuantity: (.CurrentQuantity // 0),
+      name: .Name,
+      type: .Type
+    }' <<<"$found")"
   fi
 
-  [[ -z "$found" ]] && die "No item matching '$query' in league=$league"
-  print_item_detail "$found"
+  local item_id; item_id="$(echo "$cat_json" | jq -r '.itemId')"
+  # TTL=24h — cache hit returns instantly, miss does 1 live fetch + cache.
+  local wrapped; wrapped="$(_fetch_item_history "$league" "$item_id" "$cat_json" 86400)"
+
+  echo ""
+  print_item_history "$wrapped"
+  echo ""
+}
+
+# Force-refresh single item history (bypass cache, write fresh items/<id>.json)
+cmd_history() {
+  local query="${1:-}"; shift || true
+  [[ -z "$query" ]] && die "Usage: api.sh history <name-or-apiid> [league]"
+  local league; league="$(resolve_league "${1:-}")"
+
+  local cat_json
+  if ! cat_json="$(resolve_item "$league" "$query")"; then
+    die "No catalog match for '$query'. Run \`api.sh snapshot\` first or use \`api.sh item\` for live scan."
+  fi
+  local item_id; item_id="$(echo "$cat_json" | jq -r '.itemId')"
+
+  echo "## Refreshing $item_id history (bypass cache)"
+  echo ""
+  local wrapped; wrapped="$(_fetch_item_history "$league" "$item_id" "$cat_json" 0)"
+  print_item_history "$wrapped"
+  echo ""
+}
+
+# Opt-in heavy compute — pull DailyStatsHistory for ALL items in catalog,
+# write items/<id>.json (TTL-respected), compute multi-window trends.json.
+# Takes ~15 min for ~1000 items with 250ms pacing.
+cmd_trends() {
+  local league; league="$(resolve_league "${1:-}")"
+  need bun
+  bun "$SCRIPT_DIR/trends.ts" --realm "$REALM" --league "$league" --data "$DATA_DIR"
 }
 
 cmd_reference() {
@@ -256,10 +401,12 @@ case "${1:-}" in
   categories) shift; cmd_categories "$@" ;;
   list)       shift; cmd_list "$@" ;;
   item)       shift; cmd_item "$@" ;;
+  history)    shift; cmd_history "$@" ;;
+  trends)     shift; cmd_trends "$@" ;;
   reference)  shift; cmd_reference "$@" ;;
   snapshot)   shift; cmd_snapshot "$@" ;;
   ""|-h|--help|help)
-    sed -n '2,12p' "$0"
+    sed -n '2,14p' "$0"
     ;;
   *)
     die "Unknown subcommand: $1. Run api.sh help."

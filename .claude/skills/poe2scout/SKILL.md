@@ -1,151 +1,202 @@
 ---
 skill_name: poe2scout
-description: Fetch POE2 market data from poe2scout.com — price, 7-day history, volume cho Currency + Unique items. Realm=poe2 (POE2 workspace). Use when user asks giá/price/volume/history items hoặc cần snapshot economy.
-version: 1.0.0
-tags: [economy, poe2scout, api, price, history, volume, poe2]
+description: Fetch POE2 market data from poe2scout.com — fast catalog + lazy per-item OHLC history cache cho Currency + Unique. Realm=poe2 (POE2 workspace). Use when user asks giá/price/volume/history items.
+version: 3.0.0
+tags: [economy, poe2scout, api, price, history, volume, ohlc, poe2]
 ---
 
-# poe2scout — POE2 market data (price + history + volume)
+# poe2scout — POE2 market data (lazy-cached per-item history)
 
-API: `https://api.poe2scout.com` — public REST API, **no auth required**, JSON, CORS-enabled. POE2 Scout track cả Currency (15 categories) lẫn Unique items (7 categories) cho POE2.
+API: `https://api.poe2scout.com` — public REST, **no auth**, JSON, CORS-enabled. Site track cả POE1 lẫn POE2 (realm `pc` vs `poe2`).
 
 **Realm constants for this workspace:**
 - Realm: `poe2`
-- Auto-detected default league: current softcore (vd `vaal` cho Fate of the Vaal patch hiện tại). Override bằng env `POE2SCOUT_LEAGUE=<slug>`.
+- Auto-detected default league: current softcore (vd `vaal`). Override env `POE2SCOUT_LEAGUE=<slug>`.
+- Coverage: 15 Currency categories + 7 Unique categories.
 
-> **Note:** Sibling workspace `../poe1/` có skill poe2scout song song nhưng realm=`pc` và chỉ Currencies (POE1 không có Uniques trên scout). Hai workspace KHÔNG share data — mỗi cái có `data/poe2scout/<league>/` riêng.
+> **Sibling**: `../poe1/` có skill song song nhưng realm=`pc`, chỉ Currencies (POE1 không có Unique trên scout).
 
-## Why poe2scout (vs poe-ninja đã có)
+## Architecture (v3 — lazy cache)
 
-| Need | poe2scout | poe-ninja |
-|---|---|---|
-| POE2 currency price + history + volume | ✅ Native, 7d granular | ⚠️ POE2 coverage thưa, không history |
-| POE2 unique item price | ✅ Đầy đủ | ❌ |
-| Build/character ladder | ❌ | ✅ Native |
+Skill có 2 layer:
 
-→ Hai skill bổ sung nhau. Dùng poe2scout cho **price/economy**, poe-ninja cho **build distribution**.
+1. **Catalog** (`catalog.json`) — manifest tất cả items + current price/volume. Fast snapshot (~10s, không rate-limit). Build qua `api.sh snapshot`.
+2. **Per-item history** (`items/<itemId>.json`) — lazy cache OHLC + Volume history per item. **Chỉ fetch khi user lookup** item đó qua `api.sh item`. Cache TTL 24h.
+
+Trends.json (cross-item ranking) là **opt-in** — chạy `api.sh trends` khi cần (~15 phút full pull). Default workflow không động đến.
+
+**Vì sao thay đổi từ v2**: bulk-pulling all-items history hit HTTP 429 rate limit (parallel pulls trên 2 workspace). v3 lazy cache tôn trọng server + match actual use case (user lookup 1-10 items, không phải tất cả 1000).
+
+## Endpoint reference
+
+Base: `https://api.poe2scout.com`, realm path = `poe2`.
+
+| Endpoint | Used by |
+|---|---|
+| `GET /poe2/Leagues` | `cmd_leagues`, `resolve_league` |
+| `GET /poe2/Leagues/{league}/Items/Categories` | `cmd_categories`, snapshot |
+| `GET /poe2/Leagues/{league}/{Currencies\|Uniques}/ByCategory?Category=...&Page=...&PerPage=...` | snapshot, list, item-fallback |
+| `GET /poe2/Leagues/{league}/Items/{itemId}/DailyStatsHistory?DayCount=365` | **lazy item history fetch** |
+| `GET /poe2/Leagues/{league}/ReferenceCurrencies` | `cmd_reference` |
+
+DailyStatsHistory response (raw):
+```jsonc
+{
+  "DailyStats": [
+    { "Time": "2025-12-14", "Open": ..., "High": ..., "Low": ..., "Close": ..., "Average": ..., "Volume": ... }
+  ],
+  "HasMore": false,
+  "BaseCurrencyApiId": "exalted",
+  "BaseCurrencyText": "Exalted Orb"
+}
+```
+
+`DayCount=365` đảm bảo `HasMore=false` (exhaust hết data có thể có).
 
 ## Quick start
 
 ```bash
-# List leagues (auto-detect current softcore)
+# Setup once
+.claude/skills/poe2scout/scripts/api.sh snapshot          # ~10s catalog
+
+# Daily lookups
 .claude/skills/poe2scout/scripts/api.sh leagues
-
-# List categories có gì
 .claude/skills/poe2scout/scripts/api.sh categories
-
-# Top 25 currency items by current price
 .claude/skills/poe2scout/scripts/api.sh list currency
-
-# Top 10 weapon uniques
 .claude/skills/poe2scout/scripts/api.sh list weapon vaal 10
 
-# Lookup 1 item (price + 7d history + volume)
+# Item lookup — 0.6s cold (live fetch + cache), 0.1s warm (cache hit)
 .claude/skills/poe2scout/scripts/api.sh item "mirror"
 .claude/skills/poe2scout/scripts/api.sh item "the auspex"
 
-# Reference currency rates (chaos ↔ divine ↔ exalted)
+# Force refresh single item (bypass 24h cache)
+.claude/skills/poe2scout/scripts/api.sh history "mirror"
+
+# Reference rates
 .claude/skills/poe2scout/scripts/api.sh reference
 
-# Bulk snapshot tất cả categories (~30s, ~5MB), compute trend
-.claude/skills/poe2scout/scripts/api.sh snapshot
+# Opt-in: full multi-item trends (slow ~15 min, hits rate limit risk)
+.claude/skills/poe2scout/scripts/api.sh trends
 ```
 
-## Endpoint reference
+## Subcommands
 
-Base: `https://api.poe2scout.com`, realm path segment = `poe2`.
-
-| Endpoint | Returns |
-|---|---|
-| `GET /Realms` | List realms (`pc`, `poe2`) |
-| `GET /poe2/Leagues` | League list with `ShortName`, `IsCurrent`, `DivinePrice`, `ChaosDivinePrice` |
-| `GET /poe2/Leagues/{league}/Items/Categories` | `UniqueCategories[]` + `CurrencyCategories[]` |
-| `GET /poe2/Leagues/{league}/ReferenceCurrencies` | Reference currencies (chaos, divine, exalted) — `RelativePrice` |
-| `GET /poe2/Leagues/{league}/Currencies/ByCategory?Category={c}&Page={p}&PerPage={n}` | Currency items paginated |
-| `GET /poe2/Leagues/{league}/Uniques/ByCategory?Category={c}&Page={p}&PerPage={n}` | Unique items paginated |
-
-**Per-item schema (cùng cho Currency + Unique, có vài field khác biệt nhỏ):**
-
-```jsonc
-{
-  "ApiId": "mirror",                        // stable slug
-  "Text": "Mirror of Kalandra",             // display name
-  "CategoryApiId": "currency",
-  "IconUrl": "https://web.poecdn.com/...",
-  "ItemMetadata": {                         // optional, có lúc null
-    "name": "...", "base_type": "...",
-    "stack_size": 1, "max_stack_size": 10,
-    "description": "...", "effect": [...]
-  },
-  "PriceLogs": [                            // 7 day daily snapshots, newest first
-    { "Price": 1541316.22, "Time": "2026-05-25T00:00:00", "Quantity": 686 },
-    { "Price": 1631410.28, "Time": "2026-05-24T00:00:00", "Quantity": 785 }
-  ],
-  "CurrentPrice": 1830204.91,               // realtime now
-  "CurrentQuantity": 60,                    // volume listed now
-  // Uniques-only:
-  "Name": "Palm of the Dreamer",
-  "Type": "Shrine Sceptre",
-  "IsChanceable": false
-}
-```
-
-Price quoted in default currency của realm — POE2 dùng **Exalted Orb** làm base (1 Divine ≈ 190 Exalted at Vaal launch). POE1 dùng **Chaos Orb**. Confirm bằng `api.sh reference`.
-
-## Categories có sẵn (Vaal league snapshot 2026-05)
-
-**Currency** (15): `currency`, `fragments`, `runes`, `essences`, `ultimatum` (Soul Cores), `delirium`, `expedition`, `breach`, `azurite`, `sanctum`, `talisman`, `omens`, `socketables`, `corrupted`, `vaalstones`.
-
-**Unique** (7): `weapon`, `armour`, `accessory`, `flask`, `jewel`, `map`, `relic` (or similar — confirm runtime).
-
-Run `api.sh categories` để lấy danh sách live (poe2scout có thể đổi).
+| Cmd | Latency | What |
+|---|---|---|
+| `snapshot` | ~10s | Build `catalog.json` only — no per-item history |
+| `item <name>` | 0.6s cold / 0.1s warm | Catalog lookup → live DailyStatsHistory (cache 24h) |
+| `history <name>` | 0.6s | Force refresh single item (TTL=0, write fresh cache) |
+| `trends` | ~15 min | OPT-IN: pull all items' history + multi-window ranking → `trends.json` |
+| `list <cat> [n]` | 0.5s | Top N items by current price (7d Δ via ByCategory) |
+| `leagues` | 0.2s | List leagues with current marker |
+| `categories` | 0.3s | List currency + unique categories for league |
+| `reference` | 0.3s | Chaos/Divine/Exalted rates |
 
 ## Data layout
 
 ```
 data/poe2scout/<league>/
-├── latest.json                # Merged dump (items + metadata) — ~5-10MB
-├── trends.json                # Top 20 gainer/loser/liquid/illiquid (7d)
-└── snapshots/<YYYY-MM-DD>.json
-                               # Daily snapshot, idempotent rerun overwrite,
-                               # keep 30 most recent
+├── catalog.json          # Manifest — overwritten by snapshot, ~3-5 MB
+├── trends.json           # OPT-IN multi-window ranking (only if `trends` ran)
+└── items/<itemId>.json   # Lazy-cached per-item history. Grows on demand.
+                          # Files older than 24h are refetched on next lookup.
 ```
 
-Snapshot script gentle-paces requests (100ms gap) — không hammer server. Cache HTTP responses 5 phút trong `tmp/poe2scout-cache/` cho ad-hoc CLI calls.
+**`catalog.json`** schema:
+```jsonc
+{
+  "realm": "poe2", "league": "vaal", "fetched_at": "...",
+  "categories": {
+    "currency": ["currency", "fragments", ...],
+    "unique": ["weapon", "armour", ...]
+  },
+  "total_items": 838,
+  "items": {
+    "10654": {
+      "itemId": 10654, "apiId": "mirror", "text": "Mirror of Kalandra",
+      "categoryApiId": "currency", "kind": "Currency",
+      "currentPrice": 1519375, "currentQuantity": 2,
+      "iconUrl": "...", "metadata": { ... }
+    }
+  }
+}
+```
+
+**`items/<itemId>.json`** schema (wrapped — written lazily on first lookup):
+```jsonc
+{
+  "itemId": 10654, "apiId": "mirror", "text": "Mirror of Kalandra",
+  "categoryApiId": "currency", "kind": "Currency",
+  "currentPrice": 1519375, "currentQuantity": 2,
+  "baseCurrencyApiId": "exalted", "baseCurrencyText": "Exalted Orb",
+  "fetched_at": "...",
+  "dailyStats": [
+    { "Time": "2025-12-14", "Open": ..., "High": ..., "Low": ..., "Close": ..., "Average": ..., "Volume": ... }
+    // ...full league (up to ~160 entries cho actively-traded items)
+  ]
+}
+```
+
+`currentPrice`/`currentQuantity` được patch từ catalog mỗi lần read (catalog tươi hơn TTL của items/).
+
+## Item lookup output
+
+```
+- **Mirror of Kalandra** (`mirror`)
+  - Category: currency (Currency)
+  - Current: **1519375** Exalted Orb · listed now: 2
+  - History: 163 days, 2025-12-14 → 2026-05-25
+  - Δ league (163d): 8846.13%
+  - Δ 7d:  -15.313%
+  - Δ 30d: -19.576%
+  - Volume avg (last 7d): 718.5714
+  - Recent OHLC (last 10d):
+    · 2026-05-25  avg 1529000.36  H 1830204.91  L 1236280.47  vol 892
+    ...
+```
+
+`⚠️ last data Nd ago (stale)` xuất hiện khi dailyStats[-1].Time > 7d cũ — báo item không trade gần đây.
 
 ## Confidence labels
 
-- **HIGH** — `CurrentPrice` từ snapshot < 24h. Use for build cost estimate, gear shopping budget.
-- **MEDIUM** — `PriceLogs[0]` (yesterday's daily). OK cho trend pattern, không OK cho buy/sell decision.
-- **LOW** — `PriceLogs[-1]` (7 days ago) — chỉ dùng so sánh trend, không quote như giá hiện tại.
+- **HIGH** — `currentPrice` từ catalog < 24h, item không stale.
+- **HIGH** — `dailyStats[-1].Average` cho actively-traded items.
+- **MEDIUM** — Δ7d/Δ30d patterns OK cho trend, không OK cho quote giá thực.
+- **LOW** — items stale > 7 days hoặc `avgVolume < 5`. Báo giá có thể out-of-date.
 
-Khi quote giá trong build/farming note → **luôn kèm timestamp** (`fetched_at` từ latest.json hoặc `Time` của price log).
+Quote giá trong content note → kèm `fetched_at` (catalog) + `dailyStats[-1].Time` (last trade day).
 
-## Use cases (workflow)
+## Workflow
 
-### Quick price check khi user hỏi "giá X"
+### Quick price check
 ```bash
 .claude/skills/poe2scout/scripts/api.sh item "X"
 ```
-→ in current price, 7d history, Δ%, volume. Đủ để answer "giá hiện tại + có tăng/giảm tuần qua không + thanh khoản ra sao".
+→ Full league OHLC + multi-window Δ + freshness signal. Lần đầu 0.6s, lần sau 0.1s.
 
-### Build cost estimate
-1. Run snapshot 1 lần đầu phiên: `api.sh snapshot` (~30s).
-2. Sau đó `api.sh item <gear>` instant từ cache snapshot.
-3. Tổng cost = sum `CurrentPrice` per item, convert qua `reference` để có price chung.
+### Build / gear cost estimate
+1. `api.sh snapshot` (~10s, mỗi ngày 1 lần) — refresh catalog.
+2. `api.sh item <gear>` cho mỗi gear piece — instant lookup.
+3. Sum `currentPrice`. Convert qua `reference` cho cross-currency.
 
-### Liquidity check trước khi flip
-Vào `data/poe2scout/<league>/trends.json` field `low_liquid` — item priced cao nhưng `avgVolume` thấp = giá ảo, khó bán. Tránh.
+Mỗi item lần đầu lookup = 1 API call → cache. 10-item build = 10 calls = ~6s, lần sau instant.
 
-### Detect economy shift (post-patch / post-event)
-Run snapshot daily. Compare `trends.json` qua 2-3 ngày. Sudden mover thường flag league mechanic change hoặc whale dumping.
+### Detect economy shift
+Workflow A (light): `api.sh history <item>` daily cho key items, watch Δ7d trong output.
+
+Workflow B (heavy, opt-in): `api.sh trends` chạy 1 lần/tuần → `trends.json` có gainers/losers cross-item.
+
+### Programmatic access từ Nuxt site
+`catalog.json` (~3-5 MB) là static JSON — fetch directly từ Nuxt server route hoặc build-time pre-render. Items cache có thể fetch on-demand từ same dir.
 
 ## Caveats
 
-- **Server pacing**: snapshot fetch ~100 categories × multi-page = ~50-150 requests. Script đã 100ms gap. Đừng spam.
-- **POE1 limitation**: workspace song song (../poe1/) chỉ có Currencies — UniqueCategories rỗng cho realm `pc`. Skill code đã handle (skip Uniques nếu rỗng).
-- **Price spikes from low volume**: 1-2 listing tạo % swing lớn. `trends.json` đã filter `avgVolume >= 5` cho gainers/losers, nhưng vẫn double-check volume trước khi báo "price tăng 200%".
-- **Snapshot stale 24h max**: rerun nếu price feed > 24h old (check `fetched_at`).
+- **POE1 limitation**: sibling `../poe1/` chỉ có Currencies (UniqueCategories rỗng).
+- **Rate limit**: bulk-pull all 1000+ items đồng thời sẽ HTTP 429. `trends` opt-in có 250ms pacing + exponential backoff cho 429. Lazy lookup workflow không bị problem này.
+- **Item stale flag**: low-circulation items có thể last trade > 7d cũ → `⚠️` flag, confidence drops LOW.
+- **DailyStats granularity**: daily aggregate (OHLC + Average + Volume). Không có intraday data.
+- **Migration từ v2**: v3 snapshot.ts auto-delete legacy `latest.json` + `snapshots/<date>.json` khi chạy.
+- **`history` cache layers**: bash `http_get` có 5-min HTTP cache. `history` force refresh items/<id>.json nhưng nếu URL DailyStatsHistory đã cached trong tmp/poe2scout-cache trong 5 phút trước → vẫn dùng cached. Set `POE2SCOUT_NOCACHE=1 api.sh history ...` để bypass cả 2 cache.
 
 ## File structure
 
@@ -153,16 +204,18 @@ Run snapshot daily. Compare `trends.json` qua 2-3 ngày. Sudden mover thường 
 .claude/skills/poe2scout/
 ├── SKILL.md           # this file
 └── scripts/
-    ├── api.sh         # bash CLI dispatcher (leagues/categories/list/item/reference/snapshot)
-    └── snapshot.ts    # bun TypeScript bulk-dump + trend computation
+    ├── api.sh         # bash CLI dispatcher
+    ├── snapshot.ts    # bun TS — catalog only (~10s, no rate limit)
+    └── trends.ts      # bun TS — opt-in heavy: pull all + compute trends (~15 min)
 ```
 
 ## Troubleshooting
 
 | Issue | Fix |
 |---|---|
-| `curl ... HTTP 404` | Check league slug bằng `api.sh leagues`. Slug case-sensitive (`vaal` not `Vaal`). |
+| `curl ... HTTP 404` | Check league slug bằng `api.sh leagues`. Case-sensitive. |
 | `bun: command not found` | `brew install oven-sh/bun/bun` |
-| Snapshot quá chậm (>2 phút) | Server có thể rate-limit. Tăng `REQUEST_GAP_MS` trong snapshot.ts từ 100 → 250. |
-| Stale cache | `rm -rf tmp/poe2scout-cache/` hoặc `POE2SCOUT_NOCACHE=1 api.sh ...` |
-| `item` không tìm thấy | Snapshot có thể thiếu item đó (ItemMetadata null). Thử exact ApiId từ `api.sh list <category>`. |
+| `trends` báo HTTP 429 lặp lại | Server overloaded — wait 1 hour, retry. Hoặc tăng `REQUEST_GAP_MS` trong trends.ts từ 250 → 500. |
+| Item lookup ra `⚠️ stale` | Item không trade gần đây. Confidence LOW — verify bằng GGG trade. |
+| `api.sh item` ra `apiId: (4007)` | Item là Unique → poe2scout không có ApiId slug, fallback ItemId numeric. |
+| Cache stale | `rm -rf data/poe2scout/<league>/items/` hoặc dùng `api.sh history <name>` cho 1 item. |

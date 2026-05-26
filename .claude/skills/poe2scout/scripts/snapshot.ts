@@ -1,52 +1,50 @@
 #!/usr/bin/env bun
 /**
- * poe2scout.com daily snapshot — bulk dump all categories cho 1 league.
+ * poe2scout.com lightweight catalog snapshot.
  *
- * Output (per league):
- *   data/poe2scout/<league>/latest.json            — newest snapshot (overwrite)
- *   data/poe2scout/<league>/snapshots/<date>.json  — 1 file/day, idempotent rerun
- *   data/poe2scout/<league>/trends.json            — top 20 gainer / loser 7d
+ * Builds *only* `catalog.json` — manifest of all items in league + current price/quantity.
+ * Per-item DailyStatsHistory được fetch LAZY qua `api.sh item <name>` và cache vào
+ * `items/<id>.json` khi user thực sự lookup. Tránh bulk-pull bị API rate-limit.
  *
- * Retention: keep 30 most recent daily snapshots, prune older.
+ * Output:
+ *   data/poe2scout/<league>/catalog.json    — manifest (override mỗi run)
  *
  * Usage:
  *   bun snapshot.ts --realm pc   --league mirage
  *   bun snapshot.ts --realm poe2 --league vaal
+ *
+ * For full history archive + trends: `api.sh trends` (opt-in, slow).
  */
 
-import { mkdir, readdir, unlink, writeFile } from "node:fs/promises"
+import { mkdir, writeFile, rm, unlink } from "node:fs/promises"
 import { existsSync } from "node:fs"
 import { dirname, join } from "node:path"
 import { fileURLToPath } from "node:url"
 
 const BASE_URL = "https://api.poe2scout.com"
 const PER_PAGE = 100
-const KEEP_DAILY = 30
-const REQUEST_GAP_MS = 100 // gentle pacing — server-friendly
+const REQUEST_GAP_MS = 100
 
-// Workspace path resolution: scripts live at .claude/skills/poe2scout/scripts/
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url))
 const WORKSPACE_DIR = join(SCRIPT_DIR, "..", "..", "..", "..")
 const DATA_BASE = join(WORKSPACE_DIR, "data", "poe2scout")
 
 // ---------- types ----------
 
-interface PriceLog {
-  Price: number
-  Time: string // ISO datetime
-  Quantity: number
+interface CategoriesResponse {
+  CurrencyCategories: { ApiId: string; Label: string }[]
+  UniqueCategories: { ApiId: string; Label: string }[]
 }
 
-interface ScoutItem {
-  ApiId: string
+interface ScoutListItem {
+  ItemId: number
+  ApiId?: string
   Text: string
-  IconUrl: string
   CategoryApiId: string
+  IconUrl: string
   ItemMetadata?: unknown
-  PriceLogs: PriceLog[]
-  CurrentPrice: number
-  CurrentQuantity: number
-  // Uniques-only fields
+  CurrentPrice: number | null
+  CurrentQuantity: number | null
   Name?: string
   Type?: string
   IsChanceable?: boolean
@@ -56,45 +54,30 @@ interface CategoryListResponse {
   CurrentPage: number
   Pages: number
   Total: number
-  Items: ScoutItem[]
+  Items: ScoutListItem[]
 }
 
-interface CategoriesResponse {
-  CurrencyCategories: { ApiId: string; Label: string }[]
-  UniqueCategories: { ApiId: string; Label: string }[]
+interface CatalogItem {
+  itemId: number
+  apiId: string
+  text: string
+  categoryApiId: string
+  kind: "Currency" | "Unique"
+  iconUrl: string
+  currentPrice: number
+  currentQuantity: number
+  metadata?: unknown
+  name?: string
+  type?: string
 }
 
-interface Snapshot {
+interface Catalog {
   realm: string
   league: string
   fetched_at: string
+  categories: { currency: string[]; unique: string[] }
   total_items: number
-  currency_categories: string[]
-  unique_categories: string[]
-  items: ScoutItem[]
-}
-
-interface TrendEntry {
-  apiId: string
-  text: string
-  category: string
-  kind: "Currency" | "Unique"
-  currentPrice: number
-  oldestPrice: number
-  deltaPct: number
-  avgVolume: number
-}
-
-interface Trends {
-  league: string
-  computed_at: string
-  // 7d % change ranked
-  top_gainers: TrendEntry[]
-  top_losers: TrendEntry[]
-  // Highest absolute volume (most liquid)
-  top_liquid: TrendEntry[]
-  // Lowest volume but priced — illiquid risk
-  low_liquid: TrendEntry[]
+  items: Record<string, CatalogItem>
 }
 
 // ---------- helpers ----------
@@ -114,29 +97,40 @@ function parseArgs(): { realm: string; league: string } {
   return { realm, league }
 }
 
-async function sleep(ms: number) {
-  return new Promise((r) => setTimeout(r, ms))
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
+
+async function getJson<T>(url: string, retries = 3): Promise<T> {
+  for (let i = 0; i <= retries; i++) {
+    try {
+      const r = await fetch(url, { headers: { accept: "application/json" } })
+      if (r.status === 429) {
+        // Rate-limited — back off harder
+        const wait = 2000 * (i + 1)
+        await sleep(wait)
+        continue
+      }
+      if (!r.ok) throw new Error(`HTTP ${r.status}`)
+      return (await r.json()) as T
+    } catch (e) {
+      if (i === retries) throw new Error(`GET ${url} → ${e}`)
+      await sleep(500 * (i + 1))
+    }
+  }
+  throw new Error("unreachable")
 }
 
-async function getJson<T>(url: string): Promise<T> {
-  const r = await fetch(url, { headers: { accept: "application/json" } })
-  if (!r.ok) throw new Error(`GET ${url} → HTTP ${r.status}`)
-  return (await r.json()) as T
-}
-
-async function fetchAllPages(
+async function fetchCategoryItems(
   realm: string,
   league: string,
   kind: "Currencies" | "Uniques",
   category: string,
-): Promise<ScoutItem[]> {
-  const all: ScoutItem[] = []
+): Promise<ScoutListItem[]> {
+  const all: ScoutListItem[] = []
   let page = 1
   while (true) {
     const url = `${BASE_URL}/${realm}/Leagues/${league}/${kind}/ByCategory?Category=${encodeURIComponent(category)}&Page=${page}&PerPage=${PER_PAGE}`
     const body = await getJson<CategoryListResponse>(url)
     for (const it of body.Items) {
-      // ensure CategoryApiId is present (Uniques response uses .CategoryApiId already; defensive)
       if (!it.CategoryApiId) it.CategoryApiId = category
       all.push(it)
     }
@@ -147,156 +141,98 @@ async function fetchAllPages(
   return all
 }
 
-function isoDateOnly(d = new Date()): string {
-  return d.toISOString().slice(0, 10)
-}
-
-function computeTrends(snap: Snapshot): Trends {
-  const entries: TrendEntry[] = []
-  for (const it of snap.items) {
-    // PriceLogs có thể chứa null entry cho Uniques sparse — filter trước khi tính
-    const logs = (it.PriceLogs ?? []).filter(
-      (l): l is PriceLog => l != null && typeof l.Price === "number",
-    )
-    if (logs.length < 2) continue
-    const cur = logs[0].Price
-    const old = logs[logs.length - 1].Price
-    if (!cur || !old || cur <= 0 || old <= 0) continue
-    const deltaPct = ((cur - old) / old) * 100
-    const avgVolume = logs.reduce((s, l) => s + (l.Quantity ?? 0), 0) / logs.length
-    const kind: "Currency" | "Unique" =
-      snap.currency_categories.includes(it.CategoryApiId) ? "Currency" : "Unique"
-    entries.push({
-      apiId: it.ApiId,
-      text: it.Text,
-      category: it.CategoryApiId,
-      kind,
-      currentPrice: cur,
-      oldestPrice: old,
-      deltaPct,
-      avgVolume,
-    })
-  }
-
-  // Filter out spurious swings:
-  //   - avgVolume < 5    → 1-2 listing tạo % swing không đáng tin
-  //   - oldestPrice < 1  → giá floor 0 → bất kỳ price > 0 đều tạo +Inf%
-  //   - currentPrice < 1 → idem cho losers
-  // Bonus: cap dramatic outliers — divination cards mới in/wraprolled hay show > 10000% swing
-  // không phải tín hiệu economy thật, chỉ là item mới được scout track.
-  const liquid = entries.filter(
-    (e) =>
-      e.avgVolume >= 5 &&
-      e.oldestPrice >= 1 &&
-      e.currentPrice >= 1 &&
-      Math.abs(e.deltaPct) < 10000,
-  )
-
-  const sortByDeltaDesc = [...liquid].sort((a, b) => b.deltaPct - a.deltaPct)
-  const sortByVolumeDesc = [...entries].sort((a, b) => b.avgVolume - a.avgVolume)
-  const sortByVolumeAsc = [...entries]
-    .filter((e) => e.currentPrice > 0)
-    .sort((a, b) => a.avgVolume - b.avgVolume)
-
-  return {
-    league: snap.league,
-    computed_at: new Date().toISOString(),
-    top_gainers: sortByDeltaDesc.slice(0, 20),
-    top_losers: sortByDeltaDesc.slice(-20).reverse(),
-    top_liquid: sortByVolumeDesc.slice(0, 20),
-    low_liquid: sortByVolumeAsc.slice(0, 20),
-  }
-}
-
-async function pruneOldSnapshots(snapshotsDir: string) {
-  if (!existsSync(snapshotsDir)) return
-  const files = (await readdir(snapshotsDir))
-    .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
-    .sort()
-  const excess = files.length - KEEP_DAILY
-  if (excess <= 0) return
-  for (const f of files.slice(0, excess)) {
-    await unlink(join(snapshotsDir, f))
-    console.log(`  pruned ${f}`)
-  }
-}
-
 // ---------- main ----------
 
 async function main() {
   const { realm, league } = parseArgs()
   const t0 = Date.now()
 
+  console.log(`Building catalog for realm=${realm} league=${league}...`)
   const cats = await getJson<CategoriesResponse>(
     `${BASE_URL}/${realm}/Leagues/${league}/Items/Categories`,
   )
-  console.log(
-    `Categories — currency=${cats.CurrencyCategories.length}  unique=${cats.UniqueCategories.length}`,
-  )
+  console.log(`  currency=${cats.CurrencyCategories.length}  unique=${cats.UniqueCategories.length}`)
 
-  const items: ScoutItem[] = []
+  const items: ScoutListItem[] = []
+  const kinds: Record<number, "Currency" | "Unique"> = {}
 
   for (const c of cats.CurrencyCategories) {
-    process.stdout.write(`  fetching Currencies/${c.ApiId} ... `)
-    const chunk = await fetchAllPages(realm, league, "Currencies", c.ApiId)
-    console.log(`${chunk.length} items`)
+    process.stdout.write(`  Currencies/${c.ApiId}... `)
+    const chunk = await fetchCategoryItems(realm, league, "Currencies", c.ApiId)
+    console.log(`${chunk.length}`)
+    for (const it of chunk) kinds[it.ItemId] = "Currency"
     items.push(...chunk)
     await sleep(REQUEST_GAP_MS)
   }
-
   for (const c of cats.UniqueCategories) {
-    process.stdout.write(`  fetching Uniques/${c.ApiId} ... `)
-    const chunk = await fetchAllPages(realm, league, "Uniques", c.ApiId)
-    console.log(`${chunk.length} items`)
+    process.stdout.write(`  Uniques/${c.ApiId}... `)
+    const chunk = await fetchCategoryItems(realm, league, "Uniques", c.ApiId)
+    console.log(`${chunk.length}`)
+    for (const it of chunk) kinds[it.ItemId] = "Unique"
     items.push(...chunk)
     await sleep(REQUEST_GAP_MS)
   }
 
-  const snapshot: Snapshot = {
+  // Dedupe by ItemId
+  const seen = new Set<number>()
+  const deduped = items.filter((it) => {
+    if (seen.has(it.ItemId)) return false
+    seen.add(it.ItemId)
+    return true
+  })
+
+  const catalogItems: Record<string, CatalogItem> = {}
+  for (const it of deduped) {
+    const kind = kinds[it.ItemId] ?? "Currency"
+    catalogItems[String(it.ItemId)] = {
+      itemId: it.ItemId,
+      apiId: it.ApiId ?? String(it.ItemId),
+      text: it.Text,
+      categoryApiId: it.CategoryApiId,
+      kind,
+      iconUrl: it.IconUrl,
+      currentPrice: it.CurrentPrice ?? 0,
+      currentQuantity: it.CurrentQuantity ?? 0,
+      metadata: it.ItemMetadata ?? undefined,
+      name: it.Name,
+      type: it.Type,
+    }
+  }
+
+  const catalog: Catalog = {
     realm,
     league,
     fetched_at: new Date().toISOString(),
-    total_items: items.length,
-    currency_categories: cats.CurrencyCategories.map((c) => c.ApiId),
-    unique_categories: cats.UniqueCategories.map((c) => c.ApiId),
-    items,
+    categories: {
+      currency: cats.CurrencyCategories.map((c) => c.ApiId),
+      unique: cats.UniqueCategories.map((c) => c.ApiId),
+    },
+    total_items: deduped.length,
+    items: catalogItems,
   }
 
   const leagueDir = join(DATA_BASE, league)
-  const snapshotsDir = join(leagueDir, "snapshots")
-  await mkdir(snapshotsDir, { recursive: true })
+  await mkdir(leagueDir, { recursive: true })
+  await writeFile(join(leagueDir, "catalog.json"), JSON.stringify(catalog, null, 2))
 
-  const latestPath = join(leagueDir, "latest.json")
-  const dailyPath = join(snapshotsDir, `${isoDateOnly()}.json`)
-  const trendsPath = join(leagueDir, "trends.json")
+  // Cleanup legacy v1/v2 artifacts that no longer fit v3
+  for (const f of ["latest.json", "trends.json"]) {
+    const p = join(leagueDir, f)
+    if (existsSync(p)) await unlink(p)
+  }
+  const legacySnapshots = join(leagueDir, "snapshots")
+  if (existsSync(legacySnapshots)) await rm(legacySnapshots, { recursive: true, force: true })
 
-  await writeFile(latestPath, JSON.stringify(snapshot, null, 2))
-  await writeFile(dailyPath, JSON.stringify(snapshot, null, 2))
-
-  const trends = computeTrends(snapshot)
-  await writeFile(trendsPath, JSON.stringify(trends, null, 2))
-
-  await pruneOldSnapshots(snapshotsDir)
+  // Note: items/ dir is preserved — it holds lazy-cached history files.
+  // Stale entries (item removed from API) are pruned on next `api.sh trends` run.
 
   const elapsed = ((Date.now() - t0) / 1000).toFixed(1)
-  console.log("")
-  console.log(`Snapshot done — ${items.length} items in ${elapsed}s`)
-  console.log(`  latest:    ${latestPath}`)
-  console.log(`  daily:     ${dailyPath}`)
-  console.log(`  trends:    ${trendsPath}`)
-  console.log("")
-  console.log("Top 5 gainers (7d):")
-  for (const t of trends.top_gainers.slice(0, 5)) {
-    console.log(
-      `  +${t.deltaPct.toFixed(1)}%  ${t.text}  (${t.category}, vol ${t.avgVolume.toFixed(0)})`,
-    )
-  }
-  console.log("Top 5 losers (7d):")
-  for (const t of trends.top_losers.slice(0, 5)) {
-    console.log(
-      `  ${t.deltaPct.toFixed(1)}%  ${t.text}  (${t.category}, vol ${t.avgVolume.toFixed(0)})`,
-    )
-  }
+  console.log(`\nCatalog written in ${elapsed}s — ${deduped.length} items`)
+  console.log(`  ${join(leagueDir, "catalog.json")}`)
+  console.log(``)
+  console.log(`Next:`)
+  console.log(`  api.sh item <name>       → lookup single item (live DailyStatsHistory + cache)`)
+  console.log(`  api.sh trends [window]   → opt-in: pull all histories + compute trends (slow ~15 min)`)
 }
 
 main().catch((e) => {
