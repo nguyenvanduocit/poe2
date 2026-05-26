@@ -1,7 +1,7 @@
 ---
 skill_name: pob
 description: Analyze and calculate Path of Building 2 (POE2) builds from poe.ninja, mobalytics.gg, or pobb.in URLs
-version: 2.3.0
+version: 2.4.0
 tags: [pob, path-of-building, builds, decoder, pobb.in, poe.ninja, mobalytics, poe2, calculations, dps]
 ---
 
@@ -23,8 +23,8 @@ Analyze PoE2 builds from **poe.ninja**, **mobalytics.gg**, or **pobb.in** URLs.
 .claude/skills/pob/scripts/scripts/analyze.sh "https://poe.ninja/poe2/builds/vaal/character/account/CharName"
 .claude/skills/pob/scripts/scripts/analyze.sh "https://pobb.in/abc123"
 
-# Or use CLI directly with raw POB code
-.claude/skills/pob/.claude/skills/pob/scripts/pob-cli.sh calc @/path/to/pob-code.txt
+# Or use the POB2 CLI directly (after setup) with raw POB code
+data/pob-source/pob-cli.sh calc @/path/to/pob-code.txt
 ```
 
 ## Setup
@@ -35,11 +35,13 @@ If POB2 is not installed, run the setup script:
 .claude/skills/pob/scripts/setup.sh
 ```
 
-This will:
-1. Clone POB2 from GitHub
-2. Install lua-zlib for compression
-3. Patch HeadlessWrapper.lua for CLI support
-4. Test the installation
+**Idempotent — safe to re-run.** Each step is skipped if its output is already in place:
+
+1. **Clone PathOfBuilding-PoE2** → `<project-root>/data/pob-source/` via `fetch-poe2-data.sh` (skipped if `.git` exists; refresh by running the fetch script directly)
+2. **Install lua-zlib** via luarocks for Lua 5.1 (skipped if `luarocks show lua-zlib` returns OK)
+3. **Patch `src/HeadlessWrapper.lua`** with zlib `Deflate`/`Inflate` impls (skipped if marker `zlib.deflate()(data, "finish")` already present)
+4. **Sync CLI helpers** (`pob-cli.sh`, `pob-cli.lua`, `cli_test.lua`) from skill dir → install dir (skipped per-file if `cmp -s` reports identical)
+5. **Smoke test** by running `pob-cli.sh new`
 
 **Requirements:**
 - luajit (`brew install luajit`)
@@ -152,10 +154,10 @@ Fetch only the PoB code from poe.ninja (without analysis).
 
 ### pob-cli.sh
 
-Direct POB2 CLI for analyzing build codes.
+Direct POB2 CLI for analyzing build codes. **Must run from the install dir** (`data/pob-source/`) because it expects `src/HeadlessWrapper.lua` and `runtime/lua/` siblings — the source-of-truth copy in `.claude/skills/pob/scripts/` is for git tracking, not direct execution.
 
 ```bash
-.claude/skills/pob/.claude/skills/pob/scripts/pob-cli.sh <command> [pob-code]
+data/pob-source/pob-cli.sh <command> [pob-code]
 ```
 
 **Commands:**
@@ -168,7 +170,7 @@ Direct POB2 CLI for analyzing build codes.
 **File Input:**
 Use `@` prefix to read code from file:
 ```bash
-.claude/skills/pob/.claude/skills/pob/scripts/pob-cli.sh calc @/path/to/code.txt
+data/pob-source/pob-cli.sh calc @/path/to/code.txt
 ```
 
 ## poe.ninja API Reference
@@ -217,7 +219,7 @@ curl -s "https://poe.ninja/poe2/api/builds/$VERSION/character?account=wongklun-2
   python3 -c "import json,sys; print(json.load(sys.stdin)['pathOfBuildingExport'])" > build.txt
 
 # 3. Analyze
-.claude/skills/pob/.claude/skills/pob/scripts/pob-cli.sh calc @build.txt
+data/pob-source/pob-cli.sh calc @build.txt
 ```
 
 ## pobb.in Integration
@@ -290,20 +292,20 @@ The POB CLI outputs these stats:
 .claude/skills/pob/scripts/scripts/fetch-poeninja.sh "url2" build2.txt
 
 # Compare stats
-.claude/skills/pob/.claude/skills/pob/scripts/pob-cli.sh stats @build1.txt > stats1.json
-.claude/skills/pob/.claude/skills/pob/scripts/pob-cli.sh stats @build2.txt > stats2.json
+data/pob-source/pob-cli.sh stats @build1.txt > stats1.json
+data/pob-source/pob-cli.sh stats @build2.txt > stats2.json
 ```
 
 ### Extract skills for documentation
 
 ```bash
-.claude/skills/pob/.claude/skills/pob/scripts/pob-cli.sh info @build.txt | jq '.info.skills'
+data/pob-source/pob-cli.sh info @build.txt | jq '.info.skills'
 ```
 
 ### Check defensive stats
 
 ```bash
-.claude/skills/pob/.claude/skills/pob/scripts/pob-cli.sh stats @build.txt | jq '{life, armour, evasion, fireRes, coldRes, lightningRes, chaosRes}'
+data/pob-source/pob-cli.sh stats @build.txt | jq '{life, armour, evasion, fireRes, coldRes, lightningRes, chaosRes}'
 ```
 
 ## Troubleshooting
@@ -334,23 +336,37 @@ The PoB code may be corrupted or in an unsupported format. Try:
 ## File Structure
 
 ```
-.claude/skills/pob/scripts/
-├── SKILL.md           # This file
-├── setup.sh           # POB2 installation script
-├── .gitignore         # Excludes pob/ from git
-├── scripts/
-│   ├── analyze.sh          # Unified analyzer (auto-detects source)
-│   ├── extract-tree.sh     # Extract passive skill tree
-│   ├── fetch-poe2-data.sh  # Fetch PathOfBuilding-PoE2 repo
-│   └── fetch-poeninja.sh   # Fetch raw POB code from poe.ninja
-└── pob/              # POB2 installation (gitignored)
-    ├── src/           # POB2 source code
-    ├── runtime/       # Lua runtime and assets
-    └── pob-cli.sh     # POB2 CLI script
+.claude/skills/pob/                  # Skill source-of-truth (tracked in git)
+├── SKILL.md                         # This file
+└── scripts/
+    ├── setup.sh                     # Idempotent installer
+    ├── pob.ts                       # pobb.in TypeScript client (bun runner)
+    ├── pob-client.ts                # pobb.in TypeScript module
+    ├── pob-cli.sh                   # POB2 bash CLI (synced to install dir)
+    ├── pob-cli.lua                  # POB2 pure-Lua CLI (synced to install dir)
+    ├── cli_test.lua                 # CLI test scaffold (synced to install dir)
+    └── scripts/
+        ├── analyze.sh               # Unified URL analyzer (auto-detects source)
+        ├── extract-tree.sh          # Extract passive skill tree
+        ├── fetch-poe2-data.sh       # Clone/update PathOfBuilding-PoE2
+        └── fetch-poeninja.sh        # Fetch raw POB code from poe.ninja
+
+<project-root>/data/pob-source/      # POB2 install + game data (gitignored, ~572MB)
+├── .git/                            # Shallow clone of PathOfBuildingCommunity/PathOfBuilding-PoE2
+├── src/
+│   ├── HeadlessWrapper.lua          # Patched with zlib Deflate/Inflate by setup.sh
+│   └── Data/                        # Skills/, Gems.lua, Uniques/, Minions.lua, Mod*.lua
+├── runtime/                         # Lua runtime + Windows DLLs (used by HeadlessWrapper)
+├── pob-cli.sh                       # Synced from skill dir by setup.sh
+├── pob-cli.lua                      # Synced from skill dir by setup.sh
+└── cli_test.lua                     # Synced from skill dir by setup.sh
 ```
+
+**Why split:** the skill dir is tracked in git (so helpers + setup logic survive a wipe of `data/`). The install dir is gitignored — too big to commit, regenerable via `fetch-poe2-data.sh` + `setup.sh`. The CLI must execute from the install dir because `pob-cli.sh` resolves `src/` and `runtime/` relative to its own location.
 
 ## Version History
 
+- **2.4.0** - Consolidated POB2 install at `data/pob-source/` (single clone shared with `fetch-poe2-data.sh`). Setup.sh now idempotent — skips clone/lua-zlib/patch/copy steps when output already in place. CLI helpers tracked in skill dir, synced to install dir.
 - **2.3.0** - Added extract-tree.sh for passive tree extraction
 - **2.2.0** - Unified analyze.sh with auto-detection, rich output
 - **2.1.0** - Added mobalytics.gg integration

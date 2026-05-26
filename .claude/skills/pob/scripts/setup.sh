@@ -1,24 +1,31 @@
 #!/bin/bash
-# POB2 Setup Script
-# This script sets up Path of Building 2 for headless CLI usage
+# POB2 Setup Script — idempotent
+# Sets up Path of Building 2 for headless CLI usage at <project-root>/data/pob-source/.
+#
+# Idempotent steps (safe to re-run):
+#   1. Clone PathOfBuilding-PoE2 to data/pob-source/ (delegates to fetch-poe2-data.sh; updates if exists)
+#   2. Install lua-zlib via luarocks (skipped if already installed)
+#   3. Patch src/HeadlessWrapper.lua with zlib Deflate/Inflate (skipped if marker present)
+#   4. Copy pob-cli.sh / pob-cli.lua / cli_test.lua from skill dir to runtime dir (skipped if identical)
+#   5. Smoke-test by running pob-cli.sh new
+#
+# WHY data/pob-source/: this is the canonical POB2 install location (gitignored, ~572MB).
+# The same clone is used for both runtime (HeadlessWrapper + pob-cli) and game-data reference
+# (src/Data/Skills/, src/Data/Gems.lua, etc.) — one source of truth, no duplicate clones.
 
 set -e
 
-SKILL_DIR="$(cd "$(dirname "$0")" && pwd)"
-POB2_DIR="$SKILL_DIR/pob"
-POB2_REPO="https://github.com/PathOfBuildingCommunity/PathOfBuilding-PoE2.git"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+# SCRIPT_DIR = <root>/.claude/skills/pob/scripts → climb 4 to reach project root.
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../../.." && pwd)"
+POB2_DIR="$PROJECT_ROOT/data/pob-source"
+FETCH_SCRIPT="$SCRIPT_DIR/scripts/fetch-poe2-data.sh"
 
 echo "=== POB2 CLI Setup ==="
-echo "Skill directory: $SKILL_DIR"
+echo "Skill scripts:    $SCRIPT_DIR"
+echo "POB2 install dir: $POB2_DIR"
 
-# Check if POB2 already exists
-if [ -d "$POB2_DIR" ]; then
-    echo "POB2 already exists at $POB2_DIR"
-    echo "To reinstall, remove the directory first: rm -rf $POB2_DIR"
-    exit 0
-fi
-
-# Check dependencies
+# ─── Dependencies ──────────────────────────────────────────────────────────
 echo ""
 echo "Checking dependencies..."
 
@@ -26,7 +33,7 @@ if ! command -v luajit &> /dev/null; then
     echo "ERROR: luajit not found. Install with: brew install luajit"
     exit 1
 fi
-echo "  - luajit: OK"
+echo "  - luajit:   OK"
 
 if ! command -v luarocks &> /dev/null; then
     echo "ERROR: luarocks not found. Install with: brew install luarocks"
@@ -38,101 +45,114 @@ if ! command -v git &> /dev/null; then
     echo "ERROR: git not found"
     exit 1
 fi
-echo "  - git: OK"
+echo "  - git:      OK"
 
-# Clone POB2
+# ─── 1. Clone/update POB2 ──────────────────────────────────────────────────
 echo ""
-echo "Cloning POB2..."
-git clone --depth 1 "$POB2_REPO" "$POB2_DIR"
+if [ -d "$POB2_DIR/.git" ]; then
+    echo "POB2 already cloned at $POB2_DIR — to refresh run:"
+    echo "  $FETCH_SCRIPT"
+else
+    echo "Cloning PathOfBuilding-PoE2 via fetch script..."
+    bash "$FETCH_SCRIPT"
+fi
 
-# Install lua-zlib
+# ─── 2. lua-zlib ───────────────────────────────────────────────────────────
 echo ""
-echo "Installing lua-zlib..."
-luarocks install lua-zlib --lua-version=5.1
+if luarocks show lua-zlib --lua-version=5.1 &> /dev/null; then
+    echo "lua-zlib already installed (Lua 5.1) — skipping."
+else
+    echo "Installing lua-zlib..."
+    luarocks install lua-zlib --lua-version=5.1
+fi
 
-# Patch HeadlessWrapper.lua with zlib support
+# ─── 3. Patch HeadlessWrapper.lua ──────────────────────────────────────────
 echo ""
-echo "Patching HeadlessWrapper.lua..."
-
 WRAPPER_FILE="$POB2_DIR/src/HeadlessWrapper.lua"
 
-# Create the patch
-cat > /tmp/headless-zlib-patch.lua << 'PATCH'
--- Load zlib for compression/decompression
-local zlibOk, zlib = pcall(require, "zlib")
-if not zlibOk then
-	zlib = nil
-end
+if [ ! -f "$WRAPPER_FILE" ]; then
+    echo "ERROR: $WRAPPER_FILE not found. Clone may be corrupted — try removing $POB2_DIR and re-running."
+    exit 1
+fi
 
-function Deflate(data)
-	if zlib then
-		return zlib.deflate()(data, "finish")
-	end
-	return ""
-end
-function Inflate(data)
-	if zlib then
-		local stream = zlib.inflate()
-		local result, eof, bytesIn, bytesOut = stream(data)
-		return result or ""
-	end
-	return ""
-end
-PATCH
-
-# Replace the stub functions in HeadlessWrapper.lua
-if grep -q "function Deflate(data)" "$WRAPPER_FILE"; then
-    # Create a sed-compatible replacement
-    python3 << PYSCRIPT
-import re
-
-with open("$WRAPPER_FILE", "r") as f:
+# Idempotency marker: presence of zlib impl in Deflate body.
+if grep -q 'zlib.deflate()(data, "finish")' "$WRAPPER_FILE"; then
+    echo "HeadlessWrapper.lua already patched — skipping."
+elif grep -q 'function Deflate(data)' "$WRAPPER_FILE"; then
+    echo "Patching HeadlessWrapper.lua with zlib support..."
+    python3 - "$WRAPPER_FILE" << 'PYSCRIPT'
+import re, sys
+path = sys.argv[1]
+with open(path, "r") as f:
     content = f.read()
 
-# Pattern to match the stub functions
+# Match upstream stubs: Deflate/Inflate returning "" with TODO comments.
 pattern = r'function Deflate\(data\)\s*\n\s*-- TODO: Might need this\s*\n\s*return ""\s*\nend\s*\nfunction Inflate\(data\)\s*\n\s*-- TODO: And this\s*\n\s*return ""\s*\nend'
 
 replacement = '''-- Load zlib for compression/decompression
 local zlibOk, zlib = pcall(require, "zlib")
 if not zlibOk then
-	zlib = nil
+\tzlib = nil
 end
 
 function Deflate(data)
-	if zlib then
-		return zlib.deflate()(data, "finish")
-	end
-	return ""
+\tif zlib then
+\t\treturn zlib.deflate()(data, "finish")
+\tend
+\treturn ""
 end
 function Inflate(data)
-	if zlib then
-		local stream = zlib.inflate()
-		local result, eof, bytesIn, bytesOut = stream(data)
-		return result or ""
-	end
-	return ""
+\tif zlib then
+\t\tlocal stream = zlib.inflate()
+\t\tlocal result, eof, bytesIn, bytesOut = stream(data)
+\t\treturn result or ""
+\tend
+\treturn ""
 end'''
 
-new_content = re.sub(pattern, replacement, content)
+new_content, n = re.subn(pattern, replacement, content)
+if n == 0:
+    print("WARNING: stub pattern not matched — file may have an unexpected layout. Inspect manually.", file=sys.stderr)
+    sys.exit(2)
 
-with open("$WRAPPER_FILE", "w") as f:
+with open(path, "w") as f:
     f.write(new_content)
-
-print("Patched successfully")
+print(f"Patched ({n} substitution)")
 PYSCRIPT
+else
+    echo "WARNING: Deflate stub not found in $WRAPPER_FILE — upstream layout may have changed. Inspect manually."
 fi
 
-# Copy CLI script
+# ─── 4. Copy CLI helpers into install dir ──────────────────────────────────
 echo ""
-echo "Setting up CLI..."
-cp "$SKILL_DIR/scripts/pob-cli.sh" "$POB2_DIR/pob-cli.sh"
+echo "Syncing CLI helpers from skill dir to install dir..."
+for helper in pob-cli.sh pob-cli.lua cli_test.lua; do
+    SRC="$SCRIPT_DIR/$helper"
+    DST="$POB2_DIR/$helper"
+
+    if [ ! -f "$SRC" ]; then
+        echo "  - $helper: SOURCE MISSING at $SRC (skipping)"
+        continue
+    fi
+
+    if [ -f "$DST" ] && cmp -s "$SRC" "$DST"; then
+        echo "  - $helper: already identical, skip"
+    else
+        cp "$SRC" "$DST"
+        echo "  - $helper: copied"
+    fi
+done
 chmod +x "$POB2_DIR/pob-cli.sh"
 
-# Test
+# ─── 5. Smoke test ─────────────────────────────────────────────────────────
 echo ""
-echo "Testing installation..."
+echo "Smoke test (pob-cli.sh new)..."
 cd "$POB2_DIR"
-./pob-cli.sh new 2>&1 | head -5
+if ./pob-cli.sh new 2>&1 | head -5 | grep -q '.'; then
+    echo "  - pob-cli.sh: responsive"
+else
+    echo "  WARNING: pob-cli.sh new produced no output — install may be broken."
+fi
 
 echo ""
 echo "=== Setup Complete ==="
@@ -142,5 +162,8 @@ echo "  $POB2_DIR/pob-cli.sh new              # Create empty build"
 echo "  $POB2_DIR/pob-cli.sh calc <pob-code>  # Analyze build"
 echo "  $POB2_DIR/pob-cli.sh calc @file.txt   # Load from file"
 echo ""
-echo "To fetch builds from poe.ninja, use:"
-echo "  $SKILL_DIR/scripts/fetch-poeninja.sh <url>"
+echo "Fetch builds from poe.ninja / pobb.in / mobalytics:"
+echo "  $SCRIPT_DIR/scripts/analyze.sh <url>"
+echo ""
+echo "Refresh PathOfBuilding-PoE2 source:"
+echo "  $FETCH_SCRIPT"
