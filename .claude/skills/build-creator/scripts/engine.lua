@@ -43,6 +43,14 @@ function engine.classIdByName(name)
   return nil
 end
 
+-- Set an explicit character level. MUST disable characterLevelAutoMode, else
+-- OnFrame re-derives the level from gems/tree (Build.lua:845-846) and our value
+-- is silently overwritten on the next commit.
+function engine.setLevel(n)
+  build.characterLevelAutoMode = false
+  build.characterLevel = math.max(1, math.min(100, n))
+end
+
 function engine.selectClass(name)
   local id = engine.classIdByName(name)
   if not id then error("engine: unknown class '" .. tostring(name) .. "'") end
