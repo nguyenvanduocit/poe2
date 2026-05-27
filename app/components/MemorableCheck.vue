@@ -66,53 +66,60 @@ const isDone = computed(() => mounted.value && done.value)
 </template>
 
 <style scoped>
+/* Mirror the look of a prose `.content li`: Literata serif body, 1.6 line
+   height, hanging indent (pl-7), and a coral square marker with the brutalist
+   2px stamp shadow — except the marker is now an interactive checkbox.
+   Theme tokens hardcoded (scoped CSS can't read tailwind theme()): primary
+   #ff7b6b, terminal.border #474541, surface-0 #2e2f2c, terminal.bg #2a2a28,
+   terminal.text #d5cfc5. */
 .mc {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
+  display: block;
+  position: relative;
+  padding-left: 1.75rem;
+  margin: 0.5rem 0;
   cursor: pointer;
   user-select: none;
-  margin: 0.3rem 0;
-  font-family: ui-monospace, 'SF Mono', monospace;
-  font-size: 0.82rem;
-  font-weight: 500;
-  line-height: 1.45;
-  color: #c7ccab;
-  transition: color 0.12s ease;
+  font-family: 'Literata', 'Literata Fallback', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d5cfc5;
 }
 
 .mc__box {
   appearance: none;
   -webkit-appearance: none;
-  flex-shrink: 0;
-  width: 0.95rem;
-  height: 0.95rem;
-  margin: 0.15rem 0 0;
-  border: 1.5px solid rgba(212, 255, 0, 0.4);
-  background: transparent;
+  position: absolute;
+  left: 0;
+  top: 0.42rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  margin: 0;
+  border: 2px solid #474541;
+  background: #2e2f2c;
   border-radius: 0;
+  box-shadow: 2px 2px 0 #474541;
   cursor: pointer;
-  position: relative;
-  transition: background 0.12s ease, border-color 0.12s ease;
+  transition: background 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
 }
 
 .mc:hover .mc__box {
-  border-color: #d4ff00;
+  border-color: #ff7b6b;
+  box-shadow: 2px 2px 0 #ff7b6b;
 }
 
 .mc__box:checked {
-  background: #d4ff00;
-  border-color: #d4ff00;
+  background: #ff7b6b;
+  border-color: #ff7b6b;
 }
 .mc__box:checked::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: #14160d;
+  background: #2a2a28;
   clip-path: polygon(15% 50%, 40% 75%, 85% 25%, 75% 15%, 40% 55%, 25% 40%);
 }
 .mc__box:focus-visible {
-  outline: 2px solid #d4ff00;
+  outline: 2px solid #ff7b6b;
   outline-offset: 2px;
 }
 
