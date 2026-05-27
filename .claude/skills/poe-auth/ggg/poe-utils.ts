@@ -87,8 +87,7 @@ export interface PassiveTree {
  * Returns true when no usable passive-tree mirror exists locally.
  * Patch-versioned semantics: poedb publishes immutable per-patch snapshots, so staleness
  * means "no tree data on disk for any patch" rather than "timestamp expired".
- * For explicit refresh, run `./.claude/skills/poedb/scripts/download.sh <patch>`
- * or `bun .claude/skills/passive-skill-tree/scripts/analyze.ts <cmd> --force-update`.
+ * For explicit refresh, run `./.claude/skills/poedb/scripts/download.sh <patch>`.
  */
 export function isCacheStale(): boolean {
   const patch = findLatestPatch();

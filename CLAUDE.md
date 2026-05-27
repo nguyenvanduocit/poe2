@@ -117,6 +117,7 @@ Mọi data persistent sống dưới `data/` (xem `../CLAUDE.md ## Rules` cho ca
 - `data/poedb/<patch>/` — database mirror poe2db.tw per patch
 - `data/release-notes/Version_X.Y.Z.md` — patch notes (+ `latest.md` symlink)
 - `data/atlas-tree/atlas-tree.json` — GGG atlas tree export
+- `data/passive-tree/<tag>/data.json` — GGG `poe2-skilltree-export` passive tree (normalized), pinned per release tag (+ `meta.json`)
 - `data/poe-ninja/<league>/{latest,trends}.json + snapshots/` — economy snapshot
 - `data/price-history/{daily/,master.json}` — currency/item price time series cho price-forecast
 - `data/map-mods/<corpus>-mods-X.Y.json` — waystone/tablet mod corpus

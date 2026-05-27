@@ -143,6 +143,29 @@ luarocks --lua-version=5.1 --lua-dir=/opt/homebrew/opt/luajit install luautf8 lu
 - "Optimized" = the per-request target the user sets; the verify/optimize loop is
   the judge, not vibes.
 
+## Gotchas (PoB headless) — learned the hard way
+
+- **Revert with `CreateUndoState`/`RestoreUndoState`, not `DeallocNode`+`AllocNode`.**
+  `optimize.lua` reverts *additions* it just made, which is symmetric. But for
+  REMOVING an existing node (trim/swap) and measuring marginal loss, re-`AllocNode`
+  does NOT restore the node's attribute choice — `SwitchAttributeNode` defaults to
+  Strength, silently corrupting Str/Dex/Int and drifting every later measurement
+  down (observed: a 147pt trim reported 397k DPS instead of the true 491k).
+  `CreateUndoState` captures `hashOverrides` (= attribute choices), so
+  snapshot/restore is the only correct revert for removals.
+- **"0 DPS loss" ≠ "safe to cut".** `mainOutput.TotalDPS` is all the greedy sees;
+  it is blind to mechanics. Cutting `Blood Magic` (flips skill cost life→mana) or
+  rage/warcry nodes scores 0 DPS loss yet can break the build. PoB calc is also
+  **config-dependent** — rage at 0 stacks in the build config makes rage nodes
+  read 0 DPS even if they matter in play. Always surface the cut list for human
+  vetting; never auto-apply.
+- **Tree trim only removes leaves.** A node is safe to deallocate iff
+  `#node.depends == 1` (only itself depends on it). Cutting a bridge cascades and
+  orphans everything downstream. `DeallocNode` re-runs `BuildAllDependsAndPaths`,
+  so `depends` is fresh each round.
+- **PoB logs via `ConPrintf`→`print`→stdout.** Silence it (noop `print` around the
+  `dofile`, then noop `ConPrintf`) or machine-readable JSON output gets polluted.
+
 ## Files
 
 ```
