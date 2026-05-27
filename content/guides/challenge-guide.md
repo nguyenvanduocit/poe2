@@ -34,37 +34,37 @@ Target mặc định của mình là **8/8**. Lý do đơn giản: scope nhỏ, 
 
 ## Challenge 1 — The Rune Seeker
 
-:challenge-check{id="rune-seeker" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="rune-seeker" storageKey="poe2-runes-of-aldur-challenges"}
 
 Đây là challenge gắn trực tiếp với league mechanic, nên nó tự tiến triển khi mình chơi Remnant. Yêu cầu là tìm :wiki-link{url="https://www.poe2wiki.net/wiki/Remnant"} có số slot ngày càng nhiều rồi dùng chúng craft item mới qua Runic Recipe. Remnant slot ít thì an toàn, nhưng để tick được mốc cao mình phải mở những craft nhiều slot. Bản craft bảy slot là chỗ khó: nó đi kèm sáu wave quái, và càng nhiều slot thì encounter càng nguy hiểm vì phần thưởng lớn đổi bằng rủi ro chết. Cách đẩy là chơi Remnant liên tục trong map loop và chủ động chọn remnant slot cao khi build đã đủ tanky để sống qua sáu wave — đừng ép craft bảy slot lúc còn yếu, một wave dồn là mất cả encounter.
 
 ## Challenge 2 — The Hunter
 
-:challenge-check{id="hunter" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="hunter" storageKey="poe2-runes-of-aldur-challenges"}
 
 Trong suốt campaign rải rác nhiều optional boss, và challenge này yêu cầu hạ **sáu** trong số đó. Bốn con đầu gặp tự nhiên khi đi campaign nên không phải lo. Hai con cuối khó tìm hơn hẳn vì chúng nằm khuất trong một vùng sa mạc của campaign: cách định vị là **đi theo lòng sông khô** (dry riverbed), arena của chúng nằm ở cuối đường. Cứ bám lòng sông khô là ra. Hai boss đó tên tạm là *Aki the Final Sting* và *Anund the Sandworm* ở vùng *Kari Crossing* — tên theo phụ đề video, confidence LOW, verify lại tên chính xác khi vào game. Với một starter leo campaign bình thường thì sáu optional boss này nằm trọn trong envelope, chỉ cần không bỏ sót khi chạy qua vùng sa mạc.
 
 ## Challenge 3 — The Ascendant
 
-:challenge-check{id="ascendant" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="ascendant" storageKey="poe2-runes-of-aldur-challenges"}
 
 Yêu cầu là đạt đủ **tám điểm ascendancy** cho class của mình qua các ascendancy trial. Bốn điểm đầu lấy dễ, phần khó là set điểm cuối cùng. Có hai con đường và phải chọn một: hoặc hạ *Zarokh* ở tầng bốn của :wiki-link{url="https://www.poe2wiki.net/wiki/Trial_of_the_Sekhemas"}, hoặc hạ Trial Master của :wiki-link{url="https://www.poe2wiki.net/wiki/Trial_of_Chaos"} bằng cách tìm đủ ba key. Tradeoff rõ ràng: Trial of Chaos tốn thời gian hơn nhiều vì phải chạy trial nhiều lần để gom đủ key, nhưng Trial of the Sekhemas lại khó hơn về độ gắt của encounter (honor system, một chuỗi tầng không được chết). Mình chọn đường nào tuỳ build — build tanky chịu được Sekhemas thì đi Sekhemas cho nhanh; build squishy hơn nhưng có dư thời gian thì grind Chaos key an toàn hơn. Dù sao tám điểm ascendancy cũng là thứ mình muốn có cho power, nên challenge này gần như free.
 
 ## Challenge 4 — The Reliquarian
 
-:challenge-check{id="reliquarian" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="reliquarian" storageKey="poe2-runes-of-aldur-challenges"}
 
 Đơn giản nhất trong nhóm: **identify 50 unique item khác nhau**. Không yêu cầu giữ hay drop từ nguồn cụ thể, chỉ cần identify đủ 50 loại unique riêng biệt. Cái này tự xong khi chạy endgame và nhặt unique rớt. Nếu thấy chậm, Atlas master **Jado** có nhiều ability chuyên tăng tỉ lệ tìm unique — bật Jado (qua Masters of the Atlas, mỗi map chọn một master active) khi muốn đẩy nhanh challenge này. Cứ identify mọi unique nhặt được thay vì vendor thẳng là sẽ tới 50 trước khi nhận ra.
 
 ## Challenge 5 — The Artisan
 
-:challenge-check{id="artisan" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="artisan" storageKey="poe2-runes-of-aldur-challenges"}
 
 Yêu cầu dùng một loạt **crafting item khác nhau**, tất cả đều đến từ Remnant encounter. Vì challenge này gắn với cùng hệ Runeforging như The Rune Seeker, hai cái đẩy song song: càng chơi Remnant mở nhiều craft thì càng tiêu thụ nhiều loại crafting item khác nhau, tick cả hai challenge cùng lúc. Điểm cần chú ý là phải dùng *đa dạng* loại item chứ không phải spam một loại — nên khi craft, chủ động xài hết các loại crafting currency từ remnant thay vì chỉ dùng một hai cái quen thuộc.
 
 ## Challenge 6 — The Cartographer
 
-:challenge-check{id="cartographer" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="cartographer" storageKey="poe2-runes-of-aldur-challenges"}
 
 Đây là một trong hai challenge nặng nhất: **allocate toàn bộ Atlas tree, cả 300 node**. Có hai cách. Cách chậm là hoàn thành mọi map trong Fortress để gom đủ Atlas point cho 300 node — khả thi nhưng rất dài. Cách nhanh dựa vào :wiki-link{url="https://www.poe2wiki.net/wiki/Arbiter_of_Divinity"}: mỗi lần hạ Arbiter of Divinity, mình mở khả năng tự động hoàn thành một mảng lớn của Fortress. Key vào trận Arbiter lấy bằng cách tìm :wiki-link{url="https://www.poe2wiki.net/wiki/Citadel"} trên Atlas — mỗi Citadel có cột sáng lớn (glowing beam) nên thấy được qua màn sương. Hạ Arbiter đủ số lần thì toàn bộ Fortress được complete và mình có đủ point cho cả 300 node.
 
@@ -72,7 +72,7 @@ Yêu cầu dùng một loạt **crafting item khác nhau**, tất cả đều đ
 
 ## Challenge 7 — The Vanquisher
 
-:challenge-check{id="vanquisher" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="vanquisher" storageKey="poe2-runes-of-aldur-challenges"}
 
 Challenge khó nhất: hạ **ba pinnacle boss**, những trận gắt nhất game. Ba con này là pinnacle của ba league mechanic Delirium, Ritual và Abyss, nên muốn tick challenge mình phải chạy ba quest line tương ứng để mở đường tới từng pinnacle. Cụ thể theo patch notes: pinnacle **Delirium** mở bằng key từ :wiki-link{url="https://www.poe2wiki.net/wiki/Simulacrum"} (giờ là encounter 7 wave, hoàn thành nhả key); pinnacle **Ritual** mở bằng key gom từ Rite of the Nameless (mỗi map trong chuỗi cho một element của key); pinnacle **Abyss** mở qua Abyssal Depths. Tên ba boss theo phụ đề video là *Tangazu* (Delirium), *the Bodark* (Ritual) và *Vessel of Coolark* (Abyss) — confidence LOW về chính tả, mình bám mechanic ở trên là chắc chắn, tên cụ thể verify khi vào game.
 
@@ -82,7 +82,7 @@ Vì cả ba đều có **quest version deterministic** (patch note: mọi pinnac
 
 ## Challenge 8 — Chưa Công Bố
 
-:challenge-check{id="challenge-8" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="challenge-8" storageKey="poe2-runes-of-aldur-challenges"}
 
 Challenge screen có đủ tám challenge, nhưng video reveal chính chủ (27/05) chỉ đi qua bảy cái ở trên. Challenge thứ tám chưa được công bố tại thời điểm viết.
 

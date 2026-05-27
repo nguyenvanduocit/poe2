@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 
+// Inline checkbox that remembers its state in localStorage. Generic — drop it
+// under any heading in MDC content (challenge steps, build progression, gear
+// checklist, farming run targets). Sibling instances sharing a storageKey form
+// one logical checklist keyed by `id`.
 const props = defineProps<{
   // Item key inside the shared checklist object.
   id: string
-  // Namespaces the localStorage entry; sections of one guide share this key.
+  // Namespaces the localStorage entry; instances sharing it share state.
   storageKey?: string
   doneLabel?: string
   todoLabel?: string
@@ -49,19 +53,19 @@ const isDone = computed(() => mounted.value && done.value)
        styling). An off-flow sr-only input would receive focus on label click
        and make the browser scroll-into-view its clipped position, yanking the
        whole content scroller — the bug this replaced. -->
-  <label class="cc" :class="{ 'cc--done': isDone }">
+  <label class="mc" :class="{ 'mc--done': isDone }">
     <input
       type="checkbox"
-      class="cc__box"
+      class="mc__box"
       :checked="isDone"
       @change="toggle"
     >
-    <span class="cc__text">{{ isDone ? (doneLabel ?? 'Đã hoàn thành') : (todoLabel ?? 'Đánh dấu hoàn thành') }}</span>
+    <span class="mc__text">{{ isDone ? (doneLabel ?? 'Đã hoàn thành') : (todoLabel ?? 'Đánh dấu hoàn thành') }}</span>
   </label>
 </template>
 
 <style scoped>
-.cc {
+.mc {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -76,7 +80,7 @@ const isDone = computed(() => mounted.value && done.value)
   transition: color 0.12s ease;
 }
 
-.cc__box {
+.mc__box {
   appearance: none;
   -webkit-appearance: none;
   flex-shrink: 0;
@@ -91,27 +95,27 @@ const isDone = computed(() => mounted.value && done.value)
   transition: background 0.12s ease, border-color 0.12s ease;
 }
 
-.cc:hover .cc__box {
+.mc:hover .mc__box {
   border-color: #d4ff00;
 }
 
-.cc__box:checked {
+.mc__box:checked {
   background: #d4ff00;
   border-color: #d4ff00;
 }
-.cc__box:checked::after {
+.mc__box:checked::after {
   content: '';
   position: absolute;
   inset: 0;
   background: #14160d;
   clip-path: polygon(15% 50%, 40% 75%, 85% 25%, 75% 15%, 40% 55%, 25% 40%);
 }
-.cc__box:focus-visible {
+.mc__box:focus-visible {
   outline: 2px solid #d4ff00;
   outline-offset: 2px;
 }
 
-.cc--done {
+.mc--done {
   color: #d4ff00;
 }
 </style>
