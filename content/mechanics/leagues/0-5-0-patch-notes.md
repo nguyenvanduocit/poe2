@@ -5,7 +5,7 @@ title: "Patch Notes — Return of the Ancients"
 status: draft
 author: duocnv
 created: '2026-05-24'
-updated: '2026-05-24'
+updated: '2026-05-27'
 league: '0.5'
 patch: 0.5.0
 tags:
@@ -16,7 +16,9 @@ tags:
   - endgame-overhaul
 ---
 
-Đây là patch note chính thức của Path of Exile 2 — Content Update 0.5.0 "Return of the Ancients", do Grinding Gear Games (Stacey_GGG) đăng ngày 21/05/2026 tại [pathofexile2.com/ancients](https://www.pathofexile2.com/ancients), kèm bản cập nhật bổ sung ngày 22/05/2026. Đây là changelog đầy đủ, chép nguyên văn từng dòng để tra cứu — thuật ngữ game giữ nguyên tiếng Anh. File gốc nằm trong repo tại `data/release-notes/Version_0.5.0.md`. Bản tóm tắt định hướng (chỉ giữ thay đổi đủ lớn để đổi cách chơi) ở [Return of the Ancients](/mechanics/leagues/return-of-the-ancients).
+Đây là patch note chính thức của Path of Exile 2 — Content Update 0.5.0 "Return of the Ancients", do Grinding Gear Games đăng ngày 21/05/2026 tại [pathofexile2.com/ancients](https://www.pathofexile2.com/ancients), kèm ba bản cập nhật bổ sung ngày 22, 25 và 26/05/2026. Bản này chép nguyên văn từ thread patch note chính thức trên forum GGG ([forum thread 3932540](https://www.pathofexile.com/forum/view-thread/3932540) — nguồn authoritative cao nhất), fetch ngày 27/05/2026; file gốc nằm trong repo tại `data/release-notes/Version_0.5.0.md`.
+
+Doc này có hai phần. Phần đầu là **changelog đầy đủ chép nguyên văn từng dòng để tra cứu** — thuật ngữ game giữ nguyên tiếng Anh, không diễn giải. Phần cuối — mục **"0.5.0 đổi gì cho build & mechanic của mình"** ở cuối doc — là ghi chú riêng về những thay đổi tác động trực tiếp tới các build/mechanic mình đang theo, viết bằng giọng chủ quan để tự định hướng việc cần làm sau patch. Bản tóm tắt định hướng ngắn gọn hơn (chỉ giữ thay đổi đủ lớn để đổi cách chơi) ở [Return of the Ancients](/mechanics/leagues/return-of-the-ancients).
 
 Expansion **Return of the Ancients** mang đến một league mới, một cuộc đại tu toàn bộ Endgame của Path of Exile 2, với sáu storyline Endgame mới và 2 Ascendancy class mới, cùng một lượng nội dung khổng lồ khác.
 
@@ -40,8 +42,8 @@ Expansion **Return of the Ancients** mang đến một league mới, một cuộ
 - Thêm 15 **Meta crafting rune** — craft từ Remnant.
 - Thêm hơn 60 rune có thể tạo bằng cách phá hủy một unique để làm ra một rune mang một phần thuộc tính của nó.
 - Thêm hơn 15 **Runic Ward Rune** — craft từ Remnant, thêm hoặc chỉnh các thuộc tính liên quan Runic Ward.
-- Thêm 21 **Kalguuran Skill** có thể craft từ Remnant: Animus Exchange, Animus Splinters, Bitter Dead, Conductive Runes, Detonate Living, Eternal March, Explosive Transmutation, Fragments of the Past, Frostflame Nova, Grim Pillars, Hollow Shell, Leylines, Powered by Verisium, Refutation, Remnants of Kalguur, Repulsion, Runic Reprieve, Skyfall, Triskelion Cascade, Verisium Manifestations, và Voltaic Barrier.
-- Thêm 8 **Kalguuran Support** có thể craft từ Remnant: Concussive Runes, Fist of Kalguur, Healing Runes, Kalguuran Conviction, Runeforged Blades, Runic Extraction, Runic Infusion và Scouring Flame.
+- Thêm 23 **Kalguuran Skill** có thể craft từ Remnant: Animus Exchange, Animus Splinters, Bitter Dead, Conductive Runes, Detonate Living, Eternal March, Explosive Transmutation, Fragments of the Past, Frostflame Nova, Grim Pillars, Hollow Shell, Leylines, Powered by Verisium, Rain of Blades, Refutation, Remnants of Kalguur, Repulsion, Runic Reprieve, Skyfall, Triskelion Cascade, Verisium Manifestations, Voltaic Barrier, và Wardbound Minions.
+- Thêm 7 **Kalguuran Support** có thể craft từ Remnant: Concussive Runes, Fist of Kalguur, Healing Runes, Runeforged Blades, Runic Extraction, Runic Infusion và Scouring Flame.
 - Expedition Remnant đã được đổi thành Remnant của league Runes of Aldur.
 - **Endgame Story mới:** Lên đường thám hiểm cùng Farrow để khám phá Đại Dương khi bạn điều tra các lăng mộ của những người Kalguuran đã ngã xuống và thách đấu họ để giành phần thưởng phi thường. Đi tìm hố thiên thạch của một ngôi sao đã rơi — một thiên thạch bằng Verisium nguyên chất — nơi bạn hy vọng rèn ra những vật phẩm uy lực vô song… nếu bạn có thể đánh bại thứ đang chờ ở đó.
 - Có một hub area mới **"The Ruins of Kingsmarch"** cho Runes of Aldur, nằm ở phía đông-nam vị trí khởi đầu của bạn trên Atlas.
@@ -780,8 +782,107 @@ GGG cập nhật hai mục patch note ngày 22/05/2026:
 - **Unique Verisium Runeforging:** Sau khi unlock Unique Verisium Runeforging ở Act 3, bạn có thể nâng base type của Unique Weapon và Armour rớt ở level dưới 55. Unique Weapon được nâng cấp sẽ có damage cao hơn, và Unique Armour được nâng cấp sẽ có base defence cao hơn cùng Runic Ward — giúp chúng cạnh tranh hơn ở level cao. Unique Armour trên level 55 vẫn có thể Runeforge để chỉnh defence sao cho có Runic Ward, đổi lại giảm các defence khác giống base type.
 - **Ghost Dance:** Khoảng thời gian giữa các lần nhận Ghost Shroud không còn là duration. Giờ có "Modifiers to Cooldown Recovery Rate also apply to Ghost Shroud gain frequency". Cũng có "When Hit, lose a Ghost Shroud" và "Regenerate Energy Shield equal to 2% of your Evasion Rating per second if you have lost a Ghost Shroud Recently". Giờ nhận một Ghost Shroud mỗi 11.7-10.1 giây ở Gem level 4-20 (trước 7.6-6.1).
 
+## Cập Nhật Patch Notes (25/05/2026)
+
+GGG đăng đợt cập nhật lớn ngày 25/05/2026.
+
+**Mục patch note được sửa:**
+
+- Danh sách Kalguuran Skill được chốt lại thành 23 skill (thêm Rain of Blades và Wardbound Minions) — đã phản ánh ở phần [League Runes of Aldur](#league-runes-of-aldur) phía trên.
+- Các item sau bị gỡ khỏi Currency Exchange: Black Scythe Artifact, Broken Circle Artifact, Exotic Coinage, Order Artifact, Petition Splinter, Runic Splinter và Sun Artifact.
+- Các item sau chỉ còn xuất hiện trên Currency Exchange ở Standard League: Omen of Corruption, Omen of Homogenising Coronation và Omen of Homogenising Exaltation.
+- Legacy Expedition Currency giờ bán được cho vendor để lấy Gold.
+- Rog, Gwennen, Dannig và Tujen trong hideout hiện có bị chuyển thành doodad không tương tác được. Nói chuyện với các NPC này sẽ không còn mời họ về hideout.
+- Primary Calamity Fragment hiện có được chuyển thành Ancient Crisis Fragment; Secondary thành Faded Crisis Fragment; Tertiary thành Weathered Crisis Fragment.
+- Các Waystone Modifier thêm Damage cho Monster, Penetrate Elemental Resistance của người chơi, hoặc giảm Max Resistance của người chơi đều bị giảm giá trị trên diện rộng.
+- Waystone Modifier cấp Extra Projectile cho Monster bị disable.
+- Base duration của mọi Shrine giờ là 45 giây.
+- Modifier "Contains Identified Items" trên Strongbox không còn roll được.
+- Các Tablet Modifier không còn chức năng bị disable (vd Breach trong map chứa thêm Clasped Hand, hoặc Delirium Encounter có cơ hội tạo thêm Reward).
+- Ignite bị reflect lên người chơi không còn lan sang kẻ thù khác từ người chơi.
+- Ngưỡng Culling Strike không còn bị hạ trong party play đối với non-unique monster (vẫn hạ theo số người chơi đối với unique monster).
+- Lineage Support Gem mới: Olroth's Hubris.
+- **Ice Nova:** không còn phát ra từ Frostbolt khi cascade ngang.
+- **Primal Strikes:** min Gem level giờ là 9 (trước 7).
+- **Tame Beast:** Summoned Beast giờ deal 40% more damage ở Gem Level 9, scale lên 84% ở Gem Level 20. Giờ summon ngay Beast vừa Tame nếu đủ spirit. Min Gem level giờ là 7 (trước 9).
+- **Spell Cascade:** không còn giới hạn chỉ support spell bạn tự dùng.
+- **Collapsing Horizon** Unique Quarterstaff giờ cấp 100% increased Elemental Damage (trước là 100% increased Elemental Damage with Attacks).
+- **Idol of Uldurn** Unique Amulet giờ có thêm 20-40% reduced Presence Area of Effect và 10-15% increased Spirit.
+- **The Road Warrior** Unique Body Armour không còn lấy được nữa.
+- Các skill do **Unborn Lich** Unique Staff cấp được rework (His Foul Emergence, His Scattering Calamity, His Vile Intrusion, His Winnowing Flame) — phần lớn về Mana Cost 0 và điều chỉnh cooldown/duration/impale.
+- Mọi crafted modifier giờ được đảm bảo (guaranteed) nhưng item chỉ có 1 crafted modifier tại một thời điểm. Desecrated modifier không còn tính là crafted modifier, nhưng item giới hạn 1 Desecrated modifier.
+- **Quipolatl's Thesis** Soul Core và **Guatelitzi's Thesis** Soul Core được rework giá trị theo slot.
+- Modifier Leech % Physical Attack Damage as Life/Mana trên Glove và Ring được chỉnh roll ở level thấp hơn, bỏ tier đầu.
+- Suffix "of the Parasite" và "of the Thirsty" không còn roll được.
+- Hàng loạt suffix Max Rage / hybrid (of the Locust, Remora, Lamprey, Vampire, Parched, Arid, Drought, Desperate) đổi level roll; "of the Vampire" và "of the Desperate" giờ roll được trên Bow và Crossbow.
+- **Bogfelled Commoner** giờ có biến thể Spectre cho phiên bản boss của monster.
+- Nhiều bug fix: Arc giữ nhầm stat Lightning Infused; support gem "Skills you use yourself" áp nhầm lên clone/minion; Unearth không nhận support; flask bị disable vẫn dùng được qua một số effect; bleed modifier không hoạt động với bleed từ Spell Hit; melee strike range hiển thị bằng game unit thay vì mét (giá trị hiển thị nhỏ đi 10 lần, không phải thay đổi chức năng).
+
+## Cập Nhật Patch Notes (26/05/2026)
+
+GGG đăng đợt cập nhật cuối trước launch ngày 26/05/2026.
+
+**Mục patch note được sửa:**
+
+- Danh sách Kalguuran Support được chốt lại thành 7 support (bỏ Kalguuran Conviction) — đã phản ánh ở phần [League Runes of Aldur](#league-runes-of-aldur) phía trên.
+- Thêm khả năng search nhanh trade market bằng item bạn đang có: Shift-Alt Click lên item sẽ điền sẵn filter để xem giá hiện tại. Với Rare item, bạn bật/tắt từng modifier để biết mỗi mod ảnh hưởng giá thế nào. Controller dùng tính năng này bằng cách giữ Y hoặc Triangle trên item.
+
+**Mục patch note mới thêm:**
+
+- Có thể dùng lệnh chat `/reclaimexpeditioninventories` để lấy lại item còn kẹt trong các inventory đã deprecate, gồm cả của Recombinator và Expedition Vendor.
+- Giờ có thể click vào Town trên Atlas để travel tới đó qua waypoint, hoặc Ctrl-Click nút quick travel ở cạnh màn hình Atlas.
+- **Unforeseen Consequences** Unique Tablet không còn mod "4-6 additional Rare Monster spawn từ Abyss trong Map". Bản hiện có có thể bị làm tệ hơn bằng Divine Orb.
+- Nhiều boss Act 4 giờ có thể xuất hiện trong cơ chế Stone Circle Map.
+- Modifier áp dụng cho Allies in your Presence (như trên Sceptre và Grip of Kulemak Unique Ring) không còn cộng dồn trong party nếu nhiều thành viên có cùng loại modifier. Thay đổi này không ảnh hưởng modifier "Allies in your Presence deal 50% increased Damage" từ Leer Cast Unique Helmet.
+- Lineage Support mới: Olroth's Conviction.
+- Thêm 3D art cho Rise of the Phoenix.
+- Thêm nhiều cluster mới vào Passive Skill Tree: Armour applies to Elemental Damage + faster start of Energy Shield Recharge; hybrid Armour + Elemental Damage + Deflection; hybrid Deflection + Faster Start of ES Recharge; và Armour + Evasion.
+- **Backup Plan** Notable: giờ cấp 20% increased Armour and Evasion; Evasion Rating khi đã bị hit gần đây là 40% (trước 50%); Increased Armour khi chưa bị hit gần đây là 40% (trước 50%).
+- **Defiance** Notable: giờ cấp 20% increased Armour and Evasion Rating; và 80% increased Armour and Evasion Rating khi Low Life (trước 120%).
+- **Insulated Treads** và **Strong Chin** Notable: thêm 25% increased Armour and Evasion bên cạnh hiệu ứng hiện có.
+- **Iron Slippers** Notable: 2 Armour mỗi 1 Energy Shield trên Boots (trước 3). **Subterfuge Mask** Notable: 1 Evasion mỗi 1 Energy Shield trên Helmet (trước 2).
+- **Tolerant Equipment** Notable: cấp 15% increased Armour and Evasion. **Wild Cat** Notable: 12% Evasion as Deflection Rating (trước 10%).
+- Small Passive cấp Deflection Rating theo % Evasion giờ có giá trị 8% (trước 6%).
+- **Barkskin:** giờ cấp 50% of Energy Shield Lost as Armour ở level 8 (trước 32%), scale lên 62% ở level 20 (trước 44%).
+- **Mark of Siphoning / II:** enemy bị Mark khiến bạn Leech Mana (và với II, cả Life) bằng 8% Physical Attack Damage.
+- **Gravebind** Unique Gloves giờ có 15-20% Increased Rarity of Items Found, và các modifier Rarity khác của bạn không áp dụng.
+- Lesser/Greater/Perfect Jeweller's Orb giờ dùng được trên item có skill để tăng số socket cho skill item đó cấp; dùng trên item nhiều skill sẽ ảnh hưởng tất cả skill.
+- Cải thiện reward của quest Tribal Medicine. Nâng cấp MTX: Originator's Weapon Effect và Celestial Emperor Rare Finisher Effect giờ dùng được trong POE2.
+- Bug fix: Fire Skill dùng bởi Spell Totem / Visage (Align Fate) không còn tạo Raging Spirit; sửa overlap giá trị mod "Lord's" Increased Spirit (giờ 20-26%, trước 30-36%); sửa lỗi Chaos Inoculation override max life thành 1 ảnh hưởng nhầm ngưỡng stun/ailment (nổi bật là CI + một số mod Stun Threshold khiến nhân vật miễn Heavy Stun); sửa Eternal Youth + 0 ES; sửa hiển thị crit damage của Gore Spike; sửa queued skill không update target; sửa Killing Palm / Staggering Palm dash trượt target; sửa projectile của Arbiter of Ash tàng hình khi tạo quá xa người chơi.
+
+## 0.5.0 đổi gì cho build & mechanic của mình
+
+Đây là phần ghi chú riêng — soi nguyên đống note trong kho của mình xem patch 0.5.0 đụng tới cái gì, xếp theo mức độ phải bắt tay làm.
+
+### Phải viết lại từ đầu
+
+[Dinomancer Lich Elephant](/builds/witch/dinomancer-lich-elephant) là build đau nhất. Engine của nó là tier 5 :wiki-link{url="https://www.poe2wiki.net/wiki/Infernal_Legion"} cho phase "walking simulator" pure burn — mà 0.5.0 xoá hẳn Infernal Legion III khỏi game, đồng thời halve self-burn + ignite base của tier I/II từ 20% xuống 10%, cộng thêm fix bug khiến IL luôn tính crit. Toàn bộ math damage của build sụp, không phải lệch số mà gãy nền tảng. Phải re-PoB từ đầu và trả lời câu hỏi IL có còn viable không — nếu không thì pivot sang :wiki-link{url="https://www.poe2wiki.net/wiki/Tame_Beast"} pure damage (vừa được buff mạnh, xem bên dưới) hoặc hướng Minion Instability bomber tận dụng biến thể Spectre mới của Bogfelled Commoner. Đi kèm là note mechanic [Infernal Legion Ignite Loop](/mechanics/skills/infernal-legion-ignite-loop): concept synthesized-ignite vẫn đúng nhưng mọi con số ví dụ (IL III 30%/25%, I/II 20%) phải viết lại theo 10% tier I/II và bỏ hẳn tier III.
+
+[Talisman Crafting](/mechanics/crafting/talisman-crafting) mất nguyên Method 2 vì GGG disable hẳn :wiki-link{url="https://www.poe2wiki.net/wiki/Recombinator"} và remove Omen of Recombination — cả farming path đó chết. Phải retire Method 2 và viết lại quanh các hệ craft mới: Verisium Runeforging, Alloy, Genesis Tree. Talisman implicit Max Rage cũng giảm nhẹ (+8-12 → +7-10), nên advice base damage cần chỉnh theo.
+
+### Chỉ cần refresh số
+
+[Hollow Mask Acolyte minion](/builds/monk/hollow-mask-acolyte-minion-hypothesis) thắng lớn: :wiki-link{url="https://www.poe2wiki.net/wiki/The_Hollow_Mask"} giờ có stat chính thức khớp đúng giả thuyết của note (cấp Wildwood's Gifts skill, "Remnants you create affect Allies in your Presence", 80-100% increased Reservation Efficiency of Remnant Skills), còn Acolyte of Chayula buff leech Into the Breach 15%→20%. Build chỉ cần cập nhật số là mạnh hơn. [Twister Huntress starter](/builds/huntress/0-5-twister-huntress-starter) thì đã được viết kèm patch từ trước (Salvo rework và Pounce nerf đều ghi đúng); Twister bản thân không bị đụng nên đây vẫn là league starter hạng S — chỉ cần verify lại implicit Quiver projectile (+2 → +1). [Spirit Walker Catha companion](/builds/huntress/0-5-spirit-walker-catha-companion) và note [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) hưởng trực tiếp cú buff Tame Beast (Summoned Beast +40% more damage ở Gem 9, lên 84% ở Gem 20, summon ngay khi đủ spirit, min level hạ 9→7) — cập nhật lại DPS math là xong. [Guide prep 0.5](/guides/poe2-0-5-prep) cần soi kỹ nhất ở phần keystone vì :wiki-link{url="https://www.poe2wiki.net/wiki/Trusted_Kinship"} bị rework đổi hẳn cơ chế dual-companion, kèm Vaal Pact và Ancestral Bond cũng đổi.
+
+### Content mới của 0.5 chờ verify rồi publish
+
+Note [Energy Shield Recovery Rework](/mechanics/energy-shield-recovery-rework) chính là bản mổ xẻ đợt nerf ES recharge này, số khớp patch verbatim — chỉ chờ PoB2 0.5 ra để đổi từ draft sang published. Cùng nhóm là [Return of the Ancients](/mechanics/leagues/return-of-the-ancients), [New Unique Items 0.5](/mechanics/0-5-new-unique-items), [Olroth's Legacy](/mechanics/olroth-s-legacy) và [Armour Defensive Scaling](/mechanics/armour-defensive-scaling): patch confirm phần lớn claim, cần đối chiếu nốt từng số rồi publish dần.
+
+### Cơ hội mới đáng nghiên cứu
+
+Cú buff Tame Beast làm companion damage lần đầu tự đứng được mà không cần mượn IL ignite — đáng dựng hẳn một build Tame Beast pure-damage. Hai ascendancy mới Martial Artist (Monk, đánh tay không) ghép :wiki-link{url="https://www.poe2wiki.net/wiki/Facebreaker"} và Spirit Walker spectral companion đều chưa có build doc. Về crafting, Genesis Tree (qua Breach) mở path mới thay chỗ Recombinator vừa chết, còn :wiki-link{url="https://www.poe2wiki.net/wiki/Runic_Ward"} defense layer mới và cơ chế "phá unique thành rune" của Olroth's Legacy đều xứng một deep-dive mechanic riêng.
+
+### Item chờ datamine
+
+Facebreaker, The Auspex, Liminal Coil, Sylvan's Effigy và Twisted Empyrean được patch xác nhận tồn tại (đúng tên trong mục New Unique item) nhưng chưa kèm stat block — phải chờ datamine từ poe2db.tw / poe2wiki sau launch mới chốt được số. Riêng The Hollow Mask đã có stat đầy đủ nên verify được ngay.
+
 ## Relationships
 
 - **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — bản tóm tắt định hướng đã digest của chính patch 0.5.0 này.
-- **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — ascendancy companion mới ra mắt trong changelog này.
-- **related_builds** [Dinomancer Lich Elephant](/builds/witch/dinomancer-lich-elephant) — build chịu tác động trực tiếp từ nerf Infernal Legion ghi trong patch note.
+- **related_mechanics** [Energy Shield Recovery Rework](/mechanics/energy-shield-recovery-rework) — mổ xẻ đợt nerf ES recharge ghi trong changelog.
+- **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — ascendancy companion mới + cú buff Tame Beast trong changelog này.
+- **related_mechanics** [Infernal Legion Ignite Loop](/mechanics/skills/infernal-legion-ignite-loop) — note phải viết lại sau nerf Infernal Legion.
+- **related_mechanics** [Talisman Crafting](/mechanics/crafting/talisman-crafting) — mất Method 2 vì Recombinator bị disable.
+- **related_builds** [Dinomancer Lich Elephant](/builds/witch/dinomancer-lich-elephant) — build chịu tác động nặng nhất từ nerf Infernal Legion.
+- **related_builds** [Hollow Mask Acolyte Minion](/builds/monk/hollow-mask-acolyte-minion-hypothesis) — The Hollow Mask được xác nhận stat trong changelog.
+- **related_guides** [POE2 0.5 Prep](/guides/poe2-0-5-prep) — guide league-start chịu ảnh hưởng từ loạt rework keystone.

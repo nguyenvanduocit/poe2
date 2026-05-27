@@ -5,7 +5,7 @@ title: "Patch Notes — Return of the Ancients"
 status: draft
 author: duocnv
 created: '2026-05-24'
-updated: '2026-05-24'
+updated: '2026-05-27'
 league: '0.5'
 patch: 0.5.0
 tags:
@@ -16,7 +16,9 @@ tags:
   - endgame-overhaul
 ---
 
-These are the official patch notes for Path of Exile 2 — Content Update 0.5.0 "Return of the Ancients", posted by Grinding Gear Games (Stacey_GGG) on 21/05/2026 at [pathofexile2.com/ancients](https://www.pathofexile2.com/ancients), with a supplemental update on 22/05/2026. This is the full changelog, copied line for line for reference — game terms are kept in English. The original file lives in the repo at `data/release-notes/Version_0.5.0.md`. The orientation summary (keeping only the changes big enough to alter how you play) is at [Return of the Ancients](/mechanics/leagues/return-of-the-ancients).
+These are the official patch notes for Path of Exile 2 — Content Update 0.5.0 "Return of the Ancients", posted by Grinding Gear Games on 21/05/2026 at [pathofexile2.com/ancients](https://www.pathofexile2.com/ancients), with three supplemental updates on 22, 25 and 26/05/2026. This copy is taken verbatim from the official GGG forum patch-note thread ([forum thread 3932540](https://www.pathofexile.com/forum/view-thread/3932540) — the highest-authority source), fetched on 27/05/2026; the original file lives in the repo at `data/release-notes/Version_0.5.0.md`.
+
+This doc has two parts. The first is the **full changelog, copied line for line for reference** — game terms kept in English, no interpretation. The last section — **"What 0.5.0 changes for my builds & mechanics"** at the end of the doc — is a personal note on the changes that hit the builds/mechanics I'm tracking, written in a subjective voice to orient my own post-patch to-do list. The shorter orientation summary (keeping only the changes big enough to alter how you play) is at [Return of the Ancients](/mechanics/leagues/return-of-the-ancients).
 
 The **Return of the Ancients** expansion brings a new league, a complete overhaul of the entire Path of Exile 2 Endgame, with six new Endgame storylines and 2 new Ascendancy classes, along with a massive amount of other content.
 
@@ -40,8 +42,8 @@ The **Return of the Ancients** expansion brings a new league, a complete overhau
 - Added 15 **Meta crafting runes** — crafted from the Remnant.
 - Added more than 60 runes that can be made by destroying a unique to create a rune carrying part of its properties.
 - Added more than 15 **Runic Ward Runes** — crafted from the Remnant, adding or adjusting properties related to Runic Ward.
-- Added 21 **Kalguuran Skills** craftable from the Remnant: Animus Exchange, Animus Splinters, Bitter Dead, Conductive Runes, Detonate Living, Eternal March, Explosive Transmutation, Fragments of the Past, Frostflame Nova, Grim Pillars, Hollow Shell, Leylines, Powered by Verisium, Refutation, Remnants of Kalguur, Repulsion, Runic Reprieve, Skyfall, Triskelion Cascade, Verisium Manifestations, and Voltaic Barrier.
-- Added 8 **Kalguuran Supports** craftable from the Remnant: Concussive Runes, Fist of Kalguur, Healing Runes, Kalguuran Conviction, Runeforged Blades, Runic Extraction, Runic Infusion, and Scouring Flame.
+- Added 23 **Kalguuran Skills** craftable from the Remnant: Animus Exchange, Animus Splinters, Bitter Dead, Conductive Runes, Detonate Living, Eternal March, Explosive Transmutation, Fragments of the Past, Frostflame Nova, Grim Pillars, Hollow Shell, Leylines, Powered by Verisium, Rain of Blades, Refutation, Remnants of Kalguur, Repulsion, Runic Reprieve, Skyfall, Triskelion Cascade, Verisium Manifestations, Voltaic Barrier, and Wardbound Minions.
+- Added 7 **Kalguuran Supports** craftable from the Remnant: Concussive Runes, Fist of Kalguur, Healing Runes, Runeforged Blades, Runic Extraction, Runic Infusion, and Scouring Flame.
 - The Expedition Remnant has been changed into the Remnant of the Runes of Aldur league.
 - **New Endgame Story:** Set out on an expedition with Farrow to explore the Ocean as you investigate the tombs of the fallen Kalguuran and challenge them for extraordinary rewards. Seek out the impact crater of a fallen star — a meteorite of pure Verisium — where you hope to forge items of unmatched power… if you can defeat what waits there.
 - There is a new hub area, **"The Ruins of Kingsmarch"**, for Runes of Aldur, located to the south-east of your starting position on the Atlas.
@@ -780,8 +782,107 @@ GGG updated two patch note entries on 22/05/2026:
 - **Unique Verisium Runeforging:** After unlocking Unique Verisium Runeforging in Act 3, you can upgrade the base type of Unique Weapons and Armour dropped below level 55. An upgraded Unique Weapon will have higher damage, and upgraded Unique Armour will have higher base defence along with Runic Ward — making them more competitive at high level. Unique Armour above level 55 can still be Runeforged to adjust its defence to gain Runic Ward, in exchange for reduced other defences just like the base type.
 - **Ghost Dance:** The interval between gaining Ghost Shrouds is no longer a duration. Now has "Modifiers to Cooldown Recovery Rate also apply to Ghost Shroud gain frequency". Also has "When Hit, lose a Ghost Shroud" and "Regenerate Energy Shield equal to 2% of your Evasion Rating per second if you have lost a Ghost Shroud Recently". Now gains a Ghost Shroud every 11.7-10.1 seconds at Gem level 4-20 (previously 7.6-6.1).
 
+## Patch Notes Update (25/05/2026)
+
+GGG posted a large update on 25/05/2026.
+
+**Updated patch note entries:**
+
+- The Kalguuran Skill list was finalised to 23 skills (adding Rain of Blades and Wardbound Minions) — already reflected in [Runes of Aldur League](#runes-of-aldur-league) above.
+- The following items were removed from the Currency Exchange: Black Scythe Artifact, Broken Circle Artifact, Exotic Coinage, Order Artifact, Petition Splinter, Runic Splinter, and Sun Artifact.
+- The following items only appear on the Currency Exchange in Standard Leagues: Omen of Corruption, Omen of Homogenising Coronation, and Omen of Homogenising Exaltation.
+- Legacy Expedition Currency can now be sold to vendors for Gold.
+- Rog, Gwennen, Dannig and Tujen in existing hideouts have been converted to non-interactable doodads. Speaking to them no longer invites them to your hideout.
+- Existing Primary Calamity Fragments have been converted to Ancient Crisis Fragments; Secondary to Faded Crisis Fragments; Tertiary to Weathered Crisis Fragments.
+- Waystone Modifiers that added Damage to Monsters, Penetrated Player Elemental Resistances, or reduced the Player's Maximum Resistances have had their values reduced across the board.
+- The Waystone Modifier granting Extra Projectiles to Monsters has been disabled.
+- The base duration of all Shrines is now 45 seconds.
+- The "Contains Identified Items" modifier on Strongboxes can no longer roll.
+- Tablet Modifiers that are no longer functional have been disabled (e.g. Breaches in Map contain additional Clasped Hands, or Delirium Encounters have a chance to generate an additional Reward).
+- Ignites reflected onto a player can no longer spread to other enemies from the player.
+- Culling strike thresholds are no longer lowered in party play for non-unique monsters (still lowered by party size for unique monsters).
+- New Lineage Support Gem: Olroth's Hubris.
+- **Ice Nova:** can no longer originate from Frostbolt while cascading sideways.
+- **Primal Strikes:** now has a minimum Gem level of 9 (previously 7).
+- **Tame Beast:** Summoned Beasts now deal 40% more damage at Gem Level 9, scaling up to 84% at Gem Level 20. Now immediately summons newly Tamed Beasts if you have enough spirit. Minimum Gem level is now 7 (previously 9).
+- **Spell Cascade:** no longer limited to supporting spells you use yourself.
+- **Collapsing Horizon** Unique Quarterstaff now grants 100% increased Elemental Damage (previously 100% increased Elemental Damage with Attacks).
+- **Idol of Uldurn** Unique Amulet now also has 20-40% reduced Presence Area of Effect and 10-15% increased Spirit.
+- **The Road Warrior** Unique Body Armour can no longer be obtained.
+- The skills granted by the **Unborn Lich** Unique Staff were reworked (His Foul Emergence, His Scattering Calamity, His Vile Intrusion, His Winnowing Flame) — mostly moving to Mana Cost 0 with cooldown/duration/impale adjustments.
+- All crafted modifiers are now guaranteed, but items can only have 1 crafted modifier at a time. Desecrated modifiers no longer count as crafted modifiers, but items are limited to 1 Desecrated modifier.
+- **Quipolatl's Thesis** and **Guatelitzi's Thesis** Soul Cores were reworked per socket slot.
+- Leech % Physical Attack Damage as Life/Mana modifiers on Gloves and Rings adjusted to roll at lower level, first tiers removed.
+- "of the Parasite" and "of the Thirsty" Suffix Modifiers can no longer roll.
+- A batch of Max Rage / hybrid suffixes (of the Locust, Remora, Lamprey, Vampire, Parched, Arid, Drought, Desperate) had their roll levels changed; "of the Vampire" and "of the Desperate" can now also roll on Bows and Crossbows.
+- **Bogfelled Commoner** now has a Spectre variant for the boss version of the monster.
+- Many bug fixes: Arc retaining Lightning Infused stats incorrectly; support gems "Skills you use yourself" applying to clones/minions; Unearth not receiving supports; disabled flasks still usable via some effects; bleed modifiers not working on bleeds from Spell Hits; melee strike range displayed in game units instead of metres (displayed values 10× smaller, not a functional change).
+
+## Patch Notes Update (26/05/2026)
+
+GGG posted the final pre-launch update on 26/05/2026.
+
+**Updated patch note entries:**
+
+- The Kalguuran Support list was finalised to 7 supports (dropping Kalguuran Conviction) — already reflected in [Runes of Aldur League](#runes-of-aldur-league) above.
+- Added the ability to quickly search the trade market with an item you have: Shift-Alt Click on an item populates the filters so you can see current prices. For Rare items you can enable/disable each modifier to see how each one affects the price. Controller users hold Y or Triangle on the item.
+
+**New patch note entries:**
+
+- You can use the `/reclaimexpeditioninventories` chat command to reclaim items left in deprecated inventories, including the Recombinator's and Expedition Vendors'.
+- You can now click the Town on the Atlas to travel there via waypoint, or Ctrl-Click the quick travel button at the side of the Atlas screen.
+- The **Unforeseen Consequences** Unique Tablet no longer has "4-6 additional Rare Monsters spawned from Abysses in Map". Existing versions can be made worse with a Divine Orb.
+- Many Act 4 bosses can now appear in the Stone Circle Map mechanic.
+- Modifiers that apply to Allies in your Presence (such as on Sceptres and the Grip of Kulemak Unique Ring) no longer stack in a party if multiple members have the same type of modifier. This does not affect the "Allies in your Presence deal 50% increased Damage" modifier from the Leer Cast Unique Helmet.
+- New Lineage Support: Olroth's Conviction.
+- Added 3D art for Rise of the Phoenix.
+- Added new clusters to the Passive Skill Tree: Armour applies to Elemental Damage + faster start of Energy Shield Recharge; hybrid Armour + Elemental Damage + Deflection; hybrid Deflection + Faster Start of ES Recharge; and Armour + Evasion.
+- **Backup Plan** Notable: now grants 20% increased Armour and Evasion; Evasion Rating if hit recently is now 40% (previously 50%); increased Armour if not hit recently is now 40% (previously 50%).
+- **Defiance** Notable: now grants 20% increased Armour and Evasion Rating; and 80% increased Armour and Evasion Rating when on Low Life (previously 120%).
+- **Insulated Treads** and **Strong Chin** Notables: now grant 25% increased Armour and Evasion in addition to their current effects.
+- **Iron Slippers** Notable: 2 Armour per 1 Energy Shield on equipped Boots (previously 3). **Subterfuge Mask** Notable: 1 Evasion per 1 Energy Shield on equipped Helmet (previously 2).
+- **Tolerant Equipment** Notable: grants 15% increased Armour and Evasion. **Wild Cat** Notable: 12% Evasion as Deflection Rating (previously 10%).
+- Small Passives granting Deflection Rating as a percentage of Evasion now have values of 8% (previously 6%).
+- **Barkskin:** now provides 50% of Energy Shield Lost as Armour at level 8 (previously 32%), scaling up to 62% at level 20 (previously 44%).
+- **Mark of Siphoning / II:** enemies Marked by Supported Skills cause you to Leech Mana (and, with II, Life) equal to 8% of Physical Attack Damage.
+- **Gravebind** Unique Gloves now have 15-20% Increased Rarity of Items Found, and your other Rarity modifiers do not apply.
+- Lesser/Greater/Perfect Jeweller's Orbs can now be used on items with skills to increase the number of sockets on the item's granted skills; using one on an item with multiple skills affects all of them.
+- Improved the Tribal Medicine quest rewards. MTX: Originator's Weapon Effect and Celestial Emperor Rare Finisher Effect are now enabled for use in POE2.
+- Bug fixes: Fire Skills used by Spell Totems / Visages (Align Fate) no longer generate Raging Spirits; fixed the "Lord's" Increased Spirit modifier value overlap (now 20-26%, previously 30-36%); fixed Chaos Inoculation overriding maximum life to 1 incorrectly affecting stun/ailment thresholds (most notably CI + some Stun Threshold modifiers granting Heavy Stun immunity); fixed Eternal Youth + 0 ES; fixed Gore Spike crit damage display; fixed queued skills failing to update their target; fixed Killing Palm / Staggering Palm dashes missing their target; fixed Arbiter of Ash projectiles turning invisible when created too far from the player.
+
+## What 0.5.0 changes for my builds & mechanics
+
+This is the personal section — combing through my whole pile of notes to see what 0.5.0 actually touches, ranked by how urgently I need to act.
+
+### Has to be rewritten from scratch
+
+[Dinomancer Lich Elephant](/builds/witch/dinomancer-lich-elephant) is the worst hit. Its engine is the tier 5 :wiki-link{url="https://www.poe2wiki.net/wiki/Infernal_Legion"} feeding the "walking simulator" pure-burn phase — but 0.5.0 removes Infernal Legion III from the game entirely, halves the tier I/II self-burn + ignite base from 20% to 10%, and fixes the bug that made IL always count as a crit. The whole damage math collapses; this isn't a number drift, it's a broken foundation. I have to re-PoB from scratch and answer whether IL is still viable at all — if not, pivot to :wiki-link{url="https://www.poe2wiki.net/wiki/Tame_Beast"} pure damage (just heavily buffed, see below) or a Minion Instability bomber leveraging the new Bogfelled Commoner Spectre variant. Its companion note [Infernal Legion Ignite Loop](/mechanics/skills/infernal-legion-ignite-loop) is in the same boat: the synthesized-ignite concept still holds, but every example number (IL III 30%/25%, I/II 20%) has to be rewritten around 10% for tier I/II with tier III gone.
+
+[Talisman Crafting](/mechanics/crafting/talisman-crafting) loses its entire Method 2 because GGG fully disabled the :wiki-link{url="https://www.poe2wiki.net/wiki/Recombinator"} and removed the Omen of Recombination — that farming path is dead. Method 2 has to be retired and the note rebuilt around the new crafting systems: Verisium Runeforging, Alloy, Genesis Tree. The Talisman Max Rage implicit also dropped slightly (+8-12 → +7-10), so the base-damage advice needs adjusting.
+
+### Just needs number refreshes
+
+[Hollow Mask Acolyte minion](/builds/monk/hollow-mask-acolyte-minion-hypothesis) is a big winner: :wiki-link{url="https://www.poe2wiki.net/wiki/The_Hollow_Mask"} now has an official stat block matching the note's hypothesis exactly (grants the Wildwood's Gifts skill, "Remnants you create affect Allies in your Presence", 80-100% increased Reservation Efficiency of Remnant Skills), and Acolyte of Chayula buffs the Into the Breach leech from 15% to 20%. The build is stronger — just refresh the numbers. [Twister Huntress starter](/builds/huntress/0-5-twister-huntress-starter) was already written with the patch in mind (Salvo rework and Pounce nerf recorded correctly); Twister itself wasn't touched, so it remains an S-tier league starter — just verify the Quiver projectile implicit (+2 → +1). [Spirit Walker Catha companion](/builds/huntress/0-5-spirit-walker-catha-companion) and the [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) note both benefit directly from the Tame Beast buff (Summoned Beasts +40% more damage at Gem 9, up to 84% at Gem 20, immediate summon, min level lowered 9→7) — just update the DPS math. [Guide prep 0.5](/guides/poe2-0-5-prep) needs the closest look at its keystone section because :wiki-link{url="https://www.poe2wiki.net/wiki/Trusted_Kinship"} was reworked, changing the dual-companion mechanic outright, alongside Vaal Pact and Ancestral Bond changes.
+
+### New 0.5 content awaiting verification before publish
+
+The [Energy Shield Recovery Rework](/mechanics/energy-shield-recovery-rework) note is the dissection of this very ES recharge nerf wave, and its numbers match the patch verbatim — it just needs PoB2 0.5 to ship before flipping from draft to published. Same group: [Return of the Ancients](/mechanics/leagues/return-of-the-ancients), [New Unique Items 0.5](/mechanics/0-5-new-unique-items), [Olroth's Legacy](/mechanics/olroth-s-legacy) and [Armour Defensive Scaling](/mechanics/armour-defensive-scaling) — the patch confirms most claims; just reconcile the remaining numbers and publish them one by one.
+
+### New opportunities worth researching
+
+The Tame Beast buff makes companion damage stand on its own for the first time without borrowing IL ignite — worth building a dedicated Tame Beast pure-damage build. The two new ascendancies, Martial Artist (Monk, unarmed) paired with :wiki-link{url="https://www.poe2wiki.net/wiki/Facebreaker"} and the Spirit Walker spectral companion, both lack a build doc. On crafting, the Genesis Tree (via Breach) opens a new path to replace the now-dead Recombinator, while the new :wiki-link{url="https://www.poe2wiki.net/wiki/Runic_Ward"} defence layer and Olroth's Legacy "destroy a unique into a rune" mechanic each deserve their own deep-dive.
+
+### Items awaiting datamine
+
+Facebreaker, The Auspex, Liminal Coil, Sylvan's Effigy and Twisted Empyrean are confirmed by the patch to exist (correct names in the New Unique item section) but ship without a stat block — I have to wait for the datamine from poe2db.tw / poe2wiki after launch to pin the numbers. The Hollow Mask is the exception, already having full stats, so it can be verified right now.
+
 ## Relationships
 
 - **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — the digested orientation summary of this very 0.5.0 patch.
-- **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — the new companion ascendancy introduced in this changelog.
-- **related_builds** [Dinomancer Lich Elephant](/builds/witch/dinomancer-lich-elephant) — the build directly impacted by the Infernal Legion nerf recorded in the patch notes.
+- **related_mechanics** [Energy Shield Recovery Rework](/mechanics/energy-shield-recovery-rework) — dissects the ES recharge nerf recorded in the changelog.
+- **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — the new companion ascendancy plus the Tame Beast buff in this changelog.
+- **related_mechanics** [Infernal Legion Ignite Loop](/mechanics/skills/infernal-legion-ignite-loop) — note that must be rewritten after the Infernal Legion nerf.
+- **related_mechanics** [Talisman Crafting](/mechanics/crafting/talisman-crafting) — loses Method 2 to the Recombinator disable.
+- **related_builds** [Dinomancer Lich Elephant](/builds/witch/dinomancer-lich-elephant) — the build hit hardest by the Infernal Legion nerf.
+- **related_builds** [Hollow Mask Acolyte Minion](/builds/monk/hollow-mask-acolyte-minion-hypothesis) — The Hollow Mask had its stats confirmed in the changelog.
+- **related_guides** [POE2 0.5 Prep](/guides/poe2-0-5-prep) — league-start guide affected by the wave of keystone reworks.
