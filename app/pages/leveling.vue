@@ -18,9 +18,6 @@ const {
   currentZone,
   checked,
   zoneDone,
-  checkedCount,
-  totalSteps,
-  overallPct,
   goTo,
   next,
   prev,
@@ -90,12 +87,6 @@ onMounted(() => {
           <p class="lvl-sub">
             Route campaign Act 1–4. Nối <code>Client.txt</code> để overlay tự nhảy bước theo zone, pop-out nổi trên game.
           </p>
-        </div>
-        <!-- Big overall progress -->
-        <div class="lvl-overall">
-          <div class="lvl-overall-num">{{ overallPct }}<span>%</span></div>
-          <div class="lvl-overall-meta">{{ checkedCount }} / {{ totalSteps }} bước</div>
-          <div class="lvl-overall-bar"><span :style="{ width: `${overallPct}%` }" /></div>
         </div>
       </header>
 
@@ -226,12 +217,6 @@ onMounted(() => {
 .lvl-title { font-size: clamp(30px, 5vw, 46px); font-weight: 700; text-transform: uppercase; letter-spacing: -0.03em; line-height: 0.95; margin-top: 6px; }
 .lvl-sub { margin-top: 8px; max-width: 52ch; font-family: theme('fontFamily.prose'); font-size: 14px; color: var(--c-sec); }
 .lvl-sub code { font-family: theme('fontFamily.mono'); color: var(--c-primary); font-size: 13px; }
-.lvl-overall { flex: 0 0 auto; min-width: 168px; border: 3px solid var(--c-border); background: var(--c-s0); padding: 12px 16px; box-shadow: 4px 4px 0 0 var(--c-border); }
-.lvl-overall-num { font-size: 40px; font-weight: 700; line-height: 1; color: var(--c-primary); font-variant-numeric: tabular-nums; }
-.lvl-overall-num span { font-size: 18px; color: var(--c-muted); }
-.lvl-overall-meta { margin-top: 2px; font-family: theme('fontFamily.mono'); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-faint); }
-.lvl-overall-bar { margin-top: 8px; height: 6px; border: 2px solid var(--c-border); background: var(--c-bg); }
-.lvl-overall-bar span { display: block; height: 100%; background: var(--c-primary); transition: width 0.3s; }
 
 /* ---------- Controls ---------- */
 .lvl-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }

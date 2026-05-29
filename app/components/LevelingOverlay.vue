@@ -7,7 +7,7 @@
 // This floats ON TOP of the game in PiP, so density is the whole point: a tight
 // one-row header (controls + zone id) and thin checklist rows — block as little
 // of the screen as possible.
-import type { LevelingAct, LevelingStep, LevelingZone } from '~/composables/data/leveling-poe2-0-5'
+import type { LevelingAct, LevelingZone } from '~/composables/data/leveling-poe2-0-5'
 
 const props = defineProps<{
   act: LevelingAct | null
@@ -26,18 +26,6 @@ const emit = defineEmits<{
   prev: []
   toggle: [id: string]
 }>()
-
-// Short tag + role per step type. Combat/objective steps carry the coral accent;
-// utility steps stay muted so the eye lands on what actually matters.
-const TYPE_META: Record<LevelingStep['type'], { tag: string; hot: boolean }> = {
-  quest: { tag: 'QUEST', hot: true },
-  kill: { tag: 'KILL', hot: true },
-  pickup: { tag: 'GRAB', hot: false },
-  waypoint: { tag: 'WP', hot: false },
-  transition: { tag: 'GO', hot: true },
-  trial: { tag: 'TRIAL', hot: true },
-  note: { tag: 'TIP', hot: false },
-}
 
 const atFirst = computed(() => props.currentIdx <= 0)
 const atLast = computed(() => props.currentIdx >= props.total - 1)
@@ -59,7 +47,7 @@ const doneInZone = computed(() => {
           :class="{ 'lvo-tick--done': zoneDone }"
           @click="emit('tick')"
         >
-          <span class="lvo-tick-mark">✓</span>{{ zoneDone ? 'KẾ' : 'TICK' }}
+          <span class="lvo-tick-mark">✓</span>{{ zoneDone ? 'KẾ' : 'Done' }}
         </button>
         <button type="button" class="lvo-arrow" :disabled="atLast" aria-label="Zone kế" @click="emit('next')">›</button>
       </div>
@@ -97,10 +85,7 @@ const doneInZone = computed(() => {
       >
         <span class="lvo-box"><span class="lvo-box-mark">✓</span></span>
         <span class="lvo-step-body">
-          <span class="lvo-tag" :class="{ 'lvo-tag--hot': TYPE_META[step.type].hot && !step.optional }">
-            <template v-if="step.optional">OPT·</template>{{ TYPE_META[step.type].tag }}
-          </span>
-          <span class="lvo-text">{{ step.text }}</span>
+          <span class="lvo-text"><template v-if="step.optional">OPT· </template>{{ step.text }}</span>
         </span>
       </button>
     </div>
@@ -213,12 +198,6 @@ const doneInZone = computed(() => {
 .lvo-step--done .lvo-box { background: var(--c-primary); border-color: var(--c-primary); }
 .lvo-step--done .lvo-box-mark { transform: scale(1); }
 .lvo-step-body { flex: 1; min-width: 0; }
-.lvo-tag {
-  display: inline-block; margin-right: 5px; vertical-align: 1px;
-  font-family: theme('fontFamily.mono'); font-size: 8px; font-weight: 700; letter-spacing: 0.05em;
-  color: var(--c-faint); border: 1px solid var(--c-border); padding: 0 3px;
-}
-.lvo-tag--hot { color: var(--c-primary); border-color: color-mix(in srgb, var(--c-primary) 55%, transparent); }
 .lvo-text { font-family: theme('fontFamily.prose'); font-size: 13px; line-height: 1.28; color: var(--c-text); }
 .lvo-step--opt .lvo-text { color: var(--c-muted); }
 .lvo-step--done .lvo-text { color: var(--c-faint); text-decoration: line-through; text-decoration-thickness: 1px; }
