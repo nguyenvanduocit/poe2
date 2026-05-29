@@ -5,7 +5,7 @@ title: Infernal Legion Lich
 status: draft
 author: duocnv
 created: '2026-05-13'
-updated: '2026-05-19'
+updated: '2026-05-29'
 class: Witch
 ascendancy: Lich
 league: '0.5'
@@ -81,6 +81,8 @@ Uplift thực tế qua IL channel ≈ **0-15%**, chỉ đến từ auto-attack h
 - Xoph's Pyre off → on, delta ≤10% confirm gate analysis (Xoph không amplify IL); delta ≥30% refute, IL ignite có path qualify Hit-gated modifier mà chưa rõ
 
 Cả 2 test nên chạy độc lập trên cùng PoB snapshot. Cross-reference: Minion Instability wiki explicit exclusion là precedent strongest cho class "Gain X% as Y" không scale non-hit synthesized damage event.
+
+Cùng class reach question là **minion damage bonus vs non-unique/unique enemies** — một bonus innate cho minion với magnitude ~25-35% vs non-unique và ~20-25% vs unique ở late-game, và bonus này **không nằm trong số DPS minion mà PoB/tooltip hiển thị**. Vì IL ignite là non-hit synthesized "as though dealing Base Fire Damage", chưa rõ một modifier dạng "more minion damage" có scale magnitude của nó hay chỉ áp lên hit channel (auto-attack companion). Falsifier: trong PoB so IL ignite tick khi target là non-unique vs unique — delta khớp ~25-35% / ~20-25% thì bonus reach IL channel (DPS thực cao hơn số hiển thị đúng khoảng đó); delta phẳng thì bonus chỉ sống trên hit channel và số IL display của PoB là chính xác. Đo khi vào league vì PoB chưa chắc model bonus này.
 
 Pre-Xoph's build vẫn online hoàn toàn vì IL ignite không phụ thuộc gem này (worst case Xoph delta = 0); gem giá trị nhất ở phase secondary skill (Frost Bomb / Storm Mage shock proc via fire→chaos→ignite contribution qua Hit channel hợp lệ).
 
@@ -411,6 +413,9 @@ Leveling path đã được test bởi Oscrix (build creator) và jungroan (7 gi
 - **Investment curve:** Zero budget playable → AoE Elephant breakpoint (10-30 div) → Xoph's Pyre spike (50-150 div) → Apocalypse Curio min/max (300+ div). Diminishing returns sau Curio +5.
 
 ## Changelog
+
+### 2026-05-29 (minion damage bonus IL-reach falsifier)
+- Added falsifier cho **minion damage bonus vs non-unique/unique enemies** (magnitude ~25-35% / ~20-25% late-game, không hiển thị trên PoB minion DPS) — câu hỏi reach vào IL non-hit synthesized ignite channel, cùng class với Searing Flame/Xoph's Pyre test. Đo khi vào league.
 
 ### 2026-05-19 (triple-curse + Path A/B archetype integration — Ranny El video)
 - **Curse Stack refactor**: Replace single-curse Blasphemy + manual Elem Weak với **dual-curse Blasphemy** (Temp Chains + Elem Weak cùng socket = 120 spirit aura) + **manual cast Despair** (3rd curse với Decaying Hex chaos DoT + Heightened Curse +25% magnitude). Layout đến từ Ranny El video Lich PoB (poe.ninja/poe2/pob/1863a) — verified verbatim qua PoB XML decode + wiki cross-reference.

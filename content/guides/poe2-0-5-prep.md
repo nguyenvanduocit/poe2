@@ -11,7 +11,7 @@ patch: 0.5.0
 guide_type: league-prep
 tags:
   - poe2
-  - '0.5'
+  - 0-5
   - return-of-the-ancients
   - runes-of-aldur
   - spirit-walker

@@ -13,7 +13,7 @@ tags:
   - meta-analysis
   - builds
   - vaal
-  - '0.4'
+  - 0-4
   - fate-of-the-vaal
   - top-builds
   - pathfinder

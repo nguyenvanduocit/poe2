@@ -468,6 +468,8 @@ A: Yes, very HC-friendly. Minions body-block and tank damage, passive playstyle 
 
 (Moved from frontmatter — 6 dimension, 1-5 scale.)
 
+Số DPS spectre trên PoB chưa bao gồm minion damage bonus vs non-unique (~25-35%) và vs unique (~20-25%) ở late-game — bonus innate này không hiển thị trên minion DPS, nên clear lẫn boss thực tế nhỉnh hơn con số PoB.
+
 | Aspect          | Rating (1-5) |
 |-----------------|--------------|
 | clear_speed    | 5 |

@@ -1,8 +1,8 @@
 # Version 0.5.0 — Return of the Ancients
 
-> **Nguồn:** Official GGG forum — [pathofexile.com/forum/view-thread/3932540](https://www.pathofexile.com/forum/view-thread/3932540) (patch notes gốc, source #1 trong hierarchy)
-> **Fetched:** 2026-05-27 · **Launch:** 2026-05-29 · **League:** Runes of Aldur
-> Bao gồm addendum "Updated Patch Notes — 22/5/26" ở cuối.
+> **Nguồn canonical:** Official GGG forum thread — [pathofexile.com/forum/view-thread/3932540](https://www.pathofexile.com/forum/view-thread/3932540) (patch notes gốc, source #1 trong hierarchy). Mọi lần fetch/sync sau lấy từ thread này làm chuẩn.
+> **Synced:** 2026-05-28 · **Launch:** 2026-05-29 · **League:** Runes of Aldur
+> Bao gồm các addendum "Updated Patch Notes" cho 22/5, 25/5, 26/5 và 28/5/26 ở cuối — verified khớp với forum thread.
 
 ---
 
@@ -1020,6 +1020,23 @@ We really hope you enjoy Path of Exile 2: Return of the Ancients. [Thanks for yo
 [Return to top](#top)
 
 ### Updates to Patch Notes
+
+Updates for 28/5/26
+
+**Updated Patch Notes:**
+
+* The Ancestral Bond Keystone Passive now has: Your Totem Limit is doubled, No Charge requirement for placing Totems, Totems reserve 75 Spirit each. To clarify, despite Spell Totem having the Spell tag, summoning the totem itself is not a spell so costs added to spells are not added to summoning a Spell Totem.
+
+**New Patch Notes:**
+
+* Many Skills which had no cost now cost 0 Mana, meaning that they can now gain additional costs. This includes default weapon Attacks, item-inherent Skills, and any Triggered Skills from Support Gems and other sources.
+* Blood Mage: The Sanguine Tides Notable Ascendancy Passive now grants: Gain 1 Life Flask Charge per 2% Life spent (previously per 4%). On hitting an Enemy while a Life Flask is at full Charges, 40% of its Charges are consumed. (unchanged). Gain 1% of damage as Physical damage for 5 seconds per Charge consumed this way (previously 3 seconds). Flasks do not recover Life (previously 50% less Life Recovery from Flasks).
+* The additional Chest level modifier on Strongboxes is now +1 (from +1-2)
+* Prefix modifiers on Strongboxes that use skills, such as "Casts Chaos Barrages" now additionally have 10-20% more Rarity of Contained Items.
+* Added two new Prefix modifiers to Strongboxes: 40-60% increased Rarity of Items Dropped from Strongbox Monsters and 40-60% more Rarity of Contained Items. 15-30% increased Effectiveness of Strongbox Monsters and 20-30% more Quantity of Contained Items.
+* You no longer get offered Ritual Altar rewards after defeating the King in the Mists in Act 1 Freythorn.
+* Eye of Winter now describes the number of shard projectiles it fires per second while in flight, and this number can now be modified by adding additional projectiles.
+* Fixed a bug that caused the minion damage bonus against non-unique enemies introduced in version 0.3 to function incorrectly. Depending on specific circumstances, this will result in very little change to early minion damage, approximately 25-35% more late-game minion damage against non-unique enemies, and approximately 20-25% more late-game minion damage against unique enemies. This bonus is also no longer factored into the damage numbers displayed for skills of your minions.
 
 Updates for 26/5/26
 

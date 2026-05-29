@@ -30,7 +30,7 @@ tags:
 - unique
 - minion
 - pre-launch
-- '0.5'
+- 0-5
 - return-of-the-ancients
 - mist-raven
 - gruelling-madness

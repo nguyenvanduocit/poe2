@@ -21,7 +21,7 @@ tags:
   - huntress
   - spirit-walker
   - ice-tipped-arrow
-  - '0.5'
+  - 0-5
   - starter
   - leveling
   - poe2

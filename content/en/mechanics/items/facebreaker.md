@@ -30,7 +30,7 @@ tags:
 - unique
 - gloves
 - pre-launch
-- '0.5'
+- 0-5
 - return-of-the-ancients
 - facebreaker
 - unarmed

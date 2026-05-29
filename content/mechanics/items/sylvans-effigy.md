@@ -25,7 +25,7 @@ meta_tags:
 tags:
 - item
 - unique
-- '0.5'
+- 0-5
 - return-of-the-ancients
 - spirit-walker
 - companion

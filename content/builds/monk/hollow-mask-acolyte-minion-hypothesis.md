@@ -118,6 +118,8 @@ Cái giá phải trả là 15-20 passive points xa hơn so với Witch Infernali
 
 ### Performance Ratings
 
+Số DPS minion trên PoB chưa bao gồm minion damage bonus vs non-unique (~25-35%) và vs unique (~20-25%) ở late-game — bonus innate này không hiển thị trên minion DPS, nên clear lẫn boss thực tế nhỉnh hơn con số PoB.
+
 | Aspect          | Rating (1-5) |
 |-----------------|--------------|
 | clear_speed     | 4            |
