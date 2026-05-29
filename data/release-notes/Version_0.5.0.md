@@ -6,6 +6,7 @@
 
 ---
 
+
 ## Content Update 0.5.0 — Path of Exile 2: Return of the Ancients
 
 ### Table of Contents
@@ -36,12 +37,7 @@
 * [Microtransaction Changes](#microtransactionchanges)
 * [Bug Fixes](#bugfixes)
 
-The Return of the Ancients expansion contains a new league, an overhaul to Path of Exile 2's Endgame, with six new Endgame storylines and 2 new Ascendancy classes as well as a huge amount of other content.
-For more information about this expansion, check out [pathofexile2.com/ancients](http://pathofexile2.com/ancients)
-
-![](https://web.poecdn.com/public/news/2026-05-22/RotAInfographic.png)
-
----
+The Return of the Ancients expansion contains a new league, an overhaul to Path of Exile 2's Endgame, with six new Endgame storylines and 2 new Ascendancy classes as well as a huge amount of other content. For more information about this expansion, check out [pathofexile2.com/ancients](http://pathofexile2.com/ancients)
 
 ### The Runes of Aldur League
 
@@ -82,8 +78,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 
 [Return to top](#top)
 
----
-
 ### Endgame
 
 * The Atlas now has fixed points of interest at specific locations, giving you distinct objectives that are easy to find.
@@ -93,12 +87,10 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 
 [Return to top](#top)
 
----
-
 ### Origins of Divinity, the Endgame Overhaul
 
 * New Endgame Storyline: The Cataclysm of the Beast has invoked an ancient protocol, designed to scour for and purge corruption should it ever take hold to this degree.
-  Traverse the Atlas to enter the Fortress and activate the Gates. Obtain the keys to reach the ancient Precursor weapons and disarm them.
+* Traverse the Atlas to enter the Fortress and activate the Gates. Obtain the keys to reach the ancient Precursor weapons and disarm them.
 * On completion of your first tower, a Fortress will rise from the earth
 * Maps inside the fortress grant one or more passive points for the Atlas Passive Tree. This entirely replaces the previous method of gaining Atlas Points.
 * The Atlas Tree has been significantly expanded with over 300 nodes. After completing all the maps inside the fortress, you will gain enough passive points to fully allocate the Atlas Tree.
@@ -115,8 +107,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 
 [Return to top](#top)
 
----
-
 ### Masters of the Atlas
 
 * Alongside the Atlas tree, a new system called Masters of the Atlas introduces Ascendancy-style progression for the endgame. Players can align with different masters - such as Jado of the Order of the Djinn or the monster hunter Hilda - each offering unique, asymmetric bonuses that can be swapped between maps at will, enabling build-defining bonuses.
@@ -128,8 +118,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 * New Atlas Master: Jado's Spycraft questline is unlocked by completing an anomaly map near the starting location.
 
 [Return to top](#top)
-
----
 
 ### Delirium
 
@@ -155,8 +143,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 * Some non-amulet Delirium Uniques now drop with the Raven-Touched modifier allowing them to be instilled.
 
 [Return to top](#top)
-
----
 
 ### Breach
 
@@ -186,8 +172,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 
 [Return to top](#top)
 
----
-
 ### Ritual
 
 * New Storyline: Aoife lingers as a restless spirit, bound to the Wildwood and searching for one who might answer her call. The King in the Mists has claimed her flesh, leaving her soul adrift, untethered and unable to pass beyond. She believes that only by reclaiming what was taken can she be made whole once more. Find out more at <https://pathofexile2.com/ancients#ritual>
@@ -202,10 +186,9 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 * Each map in the Rite of the Nameless awards one element of the key used to access the Ritual Pinnacle Boss
 * Added New Boss: The Queen in the Mists available after allocating a specific node on the Atlas Tree. This boss can drop three new corrupted Idols.
 * Freythorn Rituals are now prevented from ever showing deferred items, to ensure items are not lost if returning to this area on a higher level character.
+* You no longer get offered Ritual Altar rewards after defeating the King in the Mists in Act 1 Freythorn.
 
 [Return to top](#top)
-
----
 
 ### Fate of the Vaal Moving To Core
 
@@ -243,8 +226,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 
 [Return to top](#top)
 
----
-
 ### Abyss
 
 * There are now large Abyss cracks on the atlas. Completing Atlas Abysses will close them and always give you an Abyssal Depths with a boss fight.
@@ -256,8 +237,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 * Lithomantic Runes from the Lithomantic Runes Abyss Monster modifier are now active after a longer Delay.
 
 [Return to top](#top)
-
----
 
 ### Expedition
 
@@ -273,8 +252,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 * You can use the '/reclaimexpeditioninventories' chat command to reclaim any items left in deprecated inventories, including those of the Recombinator and Expedition Vendors.
 
 [Return to top](#top)
-
----
 
 ### Other Endgame Changes
 
@@ -318,8 +295,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 
 [Return to top](#top)
 
----
-
 ### Campaign Replayability
 
 * To improve how long it takes for experienced players to replay through the game in each new league we've added added elements to multiple Campaign areas that tell you where to go, if you know what to look for. You can see some examples in this video: https://www.youtube.com/watch?v=miL0Ms-VwGI
@@ -330,8 +305,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 * Monster density in the second half of the campaign has been reduced, especially in the Interludes to allow getting through these areas more quickly.
 
 [Return to top](#top)
-
----
 
 ### Player Changes
 
@@ -352,8 +325,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 * Archon Buffs are no longer inherently lost when you attack. This is now a property of Elemental Archon specifically.
 
 [Return to top](#top)
-
----
 
 ### New Content and Features
 
@@ -437,8 +408,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 
 [Return to top](#top)
 
----
-
 ### Ascendancy Changes
 
 **Acolyte of Chayula**
@@ -450,6 +419,7 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 **Blood Mage**
 
 * The Vitality Siphon Notable Passive Skill now grants 20% of Spell Damage Leeched as Life (previously 10%).
+* The Sanguine Tides Notable Passive Skill now grants Gain 1 Life Flask Charge per 2% Life spent (previously per 4%). On hitting an Enemy while a Life Flask is at full Charges, 40% of its Charges are consumed. (unchanged). Gain 1% of damage as Physical damage for 5 seconds per Charge consumed this way (previously 3 seconds). Flasks do not recover Life (previously 50% less Life Recovery from Flasks).
 
 **Chronomancer**
 
@@ -479,8 +449,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 
 [Return to top](#top)
 
----
-
 ### Passive Tree Changes
 
 * Added 19 new Companion-themed Passive Skills to the Passive Tree.
@@ -490,7 +458,7 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 * Added new hybrid Armour applies to Elemental Damage and Deflection clusters to the Passive Skill Tree.
 * Added new hybrid Deflection and Faster Start of Energy Shield Recharge clusters to the Passive Skill Tree.
 * Added new Armour and Evasion clusters to the Passive Skill Tree.
-* The Ancestral Bond Keystone Passive Skill now causes placing totems to have no cost and not require consuming charges to place. It still causes totems to reserve 75 spirit each, and now doubles totem limit instead of removing it completely.
+* The Ancestral Bond Keystone Passive now has: Your Totem Limit is doubled, No Charge requirement for placing Totems, Totems reserve 75 Spirit each. To clarify, despite Spell Totem having the Spell tag, summoning the totem itself is not a spell so costs added to spells are not added to summoning a Spell Totem.
 * The Trusted Kinship Keystone Passive Skill now grants 30% more Reservation Efficiency of Companion Skills, and 20% less Reservation Efficiency of non-Companion Skills. It no longer provides You have 30% less Defences, or Companions have +1 to each Defence for every 2 of that Defence you have.
 * The Vaal Pact Keystone Passive Skill now grants 50% more amount of Life Leeched, 67% less Life Leech speed, Cannot Recover Life other than from Leech, and Life Leech effects are not removed when Unreserved Life is Filled. It no longer provides Life Leech is Instant, or Cannot use Life Flasks.
 * The Reformed Barrier cluster has been removed.
@@ -552,13 +520,12 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 
 [Return to top](#top)
 
----
-
 ### Skill Changes
 
 * Skills with a fixed number of projectiles (such as Glacial Lance) can now benefit from effects that cause projectile count modifiers to apply to something else instead (such as Ricochet III Support).
 * Skills which have a cost of 0 Mana now display this cost. This allows players to distinguish between skills like default attacks which do not have a cost at all (and are thus unaffected by any + cost modifiers), from those which do have a base cost, but with 0 base value (which are affected by all +cost modifiers, even if they add different resource costs, like adding life cost to a skill with base mana cost 0).
 * Crossbow Ammunition Skills now have a base cost of 0 rather than having their cost completely disabled, meaning that effects that add additional costs will now apply to them.
+* Many Skills which had no cost now cost 0 Mana, meaning that they can now gain additional costs. This includes default weapon Attacks, item-inherent Skills, and any Triggered Skills from Support Gems and other sources.
 * Ignites inflicted on targets by Oil Ground that has been ignited can no longer compound, and cannot be compounded with by other ignites from the same skill use.
 * All Command Skills now have a 50% movement speed penalty during skill use (previously 70%).
 * Align Fate (granted by the Oracle's Fateful Vision Notable Passive): Now has "Modifiers to Cooldown Recovery Rate also apply to visage appearance frequency".
@@ -571,6 +538,7 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 * Defiance Banner, Dread Banner, and War Banner: No longer have a Movement Speed penalty during use. Now have a Banner Aura base radius of 6 metres (previously 4.5).
 * Earthquake: Aftershock now deals 184-666% of Attack damage at Gem levels 1-20 (previously 160-580%).
 * Eternal Rage: Can no longer be activated in specific weapon sets. It is now required to be active in both weapon sets, and will fail to activate if this is not possible.
+* Eye of Winter now describes the number of shard projectiles it fires per second while in flight, and this number can now be modified by adding additional projectiles.
 * Feral Invocation: No longer bypasses the cooldown of socketed skills.
 * Flame Breath: Now has an Energy Gain penalty similar to Incinerate.
 * Fortifying Cry: Now only consumes one stack when you detonate a shield wall to create a shockwave around each shield wall segment. Fortifying Cry Shockwaves from a single Shield Wall cannot hit the same enemy multiple times. Shield Wave now deals 5 to 7 Added Physical Damage per 15 Armour on Shield (previously 6 to 8).
@@ -612,8 +580,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 
 [Return to top](#top)
 
----
-
 ### Support Changes
 
 * Unleash, Expand, Salvo, and Freezing Salvo Supports all now use the same concept of Seals, instead of each having their own version. This means standardised rules for Seals that will be consistent for all cases, resulting in some behaviour changes. Supports granting Seals now consistently all have the Seal category.
@@ -651,8 +617,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 
 [Return to top](#top)
 
----
-
 ### Unique Item Changes
 
 * The Ab Aeterno Unique boots no longer grant 10% less Movement and Skill Speed per Dodge Roll in the past 20 seconds, and now have 200-250% increased Armour, Evasion and Energy Shield (previously 100-150%). It now has Your speed is unaffected by Slows while Sprinting, and Gain Overencumbrance for 4 seconds when you Dodge Roll. Existing versions of this Unique can be updated to the new Armour, Evasion and Energy Shield values using a Divine Orb, but will not receive any other changes.
@@ -668,7 +632,7 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 * The Elevore Unique Helmet now grants Charms gain 1 Charge per second (previously 0.5), and now provides +1-2 Charm Slots (previously +1). Existing items can be buffed using a Divine Orb.
 * The Eshtera's Path Unique Ring no longer has Cold Resistance is unaffected by Area Penalties. It now has +5-10% to Fire and Cold Resistance per Equipped Item with a Lightning Resistance Modifier. Existing items are not affected by this change.
 * The Glowswarm Unique Ring now has Using a Mana Flask grants Guard equal to 100% of the Flask's Recovery amount for 4 seconds. Existing items are not affected by this change.
-* The Gravebind Unique Gloves now have 15-20% Increased Rarity of Items Found, and Your other Modifiers to Rarity of Items found do not apply.
+* The Gravebind Unique Gloves now have 15-20% Increased Rarity of Items Found, and Your other Modifiers to Rarity of Items found do not apply. This change will affect existing items.
 * The Hollow Mask Unique Helmet now grants the Wildwood's Gifts Skill, where Azmerian spirits offer guidance, allowing you to see nearby Ancient Blooms. It also now has Remnants you create affect Allies in your Presence as well as you when collected, and 80-100% increased Reservation Efficiency of Remnant Skills.
 * The Husk of Dreams Unique Body Armour has been renamed to Reverie. It no longer has 20-30% increased Flask Charges gained, or 50% less Flask Charges used. It now grants the Rite of Restoration Skill, and has Non-Unique Life Flasks apply their effects constantly. It also now has Cannot use Life Flasks, Recovery from Life Flasks cannot be instant, Recovery from Life Flasks cannot be applied to anything other than you, as well as 40-60% less Life Flask Recovery. Existing versions of this item cannot obtain these new modifiers.
 * The Hyrri's Ire Unique Body Armour now has 100-150% Increased Evasion Rating (previously 200-250%), and Gain 10-20% of Damage as Extra Cold Damage (previously 15-25%). Existing versions of this Unique can be made worse with a Divine Orb.
@@ -688,8 +652,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 * The Zerphi's Genesis Unique Belt no longer has 10-30% increased Charm Charges used. It now has 50% of Charges consumed by used Life Flasks are granted to your Charms, Skills from Corrupted Gems have 15-25% increased Cost Efficiency during any Flask Effect, and 25-50% increased Corrupted Charms Effect Duration, in addition to its other modifiers.
 
 [Return to top](#top)
-
----
 
 ### Item Changes
 
@@ -787,8 +749,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 
 [Return to top](#top)
 
----
-
 ### Monster Changes
 
 * The Culling Strike Threshold for Normal enemies is now 35% of their Maximum Life (previously 30%).
@@ -799,10 +759,11 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 * You will now refill some Flask charges when Viper Napuatzi's soldiers constrict the size of her arena.
 * The Burning Dead in Ogham Village now deal a portion of their damage as Fire (previously purely Physical).
 * Improved the visuals and telegraphing of the Lightning Doryani's Elite Monster.
+* The additional Chest level modifier on Strongboxes is now +1 (from +1-2)
+* Prefix modifiers on Strongboxes that use skills, such as "Casts Chaos Barrages" now additionally have 10-20% more Rarity of Contained Items.
+* Added two new Prefix modifiers to Strongboxes: 40-60% increased Rarity of Items Dropped from Strongbox Monsters and 40-60% more Rarity of Contained Items. 15-30% increased Effectiveness of Strongbox Monsters and 20-30% more Quantity of Contained Items.
 
 [Return to top](#top)
-
----
 
 ### Quest Changes
 
@@ -812,8 +773,6 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 * Improved the rewards offered for completing the Tribal Medicine quest. Happy shark hunting.
 
 [Return to top](#top)
-
----
 
 ### User Interface Changes
 
@@ -841,10 +800,9 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 * Improved target selection for items and interactable objects when using a controller.
 * Updated and restructured the Options menu.
 * Enabled in-game clock option for PlayStation and Xbox.
+* The Support Gem cutting UI's "All Valid" tab will now also show support gems that are valid for any of the Skill Gems socketed into the selected Meta Gem.
 
 [Return to top](#top)
-
----
 
 ### Microtransaction Changes
 
@@ -867,10 +825,9 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 
 [Return to top](#top)
 
----
-
 ### Bug Fixes
 
+* Fixed a bug that caused the minion damage bonus against non-unique enemies introduced in version 0.3 to function incorrectly. Depending on specific circumstances, this will result in very little change to early minion damage, approximately 25-35% more late-game minion damage against non-unique enemies, and approximately 20-25% more late-game minion damage against unique enemies. This bonus is also no longer factored into the damage numbers displayed for skills of your minions.
 * Fixed a bug where Life Flasks could not always be used while at full life with the Enduring Elixirs Pathfinder Notable Passive Skill, despite it allowing their effect to stay on you while on full life.
 * Fixed a bug where the Ritualist's Ritual Sacrifice skill gained a cooldown at level 20 specifically. Information about using Ritual Sacrifice on yourself has now been folded into the skill's description rather than being described separately on the "As the Whispers Demand" passive. This is purely a description change.
 * Fixed a bug where Pounce was providing additional Mark Effect to Predator's Mark or socketed Marks.
@@ -1014,12 +971,24 @@ For more information about this expansion, check out [pathofexile2.com/ancients]
 * Fixed an issue where the Black Hole Rare Finisher Effect was previously stated as being enabled in Path of Exile 2 but could not be equipped.
 * Fixed an issue where the Dragon Fire Rare Finisher Effect was previously stated as being enabled in Path of Exile 2 but could not be equipped.
 * Fixed a bug where the Arachnamagus Portal Effect microtransaction was missing its effects.
+* Fixed a bug where reducing presence radius to 0 could cause certain buffs to incorrectly apply to yourself.
+* Fixed a bug where stolen monster mods from Behead support would be lost on killing a monster.
+* Fixed a bug where some item mods that grant flat Thorns damage could roll minimum damage equal to or higher than maximum damage.
 
 We really hope you enjoy Path of Exile 2: Return of the Ancients. [Thanks for your support](https://pathofexile2.com/purchase)!
 
 [Return to top](#top)
 
 ### Updates to Patch Notes
+
+Updates for 29/5/26
+
+**New Patch Notes:**
+
+* The Support Gem cutting UI's "All Valid" tab will now also show support gems that are valid for any of the Skill Gems socketed into the selected Meta Gem.
+* Fixed a bug where reducing presence radius to 0 could cause certain buffs to incorrectly apply to yourself.
+* Fixed a bug where stolen monster mods from Behead support would be lost on killing a monster.
+* Fixed a bug where some item mods that grant flat Thorns damage could roll minimum damage equal to or higher than maximum damage.
 
 Updates for 28/5/26
 
@@ -1069,7 +1038,7 @@ Updates for 26/5/26
 * Barkskin: Now provides 50% of Energy Shield Lost as Armour at level 8 (previously 32%), scaling up to 62% at level 20 (previously 44%)
 * Mark of Siphoning: Now causes Enemies Marked by Supported Skills cause you to Leech Mana equal to 8% of Physical Attack Damage.
 * Mark of Siphoning II: Now causes Enemies Marked by Supported Skills cause you to Leech Mana equal to 8% of Physical Attack Damage, and Enemies Marked by Supported Skills cause you to Leech Life equal to 8% of Physical Attack Damage.
-* The Gravebind Unique Gloves now have 15-20% Increased Rarity of Items Found, and Your other Modifiers to Rarity of Items found do not apply.
+* The Gravebind Unique Gloves now have 15-20% Increased Rarity of Items Found, and Your other Modifiers to Rarity of Items found do not apply. This change will affect existing items.
 * Lesser, Greater and Perfect Jeweller's Orbs can now be used on items with skills on them to increase the number of sockets on the item's granted skills. Using a Jeweller's Orb on Items with multiple skills will affect all skills on that item.
 * Improved the rewards offered for completing the Tribal Medicine quest. Happy shark hunting.
 * Enabled the existing Originator's Weapon Effect for use in Path of Exile 2.
@@ -1106,13 +1075,13 @@ Updates for 25/5/26
 * New Lineage Support Gem, Olroth's Hubris.
 * Ice Nova: Is no longer able to originate from Frostbolt while cascading sideways.
 * Primal Strikes: Now has a minimum Gem level of 9 (previously 7).
-  Tame Beast: Summoned Beasts now deal 40% more damage at Gem Level 9 scaling up to 84% at Gem Level 20. Now immediately summons newly Tamed Beasts if you have enough spirit. Now has a minimum Gem level of 7 (previously 9).
+* Tame Beast: Summoned Beasts now deal 40% more damage at Gem Level 9 scaling up to 84% at Gem Level 20. Now immediately summons newly Tamed Beasts if you have enough spirit. Now has a minimum Gem level of 7 (previously 9).
 * Spell Cascade: Is no longer limited to supporting spells you use yourself.
 * The Collapsing Horizon Unique Quarterstaff now grants 100% increased Elemental Damage (previously 100% increased Elemental Damage with Attacks).
 * The Idol of Uldurn Unique Amulet now also has 20-40% reduced Presence Area of Effect, and 10-15% increased Spirit.
 * The Road Warrior Unique Body Armour can no longer be obtained.
 * The Skills granted by the Unborn Lich Unique Staff have received the following changes:
-  [li]His Foul Emergence now has a Mana Cost of 0 (previously 18-189 at gem levels 1-20) and a Cooldown Time of 8 seconds at all levels (previously 25-15.5 at Gem levels 1-20). Inflicted Wither now lasts 10 seconds (previously 8) and Withering Ground duration is now 8 seconds (previously 5).
+* \[li\]His Foul Emergence now has a Mana Cost of 0 (previously 18-189 at gem levels 1-20) and a Cooldown Time of 8 seconds at all levels (previously 25-15.5 at Gem levels 1-20). Inflicted Wither now lasts 10 seconds (previously 8) and Withering Ground duration is now 8 seconds (previously 5).
 * His Scattering Calamity now has a Mana Cost of 0 (previously 3-37 at Gem levels 1-20).
 * His Vile Intrusion now has a Mana Cost of 0 (previously 8-83 at Gem levels 1-20). Now has 100% increased Impale Magnitude at all levels (previously 2-40% at Gem levels 1-20), and now inflicts 2 impales at Gem level 20 and 3 impales at Gem level 25 (previously 1 at all levels).
 * His Winnowing Flame now has a Cast Time of 0.7 seconds (previously 1 second) and has a Mana Cost of 0 (previously 6-68). Grisly Pyres triggered by Consuming Ignites now have a radius of 2 metres (previously 1.5 metres), deal 30% of the highest expected remaining Damage of the Consumed Ignites (previously 25%) and have a shorter delay before dealing its damage.
