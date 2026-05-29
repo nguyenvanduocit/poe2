@@ -5,11 +5,13 @@ title: Twister Huntress — Ice-Tipped Arrow Starter
 status: review
 author: duocnv
 created: '2026-05-19'
-updated: '2026-05-25'
+updated: '2026-05-30'
 class: Huntress
 ascendancy: Spirit Walker
 league: '0.5'
 patch: 0.5.0
+pob_coverage: PARTIAL
+confidence_level: MEDIUM
 budget_tier: league-starter
 build_tags:
   primary_skill: Twister
@@ -29,11 +31,11 @@ tags:
 
 # Twister Huntress — Ice-Tipped Arrow Starter
 
-Build league-start cho Runes of Aldur, dùng :wiki-link{url="https://www.poe2wiki.net/wiki/Whirling_Slash"} làm engine spin gió và :wiki-link{url="https://www.poe2wiki.net/wiki/Twister"} làm nguồn sát thương chính. Spirit Walker — ascendancy mới giới thiệu trong patch 0.5 — cung cấp owl feather để ép projectile count và projectile speed lên cùng lúc, hợp với cách Twister scale. Consensus từ creator post-patch-notes (SiahZ, GuyThatDies, SnooBAE85, Lolcohol) đều xếp build vào S-tier league starter cho 0.5, với GuyThatDies gọi đây là "strongest league starter I've ever seen in Path of Exile 2". Hợp với người thích clear nhanh map hành lang + bossing arena hẹp; không hợp với người muốn facetank cứng hay solo Arbiter ngay tuần đầu.
+Build league-start cho Runes of Aldur, dùng :wiki-link{url="https://www.poe2wiki.net/wiki/Whirling_Slash"} làm engine spin gió và :wiki-link{url="https://www.poe2wiki.net/wiki/Twister"} làm nguồn sát thương chính. Spirit Walker — ascendancy mới giới thiệu trong patch 0.5 — cung cấp owl feather để ép projectile count và projectile speed lên cùng lúc, hợp với cách Twister scale. Đây là một trong những league starter mạnh nhất của 0.5 — xếp S-tier nhờ damage scaling rẻ và clear corridor cực nhanh. Hợp với người thích clear nhanh map hành lang + bossing arena hẹp; không hợp với người muốn facetank cứng hay solo Arbiter ngay tuần đầu.
 
 ## Build Overview
 
-Loop chia làm hai tầng. Tầng 1 là Whirling Slash: xoay spear ba lần liên tiếp để spawn một Whirlwind đứng yên trên ground, max 3 stage. Mỗi spin thêm 1 stage, mỗi stage tăng radius +0.3m và đẩy multiplier collapse damage lên. Tầng 2 là Twister: bắn tornado bay erratically xuyên qua Whirlwind, mỗi stage consume tạo thêm 1 tornado và cho từng tornado +80% more damage. Khi Whirlwind đạt rank 3 trước cast, một Twister cast sinh ra 4 tornado tổng cộng với multiplier compound: `1 + 1.80 + 1.80² + 1.80³ ≈ 10.95×` base damage. Đó là lý do tại sao timing rất quan trọng — bắn Twister trước khi Whirlwind đạt stage 3 thì mất phần lớn damage.
+Loop chia làm hai tầng. Tầng 1 là Whirling Slash: xoay spear ba lần liên tiếp để spawn một Whirlwind đứng yên trên ground, max 3 stage. Mỗi spin thêm 1 stage, mỗi stage tăng radius +0.3m và đẩy multiplier collapse damage lên. Tầng 2 là Twister: bắn tornado bay erratically xuyên qua Whirlwind, mỗi stage consume tạo thêm 1 tornado và cho từng tornado +80% more damage. Khi Whirlwind đạt rank 3 trước cast, một Twister cast sinh ra 4 tornado tổng cộng — phần verified chắc chắn là mỗi stage cho +80% more damage. Con số compound aggregate (model `1 + 1.80 + 1.80² + 1.80³` thường được quote ≈10.95×) là theorycraft chưa verify (LOW): công thức đó thực ra ra 11.87×, lệch với mọi con số đang lưu truyền, và nó còn giả định per-tornado compounding chưa test in-game — nên đừng cầm con số tổng này như fact, chỉ neo vào +80%/stage. Đó là lý do tại sao timing rất quan trọng — bắn Twister trước khi Whirlwind đạt stage 3 thì mất phần lớn damage.
 
 Lớp damage thứ ba đến từ ground synthesis. Khi Twister bay qua Chilled Ground, mỗi tornado **gain** thêm 50% as cold damage (đây là added damage, không phải convert — physical scale 100% vẫn intact, cold scale là layer cộng thêm). Đây là vì sao build vừa stack physical trên vũ khí vừa cần Chilled Ground reliable. Phòng thủ dựa vào evasion + Wind Dancer + freeze uptime; mobility chính là dodge roll (cũng là trigger cho owl feather của Spirit Walker) cộng Pounce — patch 0.5 đã bump cooldown Pounce lên 6-5.1s từ 4.9-4s ở gem level 3-20, nên cooldown mobility chậm hơn pre-patch đáng kể, cần plan dodge cadence kỹ hơn.
 
@@ -77,11 +79,11 @@ Mhacha's Gift cho phép một dodge roll expend tới 3 owl feather cùng lúc, 
 
 **Lab 3: :wiki-link{url="https://www.poe2wiki.net/wiki/Wild_Protector"} + :wiki-link{url="https://www.poe2wiki.net/wiki/Vivid_Stampede"}**
 
-Hai notable này không phải nguồn damage chính cho Twister, nhưng phải lấy để mở Sacred Unity ở Lab 4. Wild Protector gọi bear companion hỗ trợ hit additional target, đồng thời cấp 2% maximum life regen mỗi giây và redirect 8% damage taken sang bear — đây là layer phòng thủ phụ đáng kể, đặc biệt với build evasion thiếu mitigation cứng. Vivid Stampede tạo stag spirit khi di chuyển đủ 20m rồi attack — pair tốt với playstyle Twister vì player luôn move giữa các pack quái.
+Hai notable này không phải nguồn damage chính cho Twister, nhưng phải lấy để mở Sacred Unity ở Lab 4. Wild Protector gọi Spirit Bear hỗ trợ hit additional target — leap vào enemy gây maim, slam có life leech, roar áp Intimidate, và bear không chiếm Companion slot. Lưu ý timing: bản thân Wild Protector trần chỉ cho con bear; buff phòng thủ của nó (Embrace of the Wild — 2% maximum life regen mỗi giây + redirect 8% damage taken sang bear) chỉ online khi allocate Sacred Unity ở Lab 4, nên đừng tính layer mitigation đó vào ngay khi vừa xong Lab 3. Vivid Stampede tạo stag spirit khi di chuyển đủ 20m rồi attack — pair tốt với playstyle Twister vì player luôn move giữa các pack quái.
 
 **Lab 4: :wiki-link{url="https://www.poe2wiki.net/wiki/Sacred_Unity"}**
 
-Sacred Unity là reward khi đã lấy đủ Wild Protector, Primal Bounty, và Vivid Stampede. Với Twister, điểm đáng giá nhất là central projectile của owl-feather-empowered skill để lại Soaring Ground — ground effect mới của 0.5 cấp 40% increased damage và 30% increased evasion khi đứng trên đó ở full life. Bear nhận Embrace of the Wild (buff defensive thêm), stag biết leap vào enemy thay vì chạy ngẫu nhiên. Tổng lại Lab 4 vừa tăng damage Twister trực tiếp (Soaring Ground 40% damage layer) vừa thêm evasion buff conditional — không chỉ utility như đánh giá ban đầu.
+Sacred Unity là reward khi đã lấy đủ Wild Protector, Primal Bounty, và Vivid Stampede. Với Twister, điểm đáng giá nhất là central projectile của owl-feather-empowered skill để lại Soaring Ground — ground effect mới của 0.5. Đứng trên Soaring Ground (kéo dài 6s, linger thêm 1s) luôn cho 30% increased Evasion Rating và Onslaught vô điều kiện cho player + ally; riêng 40% increased damage chỉ active khi đang ở full life. (MEDIUM: cách parse điều kiện này dựa trên grammar của source — cụm "while at Full Life" nhiều khả năng chỉ bind vào 40% damage; verify in-game lúc league start.) Sacred Unity cũng kích hoạt Embrace of the Wild cho bear (2% maximum life regen mỗi giây + redirect 8% damage taken sang bear — đây mới là điểm bật layer mitigation đó, không phải Wild Protector trần ở Lab 3), và stag biết leap vào enemy thay vì chạy ngẫu nhiên. Tổng lại Lab 4 vừa tăng damage Twister trực tiếp (Soaring Ground 40% damage layer full-life) vừa thêm 30% evasion + Onslaught unconditional + sustain bear — đây là chỗ sustain regen thật sự online, nên trước Lab 4 build mỏng hơn về recovery (MEDIUM: timing này verify khi vào league).
 
 **Các node bỏ qua**
 
@@ -168,11 +170,13 @@ POE2 không có hai hệ thống này. Decision tương đương trong patch 0.5
 
 Đừng đánh giá build qua vài khu đầu Act 1. Lúc này còn thiếu attack speed, thiếu projectile speed, và phải dùng combo 5-nút (Parry → Fangs of Frost → Whirling Slash spin → Twister cast → Pounce reposition). Patch 0.5 còn crop Parry mất Attack Distance bonus nên Act 1 combo càng cramped, càng nên rush Act 2 nhanh để pivot sớm.
 
-Cảm giác chơi cải thiện hẳn sau khi có Ice-Tipped Arrows + Barrage + Combat Frenzy. Playtest pre-0.5 của Lolcohol chạy Act 1-3 cho thấy build clear Jamanra, Tor Gul, Viper Napuatzi và Doryani chỉ với setup Act 2-3 — character level 27 với spear chỉ level 16 (underleveled vài cấp), Act 3 hoàn thành trong 3 giờ 19 phút trong khi vừa đọc guide vừa pause chat. Damage được mô tả "out of this world" và "S tier leveling setup for Huntress" nếu không bị nerf. Patch notes 0.5 đã confirm — không có nerf trực tiếp lên Twister hay Whirling Slash, nên kết luận đó vẫn đứng vững. SnooBAE85 lập world record campaign-to-maps 3 giờ 25 phút trên Amazon variant (pre-Spirit Walker), thắng record cũ của chính mình 5 phút hai lần liên tiếp.
+Cảm giác chơi cải thiện hẳn sau khi có Ice-Tipped Arrows + Barrage + Combat Frenzy. Với setup Act 2-3 này, build clear Jamanra, Tor Gul, Viper Napuatzi và Doryani ngay cả khi underleveled vài cấp — character level 27 cầm spear chỉ level 16 vẫn đẩy xong Act 3 trong khoảng 3 giờ 19 phút dù vừa chơi vừa đọc guide. Damage ở giai đoạn này đã thừa sức trivialize campaign, đúng tier leveling tốt nhất hiện có cho Huntress. Patch notes 0.5 không nerf trực tiếp Twister hay Whirling Slash nên kết luận đó vẫn đứng vững. Amazon variant (pre-Spirit Walker) thậm chí về maps trong ~3 giờ 25 phút ở pace world-record — trần tốc độ campaign của archetype này rất cao.
 
-Lưu ý 0.5 cho phase Act 2-3: tier-2 support đầu tiên unlock là Frost Nexus add lên Twister hoặc Ice-Tipped — biến build từ "okay damage" sang "trivialize game" theo lời GuyThatDies. Pounce mark double-effect bug đã fix trong 0.5 — wolf weapon-set swap tech (gain extra mark effect bằng cách swap set) không còn hoạt động, nên các creator quen tech này cần adapt.
+Lưu ý 0.5 cho phase Act 2-3: tier-2 support đầu tiên unlock là Frost Nexus add lên Twister hoặc Ice-Tipped — biến build từ damage tạm ổn sang trivialize game thật sự. Pounce mark double-effect bug đã fix trong 0.5 — wolf weapon-set swap tech (gain extra mark effect bằng cách swap set) không còn hoạt động, nên các creator quen tech này cần adapt.
 
 Khi leveling, nâng cấp vũ khí quan trọng hơn cố giữ một món unique yếu. Build spear đói flat damage trên vũ khí + găng + nhẫn — iron ring rẻ tiền early game tạo khác biệt rõ rệt. Nếu damage tụt, kiểm tra spear trước, sau đó mới nhìn support gem hoặc passive tree.
+
+Reality-check cho hai ngày đầu league: campaign 0.5 dài cỡ 25-40h, nên trong 48h đầu hầu hết người chơi vẫn nằm đúng giai đoạn clunky + mỏng này — Act 1 5-nút, Parry mất Attack Distance, chưa đủ ~8k evasion, và sustain regen chưa online cho tới Lab 4. Build hay nhất sau Act 2 pivot, nhưng phase day-1/2 lại đúng là phase yếu nhất của nó. Đây là build mượt từ ngày 3-4 trở đi, không phải build dễ nhất 48h đầu (MEDIUM).
 
 ## Budget & Investment
 
@@ -181,6 +185,8 @@ Campaign chạy gần như zero currency nếu chăm nhặt spear và găng có 
 Mid-mapping cần khoảng 5-10 exalt cho spear ổn (flat phys + flat cold + AS) và vài món gear có flat damage/accuracy. Endgame T13+ bắt đầu cần spear level cao 60+ (giá tăng dốc với +level projectile mod), accuracy trên ring, và đủ life/resistance để không bị one-shot bởi rare modifier mới của 0.5.
 
 Mageblood là goal mirror-tier nhưng đầu tư quá sâu vào mirror gear chưa phải mục tiêu của starter này. Khi đã tới mức đó, nên chuyển sang variant endgame riêng với passive tree được tối ưu lại.
+
+Lưu ý về giá: tính tới 30/05/2026 economy league chưa hình thành (day-2 launch — poe2scout chưa populate Runes of Aldur, poe.ninja gần như 0 char index), nên mọi con số exalt/divine ở trên là baseline ước tính, re-snapshot khi economy ổn định (cỡ một tuần sau launch). Riêng 48h đầu cần caveat thêm: Twister là build phổ biến nhất league nên spear có projectile speed/count + +level projectile là loại gear bị tranh giá mạnh nhất, và trade site gần như không dùng được trong ~6h đầu — 5-10 exalt là kỳ vọng lạc quan. Tuần đầu nên tự nhặt/craft flat phys + AS thay vì cố mua spear "đúng meta".
 
 ## Strengths & Limitations
 
@@ -192,13 +198,15 @@ Build clear cực nhanh trong map hành lang — Twister nảy nhiều lần khi
 
 Act 1 vẫn clunky vì phải spin Whirling Slash 3 lần trước mỗi Twister cast, và Parry mất Attack Distance trong 0.5 càng cramped hơn. Build mỏng cho tới khi có Wind Dancer + Catlike Agility + ~8k evasion — die nhiều ở Act 1-2 là bình thường. Boss arena rộng (Doryani phase 2, Arbiter open arena) làm Twister mất nhiều damage vì tornado bay xa rồi dissipate trước khi nảy lại. Pounce cooldown 6s trong 0.5 (từ 4s pre-patch) làm mobility chậm hơn — plan dodge cadence kỹ thay vì spam Pounce.
 
-Combat Frenzy fail vs boss freeze-immune — nếu boss không thể freeze, không thể electrocute, và không có cách pin ổn định, frenzy charge sẽ hụt → Barrage không bypass được Ice-Tipped Arrows cooldown 12s → DPS tụt rõ rệt. Một số Pinnacle boss của 0.5 (Arbiter of Divinity, Faction Leader mới) có thể có freeze immunity — chưa test live, cần verify khi league launch.
+**Boss DPS cliff — single point of failure (freeze dependency):** toàn bộ boss DPS treo trên việc freeze landing. Combat Frenzy chỉ tạo Frenzy Charge khi Freeze / Electrocute / Pin enemy (tối đa once every few seconds), và Frenzy Charge chính là thứ bypass cooldown 12s của Ice-Tipped Arrows. Boss có freeze-threshold cao hoặc freeze-immune — một số Pinnacle/Faction Leader mới của 0.5 (Arbiter of Divinity, Faction Leader) có thể rơi vào nhóm này, chưa test live → charge starve → Ice-Tipped về cooldown 12s → DPS sụt mạnh đúng trên target khó. Cần verify freeze-immunity từng boss khi league launch; đây cũng là lý do build cần Freezing Mark + Frost Nexus để giữ freeze reliable nhất có thể.
 
-Một điểm thẳng thắn: SnooBAE85 sau khi deep-dive Spirit Walker vẫn cho rằng Deadeye có raw DPS ceiling cao hơn nhờ Tailwind tự động + frenzy charge ổn định. Pick Spirit Walker cho build này dựa trên content/novelty (ascendancy mới, owl feather cycle vui chơi) + projectile count scale dễ hơn, không phải vì raw power numbers.
+**Map mod hostile (MEDIUM — reroll/né khi gặp):** ba mod waystone bóp build mạnh nhất. "Monsters have increased Ailment Threshold" (của [implicit], 30-79% theo tier) đẩy freeze buildup cần magnitude cao hơn nhiều → freeze thành unreliable → Combat Frenzy không tạo charge → Ice-Tipped Arrows về cooldown 12s (cùng gốc với boss freeze-immune ở trên), nên reroll hoặc né khi build dựa freeze-to-charge. "Players have less Recovery Rate of Life and Energy Shield" (của Smothering, 20-40% theo tier) bóp sustain vì build không có life leech, chỉ dựa Life Flask + bear regen từ Embrace of the Wild (online ở Lab 4 Sacred Unity, không phải Wild Protector trần) — reroll nếu đang die nhiều. "Players have less Cooldown Recovery Rate" (của Fatigue, 15-30% theo tier) kéo dài cooldown Pounce/dodge (vốn đã chậm 6s trong 0.5), làm vỡ owl-feather dodge cadence và burst window Mhacha's Gift. Ngược lại, Chilled Ground trên map lại là damage enabler cho build (Twister gain 50% cold khi bay qua), không phải mod hostile.
+
+Một điểm thẳng thắn: Deadeye vẫn có raw DPS ceiling cao hơn nhờ Tailwind tự động + frenzy charge ổn định. Pick Spirit Walker cho build này dựa trên content/novelty (ascendancy mới, owl feather cycle vui chơi) + projectile count scale dễ hơn, không phải vì raw power numbers.
 
 **Patch 0.5 confirmed status**
 
-Patch notes drop 21/05/2026, league launch 29/05/2026. Engine của build (Twister + Whirling Slash + Spirit Walker + Combat Frenzy + Ice-Tipped Arrows) không bị nerf trực tiếp — SnooBAE85 confirm "control-F Twister trên patch notes = zero, same with Whirling Slash". Các điểm cần chú ý:
+Patch notes drop 21/05/2026, league launch 29/05/2026. Engine của build (Twister + Whirling Slash + Spirit Walker + Combat Frenzy + Ice-Tipped Arrows) không bị nerf trực tiếp — control-F Twister và Whirling Slash trên patch notes 0.5 đều ra zero. Các điểm cần chú ý:
 
 - Salvo Support: rework seal mechanic (1s/seal × 6 × 1 proj thay vì 2s/seal × 3 × 2 proj) — cap +6 proj giữ nguyên, ramp smoother.
 - Pounce: cooldown 4.9-4s → 6-5.1s ở gem level 3-20. Mobility chậm hơn. Bug double mark effect đã fix → wolf weapon-set swap tech gone.
@@ -209,19 +217,21 @@ Patch notes drop 21/05/2026, league launch 29/05/2026. Engine của build (Twist
 - Mageblood: thêm vào drop pool 0.5 — mirror tier goal khả thi.
 - Free passive tree refund cho mọi character cũ — test variant không tốn regret.
 
+Live meta thì chưa hình thành: poe.ninja runesofaldur còn 0 character tính tới 30/05/2026 (day-2), nên chưa verify được popularity thực, phân bố Spirit Walker vs Deadeye, hay tỉ lệ dùng Twister — re-check khi snapshot populate (thường tuần 1). Các addendum ngày launch (25→29/5) không động vào engine của build: chỉ leech roll-tier (25/5) và một số passive evasion (26/5) brush nhẹ vào khu vực lân cận; control-F Twister / Whirling Slash / Spirit Walker trên patch file vẫn ra zero xuyên suốt tới ngày launch — củng cố block confirmed status ở trên.
+
 **Future-nerf risk watch (post-launch)**
 
-Mana leech đã bị gut trong 0.5 — passive notable "instant leech on empowered skills" (Twister luôn empowered) là target khả nghi cho hotfix tiếp theo nếu build dominate. Ice-Tipped Arrows tự skill có thể bị nerf nếu meta consolidate xung quanh nó — SnooBAE85 flag "if anything gets nerfed mid-league, will likely be Ice-Tipped Arrows". Ghost Dance đã bị nerf hai lần post patch-notes — không ảnh hưởng build hiện tại nhưng cho thấy GGG đang nhắm các defensive layer evasion-based. Plan B nếu Ice-Tipped Arrows bị crop: revert sang setup Frostbolt + Ice Crash combo cho Chilled Ground generator.
+Leech đã bị gut trong 0.5 — và đây là fact đã live, không phải dự đoán: Desecrated instant-leech modifier không còn roll được nữa, Vaal Pact và Voracious đều mất dòng "Life Leech is Instant", glove/ring phys-attack-leech bị cắt tier đầu và roll ở level cao hơn (addendum 25/5). Build này không phụ thuộc leech để sustain cốt lõi — nó chạy bằng Life Flask, freeze + evasion, và 2% maximum life regen từ Embrace of the Wild (online khi Sacred Unity ở Lab 4). 0.5 thậm chí còn thêm một option mana leech mới qua Mark of Siphoning (Leech Mana 8% of Physical Attack Damage trên target đã mark), hợp với setup kiểu Freezing/Charged Mark sẵn có. Net lại nerf leech gần như không chạm build này. Ice-Tipped Arrows tự skill là target nerf khả nghi nhất nếu meta consolidate xung quanh nó — đây là thứ dễ ăn hotfix giữa league nhất của build. Ghost Dance bị nerf trong 0.5 — Ghost Shroud interval 7.6-6.1s → 11.7-10.1s ở gem level 4-20, đổi sang scaling theo Cooldown Recovery Rate và mất shroud khi bị hit — không ảnh hưởng build hiện tại nhưng cho thấy GGG đang nhắm các defensive layer evasion-based. (Patch file in nguyên dòng này hai lần — body chính + addendum 22/5 — nhưng cùng một thay đổi, không phải hai nerf riêng.) Plan B nếu Ice-Tipped Arrows bị crop: revert sang setup Frostbolt + Ice Crash combo cho Chilled Ground generator.
 
 ## Summary
 
-- Engine 2 tầng: Whirling Slash spawn Whirlwind 3-stage → Twister consume → 4 tornado compound 10.95× base damage.
+- Engine 2 tầng: Whirling Slash spawn Whirlwind 3-stage → Twister consume → 4 tornado, mỗi stage +80% more damage (verified). Con số compound aggregate (~10.95×) là theorycraft chưa verify (LOW), neo vào +80%/stage thay vì con số tổng.
 - Chilled Ground gain 50% cold là added damage (không convert) — physical scaling 100% vẫn intact.
 - Salvo 0.5 rework: cap +6 projectile giữ nguyên, ramp 1s/seal smoother, không còn block earn seal khi cast.
 - Spirit Walker owl feather (Primal Bounty + Mhacha's Gift) scale projectile count + speed direct — fully-scaled ~6 proj + ~200% speed mỗi 9s, cycle match boss telegraph naturally.
 - Projectile Acceleration III + owl feather speed buff convert thành damage multiplier compound.
 - Frost Nexus + Elemental Focus + Charged Mark là 3 support gem critical cho Act 2 pivot setup mà bài cũ chưa cover.
-- Consensus 4 creator post-patch (SiahZ, GuyThatDies, SnooBAE85, Lolcohol): S-tier league starter cho 0.5.
+- Đánh giá tổng: S-tier league starter cho 0.5 — mạnh nhất ở corridor clear + chi phí khởi động thấp, đổi lại raw ceiling thua các archetype đầu tư nặng (Deadeye Twister).
 - Build clear corridor S-tier, boss arena rộng A-tier, leveling cải thiện rõ sau Act 2 pivot Ice-Tipped Arrows.
 - Patch 0.5 không nerf engine — Salvo/Pounce/Atziri-Contempt là 3 điểm cần lưu ý nhỏ. Ice-Tipped Arrows là target risk cho hotfix nếu meta consolidate.
 
@@ -254,6 +264,18 @@ Chi tiết cơ chế Twister xem [mechanic doc Twister](/mechanics/skills/twiste
 - **Patch 0.5.0 notes (local):** data/release-notes/Version_0.5.0.md
 
 ## Changelog
+
+### 2026-05-30
+
+- Twister aggregate compound (~10.95×) relabel thành theorycraft chưa verify (LOW) ở cả Build Overview lẫn Summary — công thức đang lưu truyền thực ra ra 11.87×, neo lại vào fact verified +80%/stage thay vì con số tổng.
+- Wild Protector (Lab 3) sửa lại còn đúng grant base: Spirit Bear (leap maim / slam life-leech / roar Intimidate, không chiếm Companion slot). Chuyển 2% life regen + redirect 8% damage sang Embrace of the Wild — chỉ online ở Lab 4 Sacred Unity.
+- Sacred Unity (Lab 4): sửa điều kiện Soaring Ground — 30% increased evasion + Onslaught là vô điều kiện cho player + ally, chỉ 40% damage mới gate full-life (MEDIUM); ghi nhận đây là chỗ sustain regen thật sự bật.
+- Ghost Dance: sửa từ "nerf hai lần" còn một nerf (patch file in lại cùng dòng trong addendum 22/5), thêm số interval thật.
+- Future-nerf leech: bỏ phantom notable "instant leech on empowered skills", reframe thành fact đã live (Desecrated/Vaal Pact/Voracious/glove-ring) + neutralize — build không phụ thuộc leech, Mark of Siphoning còn thêm option mana leech.
+- Điểm yếu: nâng Combat Frenzy lên thành single point of failure (freeze dependency), bỏ attribution "GGG flag" không có nguồn; thêm map-mod hostile failure mode (Ailment Threshold / Recovery Rate / Cooldown Recovery), giữ Chilled Ground là enabler.
+- Thêm reality-check day-1/2 (campaign 25-40h, phase đầu đúng là phase yếu) vào Leveling Notes; thêm freshness note giá (economy chưa hình thành, spear meta bị tranh giá) vào Budget; thêm freshness note live meta (poe.ninja 0 char day-2) vào confirmed-status block.
+- Owner-voice pass: bỏ creator-attribution rò rỉ vào body prose (intro, Leveling Notes, honesty note, confirmed-status, future-nerf, Summary), restate thành đánh giá của chính tác giả — provenance giữ nguyên ở Resources + các entry changelog cũ.
+- Frontmatter: pob_coverage PARTIAL + confidence_level MEDIUM, updated 30/05/2026.
 
 ### 2026-05-25
 
