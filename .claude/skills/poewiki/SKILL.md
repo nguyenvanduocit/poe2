@@ -51,14 +51,13 @@ goscrape --markdown --include '/wiki/(The_Hollow_Mask|Reverie|Mageblood|.*Voidst
   -o ./data/wiki https://www.poe2wiki.net
 ```
 
-## Release Notes / Patch Notes Fetcher
+## Release Notes / Patch Notes
+
+Patch notes are fetched từ **official GGG forum thread** (không phải wiki) — dùng skill riêng `/update-release-note`:
 
 ```bash
-./.claude/skills/poewiki/scripts/release-notes/fetch.sh                # latest POE2 (auto-detect)
-./.claude/skills/poewiki/scripts/release-notes/fetch.sh 0.5.0          # version cụ thể
+.claude/skills/update-release-note/scripts/fetch.sh 3932540    # POE2 0.5.0
 ```
-
-Dùng `markitdown` → clean text-only Markdown (no icons/images). Output `data/release-notes/Version_X.Y.Z.md` + symlink `latest.md`.
 
 > **POE2 0.5 "Runes of Aldur"** patch notes nằm tại `data/release-notes/Version_0.5.0.md`. Đây là source verbatim cho mọi note về Remnant / Runic Recipe / Ocean Exploring / Spirit Walker / Martial Artist / Atlas Endgame rewrite.
 

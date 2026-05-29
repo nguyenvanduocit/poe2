@@ -236,6 +236,22 @@ function extractItemBox(html: string, host: string): string | undefined {
   return undefined
 }
 
+// Header name of the first item box on the page, e.g. "Frost Bomb".
+// Used to verify the box belongs to the requested entity before showing it.
+function firstItemBoxName(html: string): string | null {
+  const start = findItemBoxStart(html)
+  if (!start) return null
+  const seg = html.slice(start.idx, start.idx + 1200)
+  const m = seg.match(/class="header[^"]*">([\s\S]*?)<span class="item-stats"/i)
+  const txt = m ? stripHtml(m[1]) : ''
+  return txt || null
+}
+
+function nameMatches(a: string, b: string): boolean {
+  const norm = (s: string): string => s.toLowerCase().replace(/['’]/g, "'").replace(/[\s_]+/g, ' ').trim()
+  return norm(a) === norm(b)
+}
+
 export default defineEventHandler(async (event): Promise<WikiDataResult> => {
   const { name, wiki } = getQuery(event)
   if (!name || typeof name !== 'string') {
@@ -271,6 +287,12 @@ export default defineEventHandler(async (event): Promise<WikiDataResult> => {
 
   const pageHtml = parseRes?.parse?.text?.['*']
   const itemBoxHtml = pageHtml ? extractItemBox(pageHtml, host) : undefined
+  // The first item box on a page only belongs to the requested entity when its
+  // header name matches. Concept/redirect pages (e.g. "Elemental Infusion" →
+  // "Infusion", "Remnant", "Power Charge") embed OTHER skills' boxes via a
+  // related-skills table, so the first box is a wrong skill (e.g. Frost Bomb).
+  const boxName = pageHtml ? firstItemBoxName(pageHtml) : null
+  const boxMatchesEntity = !!boxName && nameMatches(boxName, name)
 
   let data: WikiDataResult
 
@@ -294,7 +316,7 @@ export default defineEventHandler(async (event): Promise<WikiDataResult> => {
       }
     }
   } else if (pageHtml) {
-    if (pageHtml.includes('infobox-page-container') && pageHtml.includes('item-box -gem')) {
+    if (boxMatchesEntity && pageHtml.includes('infobox-page-container') && pageHtml.includes('item-box -gem')) {
       data = parseInfoboxGem(pageHtml, name)
     } else if (pageHtml.includes('info-card')) {
       data = parseInfoCard(pageHtml, name)
@@ -305,7 +327,9 @@ export default defineEventHandler(async (event): Promise<WikiDataResult> => {
     data = { name, found: false }
   }
 
-  if (itemBoxHtml) data.itemBoxHtml = itemBoxHtml
+  // Only attach the scraped item box when it belongs to the entity (cargo hit
+  // means the page is the item's own page; otherwise require a header match).
+  if (itemBoxHtml && (row || boxMatchesEntity)) data.itemBoxHtml = itemBoxHtml
 
   cache.set(cacheKey, data)
   return data

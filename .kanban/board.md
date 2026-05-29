@@ -1,5 +1,5 @@
 # Kanban Board
-<!-- Updated: 2026-05-29 (T-003 leveling style+overlay polish done) -->
+<!-- Updated: 2026-05-29 (T-004 deploy skill repoint to poe2 done) -->
 
 ## Backlog
 
@@ -8,6 +8,8 @@
 ## Doing
 
 ## Done
+
+- [T-004](tasks/T-004-deploy-skill-wrong-project.md) Skill /deploy trỏ sai CF project → repoint poe2 — high/S (grep sạch + 10× /projects/poe2; verify-server snippet chạy ✅ HEAD=Deployed=45c698a)
 
 - [T-003](tasks/T-003-leveling-style-consistency-overlay-space.md) Leveling tracker — style đồng nhất + overlay hug content — medium/S (overlay hug content -202px void; card 2-tier consistent; PiP fill inline; generate pass)
 

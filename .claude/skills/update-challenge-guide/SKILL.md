@@ -14,9 +14,7 @@ context: inline
 
 # update-challenge-guide
 
-Refresh the canonical POE2 league challenge guide from live challenge page data. This skill is **agentic** — the agent fetches HTML, then reasons semantically and writes the guide by hand. No parser script, no template fill.
-
-**Use this skill cho POE2 (0.5 Runes of Aldur trở đi).** Use `/update-challenge-guide1` (no `2`) cho POE1.
+Refresh the canonical POE2 challenge guide from live challenge page data. This skill is **agentic** — the agent fetches HTML, then reasons semantically and writes the guide by hand. No parser script, no template fill.
 
 ## POE2 0.5 — bối cảnh challenge system lần đầu
 
@@ -30,16 +28,9 @@ POE2 0.5 "Runes of Aldur" (launch ~29/05/2026) là league POE2 ĐẦU TIÊN có 
 
 Vì scope nhỏ và reward cosmetic, **default target thường là 8/8** thay vì split theo tier như POE1 — chi phí marginal để đi từ 6 lên 8 thấp, và bộ giáp full set có giá trị cosmetic cao hơn từng mảnh rời. Override target nếu user nói cụ thể (vd "chỉ cần 4 cho mảnh chest").
 
-## Canonical Guide Rule
+## Canonical Guide Path
 
-Maintain **one stable guide per game** — challenge guide là rolling living doc, không phải per-league archive. Filename không đổi giữa các league; lần chạy lặp ghi đè cùng file với content league hiện tại. Không tạo dated copy hay league-suffixed copy.
-
-| Game | Canonical guide |
-|---|---|
-| poe1 | `content/guides/current-character-challenge-guide-poe1.md` |
-| poe2 | `content/guides/current-character-challenge-guide-poe2.md` |
-
-Filename game-scoped và stable. Khi league đổi, chỉ ghi đè content và bump frontmatter `league` + `patch` — không rename file. File poe2 được tạo lần đầu khi POE2 0.5 mở challenge system.
+`content/guides/challenge-guide.md` — single stable file, rolling living doc. Filename không đổi giữa các league; mỗi lần chạy ghi đè body với content league hiện tại. Không tạo dated copy hay league-suffixed copy. Khi league đổi, chỉ overwrite content và bump frontmatter `league` + `patch` — không rename.
 
 ## Step 1 — Get fresh HTML
 
@@ -114,13 +105,46 @@ Use character context từ `CLAUDE.md` (current POE2 character — TBD cho 0.5; 
 
 1. **Opening paragraph** — current state (done/8), target chosen (default 8 hoặc custom) và *why* target đó, count must-do + skip-able.
 2. **Build status** — short paragraph confirm current POE2 character envelope cover all must-do (cite character file nếu có).
-3. **N must-do challenges** — một H3 mỗi challenge. Mỗi cái: current counter, what's needed, why nó bundle hoặc cách one-shot, specific atlas keystone / tablet / waystone setup, specific item cần mua/craft với verbatim wiki-link `poe2wiki.net`, expected map count hoặc divine cost.
+3. **N must-do challenges** — một H3 mỗi challenge. Mỗi cái: **inline `:memorable-check{}` ticks ngay dưới H3** (action-first, xem "Inline Progress Ticks" bên dưới), rồi current counter, what's needed, why nó bundle hoặc cách one-shot, specific atlas keystone / tablet / waystone setup, specific item cần mua/craft với verbatim wiki-link `poe2wiki.net`, expected map count hoặc divine cost.
 4. **Atlas + Tablet loop** — section giải thích multi-tick setup. POE2 0.5 có Masters of the Atlas (Doryani's Science / Hilda's Hunting / Jado's Spycraft — pick 1 active mỗi map), Atlas Tree mới (300+ node), Tablet stacking (cùng loại stack được). Math tổng map count để compound mọi thứ.
 5. **Boss tour** (nếu must-do bao gồm Pinnacle hoặc Citadel boss) — separate section với specific key/fragment cần buy/farm. Ưu tiên **quest version** của pinnacle boss (deterministic, cheaper) thay vì infinite-farm version.
 6. **K skip-able challenges** — paragraph mỗi skip-able, giải thích cost vs reward và *khi nào* đảo quyết định (vd "skip nếu Arbiter of Divinity infinite-version key giá >X div").
 7. **Pitfalls / không làm** — specific traps (wrong fragment cho pinnacle quest version, waystone chưa identify nên không activate được, tablet đặc thù league không rớt từ Simulacrum/Abyssal Depths/Twisted Domain nữa).
 8. **Checklist sau mỗi session** — counter cần track + abort condition.
 9. **Related Resources** — link đến character progress, farming strategy POE2, related mechanic doc (`content/mechanics/return-of-the-ancients.md`, `content/mechanics/spirit-walker-companion-beast-hunt.md`).
+
+## Inline Progress Ticks — `:memorable-check{}` MDC
+
+Guide phải interactive. Mỗi must-do milestone phải **tick được inline** qua component `MemorableCheck.vue` (`app/components/MemorableCheck.vue` — generic, render brutalist coral checkbox, persist state ở `localStorage`).
+
+**Placement rule** — ticks đặt **trước**, ngay dưới mỗi `### <Challenge Name>` heading, *trước* prose. Action-first scan tốt hơn narrative-first scroll. Prose giải thích đi sau và nói *vì sao* tick đó quan trọng.
+
+**Syntax** — một milestone một dòng:
+
+```mdc
+:memorable-check{id="<stable-slug>" label="<task với target counter>" storageKey="poe2-<league-slug>-challenges"}
+```
+
+- `id` — stable kebab-slug unique trong storageKey namespace. Dùng form `<challenge>-<milestone>` (vd `rune-seeker-7slot`, `hunter-aki`, `cartographer-300`). **Stable qua các lần rewrite guide** — đừng đổi ID khi bump counter, user sẽ mất tick state. Nếu challenge có sub-milestone mới, *thêm* id mới; đừng recycle.
+- `label` — short Vietnamese task description với target counter và one-line action hint (vd `"Craft thành công Remnant 7-slot (sống qua 6 wave)"`). Giữ dưới ~80 ký tự cho khỏi wrap xấu.
+- `storageKey` — league-scoped namespace. Dùng literal `poe2-<league-slug>-challenges` (vd `poe2-runes-of-aldur-challenges`). Khi đổi league, bump slug để fresh league bắt đầu với empty checks thay vì kế thừa state league cũ.
+
+**Số ticks per challenge** — một per *trackable milestone*, không phải một per counter unit. POE2 0.5 có 8 challenge và phần lớn chỉ có 1-3 milestone mỗi cái (tick craft + tick threshold cao chẳng hạn). Aim ~10-20 ticks total cho 8/8 push, không phải 50+.
+
+**Setup-phase ticks** — cũng tick *loop prep* (atlas master active, tablet stack configured, pinnacle quest key bought). Đây là one-time prerequisite, không per-map. Đặt trong các section "Atlas + Tablet loop" / "Boss tour".
+
+**Example** (từ current guide POE2 0.5):
+
+```mdc
+## Challenge 1 — The Rune Seeker
+
+:memorable-check{id="rune-seeker-craft" label="Craft item từ Remnant nhiều slot trong map loop" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="rune-seeker-7slot" label="Craft thành công Remnant 7-slot (sống qua 6 wave)" storageKey="poe2-runes-of-aldur-challenges"}
+
+Đây là challenge gắn trực tiếp với league mechanic, nên nó tự tiến triển khi mình chơi Remnant. ...
+```
+
+**Đừng** đặt ticks bên trong bullet list, blockquote, hoặc code block — MDC component phải ở block level. **Đừng** wrap nhiều ticks bằng prose dài dòng giữa chúng — chúng đọc như checklist khi stack thẳng. **Đừng** invent component name mới; `:memorable-check{}` là tick syntax duy nhất sanctioned trong guide này.
 
 **Frontmatter required** (vault-keeper enforced):
 
@@ -159,7 +183,7 @@ Use Write tool trên canonical guide path. Overwrite toàn file — đừng merg
 ## Step 4 — Validate
 
 ```bash
-bun run validate --path content/guides/current-character-challenge-guide-poe2.md
+bun run validate --path content/guides/challenge-guide.md
 ```
 
 Phải show 1/1 valid, 0 error, 0 warning.

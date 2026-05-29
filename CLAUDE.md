@@ -15,6 +15,7 @@ Mọi command trong workspace này trỏ POE2. Không có command POE1 — muố
 - `/pob` → PoB2 calculator (community fork POE2)
 - `/poewiki` → wiki mirror poe2wiki.net (qua `data/wiki/`)
 - `/poedb` → database mirror poe2db.tw per patch (qua `data/poedb/<patch>/`)
+- `/update-release-note` → fetch patch notes từ official GGG forum thread → `data/release-notes/`
 - `/passive-skill-tree` → passive tree
 - `/atlas-tree` → atlas passive tree
 - `/trade` → trade qua CDP Relay
@@ -55,13 +56,14 @@ Lưu ý: POE2 hiện chủ yếu dùng poe.ninja snapshot / pobb.in / mobalytics
 ### Fetch release notes / patch notes
 
 ```
-./.claude/skills/poewiki/scripts/release-notes/fetch.sh             # latest (auto-detect from Version_history)
-./.claude/skills/poewiki/scripts/release-notes/fetch.sh 0.5.0       # specific version
+.claude/skills/update-release-note/scripts/fetch.sh 3932540          # POE2 0.5.0 (thread id 3932540)
+.claude/skills/update-release-note/scripts/fetch.sh 3932540 0.5.0    # version explicit (hotfix)
 ```
 
-- Lightweight fetch qua `markitdown` → clean text-only Markdown (không hàng trăm icon/image).
-- Output saved under `data/release-notes/Version_X.Y.Z.md`, tracked in git.
-- Always tạo `latest.md` symlink trong cùng folder cho quick access.
+- Fetch verbatim từ **official GGG forum thread** (canonical source #1), không phải wiki mirror. Xem skill `/update-release-note`.
+- Mỗi patch là một thread id riêng (lookup tay từ GGG forum announcement) — không auto-detect. Đã biết: 0.5.0 = `3932540`.
+- Pipeline `curl` (browser UA, né Cloudflare 403) → `extract-forum.py` (bs4 post-body + split packed `<li>`) → `pandoc` → cleanup. Output `data/release-notes/Version_X.Y.Z.md` + `latest.md` symlink, tracked in git.
+- Re-fetch cùng version giữ nguyên header block đã curate (mọi thứ trên `---`), chỉ refresh body — đúng cách để kéo dated "Updates to Patch Notes" addendum mới.
 - Dùng khi cần exact wording của changes cho league/patch mới (đặc biệt trước khi viết mechanics hoặc farming strategy notes).
 
 ### Trading & pricing
@@ -123,3 +125,32 @@ Mọi data persistent sống dưới `data/` (xem `../CLAUDE.md ## Rules` cho ca
 - `data/map-mods/<corpus>-mods-X.Y.json` — waystone/tablet mod corpus
 - `data/pob-source/` — PathOfBuildingCommunity clone (~572M, gitignored, fetch qua PoB fetch script)
 - `data/character-exports/` — per-character JSON export (gitignored, instance data)
+
+<!-- kanban:start -->
+## Task Board
+
+!`bash .kanban/status.sh 2>/dev/null`
+
+Board: `.kanban/board.md` (index) | Tasks: `.kanban/tasks/T-NNN-slug.md` | Archive: `.kanban/archive/`
+
+**Session start:** Read `.kanban/board.md`. For Doing tasks, open their task files.
+**Session end:** Update `.kanban/board.md` — move completed task lines to Done, note blockers, update timestamp.
+
+**Board line format** (one per task):
+```
+- [T-NNN](tasks/T-NNN-slug.md) Title — priority/effort
+```
+
+**Task file format** (`.kanban/tasks/T-NNN-slug.md`):
+```
+# T-NNN: Title
+> One-line description
+- **priority**: critical|high|medium|low
+- **effort**: XS|S|M|L
+
+## Criteria
+- [ ] Acceptance criterion
+```
+
+**Rules:** WIP limit = 2 in Doing. Pick highest-priority from Todo. Never skip criteria checkboxes. Slug is kebab-case from title, ≤40 chars.
+<!-- kanban:end -->

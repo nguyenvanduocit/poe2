@@ -1,20 +1,20 @@
 ---
 name: deploy
-description: Trigger hoặc check Cloudflare Pages deploy cho poe.aiocean.io (Nuxt 4 SSG site). Auto-deploy via git push lên `main`; manual trigger qua CF API. Dùng khi user gõ /deploy, "deploy site", "ship to cloudflare", "trigger rebuild", "redeploy", "deploy status", "kiểm tra build", "tại sao deploy fail", hoặc cần troubleshoot lỗi build CF Pages.
+description: Trigger hoặc check Cloudflare Pages deploy cho poe2.aiocean.io (Nuxt 4 SSG site). Auto-deploy via git push lên `main`; manual trigger qua CF API. Dùng khi user gõ /deploy, "deploy site", "ship to cloudflare", "trigger rebuild", "redeploy", "deploy status", "kiểm tra build", "tại sao deploy fail", hoặc cần troubleshoot lỗi build CF Pages.
 ---
 
-# /deploy — Cloudflare Pages cho poe.aiocean.io
+# /deploy — Cloudflare Pages cho poe2.aiocean.io
 
 **Bạn là agent deploy.** Site này deploy lên Cloudflare Pages qua git integration. Push lên `main` → CF tự build. Skill này document setup hiện tại + cách trigger thủ công + cách debug khi fail.
 
 ## Project state — verify trước khi action
 
 ```text
-GitHub repo:       nguyenvanduocit/poe-n (private), branch main
+GitHub repo:       nguyenvanduocit/poe2 (private), branch main
 CF Account:        a44473eab2f968599bc24d5d1a4853f1 (Nguyenvanduocit@gmail.com)
-CF Project:        poe
-Subdomain:         poe-70i.pages.dev
-Custom domain:     poe.aiocean.io (zone aiocean.io trên cùng account)
+CF Project:        poe2
+Subdomain:         poe2-7sl.pages.dev
+Custom domain:     poe2.aiocean.io (zone aiocean.io trên cùng account)
 Build command:     bun install --frozen-lockfile && bun run generate
 Build output dir:  dist
 Compat date:       2025-11-04
@@ -23,6 +23,8 @@ Env vars (build):  NODE_VERSION=20, BUN_VERSION=1.2.5
 ```
 
 Nếu state này không khớp với reality (CF dashboard / GitHub) → STOP và investigate, không guess. CF token ở `~/Library/Preferences/.wrangler/config/default.toml` (key `oauth_token`).
+
+> Account này có nhiều CF Pages project. `poe2` là project của workspace NÀY (poe2.aiocean.io). Sibling `poe1` (poe1.aiocean.io) và `poe` cũ (poe.aiocean.io) là project KHÁC — đừng thao tác nhầm. Luôn dùng `/projects/poe2` trong URL.
 
 ## Default flow — chỉ cần git push
 
@@ -35,7 +37,7 @@ git push origin main
 # ETA ~5-15 min cho build cold (cache miss)
 ```
 
-Push lên branch khác → preview deploy (URL dạng `<branch>.poe-70i.pages.dev`).
+Push lên branch khác → preview deploy (URL dạng `<branch>.poe2-7sl.pages.dev`).
 
 ## Manual trigger — khi push không kích hoạt được
 
@@ -48,7 +50,7 @@ ACC=a44473eab2f968599bc24d5d1a4853f1
 curl -s -X POST \
   -H "Authorization: Bearer $CF_TOKEN" \
   -H "User-Agent: Mozilla/5.0 wrangler" \
-  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe/deployments?branch=main"
+  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe2/deployments?branch=main"
 ```
 
 Trả về JSON với `result.id` (full UUID) + `result.short_id` (8 chars).
@@ -62,7 +64,7 @@ CF_TOKEN=$(awk -F'"' '/^oauth_token/{print $2}' ~/Library/Preferences/.wrangler/
 ACC=a44473eab2f968599bc24d5d1a4853f1
 
 curl -s -H "Authorization: Bearer $CF_TOKEN" -H "User-Agent: Mozilla/5.0 wrangler" \
-  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe/deployments" \
+  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe2/deployments" \
   | python3 -c "
 import json, sys
 d = json.load(sys.stdin)
@@ -74,12 +76,31 @@ for dep in (d.get('result') or [])[:5]:
 "
 ```
 
+### Verify server đã chạy commit mới nhất chưa
+
+So commit của deploy `success` gần nhất với git HEAD/origin:
+
+```bash
+CF_TOKEN=$(awk -F'"' '/^oauth_token/{print $2}' ~/Library/Preferences/.wrangler/config/default.toml)
+ACC=a44473eab2f968599bc24d5d1a4853f1
+
+git fetch origin main --quiet
+LOCAL=$(git rev-parse HEAD)
+DEPLOYED=$(curl -s -H "Authorization: Bearer $CF_TOKEN" -H "User-Agent: Mozilla/5.0 wrangler" \
+  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe2/deployments" \
+  | python3 -c "import json,sys; d=json.load(sys.stdin); print(next((x['deployment_trigger']['metadata']['commit_hash'] for x in d.get('result',[]) if (x.get('latest_stage') or {}).get('status')=='success'), ''))")
+
+echo "HEAD     : $LOCAL"
+echo "Deployed : $DEPLOYED"
+[ "${LOCAL:0:12}" = "${DEPLOYED:0:12}" ] && echo "✅ server = latest commit" || echo "⚠️ server KHÁC HEAD"
+```
+
 ### Tail build logs cho deploy cụ thể
 
 ```bash
 DEP=<full-deployment-uuid>
 curl -s -H "Authorization: Bearer $CF_TOKEN" -H "User-Agent: Mozilla/5.0 wrangler" \
-  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe/deployments/$DEP/history/logs" \
+  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe2/deployments/$DEP/history/logs" \
   | python3 -c "
 import json, sys
 d = json.load(sys.stdin)
@@ -91,9 +112,9 @@ for l in d.get('result', {}).get('data', []):
 ### Verify live site
 
 ```bash
-curl -sI https://poe.aiocean.io | head -1            # expect HTTP/2 200
-curl -s  https://poe.aiocean.io | grep -oE 'data-v-[a-f0-9]+' | head -1
-                                                      # expect Vue scoped marker
+curl -sI https://poe2.aiocean.io | head -1            # expect HTTP/2 200
+curl -s  https://poe2.aiocean.io | grep -oE 'data-v-[a-f0-9]+' | head -1
+                                                       # expect Vue scoped marker
 ```
 
 ## Troubleshooting — failures đã gặp
@@ -130,7 +151,7 @@ curl -s -X PATCH \
   -H "Content-Type: application/json" \
   -H "User-Agent: Mozilla/5.0 wrangler" \
   --data '{"build_config":{"build_command":"bun install --frozen-lockfile && bun run generate","destination_dir":"dist","root_dir":"","build_caching":true}}' \
-  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe"
+  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe2"
 ```
 
 ### `build` fail: prerender 404
@@ -145,22 +166,22 @@ bun run validate
 
 - **PATCH source repo qua API silently ignored.** Field `source.config.repo_name` không update được sau khi tạo project. CF dashboard cũng không có UI để đổi (link "Manage" chỉ vào GitHub App settings, không phải đổi repo). Muốn đổi source → phải `delete + recreate` (xem section dưới).
 - **Delete project có custom domain bị block** với code `8000028`. Phải `DELETE /domains/<domain>` trước, rồi mới `DELETE /projects/<name>`.
-- **Recreate cùng tên giữ subdomain.** Project `poe` recreate lại được CF cấp `poe-70i.pages.dev` lại y nguyên (cùng prefix). Chưa rõ điều này có guarantee hay chỉ may mắn.
+- **Recreate cùng tên giữ subdomain.** Project recreate lại cùng tên `poe2` được CF cấp `poe2-7sl.pages.dev` lại y nguyên (cùng prefix). Chưa rõ điều này có guarantee hay chỉ may mắn.
 - **CF API trả pseudo-JSON** trên một số GET (unquoted keys). Workaround: thêm `User-Agent: Mozilla/5.0 wrangler` + `Accept: application/json` headers.
 - **Build cache 25MB/file, ~20K files/deploy** giới hạn. Site nặng phần lớn do cached PoE asset images trong `_web.poecdn.com/`. Nếu vượt limit → trim asset cache hoặc content trước.
 
 ## Recreate project from scratch — kịch bản destructive
 
-CHỈ làm khi cần đổi source repo hoặc reset hoàn toàn. Có ~30s downtime trên `poe.aiocean.io` (522 trong khi recreate + re-attach domain).
+CHỈ làm khi cần đổi source repo hoặc reset hoàn toàn. Có ~30s downtime trên `poe2.aiocean.io` (522 trong khi recreate + re-attach domain).
 
 ```bash
 # 1. Detach custom domain
 curl -s -X DELETE -H "Authorization: Bearer $CF_TOKEN" -H "User-Agent: Mozilla/5.0 wrangler" \
-  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe/domains/poe.aiocean.io"
+  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe2/domains/poe2.aiocean.io"
 
 # 2. Delete project
 curl -s -X DELETE -H "Authorization: Bearer $CF_TOKEN" -H "User-Agent: Mozilla/5.0 wrangler" \
-  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe"
+  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe2"
 
 # 3. Recreate (full payload - source + build_config + deployment_configs)
 curl -s -X POST \
@@ -168,13 +189,13 @@ curl -s -X POST \
   -H "Content-Type: application/json" \
   -H "User-Agent: Mozilla/5.0 wrangler" \
   --data '{
-    "name": "poe",
+    "name": "poe2",
     "production_branch": "main",
     "source": {
       "type": "github",
       "config": {
         "owner": "nguyenvanduocit",
-        "repo_name": "poe-n",
+        "repo_name": "poe2",
         "production_branch": "main",
         "pr_comments_enabled": true,
         "deployments_enabled": true,
@@ -218,14 +239,14 @@ curl -s -X POST \
   -H "Authorization: Bearer $CF_TOKEN" \
   -H "Content-Type: application/json" \
   -H "User-Agent: Mozilla/5.0 wrangler" \
-  --data '{"name": "poe.aiocean.io"}' \
-  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe/domains"
+  --data '{"name": "poe2.aiocean.io"}' \
+  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe2/domains"
 
 # 5. Trigger first deploy
 curl -s -X POST \
   -H "Authorization: Bearer $CF_TOKEN" \
   -H "User-Agent: Mozilla/5.0 wrangler" \
-  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe/deployments?branch=main"
+  "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe2/deployments?branch=main"
 ```
 
 ## Output format
@@ -233,8 +254,9 @@ curl -s -X POST \
 Khi user gõ `/deploy` không có argument cụ thể, default action là **status check**:
 
 1. List 3 deploy gần nhất (short_id, trigger, commit, stage, status)
-2. Hiện build_command + build_output_dir hiện tại
-3. Báo URL: `https://poe.aiocean.io` (production), `https://poe-70i.pages.dev` (CF subdomain)
-4. Nếu deploy mới nhất `failure` → tail logs + đề xuất fix dựa vào pattern lỗi (mục Troubleshooting)
+2. So commit deploy mới nhất với git HEAD → báo server đã latest chưa
+3. Hiện build_command + build_output_dir hiện tại
+4. Báo URL: `https://poe2.aiocean.io` (production), `https://poe2-7sl.pages.dev` (CF subdomain)
+5. Nếu deploy mới nhất `failure` → tail logs + đề xuất fix dựa vào pattern lỗi (mục Troubleshooting)
 
 Khi user yêu cầu trigger ("deploy now", "rebuild"): chạy manual trigger API + poll status đến khi `deploy/success` hoặc fail.

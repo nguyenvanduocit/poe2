@@ -19,7 +19,7 @@ model: claude-opus-4-7
     - **vs `mechanic-researcher`**: mechanic researches single mechanic. Patch-impact aggregate scan. Patch-impact có thể TRIGGER mechanic-researcher cho mechanic bị thay đổi sau scan.
     - **vs `farming-researcher`**: same — patch-impact scan farming docs cho nerfed content.
     - **vs `interaction-mapper`**: patch-impact có thể trigger interaction-mapper re-probe nếu pair bị patch thay đổi (vd `RemnantCannotBeShared` tag bị remove).
-    - **vs `/poewiki release-notes/fetch.sh` script**: script chỉ FETCH patch notes thành markdown. Agent USE script internally để lấy patch notes, sau đó RESEARCH cross-cut impact.
+    - **vs `/update-release-note` skill**: skill chỉ FETCH patch notes thành markdown. Agent USE skill internally để lấy patch notes, sau đó RESEARCH cross-cut impact.
   </Boundary_Vs_Other_Agents>
 
   <Why_This_Matters>
@@ -34,7 +34,7 @@ model: claude-opus-4-7
   </Why_This_Matters>
 
   <Success_Criteria>
-    - Patch notes fetched verbatim qua `.claude/skills/poewiki/scripts/release-notes/fetch.sh <version>` → `data/release-notes/Version_<version>.md`
+    - Patch notes fetched verbatim qua `.claude/skills/update-release-note/scripts/fetch.sh <thread-id> [version]` (POE2 GGG forum thread) → `data/release-notes/Version_<version>.md`
     - Master impact log written: `data/release-notes/Version_<version>-impact.md`
     - Structured change list trong impact log: section per category (nerf / buff / new / removed / renamed / reworked) với verbatim quote per change
     - Affected doc scan: rg toàn bộ `content/builds/`, `content/mechanics/`, `content/farming/`, `content/skilltree/`, `content/characters/`, `content/guides/` cho mỗi entity bị thay đổi
@@ -68,7 +68,7 @@ model: claude-opus-4-7
        - Optional: priority filter (vd "chỉ scan builds folder", "chỉ entity X")
     2. Fetch patch notes:
        ```bash
-       .claude/skills/poewiki/scripts/release-notes/fetch.sh <version>
+       .claude/skills/update-release-note/scripts/fetch.sh <thread-id> <version>
        ```
        Output path: `data/release-notes/Version_<version>.md`
        Verify file exists + content non-empty.
@@ -178,7 +178,7 @@ model: claude-opus-4-7
 
   <Tool_Usage>
 
-    - `Bash` cho `./scripts/release-notes/fetch.sh <game> <version>` (Phase 0)
+    - `Bash` cho `.claude/skills/update-release-note/scripts/fetch.sh <thread-id> [version]` (Phase 0)
     - `Read` patch notes file (P001)
     - `Bash` cho `rg -l "<entity>" content/` (P003, parallel cho multiple entities)
     - `Skill` tool: `superpowers:brainstorming` (Phase 1), `oh-my-claudecode:ultragoal` (Phase 2), `oh-my-claudecode:autoresearch` (Phase 3)
@@ -288,7 +288,7 @@ model: claude-opus-4-7
     <Good>
       **Input**: "Patch impact analysis POE1 3.29"
       
-      **Phase 0**: Fetch `./scripts/release-notes/fetch.sh poe1 3.29` → `data/release-notes/Version_3.29.md`. Verify file exists.
+      **Phase 0**: Fetch `.claude/skills/update-release-note/scripts/fetch.sh <thread-id> <version>` → `data/release-notes/Version_<version>.md`. Verify file exists.
       
       **Phase 1**: Brainstorm — ask user (a) scope full vs focus TheLeader_A build, (b) auto-trigger downstream nếu HIGH confidence, (c) time budget.
       
