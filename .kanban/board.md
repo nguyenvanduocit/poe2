@@ -1,9 +1,11 @@
 # Kanban Board
-<!-- Updated: 2026-05-29 (T-004 deploy skill repoint to poe2 done) -->
+<!-- Updated: 2026-05-30 (T-005 mobalytics skill broken — added to Todo) -->
 
 ## Backlog
 
 ## Todo
+
+- [T-005](tasks/T-005-mobalytics-skill-cloudflare-stale-query.md) Mobalytics skill hỏng — Cloudflare 403 + stale query + profile-URL slug — medium/M
 
 ## Doing
 
