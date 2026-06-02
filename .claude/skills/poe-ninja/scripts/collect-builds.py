@@ -115,7 +115,8 @@ GAMES = ("poe2",)
 # vẫn commit được data thực.
 MIN_CHARS = 200
 
-PROJECT_DIR = Path(__file__).resolve().parents[2]
+# scripts/ → poe-ninja/ → skills/ → .claude/ → project root (poe2/).
+PROJECT_DIR = Path(__file__).resolve().parents[4]
 DATA_DIR = PROJECT_DIR / "data" / "poe-ninja"
 CACHE_DIR = PROJECT_DIR / "tmp" / "poeninja-cache"
 
@@ -732,7 +733,8 @@ def compute_trends(
 
 
 def write_outputs(snapshot: dict[str, Any]) -> dict[str, Path]:
-    out_dir = DATA_DIR / snapshot["game"] / snapshot["league_url"]
+    # Workspace is game-specific (poe2/) — canonical layout has no game subpath.
+    out_dir = DATA_DIR / snapshot["league_url"]
     snap_dir = out_dir / "snapshots"
     snap_dir.mkdir(parents=True, exist_ok=True)
 

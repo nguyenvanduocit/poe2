@@ -1,15 +1,18 @@
 # Kanban Board
-<!-- Updated: 2026-06-01 (T-008 poe.ninja profile pull — Doing) -->
+<!-- Updated: 2026-06-02 (T-009 poe-ninja path fix — Done; T-010 price-forecast path — Todo) -->
 
 ## Backlog
 
 ## Todo
 
 - [T-005](tasks/T-005-mobalytics-skill-cloudflare-stale-query.md) Mobalytics skill hỏng — Cloudflare 403 + stale query + profile-URL slug — medium/M
+- [T-010](tasks/T-010-price-forecast-path-reconcile.md) price-forecast ghi data vào .claude/skills/data/ + lệch path nuxt build — medium/S
 
 ## Doing
 
 ## Done
+
+- [T-009](tasks/T-009-poe-ninja-collect-builds-path.md) poe-ninja collect-builds ghi data sai chỗ (.claude/skills/data/) — high/XS (parents[2]→parents[4] + bỏ game segment `poe2/`; py_compile ok; resolve verify PROJECT_DIR=root, out_dir=data/poe-ninja/runesofaldur khớp data relocate, CACHE_DIR=tmp/; snapshot lạc đã move về canonical)
 
 - [T-008](tasks/T-008-pob-skill-poeninja-profile-pull.md) Pull POE2 char đầy đủ từ poe.ninja profile API vào /pob — high/S (fetch-poeninja.sh +profile branch: events SSE → dynamic modelId → model JSON; verified ThaoCamVienSaiGon PoB 8900 + model 175KB saved, /pob analyze.sh route info=ok exit0; pob+stash SKILL.md docs; bonus: fixed broken .gitignore inline-comment patterns → char-exports/pob-source(572M) now actually ignored)
 
