@@ -19,9 +19,9 @@ tags:
 
 # Spirit Walker Companion Beast Hunt
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Spirit_Walker"} companions aren't the kind where you summon a few pets for fun. This direction turns :wiki-link{url="https://www.poe2wiki.net/wiki/Tame_Beast"} into a puzzle of hunting the right monster base, hunting the right modifiers, balancing spirit reservation, and picking weapons to push companion damage.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Spirit_Walker"} companions are a full build axis, not a few cosmetic pets. The direction turns :wiki-link{url="https://www.poe2wiki.net/wiki/Tame_Beast"} into hunting the right monster base, hunting the right modifiers, balancing spirit reservation, and picking weapons to push companion damage.
 
-The core of the setup is a boss Beast or a rare Beast good enough to be worth the spirit. That beast is only strong when all three layers line up: the base monster has a good attack pool, the modifiers retained support the build, and the character has enough scaling from weapon, minion attack speed, debuffs, or ascendancy.
+The setup centres on a boss Beast or a rare Beast good enough to be worth the spirit. That beast is only strong when all three layers line up: the base monster has a good attack pool, the modifiers retained support the build, and the character has enough scaling from weapon, minion attack speed, debuffs, or ascendancy.
 
 ## How It Works
 

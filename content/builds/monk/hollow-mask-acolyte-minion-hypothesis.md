@@ -36,8 +36,6 @@ tags:
 
 ## Build Overview
 
-Vòng damage của build gói gọn trong bốn bước rõ ràng.
-
 Đầu tiên đi Monk, chọn :wiki-link{url="https://www.poe2wiki.net/wiki/Acolyte_of_Chayula"} và allocate :wiki-link{url="https://www.poe2wiki.net/wiki/Waking_Dream"} — node này grant :wiki-link{url="https://www.poe2wiki.net/wiki/Into_the_Breach"}, skill reservation persistent. Khi active, skill tạo Breach quanh người và spawn một :wiki-link{url="https://www.poe2wiki.net/wiki/Flame_of_Chayula"} mỗi 1.21-1.4 giây (tốc độ cải thiện theo gem level). Flame mang tag Remnant, tự fade sau 25 giây nếu không nhặt.
 
 Tiếp theo là :wiki-link{url="https://www.poe2wiki.net/wiki/Lucid_Dreaming"} + :wiki-link{url="https://www.poe2wiki.net/wiki/Choice_of_Power"}. Hai node này khóa toàn bộ Flames thành Purple và tăng 50% effect của Remnants đồng thời mở rộng pickup range 50%. Mỗi Purple Flame cho character (và giờ là minions) một stack 7% damage as extra Chaos, kéo dài 8 giây, stack tối đa 10 lần — tổng 70% base trước khi nhân multiplier.
@@ -80,11 +78,11 @@ Kết hợp staff skill cho player (volatility trigger hoặc chaos spell như I
 
 Thứ tự lab bốn point:
 
-**1. Waking Dream** — Bắt buộc tuyệt đối. Không có node này thì không có Into the Breach, không có Flames of Chayula, không còn gì để bàn.
+**1. Waking Dream** — Bắt buộc tuyệt đối. Không có node này thì không có Into the Breach, không có Flames of Chayula — toàn bộ build không chạy.
 
 **2. Lucid Dreaming + Choice of Power** — Lấy liền sau point đầu. Choice of Power khóa toàn bộ Flames thành Purple (ổn định damage type), tăng 50% remnant effect và mở rộng pickup range 50%. Đây là nhân multiplier lớn nhất cho toàn bộ extra Chaos trên army.
 
-**3. Chayula's Gift** — Lớp defense không thể thiếu. +10% max chaos res và doubled chaos res giúp cap 85%+ rất dễ dàng. Bỏ node này là tự sát vì chaos damage ăn double vào ES và The Hollow Mask đã -10% elemental res.
+**3. Chayula's Gift** — Lớp defense không thể thiếu. +10% max chaos res và doubled chaos res giúp cap 85%+ rất dễ dàng. Bỏ node này thì chaos damage ăn double vào ES và The Hollow Mask đã -10% elemental res — gần như không sống nổi.
 
 **4. Point cuối** — :wiki-link{url="https://www.poe2wiki.net/wiki/Sap_of_Nightmares"} (leech áp dụng cho cả chaos damage) là lựa chọn an toàn nhất. :wiki-link{url="https://www.poe2wiki.net/wiki/Inner_Turmoil"} chỉ đáng nếu build inflict elemental ailment thường xuyên. :wiki-link{url="https://www.poe2wiki.net/wiki/Embrace_the_Darkness"} nuốt sạch Spirit pool và đụng trực tiếp với Into the Breach nên hầu như không dùng ở variant minion.
 

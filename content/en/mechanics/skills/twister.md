@@ -1,7 +1,7 @@
 ---
 template: templates/mechanic-template.md
 document_type: mechanic
-title: Twister — Spear Wind Projectile Engine
+title: Twister — Spear Wind Projectile Skill
 status: draft
 author: duocnv
 created: '2026-05-19'
@@ -21,15 +21,15 @@ tags:
   - mechanic
 ---
 
-# Twister — Spear Wind Projectile Engine
+# Twister — Spear Wind Projectile Skill
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Twister"} is a spear attack skill tagged Wind + Projectile + AoE + Duration in POE2 patch 0.5, dropping at Tier 1 so it's usable from Act 1. The skill doesn't run on its own — it's the second half of a two-stage engine, the first half being :wiki-link{url="https://www.poe2wiki.net/wiki/Whirling_Slash"} (which spawns a Whirlwind); Twister arrives and **consumes the Whirlwind** to multiply both the projectile count and the damage multiplier. Understanding Twister matters because 90% of guides out there only say "scale projectile count" while skipping the two wiki lines that actually decide real damage — the hidden 0.66s same-target throttle cap, and the difference between "Gain" and "Convert" in the elemental ground line.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Twister"} is a spear attack skill tagged Wind + Projectile + AoE + Duration in POE2 patch 0.5, dropping at Tier 1 so it's usable from Act 1. The skill doesn't run on its own — it's the second half of a two-stage combo, the first half being :wiki-link{url="https://www.poe2wiki.net/wiki/Whirling_Slash"} (which spawns a Whirlwind); Twister arrives and **consumes the Whirlwind** to multiply both the projectile count and the damage multiplier. Two wiki lines decide real damage and most guides skip them: the hidden 0.66s same-target throttle cap, and the difference between "Gain" and "Convert" in the elemental ground line.
 
 ## How It Works
 
 Twister spawns a tornado that moves forward erratically (random wobble), blinds enemies around it, and **pierces all targets** (per the gem text — always pierces, no support needed). Base attack damage scales with gem level from 80%→232% (lv 1→20), cast time = 80% of base attack speed. The tornado lasts 3 seconds with a radius of 0.5 metres, bouncing around terrain if it hits a wall — this is why the build clears corridor maps extremely well (the tornado ping-pongs in a narrow hallway) but is weak in an open arena (the tornado dissipates before it bounces back).
 
-The Whirlwind consume mechanic is the heart of the damage:
+The Whirlwind consume mechanic is the main damage multiplier:
 
 > Consumes Whirlwinds to create an additional twister and deal 80% more damage per Whirlwind stage
 
@@ -78,11 +78,11 @@ Hidden gotcha: Mhacha's "Dodging can expend up to 3 Owl Feathers" — the dodge 
 
 Shocked Ground (lightning ailment), not Chilled Ground. Standing on Shocked Ground → Twister gains +50% lightning damage, useless for a cold scaling build. The right direction: :wiki-link{url="https://www.poe2wiki.net/wiki/Fangs_of_Frost"} (a spear attack that spawns Chilled Ground when consuming a Parried Debuff — early campaign), or the Frost Nexus support gem chaining freeze → spawning Chilled Ground after the ailment. Drop Wake of Destruction from the gear plan.
 
-**Twister × Ice-Tipped Arrows (ice fragment engine)** — when Ice-Tipped Arrows empower Barrage (or a projectile spear attack) and then fire Twister, each Twister hit on an enemy drops Ice Fragments on the ground. These ice shards explode dealing cold damage + shatter potential, especially strong combined with :wiki-link{url="https://www.poe2wiki.net/wiki/Herald_of_Ice"} (a chain of explosions when monsters are frozen). This is why clear "suddenly becomes comfortable and visually satisfying" after the Act 2 pivot — Twister isn't just a wind projectile but also a source triggering mass ice explosions. Playtesting shows that even without actively creating Chilled Ground, the fragments from Twister hits still create a strong chain effect.
+**Twister × Ice-Tipped Arrows (ice fragment engine)** — when Ice-Tipped Arrows empower Barrage (or a projectile spear attack) and then fire Twister, each Twister hit on an enemy drops Ice Fragments on the ground. These ice shards explode dealing cold damage + shatter potential, especially strong combined with :wiki-link{url="https://www.poe2wiki.net/wiki/Herald_of_Ice"} (a chain of explosions when monsters are frozen). This is why clear improves a lot after the Act 2 pivot — Twister isn't just a wind projectile but also a source triggering mass ice explosions. Playtesting shows that even without actively creating Chilled Ground, the fragments from Twister hits still create a strong chain effect.
 
 ## Hidden Cap — Same-Target Throttle 0.66s
 
-A wiki line that doesn't appear in 95% of build guides out there, but it completely breaks the thesis of "stack infinite projectiles = infinite boss DPS":
+A wiki line most build guides miss, but it breaks the thesis of "stack infinite projectiles = infinite boss DPS":
 
 > Twisters fired at the same time can Hit the same target no more than once every 0.66 seconds.
 

@@ -52,7 +52,7 @@ Attacks with this Weapon have Added Cold Damage equal to 6% to 10% of maximum Ma
 Convert 100% of Fire Damage with Mace Skills to Cold Damage
 ```
 
-Confidence: **HIGH** — mod verbatim từ data poe2db 0.5.0. "Requires: Level 1" trên item có khả năng là placeholder datamine; Starborn Onslaught bản thân yêu cầu Level 78, 137 Strength để dùng (MEDIUM — số skill từ page Starborn Onslaught).
+Mod verbatim từ data poe2db 0.5.0. "Requires: Level 1" trên item có khả năng là placeholder datamine; Starborn Onslaught bản thân yêu cầu Level 78, 137 Strength để dùng — con số skill này lấy từ page Starborn Onslaught, cần xác minh trong client khi league live.
 
 ## Why This Item Is Powerful
 

@@ -20,7 +20,7 @@ tags:
 
 # Return of the Ancients
 
-0.5.0 là patch lớn cuối cùng của Path of Exile 2 trước bản 1.0, launch ngày **29/05/2026**, patch note drop trước tám ngày. Đây không phải league gắn thêm vài cơ chế — toàn bộ Endgame bị viết lại: Atlas reset, sáu storyline endgame mới, hai ascendancy mới (Martial Artist cho Monk, Spirit Walker cho Huntress), và lần đầu tiên Path of Exile 2 có hệ challenge. Note này là bản đồ định hướng — lọc 789 dòng changelog xuống những thay đổi đủ lớn để đổi cách chơi nhân vật. Mọi dòng nguyên văn (skill scaling, unique mod, ascendancy node) tra cứu ở [Patch Notes 0.5.0](/mechanics/leagues/0-5-0-patch-notes); ở đây chỉ giữ phần đáng để lock decision trước khi chạm league.
+0.5.0 là patch lớn cuối cùng của Path of Exile 2 trước bản 1.0, launch ngày **29/05/2026**, patch note drop trước tám ngày. Đây không phải league gắn thêm vài cơ chế — toàn bộ Endgame bị viết lại: Atlas reset, sáu storyline endgame mới, hai ascendancy mới (Martial Artist cho Monk, Spirit Walker cho Huntress), và lần đầu tiên Path of Exile 2 có hệ challenge. Mọi dòng nguyên văn (skill scaling, unique mod, ascendancy node) tra cứu ở [Patch Notes 0.5.0](/mechanics/leagues/0-5-0-patch-notes).
 
 ## Runes of Aldur — League Và Hệ Crafting Verisium
 
@@ -80,7 +80,7 @@ Vài thay đổi player-side đủ lớn để định hình lại tính toán d
 
 **Leech bị viết lại.** Mỗi loại tài nguyên (Life, Mana, Energy Shield) chỉ có một instance leech hoạt động cùng lúc — instance recovery cao nhất chạy trước, hết hạn mới tới cái kế. Và có trần damage cho leech: hit dưới 40.000 total damage không bị ảnh hưởng, nhưng hit trên ngưỡng đó chỉ được tính như 40.000 damage khi tính leech. Build one-shot bằng hit khổng lồ không còn leech về full từ một cú đánh — leech thành nguồn sustain ổn định thay vì burst, dù tăng % leech vẫn luôn tăng lượng nhận.
 
-**Energy Shield recharge bị nerf gián tiếp nhưng diện rộng.** Small passive cấp "Energy Shield Recharge Rate" bị gỡ khỏi tree, thay bằng "faster start of Energy Shield Recharge" ở giá trị thấp hơn (15% xuống 6%). Hàng loạt notable bị convert từ recharge rate sang faster-start ở số nhỏ hơn, và các suffix bị cắt sâu — "of Buffering" từ 36-40% xuống 12-15%, "of Ardour" từ 41-45% xuống 16-19%, "of Suffusion" từ 46-50% xuống 20-23%. Không có dòng nào ghi "ES nerf" cho oách, nhưng cộng dồn lại build dựa ES recharge để sustain sẽ yếu đi đáng kể — loại nerf phải đọc cả section Passive Tree mới thấy.
+**Energy Shield recharge bị nerf gián tiếp nhưng diện rộng.** Small passive cấp "Energy Shield Recharge Rate" bị gỡ khỏi tree, thay bằng "faster start of Energy Shield Recharge" ở giá trị thấp hơn (15% xuống 6%). Hàng loạt notable bị convert từ recharge rate sang faster-start ở số nhỏ hơn, và các suffix bị cắt sâu — "of Buffering" từ 36-40% xuống 12-15%, "of Ardour" từ 41-45% xuống 16-19%, "of Suffusion" từ 46-50% xuống 20-23%. Không có dòng nào ghi "ES nerf" trực tiếp, nhưng cộng dồn lại build dựa ES recharge để sustain sẽ yếu đi đáng kể — loại nerf phải đọc cả section Passive Tree mới thấy.
 
 **Vaal Pact đổi bản chất.** Keystone giờ cấp 50% more amount of Life Leeched và 67% less Life Leech speed, kèm "Cannot Recover Life other than from Leech" và "Life Leech effects are not removed when Unreserved Life is Filled". Nó bỏ "Life Leech is Instant" và bỏ "Cannot use Life Flasks" — Vaal Pact thành leech chậm-nhưng-nhiều thay vì leech tức thì như trước.
 

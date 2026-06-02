@@ -34,7 +34,7 @@ tags:
 
 # Spirit Walker Unique Beast Companion
 
-Đây là hướng companion đẩy tới trần: một con Unique Beast duy nhất, được nuôi bằng toàn bộ damage của nhân vật, gánh cả single-target lẫn phần lớn clear. Người thích cảm giác "có một con thú mạnh khủng khiếp đứng đánh thay mình" sẽ thích nhất hướng này, vì nó không chia damage cho cả đàn nhỏ mà dồn hết vào một con. Core là :wiki-link{url="https://www.poe2wiki.net/wiki/The_Catha%27s_Balance"} đổi scaling companion sang vũ khí, :wiki-link{url="https://www.poe2wiki.net/wiki/The_Natural_Order"} mở slot Unique Beast, và một vũ khí flat-damage cao nhất có thể; chơi được all-content miễn cân đúng spirit và chấp nhận rủi ro single-point-of-failure.
+Đây là hướng companion đẩy tới trần: một con Unique Beast duy nhất, được scale bằng toàn bộ damage của nhân vật, gánh cả single-target lẫn phần lớn clear. Build không chia damage cho cả đàn nhỏ mà dồn hết vào một con, nên trần single-target cao hơn các hướng army. Core là :wiki-link{url="https://www.poe2wiki.net/wiki/The_Catha%27s_Balance"} đổi scaling companion sang vũ khí, :wiki-link{url="https://www.poe2wiki.net/wiki/The_Natural_Order"} mở slot Unique Beast, và một vũ khí flat-damage cao nhất có thể; chơi được all-content miễn cân đúng spirit và chấp nhận rủi ro single-point-of-failure.
 
 ## Build Overview
 

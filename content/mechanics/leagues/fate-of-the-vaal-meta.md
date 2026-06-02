@@ -41,8 +41,8 @@ Tiếp theo là Shaman (7.78%), Titan (5.83%), Invoker (5.23%), Stormweaver (5.0
 
 ## Các Archetype Mạnh Nhất
 
-### 1. Oracle Spellslinger (Druid) — DPS Thần Thánh
-Build Oracle Druid dùng **Spellslinger** chiếm lĩnh đỉnh ladder với con số khó tin: **116 triệu DPS** (character Ithaax, account Ithax-6772, level 100).
+### 1. Oracle Spellslinger (Druid)
+Build Oracle Druid dùng **Spellslinger** dẫn đầu ladder với **116 triệu DPS** (character Ithaax, account Ithax-6772, level 100).
 
 Đặc điểm chung:
 - Life pool thấp (~1.6k), defence mỏng (armour 323, evasion 367) → thuần glass cannon.
@@ -52,8 +52,8 @@ Build Oracle Druid dùng **Spellslinger** chiếm lĩnh đỉnh ladder với con
 
 Đây là archetype "nổ một phát chết" điển hình của POE2 0.4 — khi lên được thì clear map cực nhanh, nhưng đòi hỏi gear và tree cực kỳ tối ưu.
 
-### 2. Poisonburst Arrow Pathfinder — Vua Clear & Mapping
-Đây là archetype phổ biến và thực chiến nhất:
+### 2. Poisonburst Arrow Pathfinder
+Đây là archetype phổ biến và thực chiến nhất cho clear và mapping:
 
 - **Poisonburst Arrow** xuất hiện ở mức 25%+ trong các phân tích skill cluster.
 - Nhiều character Pathfinder đạt 1–27 triệu DPS trong top sample (peakAengus đạt 27M DPS / 34k EHP).
@@ -70,7 +70,7 @@ Blood Mage kết hợp life cost + chaos/fire explosion tạo ra playstyle rất
 - Thường kết hợp với Sanguimancy, Blood Magic, hoặc CI hybrid.
 
 ### 4. Companion & Bear Builds (Shaman / Druid)
-Shaman và một số Druid build dùng **Bear** (Ancestral Bear / Bear Rampage) tạo thành "freight train" vừa tank vừa clear:
+Shaman và một số Druid build dùng **Bear** (Ancestral Bear / Bear Rampage) vừa tank vừa clear:
 
 - Top EHP có Shaman Living Lightning và các bear setup.
 - Meta companion (Bear + minion ignite trước đây) vẫn còn sức hút mạnh, dù Lich giảm sút.

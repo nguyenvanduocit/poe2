@@ -45,7 +45,7 @@ Target mặc định của mình là **8/8**. Lý do đơn giản: scope nhỏ, 
 :memorable-check{id="hunter-aki" label="Hạ Aki the Final Sting (theo lòng sông khô)" storageKey="poe2-runes-of-aldur-challenges"}
 :memorable-check{id="hunter-anund" label="Hạ Anund the Sandworm (theo lòng sông khô)" storageKey="poe2-runes-of-aldur-challenges"}
 
-Trong suốt campaign rải rác nhiều optional boss, và challenge này yêu cầu hạ **sáu** trong số đó. Bốn con đầu gặp tự nhiên khi đi campaign nên không phải lo. Hai con cuối khó tìm hơn hẳn vì chúng nằm khuất trong một vùng sa mạc của campaign: cách định vị là **đi theo lòng sông khô** (dry riverbed), arena của chúng nằm ở cuối đường. Cứ bám lòng sông khô là ra. Hai boss đó tên tạm là *Aki the Final Sting* và *Anund the Sandworm* ở vùng *Kari Crossing* — tên theo phụ đề video, confidence LOW, verify lại tên chính xác khi vào game. Với một starter leo campaign bình thường thì sáu optional boss này nằm trọn trong envelope, chỉ cần không bỏ sót khi chạy qua vùng sa mạc.
+Trong suốt campaign rải rác nhiều optional boss, và challenge này yêu cầu hạ **sáu** trong số đó. Bốn con đầu gặp tự nhiên khi đi campaign nên không phải lo. Hai con cuối khó tìm hơn hẳn vì chúng nằm khuất trong một vùng sa mạc của campaign: cách định vị là **đi theo lòng sông khô** (dry riverbed), arena của chúng nằm ở cuối đường. Cứ bám lòng sông khô là ra. Hai boss đó tên tạm là *Aki the Final Sting* và *Anund the Sandworm* ở vùng *Kari Crossing* — tên lấy từ phụ đề video nên có thể sai chính tả, đọc lại tên chính xác trong client khi vào game. Với một starter leo campaign bình thường thì sáu optional boss này nằm trọn trong envelope, chỉ cần không bỏ sót khi chạy qua vùng sa mạc.
 
 ## Challenge 3 — The Ascendant
 
@@ -75,7 +75,7 @@ Yêu cầu dùng một loạt **crafting item khác nhau**, tất cả đều đ
 
 Đây là một trong hai challenge nặng nhất: **allocate toàn bộ Atlas tree, cả 300 node**. Có hai cách. Cách chậm là hoàn thành mọi map trong Fortress để gom đủ Atlas point cho 300 node — khả thi nhưng rất dài. Cách nhanh dựa vào :wiki-link{url="https://www.poe2wiki.net/wiki/Arbiter_of_Divinity"}: mỗi lần hạ Arbiter of Divinity, mình mở khả năng tự động hoàn thành một mảng lớn của Fortress. Key vào trận Arbiter lấy bằng cách tìm :wiki-link{url="https://www.poe2wiki.net/wiki/Citadel"} trên Atlas — mỗi Citadel có cột sáng lớn (glowing beam) nên thấy được qua màn sương. Hạ Arbiter đủ số lần thì toàn bộ Fortress được complete và mình có đủ point cho cả 300 node.
 
-> **Số lần hạ Arbiter — cần verify live.** Video nói "bốn lần", nhưng patch note 0.5.0 ghi "kill the Arbiter of Divinity **5 times** to complete different sections of the fortress automatically". Khả năng cách hiểu là bốn lần đủ phần lớn section còn lần năm max-out toàn bộ, hoặc thật sự là năm. Khi vào league, đếm số section còn lại sau mỗi kill trước khi farm dư key — confidence MEDIUM, patch note nghiêng về **4–5 lần**.
+> **Số lần hạ Arbiter — cần verify live.** Video nói "bốn lần", nhưng patch note 0.5.0 ghi "kill the Arbiter of Divinity **5 times** to complete different sections of the fortress automatically". Khả năng cách hiểu là bốn lần đủ phần lớn section còn lần năm max-out toàn bộ, hoặc thật sự là năm. Khi vào league, đếm số section còn lại sau mỗi kill trước khi farm dư key — patch note nghiêng về **4–5 lần**.
 
 ## Challenge 7 — The Vanquisher
 
@@ -83,7 +83,7 @@ Yêu cầu dùng một loạt **crafting item khác nhau**, tất cả đều đ
 :memorable-check{id="vanquisher-ritual" label="Hạ Ritual pinnacle (key từ Rite of the Nameless)" storageKey="poe2-runes-of-aldur-challenges"}
 :memorable-check{id="vanquisher-abyss" label="Hạ Abyss pinnacle ở full strength (không làm yếu boss)" storageKey="poe2-runes-of-aldur-challenges"}
 
-Challenge khó nhất: hạ **ba pinnacle boss**, những trận gắt nhất game. Ba con này là pinnacle của ba league mechanic Delirium, Ritual và Abyss, nên muốn tick challenge mình phải chạy ba quest line tương ứng để mở đường tới từng pinnacle. Cụ thể theo patch notes: pinnacle **Delirium** mở bằng key từ :wiki-link{url="https://www.poe2wiki.net/wiki/Simulacrum"} (giờ là encounter 7 wave, hoàn thành nhả key); pinnacle **Ritual** mở bằng key gom từ Rite of the Nameless (mỗi map trong chuỗi cho một element của key); pinnacle **Abyss** mở qua Abyssal Depths. Tên ba boss theo phụ đề video là *Tangazu* (Delirium), *the Bodark* (Ritual) và *Vessel of Coolark* (Abyss) — confidence LOW về chính tả, mình bám mechanic ở trên là chắc chắn, tên cụ thể verify khi vào game.
+Challenge khó nhất: hạ **ba pinnacle boss**, những trận gắt nhất game. Ba con này là pinnacle của ba league mechanic Delirium, Ritual và Abyss, nên muốn tick challenge mình phải chạy ba quest line tương ứng để mở đường tới từng pinnacle. Cụ thể theo patch notes: pinnacle **Delirium** mở bằng key từ :wiki-link{url="https://www.poe2wiki.net/wiki/Simulacrum"} (giờ là encounter 7 wave, hoàn thành nhả key); pinnacle **Ritual** mở bằng key gom từ Rite of the Nameless (mỗi map trong chuỗi cho một element của key); pinnacle **Abyss** mở qua Abyssal Depths. Tên ba boss theo phụ đề video là *Tangazu* (Delirium), *the Bodark* (Ritual) và *Vessel of Coolark* (Abyss) — chính tả lấy từ phụ đề tự động nên có thể sai; mình bám mechanic ở trên là chắc chắn, đọc lại tên cụ thể trong client khi vào game.
 
 Một điểm bắt buộc với pinnacle Abyss: phải hạ nó **ở full strength**. Tức là phải chấp nhận rủi ro item trong trận — return cái finger (fragment) và đánh boss ở dạng mạnh nhất thay vì làm yếu nó đi. Nếu làm yếu boss để dễ thắng thì không tick được challenge.
 
@@ -95,9 +95,8 @@ Vì cả ba đều có **quest version deterministic** (patch note: mọi pinnac
 
 Challenge screen có đủ tám challenge, nhưng video reveal chính chủ (27/05) chỉ đi qua bảy cái ở trên. Challenge thứ tám chưa được công bố tại thời điểm viết.
 
-- **Trạng thái:** chưa public trong reveal hôm nay.
+- **Trạng thái:** chưa public trong reveal hôm nay — chưa điền requirement vì không suy diễn, không bịa.
 - **Hành động:** mở `H` panel ngày **29/05** khi league live, đọc requirement của challenge còn lại và điền vào section này.
-- **Confidence:** N/A — không suy diễn, không bịa.
 
 ## Atlas + Execution Loop
 

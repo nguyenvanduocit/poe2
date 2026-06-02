@@ -136,7 +136,7 @@ Khi có Mageblood thì ưu tiên flask có mod tăng evasion, ES recovery, hoặ
 
 **Đến Lab 1 (~Lv 25-30):** Vẫn dùng **Tempest Bell** cho single target. Clear một nút Wind Blast + Impact + Herald.
 
-**Sau Lab 1:** Bắt đầu channel **Hollow Form** link Rolling Slam hoặc Forge Hammer. Đây là lúc build "thức tỉnh".
+**Sau Lab 1:** Bắt đầu channel **Hollow Form** link Rolling Slam hoặc Forge Hammer. Đây là lúc build có nguồn single target chính.
 
 **Giữa Act 3 trở đi:** Bắt đầu nhắm **Runic Meridians** và **Way of the Mountain**. Thu thập Remnant để craft rune sớm.
 

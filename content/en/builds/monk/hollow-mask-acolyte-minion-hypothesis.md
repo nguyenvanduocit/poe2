@@ -32,7 +32,7 @@ tags:
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/The_Hollow_Mask"} turns :wiki-link{url="https://www.poe2wiki.net/wiki/Acolyte_of_Chayula"} into one of the most unique minion scalers in POE2. The build uses :wiki-link{url="https://www.poe2wiki.net/wiki/Into_the_Breach"} to continuously spawn purple :wiki-link{url="https://www.poe2wiki.net/wiki/Flames_of_Chayula"}, and then the helmet itself shares the entire remnant effect to every minion in your Presence. The result is an army that gains 80-150%+ damage as extra Chaos while you keep an extremely strong chaos defense layer from :wiki-link{url="https://www.poe2wiki.net/wiki/Chayula's_Gift"} and near-automatic flask sustain from :wiki-link{url="https://www.poe2wiki.net/wiki/Wildwood's_Gifts"}.
 
-This is a true **Eldritch Horror Summoner** archetype: hybrid remnant + spectre/minion chaos, volatility triggers combined with a player staff skill, all revolving around stably sharing Purple Flames after GGG fixed remnant sharing.
+This is an **Eldritch Horror Summoner** archetype: hybrid remnant + spectre/minion chaos, volatility triggers combined with a player staff skill, built around stably sharing Purple Flames after GGG fixed remnant sharing.
 
 ## Build Overview
 
@@ -42,9 +42,9 @@ First, go Monk, pick :wiki-link{url="https://www.poe2wiki.net/wiki/Acolyte_of_Ch
 
 Next is :wiki-link{url="https://www.poe2wiki.net/wiki/Lucid_Dreaming"} + :wiki-link{url="https://www.poe2wiki.net/wiki/Choice_of_Power"}. These two nodes lock every Flame to Purple, increase Remnant effect by 50%, and extend the pickup range by 50%. Each Purple Flame gives the character (and now minions) a stack of 7% damage as extra Chaos, lasting 8 seconds, stacking up to 10 times — a total of 70% base before any multipliers.
 
-The crux belongs to :wiki-link{url="https://www.poe2wiki.net/wiki/The_Hollow_Mask"}. The mod line "Remnants you create affect Allies in your Presence as well as you when collected" makes Flames of Chayula share the entire Purple buff with every minion (and ally) standing within Presence radius. Combine :wiki-link{url="https://www.poe2wiki.net/wiki/Empowering_Remnants"} (15% chance to grant effect twice) and link :wiki-link{url="https://www.poe2wiki.net/wiki/Remnant_Potency_I"} into Into the Breach, and the total extra Chaos on the army easily exceeds 100-150% depending on investment.
+The key item is :wiki-link{url="https://www.poe2wiki.net/wiki/The_Hollow_Mask"}. The mod line "Remnants you create affect Allies in your Presence as well as you when collected" makes Flames of Chayula share the entire Purple buff with every minion (and ally) standing within Presence radius. Combine :wiki-link{url="https://www.poe2wiki.net/wiki/Empowering_Remnants"} (15% chance to grant effect twice) and link :wiki-link{url="https://www.poe2wiki.net/wiki/Remnant_Potency_I"} into Into the Breach, and the total extra Chaos on the army easily exceeds 100-150% depending on investment.
 
-Defense revolves around :wiki-link{url="https://www.poe2wiki.net/wiki/Chayula's_Gift"} — a node that grants +10% maximum Chaos Resistance and also doubles your chaos res stat, pushing the cap easily to 85%+ on just average gear. :wiki-link{url="https://www.poe2wiki.net/wiki/The_Hollow_Mask"} drags -10% all elemental resistances, so you have to overcap ele res, but in exchange the build is nearly immune to chaos damage (its own primary damage type). The extra 15% additional Physical Damage Reduction from the helmet is a free tankiness layer.
+Defense revolves around :wiki-link{url="https://www.poe2wiki.net/wiki/Chayula's_Gift"} — a node that grants +10% maximum Chaos Resistance and also doubles your chaos res stat, pushing the cap easily to 85%+ on just average gear. :wiki-link{url="https://www.poe2wiki.net/wiki/The_Hollow_Mask"} gives -10% all elemental resistances, so you have to overcap ele res, but in exchange the build is nearly immune to chaos damage (its own primary damage type). The extra 15% additional Physical Damage Reduction from the helmet is a free defensive layer.
 
 Wildwood's Gifts (the level 19 skill from the helmet) continuously spawns Ancient Blooms on its own, providing steady flask charges — nearly eliminating flask sustain issues during long mapping.
 
@@ -80,13 +80,13 @@ Combine a staff skill for the player (volatility trigger or a chaos spell like t
 
 The four-point lab order:
 
-**1. Waking Dream** — Absolutely mandatory. Without this node there's no Into the Breach, no Flames of Chayula, nothing left to discuss.
+**1. Waking Dream** — Absolutely mandatory. Without this node there's no Into the Breach and no Flames of Chayula, so the build doesn't function.
 
 **2. Lucid Dreaming + Choice of Power** — Take immediately after the first point. Choice of Power locks every Flame to Purple (stable damage type), increases remnant effect by 50%, and extends pickup range by 50%. This is the biggest multiplier for all the extra Chaos on the army.
 
-**3. Chayula's Gift** — An indispensable defense layer. +10% max chaos res and doubled chaos res make capping at 85%+ very easy. Skipping this node is suicide because chaos damage double-dips into ES and The Hollow Mask already gives -10% elemental res.
+**3. Chayula's Gift** — An indispensable defense layer. +10% max chaos res and doubled chaos res make capping at 85%+ very easy. Don't skip this node: chaos damage double-dips into ES and The Hollow Mask already gives -10% elemental res.
 
-**4. Final point** — :wiki-link{url="https://www.poe2wiki.net/wiki/Sap_of_Nightmares"} (leech applies to chaos damage too) is the safest choice. :wiki-link{url="https://www.poe2wiki.net/wiki/Inner_Turmoil"} is only worth it if the build inflicts elemental ailments frequently. :wiki-link{url="https://www.poe2wiki.net/wiki/Embrace_the_Darkness"} devours the entire Spirit pool and directly conflicts with Into the Breach, so it's almost never used in the minion variant.
+**4. Final point** — :wiki-link{url="https://www.poe2wiki.net/wiki/Sap_of_Nightmares"} (leech applies to chaos damage too) is the safest choice. :wiki-link{url="https://www.poe2wiki.net/wiki/Inner_Turmoil"} is only worth it if the build inflicts elemental ailments frequently. :wiki-link{url="https://www.poe2wiki.net/wiki/Embrace_the_Darkness"} consumes the entire Spirit pool and directly conflicts with Into the Breach, so it's almost never used in the minion variant.
 
 ## Passive Tree & Mastery
 
@@ -112,7 +112,7 @@ The price you pay is being 15-20 passive points further out compared to Witch In
 
 - **EHP:** High vs chaos damage; moderate vs elemental. Ghost Dance + evasion keep recovery solid.
 
-- **Spirit:** Very important and tight. Into the Breach + minion gems + auras compete fiercely — the 94% Remnant Reservation Efficiency on the helmet is a lifeline.
+- **Spirit:** Very important and tight. Into the Breach + minion gems + auras all compete for it — the 94% Remnant Reservation Efficiency on the helmet is what makes the budget work.
 
 - **Movement Speed:** Baseline Monk + good boots, no special boost from the ascendancy.
 
@@ -224,7 +224,7 @@ Budget scaling is average because, once you have the helmet, gear is mostly rare
 
 - A medium-budget all-rounder once you have the helmet; not a safe league starter.
 
-- After GGG fixed remnant sharing, the build went from hypothesis to a real niche pick on the ladder.
+- The remnant-sharing fix is what makes the build work — it's a real niche pick on the ladder now.
 
 ## Changelog
 

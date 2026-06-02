@@ -16,7 +16,7 @@ tags:
   - passive-tree-rework
 ---
 
-# Sau 0.5 sẽ ra sao — đọc phỏng vấn Jonathan & Mark
+# Beyond 0.5 — Dev Interview Insights & Roadmap to 1.0
 
 Palsteron tổng hợp phỏng vấn 2.5 tiếng với Jonathan và Mark. Phần đáng chú ý nhất không phải 0.5, mà là những gì họ nói về khoảng thời gian giữa 0.5 và 1.0.
 
@@ -34,4 +34,4 @@ Nhìn chung, từ cách họ nói thì GGG đang chấp nhận thay đổi mạn
 
 Với người chơi, 0.5 không chỉ là một league. Nó là giai đoạn chuyển tiếp. Nên chơi với tâm thế học và vui hơn là cố tối ưu cực đoan ngay từ đầu.
 
-Nguồn là video Palsteron + phỏng vấn gốc. Mình sẽ cập nhật khi có thêm thông tin chính thức. Hiện tại thì đây là những gì đáng để biết trước khi quyết định đầu tư vào league.
+Mình sẽ cập nhật khi có thêm thông tin chính thức.

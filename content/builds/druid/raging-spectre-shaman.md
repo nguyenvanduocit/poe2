@@ -32,7 +32,7 @@ tags:
 
 # Raging Spectre Shaman
 
-Đây là hướng summoner mình gọi vui là "Cocaine Wasps": một bầy :wiki-link{url="https://www.poe2wiki.net/wiki/Spectre"} hồi sinh từ :wiki-link{url="https://www.poe2wiki.net/wiki/Gargantuan_Wasp"} bay điên cuồng qua mọi vật cản, gánh cả clear lẫn boss, còn mình đứng sau stack :wiki-link{url="https://www.poe2wiki.net/wiki/Rage"} để bơm tốc độ và damage cho chúng. Ai mê cảm giác màn hình đầy ong tự đánh, tự lao vào pack tiếp theo trước cả khi mình kịp di chuyển sẽ thích build này. Trục damage là Rage của bản thân được :wiki-link{url="https://www.poe2wiki.net/wiki/Shaman"} chuyển hóa thành minion stat, gánh bởi spirit headroom của Shaman và một pool Energy Shield Chaos Inoculation ở endgame.
+Đây là hướng summoner dùng một bầy :wiki-link{url="https://www.poe2wiki.net/wiki/Spectre"} hồi sinh từ :wiki-link{url="https://www.poe2wiki.net/wiki/Gargantuan_Wasp"} (mình gọi vui là "Cocaine Wasps") bay nhanh và aggressive qua mọi vật cản, gánh cả clear lẫn boss, tự lao vào pack tiếp theo trước cả khi mình kịp di chuyển; còn mình đứng sau stack :wiki-link{url="https://www.poe2wiki.net/wiki/Rage"} để đẩy tốc độ và damage cho chúng. Trục damage là Rage của bản thân được :wiki-link{url="https://www.poe2wiki.net/wiki/Shaman"} chuyển hóa thành minion stat, gánh bởi spirit headroom của Shaman và một pool Energy Shield Chaos Inoculation ở endgame.
 
 ## Build Overview
 

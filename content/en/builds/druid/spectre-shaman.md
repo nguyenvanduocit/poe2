@@ -78,7 +78,7 @@ The build uses the Druid Shaman's Sacred Flow to reach 356-456 Spirit, enough to
 
 **Weaknesses**
 - **Acts 1-2 struggle** - Must play caster until Act 3 Spectres
-- **Moderate mobility** - Not a zoom-zoom build, minions need to catch up
+- **Moderate mobility** - Not a fast-clearing build, minions need to catch up
 - **Spirit management** - Must not equip Charms to maximize Spirit (Sacred Flow)
 - **Vendor checking** - Need to frequently check vendors for +Minion gear
 
@@ -328,7 +328,7 @@ Raise Spectre: Powered Zealots (55 Spirit, Lightning Beam variant)
 - Wands/Staves with +Spell levels and % Spell Damage
 - Basic life and resistances
 
-#### Act 3: The Golden Transition
+#### Act 3: Spectre Transition
 
 **Critical Moment: Utzaal Zone (Late Act 3)**
 
@@ -365,7 +365,7 @@ Support: Pain Offering
 Curse: Vulnerability
 ```
 
-#### Acts 4-10: Cruise Control
+#### Acts 4-10: Maintain and Scale
 
 **Main Strategy:**
 - Maintain Vulgard Spectres (recapture if you die/lose them)

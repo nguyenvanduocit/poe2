@@ -21,11 +21,11 @@ tags:
 template: templates/mechanic-template.md
 ---
 
-# Talisman Crafting Guide - Budget to Min-Max
+# Talisman Crafting — Budget to Min-Max
 
 ## Overview
 
-The Talisman is the main weapon type for many physical-based attack builds in POE2, especially the [Meteor Bear Shaman](/builds/druid/meteor-bear-shaman/). This guide covers 5 crafting methods from 1 divine to 8+ divine investment, letting you craft a Talisman that fits your current budget and upgrade it gradually as you progress.
+The Talisman is the main weapon type for many physical-based attack builds in POE2, especially the [Meteor Bear Shaman](/builds/druid/meteor-bear-shaman/). There are 5 crafting methods from 1 divine to 8+ divine investment, letting you craft a Talisman that fits your current budget and upgrade it gradually as you progress.
 
 ### Method Comparison
 

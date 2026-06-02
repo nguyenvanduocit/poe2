@@ -194,7 +194,7 @@ Use: Break enemy armor before Slam
 
 ### Act 3: Power Spike
 
-#### Fury of the Mountain - the point where the build takes off
+#### Fury of the Mountain - the build's first major power spike
 
 ```yaml
 Replaces Maul as the basic attack

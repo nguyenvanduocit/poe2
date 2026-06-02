@@ -51,15 +51,15 @@ Spell Hits Gain 27% of Damage as Extra Chaos Damage per Curse on target
 Spell Hits Gain 27% of Damage as Extra Physical Damage per Curse on target
 ```
 
-Confidence: **HIGH** — mods verbatim from poe2db 0.5.0 data. "Requires: Level 1" on the item may be a placeholder; Coiling Bolts requires Level 72 and 126 Intelligence to use (MEDIUM — numbers from the Coiling Bolts page).
+Mods are verbatim from poe2db 0.5.0 data. "Requires: Level 1" on the item may be a placeholder; Coiling Bolts requires Level 72 and 126 Intelligence to use.
 
 ## Why This Item Is Powerful
 
-The self-balancing mechanic lives in the pair "zero magnitude" and "ignore curse limit". A normal curse is capped at 1 curse per target (unless a node raises the limit), and a curse's value comes from its magnitude. Liminal Coil drops both: magnitude goes to 0 so a curse does nothing *directly*, but the limit is removed so the player stacks as many curses as the supply allows. Each curse on the target then adds "27% of Damage as Extra Chaos" and "27% as Extra Physical" to the spell hit — with 4 curses, that's +108% extra chaos and +108% extra phys, compounding on the spell's base damage.
+The self-balancing comes from the pair "zero magnitude" and "ignore curse limit". A normal curse is capped at 1 curse per target (unless a node raises the limit), and a curse's value comes from its magnitude. Liminal Coil drops both: magnitude goes to 0 so a curse does nothing *directly*, but the limit is removed so the player stacks as many curses as the supply allows. Each curse on the target then adds "27% of Damage as Extra Chaos" and "27% as Extra Physical" to the spell hit — with 4 curses, that's +108% extra chaos and +108% extra phys, compounding on the spell's base damage.
 
 The granted skill Coiling Bolts fits this mechanic exactly. It "Simultaneously fires a Physical Projectile and a Chaos Projectile at the target. These projectiles Chain through any number of Cursed targets" — precisely the two damage types the item adds extra of (phys + chaos), and "chain through any number of Cursed targets" means in a room full of cursed enemies the projectiles bounce without limit. Coiling Bolts deals 188-283 Physical + 165-306 Chaos base at Cost 0 Mana, so you can spam it freely. The loop: curse spreads across the pack → Coiling Bolts chains through the whole pack → each hit is multiplied by the curse count on each individual target.
 
-What to test when the league goes live: whether a source that applies many curses at once (curse-on-hit support, :wiki-link{url="https://www.poe2wiki.net/wiki/Curse"} multiple curse skills, or AoE curse) is fast enough to keep the stack high, and whether "ignore curse limit" allows stacking *the same* curse multiple times or only multiple different curses (LOW — wording unclear, needs in-game logging).
+What to test when the league goes live: whether a source that applies many curses at once (curse-on-hit support, :wiki-link{url="https://www.poe2wiki.net/wiki/Curse"} multiple curse skills, or AoE curse) is fast enough to keep the stack high, and whether "ignore curse limit" allows stacking *the same* curse multiple times or only multiple different curses — the wording is ambiguous, so log this in-game once the league is live.
 
 ## Build Enabler Mechanics
 

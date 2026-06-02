@@ -25,15 +25,15 @@ tags:
   - 0-5
 ---
 
-# Plants Lich 0.5 — DEADR4BB1T claim là dễ nhất, mình thấy có lý
+# Plants Lich Abyssal League Starter
 
-DEADR4BB1T chạy full campaign level 1 đến maps với Plants Lich và nói đây là "the easiest campaign run" và "more cozy" so với meta hiện tại. Mình xem transcript thì thấy không phải kiểu khoe khoang suông. Progression rất rõ ràng và có mấy cái trick thực tế đáng để lấy.
+Plants Lich chạy full campaign level 1 đến maps là một trong những đường league start dễ và "cozy" nhất so với meta hiện tại — progression rõ ràng, ít spike khó, và có mấy trick thực tế đáng lấy.
 
 Cốt lõi là Entangle cho clear + Bone Storm cho single target, sau này chuyển sang Thrashing Vines. Volcano buff ở 0.5 (base crit tăng) giúp early game đỡ đau hơn trước. Đến level 14 chuyển Bone Storm là bước ngoặt. Trick quan trọng là tap-hold để channel Bone Storm vừa di chuyển — không làm trick này thì kiting boss sẽ rất khó.
 
-Đến Act 3 thì Thrashing Vines lên thay Volcano. Vines scale physical và hưởng lợi cực mạnh từ Rupture the Flesh của Abyssal Lich (explosion thành physical thay vì chaos). Đây là lý do anh ta khuyên nên đi Abyssal thay vì Lich thường.
+Đến Act 3 thì Thrashing Vines lên thay Volcano. Vines scale physical và hưởng lợi cực mạnh từ Rupture the Flesh của Abyssal Lich (explosion thành physical thay vì chaos). Đây là lý do đi Abyssal thay vì Lich thường.
 
-Điều đáng chú ý là build này khá ít phụ thuộc vào crafted gear đắt. Chủ yếu cần +level gems và generic damage. Với crafting 0.5 chỉ cho một crafted mod mỗi item thì những build không cần stack nhiều bench craft sẽ chịu ít thiệt hại hơn. DEADR4BB1T cũng nói thẳng là Plants Lich không bị ảnh hưởng nhiều.
+Build này khá ít phụ thuộc vào crafted gear đắt — chủ yếu cần +level gems và generic damage. Với crafting 0.5 chỉ cho một crafted mod mỗi item thì những build không cần stack nhiều bench craft sẽ chịu ít thiệt hại hơn, và Plants Lich nằm trong nhóm đó.
 
 Spell Totem là nâng cấp single-target lớn cho phase sau. Với :wiki-link{url="https://www.poe2wiki.net/wiki/Ancestral_Bond"}, Totem Limit nhân đôi nên chạy được 2 Bone Storm totem cùng lúc — gần gấp đôi single-target output — và đặt totem không tốn charge. Cái giá là mỗi totem reserve 75 Spirit, tức 150 Spirit cho 2 totem. Vì summon Spell Totem không tính là spell, các modifier cộng cost lên spell không đội lên chi phí đặt totem, nên budget chỉ phải lo phần reservation. Kế hoạch là cắm Bone Storm vào totem cho boss, giữ Entangle/Thrashing Vines tự cast cho clear.
 

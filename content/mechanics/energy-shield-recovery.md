@@ -109,7 +109,7 @@ Runic Ward không scale với bất kỳ modifier "Defences" nào, nên build ph
 
 ## Verdict & Open Questions
 
-Verdict: NEUTRAL — HIGH confidence. ES recovery vẫn tồn tại và có giá trị, nhưng không còn là lớp phòng thủ chính nữa. Build buộc phải kết hợp với Deflection và Runic Ward.
+Verdict: NEUTRAL. ES recovery vẫn tồn tại và có giá trị, nhưng không còn là lớp phòng thủ chính nữa. Build buộc phải kết hợp với Deflection và Runic Ward.
 
 Open question: Recovery rate có cap nào không trong 0.5? Cần test thực tế với build full rate gear ở T16+ để xác nhận TTF thực. Sẽ update sau khi có dữ liệu live từ tuần đầu league.
 

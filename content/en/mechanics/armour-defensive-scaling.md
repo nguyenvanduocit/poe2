@@ -110,10 +110,10 @@ The old "increased Defences" modifier (now "Armour, Evasion and Energy Shield") 
 
 ## Verdict & Open Questions
 
-- **Verdict — BUFF, HIGH confidence.** Patch note 0.5.0 literal: the amount of armour items/modifiers grant increases +33% at lvl 65 → +15% at lvl 80+ (line 494). Parallel Evasion buff at the same level + linear deflect formula capped at 95% (line 248-249, 495). ES recovery layers swept 50-70% (see ES rework doc). The defence balance tilts clearly toward armour/evasion for physical-heavy content.
+- **Verdict — BUFF.** Patch note 0.5.0 literal: the amount of armour items/modifiers grant increases +33% at lvl 65 → +15% at lvl 80+ (line 494). Parallel Evasion buff at the same level + linear deflect formula capped at 95% (line 248-249, 495). ES recovery layers swept 50-70% (see ES rework doc). The defence balance tilts clearly toward armour/evasion for physical-heavy content.
 - **Nuance — net isn't uniform.** Builds using rare armour or buffed uniques (Keeper of the Arc, Sine Aequo, Ab Aeterno) eat the full buff; extreme stackers relying on Brass Dome (700-800→500-600%) are nearly a wash since the top-end multiplier was pulled back.
 - **Armour isn't an all-rounder** — only physical, weak against large bursts by the formula, doesn't touch DoT. "Best defensive layer" is correct in the sense of being the easiest to scale for sustained physical, not beating every layer on every axis.
-- **Open question — is the 90% cap still intact in 0.5?** The formula and 90% cap come from the wiki mirror (poe2wiki.net), patch note 0.5.0 doesn't mention changing the cap. The wiki can lag the patch — need a wiki diff after league launch to confirm the cap hasn't changed. Confidence MEDIUM on the cap number.
+- **Open question — is the 90% cap still intact in 0.5?** The formula and 90% cap come from the wiki mirror (poe2wiki.net), patch note 0.5.0 doesn't mention changing the cap. The wiki can lag the patch, so the cap number needs a wiki diff after league launch to confirm it hasn't changed.
 - **Open question — actual endgame survival lift.** Compound math gives ~2-3.4 points of DR, but it needs the PoB2 0.5 release + a char tested in endgame T15+ to confirm the actual TTK/survival and the net for an extreme stacker. Verify window: 2026-06-01 → 2026-06-08.
 - **Open question — Runic Ward + armour stacker live behavior.** The armour + Runic Ward pair hasn't been tested in-game; need to log Runic Ward uptime and pop behavior against boss bursts when the league goes live.
 

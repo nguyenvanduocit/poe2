@@ -1,6 +1,6 @@
 ---
 document_type: build
-title: Raging Spectre Shaman - Cocaine Wasps
+title: Raging Spectre Shaman
 class: Druid
 ascendancy: Shaman
 league: '0.4'
@@ -30,7 +30,7 @@ tags:
 template: templates/build-template.md
 ---
 
-# Raging Spectre Shaman - Cocaine Wasps
+# Raging Spectre Shaman
 
 ## Quick Start
 

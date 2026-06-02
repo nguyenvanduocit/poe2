@@ -51,7 +51,7 @@ Companions deal 85% increased damage to your Marked targets
 You can have any number of Companions of different types
 ```
 
-Confidence: **HIGH** — mod verbatim từ data poe2db 0.5.0. Granted skill Azmerian Wolf yêu cầu Level 78, 42 Strength, 106 Intelligence để dùng (MEDIUM — số từ page Azmerian Wolf).
+Mod verbatim từ data poe2db 0.5.0. Granted skill Azmerian Wolf yêu cầu Level 78, 42 Strength, 106 Intelligence để dùng — số lấy từ page Azmerian Wolf, đọc lại trong client khi league live để chốt.
 
 ## Why This Item Is Powerful
 
@@ -59,7 +59,7 @@ Giá trị thật nằm ở "You can have any number of Companions of different 
 
 Granted skill Azmerian Wolf cho thấy hướng damage: Companion/Persistent/Physical, Cooldown 15s, Attack Damage 1000%, "Summons 7 Spirit Wolves" dash vào enemy trong 8 giây, Maim mục tiêu trúng đòn. Đây là burst companion theo cooldown — 7 sói lao trong 8s rồi biến mất, hợp với việc Mark một target rồi xả, vì "Companions deal 85% increased damage to your Marked targets" nhân thẳng vào damage bầy sói lên mục tiêu đã đánh dấu. "Allies in your Presence Regenerate 64 Life per second" giữ các companion bền hơn trong combat kéo dài.
 
-Điểm cần test khi league live: tổng Spirit thực tế nuôi được bao nhiêu companion khác loại cùng lúc, và "any number ... of different types" có nghĩa nhiều con mỗi loại hay chỉ một con mỗi loại nhiều loại (LOW — wording cần log in-game xác nhận).
+Điểm cần test khi league live: tổng Spirit thực tế nuôi được bao nhiêu companion khác loại cùng lúc, và "any number ... of different types" có nghĩa nhiều con mỗi loại hay chỉ một con mỗi loại nhiều loại — wording cần log in-game xác nhận.
 
 ## Build Enabler Mechanics
 

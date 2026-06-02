@@ -21,11 +21,11 @@ tags:
 template: templates/mechanic-template.md
 ---
 
-# Talisman Crafting Guide - Budget to Min-Max
+# Talisman Crafting — Budget to Min-Max
 
 ## Overview
 
-Talisman là weapon type chính cho nhiều physical-based attack builds trong POE2, đặc biệt là [Meteor Bear Shaman](/builds/druid/meteor-bear-shaman/). Guide này cover 5 crafting methods từ 1 divine đến 8+ divine investment, cho phép bạn craft Talisman phù hợp với budget hiện tại và upgrade dần theo progression.
+Talisman là weapon type chính cho nhiều physical-based attack builds trong POE2, đặc biệt là [Meteor Bear Shaman](/builds/druid/meteor-bear-shaman/). Có 5 crafting method từ 1 divine đến 8+ divine investment, craft được Talisman phù hợp với budget hiện tại và upgrade dần theo progression.
 
 ### Method Comparison
 
@@ -45,7 +45,7 @@ Talisman là weapon type chính cho nhiều physical-based attack builds trong P
 
 ### Build Context
 
-Guide này được thiết kế cho physical-based attack builds, đặc biệt là [Meteor Bear Shaman](/builds/druid/meteor-bear-shaman/) sử dụng Talisman làm main weapon.
+Các method này nhắm physical-based attack builds, đặc biệt là [Meteor Bear Shaman](/builds/druid/meteor-bear-shaman/) sử dụng Talisman làm main weapon.
 
 Target Stats cho Meteor Bear:
 - High pDPS (550+)

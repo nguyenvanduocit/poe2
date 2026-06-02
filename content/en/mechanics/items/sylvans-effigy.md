@@ -51,15 +51,15 @@ Companions deal 85% increased damage to your Marked targets
 You can have any number of Companions of different types
 ```
 
-Confidence: **HIGH** — mods verbatim from poe2db 0.5.0 data. The granted skill Azmerian Wolf requires Level 78, 42 Strength, and 106 Intelligence to use (MEDIUM — numbers from the Azmerian Wolf page).
+Mods are verbatim from poe2db 0.5.0 data. The granted skill Azmerian Wolf requires Level 78, 42 Strength, and 106 Intelligence to use, per the Azmerian Wolf page.
 
 ## Why This Item Is Powerful
 
-The real value lives in "You can have any number of Companions of different types", not the damage line. POE2 companions are normally limited in number, so a companion build has to pick one and pour everything into it. This item lifts the cap for companions of different types — meaning the player can run multiple companion types simultaneously (one of each type), as long as there's enough Spirit to reserve them. The "54% increased Spirit" on the same item is what funds that: Spirit is the reservation resource, and 54% increased multiplies the budget used to open up extra companion slots directly.
+The real value is "You can have any number of Companions of different types", not the damage line. POE2 companions are normally limited in number, so a companion build has to pick one and pour everything into it. This item lifts the cap for companions of different types — meaning the player can run multiple companion types simultaneously (one of each type), as long as there's enough Spirit to reserve them. The "54% increased Spirit" on the same item is what funds that: Spirit is the reservation resource, and 54% increased multiplies the budget used to open up extra companion slots directly.
 
 The granted skill Azmerian Wolf shows the damage direction: Companion/Persistent/Physical, Cooldown 15s, Attack Damage 1000%, "Summons 7 Spirit Wolves" that dash into enemies for 8 seconds, Maiming targets they hit. It's a burst companion on a cooldown — 7 wolves charge in for 8s then vanish, suited to Marking a target then dumping, because "Companions deal 85% increased damage to your Marked targets" multiplies the wolf pack's damage against the marked target directly. "Allies in your Presence Regenerate 64 Life per second" keeps the companions sturdier through extended combat.
 
-What to test when the league goes live: how many companions of different types the actual total Spirit can fund at once, and whether "any number ... of different types" means many of each type or just one of each across many types (LOW — wording needs in-game logging to confirm).
+What to test when the league goes live: how many companions of different types the actual total Spirit can fund at once, and whether "any number ... of different types" means many of each type or just one of each across many types — the wording needs in-game logging to confirm.
 
 ## Build Enabler Mechanics
 

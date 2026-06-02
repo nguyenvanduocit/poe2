@@ -52,11 +52,11 @@ Attacks with this Weapon have Added Cold Damage equal to 6% to 10% of maximum Ma
 Convert 100% of Fire Damage with Mace Skills to Cold Damage
 ```
 
-Confidence: **HIGH** — mods verbatim from poe2db 0.5.0 data. "Requires: Level 1" on the item may be a datamine placeholder; Starborn Onslaught itself requires Level 78 and 137 Strength to use (MEDIUM — skill numbers from the Starborn Onslaught page).
+The mods are verbatim from poe2db 0.5.0 data. "Requires: Level 1" on the item may be a datamine placeholder; Starborn Onslaught itself requires Level 78 and 137 Strength to use, per the Starborn Onslaught skill page.
 
 ## Why This Item Is Powerful
 
-The weight lives in a single stat — maximum Mana — carrying three roles, so every point of mana investment is three times as efficient.
+A single stat — maximum Mana — carries three roles, so every point of mana investment is three times as efficient.
 
 **Mana into damage.** "Adds 166 to 372 Cold Damage" is flat added on top, but the expensive line is "Added Cold Damage equal to 6% to 10% of maximum Mana". With +319 mana from the item itself plus mana from tree/gear, a pool of 2,000 mana for example adds 120 to 200 cold damage per attack from this line alone, independent of the flat 166-372. The higher the mana, the larger the cold added — this is why the build commits everything into mana instead of life.
 

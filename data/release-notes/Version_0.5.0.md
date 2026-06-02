@@ -981,6 +981,23 @@ We really hope you enjoy Path of Exile 2: Return of the Ancients. [Thanks for yo
 
 ### Updates to Patch Notes
 
+Updates for 30/5/26 — 0.5.0 Hotfix
+
+> Source: separate GGG forum thread "0.5.0 Hotfix" — [pathofexile.com/forum/view-thread/3934397](https://www.pathofexile.com/forum/view-thread/3934397) (posted by Alexander_GGG, 30/5/26, Early Access Patch Notes subforum). Stability + QoL only; no balance/skill/item/economy changes.
+
+* You can now Ctrl + Left-click on a Remnant recipe to select the recipe and start the encounter.
+* Fixed a client deadlock that could occur from build planner files.
+* Fixed a client crash that could occur when changing characters.
+* Fixed a client crash that could occur when claiming rewards from NPCs when using a controller.
+* Fixed two instance crashes.
+
+**Known issues GGG acknowledged on Day 1** (from "Return of the Ancients Launch - Live Updates", [pathofexile.com/forum/view-thread/3933988](https://www.pathofexile.com/forum/view-thread/3933988), Natalia_GGG, 30/5/26):
+
+* Corrupting Cry is no longer affected by Support Gems or modifiers to Warcry damage — GGG investigating, fix pending. (Warcry/Corrupting Cry builds currently underperform until patched.)
+* Client deadlock tied to build planner (PoB import) files — workaround: keep the build planner "name" field short / within the text box; hotfix shipped.
+* Email unlock codes sometimes delayed — investigating.
+* Game validation issues on client update — resolved.
+
 Updates for 29/5/26
 
 **New Patch Notes:**

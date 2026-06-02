@@ -70,7 +70,7 @@ Blood Mage combines life cost + chaos/fire explosion to create a very distinctiv
 - Usually pairs with Sanguimancy, Blood Magic, or a CI hybrid.
 
 ### 4. Companion & Bear Builds (Shaman / Druid)
-Shaman and some Druid builds use **Bear** (Ancestral Bear / Bear Rampage) to form a "freight train" that both tanks and clears:
+Shaman and some Druid builds use **Bear** (Ancestral Bear / Bear Rampage) for a setup that both tanks and clears:
 
 - Top EHP includes Shaman Living Lightning and various bear setups.
 - The companion meta (Bear + minion ignite previously) still has strong pull, even as Lich declines.
@@ -122,7 +122,7 @@ Fate of the Vaal leaves behind several important insights heading into Return of
 
 ## Conclusion
 
-Fate of the Vaal is the season of **Pathfinder Poisonburst**, the explosion of **Oracle Spellslinger**, and the rise of **Blood Mage** + tanky companions. It proves POE2 already has a diverse meta with depth, and it leaves behind many valuable lessons for 0.5 — the biggest endgame overhaul to date.
+Fate of the Vaal was defined by **Pathfinder Poisonburst**, the rise of **Oracle Spellslinger**, and **Blood Mage** + tanky companions — a diverse meta with depth, and the source of several lessons carrying into 0.5, the biggest endgame overhaul to date.
 
 When starting Runes of Aldur, the top priorities should be:
 - Understand Runic Ward + Verisium crafting thoroughly.

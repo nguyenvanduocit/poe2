@@ -285,4 +285,4 @@ For Twister mechanic details see the [Twister mechanic doc](/mechanics/skills/tw
 
 ## Relationships
 
-- **synergizes_with** [Twister — Spear Wind Projectile Engine](/mechanics/skills/twister) — The build uses Twister as the main damage source; the mechanic doc explains how the wind is created, the damage chain and the 0.66-second hit limit.
+- **synergizes_with** [Twister — Spear Wind Projectile Skill](/mechanics/skills/twister) — The build uses Twister as the main damage source; the mechanic doc explains how the wind is created, the damage chain and the 0.66-second hit limit.

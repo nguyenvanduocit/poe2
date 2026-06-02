@@ -1,7 +1,7 @@
 ---
 template: templates/mechanic-template.md
 document_type: mechanic
-title: Twister — Spear Wind Projectile Engine
+title: Twister — Spear Wind Projectile Skill
 status: draft
 author: duocnv
 created: '2026-05-19'
@@ -21,15 +21,15 @@ tags:
   - mechanic
 ---
 
-# Twister — Spear Wind Projectile Engine
+# Twister — Spear Wind Projectile Skill
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Twister"} là spear attack skill tag Wind + Projectile + AoE + Duration trong POE2 patch 0.5, drop Tier 1 nên dùng được từ Act 1. Skill này không tự chạy — nó là half thứ hai của engine 2 tầng, half thứ nhất là :wiki-link{url="https://www.poe2wiki.net/wiki/Whirling_Slash"} (spawn Whirlwind), Twister đến và **consume Whirlwind** để nhân lên cả số lượng projectile lẫn damage multiplier. Hiểu Twister quan trọng vì 90% guide ngoài kia chỉ nói "scale projectile count" mà bỏ qua hai dòng wiki quyết định damage thật — hidden cap 0.66s same-target throttle, và sự khác biệt giữa "Gain" và "Convert" trong dòng elemental ground.
 
 ## How It Works
 
-Twister sinh ra một tornado di chuyển forward erratically (lảo đảo random), blind enemy quanh nó, và **pierce all targets** (per gem text — luôn pierce, không cần support). Base attack damage scale theo gem level 80%→232% (lv 1→20), cast time = 80% base attack speed. Tornado tồn tại 3 giây với radius 0.5 metres, nảy quanh địa hình nếu chạm wall — đây là lý do build clear corridor map cực mạnh (tornado ping-pong trong hành lang hẹp) nhưng yếu trong open arena (tornado dissipate trước khi nảy về).
+Twister sinh ra một tornado di chuyển forward erratically (lảo đảo random), blind enemy quanh nó, và **pierce all targets** (per gem text — luôn pierce, không cần support). Base attack damage scale theo gem level 80%→232% (lv 1→20), cast time = 80% base attack speed. Tornado tồn tại 3 giây với radius 0.5 metres, nảy quanh địa hình nếu chạm wall — đây là lý do build clear corridor map cực mạnh (tornado nảy liên tục giữa hai tường trong hành lang hẹp) nhưng yếu trong open arena (tornado dissipate trước khi nảy về).
 
-Cơ chế consume Whirlwind là trái tim damage:
+Damage thật của Twister đến từ cơ chế consume Whirlwind:
 
 > Consumes Whirlwinds to create an additional twister and deal 80% more damage per Whirlwind stage
 

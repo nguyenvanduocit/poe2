@@ -110,10 +110,10 @@ Modifier "increased Defences" cũ (giờ là "Armour, Evasion and Energy Shield"
 
 ## Verdict & Open Questions
 
-- **Verdict — BUFF, HIGH confidence.** Patch note 0.5.0 literal: lượng armour item/modifier cấp tăng +33% ở lvl 65 → +15% ở lvl 80+ (line 494). Evasion buff song song cùng mức + deflect formula tuyến tính cap 95% (line 248-249, 495). ES recovery layer bị quét 50-70% (xem ES rework doc). Tương quan defence nghiêng rõ về armour/evasion cho physical-heavy content.
+- **Verdict — BUFF.** Patch note 0.5.0 literal: lượng armour item/modifier cấp tăng +33% ở lvl 65 → +15% ở lvl 80+ (line 494). Evasion buff song song cùng mức + deflect formula tuyến tính cap 95% (line 248-249, 495). ES recovery layer bị quét 50-70% (xem ES rework doc). Tương quan defence nghiêng rõ về armour/evasion cho physical-heavy content.
 - **Nuance — net không đồng đều.** Build dùng rare armour hoặc unique được buff (Keeper of the Arc, Sine Aequo, Ab Aeterno) ăn trọn buff; extreme stacker dựa Brass Dome (700-800→500-600%) gần như wash vì top-end multiplier bị kéo lùi.
 - **Armour không phải all-rounder** — chỉ physical, kém trước burst lớn theo công thức, không chạm DoT. "Best defensive layer" đúng theo nghĩa scale dễ nhất cho sustained physical, không phải vượt mọi layer mọi chiều.
-- **Open question — 90% cap còn nguyên trong 0.5?** Công thức và cap 90% lấy từ wiki mirror (poe2wiki.net), patch note 0.5.0 không nhắc đổi cap. Wiki có thể lag patch — cần wiki diff sau league launch để confirm cap chưa đổi. Confidence MEDIUM cho con số cap.
+- **Open question — 90% cap còn nguyên trong 0.5?** Công thức và cap 90% lấy từ wiki mirror (poe2wiki.net), patch note 0.5.0 không nhắc đổi cap. Wiki có thể lag patch — cần đọc wiki diff sau league launch để xác nhận con số cap chưa đổi.
 - **Open question — actual endgame survival lift.** Compound math cho ~2-3.4 điểm DR, nhưng cần PoB2 0.5 release + char test endgame T15+ mới khẳng định TTK/survival thực tế và mức net của extreme stacker. Window verify: 2026-06-01 → 2026-06-08.
 - **Open question — Runic Ward + armour stacker live behavior.** Cặp armour + Runic Ward chưa test in-game; cần log Runic Ward uptime và pop behavior trước boss burst khi vào league.
 

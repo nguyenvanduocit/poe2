@@ -107,7 +107,7 @@ Chưa có sim PoB2 0.5 public cho hướng này tại ngày league start, nên m
 - **Energy Shield / Life:** ES là pool chính qua Beidat's Hand; Life bị reserve qua các node Beidat (mỗi node 25%) — đo lại EHP trong game vì reserve 50% (2 Beidat) khác hẳn 75% (3 Beidat).
 - **Resistances:** cap 75% Fire/Cold/Lightning trước maps; Chaos res càng cao càng tốt vì hay phải đứng gần để re-summon.
 
-Toàn bộ con số tuyệt đối (ES, EHP, DPS/giây) ở mức **LOW confidence** cho tới khi materialize character trong league và chạy PoB2 0.5. Test plan: log tooltip damage mỗi spectre × số spectre × uptime, rồi nhân tay ×1.25-1.35 (non-unique) cho phần buff ẩn, so với clear thực tế trên T15-T16; log riêng số trên unique boss (chỉ ~1.20-1.25).
+Toàn bộ con số tuyệt đối (ES, EHP, DPS/giây) chưa chốt được cho tới khi materialize character trong league và chạy PoB2 0.5. Test plan: log tooltip damage mỗi spectre × số spectre × uptime, rồi nhân tay ×1.25-1.35 (non-unique) cho phần buff ẩn, so với clear thực tế trên T15-T16; log riêng số trên unique boss (chỉ ~1.20-1.25).
 
 ### Performance Ratings
 
@@ -145,7 +145,7 @@ Slot Last Gasp endgame có thể nâng lên :wiki-link{url="https://www.poe2wiki
 ### Mirror Tier (BiS)
 Stack tối đa +Spirit (flat), % increased Spirit, và reservation efficiency trên mọi slot — ba đòn bẩy spirit khác nhau, đừng double-count: flat (Chober +50, Soul Mantle +75, sceptre base ~100, suffix "Lord's" 20-26% increased), % increased (:wiki-link{url="https://www.poe2wiki.net/wiki/Sylvan's_Effigy"} 54-63%, Rabbit Idol 15%), reservation efficiency (Raven's Flock 34%, Bones of Ullr cho Undead). Reservation efficiency thường mạnh nhất per-point vì làm *mọi* spectre rẻ đi. Diminishing returns đến khi bầy đã đầy — lúc đó tiền đổ vào minion damage % và một spectre cao cấp.
 
-**Reframe Quipolatl's Thesis:** :wiki-link{url="https://www.poe2wiki.net/wiki/Quipolatl's_Thesis"} soul core trong Gloves cho "ES Recharge starts when your Minions are Reformed". Đây là tech của riêng mình, **không guide meta nào dùng** — và nó kém tin cậy: "Reform" là điều kiện nghiêm ngặt hơn revive, chỉ kích hoạt khi minion permanent hồi sau hết timer ~7.5 giây, *không* tính revive nhanh/Last-Gasp/leash. Tức trên backline an toàn (spectre hiếm chết) hoặc boss dài (spectre sống) nó **không** fire đúng lúc cần ES nhất. Xếp nó là utility mapping MEDIUM, không phải cornerstone.
+**Reframe Quipolatl's Thesis:** :wiki-link{url="https://www.poe2wiki.net/wiki/Quipolatl's_Thesis"} soul core trong Gloves cho "ES Recharge starts when your Minions are Reformed". Đây là tech của riêng mình, **không guide meta nào dùng** — và nó kém tin cậy: "Reform" là điều kiện nghiêm ngặt hơn revive, chỉ kích hoạt khi minion permanent hồi sau hết timer ~7.5 giây, *không* tính revive nhanh/Last-Gasp/leash. Tức trên backline an toàn (spectre hiếm chết) hoặc boss dài (spectre sống) nó **không** fire đúng lúc cần ES nhất. Xếp nó là utility mapping tình huống, không phải cornerstone.
 
 **Anti-recommendation:** đừng dùng :wiki-link{url="https://www.poe2wiki.net/wiki/Heartbound_Loop"} — "300 Physical Damage taken on Minion Death" sẽ cascade giết mình khi bầy 5-6 con chết/hồi liên tục.
 
@@ -185,7 +185,7 @@ Build làm tốt ba thứ: clear speed cao nhờ AoE native của nhiều spectr
 
 ## Optimization
 
-Các điểm cần log/test khi character materialize trong league (hiện ở mức LOW, đừng treat như fact):
+Các điểm cần log/test khi character materialize trong league — chưa verify được, đừng treat như fact:
 
 - **Spectre nào là #1 meta.** Các guide đã publish nghiêng về :wiki-link{url="https://www.poe2wiki.net/wiki/Vaal_Guard"} (Bomber variant, 50 Spirit, oil grenade physical+fire — kiếm ở Utzaal Act 3, tránh variant cùng tên melee/ranged) và :wiki-link{url="https://www.poe2wiki.net/wiki/Powered_Zealot"} (55 Spirit, lightning Spark). Các con caster wiki-confirmed khác — Priest of the Sun (100, Firebolt/Solar Orb), Doryani's Elite (70, lightning orb) — vẫn hợp lệ nhưng đắt spirit hơn. Log DPS thực tế mỗi con trên cùng pack/boss để chốt con đáng bind.
 - **Infernalist vs Lich vs Shaman.** Đừng claim Infernalist thắng tuyệt đối. Sự thật day-0: Shaman stack spirit nhiều hơn (con đường legion lớn nhất), Lich miễn nhiễm các nerf 0.5 nên cộng đồng nghiêng Lich cho endgame. Edge thật của Infernalist là ES defense + league-start smoothness + Altered Flesh conversion, không phải spirit supremacy. Log so sánh khi có cả ba.
@@ -198,12 +198,12 @@ Các điểm cần log/test khi character materialize trong league (hiện ở m
 - Ascendancy 8 điểm: **Altered Flesh** (gate bắt buộc) → Beidat's Will (spirit) → Beidat's Hand (ES) → Loyal Hellhound. **Bỏ Demon Form** — nó buff Spell damage của player, không phải Minion damage, nên cho spectre đúng 0 damage.
 - Damage buff toàn cục là **một** modifier (không double-count): ~1.25-1.35 lên non-unique / ~1.20-1.25 lên unique, và **ẩn khỏi tooltip** (PoB under-report) — đây là caveat pob_coverage cốt lõi.
 - Spirit ~210-230 trước gear nuôi ~3 con premium hoặc ~5 con rẻ; endgame ưu tiên Bones of Ullr (+minion count) + Soul Mantle (+75 Spirit), vũ khí Chober Chaber vs Raven's Flock là tradeoff PoB.
-- Honest: Infernalist là pick league-start/ES-defense mạnh, không phải spirit-king (Shaman) hay endgame-king (Lich). Meta day-0 ở mức LOW — đợi datamine ngày 3-7.
+- Honest: Infernalist là pick league-start/ES-defense mạnh, không phải spirit-king (Shaman) hay endgame-king (Lich). Meta day-0 chưa chốt được — đợi datamine ngày 3-7.
 
 ## Changelog
 
 ### 2026-05-29
-- Dựng lại toàn diện sau verification từ patch 0.5.0 + wiki mirror + passive tree 0.5 + meta live. Sửa các lỗi: bỏ nhánh Demon Form (buff Spell không phải Minion), thêm Altered Flesh gate + thứ tự 8 điểm ascendancy, hết double-count global minion buff (một modifier ~1.25-1.35 non-unique, ẩn khỏi tooltip), đổi exemplar spectre sang Vaal Guard + Powered Zealot, đổi link sang Magnified Area II + Minion Mastery + Elemental Army + Last Gasp (bench Crazed/Hulking vì reservation tax), ưu tiên Bones of Ullr + Soul Mantle endgame, demote Quipolatl/Chober, thêm Umbilicus Immortalis + anti-rec Heartbound Loop, reframe Infernalist vs Lich/Shaman. DPS tuyệt đối để LOW vì chưa có PoB2 0.5 sim.
+- Dựng lại toàn diện sau verification từ patch 0.5.0 + wiki mirror + passive tree 0.5 + meta live. Sửa các lỗi: bỏ nhánh Demon Form (buff Spell không phải Minion), thêm Altered Flesh gate + thứ tự 8 điểm ascendancy, hết double-count global minion buff (một modifier ~1.25-1.35 non-unique, ẩn khỏi tooltip), đổi exemplar spectre sang Vaal Guard + Powered Zealot, đổi link sang Magnified Area II + Minion Mastery + Elemental Army + Last Gasp (bench Crazed/Hulking vì reservation tax), ưu tiên Bones of Ullr + Soul Mantle endgame, demote Quipolatl/Chober, thêm Umbilicus Immortalis + anti-rec Heartbound Loop, reframe Infernalist vs Lich/Shaman. DPS tuyệt đối chưa chốt vì chưa có PoB2 0.5 sim.
 - Initial draft (cùng ngày, đã thay thế): core + ascendancy chốt verbatim từ patch 0.5.0.
 
 ## Relationships
