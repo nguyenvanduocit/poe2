@@ -35,7 +35,7 @@ export function pickForwardIndex(idxs: number[] | undefined, currentIdx: number)
 /**
  * Latest resolution for first connect: pick where the player actually is now,
  * even if behind the furthest zone reached. With a unique name there is one
- * index; with repeats (Cruel re-run) the last occurrence is the better guess.
+ * index; with repeats (a revisited zone) the last occurrence is the better guess.
  */
 export function pickLatestIndex(idxs: number[] | undefined): number | null {
   if (!idxs || idxs.length === 0) return null

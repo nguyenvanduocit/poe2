@@ -8,9 +8,20 @@
 // human surface: short imperative Vietnamese instructions that keep English
 // game terms (skills/items/monsters/zones), overlay-checklist style.
 //
-// Data body (the `LEVELING_DATA` array) is authored from the wiki mirror
-// (data/wiki/Act_N.md + zone/quest pages), Acts 1-4 (the live 0.5 campaign;
-// Acts 5-6 are stubs).
+// Data body (the `LEVELING_DATA` array) covers the live 0.5 campaign: Acts 1-4
+// (id 1-4) + the 3 Interludes (id 5-7: The Curse of Holten / The Stolen Barya /
+// Doryani's Contingency — these replaced the old Cruel second run). Acts 5-6
+// ship at full release. Act 1-4 zones are verified against poe2db (live 0.5) +
+// the GGG 0.5.0 patch notes; Interlude internals come from the pre-launch wiki
+// Interlude navbox, so their exact order / clientName / area level are LOW
+// confidence — verify against a real Client.txt log once in-league.
+//
+// In-league test plan (log when playing 0.5): (1) confirm every clientName matches
+// the exact Client.txt "You have entered <X>." string; (2) confirm the Act 3 area
+// order — patch L303 rearranged it but did not enumerate, so the order here is the
+// prior sequence kept as-is; (3) confirm the 3 Interludes' zone order + area levels
+// (sourced from the pre-launch 0.3-era Interlude navbox); (4) confirm Freythorn still
+// requires dispelling the mist (s2) to reach the King in the Mists.
 
 export type LevelingStepType =
   | 'quest' // start / turn in a quest, talk to NPC
@@ -59,8 +70,9 @@ export interface LevelingAct {
   zones: LevelingZone[]
 }
 
-// Full Acts 1-4 route, authored from the wiki mirror (data/wiki/Act_N.md +
-// zone/quest pages). 70 zones, 306 steps.
+// Full 0.5 route: 4 Acts + 3 Interludes, 92 zones / 337 steps. Acts 1-4 from
+// poe2db (live 0.5) + GGG 0.5.0 patch notes; Interludes from the wiki Interlude
+// navbox (pre-launch — LOW confidence on exact order / clientName / level).
 export const LEVELING_DATA: LevelingAct[] = [
   {
     "id": 1,
@@ -105,12 +117,18 @@ export const LEVELING_DATA: LevelingAct[] = [
         "id": "act1-clearfell-encampment",
         "name": "Clearfell Encampment",
         "clientName": "Clearfell Encampment",
-        "areaLevel": "15",
+        "areaLevel": "2",
         "isTown": true,
         "steps": [
           {
             "id": "act1-clearfell-encampment-s1",
             "text": "Nói chuyện với Renly để hoàn thành Reaching Clearfell + nhận Uncut Skill Gem",
+            "type": "quest",
+            "optional": false
+          },
+          {
+            "id": "act1-clearfell-encampment-farrow",
+            "text": "Nói chuyện với Farrow nhận quest đầu tiên — mở khoá Verisium Runeforging để thêm Runic Ward cho armour",
             "type": "quest",
             "optional": false
           },
@@ -498,14 +516,8 @@ export const LEVELING_DATA: LevelingAct[] = [
           },
           {
             "id": "act1-freythorn-s3",
-            "text": "Giết The King in the Mists ở Unnamed Ritual (hoàn thành Ominous Altars)",
+            "text": "Giết The King in the Mists ở Unnamed Ritual, nhặt Gembloom Skull (+30 Maximum Spirit) — 0.5 không còn đổi reward ở Ritual altar sau khi giết",
             "type": "kill",
-            "optional": true
-          },
-          {
-            "id": "act1-freythorn-s4",
-            "text": "Đổi Tribute lấy item ở Ritual altar",
-            "type": "pickup",
             "optional": true
           }
         ]
@@ -707,7 +719,7 @@ export const LEVELING_DATA: LevelingAct[] = [
         "id": "act2-the-ardura-caravan",
         "name": "The Ardura Caravan",
         "clientName": "The Ardura Caravan",
-        "areaLevel": "32",
+        "areaLevel": "16",
         "isTown": true,
         "steps": [
           {
@@ -719,6 +731,12 @@ export const LEVELING_DATA: LevelingAct[] = [
           {
             "id": "act2-the-ardura-caravan-s2",
             "text": "Nói chuyện với The Hooded One rồi Sekhema Asala để bắt đầu The Trail of Corruption",
+            "type": "quest",
+            "optional": false
+          },
+          {
+            "id": "act2-the-ardura-caravan-farrow",
+            "text": "Hoàn thành quest Act 2 của Farrow — mở khoá 13 Alloy currency (craft modifier qua Remnant encounter)",
             "type": "quest",
             "optional": false
           },
@@ -1347,7 +1365,7 @@ export const LEVELING_DATA: LevelingAct[] = [
         "id": "act3-ziggurat-encampment",
         "name": "Ziggurat Encampment",
         "clientName": "Ziggurat Encampment",
-        "areaLevel": "44",
+        "areaLevel": "33",
         "isTown": true,
         "steps": [
           {
@@ -1359,6 +1377,12 @@ export const LEVELING_DATA: LevelingAct[] = [
           {
             "id": "act3-ziggurat-encampment-s2",
             "text": "Nói chuyện với The Hooded One về việc rút nước Utzaal",
+            "type": "quest",
+            "optional": false
+          },
+          {
+            "id": "act3-ziggurat-encampment-farrow",
+            "text": "Hoàn thành quest Act 3 của Farrow — mở khoá Unique Verisium Runeforging (nâng base type cho Unique drop dưới Lv55)",
             "type": "quest",
             "optional": false
           },
@@ -1480,7 +1504,7 @@ export const LEVELING_DATA: LevelingAct[] = [
         "id": "act3-the-azak-bog",
         "name": "The Azak Bog",
         "clientName": "The Azak Bog",
-        "areaLevel": "36",
+        "areaLevel": "40",
         "isTown": false,
         "boss": "Ignagduk, the Bog Witch",
         "steps": [
@@ -1684,7 +1708,7 @@ export const LEVELING_DATA: LevelingAct[] = [
           },
           {
             "id": "act3-the-matlan-waterways-s4",
-            "text": "Dùng Canal Lever để rút nước Utzaal",
+            "text": "Đi qua các pressure pad để rút nước Utzaal (0.5: lever đổi thành pad chỉ cần đi qua, đoạn cuối level đã rút nước sẵn)",
             "type": "quest",
             "optional": false
           },
@@ -1858,6 +1882,12 @@ export const LEVELING_DATA: LevelingAct[] = [
             "optional": false
           },
           {
+            "id": "act3-utzaal-fate-of-the-vaal",
+            "text": "Fate of the Vaal (core 0.5): tìm và energise đợt 1 gồm 6 Ancient Beacon rải khắp Utzaal + Aggorat, lấy Energised Crystal để mở portal vào Vaal Ruins",
+            "type": "quest",
+            "optional": true
+          },
+          {
             "id": "act3-utzaal-s4",
             "text": "Lấy Inscribed Ultimatum (Lv43) từ tượng Trialmaster's Challenge",
             "type": "pickup",
@@ -1961,6 +1991,12 @@ export const LEVELING_DATA: LevelingAct[] = [
           {
             "id": "act4-kingsmarch-s1",
             "text": "Nói chuyện với Doryani và Alva để bắt đầu The Search",
+            "type": "quest",
+            "optional": false
+          },
+          {
+            "id": "act4-kingsmarch-farrow",
+            "text": "Hoàn thành quest Act 4 của Farrow — mở khoá 13 Ancient Rune (bonus mạnh theo từng loại weapon, craft qua Remnant)",
             "type": "quest",
             "optional": false
           },
@@ -2381,7 +2417,7 @@ export const LEVELING_DATA: LevelingAct[] = [
         "clientName": "Halls of the Dead",
         "areaLevel": "47",
         "isTown": false,
-        "boss": "Yama The White",
+        "boss": "Yama the White",
         "steps": [
           {
             "id": "act4-halls-of-the-dead-s1",
@@ -2403,8 +2439,14 @@ export const LEVELING_DATA: LevelingAct[] = [
           },
           {
             "id": "act4-halls-of-the-dead-s4",
-            "text": "Giết Yama The White ở Yama's Test",
+            "text": "Giết Yama the White ở Yama's Test",
             "type": "kill",
+            "optional": true
+          },
+          {
+            "id": "act4-halls-of-the-dead-navali",
+            "text": "Nói chuyện với Navali ở Halls of the Dead nhận Greater Mind Rune (0.5: nâng từ Lesser Mind Rune)",
+            "type": "pickup",
             "optional": true
           }
         ]
@@ -2593,6 +2635,395 @@ export const LEVELING_DATA: LevelingAct[] = [
           {
             "id": "act4-heart-of-the-tribe-s4",
             "text": "Về Kingsmarch nói chuyện với The Hooded One để hoàn thành The Search",
+            "type": "quest",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Interlude 1 — The Curse of Holten",
+    "region": "Ogham",
+    "zones": [
+      {
+        "id": "i1-the-refuge",
+        "name": "The Refuge",
+        "clientName": "The Refuge",
+        "areaLevel": "54",
+        "isTown": true,
+        "steps": [
+          {
+            "id": "i1-the-refuge-s1",
+            "text": "Travel qua The Hooded One — hub Interlude 1; làm 3 Interlude theo thứ tự bất kỳ, area level scale +8 dần khi clear boss 2 Interlude còn lại",
+            "type": "note",
+            "optional": false
+          },
+          {
+            "id": "i1-the-refuge-s2",
+            "text": "(Tuỳ chọn) Mua Greater Rune một lần từ Soul of the Ferryman (~20,000 Gold)",
+            "type": "pickup",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "i1-scorched-farmlands",
+        "name": "Scorched Farmlands",
+        "clientName": "Scorched Farmlands",
+        "areaLevel": "54-62",
+        "isTown": false,
+        "boss": "Isolde of the White Shroud & Heldra of the Black Pyre",
+        "steps": [
+          {
+            "id": "i1-scorched-farmlands-s1",
+            "text": "Vào Scorched Farmlands, giết Isolde of the White Shroud và Heldra of the Black Pyre",
+            "type": "kill",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "i1-stones-of-serle",
+        "name": "Stones of Serle",
+        "clientName": "Stones of Serle",
+        "areaLevel": "54-62",
+        "isTown": false,
+        "boss": "Siora, Blade of the Mists",
+        "steps": [
+          {
+            "id": "i1-stones-of-serle-s1",
+            "text": "Giết Siora, Blade of the Mists ở Stones of Serle",
+            "type": "kill",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "i1-the-blackwood",
+        "name": "The Blackwood",
+        "clientName": "The Blackwood",
+        "areaLevel": "55-63",
+        "isTown": false,
+        "steps": [
+          {
+            "id": "i1-the-blackwood-s1",
+            "text": "Băng qua The Blackwood để tới Holten",
+            "type": "transition",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "i1-holten",
+        "name": "Holten",
+        "clientName": "Holten",
+        "areaLevel": "55-63",
+        "isTown": false,
+        "boss": "Sigbert of the Sullied Oath & Godwin of the Shattered Creed",
+        "steps": [
+          {
+            "id": "i1-holten-s1",
+            "text": "Vào Holten, giết Sigbert of the Sullied Oath và Godwin of the Shattered Creed",
+            "type": "kill",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "i1-wolvenhold",
+        "name": "Wolvenhold",
+        "clientName": "Wolvenhold",
+        "areaLevel": "56-64",
+        "isTown": false,
+        "boss": "Oswin, the Dread Warden",
+        "steps": [
+          {
+            "id": "i1-wolvenhold-s1",
+            "text": "Giết Oswin, the Dread Warden ở Wolvenhold (+2 Weapon Set Skill Points, rớt Warden's Ledger)",
+            "type": "kill",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "i1-holten-estate",
+        "name": "Holten Estate",
+        "clientName": "Holten Estate",
+        "areaLevel": "56-64",
+        "isTown": false,
+        "boss": "Thane Wulfric & Lady Elswyth",
+        "steps": [
+          {
+            "id": "i1-holten-estate-s1",
+            "text": "Giết Thane Wulfric và Lady Elswyth ở Holten Estate để chấm dứt lời nguyền — hoàn thành Interlude 1",
+            "type": "kill",
+            "optional": false
+          },
+          {
+            "id": "i1-holten-estate-s2",
+            "text": "Về The Refuge gặp The Hooded One",
+            "type": "transition",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Interlude 2 — The Stolen Barya",
+    "region": "Vastiri Desert",
+    "zones": [
+      {
+        "id": "i2-the-khari-bazaar",
+        "name": "The Khari Bazaar",
+        "clientName": "The Khari Bazaar",
+        "areaLevel": "54",
+        "isTown": true,
+        "steps": [
+          {
+            "id": "i2-the-khari-bazaar-s1",
+            "text": "Hub Interlude 2 — gặp Sekhema Asala, giúp hoàn tất Ritual of Water và tìm lại Barya bị đánh cắp",
+            "type": "quest",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "i2-the-khari-crossing",
+        "name": "The Khari Crossing",
+        "clientName": "The Khari Crossing",
+        "areaLevel": "54-62",
+        "isTown": false,
+        "boss": "Akthi, the Final Sting & Anundr, the Sandworm",
+        "steps": [
+          {
+            "id": "i2-the-khari-crossing-s1",
+            "text": "Giết Akthi, the Final Sting và Anundr, the Sandworm; nói chuyện Risu sau đó (+2 Weapon Set Skill Points)",
+            "type": "kill",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "i2-the-galai-gates",
+        "name": "The Galai Gates",
+        "clientName": "The Galai Gates",
+        "areaLevel": "56-64",
+        "isTown": false,
+        "boss": "Vornas, the Fell Flame",
+        "steps": [
+          {
+            "id": "i2-the-galai-gates-s1",
+            "text": "Giết Vornas, the Fell Flame ở The Galai Gates",
+            "type": "kill",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "i2-qimah",
+        "name": "Qimah",
+        "clientName": "Qimah",
+        "areaLevel": "56-64",
+        "isTown": false,
+        "steps": [
+          {
+            "id": "i2-qimah-s1",
+            "text": "Ở Orbala's Pillar chọn 1 trong 7 Boon (buff vĩnh viễn, đổi được sau)",
+            "type": "pickup",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "i2-qimah-reservoir",
+        "name": "Qimah Reservoir",
+        "clientName": "Qimah Reservoir",
+        "areaLevel": "56-64",
+        "isTown": false,
+        "boss": "Azmadi, the Faridun Prince",
+        "steps": [
+          {
+            "id": "i2-qimah-reservoir-s1",
+            "text": "Giết Azmadi, the Faridun Prince ở Qimah Reservoir",
+            "type": "kill",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "i2-pools-of-khatal",
+        "name": "Pools of Khatal",
+        "clientName": "Pools of Khatal",
+        "areaLevel": "55-63",
+        "isTown": false,
+        "steps": [
+          {
+            "id": "i2-pools-of-khatal-s1",
+            "text": "Băng qua Pools of Khatal tới Sel Khari Sanctuary",
+            "type": "transition",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "i2-sel-khari-sanctuary",
+        "name": "Sel Khari Sanctuary",
+        "clientName": "Sel Khari Sanctuary",
+        "areaLevel": "55-63",
+        "isTown": false,
+        "boss": "Elzarah, the Cobra Lord",
+        "steps": [
+          {
+            "id": "i2-sel-khari-sanctuary-s1",
+            "text": "Đặt Barya lên bệ giải thoát Djinn (rare Ring/Amulet/Jewel), rồi giết Elzarah, the Cobra Lord — hoàn thành Interlude 2",
+            "type": "kill",
+            "optional": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Interlude 3 — Doryani's Contingency",
+    "region": "Mount Kriar",
+    "zones": [
+      {
+        "id": "i3-the-glade",
+        "name": "The Glade",
+        "clientName": "The Glade",
+        "areaLevel": "54",
+        "isTown": true,
+        "steps": [
+          {
+            "id": "i3-the-glade-s1",
+            "text": "Hub Interlude 3 — leo núi Azmeri tìm The Cuachic Vault nơi Doryani phong ấn người Vaal",
+            "type": "quest",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "i3-ashen-forest",
+        "name": "Ashen Forest",
+        "clientName": "Ashen Forest",
+        "areaLevel": "54-62",
+        "isTown": false,
+        "steps": [
+          {
+            "id": "i3-ashen-forest-s1",
+            "text": "Băng qua Ashen Forest tới Kriar Village (nhặt Skill Gem ở Ancient Monument)",
+            "type": "transition",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "i3-kriar-village",
+        "name": "Kriar Village",
+        "clientName": "Kriar Village",
+        "areaLevel": "54-62",
+        "isTown": false,
+        "boss": "Lythara, the Wayward Spear",
+        "steps": [
+          {
+            "id": "i3-kriar-village-s1",
+            "text": "Giết Lythara, the Wayward Spear ở Kriar Village (Gemcrust Skull: +40 Maximum Spirit)",
+            "type": "kill",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "i3-glacial-tarn",
+        "name": "Glacial Tarn",
+        "clientName": "Glacial Tarn",
+        "areaLevel": "55-63",
+        "isTown": false,
+        "boss": "Rakkar, the Frozen Talon",
+        "steps": [
+          {
+            "id": "i3-glacial-tarn-s1",
+            "text": "Giết Rakkar, the Frozen Talon ở Glacial Tarn",
+            "type": "kill",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "i3-kriar-peaks",
+        "name": "Kriar Peaks",
+        "clientName": "Kriar Peaks",
+        "areaLevel": "56-64",
+        "isTown": false,
+        "steps": [
+          {
+            "id": "i3-kriar-peaks-s1",
+            "text": "Gặp Elder Maddox (~10-11 giờ) chọn 1 Unique miễn phí từ set ngẫu nhiên",
+            "type": "pickup",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "i3-etched-ravine",
+        "name": "Etched Ravine",
+        "clientName": "Etched Ravine",
+        "areaLevel": "56-64",
+        "isTown": false,
+        "boss": "Stormgore, the Guardian",
+        "steps": [
+          {
+            "id": "i3-etched-ravine-s1",
+            "text": "Giết Stormgore, the Guardian ở Etched Ravine",
+            "type": "kill",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "i3-the-cuachic-vault",
+        "name": "The Cuachic Vault",
+        "clientName": "The Cuachic Vault",
+        "areaLevel": "56-64",
+        "isTown": false,
+        "boss": "Zelina, Blood Priestess & Zolin, Blood Priest",
+        "steps": [
+          {
+            "id": "i3-the-cuachic-vault-s1",
+            "text": "Vào The Cuachic Vault, giết Zelina, Blood Priestess và Zolin, Blood Priest",
+            "type": "kill",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "id": "i3-howling-caves",
+        "name": "Howling Caves",
+        "clientName": "Howling Caves",
+        "areaLevel": "55-63",
+        "isTown": false,
+        "boss": "The Abominable Yeti",
+        "steps": [
+          {
+            "id": "i3-howling-caves-s1",
+            "text": "Giết The Abominable Yeti ở Howling Caves (rớt Icy Tusks; +2 Weapon Set Skill Points qua Hilda) — capstone Interlude 3",
+            "type": "kill",
+            "optional": false
+          },
+          {
+            "id": "i3-howling-caves-fate-of-the-vaal",
+            "text": "Fate of the Vaal: energise đợt 2 gồm 6 Ancient Beacon rải khắp các Interlude để tiếp nối storyline",
+            "type": "quest",
+            "optional": true
+          },
+          {
+            "id": "i3-howling-caves-s3",
+            "text": "Hoàn thành cả 3 Interlude → nói The Hooded One (+2 Skill Points), mở khoá Endgame Atlas/Maps (thoát campaign ~Lv60-65)",
             "type": "quest",
             "optional": false
           }
