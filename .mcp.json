@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "reddit-mcp-buddy": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "reddit-mcp-buddy"
+      ],
+      "env": {}
+    }
+  }
+}

@@ -6,6 +6,7 @@
     "build": "nuxt build",
     "build:wiki": "bun .claude/skills/nuxt/scripts/build-wiki-links/index.ts",
     "dev": "nuxt dev",
+    "dev:tunnel": "concurrently --kill-others --names nuxt,tunnel -c cyan,magenta \"nuxt dev --host --port 3000\" \"cloudflared tunnel --url http://localhost:3000\"",
     "generate": "nuxt generate",
     "install:local": "bun install --config bunfig.local.toml",
     "install:ci": "bun install --frozen-lockfile --config bunfig.toml",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "claude-code-vault-keeper": "github:nguyenvanduocit/claude-code-vault-keeper",
+    "concurrently": "^10.0.0",
     "tailwindcss": "^3",
     "vite-plugin-ai-annotator": "^1.14.13"
   },

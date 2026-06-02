@@ -80,10 +80,10 @@ File `.md` trong `content/mechanics/<sub>/` với:
 9. **No filler** — Mỗi câu phải carry ≥1 trong: số / comparison / mechanic detail / verdict / cross-link. Câu chỉ "đoạn này nói về X" → DELETE. Câu chỉ "có rất nhiều điều thú vị về Y" → DELETE. Câu chỉ recap câu trước → DELETE.
 
 10. **Verdict-with-open-question close** — Section "## Verdict & Open Questions" (section 10) luôn kết bằng:
-    - (a) Verdict label rõ (BUFF / NERF / NEUTRAL / EXPLOITABLE / OUTDATED) + confidence (HIGH/MEDIUM/LOW)
+    - (a) Verdict label rõ (BUFF / NERF / NEUTRAL / EXPLOITABLE / OUTDATED) — KHÔNG kèm nhãn confidence HIGH/MEDIUM/LOW (confidence là reasoning gate nội bộ, không viết vào content; xem `../CLAUDE.md ## Confidence`)
     - (b) Open question / next test / "waiting for patch notes [X]" / "needs character test [Y]"
 
-    Vd: "Verdict: EXPLOITABLE — HIGH confidence. Open question: liệu Wretched Defiler có bị nerf trong 3.29 không? Sẽ theo dõi patch notes sau 2026-06-15."
+    Vd: "Verdict: EXPLOITABLE. Open question: liệu Wretched Defiler có bị nerf trong 3.29 không? Sẽ theo dõi patch notes sau 2026-06-15."
 
 ## Maxroll patterns we adopt
 
@@ -107,7 +107,7 @@ File `.md` trong `content/mechanics/<sub>/` với:
    ```
    Hypothesis: <X có thể work vì reference mechanic Y>
    Evidence: <footage / wiki text / PoB test / forum post>
-   Verdict: <HIGH/MEDIUM/LOW> — <conclusion>
+   Kết luận: <conclusion khẳng định; nếu chưa chắc thì nêu test-plan cụ thể ("log Z khi vào league") — KHÔNG dán nhãn HIGH/MEDIUM/LOW>
    ```
 
 3. **## Math Chain** ⭐ NEW — Line-item adders với format CỨNG:

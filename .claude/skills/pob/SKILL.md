@@ -134,23 +134,49 @@ Fetch the PathOfBuilding-PoE2 repository for local game data access.
 
 ### fetch-poeninja.sh
 
-Fetch only the PoB code from poe.ninja (without analysis).
+Fetch the PoB code from poe.ninja (without analysis). Handles **two** poe.ninja surfaces:
+
+**A. Own profile (any connected character — including low-level leveling chars):**
 
 ```bash
-.claude/skills/pob/scripts/scripts/fetch-poeninja.sh <url> [output-file]
+.claude/skills/pob/scripts/scripts/fetch-poeninja.sh \
+  "https://poe.ninja/poe2/profile/{account}/{league}/character/{character}"
+# account uses '-' for '#', e.g. hopthuxacnhan-3062 ; league is the slug, e.g. runesofaldur
 ```
 
-**Example:**
+This is the **no-OAuth, zero-ban-risk path to a live-played POE2 character** — poe.ninja runs its
+own OAuth integration with GGG, so it surfaces POE2 chars that GGG's own website profile does not
+(the pathofexile.com profile is POE1-only — verified). The script resolves the latest snapshot id
+dynamically via the events SSE stream (`events/character/...` → `data: {"version":<id>}`), then
+fetches `.../model/<id>`. Besides printing the PoB code, it saves the **full model JSON** (rich
+`defensiveStats`, `items`, `skills`, `keystones`, `jewels`, `passiveSelection` that poe.ninja
+already computed) to `data/character-exports/export-<character>.json`.
+
+> **Snapshot, not live — force a fresh crawl first.** poe.ninja only re-crawls on its own schedule
+> (can be 6h+ stale). The script logs `updatedUtc` — if it's old, the numbers are old. To get current
+> data on demand, click **"Refresh character"** on the poe.ninja profile page (it makes poe.ninja
+> re-pull live from GGG via *their* OAuth — no GGG call from us, no ban risk), THEN run the fetch (it
+> auto-resolves the new model via the events SSE). Refresh via playwriter:
+> ```js
+> await state.page.goto('https://poe.ninja/poe2/profile/<account>/<league>/character/<char>', {waitUntil:'domcontentloaded'});
+> await state.page.getByRole('button', { name: 'Refresh character' }).click();   // → new model id
+> await state.page.waitForTimeout(6000);
+> ```
+> Only works while the character stays public/connected on poe.ninja.
+> **Analyze 0.5 chars from the saved model JSON, not PoB2** — PoB2 0.4 can't yet model 0.5 Spirit
+> Walker / companion scaling (returns DPS 0). poe.ninja's `defensiveStats` + skill `damage` are the
+> trustworthy numbers until the PoB2 fork catches up (`pob_coverage: PARTIAL`).
+
+**B. Builds ladder (laddered characters only):**
+
 ```bash
-# Output to stdout
 .claude/skills/pob/scripts/scripts/fetch-poeninja.sh \
-  "https://poe.ninja/poe2/builds/vaal/character/account/CharName"
-
-# Save to file
-.claude/skills/pob/scripts/scripts/fetch-poeninja.sh \
-  "https://poe.ninja/poe2/builds/vaal/character/account/CharName" \
-  build-code.txt
+  "https://poe.ninja/poe2/builds/{league}/character/{account}/{character}" build-code.txt
 ```
+
+> No OWN-stash / live-equipment pull exists for POE2 — GGG's character OAuth API (`/character/poe2/<name>`)
+> would give live data but requires registering a developer app + token (heavyweight, and the account
+> was previously flagged). Use it only if a future need demands true-live or a private/disconnected char.
 
 ### pob-cli.sh
 

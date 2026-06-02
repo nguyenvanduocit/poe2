@@ -122,6 +122,15 @@ export default defineNuxtConfig({
     define: {
       __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'true',
     },
+    // Dev-only: `bun run dev:tunnel` serves this dev server through a
+    // cloudflared quick tunnel at a random *.trycloudflare.com host. Vite 7
+    // rejects unknown Host headers ("Blocked request. This host is not
+    // allowed."), so whitelist the tunnel domain — the leading dot matches
+    // every subdomain. No effect on `nuxt generate` / SSG output; this
+    // configures the dev server only.
+    server: {
+      allowedHosts: ['.trycloudflare.com'],
+    },
   },
 
   // Site config + menu moved here from `app/app.config.ts`. Nuxt 5 / Nitro 3

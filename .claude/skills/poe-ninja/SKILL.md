@@ -130,6 +130,7 @@ Per-character data extracted từ value_lists trong search response. Sample ~100
 
 - **PoB sim coverage thấp hơn POE1** — poe.ninja's PoB integration cho POE2 còn mới; ~60-70% sample có DPS (so với 75-90% POE1). Đặc biệt build dùng new ascendancy (Spirit Walker, Martial Artist) hoặc 0.5 mechanic mới có thể chưa có DPS data.
 - **`main_skill` classification có thể lệch** — POE2 archetype tagging chưa mature như POE1 (build dùng companion thay DPS skill chính có thể bị mistag là support gem).
+- **`overview` keystone/skill aggregate KHÔNG suy ra được node popularity** — dimension này conflate/mislabel: ascendancy-only notable có thể hiện % bất khả thi (vd Wild Protector 9.0% trong khi class Spirit Walker chỉ 0.9% tổng chars). KHÔNG dùng aggregate % để claim một node/skill phổ biến cỡ nào. Muốn số đáng tin → filter theo class (poe.ninja `?class=...`) rồi đọc within-class distribution; tên node thì verify wiki/patch chắc hơn.
 - **`ehp` cap có thể khác** — chưa verify cap POE2; POE1 cap 10M. Update khi gặp giá trị thực.
 
 ## Caching

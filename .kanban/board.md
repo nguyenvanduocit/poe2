@@ -1,5 +1,5 @@
 # Kanban Board
-<!-- Updated: 2026-05-30 (T-005 mobalytics skill broken — added to Todo) -->
+<!-- Updated: 2026-06-01 (T-008 poe.ninja profile pull — Doing) -->
 
 ## Backlog
 
@@ -10,6 +10,12 @@
 ## Doing
 
 ## Done
+
+- [T-008](tasks/T-008-pob-skill-poeninja-profile-pull.md) Pull POE2 char đầy đủ từ poe.ninja profile API vào /pob — high/S (fetch-poeninja.sh +profile branch: events SSE → dynamic modelId → model JSON; verified ThaoCamVienSaiGon PoB 8900 + model 175KB saved, /pob analyze.sh route info=ok exit0; pob+stash SKILL.md docs; bonus: fixed broken .gitignore inline-comment patterns → char-exports/pob-source(572M) now actually ignored)
+
+- [T-006](tasks/T-006-leveling-route-0-5-accuracy.md) Leveling route data đúng POE2 0.5 (4 Acts + 3 Interludes) — high/L (14-agent workflow → spec; surgical rewrite: +3 Interludes/22 zones, +4 Farrow, Fate of the Vaal beacons, Freythorn ritual-reward removed, Waterways pads, Navali rune, Dreadnought spelling, Azak Bog Lv40; 92 zones/337 steps; generate 535 routes + matcher 23/23 + reviewer APPROVE; interludes/Act3-order = in-league test plan)
+
+- [T-007](tasks/T-007-dev-cloudflared-tunnel.md) Dev cloudflared tunnel cho live preview domain — low/XS (vite.server.allowedHosts `.trycloudflare.com` + `dev:tunnel` script via concurrently; verified URL+curl 200+kill cascade+generate 535 routes)
 
 - [T-004](tasks/T-004-deploy-skill-wrong-project.md) Skill /deploy trỏ sai CF project → repoint poe2 — high/S (grep sạch + 10× /projects/poe2; verify-server snippet chạy ✅ HEAD=Deployed=45c698a)
 

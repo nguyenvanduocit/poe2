@@ -5,6 +5,13 @@ version: 3.0.0
 tags: [stash, inventory, poe]
 ---
 
+> **POE2 has no stash API — this skill is POE1-only.** Verified 2026-06-01: GGG's stash endpoints
+> (`/character-window/get-stash-items`, OAuth `/stash/<league>`) are **PoE1 only** and exclude POE2;
+> the pathofexile.com web profile is POE1-only (no PoE 2 realm tab to DOM-scrape); poe.ninja does
+> not expose personal stash. **POE2 stash = read in-game only.** For POE2 *character* data (gear,
+> gems, passives) use `/pob` with a poe.ninja profile URL instead — see the `pob` skill. Details in
+> memory `reference_poe2_char_stash_api`.
+
 ## Commands
 
 ```bash
