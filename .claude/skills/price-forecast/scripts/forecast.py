@@ -30,14 +30,17 @@ import urllib.request
 import pandas as pd
 from datetime import datetime, timedelta
 
-# POE2 master file lives in price-history/poe2/, separate from POE1 (price-history/poe1/).
+# scripts → price-forecast → skills → .claude → project root (poe2/).
+# Canonical layout is data/price-history/master.json — same SOURCE the nuxt
+# build:prices step reads. Workspace is game-specific, no game subpath.
 DATA_FILE = os.path.join(
     os.path.dirname(__file__),
     "..",
     "..",
+    "..",
+    "..",
     "data",
     "price-history",
-    "poe2",
     "master.json",
 )
 INDEX_STATE_URL = "https://poe.ninja/poe2/api/data/index-state"

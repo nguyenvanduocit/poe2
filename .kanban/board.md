@@ -1,16 +1,17 @@
 # Kanban Board
-<!-- Updated: 2026-06-02 (T-009 poe-ninja path fix — Done; T-010 price-forecast path — Todo) -->
+<!-- Updated: 2026-06-02 (T-009 + T-010 path fixes — Done) -->
 
 ## Backlog
 
 ## Todo
 
 - [T-005](tasks/T-005-mobalytics-skill-cloudflare-stale-query.md) Mobalytics skill hỏng — Cloudflare 403 + stale query + profile-URL slug — medium/M
-- [T-010](tasks/T-010-price-forecast-path-reconcile.md) price-forecast ghi data vào .claude/skills/data/ + lệch path nuxt build — medium/S
 
 ## Doing
 
 ## Done
+
+- [T-010](tasks/T-010-price-forecast-path-reconcile.md) price-forecast ghi data vào .claude/skills/data/ + lệch path nuxt build — medium/S (collect.py + forecast.py: climb 2→4 `..` + bỏ segment `poe2/`; cả 3 consumer (collect/forecast/build.ts) đồng quy `data/price-history/master.json`; py_compile ok cả 2; resolve verify khớp build.ts REPO_ROOT; no stale ref, no blob migrate)
 
 - [T-009](tasks/T-009-poe-ninja-collect-builds-path.md) poe-ninja collect-builds ghi data sai chỗ (.claude/skills/data/) — high/XS (parents[2]→parents[4] + bỏ game segment `poe2/`; py_compile ok; resolve verify PROJECT_DIR=root, out_dir=data/poe-ninja/runesofaldur khớp data relocate, CACHE_DIR=tmp/; snapshot lạc đã move về canonical)
 

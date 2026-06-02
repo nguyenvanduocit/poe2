@@ -21,8 +21,8 @@ collect.py ghi và forecast.py đọc cùng `data/price-history/master.json` mà
 - Chưa có data tracked ở `data/price-history/` (verify: empty) → không cần migrate; nếu có blob lạc ở `.claude/skills/data/price-history/` lúc fix thì move về canonical.
 
 ## Criteria
-- [ ] collect.py DATA_DIR resolve == `<root>/data/price-history`
-- [ ] forecast.py DATA_FILE resolve == `<root>/data/price-history/master.json` (== build.ts SOURCE)
-- [ ] Bỏ `poe2/` segment + update comment ở cả 2 file
-- [ ] `python3 -m py_compile` pass cả 2
-- [ ] `.claude/skills/data/` không tái sinh sau khi chạy collect.py (smoke: resolve-only hoặc dry run)
+- [x] collect.py DATA_DIR resolve == `<root>/data/price-history`
+- [x] forecast.py DATA_FILE resolve == `<root>/data/price-history/master.json` (== build.ts SOURCE)
+- [x] Bỏ `poe2/` segment + update comment ở cả 2 file
+- [x] `python3 -m py_compile` pass cả 2
+- [x] `.claude/skills/data/` không tái sinh sau khi chạy collect.py (smoke: resolve-only hoặc dry run)

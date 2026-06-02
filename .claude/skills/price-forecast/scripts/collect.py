@@ -39,9 +39,10 @@ try:
 except ImportError:
     SSL_CTX = ssl._create_unverified_context()
 
-# POE2 dùng data dir riêng (poe2/) để KHÔNG xung đột với POE1 (poe1/) master.json.
+# scripts → price-forecast → skills → .claude → project root (poe2/).
+# Workspace is game-specific — canonical layout is data/price-history/ (no game subpath).
 DATA_DIR = os.path.join(
-    os.path.dirname(__file__), "..", "..", "data", "price-history", "poe2"
+    os.path.dirname(__file__), "..", "..", "..", "..", "data", "price-history"
 )
 DAILY_DIR = os.path.join(DATA_DIR, "daily")
 os.makedirs(DAILY_DIR, exist_ok=True)
