@@ -28,6 +28,9 @@ public/*
 !public/images/
 public/images/*
 !public/images/poe-ui/
+# App-owned social-share image — must be tracked so the CF build serves it
+# (otherwise og:image 404s in production).
+!public/images/og-cover.jpg
 .envrc
 
 # AI agent folders

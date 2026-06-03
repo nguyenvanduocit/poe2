@@ -83,8 +83,50 @@ export default defineNuxtConfig({
   extends: [layerSource],
 
   // Array module config merges with the layer's modules (Nuxt concatenates
-  // across layers), so this adds i18n on top of @nuxt/content from the theme.
-  modules: ['@nuxtjs/i18n'],
+  // across layers), so this adds i18n + the SEO stack on top of @nuxt/content
+  // from the theme. `@nuxtjs/seo` is the umbrella: sitemap, robots, og-image,
+  // schema-org (JSON-LD), and seo-utils (OG/Twitter fallbacks). Canonical +
+  // hreflang stay owned by @nuxtjs/i18n (see `site`/`seo` config below) — the
+  // SEO modules defer to i18n for those, so each page emits exactly one
+  // canonical.
+  modules: ['@nuxtjs/i18n', '@nuxtjs/seo'],
+
+  // Single source of truth for the production origin, consumed by sitemap,
+  // robots, og-image, schema-org, and seo-utils. MUST match the real custom
+  // domain (poe2.aiocean.io — the `poe2` CF Pages project). The old
+  // poe.aiocean.io is a different, dead project; pointing canonical/sitemap
+  // URLs there mis-attributes the entire site to a host Google won't serve.
+  site: {
+    url: 'https://poe2.aiocean.io',
+    name: 'POE2 Vault',
+    description: 'Path of Exile 2 builds, mechanics, farming strategies, and league guides for Runes of Aldur (0.5).',
+    defaultLocale: 'vi',
+  },
+
+  // seo-utils owns the <title> template + OG/Twitter fallbacks. Canonical and
+  // hreflang are left to @nuxtjs/i18n (which already emits them from baseUrl),
+  // so this disables seo-utils' own canonical/redirect to avoid a duplicate
+  // <link rel="canonical"> per page.
+  seo: {
+    redirectToCanonicalSiteUrl: false,
+  },
+
+  // Reference the sitemap from robots.txt and keep the whole site crawlable
+  // (it is a public docs site — nothing to hide from indexers).
+  robots: {
+    sitemap: '/sitemap.xml',
+  },
+
+  // Per-page generated OG images are deferred to a focused follow-up (T-021):
+  // nuxt-og-image's built-in community templates require ejection + a matching
+  // renderer, and a branded card wants its own component + font config + a
+  // post-deploy check that PNGs actually render on the CF Linux build. Until
+  // then the site ships the static /images/og-cover.jpg from app.head as its
+  // social image. The takumi renderer (@takumi-rs/core) is already installed
+  // and lockfile-pinned for that follow-up.
+  ogImage: {
+    enabled: false,
+  },
 
   // Canonical @nuxt/content × @nuxtjs/i18n integration (per content.nuxt.com).
   // VI is the default locale and stays unprefixed at the content root; EN lives
@@ -104,7 +146,7 @@ export default defineNuxtConfig({
     // preview deploys on *.pages.dev will emit canonical URLs pointing at
     // the production host, which is the desired SEO behavior (no preview
     // dupes in the index).
-    baseUrl: 'https://poe.aiocean.io',
+    baseUrl: 'https://poe2.aiocean.io',
     locales: [
       { code: 'vi', language: 'vi-VN', name: 'Tiếng Việt' },
       { code: 'en', language: 'en-US', name: 'English' },
@@ -143,15 +185,15 @@ export default defineNuxtConfig({
     public: {
       buildInfo,
       site: {
-        title: 'PoE',
-        description: 'Path of Exile builds, guides, and mechanics documentation',
-        tagline: 'Everything you need to dominate Wraeclast',
-        author: 'POE AIO',
-        themeColor: '#af6025',
+        title: 'POE2 Vault',
+        description: 'Path of Exile 2 builds, mechanics, farming strategies, and league guides.',
+        tagline: 'Master Wraeclast in Path of Exile 2',
+        author: 'POE2 Vault',
+        themeColor: '#d4ff00',
         logo: '/logo.png',
-        currentLeague: 'Mirage',
-        currentPatch: '3.28',
-        ign: 'dngdfkj',
+        currentLeague: 'Runes of Aldur',
+        currentPatch: '0.5.0',
+        ign: 'ThaoCamVienSaiGon',
       },
       menu: [
         { name: 'Builds', url: '/builds', weight: 1 },
@@ -181,10 +223,15 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'PoE Vault — Path of Exile Builds & Guides',
+      title: 'POE2 Vault — Path of Exile 2 Builds, Mechanics & Guides',
       meta: [
-        { name: 'description', content: 'Path of Exile builds, farming strategies, and mechanics documentation.' },
+        { name: 'description', content: 'Path of Exile 2 builds, mechanics, farming strategies, and league guides for Runes of Aldur (0.5).' },
         { name: 'theme-color', content: '#d4ff00' },
+        // Static site-wide social image (1:1 PoE2 cover). seo-utils absolutizes
+        // the relative path against site.url and mirrors og:* into twitter:*.
+        // Per-route generated images replace this once T-021 lands.
+        { property: 'og:image', content: '/images/og-cover.jpg' },
+        { name: 'twitter:card', content: 'summary_large_image' },
         // Build provenance — curl-able from rendered HTML without parsing JS.
         { name: 'build-commit', content: buildInfo.commitShort },
         { name: 'build-time', content: buildInfo.buildTime },
