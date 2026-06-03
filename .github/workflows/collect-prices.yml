@@ -71,9 +71,9 @@ jobs:
         run: |
           set -euo pipefail
           if [ "${{ inputs.force }}" = "true" ]; then
-            python scripts/price-forecast/collect.py --force
+            python .claude/skills/price-forecast/scripts/collect.py --force
           else
-            python scripts/price-forecast/collect.py
+            python .claude/skills/price-forecast/scripts/collect.py
           fi
 
       - name: Build site price index

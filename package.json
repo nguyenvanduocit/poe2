@@ -5,6 +5,7 @@
   "scripts": {
     "build": "nuxt build",
     "build:wiki": "bun .claude/skills/nuxt/scripts/build-wiki-links/index.ts",
+    "build:prices": "bun .claude/skills/nuxt/scripts/build-prices/build.ts",
     "dev": "nuxt dev",
     "dev:tunnel": "concurrently --kill-others --names nuxt,tunnel -c cyan,magenta \"nuxt dev --host --port 3000\" \"cloudflared tunnel --url http://localhost:3000\"",
     "generate": "nuxt generate",

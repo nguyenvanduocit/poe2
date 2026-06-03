@@ -30,7 +30,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y protobuf-compiler
 
       - name: Crawl POE1 + POE2 build snapshots
-        run: python3 scripts/poe-ninja/collect-builds.py
+        run: python3 .claude/skills/poe-ninja/scripts/collect-builds.py
 
       - name: Commit & push
         run: |

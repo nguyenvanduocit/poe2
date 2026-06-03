@@ -1,49 +1,26 @@
-# Nuxt Minimal Starter
+# PoE 2 Gameplay Workspace
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Path of Exile 2 league/patch gameplay workspace — a Nuxt 4 SSG "second brain" site (`poe2.aiocean.io`) plus the AI skills, content notes, and data pipelines that feed it. Current focus: PoE2 0.5 "Return of the Ancients" (Runes of Aldur league).
 
-## Setup
+## Where the real instructions live
 
-Make sure to install dependencies:
+- `CLAUDE.md` — workspace-specific bindings (slash command aliases, frontmatter convention, data paths, gameplay workflows).
+- `../CLAUDE.md` — shared instructions (rules, quantitative-reasoning discipline, content folder boundaries, writing voice, wiki-link usage).
 
-```bash
-# bun
-bun install
-```
+Read those first; they are the de-facto onboarding docs for both humans and agents.
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+## Commands
 
 ```bash
-# bun
-bun run dev
+bun install        # install dependencies
+bun run dev        # dev server on http://localhost:3000
+bun run generate   # static build — also the type/SSR gate before commit
+bun run preview    # preview the generated site
 ```
 
-## Production
+## Layout
 
-Build the application for production:
-
-```bash
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# bun
-bun run preview
-```
-
-## AI Annotator Plugin
-
-This project uses `vite-plugin-ai-annotator` for visual element annotation during development. The plugin is automatically enabled in development mode and disabled in production.
-
-### Usage
-
-1. Start the dev server: `bun run dev`
-2. Open your browser to `http://localhost:3000`
-3. Use the AI annotator interface to interact with UI elements
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- `app/`, `server/` — Nuxt app + Nitro routes.
+- `content/` — markdown notes (`builds/`, `characters/`, `mechanics/`, `guides/`).
+- `data/` — persistent download blobs: `wiki/`, `poedb/`, `release-notes/`, `poe-ninja/`, `passive-tree/`, `map-mods/`, `trade-static/`, `pob-source/` (see `../CLAUDE.md` for the canonical layout).
+- `.claude/skills/` — ~27 gameplay skills (`/pob`, `/trade`, `/poewiki`, `/farming-strategy`, `/build-creator`, …); each owns its scripts under `scripts/`.

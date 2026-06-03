@@ -95,9 +95,3 @@ tmp/*
 
 # Embedded git repo (Path of Building source) — read locally by build scripts, not shipped
 data/pob-source/
-
-# Embedded git repo (pobb.in source — pasteofexile) — read locally for renderer debug, not shipped
-data/pobb-source/
-
-# skill scratch/cache (not source)
-.claude/skills/tmp/

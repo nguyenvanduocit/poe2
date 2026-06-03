@@ -1,7 +1,7 @@
 // Shared types for the price-aware UI layer.
 //
 // `ItemType` enumerates the categories that `.claude/skills/price-forecast/scripts/collect.py`
-// currently emits into `data/price-history/price-history.json` — currency &
+// currently emits into `data/price-history/master.json` — currency &
 // consumables. Uniques are NOT collected; widening this union must wait until
 // the collector is extended.
 
@@ -36,7 +36,7 @@ export type ItemType =
 // One snapshot record per (slug) — the latest day's price for the item in the
 // current league. Generated at build time; never mutated at runtime.
 export interface ItemPriceEntry {
-  name: string         // exact name as it appears in price-history.json
+  name: string         // exact name as it appears in master.json
   type: ItemType
   price_chaos: number  // mean listing price in chaos at `as_of`
   listings: number     // listing count on `as_of` (low number → low confidence)

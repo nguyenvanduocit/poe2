@@ -18,8 +18,8 @@ Mọi command trong workspace này trỏ POE2. Không có command POE1 — muố
 - `/update-release-note` → fetch patch notes từ official GGG forum thread → `data/release-notes/`
 - `/passive-skill-tree` → passive tree
 - `/atlas-tree` → atlas passive tree
-- `/trade` → trade qua CDP Relay
-- `/gear-upgrade` → tìm gear upgrade (CDP Relay + PoB2 sim)
+- `/trade` → trade qua playwriter (page-context fetch trong tab đã login)
+- `/gear-upgrade` → tìm gear upgrade (playwriter + PoB2 sim)
 - `/poe-ninja` → popular builds + item prices
 - `/farming-strategy` → analyze farming strategy
 - `/lootfilter` → create/modify loot filter (poe2filter.com)
@@ -69,8 +69,8 @@ Lưu ý: POE2 hiện chủ yếu dùng poe.ninja snapshot / pobb.in / mobalytics
 ### Trading & pricing
 
 ```
-/trade <search>           → search trade qua CDP Relay (browser API, safest)
-/gear-upgrade             → tìm gear upgrade qua CDP Relay + PoB2 sim
+/trade <search>           → search trade qua playwriter (page-context fetch, safest)
+/gear-upgrade             → tìm gear upgrade qua playwriter + PoB2 sim
 /poe-ninja                → popular builds, item prices
 ```
 
