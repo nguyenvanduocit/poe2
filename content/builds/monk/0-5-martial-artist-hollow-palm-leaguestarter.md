@@ -191,8 +191,8 @@ Build scale tốt với currency vì rune socket cho power spike rõ rệt mà k
 
 ## Relationships
 
-- **synergizes_with** [Hollow Palm Technique](/data/wiki/Hollow_Palm_Technique.md) — Nền tảng weapon-independent scaling của toàn bộ build.
-- **requires** [Runic Meridians](/data/wiki/Runic_Meridians.md) — Bắt buộc để tận dụng Remnant + Rune league mechanic 0.5.
-- **synergizes_with** [Way of the Mountain](/data/wiki/Way_of_the_Mountain.md) — Cung cấp both damage (20% more) và defense (70% less on small hits).
+- **synergizes_with** :wiki-link{url="https://www.poe2wiki.net/wiki/Hollow_Palm_Technique"} — Nền tảng weapon-independent scaling của toàn bộ build.
+- **requires** :wiki-link{url="https://www.poe2wiki.net/wiki/Runic_Meridians"} — Bắt buộc để tận dụng Remnant + Rune league mechanic 0.5.
+- **synergizes_with** :wiki-link{url="https://www.poe2wiki.net/wiki/Way_of_the_Mountain"} — Cung cấp both damage (20% more) và defense (70% less on small hits).
 - **alternative_to** Cold Monk Glacial Cascade — Wind Blast + stun playstyle thoải mái hơn theo kinh nghiệm thực tế.
-- **part_of** [Monk 0.5 League Starter](/content/builds/monk/) — Một trong những hướng Martial Artist được thử nghiệm sớm nhất.
+- **part_of** [Monk 0.5 League Starter](/builds/monk/0-5-martial-artist-hollow-palm-leaguestarter) — Một trong những hướng Martial Artist được thử nghiệm sớm nhất.

@@ -2,7 +2,7 @@
 archetype_version: 2.0.0
 archetype_id: build-archetype
 document_type: build
-title: Meteor Bear Shaman - Walking Calamity
+title: Meteor Bear Shaman
 class: Druid
 ascendancy: Shaman
 league: '0.4'
@@ -36,7 +36,7 @@ tags:
 template: templates/build-template.md
 ---
 
-# Meteor Bear Shaman - Walking Calamity
+# Meteor Bear Shaman
 
 ## Mục Lục
 
@@ -257,7 +257,7 @@ Effect:
 
 #### Talisman Crafting (6 Exalted → 400+ DPS)
 
-> **Chi tiết:** Xem [Talisman Crafting Guide](/research/strategy/talisman-crafting-guide/) cho hướng dẫn đầy đủ từ budget đến min-max.
+> **Chi tiết:** Xem [Talisman Crafting Guide](/mechanics/crafting/talisman-crafting) cho hướng dẫn đầy đủ từ budget đến min-max.
 
 ```yaml
 1. Tìm Magic Talisman với 61%+ increased physical
@@ -1160,7 +1160,7 @@ A: Reduced Regen (affects rage). Cannot Leech annoying với Cotor.
 
 | Guide | Link |
 |-------|------|
-| Talisman Crafting | [Talisman Crafting Guide](/research/strategy/talisman-crafting-guide/) |
+| Talisman Crafting | [Talisman Crafting Guide](/mechanics/crafting/talisman-crafting) |
 
 ### Changelog
 

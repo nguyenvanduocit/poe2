@@ -81,7 +81,7 @@ Sai — viết build-around quanh một trong 19 item vỏ datamine vì thấy t
 
 - **related_mechanics** [Spirit Walker — Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — Sylvan's Effigy và The Raven's Flock cắm thẳng vào trục companion
 - **used_by** [Dinomancer Lich Elephant](/builds/witch/dinomancer-lich-elephant) — The Raven's Flock buff minion damage + spirit reservation cho hướng minion Lich
-- **related_mechanics** [Energy Shield Recovery Rework](/mechanics/energy-shield-recovery-rework) — The Unleashed thưởng ES trên 50%, đọc kèm rework ES recovery của 0.5
+- **related_mechanics** [Energy Shield Recovery](/mechanics/energy-shield-recovery) — The Unleashed thưởng ES trên 50%, đọc kèm rework ES recovery của 0.5
 - **references** [Twisted Empyrean](/mechanics/items/twisted-empyrean) — note atomic cho mace mana-stack cold slam
 - **references** [Liminal Coil](/mechanics/items/liminal-coil) — note atomic cho wand curse-stacking
 - **references** [Sylvan's Effigy](/mechanics/items/sylvans-effigy) — note atomic cho sceptre companion-multiplier

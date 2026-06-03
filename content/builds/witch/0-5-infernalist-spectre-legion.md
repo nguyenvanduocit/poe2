@@ -208,7 +208,7 @@ Các điểm cần log/test khi character materialize trong league — chưa ver
 
 ## Relationships
 
-- **alternative_to** [Spirit Walker Catha Companion](/builds/huntress/0-5-spirit-walker-catha-companion) — hướng single-companion dồn-một-mục-tiêu, đối trọng với legion chia đầu tư; so sánh boss DPS vs clear.
+- **alternative_to** [Spirit Walker Unique Beast Apex](/builds/huntress/0-5-spirit-walker-unique-beast-apex) — hướng single-companion dồn-một-mục-tiêu, đối trọng với legion chia đầu tư; so sánh boss DPS vs clear.
 - **alternative_to** [Bone Construct Mass Summoner Lich](/builds/witch/0-5-bone-construct-mass-summoner-lich) — hướng summoner Lich, endgame-king miễn nhiễm nerf 0.5; đối trọng ascendancy với Infernalist.
 - **related_builds** [Raging Spectre Shaman](/builds/druid/raging-spectre-shaman) — cùng dùng spectre nhưng trên Druid Shaman (spirit-king thật của 0.5); so sánh trục spirit headroom.
 - **related_mechanics** [Spirit Walker companion beast hunt](/mechanics/spirit-walker-companion-beast-hunt) — cơ chế minion/companion + spirit reservation nền tảng cho mọi summoner 0.5.

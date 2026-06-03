@@ -82,16 +82,15 @@ Leo campaign bằng Twister theo gem sequence ở trên, ưu tiên body armor ba
 
 ## Related Resources
 
-- [Return of the Ancients](/mechanics/return-of-the-ancients) — Toàn cảnh thay đổi 0.5.
+- [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Toàn cảnh thay đổi 0.5.
 - [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — Chi tiết cơ chế Tame Beast + companion path.
-- [Youtuber POE2 Nên Theo Dõi Cho League 0.5](/guides/poe2-youtubers-fate-of-the-vaal) — Ai xem và build 0.4 của họ làm nền cho hướng 0.5.
 - [Twister Huntress Ice-Tipped Arrow Starter](/builds/huntress/0-5-twister-huntress-starter) — Build 0.5 thực tế với gem links và ascendancy path.
-- [POE2 0.4 Meta Analysis](/mechanics/fate-of-the-vaal-meta) — Nền tảng để thấy archetype 0.5 evolve từ đâu.
+- [POE2 0.4 Meta Analysis](/mechanics/leagues/fate-of-the-vaal-meta) — Nền tảng để thấy archetype 0.5 evolve từ đâu.
 
 ## Relationships
 
 - **references** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Toàn bộ thay đổi 0.5 (Runic Ward, Verisium Runeforging, Spirit Walker, Atlas overhaul, challenges) là nền tảng cho mọi quyết định trong kế hoạch này.
 - **references** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — Hướng companion (Tame Beast + beast hunting + spirit reservation) là character hai trong kế hoạch.
-- **references** [Youtuber POE2 Nên Theo Dõi Cho League 0.5](/guides/poe2-youtubers-fate-of-the-vaal) — Danh sách creator dùng để đối chiếu intel trong tuần đầu.
+- **references** Youtuber POE2 Nên Theo Dõi Cho League 0.5 — Danh sách creator dùng để đối chiếu intel trong tuần đầu.
 - **references** [Twister Huntress — Ice-Tipped Arrow Starter](/builds/huntress/0-5-twister-huntress-starter) — Build starter thực tế dùng Spirit Walker (Primal Bounty + Mhacha's Gift owl feather) + Twister + Ice-Tipped Arrows.
 - **related_mechanics** [POE2 0.4 Meta Analysis](/mechanics/leagues/fate-of-the-vaal-meta) — Nhiều hướng 0.5 là evolution từ Poisonburst, companion Wolf/Bear, Blood Mage low-life của 0.4; Runic Ward đặc biệt hợp low-life đã mạnh trước đó.

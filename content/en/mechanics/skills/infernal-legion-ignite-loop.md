@@ -163,7 +163,3 @@ Mirror snapshot: 2026-05-18. All advice in this doc needs re-verification if GGG
 ## Relationships
 
 - **used_by** [Infernal Legion Lich](/builds/witch/dinomancer-lich-elephant) — A build using IL III as its primary damage engine — the entire DPS chain depends on this ignite loop
-- **references** [Infernal Legion Ignite Loop — Mechanic Reference (verbatim wiki + math)](/.omc/wiki/mechanic-infernal-legion-ignite-loop-reference) — Verbatim gem text for every tier + POE2 ignite formula chain + interaction graph of 12 pairs + closed-form math
-- **references** [Verdict — Infernal Legion Ignite Loop math claim audit](/.omc/wiki/mechanic-infernal-legion-ignite-loop-decision) — Gate-split analysis of Xoph's Pyre × IL synthesized ignite + 3 devil's advocate risks
-- **references** [Infernal Legion Lich Elephant — Verbatim Reference Card](/.omc/wiki/infernal-legion-lich-elephant-reference) — Build-level audit covering gem names + item identity + ascendancy fix
-- **references** [Verdict — Infernal Legion Lich Build Doc Accuracy Audit](/.omc/wiki/infernal-legion-lich-elephant-decision) — Line-by-line build doc fix list (gem names, ascendancy nodes, item locations)

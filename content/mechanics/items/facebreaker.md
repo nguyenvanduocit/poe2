@@ -130,7 +130,7 @@ POE1 version là Strapped Mitts unique grant lớn % increased physical damage w
 
 [^3]: Maxroll — *"The Build Meta - Path of Exile 2"* (2025-12-12). Historical 0.3 era meta — Hollow Palm Monk emerging archetype. <https://maxroll.gg/poe2/meta/the-build-meta>
 
-[^4]: Patch overview tổng hợp tại [Return of the Ancients](/mechanics/return-of-the-ancients). Verisium Runeforging forge new unique.
+[^4]: Patch overview tổng hợp tại [Return of the Ancients](/mechanics/leagues/return-of-the-ancients). Verisium Runeforging forge new unique.
 
 [^5]: Game8 — *"0.5.0 Patch Notes Release Date | Path of Exile 2"* (2026-05-07). Patch notes drop 2026-05-21, launch 2026-05-29. <https://game8.co/games/Path-of-Exile-2/archives/582194>
 

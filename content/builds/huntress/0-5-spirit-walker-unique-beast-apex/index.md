@@ -164,7 +164,7 @@ Mạnh nhất là trần single-target và linh hoạt gear: vì damage đến t
 
 ## Relationships
 
-- **alternative_to** [Spirit Walker Catha Companion](/builds/huntress/0-5-spirit-walker-catha-companion) — cùng core Catha weapon-scaling; bản này all-in một Unique Beast qua The Natural Order + Idolatry idol-stack, chốt rõ minion-modifier resolution mà bản kia để ngỏ test-plan.
+- **alternative_to** [Spirit Walker Companion Zoo](/builds/huntress/0-5-spirit-walker-companion-zoo) — cùng core Catha weapon-scaling; bản này all-in một Unique Beast qua The Natural Order + Idolatry idol-stack, chốt rõ minion-modifier resolution mà bản zoo để ngỏ test-plan.
 - **derived_from** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — build hiện thực hoá hướng companion damage mà mechanic doc phân tích.
 - **related** [Twister Huntress Starter](/builds/huntress/0-5-twister-huntress-starter) — cùng Spirit Walker; Twister là leveling shell và hướng projectile cạnh tranh spirit slot với companion.
 - **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — tổng quan league 0.5.0 Runes of Aldur, nơi Spirit Walker và hệ companion/idol được giới thiệu.

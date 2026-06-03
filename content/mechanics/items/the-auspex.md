@@ -117,7 +117,7 @@ Item introduced. Mod values, base type, level requirement chưa public.
 
 [^1]: GGG official YouTube — *"Path of Exile 2: New Unique Items - The Auspex and Facebreaker"* (2026-05-18). Mark Roberts giới thiệu 2 unique. Auspex segment 0:08-1:37 cover Mist Raven minion, dive command skill, frenzy cull mechanic, Gruelling Madness slow buff, lucky deflect on low life. <https://www.youtube.com/watch?v=e2QZNDtJhoM>
 
-[^2]: Patch overview tổng hợp tại [Return of the Ancients](/mechanics/return-of-the-ancients). Bao gồm Origins of Divinity endgame overhaul, 5 league cũ revamp, Atlas redesign.
+[^2]: Patch overview tổng hợp tại [Return of the Ancients](/mechanics/leagues/return-of-the-ancients). Bao gồm Origins of Divinity endgame overhaul, 5 league cũ revamp, Atlas redesign.
 
 [^3]: Game8 — *"0.5.0 Patch Notes Release Date | Path of Exile 2"* (2026-05-07). Confirms patch notes drop 2026-05-21, launch 2026-05-29. <https://game8.co/games/Path-of-Exile-2/archives/582194>
 
