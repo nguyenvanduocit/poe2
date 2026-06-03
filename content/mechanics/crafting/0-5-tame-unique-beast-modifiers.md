@@ -89,7 +89,6 @@ Một cảnh báo mua hàng: **đừng mua tablet còn ít use remaining**. Uniq
 - **part_of** [Tame Beast Companion Zoo Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-zoo) — build dùng kỹ thuật này để max con carry chính sau khi zoo online.
 - **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — cơ chế tame nền tảng mà kỹ thuật này xây lên trên.
 - **related_mechanics** [Tame Beast Damage Scaling](/mechanics/0-5-tame-beast-damage-scaling) — Extra Crits fish được ở đây là một mắt xích của chuỗi crit; doc kia gom đủ bốn trục nhân damage con carry.
-- **related_mechanics** [Crafting Để Kiếm Tiền](/mechanics/crafting/0-5-crafting-for-profit) — cùng folder crafting, vòng kinh tế song song dùng cùng currency nền.
 - **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — league system 0.5 (Masters of the Atlas / Jado, Map Device tablet, Endgame rewrite) là nền mà kỹ thuật này chạy trên đó.
 
 ## Resources
