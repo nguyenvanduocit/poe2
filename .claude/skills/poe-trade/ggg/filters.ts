@@ -45,7 +45,6 @@
 
 import type { SearchRequest, SearchQuery, StatCategory as APIStatCategory } from './client';
 import Fuse from 'fuse.js';
-import { createTradeClient } from './client';
 
 // Type declarations for Bun globals
 declare const Bun: {
@@ -55,8 +54,9 @@ declare const Bun: {
   argv: string[];
 };
 
-const FILTERS_CACHE_FILE = `${(import.meta as any).dir}/poe-filters.json`;
-const POESESSID = Bun.env.POESESSID || '';
+// Stat catalog comes from the datamined trade-static dataset (refreshed by the
+// update-static-data skill). ggg/ -> poe-trade -> skills -> .claude -> root.
+const STATS_FILE = `${(import.meta as any).dir}/../../../../data/trade-static/stats.json`;
 
 export interface StatEntry {
   id: string;
@@ -82,17 +82,16 @@ async function loadStats(): Promise<StatCategory[]> {
     return statsCache;
   }
 
-  // Try loading from cache file
+  // Load from the datamined trade-static dataset (stats.json = { result: StatCategory[] }).
   try {
-    const content = await Bun.file(FILTERS_CACHE_FILE).text();
+    const content = await Bun.file(STATS_FILE).text();
     const data = JSON.parse(content);
-    // poe-filters.json has structure: { stats, items, static }
-    statsCache = data.stats as StatCategory[];
+    statsCache = data.result as StatCategory[];
     return statsCache;
   } catch {
-    // File doesn't exist, run the update script to generate it
-    console.error('Cache file not found. Run: bun run update:filters');
-    throw new Error('poe-filters.json not found. Generate it with: bun run update:filters');
+    const msg = `${STATS_FILE} not found. Refresh it with:\n  bun .claude/skills/update-static-data/scripts/update-static-data.ts`;
+    console.error(msg);
+    throw new Error(msg);
   }
 }
 
@@ -831,101 +830,20 @@ if ((import.meta as any).main) {
 POE Trade Filters - Stat Search
 
 Usage:
-  bun .claude/skills/poe-auth/ggg/filters.ts search <query> [limit]    Search for stats by text
-  bun .claude/skills/poe-auth/ggg/filters.ts id <stat-id>              Get stat by ID
-  bun .claude/skills/poe-auth/ggg/filters.ts categories                List all categories
-  bun .claude/skills/poe-auth/ggg/filters.ts category <id>             List stats in category
-  bun .claude/skills/poe-auth/ggg/filters.ts update                      Fetch fresh data from trade API via CDP Relay
+  bun .claude/skills/poe-trade/ggg/filters.ts search <query> [limit]    Search for stats by text
+  bun .claude/skills/poe-trade/ggg/filters.ts id <stat-id>              Get stat by ID
+  bun .claude/skills/poe-trade/ggg/filters.ts categories                List all categories
+  bun .claude/skills/poe-trade/ggg/filters.ts category <id>             List stats in category
 
 Examples:
-  bun .claude/skills/poe-auth/ggg/filters.ts search "fire resistance" 10
-  bun .claude/skills/poe-auth/ggg/filters.ts id pseudo.pseudo_total_life
-  bun .claude/skills/poe-auth/ggg/filters.ts categories
-  bun .claude/skills/poe-auth/ggg/filters.ts update 1
+  bun .claude/skills/poe-trade/ggg/filters.ts search "fire resistance" 10
+  bun .claude/skills/poe-trade/ggg/filters.ts id pseudo.pseudo_total_life
+  bun .claude/skills/poe-trade/ggg/filters.ts categories
 
 Note:
-  Stats are loaded from ${FILTERS_CACHE_FILE}
-  To update: run "update" command (requires Chrome with remote debugging enabled)
+  Stats are loaded from ${STATS_FILE}
+  To refresh: bun .claude/skills/update-static-data/scripts/update-static-data.ts
       `);
-      return;
-    }
-
-    if (command === 'update') {
-      const session = args[1] || '1';
-      console.log(`Fetching fresh trade data via CDP Relay...`);
-      console.log('(Requires: Chrome with remote debugging on pathofexile.com/trade)\n');
-
-      const { execSync } = await import('child_process');
-
-      const script = `
-const [stats, items, statics] = await state.page.evaluate(async () => {
-  const [s1, s2, s3] = await Promise.all([
-    fetch("https://www.pathofexile.com/api/trade/data/stats").then(r => r.json()),
-    fetch("https://www.pathofexile.com/api/trade/data/items").then(r => r.json()),
-    fetch("https://www.pathofexile.com/api/trade/data/static").then(r => r.json()),
-  ]);
-  return [s1, s2, s3];
-});
-const fs = require("fs");
-const data = { stats: stats.result, items: items.result, static: statics.result };
-fs.writeFileSync(${JSON.stringify(FILTERS_CACHE_FILE)}, JSON.stringify(data));
-const totalStats = stats.result.reduce((sum, cat) => sum + cat.entries.length, 0);
-const totalItems = items.result.reduce((sum, cat) => sum + cat.entries.length, 0);
-const totalStatic = statics.result.reduce((sum, cat) => sum + cat.entries.length, 0);
-return { stats: totalStats, items: totalItems, static: totalStatic };
-`.trim();
-
-      const CDP_SCRIPTS = '/Users/firegroup/.claude/plugins/marketplaces/aiocean-plugins/plugins/aio-cdp-relay/skills/aio-cdp-relay/scripts';
-      const cdpScript = `
-import sys
-sys.path.insert(0, "${CDP_SCRIPTS}")
-from cdp_client import CDPClient
-import json
-
-with CDPClient() as cdp:
-    tab = cdp.find_tab(url_contains="pathofexile.com")
-    if not tab:
-        tabs = cdp.targets(type="page")
-        tab = tabs[0] if tabs else None
-    if not tab:
-        print("ERROR: No Chrome tab found", file=sys.stderr)
-        sys.exit(1)
-    cdp.attach(tab["targetId"])
-    data = cdp.evaluate_async("""
-        (async () => {
-            const [s1, s2, s3] = await Promise.all([
-                fetch("https://www.pathofexile.com/api/trade/data/stats").then(r => r.json()),
-                fetch("https://www.pathofexile.com/api/trade/data/items").then(r => r.json()),
-                fetch("https://www.pathofexile.com/api/trade/data/static").then(r => r.json()),
-            ]);
-            return { stats: s1.result, items: s2.result, static: s3.result };
-        })()
-    """)
-    with open(${JSON.stringify(FILTERS_CACHE_FILE)}, "w") as f:
-        json.dump(data, f)
-    total_stats = sum(len(cat.get("entries", [])) for cat in data.get("stats", []))
-    total_items = sum(len(cat.get("entries", [])) for cat in data.get("items", []))
-    total_static = sum(len(cat.get("entries", [])) for cat in data.get("static", []))
-    print(json.dumps({"stats": total_stats, "items": total_items, "static": total_static}))
-`.trim();
-
-      try {
-        const result = execSync(
-          `python3 -c '${cdpScript.replace(/'/g, "'\\''")}'`,
-          { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'], timeout: 30000 }
-        );
-        console.log('Updated:', FILTERS_CACHE_FILE);
-        console.log(result.trim());
-
-        // Reset in-memory cache so next search uses fresh data
-        statsCache = null;
-        fuseInstance = null;
-      } catch (error: any) {
-        console.error('Failed to fetch. Make sure Chrome has remote debugging enabled:');
-        console.error('  1. Enable chrome://inspect/#remote-debugging');
-        console.error('  2. Have pathofexile.com/trade open in a tab');
-        console.error('\nError:', error.stderr || error.message);
-      }
       return;
     }
 
@@ -1001,7 +919,7 @@ with CDPClient() as cdp:
       console.log(`\nTotal: ${stats.length} stats`);
     } else {
       console.error(`Unknown command: ${command}`);
-      console.error('Run "bun .claude/skills/poe-auth/ggg/filters.ts help" for usage');
+      console.error('Run "bun .claude/skills/poe-trade/ggg/filters.ts help" for usage');
     }
   }
 

@@ -8,22 +8,15 @@
  * - League, item, and stat data retrieval
  */
 
+import { poeFetch } from './transport';
+
 // ============================================================================
 // Types and Interfaces
 // ============================================================================
 
 export interface TradeConfig {
-  poesessid: string;
   league: string;
   game?: 'poe1' | 'poe2';
-  userAgent?: string;
-  realm?: 'pc' | 'xbox' | 'sony';
-  useRateLimitDelay?: boolean;
-  cfClearance?: string;
-  rateLimit?: {
-    requestsPerMinute?: number;
-    delayBetweenRequests?: number; // milliseconds
-  };
 }
 
 export interface SearchQuery {
@@ -209,9 +202,9 @@ export interface FetchedItem {
       x: number;
       y: number;
     };
-    whisper?: string; // Pre-formatted whisper text (only without POESESSID auth, copy-paste only)
-    whisper_token?: string; // Returned for online (in-person) trades. Use with sendWhisper().
-    hideout_token?: string; // Returned for securable (instant buy) trades. Use with sendWhisper(). Player must be in town/hideout.
+    whisper?: string; // Pre-formatted whisper text (copy-paste into game)
+    whisper_token?: string; // Online (in-person) trades — transport is read-only; whisper manually via the trade URL
+    hideout_token?: string; // Securable (instant buy) trades — transport is read-only; whisper manually via the trade URL
   };
   item: {
     verified: boolean;
@@ -323,40 +316,17 @@ export interface StatCategory {
 // ============================================================================
 
 interface InternalTradeConfig {
-  poesessid: string;
   league: string;
   game: 'poe1' | 'poe2';
-  userAgent: string;
-  realm: 'pc' | 'xbox' | 'sony';
-  useRateLimitDelay: boolean;
-  cfClearance: string;
-  rateLimit: {
-    requestsPerMinute: number;
-    delayBetweenRequests: number;
-  };
 }
 
 export class PoeTradeClient {
   private config: InternalTradeConfig;
-  private baseUrl = 'https://www.pathofexile.com';
-  private lastRequestTime = 0;
-  private requestCount = 0;
-  private requestWindow = 60000; // 1 minute in milliseconds
-  private windowStartTime = 0;
 
   constructor(config: TradeConfig) {
     this.config = {
-      poesessid: config.poesessid,
       league: config.league,
       game: config.game || 'poe1',
-      userAgent: config.userAgent || 'poe-trade-client/1.0.0 (contact@example.com)',
-      realm: config.realm || 'pc',
-      useRateLimitDelay: config.useRateLimitDelay ?? true,
-      cfClearance: config.cfClearance || '',
-      rateLimit: {
-        requestsPerMinute: config.rateLimit?.requestsPerMinute || 45,
-        delayBetweenRequests: config.rateLimit?.delayBetweenRequests || 1500,
-      },
     };
   }
 
@@ -381,129 +351,60 @@ export class PoeTradeClient {
   }
 
   /**
-   * Rate limiting: Delay requests to avoid hitting API limits
-   */
-  private async rateLimit(): Promise<void> {
-    if (!this.config.useRateLimitDelay) {
-      return;
-    }
-
-    const now = Date.now();
-    const timeSinceLastRequest = now - this.lastRequestTime;
-
-    // Enforce minimum delay between requests
-    if (timeSinceLastRequest < this.config.rateLimit.delayBetweenRequests) {
-      const delay = this.config.rateLimit.delayBetweenRequests - timeSinceLastRequest;
-      await new Promise(resolve => setTimeout(resolve, delay));
-    }
-
-    // Track requests per minute using window start time
-    if (now - this.windowStartTime > this.requestWindow) {
-      this.requestCount = 0;
-      this.windowStartTime = now;
-    }
-
-    this.requestCount++;
-    this.lastRequestTime = Date.now();
-
-    // If approaching rate limit, add extra delay
-    if (this.requestCount >= this.config.rateLimit.requestsPerMinute - 5) {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-    }
-  }
-
-  /**
-   * Make authenticated request to POE API
+   * Forward a request to the GGG API via a page-context fetch in the logged-in
+   * www.pathofexile.com tab (driven through playwriter). The transport is the
+   * single funnel enforcing rate-limiting (≥2s spacing + header backoff), so
+   * there is no local delay, cookie, or header handling here — the browser
+   * supplies all of that.
    */
   private async request<T>(
     method: 'GET' | 'POST',
     endpoint: string,
     body?: any
   ): Promise<T> {
-    await this.rateLimit();
-
-    const url = `${this.baseUrl}${endpoint}`;
-
-    // Build cookie string, only include non-empty values
-    const cookies: string[] = [];
-    if (this.config.poesessid) {
-      cookies.push(`POESESSID=${this.config.poesessid}`);
+    const wrapped = await poeFetch<T>(this.config.game, method, endpoint, body);
+    if (wrapped.status >= 400) {
+      const detail = typeof wrapped.data === 'string' ? wrapped.data : JSON.stringify(wrapped.data);
+      throw new Error(`POE API ${wrapped.status} for ${endpoint}\n${detail}`);
     }
-    if (this.config.cfClearance) {
-      cookies.push(`cf_clearance=${this.config.cfClearance}`);
-    }
-
-    const headers: HeadersInit = {
-      'Accept': '*/*',
-      'Accept-Language': 'en-US,en;q=0.9',
-      'Cache-Control': 'no-cache',
-      'DNT': '1',
-      'Pragma': 'no-cache',
-      'User-Agent': this.config.userAgent,
-      ...(cookies.length > 0 && { 'Cookie': cookies.join('; ') }),
-      'Content-Type': 'application/json',
-      'X-Requested-With': 'XMLHttpRequest',
-      'Referer': `https://www.pathofexile.com/trade/search/${this.config.league}`,
-      'Origin': 'https://www.pathofexile.com',
-      'Sec-Fetch-Dest': 'empty',
-      'Sec-Fetch-Mode': 'cors',
-      'Sec-Fetch-Site': 'same-origin',
-    };
-
-    const options: RequestInit = {
-      method,
-      headers,
-    };
-
-    if (body) {
-      options.body = JSON.stringify(body);
-    }
-
-    const response = await fetch(url, options);
-
-    // Add mandatory 1 second cooldown after each API call to POE servers
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(
-        `POE API request failed: ${response.status} ${response.statusText}\n${errorText}`
-      );
-    }
-
-    return response.json() as Promise<T>;
+    return wrapped.data;
   }
 
   // ==========================================================================
   // Data API Methods
   // ==========================================================================
 
+  /** POE2 data endpoints require the realm query param; POE1 does not. */
+  private get dataRealm(): string {
+    return this.config.game === 'poe2' ? '?realm=poe2' : '';
+  }
+
   /**
    * Get available leagues
    */
   async getLeagues(): Promise<{ result: League[] }> {
-    return this.request<{ result: League[] }>('GET', `${this.apiPath}/data/leagues`);
+    return this.request<{ result: League[] }>('GET', `${this.apiPath}/data/leagues${this.dataRealm}`);
   }
 
   /**
    * Get item categories and types
    */
   async getItems(): Promise<{ result: ItemCategory[] }> {
-    return this.request<{ result: ItemCategory[] }>('GET', `${this.apiPath}/data/items`);
+    return this.request<{ result: ItemCategory[] }>('GET', `${this.apiPath}/data/items${this.dataRealm}`);
   }
 
   /**
    * Get available stat filters
    */
   async getStats(): Promise<{ result: StatCategory[] }> {
-    return this.request<{ result: StatCategory[] }>('GET', `${this.apiPath}/data/stats`);
+    return this.request<{ result: StatCategory[] }>('GET', `${this.apiPath}/data/stats${this.dataRealm}`);
   }
 
   /**
    * Get static trade data (currencies, etc.)
    */
   async getStatic(): Promise<any> {
-    return this.request('GET', `${this.apiPath}/data/static`);
+    return this.request('GET', `${this.apiPath}/data/static${this.dataRealm}`);
   }
 
   // ==========================================================================
@@ -713,37 +614,10 @@ export class PoeTradeClient {
   }
 
   /**
-   * Get current configuration (sensitive fields redacted)
+   * Get current configuration
    */
-  getConfig(): Omit<InternalTradeConfig, 'poesessid' | 'cfClearance'> & { hasPoesessid: boolean; hasCfClearance: boolean } {
-    const { poesessid, cfClearance, ...rest } = this.config;
-    return {
-      ...rest,
-      hasPoesessid: !!poesessid,
-      hasCfClearance: !!cfClearance,
-    };
-  }
-
-  /**
-   * Send whisper via API using hideout_token
-   * Uses /api/trade/whisper for POE1 and /api/trade2/whisper for POE2
-   * IMPORTANT: Use hideout_token (returned for ALL listings when authenticated with POESESSID)
-   * Player must be in town or hideout in-game for this to work.
-   * @param token The hideout_token from listing (primary), or whisper_token (legacy)
-   * @returns Response with success status and any error details
-   */
-  async sendWhisper(token: string): Promise<{ success: boolean; error?: string }> {
-    try {
-      const result = await this.request<{ success?: boolean; error?: { code: number; message: string } }>(
-        'POST',
-        `${this.apiPath}/whisper`,
-        { token }
-      );
-      return { success: result.success === true };
-    } catch (error) {
-      const message = error instanceof Error ? error.message : String(error);
-      return { success: false, error: message };
-    }
+  getConfig(): InternalTradeConfig {
+    return { ...this.config };
   }
 
   /**
@@ -853,11 +727,9 @@ export function createTradeClient(config: TradeConfig): PoeTradeClient {
  * Returns the first non-hardcore, non-ruthless, non-SSF league
  */
 export async function detectCurrentLeague(
-  poesessid: string,
   game: 'poe1' | 'poe2' = 'poe1'
 ): Promise<string> {
   const client = createTradeClient({
-    poesessid,
     league: 'Standard', // Temporary, just to fetch leagues
     game,
   });
@@ -899,7 +771,6 @@ export async function detectCurrentLeague(
  * Quick search helper
  */
 export async function quickSearch(
-  poesessid: string,
   league: string,
   itemName: string,
   options?: {
@@ -907,9 +778,10 @@ export async function quickSearch(
     minPrice?: number;
     maxPrice?: number;
     maxResults?: number;
+    game?: 'poe1' | 'poe2';
   }
 ): Promise<FetchedItem[]> {
-  const client = createTradeClient({ poesessid, league });
+  const client = createTradeClient({ league, game: options?.game });
   const searchRequest = client.createSimpleSearch(itemName, options);
   const { items } = await client.searchAndFetch(searchRequest, options?.maxResults);
   return items;

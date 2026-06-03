@@ -30,6 +30,9 @@ import urllib.request
 import pandas as pd
 from datetime import datetime, timedelta
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from leagues import LEAGUE_STARTS
+
 # scripts → price-forecast → skills → .claude → project root (poe2/).
 # Canonical layout is data/price-history/master.json — same SOURCE the nuxt
 # build:prices step reads. Workspace is game-specific, no game subpath.
@@ -46,13 +49,8 @@ DATA_FILE = os.path.join(
 INDEX_STATE_URL = "https://poe.ninja/poe2/api/data/index-state"
 MIN_HISTORY_DAYS = 5
 
-# POE2 league start dates. Add new leagues here when they launch.
-# Verify slugs match `LEAGUES` table trong collect.py + poe.ninja index-state response.
-LEAGUE_STARTS = {
-    "Runes of Aldur": datetime(2026, 5, 29),  # 0.5 — launch guess, verify
-    "Vaal": datetime(2026, 1, 15),  # 0.4 — replace with real date
-    "Dawn of the Hunt": datetime(2025, 9, 15),  # 0.3 — replace with real date
-}
+# LEAGUE_STARTS ({name: datetime(start)}) comes from leagues.py — the single
+# source of truth shared with collect.py.
 
 
 def fetch_current_league():

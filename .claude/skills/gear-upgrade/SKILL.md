@@ -1,240 +1,192 @@
 ---
 skill_name: gear-upgrade
-description: "Find optimal POE2 gear upgrades within budget — searches trade endpoint via CDP Relay (browser API), simulates in PoB2, checks attribute + spirit requirements. Use when user says 'upgrade POE2 gear', 'find POE2 upgrade', 'optimize my POE2 character', 'what should I buy for POE2', or wants to improve their POE2 character's equipment."
-version: 1.0.0
-tags: [gear, upgrade, trade, pob, simulation, optimization, poe2, cdp-relay]
+description: "Find optimal POE2 gear upgrades by building confidence OFFLINE — simulate constructible synthetic item combinations in PoB2 from a canonical mod-query file, balance every hard constraint at once, then touch trade ONLY to price the combo you already trust. Use when user says 'upgrade POE2 gear', 'find POE2 upgrade', 'optimize my POE2 character', 'what should I buy for POE2', or wants to improve their POE2 character's equipment."
+version: 3.0.0
+tags: [gear, upgrade, trade, pob, simulation, optimization, poe2, playwriter, combination]
 ---
 
 # POE2 Gear Upgrade Optimizer
 
-End-to-end pipeline: analyze POE2 character → identify weak slots → search trade (via CDP Relay) → simulate in PoB2 → compare → present to user.
+Gear in POE2 is a **balance problem**, not a greedy stat chase. Swapping one piece shifts the whole envelope — resistances clip at cap, attribute requirements span items, Spirit reservation is a hard wall. You do not push one stat slot-by-slot; you distribute stats so **every hard constraint holds at once** and the set harmonises. And you do not spend scarce, rate-limited trade calls to *test* whether a combo works — you reach confidence entirely offline with PoB, then trade only to **price** the combo you already trust.
 
-**ALL trade searches go through CDP Relay** (`cdp.evaluate_async(fetch(...))`) — never call GGG API directly. Account `hopthuxacnhan#3062` đã từng bị flag → respect rate limit.
+## The two halves — confidence offline, trade only to price
 
-## Core Philosophy (giống POE1)
-
-**NEVER think slot-by-slot.** Always think in COMBINATIONS. Given a budget, optimal upgrade often swaps 2-4 pieces together:
-- Resistance can be redistributed across slots
-- Attribute requirements create hard constraints spanning multiple items
-- **POE2 thêm Spirit constraint** — spirit reservation từ gear (helm/amulet/body) phải đủ cho support setup; thay 1 gear có spirit modifier có thể bể skill rotation
-
-**NEVER whisper automatically.** Present full upgrade plan với cost breakdown. Only whisper after explicit user confirmation.
-
-## Quick Start
+The whole tool is one principle: **trade is the last step, not part of the search.**
 
 ```
-1. Fetch character:     .claude/skills/pob/scripts/scripts/analyze.sh "<mobalytics/ninja/pobb URL>"
-2. Attribute audit:     check Str/Dex/Int vs requirements + Spirit reservation
-3. Map attribute sources: which gear provides which attributes? Which provides spirit?
-4. Identify weak slots: analyze equipment mods, resistances, life, ES
-5. Search trade:        CDP Relay cdp.evaluate_async(fetch(...)) for MULTIPLE slots
-6. Evaluate combos:     calculate NET change across all slots
-7. Simulate in PoB2:     .claude/skills/pob/scripts/scripts/analyze.sh re-run với new gear in build
-8. Present plan:        show combo table to user, wait for confirmation
+search  (OFFLINE — zero GGG calls, runs with Chrome closed)
+  └─ assemble CONSTRUCTIBLE synthetic items from the canonical mod-query file
+     → cross-product tier variants across a plan's slots
+     → simulate every combo in PoB2 (cheap, parallel)
+     → keep combos passing ALL hard constraints, rank by balance then cost
+     → output the winning per-slot TARGET (base + achieved thresholds)
+
+price   (the ONLY phase that touches GGG — sequential, rate-limit-safe)
+  └─ search securable listings ONCE per slot for the chosen target
+     → report real prices + trade URLs
+     → re-sim the cheapest real combo to confirm it still passes
+     → if the affordable roll falls below target: loop back to search,
+        NEVER hammer trade
 ```
 
-## Step 1: Analyze Current Character
+PoB validates the **defensive + hard-constraint envelope** (res / life / evasion / ES / Int / Spirit). It cannot model companion/minion DPS for a Spirit Walker zoo (PoB2 0.4 reports `combinedDPS=0`); damage-scaling mods (minion-level, companion-level) are **trade-side soft preferences, hand-reasoned**, never claimed as PoB-verified.
 
-POE2 chưa có direct character-name fetch như POE1 `pob.sh fetch`. Dùng snapshot URL:
+**NEVER whisper automatically.** Present the combo + cost + trade URLs; the user whispers in-client.
+
+## Pieces
+
+| Piece | Path | Role |
+|------|------|------|
+| Canonical mod-query file | `data/gear-mods/<patch>-gear-mods.json` | The single "raw material": every gear mod with affix type, group, tier ranges, `rollsOn` base tags, and the trade stat hash. Synthetic items are built FROM it (so they're constructible) and trade filters are generated FROM it (so stat IDs are always right). |
+| Extractor | `.claude/skills/gear-upgrade/scripts/extract-gear-mods.{lua,sh}` | Dumps the canonical file from PoB2's own loaded mod tables (`data.itemMods.Item` + `data.itemBases`) — same data the calc engine uses. |
+| Engine | `.claude/skills/gear-upgrade/scripts/gear-optimize.py` | `baseline` / `search` (offline) / `price` (trade) / `sim` (debug). |
+| Trade primitive | `.claude/skills/gear-upgrade/scripts/trade-fetch.ts` | Clean-JSON securable fetch through `poeFetch` (rate-limit-safe). |
+| Workflow | `.claude/workflows/gear-upgrade.js` (saved — invoke by `name`) | Orchestration: divergent hypotheses → search → adversarial verify → price → present. |
+| PoB calc | `data/pob-source/pob-cli.sh calc` | Defensive stats + Int/Str/Dex/Spirit (extended `getStats`). |
+| Live fetch | `data/pob-source/pob-cli.sh --oauth <char>` | OAuth full charData → PoB code (the only path to full POE2 charData). |
+
+## Quick start (one character, end to end)
 
 ```bash
-# Analyze build from poe.ninja / mobalytics / pobb.in
-.claude/skills/pob/scripts/scripts/analyze.sh "https://poe.ninja/poe2/builds/runesofaldur/character/<account>/<charname>"
-.claude/skills/pob/scripts/scripts/analyze.sh "https://mobalytics.gg/poe-2/builds/..."
-.claude/skills/pob/scripts/scripts/analyze.sh "https://pobb.in/<id>"
+# 1. fresh live state → pin baseline XML (re-pin every run; never reuse a stale pin)
+bash data/pob-source/pob-cli.sh --oauth ThaoCamVienSaiGon | jq -r .code > tmp/code.txt
+python3 - <<'PY'
+import base64,zlib,pathlib
+code=open("tmp/code.txt").read().strip()
+xml=zlib.decompress(base64.urlsafe_b64decode(code+"="*(-len(code)%4))).decode()
+pathlib.Path("tmp/tcvsg-current.xml").write_text(xml)
+PY
+
+# 2. audit — confirm it matches the character's real stats before trusting anything
+python3 .claude/skills/gear-upgrade/scripts/gear-optimize.py baseline tmp/spec.json
+
+# 3. OFFLINE search — build confidence (no trade, Chrome can be closed)
+python3 .claude/skills/gear-upgrade/scripts/gear-optimize.py search tmp/spec.json --out tmp/gopt-chosen.json
+
+# 4. price-check the chosen combo (ONLY now touch GGG; needs logged-in Chrome + Playwriter)
+python3 .claude/skills/gear-upgrade/scripts/gear-optimize.py price tmp/gopt-chosen.json
 ```
 
-Output gồm stats, gear, gems, keystones. Lưu lại JSON/PoB export để feed back vào step 7.
+Or run the whole thing as one orchestration (see **Workflow** below).
 
-### POE2-specific Audit Checklist
+## The spec — hypothesis intent, engine does the enumeration
 
-Compared với POE1, POE2 thêm 3 constraint phải check:
+The spec is the **reasoning layer**: it declares which slots to touch, which base, and which axes matter — derived from the build's mod pool + the audit. The engine then *enumerates the constructible variants* from the canonical file and lets PoB judge. You do not hand-write rolls.
 
-1. **Spirit budget** — total Spirit (từ Str/helm/amulet/body) phải ≥ tổng spirit cost của reserve skills (auras, banner, spectre/companion). Một upgrade làm mất 30 Spirit có thể bể setup.
-2. **Attribute requirement** — POE2 strict hơn POE1 (gem requirement scale theo gem level + class)
-3. **Resistance overcap** — POE2 max res 75% default (KHÔNG có +5% Purity), maps có -X% all res mod làm cap dễ trượt hơn POE1
+```jsonc
+{
+  "baseline": "tmp/tcvsg-current.xml",
+  "league": "Runes of Aldur", "patch": "0.5.0",
+  "modfile": "data/gear-mods/0.5.0-gear-mods.json",
+  "budget_ex": 100, "workers": 6, "tiers": 2, "base_ilvl": 82,
+  "max_slot_variants": 8, "max_combos": 200, "top": 6,
 
-### Attribute Danger Zone Analysis (giống POE1)
+  "hard": { "fireRes": 75, "coldRes": 75, "lightningRes": 75,
+            "intMargin": 0, "spiritFree": 0, "life": 1170 },   // PoB MUST satisfy all
+  "soft": ["coldRes","lightningRes","evasion","spiritUnreserved","life"], // ranked balance
+  "tradePrefs": ["minion_level","companion_level"],            // hand-reasoned, not PoB-verified
 
-- **±0 margin** = DANGER — cannot lose ANY from this attr
-- **< 10 margin** = CAUTION — limited room to lose
-- **> 20 margin** = SAFE — can freely swap
-
-POE2 thêm **Spirit margin** — danger zone tương tự.
-
-## Step 2: Search Trade2 (via CDP Relay)
-
-### Setup CDP Relay
-
-```python
-import sys, json, time
-sys.path.insert(0, "/Users/firegroup/.claude/plugins/marketplaces/aiocean-plugins/plugins/aio-cdp-relay/skills/aio-cdp-relay/scripts")
-from cdp_client import CDPClient
-
-LEAGUE = "Runes of Aldur"  # current POE2 league
-LEAGUE_URL = LEAGUE.replace(" ", "%20")
-
-with CDPClient() as cdp:
-    tab = cdp.find_tab(url_contains="pathofexile.com/trade2")
-    cdp.attach(tab["targetId"])
+  "slots": {
+    // dict key = free LABEL (a variant group); "slot" = the real baseline slot it targets
+    "Ring 2 (Prismatic)": { "slot": "Ring 2", "base": "Prismatic Ring",
+      "axes": { "all_res": {"min":8}, "intelligence": {"min":18}, "life": {"min":30} } },
+    "Belt": { "slot": "Belt", "base": "Heavy Belt",
+      "axes": { "fire_res": {"min":30}, "life": {"min":60} } }
+    // explicit-item mode (test one specific item): { "slot":"Ring 2", "item":["Rarity: RARE", ...] }
+  },
+  "plans": [
+    { "label": "Prismatic ring + fire belt", "swaps": ["Ring 2 (Prismatic)", "Belt"] }
+  ]
+}
 ```
 
-### Search for Gear (POE2 example)
+- **`hard`** keys: `fireRes coldRes lightningRes chaosRes intMargin strMargin dexMargin spiritFree life energyShield`. `intMargin: 0` means `Int ≥ ReqInt` (never break a gem requirement).
+- **Constructibility is enforced**: a slot whose axes need more than 3 prefixes or 3 suffixes, or an axis that can't roll on the chosen base, is reported `INFEASIBLE` and dropped. Resistances/attributes are suffixes; life/spirit/mana are prefixes — a ring asking fire+cold+light+int (4 suffixes) is rejected, which forces the harmony solution (e.g. an all-elemental Prismatic ring instead).
+- **Difficulty** = how high the tiers are; the search prefers the cheapest tier combo that still passes, so the chosen target is realistic to buy.
 
-```python
-# Example: amulet với life + res + spirit
-result = cdp.evaluate_async(f"""
-    (async () => {{
-        const res = await fetch("https://www.pathofexile.com/api/trade2/search/poe2/{LEAGUE_URL}", {{
-            method: "POST",
-            headers: {{ "Content-Type": "application/json" }},
-            body: JSON.stringify({{
-                query: {{
-                    status: {{ option: "available" }},
-                    type: "Lazuli Amulet",
-                    stats: [{{
-                        type: "and",
-                        filters: [
-                            {{ id: "pseudo.pseudo_total_life", value: {{ min: 60 }} }},
-                            {{ id: "pseudo.pseudo_total_elemental_resistance", value: {{ min: 40 }} }},
-                            {{ id: "explicit.stat_<SPIRIT_HASH>", value: {{ min: 30 }} }}
-                        ]
-                    }}],
-                    filters: {{
-                        trade_filters: {{ filters: {{ price: {{ max: 5, option: "exalted" }} }} }}
-                    }}
-                }},
-                sort: {{ price: "asc" }}
-            }})
-        }});
-        return await res.json();
-    }})()
-""")
-print(f"Total: {result.get('total')}")
+## Workflow (the orchestration)
+
+The saved workflow `.claude/workflows/gear-upgrade.js` runs the full pipeline. Parallel agents are used ONLY where divergence helps; the engine handles combo-sim parallelism itself, and the trade phase stays sequential.
+
+```
+(caller, before invoke)  fresh OAuth → decode → pin baseline XML → body-correct any dropped
+                          unique (see T-019 / [[project_oauth_export_drops_body]]) → baseline
+                          audit, sanity-check vs real stats → pass baseline+audit+equipped via args
+Phase 1  Hypotheses  (parallel)    N agents, each a distinct philosophy (cheapest-res-cap / max-evasion /
+                                    spirit+minion-level / fewest-swaps), each grounded in the canonical file
+                                    → emits a constructible spec fragment (no hallucinated hashes)
+Phase 2  Synthesize   (JS)         merge fragments → one spec
+Phase 3  Search      (offline)     runner agent runs gear-optimize.py search → ranked combos (GATE: no trade)
+Phase 4  Verify      (parallel)    skeptics re-sim the winner + re-check constructibility + companion caveat
+Phase 5  Price       (trade ONLY)  runner agent runs gear-optimize.py price → real prices + URLs
+(return)  combo + cost + trade URLs; never whisper
 ```
 
-**Verify spirit stat hash:** POE2 stat ID khác POE1 hoàn toàn. Fetch live:
-```python
-stats = cdp.evaluate_async("""
-    (async () => {
-        const r = await fetch("https://www.pathofexile.com/api/trade2/data/stats");
-        const d = await r.json();
-        return d.result.flatMap(g => g.entries).filter(s => /spirit/i.test(s.text || ""));
-    })()
-""")
-print(json.dumps(stats, indent=2))
+Invoke BY NAME (after pinning + body-correcting the baseline):
+
+```js
+Workflow({ name: "gear-upgrade",
+           args: { baseline:"tmp/tcvsg-current.xml", league:"Runes of Aldur", patch:"0.5.0",
+                   modfile:"data/gear-mods/0.5.0-gear-mods.json", budget_ex:100,
+                   hard:{ fireRes:75, lightningRes:75, coldRes:70, intMargin:0, dexMargin:0, spiritFree:0, life:1250 },
+                   soft:["evasion","life","spiritUnreserved","coldRes"], tradePrefs:["minion_level","companion_level"],
+                   audit:"<baseline audit line>", equipped:"<per-slot mods so agents don't drop load-bearing stats>" } })
 ```
 
-### Fetch Item Details
+## Trade — securable, rate-limit-safe, page-context only
 
-```python
-time.sleep(2)  # Rate limit: 3 req/5s, min 2s spacing
-ids = result["result"][:10]
-query_id = result["id"]
-ids_str = ",".join(ids)
+Every GGG call goes through `poeFetch` (`poe-trade/ggg/transport.ts`): a same-origin `fetch()` inside a logged-in `www.pathofexile.com` tab driven by Playwriter — never curl/WebFetch to GGG. The account `hopthuxacnhan#3062` was previously flagged, so the transport self-enforces ≥2s spacing + 429/penalty backoff + a cross-process lockfile. **Prerequisite for `price`:** Chrome open, logged into `www.pathofexile.com`, Playwriter extension enabled on that tab.
 
-items = cdp.evaluate_async(f"""
-    (async () => {{
-        const res = await fetch("https://www.pathofexile.com/api/trade2/fetch/{ids_str}?query={query_id}&realm=poe2");
-        return await res.json();
-    }})()
-""")
+- **`status: securable`** for every gear search — instant-buy via secure trade, whisper-free. Smaller pool than `online` but every hit is buyable now. If a tight target returns nothing, loosen the target in `search` — do not drop to `online`.
+- **Currency = `exalted`** (POE2 main trade currency, not chaos).
+- **Categories:** `accessory.ring` / `accessory.amulet` / `accessory.belt` / `armour.chest` / `armour.helmet` / `armour.gloves` / `armour.boots` / `accessory.quiver` / `armour.focus`.
+- Resistance/attribute caps: filter by **per-element pseudo** (`pseudo.pseudo_total_fire_resistance` etc.), which counts single + all-ele rolls — the engine's `trade_filter_for` does this automatically from the canonical axes.
 
-for r in items.get("result", []):
-    item = r["item"]
-    price = r["listing"]["price"]
-    print(f"{item.get('name','')} {item['typeLine']} — {price['amount']} {price['currency']}")
-    for m in item.get("explicitMods", []):
-        print(f"  {m}")
-```
+### Stat IDs
 
-### Key Rules
-
-- **Use CDP Relay** for ALL trade searches — never direct curl/WebFetch
-- **realm=poe2 query param** required on fetch endpoint
-- **All filter categories** (`type_filters`, `socket_filters`, `trade_filters`) go INSIDE `filters` object
-- **Check attribute + spirit requirements** — POE2 spirit là constraint cứng
-- **Respect rate limits** — max 3 searches/5s, space requests ~2s apart
-- **Currency default = `exalted`** — POE2 main trade currency (KHÔNG phải chaos như POE1)
-
-### Common POE2 Stat IDs (Pending Verification)
-
-POE2 stat hash khác POE1. Sau khi 0.5 launch, fetch và populate table sau:
+Do not recall hashes — they live in the canonical file (`mods[].tradeIds`, `tradeOnlyAxes`). Spot-verify against live `/api/trade2/data/stats?realm=poe2` if a search returns empty. Cross-checked 0.5 (Runes of Aldur):
 
 | Stat | ID |
 |------|----|
-| Total life | `pseudo.pseudo_total_life` *(pseudo namespace giữ format, verify hash)* |
-| Total elemental resistance | `pseudo.pseudo_total_elemental_resistance` *(verify)* |
-| Cold resistance | `pseudo.pseudo_total_cold_resistance` *(verify)* |
-| Fire resistance | `pseudo.pseudo_total_fire_resistance` *(verify)* |
-| Lightning resistance | `pseudo.pseudo_total_lightning_resistance` *(verify)* |
-| Chaos resistance | `pseudo.pseudo_total_chaos_resistance` *(verify)* |
-| Spirit | `explicit.stat_<TBD>` *(POE2-only, no POE1 equivalent)* |
-| +N to Spirit | `explicit.stat_<TBD>` |
-| Runic Ward (POE2 0.5) | `explicit.stat_<TBD>` *(verify when 0.5 launches)* |
+| `+# to maximum Life` | `explicit.stat_3299347043` |
+| `+#% to Fire Resistance` | `explicit.stat_3372524247` |
+| `+#% to all Elemental Resistances` | `explicit.stat_2901986750` |
+| `+# to Spirit` | `explicit.stat_3981240776` |
+| `+# to Intelligence` | `explicit.stat_328541901` |
+| `+# to Level of all Minion Skills` | `explicit.stat_2162097452` |
+| `+# to Level of all Tamed Companion Skills` | `explicit.stat_448592698` (trade-only — PoB2 0.4 can't construct/sim) |
 
-**TODO:** populate sau khi fetch `/api/trade2/data/stats` thực tế.
+## Current character — ThaoCamVienSaiGon (Spirit Walker zoo)
 
-## Step 3: Simulate in PoB2
+Evasion-based Dex Huntress, companion carry. Optimization profile (see `../CLAUDE.md` Current Context):
+- **Defensive** (PoB-validated): cap Fire/Cold/Lightning res at 75; keep **Int ≥ 82** (hard gem cap, margin was only +1); keep Spirit reservation intact; favour **Evasion + Life** (never chase Armour — it doesn't scale this build).
+- **Offensive** (hand-reasoned, not PoB-validated): `+Level of all Minion Skills` (amulet/helmet — securable) > `+Level of all Tamed Companion Skills` (amulet — rare, boosts Diretusk Boar). Spirit (amulet/body) for more companions.
+- **Amulet** is the slot that carries Spirit + minion-level + life together; **body** carries the biggest Spirit roll.
 
-POE2 PoB workflow khác POE1 (PoB2 community fork, separate calc engine):
+## Refresh the canonical file
+
+After a patch (or when PoB2 fork updates), re-extract:
 
 ```bash
-# Re-analyze build với gear mới swapped vào — feed updated PoB export
-.claude/skills/pob/scripts/scripts/analyze.sh "<updated PoB export URL or path>"
+bash .claude/skills/gear-upgrade/scripts/extract-gear-mods.sh 0.5.0
 ```
 
-**Note:** Per CLAUDE.md, `analyze.sh` accepts mobalytics/ninja/pobb URL. Khi muốn simulate single item swap, hiện cách workaround là:
-1. Export PoB từ character snapshot
-2. Edit PoB XML để swap item slot
-3. Re-paste vào pobb.in để get URL
-4. Feed URL vào `analyze.sh`
+## Appendix — manual XML swap (debug / pin a baseline by hand)
 
-PoB2 chưa có CLI `swap` command tương đương POE1 `pob.sh swap` — đây là known limit. Track upstream PoB2 fork for CLI improvements.
+The engine pins a decoded equipped-state XML and swaps `<Item id="N">…</Item>` blocks, stripping `<ModRange>` so PoB reads literal numbers (keeping ModRange makes PoB recompute from the roll midpoint → wrong numbers). Slot→itemId comes from the active `<Slot … itemId="N" name="…"/>` map. To inspect/edit by hand:
 
-**Slot names (POE2):** `Weapon 1`, `Weapon 2`, `Helmet`, `Body Armour`, `Gloves`, `Boots`, `Ring 1`, `Ring 2`, `Amulet`, `Belt`, `Quiver` (cho ranged). POE2 KHÔNG có flask slot trade-able (flask drop-only, no trade meta).
+```bash
+# decode a PoB code to XML
+python3 -c 'import base64,zlib,sys; c=open("tmp/code.txt").read().strip(); print(zlib.decompress(base64.urlsafe_b64decode(c+"="*(-len(c)%4))).decode())' > tmp/build.xml
+# ... edit an <Item> block ...
+# Int/Spirit are NOT in the calc JSON — dump from the output table directly:
+cd data/pob-source/src
+export LUA_PATH="../runtime/lua/?.lua;../runtime/lua/?/init.lua;;"; export LUA_CPATH="$HOME/.luarocks/lib/lua/5.1/?.so;;"
+luajit -e '_p=print;print=function()end;dofile("HeadlessWrapper.lua");print=_p;
+  local c=io.open("/abs/tmp/code.txt"):read("*a"):gsub("-","+"):gsub("_","/");
+  loadBuildFromXML(Inflate(common.base64.decode(c)),"X");runCallback("OnFrame");
+  local o=build.calcsTab.mainOutput;
+  print("Int="..o.Int.."(req"..o.ReqInt..") Spirit free="..o.SpiritUnreserved)'
+```
 
-## Step 4: Present Plan
-
-**NEVER whisper automatically.** Present full upgrade plan first:
-
-1. Show combo table với all items, slots, costs
-2. Show NET change calculation across ALL swapped slots (life, ES, res, spirit, DPS)
-3. Show attribute + **spirit** safety check
-4. List whisper messages từ trade results
-5. **Wait for user to confirm**
-
-## Decision Framework
-
-### Think in Combos (giống POE1)
-
-**Wrong:** "Ring 2 yếu → tìm best Ring 2 → mua"
-**Right:** "Với 50ex budget, COMBINATION nào của 2-3 swap cho overall improvement tốt nhất?"
-
-### Priority when evaluating combos (POE2-specific order):
-
-1. **Attribute + Spirit requirements met** — MUST pass, non-negotiable (POE2 spirit cứng hơn POE1 attribute)
-2. **Resistance caps** — uncapped res = highest priority (POE2 max 75%, ít overcap source)
-3. **EHP improvement** — life, ES, armour, evasion. POE2 mới có **Runic Ward** layer 0.5+
-4. **Spirit headroom** — for adding new support/aura/companion
-5. **Build-specific mods** — minion damage cho minion build, spell damage cho caster, etc.
-6. **Cost efficiency** — cheaper is better when stats similar
-
-## Files
-
-| File | Purpose |
-|------|---------|
-| `.claude/skills/pob/scripts/scripts/analyze.sh` | POE2 build snapshot analyzer (URL-based) |
-| `.claude/skills/trade/SKILL.md` | POE2 trade skill (CDP Relay-based) |
-| `.claude/skills/poe-ninja/SKILL.md` | POE2 build meta data |
-| `.claude/skills/poewiki/SKILL.md` | POE2 wiki lookup (`/poe2-wiki/`) |
-| `.claude/skills/poedb/SKILL.md` | POE2 database lookup (`/poedb/<patch>/us/`) — patch-versioned base stats / mod rolls |
-
-## POE2-specific Gotchas
-
-1. **PoB2 swap CLI chưa có** — workaround qua PoB export edit + re-import (xem step 3)
-2. **Spirit constraint cứng** — luôn check trước khi commit upgrade
-3. **Currency default = exalted** (POE2), KHÔNG phải chaos (POE1)
-4. **Trade volume thấp hơn POE1** — `status: "any"` quan trọng để thấy real supply
-5. **Stat ID khác POE1** — fetch live mỗi session, đừng copy hash từ POE1 skill
-6. **Spirit Walker companion gear** — companion item là category mới 0.5; trade schema chưa verified
+Slot names (POE2): `Weapon 1/2`, `Helmet`, `Body Armour`, `Gloves`, `Boots`, `Ring 1/2`, `Amulet`, `Belt`, `Quiver`. No trade-able flask slot.

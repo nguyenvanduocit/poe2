@@ -21,6 +21,15 @@ import {
   formatGraphAnalysis,
 } from '../poe-graph';
 
+// StashClient reads go through poeFetch (a page-context fetch in the logged-in
+// www.pathofexile.com tab). Mock the transport so unit tests never spawn
+// playwriter; capture call args (game, method, path, body) to assert shape.
+const poeFetchCalls: any[][] = [];
+let poeFetchImpl: (...a: any[]) => Promise<any> = async () => ({ status: 200, ratelimit: {}, data: {} });
+mock.module('../transport', () => ({
+  poeFetch: (...args: any[]) => { poeFetchCalls.push(args); return poeFetchImpl(...args); },
+}));
+
 // ---------------------------------------------------------------------------
 // parseAttributesFromMods
 // ---------------------------------------------------------------------------
@@ -395,57 +404,38 @@ describe('ASCENDANCY_TO_CLASS', () => {
 // ---------------------------------------------------------------------------
 
 describe('StashClient - accountName handling', () => {
-  test('omits accountName from body when not set', async () => {
-    const client = new StashClient({ poesessid: 'test-id' });
-    let capturedBody = '';
-    const mockFetch = mock((url: string, opts: any) => {
-      capturedBody = opts.body;
-      return Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve({ numTabs: 0, tabs: [], items: [] }),
-      });
-    });
-    globalThis.fetch = mockFetch as any;
+  test('omits accountName from path when not set', async () => {
+    const client = new StashClient({});
+    poeFetchCalls.length = 0;
+    poeFetchImpl = async () => ({ status: 200, ratelimit: {}, data: { numTabs: 0, tabs: [], items: [] } });
 
     await client.getStashTabs('Standard', 0);
-    expect(capturedBody).not.toContain('accountName');
-    expect(capturedBody).toContain('realm=pc');
+    const path = poeFetchCalls[0][2] as string;
+    expect(path).not.toContain('accountName');
+    expect(path).toContain('realm=pc');
   });
 
-  test('includes accountName in body when set', async () => {
-    const client = new StashClient({ poesessid: 'test-id', accountName: 'TestUser' });
-    let capturedBody = '';
-    const mockFetch = mock((url: string, opts: any) => {
-      capturedBody = opts.body;
-      return Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve({ numTabs: 0, tabs: [], items: [] }),
-      });
-    });
-    globalThis.fetch = mockFetch as any;
+  test('includes accountName in path when set', async () => {
+    const client = new StashClient({ accountName: 'TestUser' });
+    poeFetchCalls.length = 0;
+    poeFetchImpl = async () => ({ status: 200, ratelimit: {}, data: { numTabs: 0, tabs: [], items: [] } });
 
     await client.getStashTabs('Standard', 0);
-    expect(capturedBody).toContain('accountName=TestUser');
+    expect(poeFetchCalls[0][2] as string).toContain('accountName=TestUser');
   });
 });
 
 describe('StashClient - getStashTabs', () => {
-  test('sends correct league and tabIndex in body', async () => {
-    const client = new StashClient({ poesessid: 'test-id', accountName: 'Test' });
-    let capturedBody = '';
-    const mockFetch = mock((url: string, opts: any) => {
-      capturedBody = opts.body;
-      return Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve({ numTabs: 1, tabs: [], items: [] }),
-      });
-    });
-    globalThis.fetch = mockFetch as any;
+  test('sends correct league and tabIndex in path', async () => {
+    const client = new StashClient({ accountName: 'Test' });
+    poeFetchCalls.length = 0;
+    poeFetchImpl = async () => ({ status: 200, ratelimit: {}, data: { numTabs: 1, tabs: [], items: [] } });
 
     await client.getStashTabs('Mirage', 3);
-    expect(capturedBody).toContain('league=Mirage');
-    expect(capturedBody).toContain('tabIndex=3');
-    expect(capturedBody).toContain('tabs=1');
+    const path = poeFetchCalls[0][2] as string;
+    expect(path).toContain('league=Mirage');
+    expect(path).toContain('tabIndex=3');
+    expect(path).toContain('tabs=1');
   });
 });
 

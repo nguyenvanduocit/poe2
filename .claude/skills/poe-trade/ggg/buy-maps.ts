@@ -7,10 +7,10 @@
  * Uses the regular trade search API instead of bulk exchange
  *
  * Usage:
- *   bun .claude/skills/poe-auth/ggg/buy-maps.ts "Beach"
- *   bun .claude/skills/poe-auth/ggg/buy-maps.ts "Beach" "Strand" "Cemetery"
- *   bun .claude/skills/poe-auth/ggg/buy-maps.ts --currency divine "Beach" "Strand"
- *   bun .claude/skills/poe-auth/ggg/buy-maps.ts --tier 16 "Beach" "Strand"
+ *   bun .claude/skills/poe-trade/ggg/buy-maps.ts "Beach"
+ *   bun .claude/skills/poe-trade/ggg/buy-maps.ts "Beach" "Strand" "Cemetery"
+ *   bun .claude/skills/poe-trade/ggg/buy-maps.ts --currency divine "Beach" "Strand"
+ *   bun .claude/skills/poe-trade/ggg/buy-maps.ts --tier 16 "Beach" "Strand"
  */
 
 import { createTradeClient, detectCurrentLeague, type FetchedItem } from './client';
@@ -19,14 +19,7 @@ import { createTradeClient, detectCurrentLeague, type FetchedItem } from './clie
 // Configuration
 // ============================================================================
 
-const POESESSID = process.env.POESESSID || '';
 const DEFAULT_OUTPUT_FILE = 'outputs/map-purchases.json';
-
-function sanitizeError(message: string): string {
-  let sanitized = message;
-  if (POESESSID) sanitized = sanitized.replace(new RegExp(POESESSID, 'g'), '[REDACTED]');
-  return sanitized;
-}
 
 interface SearchOptions {
   currency?: string; // Currency to filter by
@@ -89,8 +82,8 @@ async function searchMaps(
   console.log(`   Instant trade: ${options.instantTrade ? 'Yes' : 'No'}\n`);
 
   const client = createTradeClient({
-    poesessid: POESESSID,
     league,
+    game: 'poe2',
   });
 
   // Search for each map
@@ -121,7 +114,7 @@ async function searchMaps(
         allItems.push(...items);
       }
     } catch (error) {
-      console.error(`   Error searching for ${mapName}:`, sanitizeError(error instanceof Error ? error.message : String(error)));
+      console.error(`   Error searching for ${mapName}:`, error instanceof Error ? error.message : String(error));
     }
   }
 
@@ -219,7 +212,7 @@ async function searchMaps(
 
 async function getCurrentLeague(): Promise<string> {
   console.log('Detecting current league...');
-  const league = await detectCurrentLeague(POESESSID);
+  const league = await detectCurrentLeague('poe2');
   console.log(`Using league: ${league}\n`);
   return league;
 }
@@ -309,7 +302,7 @@ function showHelp(): void {
 Buy Maps Script
 
 USAGE:
-  bun .claude/skills/poe-auth/ggg/buy-maps.ts [options] <map1> [map2] [map3] ...
+  bun .claude/skills/poe-trade/ggg/buy-maps.ts [options] <map1> [map2] [map3] ...
 
 ARGUMENTS:
   <mapN>                   Map names to search for (e.g., "Beach" or "Pit")
@@ -336,22 +329,22 @@ FEATURES:
 
 EXAMPLES:
   # Search for single map
-  bun .claude/skills/poe-auth/ggg/buy-maps.ts "Pit"
+  bun .claude/skills/poe-trade/ggg/buy-maps.ts "Pit"
 
   # Search for multiple maps
-  bun .claude/skills/poe-auth/ggg/buy-maps.ts "Beach" "Strand" "Cemetery"
+  bun .claude/skills/poe-trade/ggg/buy-maps.ts "Beach" "Strand" "Cemetery"
 
   # Search specific tier
-  bun .claude/skills/poe-auth/ggg/buy-maps.ts --tier 16 "Strand" "Mesa"
+  bun .claude/skills/poe-trade/ggg/buy-maps.ts --tier 16 "Strand" "Mesa"
 
   # Filter by currency
-  bun .claude/skills/poe-auth/ggg/buy-maps.ts --currency chisel "Pit" "Strand"
+  bun .claude/skills/poe-trade/ggg/buy-maps.ts --currency chisel "Pit" "Strand"
 
   # Get more results
-  bun .claude/skills/poe-auth/ggg/buy-maps.ts -n 100 "Beach" "Strand" "Cemetery"
+  bun .claude/skills/poe-trade/ggg/buy-maps.ts -n 100 "Beach" "Strand" "Cemetery"
 
   # Search only instant trade listings
-  bun .claude/skills/poe-auth/ggg/buy-maps.ts --instant-trade "Beach" "Strand"
+  bun .claude/skills/poe-trade/ggg/buy-maps.ts --instant-trade "Beach" "Strand"
 
 OUTPUT:
   Generates a JSON file with sellers grouped by account.
@@ -376,7 +369,7 @@ async function main(): Promise<void> {
 
   if (mapNames.length === 0) {
     console.error('❌ Error: No map names provided');
-    console.log('Run "bun .claude/skills/poe-auth/ggg/buy-maps.ts --help" for usage');
+    console.log('Run "bun .claude/skills/poe-trade/ggg/buy-maps.ts --help" for usage');
     process.exit(1);
   }
 
@@ -384,10 +377,10 @@ async function main(): Promise<void> {
     const data = await searchMaps(mapNames, options);
     await saveOutput(data, options.outputFile);
 
-    console.log(`\n📋 Next step: Review sellers and whisper`);
-    console.log(`   bun .claude/skills/poe-auth/ggg/whisper-sellers.ts ${options.outputFile}`);
+    console.log(`\n📋 Next step: open a seller's listing in-game and whisper`);
+    console.log(`   (read-only — it finds listings; you complete the trade in the client)`);
   } catch (error) {
-    console.error('❌ Error:', sanitizeError(error instanceof Error ? error.message : String(error)));
+    console.error('❌ Error:', error instanceof Error ? error.message : String(error));
     process.exit(1);
   }
 }

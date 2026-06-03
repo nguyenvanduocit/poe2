@@ -29,6 +29,9 @@ import sys
 import time
 from datetime import datetime, timedelta
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from leagues import LEAGUES
+
 sys.stdout.reconfigure(line_buffering=True)
 sys.stderr.reconfigure(line_buffering=True)
 
@@ -58,26 +61,7 @@ def daily_path(date_str):
     return os.path.join(DAILY_DIR, f"{date_str}.json")
 
 
-# POE2 leagues. Update khi 0.5 launch (~2026-05-29) — verify slug bằng:
-#   curl -sL https://poe.ninja/poe2/api/data/index-state | python3 -m json.tool
-LEAGUES = [
-    # Runes of Aldur (0.5) — main SC POE2 league từ 2026-05-29. Slug guessed.
-    {
-        "name": "Runes of Aldur",
-        "start": "2026-05-29",
-        "end": None,
-        "slug": "Runes of Aldur",
-    },
-    # Vaal (0.4) — archive league. End date = transition vào Runes of Aldur.
-    {"name": "Vaal", "start": "2026-01-15", "end": "2026-05-29", "slug": "Vaal"},
-    # Dawn of the Hunt (0.3) — archive. Replace start date with real date when known.
-    {
-        "name": "Dawn of the Hunt",
-        "start": "2025-09-15",
-        "end": "2026-01-15",
-        "slug": "Dawn of the Hunt",
-    },
-]
+# POE2 leagues live in leagues.py (single source of truth shared with forecast.py).
 
 # POE2 item types. Verify against `/poe2/api/data/index-state` mỗi league mới.
 # Conservative list — start with types known stable across 0.3 → 0.4.

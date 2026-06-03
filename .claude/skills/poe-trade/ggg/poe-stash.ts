@@ -25,7 +25,6 @@ declare const Bun: {
 const args = Bun.argv.slice(2);
 const command = args[0];
 
-const POESESSID = Bun.env.POESESSID || '';
 const ACCOUNT_NAME = Bun.env.POE_ACCOUNT_NAME || '';
 
 // Cache for detected league
@@ -40,7 +39,7 @@ async function getCurrentLeague(): Promise<string> {
   }
 
   console.log('Detecting current league...');
-  cachedLeague = await detectCurrentLeague(POESESSID);
+  cachedLeague = await detectCurrentLeague('poe2');
   console.log(`Using league: ${cachedLeague}\n`);
 
   return cachedLeague;
@@ -58,8 +57,9 @@ Usage:
   bun run stash:stash [league] --name "Tab"       # Get stash by name
 
 Environment:
-  POESESSID          - Your POE session ID (required)
-  POE_ACCOUNT_NAME   - Your account name (optional)
+  POE_ACCOUNT_NAME   - Your account name (optional; inferred from the browser session)
+
+Stash reads run as a page-context fetch in the logged-in www.pathofexile.com tab (via playwriter) — no POESESSID needed.
 
 Examples:
   bun run stash:list
@@ -71,15 +71,9 @@ Examples:
   (globalThis as any).process?.exit(0);
 }
 
-if (!POESESSID) {
-  console.error('Error: POESESSID environment variable not set');
-  console.error('Set it with: export POESESSID="your-session-id"');
-  (globalThis as any).process?.exit(1);
-}
-
 const client = createStashClient({
-  poesessid: POESESSID,
   accountName: ACCOUNT_NAME,
+  game: 'poe2',
 });
 
 function formatItem(item: Item, indent = '') {
@@ -251,7 +245,7 @@ async function main() {
     }
   } else {
     console.error(`Unknown command: ${command}`);
-    console.error('Run "bun .claude/skills/poe-auth/ggg/poe-stash.ts help" for usage');
+    console.error('Run "bun .claude/skills/poe-trade/ggg/poe-stash.ts help" for usage');
   }
 }
 

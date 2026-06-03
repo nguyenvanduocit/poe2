@@ -142,7 +142,7 @@ pip install torch chronos-forecasting
 | Dawn of the Hunt (0.3) | 2025-09-?? | 2026-01-?? | `Dawn of the Hunt` |
 | Early Access (0.1-0.2) | 2024-12-06 | 2025-09-?? | `Early Access` *(may not exist on poe.ninja)* |
 
-**TODO khi 0.5 launch:** verify exact launch date + adjust `LEAGUE_STARTS` table trong `forecast.py`. Verify slug khớp với poe.ninja URL bằng:
+**TODO khi 0.5 launch:** verify exact launch date + adjust the `LEAGUES` table trong `scripts/leagues.py` (single source — collect.py + forecast.py đều import từ đó). Verify slug khớp với poe.ninja URL bằng:
 ```bash
 curl -sL "https://poe.ninja/poe2/api/data/index-state" | python3 -m json.tool | head -50
 ```
@@ -156,6 +156,6 @@ curl -sL "https://poe.ninja/poe2/api/data/index-state" | python3 -m json.tool | 
 - POE2 economy volatile hơn POE1 (mỗi 0.X patch reshape meta drastically) — recompute trends sau mỗi patch note
 - **0.5 specific:** Runes of Aldur introduces 13 Alloy + 13 Ancient Rune currency types mới — first 7 days, prices wild oscillate; chỉ trust forecast sau day 14
 
-## Cross-reference
+## Boundary vs poe2scout
 
-POE1 sibling: `.claude/skills/price-forecast/SKILL.md`. Cấu trúc identical, chỉ khác endpoint + currency unit. Khi cần forecast cả POE1 + POE2 cùng lúc, run cả 2 collect scripts (output không xung đột: `data/price-history/` vs `data/price-history/`).
+`price-forecast` = poe.ninja-sourced automated price pipeline (site badge index + Chronos-2 forecast). Nó own data collection + ML prediction loop trên poe.ninja POE2 endpoint. Cần spot-check một giá/volume/OHLC history thật của một item lẻ → dùng `/poe2scout` (poe2scout.com catalog + per-item history). Forecast nói "giá sẽ đi đâu", poe2scout nói "giá đang là bao nhiêu".

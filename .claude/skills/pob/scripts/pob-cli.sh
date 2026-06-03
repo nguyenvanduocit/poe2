@@ -3,6 +3,22 @@
 # Usage: ./pob-cli.sh <command> [pob-code]
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# --oauth / --token: fetch a FULL POE2 character via the OAuth client_id=pob PKCE
+# flow (the only path that returns POE2 charData incl. passives/skills), then
+# export it to a PoB code via PoB's import. Delegates to fetch-oauth.py.
+#   pob-cli.sh --oauth [character] [realm]          # interactive authorize once
+#   pob-cli.sh --oauth --list [realm]               # list characters
+#   pob-cli.sh --token <bearer> <character> [realm] # reuse an existing token
+if [ "${1:-}" == "--oauth" ] || [ "${1:-}" == "--token" ]; then
+    [ "${1:-}" == "--oauth" ] && shift   # --oauth is just the trigger; --token is parsed by fetch-oauth.py
+    for cand in "$SCRIPT_DIR/scripts/fetch-oauth.py" "$SCRIPT_DIR/../../.claude/skills/pob/scripts/scripts/fetch-oauth.py"; do
+        [ -f "$cand" ] && exec python3 "$cand" "$@"
+    done
+    echo "ERROR: fetch-oauth.py not found (looked under skill scripts/ and install ../../)" >&2
+    exit 1
+fi
+
 cd "$SCRIPT_DIR/src"
 
 export LUA_PATH="$SCRIPT_DIR/runtime/lua/?.lua;$SCRIPT_DIR/runtime/lua/?/init.lua;;"

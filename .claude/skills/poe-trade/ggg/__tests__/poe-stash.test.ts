@@ -5,6 +5,15 @@ import { StashClient } from '../stash';
 import type { Item } from '../stash';
 import fixtureEquipment from './fixtures/equipment.json' with { type: 'json' };
 
+// StashClient reads go through poeFetch (a page-context fetch in the logged-in
+// www.pathofexile.com tab). Mock the transport so unit tests never spawn
+// playwriter; capture call args (game, method, path, body) to assert shape.
+const poeFetchCalls: any[][] = [];
+let poeFetchImpl: (...a: any[]) => Promise<any> = async () => ({ status: 200, ratelimit: {}, data: {} });
+mock.module('../transport', () => ({
+  poeFetch: (...args: any[]) => { poeFetchCalls.push(args); return poeFetchImpl(...args); },
+}));
+
 // ---------------------------------------------------------------------------
 // getSocketLinks
 // ---------------------------------------------------------------------------
@@ -183,7 +192,9 @@ describe('getStashTabByName optimization', () => {
   let client: StashClient;
 
   beforeEach(() => {
-    client = new StashClient({ poesessid: 'test-session-id', accountName: 'TestAccount' });
+    client = new StashClient({ accountName: 'TestAccount' });
+    poeFetchCalls.length = 0;
+    poeFetchImpl = async () => ({ status: 200, ratelimit: {}, data: makeStashResponse(0, 'Currency') });
   });
 
   const makeStashResponse = (tabIndex: number, tabName: string) => ({
@@ -197,46 +208,24 @@ describe('getStashTabByName optimization', () => {
   });
 
   test('when tab.i === 0, only 1 fetch call made', async () => {
-    let fetchCount = 0;
-    const mockFetch = mock(() => {
-      fetchCount++;
-      return Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve(makeStashResponse(0, 'Currency')),
-      });
-    });
-    globalThis.fetch = mockFetch as any;
+    poeFetchImpl = async () => ({ status: 200, ratelimit: {}, data: makeStashResponse(0, 'Currency') });
 
     const result = await client.getStashTabByName('Standard', 'Currency');
-    expect(fetchCount).toBe(1);
+    expect(poeFetchCalls.length).toBe(1);
     expect(result).not.toBeNull();
     expect(result!.items[0].name).toBe('Currency');
   });
 
   test('when tab.i > 0, 2 fetch calls made', async () => {
-    let fetchCount = 0;
-    const mockFetch = mock(() => {
-      fetchCount++;
-      return Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve(makeStashResponse(fetchCount - 1, 'Premium')),
-      });
-    });
-    globalThis.fetch = mockFetch as any;
+    poeFetchImpl = async () => ({ status: 200, ratelimit: {}, data: makeStashResponse(poeFetchCalls.length - 1, 'Premium') });
 
     const result = await client.getStashTabByName('Standard', 'Premium');
-    expect(fetchCount).toBe(2);
+    expect(poeFetchCalls.length).toBe(2);
     expect(result).not.toBeNull();
   });
 
   test('returns null when tab not found', async () => {
-    const mockFetch = mock(() =>
-      Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve(makeStashResponse(0, 'Currency')),
-      })
-    );
-    globalThis.fetch = mockFetch as any;
+    poeFetchImpl = async () => ({ status: 200, ratelimit: {}, data: makeStashResponse(0, 'Currency') });
 
     const result = await client.getStashTabByName('Standard', 'NonExistentTab');
     expect(result).toBeNull();

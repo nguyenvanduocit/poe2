@@ -1,264 +1,95 @@
 #!/usr/bin/env bun
 
 /**
- * Unified Static Data Updater
+ * Trade-static datamine — refreshes data/trade-static/ from the trade API.
  *
- * Updates all static/rarely-changed data files that serve as single source of truth:
- * - poe-static-cache.json (maps, currencies, etc.)
- * - poe-filters.json (trade stats, items, static data)
+ * Single source of truth for trade reference data. Pulls every public reference
+ * endpoint the trade API exposes (leagues / static / items / stats / filters)
+ * via a page-context fetch on a logged-in www.pathofexile.com tab (driven
+ * through playwriter — never a direct GGG call), derives a currency id->text
+ * map, and writes meta.json with provenance.
  *
- * Usage:
- *   bun tools/update-static-data.ts [options]
+ * Needs the user's Chrome open with a logged-in www.pathofexile.com tab
+ * (Playwriter enabled) — there is no headless path.
  *
- * Options:
- *   --all         Update all static files (default)
- *   --maps        Update maps cache only
- *   --filters     Update trade filters only
- *   --force       Force update even if cache is fresh
+ * Consumed by: poe-trade/ggg/filters.ts (reads stats.json for stat-id lookup).
+ *
+ * Usage: bun .claude/skills/update-static-data/scripts/update-static-data.ts
  */
 
-import { createTradeClient } from '../ggg/client';
+import { createTradeClient } from '../../poe-trade/ggg/client';
+import { poeFetch } from '../../poe-trade/ggg/transport';
 
-const POESESSID = process.env.POESESSID || 'f6f8b8d2dd2f7b2ee60c65077710f58a';
+const GAME: 'poe1' | 'poe2' = 'poe2';
+const API = GAME === 'poe2' ? '/api/trade2' : '/api/trade';
+const REALM = GAME === 'poe2' ? '?realm=poe2' : '';
 
-// File paths
-const MAPS_CACHE_FILE = '.claude/skills/poe-auth/ggg/poe-static-cache.json';
-const FILTERS_CACHE_FILE = '.claude/skills/poe-auth/ggg/poe-filters.json';
+// scripts/ -> update-static-data -> skills -> .claude -> <workspace root>
+const OUT = `${(import.meta as any).dir}/../../../../data/trade-static`;
 
-// Cache TTL
-const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
-
-interface MapEntry {
-  id: string;
-  text: string;
-  tier: number;
-}
-
-interface StaticData {
-  maps: MapEntry[];
-  fetchedAt: number;
-}
-
-interface UpdateOptions {
-  all: boolean;
-  maps: boolean;
-  filters: boolean;
-  force: boolean;
-}
-
-function parseArgs(): UpdateOptions {
-  const args = process.argv.slice(2);
-
-  const options: UpdateOptions = {
-    all: false,
-    maps: false,
-    filters: false,
-    force: false,
-  };
-
-  // If no specific options, update all
-  const hasSpecificOption = args.includes('--maps') || args.includes('--filters');
-  if (!hasSpecificOption) {
-    options.all = true;
-  }
-
-  for (const arg of args) {
-    switch (arg) {
-      case '--all':
-        options.all = true;
-        break;
-      case '--maps':
-        options.maps = true;
-        break;
-      case '--filters':
-        options.filters = true;
-        break;
-      case '--force':
-        options.force = true;
-        break;
-    }
-  }
-
-  return options;
-}
-
-/**
- * Check if cache is still fresh
- */
-async function isCacheFresh(filePath: string): Promise<boolean> {
-  try {
-    const file = Bun.file(filePath);
-    if (!(await file.exists())) {
-      return false;
-    }
-
-    const data = await file.json();
-    if (!data.fetchedAt) {
-      return false;
-    }
-
-    return Date.now() - data.fetchedAt < CACHE_TTL;
-  } catch {
-    return false;
-  }
-}
-
-/**
- * Update maps static cache
- */
-async function updateMapsCache(force: boolean): Promise<boolean> {
-  console.log('\n📍 Maps Cache (poe-static-cache.json)');
-  console.log('═'.repeat(50));
-
-  // Check if update needed
-  if (!force && (await isCacheFresh(MAPS_CACHE_FILE))) {
-    const file = Bun.file(MAPS_CACHE_FILE);
-    const data = (await file.json()) as StaticData;
-    const age = Math.floor((Date.now() - data.fetchedAt) / 1000 / 60 / 60);
-    console.log(`✓ Cache is fresh (${age}h old, ${data.maps.length} maps)`);
-    return false;
-  }
-
-  console.log('⟳ Fetching maps data from PoE API...');
-
-  try {
-    // Fetch from API
-    const response = await fetch('https://www.pathofexile.com/api/trade/data/static');
-
-    // Add mandatory 1 second cooldown after each API call to POE servers
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    if (!response.ok) {
-      throw new Error(`API returned ${response.status}`);
-    }
-
-    const rawData = await response.json();
-
-    // Parse maps
-    const mapsCategory = rawData.result.find((cat: any) => cat.id === 'Maps');
-    if (!mapsCategory) {
-      throw new Error('Maps category not found in API response');
-    }
-
-    const maps: MapEntry[] = mapsCategory.entries
-      .filter((entry: any) => entry.id !== 'sep')
-      .map((entry: any) => ({
-        id: entry.id,
-        text: entry.text,
-        tier: parseInt(entry.subtext?.replace('Tier ', '') || '0'),
-      }));
-
-    const data: StaticData = {
-      maps,
-      fetchedAt: Date.now(),
-    };
-
-    // Save to file
-    await Bun.write(MAPS_CACHE_FILE, JSON.stringify(data, null, 2));
-
-    console.log(`✓ Updated successfully (${maps.length} maps)`);
-    return true;
-  } catch (error) {
-    console.error(`✗ Failed: ${error instanceof Error ? error.message : String(error)}`);
-    return false;
-  }
-}
-
-/**
- * Update trade filters cache
- */
-async function updateFiltersCache(force: boolean): Promise<boolean> {
-  console.log('\n🔍 Trade Filters (poe-filters.json)');
-  console.log('═'.repeat(50));
-
-  // Check if update needed
-  if (!force && (await isCacheFresh(FILTERS_CACHE_FILE))) {
-    const file = Bun.file(FILTERS_CACHE_FILE);
-    const data = await file.json();
-    const age = data.fetchedAt
-      ? Math.floor((Date.now() - data.fetchedAt) / 1000 / 60 / 60)
-      : '?';
-
-    const statsCount = data.stats?.reduce((sum: number, cat: any) => sum + cat.entries.length, 0) || 0;
-    const itemsCount = data.items?.length || 0;
-
-    console.log(`✓ Cache is fresh (${age}h old, ${statsCount} stats, ${itemsCount} items)`);
-    return false;
-  }
-
-  console.log('⟳ Fetching filters data from PoE API...');
-
-  try {
-    const client = createTradeClient({
-      poesessid: POESESSID,
-      league: 'Standard', // League doesn't matter for data endpoints
-    });
-
-    // Fetch all data
-    console.log('  - Fetching stats...');
-    const { result: stats } = await client.getStats();
-
-    console.log('  - Fetching items...');
-    const { result: items } = await client.getItems();
-
-    console.log('  - Fetching static data...');
-    const staticData = await client.getStatic();
-
-    const data = {
-      stats,
-      items,
-      static: staticData,
-      fetchedAt: Date.now(),
-    };
-
-    // Save to file
-    await Bun.write(FILTERS_CACHE_FILE, JSON.stringify(data, null, 2));
-
-    const statsCount = stats.reduce((sum: number, cat: any) => sum + cat.entries.length, 0);
-    console.log(`✓ Updated successfully (${statsCount} stats, ${items.length} items)`);
-    return true;
-  } catch (error) {
-    console.error(`✗ Failed: ${error instanceof Error ? error.message : String(error)}`);
-    return false;
-  }
+/** entries across categories (stats/items/static), or result length (leagues), or key count (derived map). */
+function count(d: any): number {
+  const r = d?.result;
+  if (!Array.isArray(r)) return Object.keys(d ?? {}).length;
+  const entries = r.reduce((s: number, g: any) => s + (g.entries?.length ?? 0), 0);
+  return entries || r.length;
 }
 
 async function main() {
-  const options = parseArgs();
+  const client = createTradeClient({ league: 'Standard', game: GAME });
+  console.log(`Datamine ${GAME} trade-static -> ${OUT}\n`);
 
-  console.log('━'.repeat(50));
-  console.log('  POE Static Data Updater');
-  console.log('━'.repeat(50));
+  // leagues / static / items / stats go through the client (handles trade vs
+  // trade2 path + realm). The transport serializes + enforces ≥2s spacing.
+  const leagues = await client.getLeagues();
+  const staticData = await client.getStatic();
+  const items = await client.getItems();
+  const stats = await client.getStats();
+  // filters has no client method — call the transport directly.
+  const filters = (await poeFetch<{ result: any[] }>(GAME, 'GET', `${API}/data/filters${REALM}`)).data;
 
-  if (options.force) {
-    console.log('\n⚠️  Force mode: Updating regardless of cache age');
+  // derived: currency id -> text (handy for exchange / price queries)
+  const currencies: Record<string, string> = {};
+  for (const g of staticData?.result ?? []) {
+    for (const e of g.entries ?? []) {
+      if (e.id && e.text) currencies[e.id] = e.text;
+    }
   }
 
-  const updates: Promise<boolean>[] = [];
+  const files: Record<string, any> = {
+    'leagues.json': leagues,
+    'static.json': staticData,
+    'items.json': items,
+    'stats.json': stats,
+    'filters.json': filters,
+    'currencies.json': currencies,
+  };
 
-  if (options.all || options.maps) {
-    updates.push(updateMapsCache(options.force));
+  for (const [name, data] of Object.entries(files)) {
+    await Bun.write(`${OUT}/${name}`, JSON.stringify(data)); // Bun.write auto-creates OUT
+    const n = name === 'currencies.json' ? Object.keys(data).length : count(data);
+    console.log(`  ${name}: ${n} ${name === 'currencies.json' ? 'currencies' : 'entries'}`);
   }
 
-  if (options.all || options.filters) {
-    updates.push(updateFiltersCache(options.force));
-  }
-
-  const results = await Promise.all(updates);
-
-  console.log('\n' + '━'.repeat(50));
-  const updated = results.filter(Boolean).length;
-  const skipped = results.length - updated;
-
-  if (updated > 0) {
-    console.log(`✓ Done! ${updated} file(s) updated, ${skipped} skipped (fresh)`);
-  } else {
-    console.log('✓ All caches are fresh. Use --force to update anyway.');
-  }
-  console.log('━'.repeat(50));
+  const meta = {
+    datamined_at: new Date().toISOString(),
+    game: GAME,
+    leagues: (leagues?.result ?? []).map((l: any) => l.id),
+    source: 'playwriter page-context fetch on logged-in www.pathofexile.com tab',
+    endpoints: {
+      'leagues.json': `${API}/data/leagues`,
+      'static.json': `${API}/data/static`,
+      'items.json': `${API}/data/items`,
+      'stats.json': `${API}/data/stats`,
+      'filters.json': `${API}/data/filters`,
+      'currencies.json': '(derived from static.json)',
+    },
+  };
+  await Bun.write(`${OUT}/meta.json`, JSON.stringify(meta, null, 2));
+  console.log('  meta.json written\nDone.');
 }
 
-main().catch((error) => {
-  console.error('\n✗ Fatal error:', error.message);
+main().catch((e) => {
+  console.error('Fatal:', e?.message ?? e);
   process.exit(1);
 });

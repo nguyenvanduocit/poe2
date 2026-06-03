@@ -14,7 +14,7 @@ API: `https://api.poe2scout.com` — public REST, **no auth**, JSON, CORS-enable
 - Auto-detected default league: current softcore (vd `vaal`). Override env `POE2SCOUT_LEAGUE=<slug>`.
 - Coverage: 15 Currency categories + 7 Unique categories.
 
-> **Sibling**: `../poe1/` có skill song song nhưng realm=`pc`, chỉ Currencies (POE1 không có Unique trên scout).
+> **Scope**: poe2scout = poe2scout.com interactive per-item OHLC lookup (catalog + on-demand history). Cho ML 7-day forecast / BUY-SELL-HOLD recommendation từ poe.ninja, dùng [`/price-forecast`](../price-forecast/SKILL.md) — đó là analysis layer, không phải duplicate của skill này.
 
 ## Architecture (v3 — lazy cache)
 
@@ -191,7 +191,6 @@ Workflow B (heavy, opt-in): `api.sh trends` chạy 1 lần/tuần → `trends.js
 
 ## Caveats
 
-- **POE1 limitation**: sibling `../poe1/` chỉ có Currencies (UniqueCategories rỗng).
 - **Rate limit**: bulk-pull all 1000+ items đồng thời sẽ HTTP 429. `trends` opt-in có 250ms pacing + exponential backoff cho 429. Lazy lookup workflow không bị problem này.
 - **Item stale flag**: low-circulation items có thể last trade > 7d cũ → `⚠️` flag, confidence drops LOW.
 - **DailyStats granularity**: daily aggregate (OHLC + Average + Volume). Không có intraday data.

@@ -12,8 +12,8 @@
 
 set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PROJECT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
-# Cache shared with poe-ninja POE1 — files content-addressed by URL hash, no collision.
+# scripts/ → poe-ninja/ → skills/ → .claude/ → workspace root (poe2/).
+PROJECT_DIR="$(cd "$SCRIPT_DIR/../../../.." && pwd)"
 CACHE_DIR="$PROJECT_DIR/tmp/poeninja-cache"
 mkdir -p "$CACHE_DIR"
 

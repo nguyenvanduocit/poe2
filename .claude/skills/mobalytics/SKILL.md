@@ -100,7 +100,12 @@ type: "listitem" -> list item container
 
 Mobalytics builds include a `pobCode` field containing the Path of Building export code. Use the **pob skill** to analyze this code for detailed DPS calculations and stat breakdowns.
 
-**Workflow:**
+**End-to-end (mobalytics URL → PoB stats):** the pob skill's `analyze.sh` handles mobalytics URLs directly — fetch + analyze in one call:
+```bash
+.claude/skills/pob/scripts/scripts/analyze.sh "https://mobalytics.gg/poe-2/builds/bear-druid-build"
+```
+
+**Manual (extract pobCode, then calc):**
 ```bash
 # 1. Fetch build from mobalytics
 .claude/skills/mobalytics/scripts/fetch.sh "bear-druid-build-league-starter-to-endgame" > build.yaml
@@ -108,15 +113,8 @@ Mobalytics builds include a `pobCode` field containing the Path of Building expo
 # 2. Extract pobCode and save to file
 grep "pobCode:" build.yaml | sed 's/pobCode: //' > pob-code.txt
 
-# 3. Analyze with POB skill
-.claude/skills/pob/.claude/skills/pob/scripts/pob-cli.sh calc @pob-code.txt
-```
-
-**Or in one pipeline:**
-```bash
-.claude/skills/mobalytics/scripts/fetch.sh "bear-druid-build" | \
-  grep "pobCode:" | sed 's/pobCode: //' | \
-  xargs -I {} .claude/skills/pob/.claude/skills/pob/scripts/pob-cli.sh calc "{}"
+# 3. Analyze with the POB CLI (run from the install dir)
+data/pob-source/pob-cli.sh calc @pob-code.txt
 ```
 
 **What POB adds:**

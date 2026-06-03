@@ -36,13 +36,6 @@ function round2(n: number | null): number | null {
   return Math.round(n * 100) / 100;
 }
 
-function sanitizeError(message: string, poesessid: string, cfClearance: string): string {
-  let sanitized = message;
-  if (poesessid) sanitized = sanitized.replaceAll(poesessid, '[REDACTED]');
-  if (cfClearance) sanitized = sanitized.replaceAll(cfClearance, '[REDACTED]');
-  return sanitized;
-}
-
 function formatPrice(amount: number, currency: string): string {
   return `${amount} ${currency}`;
 }
@@ -257,46 +250,7 @@ describe('calculatePercentile', () => {
 });
 
 // ==========================================================================
-// 3. sanitizeError
-// ==========================================================================
-
-describe('sanitizeError', () => {
-  test('redacts POESESSID from error message', () => {
-    const result = sanitizeError('Cookie: POESESSID=abc123secret', 'abc123secret', '');
-    expect(result).toBe('Cookie: POESESSID=[REDACTED]');
-  });
-
-  test('redacts CF_CLEARANCE from error message', () => {
-    const result = sanitizeError('cf_clearance=mytoken123', '', 'mytoken123');
-    expect(result).toBe('cf_clearance=[REDACTED]');
-  });
-
-  test('redacts both tokens', () => {
-    const msg = 'sess=abc123 clear=xyz789';
-    const result = sanitizeError(msg, 'abc123', 'xyz789');
-    expect(result).toBe('sess=[REDACTED] clear=[REDACTED]');
-  });
-
-  test('handles empty tokens gracefully (no replacement)', () => {
-    const msg = 'some error message';
-    expect(sanitizeError(msg, '', '')).toBe(msg);
-  });
-
-  test('handles token with regex special characters', () => {
-    // replaceAll with string (not regex) handles special chars fine
-    const token = 'abc+def.ghi[0]';
-    const msg = `error with ${token} in it`;
-    expect(sanitizeError(msg, token, '')).toBe('error with [REDACTED] in it');
-  });
-
-  test('redacts multiple occurrences', () => {
-    const result = sanitizeError('tok appeared tok again', 'tok', '');
-    expect(result).toBe('[REDACTED] appeared [REDACTED] again');
-  });
-});
-
-// ==========================================================================
-// 4. formatPrice
+// 3. formatPrice
 // ==========================================================================
 
 describe('formatPrice', () => {
@@ -505,156 +459,18 @@ describe('calculateStats', () => {
 });
 
 // ==========================================================================
-// 8. Rate limiting (PoeTradeClient)
+// 8. getConfig
 // ==========================================================================
 
-describe('PoeTradeClient rate limiting', () => {
-  test('client initializes with default rate limit config', () => {
-    const client = createTradeClient({
-      poesessid: '',
-      league: 'Standard',
-      game: 'poe1',
-    });
-    const config = client.getConfig();
-    expect(config.rateLimit.requestsPerMinute).toBe(45);
-    expect(config.rateLimit.delayBetweenRequests).toBe(1500);
-  });
-
-  test('client accepts custom rate limit config', () => {
-    const client = createTradeClient({
-      poesessid: '',
-      league: 'Standard',
-      game: 'poe1',
-      rateLimit: {
-        requestsPerMinute: 30,
-        delayBetweenRequests: 2000,
-      },
-    });
-    const config = client.getConfig();
-    expect(config.rateLimit.requestsPerMinute).toBe(30);
-    expect(config.rateLimit.delayBetweenRequests).toBe(2000);
-  });
-
-  test('useRateLimitDelay defaults to true', () => {
-    const client = createTradeClient({
-      poesessid: '',
-      league: 'Standard',
-    });
-    const config = client.getConfig();
-    expect(config.useRateLimitDelay).toBe(true);
-  });
-
-  test('useRateLimitDelay can be set to false', () => {
-    const client = createTradeClient({
-      poesessid: '',
-      league: 'Standard',
-      useRateLimitDelay: false,
-    });
-    const config = client.getConfig();
-    expect(config.useRateLimitDelay).toBe(false);
-  });
-});
-
-// ==========================================================================
-// 9. Cookie building (PoeTradeClient)
-// ==========================================================================
-
-describe('PoeTradeClient cookie building', () => {
-  // We test indirectly via getConfig since the cookie header is built in private request()
-  test('empty poesessid is reflected in getConfig', () => {
-    const client = createTradeClient({
-      poesessid: '',
-      league: 'Standard',
-    });
-    const config = client.getConfig();
-    expect(config.hasPoesessid).toBe(false);
-  });
-
-  test('non-empty poesessid is reflected in getConfig', () => {
-    const client = createTradeClient({
-      poesessid: 'abc123',
-      league: 'Standard',
-    });
-    const config = client.getConfig();
-    expect(config.hasPoesessid).toBe(true);
-  });
-
-  test('empty cfClearance is reflected in getConfig', () => {
-    const client = createTradeClient({
-      poesessid: '',
-      league: 'Standard',
-      cfClearance: '',
-    });
-    const config = client.getConfig();
-    expect(config.hasCfClearance).toBe(false);
-  });
-
-  test('non-empty cfClearance is reflected in getConfig', () => {
-    const client = createTradeClient({
-      poesessid: '',
-      league: 'Standard',
-      cfClearance: 'cf_tok',
-    });
-    const config = client.getConfig();
-    expect(config.hasCfClearance).toBe(true);
-  });
-
-  test('both cookies set', () => {
-    const client = createTradeClient({
-      poesessid: 'sess',
-      league: 'Standard',
-      cfClearance: 'cf',
-    });
-    const config = client.getConfig();
-    expect(config.hasPoesessid).toBe(true);
-    expect(config.hasCfClearance).toBe(true);
-  });
-});
-
-// ==========================================================================
-// 10. getConfig redaction
-// ==========================================================================
-
-describe('PoeTradeClient getConfig redaction', () => {
-  test('does not expose raw poesessid or cfClearance', () => {
-    const client = createTradeClient({
-      poesessid: 'super-secret-session',
-      league: 'Standard',
-      cfClearance: 'super-secret-cf',
-    });
-    const config = client.getConfig();
-
-    // Should NOT contain raw values
-    expect(JSON.stringify(config)).not.toContain('super-secret-session');
-    expect(JSON.stringify(config)).not.toContain('super-secret-cf');
-
-    // Should have boolean indicators
-    expect(config.hasPoesessid).toBe(true);
-    expect(config.hasCfClearance).toBe(true);
-  });
-
+describe('PoeTradeClient getConfig', () => {
   test('exposes non-sensitive config fields', () => {
     const client = createTradeClient({
-      poesessid: '',
       league: 'Mirage',
       game: 'poe1',
-      realm: 'pc',
     });
     const config = client.getConfig();
     expect(config.league).toBe('Mirage');
     expect(config.game).toBe('poe1');
-    expect(config.realm).toBe('pc');
-  });
-
-  test('getConfig does not have poesessid or cfClearance keys', () => {
-    const client = createTradeClient({
-      poesessid: 'x',
-      league: 'Standard',
-      cfClearance: 'y',
-    });
-    const config = client.getConfig() as any;
-    expect(config.poesessid).toBeUndefined();
-    expect(config.cfClearance).toBeUndefined();
   });
 });
 
@@ -791,7 +607,6 @@ describe('--mode validation', () => {
 
 describe('createSimpleSearch', () => {
   const client = createTradeClient({
-    poesessid: '',
     league: 'Standard',
     game: 'poe1',
   });
@@ -811,7 +626,6 @@ describe('createSimpleSearch', () => {
 
   test('exactMatch still uses term for poe2', () => {
     const poe2Client = createTradeClient({
-      poesessid: '',
       league: 'Standard',
       game: 'poe2',
     });
@@ -871,7 +685,6 @@ describe('createSimpleSearch', () => {
 
 describe('createTypeSearch', () => {
   const client = createTradeClient({
-    poesessid: '',
     league: 'Standard',
     game: 'poe1',
   });
@@ -1030,17 +843,12 @@ describe('TradeSearchBuilder fluent API', () => {
 
 describe('PoeTradeClient config defaults', () => {
   test('defaults game to poe1', () => {
-    const client = createTradeClient({ poesessid: '', league: 'Standard' });
+    const client = createTradeClient({ league: 'Standard' });
     expect(client.getConfig().game).toBe('poe1');
   });
 
-  test('defaults realm to pc', () => {
-    const client = createTradeClient({ poesessid: '', league: 'Standard' });
-    expect(client.getConfig().realm).toBe('pc');
-  });
-
   test('setLeague updates league', () => {
-    const client = createTradeClient({ poesessid: '', league: 'Standard' });
+    const client = createTradeClient({ league: 'Standard' });
     client.setLeague('Mirage');
     expect(client.getConfig().league).toBe('Mirage');
   });

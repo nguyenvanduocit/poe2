@@ -1,14 +1,20 @@
 /**
  * Path of Exile Stash API Client
  *
- * Access stash tabs and inventory
+ * Reads stash tabs via a page-context `fetch()` in the logged-in
+ * www.pathofexile.com tab (driven through playwriter). No POESESSID/cookies
+ * here — the browser supplies auth. The transport enforces rate-limiting, so no
+ * local cooldown.
+ *
+ * get-stash-items is called as GET with query params (the browser's same-origin
+ * request carries the session), which the page-context fetch sends verbatim.
  */
 
-const BASE_URL = 'https://www.pathofexile.com';
+import { poeFetch, type Game } from './transport';
 
 export interface StashClientConfig {
-  poesessid: string;
   accountName?: string;
+  game?: Game;
 }
 
 export interface Item {
@@ -50,58 +56,37 @@ export interface StashTabContents {
 }
 
 export class StashClient {
-  private config: StashClientConfig;
-  private headers: Record<string, string>;
+  private accountName?: string;
+  private game: Game;
 
   constructor(config: StashClientConfig) {
-    this.config = config;
-    this.headers = {
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36',
-      'Accept': 'application/json, text/javascript, */*; q=0.01',
-      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-      'X-Requested-With': 'XMLHttpRequest',
-      'Referer': config.accountName
-        ? `${BASE_URL}/account/view-profile/${config.accountName}`
-        : `${BASE_URL}/my-account`,
-      'Origin': BASE_URL,
-      'Cookie': `POESESSID=${config.poesessid}`,
-    };
+    this.accountName = config.accountName;
+    this.game = config.game ?? 'poe1';
   }
 
   /**
-   * Build POST body, omitting accountName if not set.
-   * The POE API infers account from POESESSID when accountName is absent.
-   * Sending accountName='' causes Forbidden.
+   * The POE API infers the account from the browser session when accountName is
+   * absent, so it is only added when explicitly provided.
    */
-  private buildBody(extra: Record<string, string> = {}): string {
-    const params: Record<string, string> = { realm: 'pc', ...extra };
-    if (this.config.accountName) {
-      params.accountName = this.config.accountName;
-    }
-    return new URLSearchParams(params).toString();
-  }
-
   async getStashTabs(league: string, tabIndex = 0): Promise<StashTabContents> {
-    const body = this.buildBody({
+    const params = new URLSearchParams({
+      realm: 'pc',
       league,
       tabIndex: tabIndex.toString(),
       tabs: '1',
     });
+    if (this.accountName) params.set('accountName', this.accountName);
 
-    const response = await fetch(`${BASE_URL}/character-window/get-stash-items`, {
-      method: 'POST',
-      headers: this.headers,
-      body,
-    });
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch stash: ${response.statusText}`);
+    const wrapped = await poeFetch<StashTabContents>(
+      this.game,
+      'GET',
+      `/character-window/get-stash-items?${params}`,
+    );
+    if (wrapped.status >= 400) {
+      const detail = typeof wrapped.data === 'string' ? wrapped.data : JSON.stringify(wrapped.data);
+      throw new Error(`Failed to fetch stash: ${wrapped.status}\n${detail}`);
     }
-
-    // Add mandatory 1 second cooldown after each successful API call to POE servers
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    return response.json();
+    return wrapped.data;
   }
 
   async getAllStashTabs(league: string): Promise<StashTab[]> {

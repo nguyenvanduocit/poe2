@@ -67,10 +67,10 @@ Schema discovery là step quan trọng nhất — note ra commit:
 
 ### 4. Port `analyze.ts` từ POE1, adapt cho 0.5 schema (~30 phút)
 
-Copy base:
+Port base từ POE1 sibling (`../poe1/`):
 ```bash
-cp /Users/firegroup/projects/poeai/.claude/skills/atlas-tree/scripts/analyze.ts \
-   /Users/firegroup/projects/poeai/.claude/skills/atlas-tree/scripts/analyze.ts
+cp /Users/firegroup/projects/poe/poe1/.claude/skills/atlas-tree/scripts/analyze.ts \
+   /Users/firegroup/projects/poe/poe2/.claude/skills/atlas-tree/scripts/analyze.ts
 ```
 
 Adapt:
@@ -123,7 +123,7 @@ Expected: 300+ node trong main tree, 3 master × 12 node, breach sub-tree có sp
 
 ## Reference
 
-- POE1 skill (copy pattern from): `.claude/skills/atlas-tree/`
+- POE1 skill (port pattern from): `../poe1/.claude/skills/atlas-tree/`
 - PoB2 fork: https://github.com/PathOfBuildingCommunity/PathOfBuilding-PoE2
 - POE2 0.5 patch notes (Atlas/Endgame section): `data/release-notes/Version_0.5.0.md` heading "Đại Tu Endgame — Origins of Divinity" + "Masters of the Atlas" + per-league sections
 - POE2 mechanic overview: `content/mechanics/return-of-the-ancients.md`

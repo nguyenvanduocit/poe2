@@ -126,7 +126,7 @@ fi
 # ─── 4. Copy CLI helpers into install dir ──────────────────────────────────
 echo ""
 echo "Syncing CLI helpers from skill dir to install dir..."
-for helper in pob-cli.sh pob-cli.lua cli_test.lua; do
+for helper in pob-cli.sh pob-cli.lua cli_test.lua export-pob.sh export-pob.lua; do
     SRC="$SCRIPT_DIR/$helper"
     DST="$POB2_DIR/$helper"
 
@@ -142,7 +142,7 @@ for helper in pob-cli.sh pob-cli.lua cli_test.lua; do
         echo "  - $helper: copied"
     fi
 done
-chmod +x "$POB2_DIR/pob-cli.sh"
+chmod +x "$POB2_DIR/pob-cli.sh" "$POB2_DIR/export-pob.sh"
 
 # ─── 5. Smoke test ─────────────────────────────────────────────────────────
 echo ""

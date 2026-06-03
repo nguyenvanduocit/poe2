@@ -174,9 +174,39 @@ already computed) to `data/character-exports/export-<character>.json`.
   "https://poe.ninja/poe2/builds/{league}/character/{account}/{character}" build-code.txt
 ```
 
-> No OWN-stash / live-equipment pull exists for POE2 — GGG's character OAuth API (`/character/poe2/<name>`)
-> would give live data but requires registering a developer app + token (heavyweight, and the account
-> was previously flagged). Use it only if a future need demands true-live or a private/disconnected char.
+> Live-equipment pull for POE2 now exists via `fetch-live.sh` (below) — it reads the pathofexile2.com
+> website's own internal-api through Playwriter, no OAuth. It returns EQUIPMENT ONLY though; passives/
+> skills/quest-stats still come from poe.ninja's computed model, and OWN-stash has no API at all. GGG's
+> character OAuth API (`api.pathofexile.com/character/poe2/<name>`) would also give passives+skills live,
+> but requires registering a developer app + token (heavyweight, account was previously flagged) — use
+> only if a future need demands it.
+
+### fetch-live.sh
+
+Pull **LIVE** character equipment straight from the pathofexile2.com website (the new POE2 site), driven through Playwriter. This is the freshest no-OAuth path — it reflects the character the instant GGG's own site does, with full raw item mods (every resist roll, rune, socketed gem, flask), richer than poe.ninja's pre-computed `defensiveStats`.
+
+```bash
+.claude/skills/pob/scripts/scripts/fetch-live.sh [character-name]
+```
+
+- Omit the name to just **list** the account's characters (id + name + level + class + league).
+- With a name → saves the raw GGG-shape JSON to `data/character-exports/live-<name>.json` (gitignored).
+
+**Examples:**
+```bash
+.claude/skills/pob/scripts/scripts/fetch-live.sh ThaoCamVienSaiGon
+.claude/skills/pob/scripts/scripts/fetch-live.sh        # list characters
+```
+
+**How it works (and why it's ban-safe):** the script drives an already-logged-in pathofexile2.com tab to view your own character page. The site's SPA fires the `internal-api/my-account/character/<id>` request with its **own DPoP token**, and we only intercept the *response* — we never read, store, or replay the token, so auth stays inside the browser, same-origin. Same same-origin safety model as the trade transport; it's just you viewing your own character. (name→id is resolved from the SPA's `localStorage` roster, because the list network call only fires on the first visit.)
+
+**Scope — EQUIPMENT ONLY.** This endpoint does not expose passive tree, skills, or quest stats (confirmed: the DPoP token's permission set has only `my-account|character` + `my-account|characters`). For passives / skills / quest-buffs / computed EHP+res, use `fetch-poeninja.sh` — poe.ninja gets those from GGG's official OAuth API. The two sources are complementary: live equipment here + computed stats from poe.ninja.
+
+**Requirements:** Chrome open with the Playwriter extension enabled on a tab (click the extension icon once if you hit a connection timeout). CLI: `npm i -g playwriter@latest`.
+
+**Tab reuse:** the script persists one Playwriter session (`tmp/.pob-playwriter-session`) and reuses a single tab across runs — no new tab per invocation. A dead session (e.g. after a relay restart) is detected and recreated automatically. On a reused tab the roster is read straight from `localStorage`, so repeat pulls skip the list-page navigation entirely.
+
+> **Interim transport.** This uses the Playwriter package for now; it will be reimplemented inside our own browser extension later.
 
 ### pob-cli.sh
 
@@ -198,6 +228,34 @@ Use `@` prefix to read code from file:
 ```bash
 data/pob-source/pob-cli.sh calc @/path/to/code.txt
 ```
+
+### Fetch a live character — `--oauth`
+
+Pull a live POE2 character and turn it into a PoB code in one command. POE2 character data (equipment + passives + skills) lives on the OAuth API `api.pathofexile.com/character/poe2/<name>`; `--oauth` runs the same `client_id=pob` PKCE flow Path of Building's desktop import uses.
+
+```bash
+data/pob-source/pob-cli.sh --oauth <character> [realm]      # realm defaults to poe2
+data/pob-source/pob-cli.sh --oauth --list [realm]           # list account characters
+data/pob-source/pob-cli.sh --token <bearer> <character>     # reuse an existing token
+```
+
+First run prints an authorize URL and opens a `localhost:49082` catcher — open the URL in a browser on this machine (logged into pathofexile.com), click **Authorize**, and the flow captures the token (cached in `tmp/.poe-oauth.json`, ~10h, auto-refreshed via the refresh token), fetches the character, and emits a PoB code through `export-pob`. To skip the browser step, paste a token from PoB desktop's `Settings.xml` (`lastToken`) with `--token`.
+
+Output is `export-pob`'s JSON `{ code, imported, info, stats }`; feed `code` to `pob-cli.sh calc @file`.
+
+> Companion / Spirit Walker builds: tree, skills, ascendancy, gear and defense import accurately, but PoB2 does not model companion (Tame Beast) damage, so `combinedDPS` reads 0 — reason companion DPS by hand (`pob_coverage: PARTIAL`).
+
+### export-pob.sh
+
+The serializer `--oauth` builds on: turns a **GGG character-API JSON** into a PoB code by reusing Path of Building's own import + export Lua — `ImportItemsAndSkills` / `ImportPassiveTreeAndJewels` to parse, `base64(Deflate(SaveDB("code")))` to serialize. No hand-rolled parsing, no engine edits, no network in-tool.
+
+```bash
+data/pob-source/export-pob.sh <charData.json>     # also accepts @file
+```
+
+**Input shapes** (auto-normalised to the inner charData):
+- OAuth `/character/poe2/<name>` → `{ character: { equipment, skills, passives, jewels } }` — full build code (tree + skills + gear + defense).
+- `fetch-live.sh` (pathofexile2.com internal-api) → `{ data: { equipment } }` — equipment-only → gear-only code (defense from item rolls; no tree/skills). Missing `skills`/`jewels` arrays normalise to empty so item import still runs.
 
 ## poe.ninja API Reference
 
@@ -371,11 +429,16 @@ The PoB code may be corrupted or in an unsupported format. Try:
     ├── pob-cli.sh                   # POB2 bash CLI (synced to install dir)
     ├── pob-cli.lua                  # POB2 pure-Lua CLI (synced to install dir)
     ├── cli_test.lua                 # CLI test scaffold (synced to install dir)
+    ├── export-pob.sh                # GGG charData JSON → PoB code wrapper (synced to install dir)
+    ├── export-pob.lua               # Reuses PoB ImportItemsAndSkills/ImportPassiveTreeAndJewels + SaveDB
     └── scripts/
         ├── analyze.sh               # Unified URL analyzer (auto-detects source)
         ├── extract-tree.sh          # Extract passive skill tree
         ├── fetch-poe2-data.sh       # Clone/update PathOfBuilding-PoE2
-        └── fetch-poeninja.sh        # Fetch raw POB code from poe.ninja
+        ├── fetch-poeninja.sh        # Fetch raw POB code from poe.ninja
+        ├── fetch-live.sh            # Pull LIVE equipment from pathofexile2.com (Playwriter)
+        ├── fetch-live.js            # Playwriter script driven by fetch-live.sh
+        └── fetch-oauth.py           # OAuth client_id=pob PKCE flow → full charData → export-pob (--oauth)
 
 <project-root>/data/pob-source/      # POB2 install + game data (gitignored, ~572MB)
 ├── .git/                            # Shallow clone of PathOfBuildingCommunity/PathOfBuilding-PoE2
@@ -392,6 +455,9 @@ The PoB code may be corrupted or in an unsupported format. Try:
 
 ## Version History
 
+- **2.7.0** - Added `--oauth` / `--token` (`fetch-oauth.py`) — fetch a live POE2 character via the `client_id=pob` PKCE flow (the OAuth API `/character/poe2/<name>` is the only source of POE2 charData incl. passives/skills) and emit a PoB code through `export-pob`. PKCE base64url + state check, `localhost:49082` redirect catcher (GGG's registered loopback for `client_id=pob`), curl token-exchange + Bearer char fetch, token cached + auto-refreshed in `tmp/.poe-oauth.json` (gitignored). Verified: ThaoCamVienSaiGon → full charData (16 equipment + passives + 9 skills) → 9584-char code → `calc` shows Huntress / Spirit Walker / Lv66, keystone Trusted Kinship, real defense (Life 1173 / ES 158 / Armour 555 / Eva 825 / res 56-55-59). Companion (Tame Beast) DPS unmodelled by PoB2 → `combinedDPS` 0 (`pob_coverage: PARTIAL`).
+- **2.6.0** - Added `export-pob.sh` / `export-pob.lua` — convert a GGG character-API JSON into a PoB2 import code by reusing PoB's own `ImportItemsAndSkills` / `ImportPassiveTreeAndJewels` + `base64(Deflate(SaveDB("code")))`; no engine edits, no in-tool network (new untracked files copied by setup.sh). Captures the file arg before `dofile(HeadlessWrapper)` (Launch.lua rewrites global `arg`); normalises missing `skills`/`jewels` arrays so equipment-only inputs import; settles calc with double `OnFrame` so the stat readout matches the round-trip.
+- **2.5.0** - Added `fetch-live.sh` — pull LIVE character equipment from the pathofexile2.com website internal-api via Playwriter (no OAuth, no token replay; intercepts the SPA's own DPoP-authed response). name→id resolved from the SPA `localStorage` roster; equipment re-fetched fresh per visit (tagged `source:"live"`, falls back to `source:"cache"` only if the live intercept misses). Persists one Playwriter session + reuses a single tab across runs (no tab-per-run; dead session auto-recreated). Saves `data/character-exports/live-<name>.json`. Scope is equipment-only — passives/skills/quest-stats stay on `fetch-poeninja.sh`. Interim Playwriter transport (extension reimpl later).
 - **2.4.0** - Consolidated POB2 install at `data/pob-source/` (single clone shared with `fetch-poe2-data.sh`). Setup.sh now idempotent — skips clone/lua-zlib/patch/copy steps when output already in place. CLI helpers tracked in skill dir, synced to install dir.
 - **2.3.0** - Added extract-tree.sh for passive tree extraction
 - **2.2.0** - Unified analyze.sh with auto-detection, rich output

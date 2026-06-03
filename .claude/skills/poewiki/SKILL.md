@@ -1,6 +1,6 @@
 ---
 name: poewiki
-description: Access Path of Exile 2 wiki data via local goscrape mirror — search, read, and reference scraped wiki pages from ./data/wiki/. POE2 ONLY (poe2wiki.net). For POE1 use /poewiki; for POE2 database use /poedb.
+description: Access Path of Exile 2 wiki data via local goscrape mirror — search, read, and reference scraped wiki pages from ./data/wiki/. POE2 ONLY (poe2wiki.net). For POE2 database use /poedb.
 version: 1.0.0
 tags: [wiki, data, research, poe2]
 ---
@@ -15,7 +15,6 @@ POE2 wiki được mirror về local qua `goscrape --markdown`. Mọi query đi 
 - Lookup unique item POE2 (The Hollow Mask, Reverie, Facebreaker POE2, v.v.)
 
 **KHÔNG dùng skill này khi:**
-- POE1 → dùng `/poewiki` (poewiki.net mirror)
 - POE2 database / item base stats / atlas tool / passive tree editor → dùng `/poedb` (poe2db.tw)
 - Live price → `/poe-ninja`
 - Build calc → `/pob` hoặc `/mobalytics`

@@ -8,10 +8,10 @@
  * tmp/search-*.ts and tmp/trade-*.ts scripts.
  *
  * Usage:
- *   bun .claude/skills/poe-auth/ggg/trade-search.ts --type "Ghastly Eye Jewel" --stat "minion cold damage" --price 2c
- *   bun .claude/skills/poe-auth/ggg/trade-search.ts --category armour.boots --stat "total life:80" --stat "movement speed:25" --price 20c
- *   bun .claude/skills/poe-auth/ggg/trade-search.ts --term "Goldrim" --price 5c --instant
- *   bun .claude/skills/poe-auth/ggg/trade-search.ts --type "Bone Ring" --stat "life:60" --price 5c --whisper 1
+ *   bun .claude/skills/poe-trade/ggg/trade-search.ts --type "Ghastly Eye Jewel" --stat "minion cold damage" --price 2c
+ *   bun .claude/skills/poe-trade/ggg/trade-search.ts --category armour.boots --stat "total life:80" --stat "movement speed:25" --price 20c
+ *   bun .claude/skills/poe-trade/ggg/trade-search.ts --term "Goldrim" --price 5c --instant
+ *   bun .claude/skills/poe-trade/ggg/trade-search.ts --type "Bone Ring" --stat "life:60" --price 5c --whisper 1
  */
 
 import { createTradeClient } from './client.ts';
@@ -77,7 +77,7 @@ function printHelp(): void {
 POE Trade Search CLI
 
 USAGE:
-  bun .claude/skills/poe-auth/ggg/trade-search.ts [options]
+  bun .claude/skills/poe-trade/ggg/trade-search.ts [options]
 
 OPTIONS:
   --stat "text:min"        Stat filter (fuzzy text -> stat ID). Repeatable.
@@ -91,7 +91,6 @@ OPTIONS:
   --status online|instant|any  Trade status (default: online)
   --instant                Shorthand for --status instant
   --limit N                Max results to fetch (default: 10)
-  --whisper N              Whisper result #N after search (1-indexed)
   --json                   Output as JSON array
   --league NAME            Override league (default: Mirage)
   --game poe1|poe2         Game version (default: poe1)
@@ -103,25 +102,23 @@ OPTIONS:
   --help                   Show this help
 
 EXAMPLES:
-  bun .claude/skills/poe-auth/ggg/trade-search.ts \\
+  bun .claude/skills/poe-trade/ggg/trade-search.ts \\
     --category armour.boots \\
     --stat "total life:80" \\
     --stat "movement speed:25" \\
     --price 20c \\
     --limit 10
 
-  bun .claude/skills/poe-auth/ggg/trade-search.ts --type "Ghastly Eye Jewel" --stat "minion cold damage" --price 2c
+  bun .claude/skills/poe-trade/ggg/trade-search.ts --type "Ghastly Eye Jewel" --stat "minion cold damage" --price 2c
 
-  bun .claude/skills/poe-auth/ggg/trade-search.ts --term "Goldrim" --price 5c
+  bun .claude/skills/poe-trade/ggg/trade-search.ts --term "Goldrim" --price 5c
 
-  bun .claude/skills/poe-auth/ggg/trade-search.ts --type "Bone Ring" --stat "life:60" --price 5c --instant
-
-  bun .claude/skills/poe-auth/ggg/trade-search.ts --type "Bone Ring" --stat "life:60" --price 5c --whisper 1
+  bun .claude/skills/poe-trade/ggg/trade-search.ts --type "Bone Ring" --stat "life:60" --price 5c --instant
 
 NOTES:
-  - Requires POESESSID env var
+  - Trade calls run as a page-context fetch in the logged-in www.pathofexile.com tab (via playwriter) — no POESESSID needed
   - Stat text is fuzzy-searched; resolved stat ID is printed for verification
-  - whisper uses hideout_token (instant) or whisper_token (online)
+  - Read-only: to buy, open the printed Trade URL and whisper in-game
 `);
 }
 
@@ -192,7 +189,7 @@ async function resolveStat(rawStat: string): Promise<ResolvedStat> {
 
   const results = await searchStats(query, 3);
   if (results.length === 0) {
-    throw new Error(`No stat found matching: "${query}". Run: bun .claude/skills/poe-auth/ggg/filters.ts search "${query}"`);
+    throw new Error(`No stat found matching: "${query}". Run: bun .claude/skills/poe-trade/ggg/filters.ts search "${query}"`);
   }
 
   const best = results[0];
@@ -343,20 +340,11 @@ async function main() {
     process.exit(0);
   }
 
-  // Auth
-  const poesessid = process.env.POESESSID ?? '';
-  if (!poesessid) {
-    console.error('Error: POESESSID environment variable is required.');
-    console.error('  export POESESSID=your_session_id');
-    process.exit(1);
-  }
-
-  // Config
-  const league = (args['league'] as string) || 'Mirage';
-  const game = ((args['game'] as string) || 'poe1') as 'poe1' | 'poe2';
+  // Config — auth comes from the logged-in browser session (page-context fetch), no POESESSID here.
+  const league = (args['league'] as string) || 'Runes of Aldur';
+  const game = ((args['game'] as string) || 'poe2') as 'poe1' | 'poe2';
   const limit = parseInt((args['limit'] as string) || '10', 10);
   const outputJson = args['json'] === true;
-  const whisperIndex = args['whisper'] ? parseInt(args['whisper'] as string, 10) - 1 : undefined;
   const sortMode = (args['sort'] as string) || 'price';
 
   // Status
@@ -463,7 +451,7 @@ async function main() {
   }
 
   // Execute search
-  const client = createTradeClient({ poesessid, league, game });
+  const client = createTradeClient({ league, game });
 
   console.log(`Searching on ${league} (${game})...`);
 
@@ -505,34 +493,8 @@ async function main() {
     console.log('--- End ---\n');
   }
 
-  // Whisper
-  if (whisperIndex !== undefined) {
-    if (whisperIndex < 0 || whisperIndex >= items.length) {
-      console.error(`Error: --whisper ${whisperIndex + 1} is out of range (fetched ${items.length} items)`);
-      process.exit(1);
-    }
-
-    const target = items[whisperIndex];
-    const token = target.listing.hideout_token ?? target.listing.whisper_token;
-
-    if (!token) {
-      console.error('Error: No token available for this listing. Re-run the search to get fresh tokens.');
-      process.exit(1);
-    }
-
-    const tokenType = target.listing.hideout_token ? 'hideout_token (instant)' : 'whisper_token (in-person)';
-    const displayName = target.item.name ? `${target.item.name} ${target.item.typeLine}` : target.item.typeLine;
-    console.log(`Whispering #${whisperIndex + 1} (${displayName.trim()}) via ${tokenType}...`);
-
-    const whisperResult = await client.sendWhisper(token);
-    if (whisperResult.success) {
-      console.log('Whisper sent!');
-    } else {
-      console.error('Whisper failed:', whisperResult.error);
-      console.error('Tip: Tokens expire ~5 minutes after search. Re-run the command to refresh.');
-      process.exit(1);
-    }
-  }
+  // To buy: open the Trade URL above and whisper in-game. The transport is read-only
+  // (account safety), so it never sends whispers or makes purchases.
 }
 
 main().catch(err => {

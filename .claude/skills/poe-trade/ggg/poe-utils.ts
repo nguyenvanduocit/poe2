@@ -15,7 +15,7 @@ import * as fs from 'fs';
 // unified export. poedb publishes immutable per-patch snapshots, so staleness here means
 // "no patch folder exists yet" rather than "timestamp expired" — refresh by running the
 // poedb download script or `/passive-skill-tree --force-update`.
-// poe-utils.ts lives in .claude/skills/poe-auth/ggg/ → ../../../../data climbs to project root.
+// poe-utils.ts lives in .claude/skills/poe-trade/ggg/ → ../../../../data climbs to project root.
 const POEDB_ROOT = new URL('../../../../data/poedb/', import.meta.url).pathname;
 const POEDB_URL_TEMPLATE = 'https://poe2db.tw/data/passive-skill-tree/{ver}/data_us.json';
 // Fallback patch used when nothing exists under data/poedb/ — current POE2 league. Bump on new league.

@@ -1,6 +1,6 @@
 ---
 name: poedb
-description: Access Path of Exile 2 database (poe2db.tw) via local goscrape mirror — patch-versioned snapshots of item base stats, modifier rolls, skill numerical data, monster info. POE2 ONLY. For POE2 wiki use /poewiki; for POE1 database use /poedb.
+description: Access Path of Exile 2 database (poe2db.tw) via local goscrape mirror — patch-versioned snapshots of item base stats, modifier rolls, skill numerical data, monster info. POE2 ONLY. For POE2 wiki use /poewiki.
 version: 1.0.0
 tags: [database, data, research, poe2]
 ---
@@ -18,7 +18,6 @@ poe2db.tw là **database site** cho POE2 (khác với wiki) — chuyên item bas
 
 **KHÔNG dùng skill này khi:**
 - Wiki-style description (mechanic explanation, lore) → `/poewiki`
-- POE1 database → `/poedb` (poedb.tw)
 - Live price → `/poe-ninja`
 - Build calc → `/pob` hoặc `/mobalytics`
 
