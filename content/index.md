@@ -1,5 +1,5 @@
 ---
-title: "PoE"
+title: "Path of Exile 2 Builds, Mechanics & Guides"
 date: 2025-11-16
 ---
 
