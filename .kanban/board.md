@@ -5,12 +5,14 @@
 
 ## Todo
 
+- [T-021](tasks/T-021-generated-og-images.md) Per-page generated OG images (nuxt-og-image takumi, verify on CF) — medium/M
 - [T-005](tasks/T-005-mobalytics-skill-cloudflare-stale-query.md) Mobalytics skill hỏng — Cloudflare 403 + stale query + profile-URL slug — medium/M
 - [T-019](tasks/T-019-export-pob-drops-runemastered-unique.md) export-pob drops runemastered-unique body armour (+ mis-slots weapon) — high/M
 
 ## Doing
 
 - [T-017](tasks/T-017-playwriter-replaces-poe-bridge-transport.md) Thay poe-bridge bằng playwriter làm transport GGG (cả poe1+poe2) — high/L
+- [T-020](tasks/T-020-seo-full-support-gsc-bing.md) Full SEO support (@nuxtjs/seo) + GSC DNS-TXT + Bing registration — high/L
 
 ## Done
 
