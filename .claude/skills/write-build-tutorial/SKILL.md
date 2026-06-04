@@ -38,7 +38,7 @@ File `.md` trong `content/builds/<class>/` với:
 - Số thật từ PoB hoặc character file (`content/characters/*.json`), zero fabrication.
 - 100% voice rule tuân thủ.
 
-## Voice rules (project luôn win — restate top 5)
+## Voice rules (project luôn win — restate top 6)
 
 1. **Owner voice** — viết như người tự chơi/test/rút kinh nghiệm. **CẤM** cụm meta-summary: "theo Fubgun/Empyrean/Goratha…", "bài này tổng hợp từ…", "trong note này chúng ta sẽ…", "tóm lại". State numbers as own knowledge: *"Wretched Defiler đẩy ~23.2M DPS với setup hiện tại"* không phải *"PoB tính ra Wretched Defiler ~23.2M DPS theo report"*.
 2. **Prose-first** — đoạn văn 2-4 câu có flow narrative ("vì… do đó… tuy nhiên…"). Bullet CHỈ khi (a) ≥3 item cùng category enumerative, (b) checklist hành động theo thứ tự, (c) data points rời rạc không có flow tự nhiên. Bullet rời rạc 5+ liền → viết lại prose.
@@ -52,6 +52,7 @@ File `.md` trong `content/builds/<class>/` với:
    ```
 
 5. **Title KHÔNG kèm league/patch** — `title:` frontmatter và H1 chỉ concept. Sai: `"Spectre Necromancer — Mirage 3.28"`. Đúng: `"Spectre Necromancer"`. Site auto-concat từ `league_name` + `patch` khi render.
+6. **Natural VN voice — heading sentence-case, không dash-subtitle, không văn dịch** — Heading nói thẳng section nói gì (`## Ascendancy đi theo thứ tự nào`), KHÔNG pattern `X — Y` (dash + subtitle). Câu ngắn, English game term inline, KHÔNG nhồi stat trong ngoặc giữa câu, KHÔNG gạch nối từ Việt (`đàn-đông`), KHÔNG câu dịch gượng ("Vì X đứng được hay không nằm trọn ở Y"). Check đồng âm (vd "đàn đông"≈"đàn ông" → "cả đàn / nguyên đàn"). **Khi match sibling cũ: lấy cấu trúc/format, KHÔNG kế thừa dash-subtitle heading + parenthetical-stat của nó** — nhiều doc cũ trong `content/` vi phạm. Áp cho mọi skill `write-*-tutorial`. Ref: memory `feedback_natural_game_native_voice` + CLAUDE.md `## Content Writing Voice`.
 
 ## Maxroll patterns we adopt
 
