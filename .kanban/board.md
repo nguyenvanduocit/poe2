@@ -1,5 +1,5 @@
 # Kanban Board
-<!-- Updated: 2026-06-03 (T-018 DONE — gear-optimizer offline-confidence + canonical file + Workflow, live demo Rune Eye Ruby Ring 100ex fire 7→74. T-019 new: export-pob drops runemastered-unique body) -->
+<!-- Updated: 2026-06-04 (T-022 DONE — content voice-lint PostToolUse hook). 2026-06-03: T-018 DONE gear-optimizer offline-confidence + Workflow; T-019 new export-pob drops runemastered-unique body -->
 
 ## Backlog
 
@@ -16,6 +16,7 @@
 
 ## Done
 
+- [T-022](tasks/T-022-content-voice-lint-hook.md) Content voice-lint hook (PostToolUse) — medium/S (DONE 2026-06-04: `.claude/hooks/content-voice-lint.sh` + settings.json PostToolUse matcher `Write|Edit|MultiEdit`. Non-blocking exit-0, surface qua `hookSpecificOutput.additionalContext`. Bắt dash-subtitle heading `## X — Y` + gạch-nối VN/homophone (`đàn đông`≈`đàn ông`); whitelist `Failure Modes` + changelog dated `### YYYY-MM-DD`. Verified: violating→warn, clean army-doc→silent, non-content/index.md→skip, exit 0 luôn; settings.json valid + `$CLAUDE_PROJECT_DIR` command resolve OK. Active từ session reload kế tiếp. Root cause: corpus cũ đầy dash-subtitle (companion-zoo 13 flags) thành khuôn bắt chước; đã vá song song CLAUDE.md `## Content Writing Voice` + write-build-tutorial rule 6 + memory. CÒN LẠI: migrate ~12 doc cũ là việc riêng.)
 - [T-018](tasks/T-018-gear-optimizer-combination-engine.md) Gear-optimizer — offline-confidence-first, trade chỉ price-check — high/L (DONE 2026-06-03: 4 deliverable — (1) canonical mod-query file `data/gear-mods/0.5.0-gear-mods.json` 428 mod extract từ PoB data.itemMods (affix/group/tier/rollsOn/tradeHashes) → synthetic item constructible by-construction; (2) engine rewrite `search`(offline, zero-trade) + `price`(trade-only) — trade ra khỏi inner loop; constructibility reject ring 4-suffix; (3) SKILL v3.0.0 reconnect; (4) Workflow gear-upgrade.workflow.js hypotheses→search→verify→price. Live ThaoCamVienSaiGon: discovered+fixed OAuth-export-drops-Enfolding-Dawn body bug (baseline fire −22→7 body-corrected); workflow 468-combo diagnose fire-blocker; corrective search → Ring2 Gold→Ruby 1-slot caps fire+light giữ Int/Dex/Spirit; price thật "Rune Eye Ruby Ring" 100ex → fire 74 (engine honestly flags 1-short, loop-back). slot_item_ids order-agnostic fix. T-014 follow-up: patch export-pob để runemastered unique không bị drop)
 
 - [T-011](tasks/T-011-trade-skill-bridge-only-transport.md) /trade skill chuyển sang poe-bridge làm transport DUY NHẤT — medium/M (SUPERSEDED bởi T-017 — migration đảo ngược: hard cut bridge→playwriter cả hai workspace. Goal "bridge làm transport duy nhất" obsolete trước khi đóng runtime criterion)
