@@ -5,7 +5,7 @@ title: Runic Ward Onslaught Loop cho Minion
 status: published
 author: duocnv
 created: '2026-06-02'
-updated: '2026-06-03'
+updated: '2026-06-04'
 league: '0.5'
 patch: 0.5.0
 confidence_level: MEDIUM
@@ -28,7 +28,7 @@ tags:
 
 0.5 mở một cách cấp :wiki-link{url="https://www.poe2wiki.net/wiki/Onslaught"} cho cả đội companion bằng chính pool :wiki-link{url="https://www.poe2wiki.net/wiki/Runic_Ward"} của mình: cố tình giữ bản thân ở trạng thái **Low Runic Ward**, và một sceptre rune biến trạng thái đó thành Onslaught vĩnh viễn cho mọi minion trong presence. Loop cắt ngang bốn hệ tách biệt — :wiki-link{url="https://www.poe2wiki.net/wiki/Verisium_Manifestations"} (Kalguuran skill rút ward), :wiki-link{url="https://www.poe2wiki.net/wiki/Warding_Rune_of_Bodyguards"} (rune đổi Low Ward thành Onslaught), pool Runic Ward (nhiên liệu), và tuỳ chọn :wiki-link{url="https://www.poe2wiki.net/wiki/Repulsion"} qua :wiki-link{url="https://www.poe2wiki.net/wiki/Blasphemy"} cho phiên bản rảnh tay.
 
-Mọi mắt xích cơ chế của loop đã verify và nó chạy thật. Nhưng kết luận thực dụng đặt thẳng lên đầu: đây là cách **phức tạp và tự hại nhất** trong ít nhất năm cách cấp Onslaught cho companion ở 0.5, và build companion zoo vốn đã mang sẵn hai nguồn rẻ hơn không phải hi sinh lớp đệm 1-life. Warding Rune of Bodyguards chỉ đáng lấy khi không còn nguồn Onslaught nào khác **và** đang chạy Low-Runic-Ward vì một lý do khác sẵn có.
+Mọi mắt xích cơ chế của loop đã verify và nó chạy thật. Kết luận thực dụng tách theo build profile. Với [bản carry](/builds/huntress/0-5-spirit-walker-companion-carry) — chạy Parry weapon-swap với Marks gloves — đây là cách **phức tạp và tự hại nhất** trong ít nhất năm cách cấp Onslaught cho companion ở 0.5: build đó đã mang sẵn hai nguồn rẻ hơn (parry buckler, marks gloves) không phải hi sinh lớp đệm 1-life, nên loop thừa. Với [bản zoo nguyên đàn no-weapon-swap](/builds/huntress/0-5-spirit-walker-companion-zoo) thì verdict lật ngược: build đó **không** chạy Parry buckler lẫn Marks gloves và không weapon-swap, nên không có hai nguồn kia — ở đó ward-drain là nguồn Onslaught chính đáng, và chính skill self-clear (Hollow Shell hoặc Spear Stab + Runic Confusion) đã rút ward nên bật Onslaught không tốn thêm gì ngoài một slot rune. Quy tắc chung: Warding Rune of Bodyguards đáng lấy khi không còn nguồn Onslaught nào khác **và** đang ở Low Runic Ward vì một lý do sẵn có — bản zoo thoả cả hai, bản carry thì không.
 
 ## Đường thật là đòn attack của chính mình, không phải minion
 
@@ -48,7 +48,7 @@ Phần thưởng thật là Onslaught cho cả zoo, không phải auto-clear. On
 
 ## Có ít nhất năm cách cấp Onslaught cho companion, và loop này là cách tệ nhất
 
-Đây là chỗ verdict đóng lại. 0.5 cấp companion Onslaught qua nhiều nguồn, và build companion zoo vốn đã mang sẵn nguyên liệu cho hai cái rẻ nhất:
+Đây là chỗ verdict đóng lại. 0.5 cấp companion Onslaught qua nhiều nguồn, và bản carry vốn đã mang sẵn nguyên liệu cho hai cái rẻ nhất (bản zoo no-weapon-swap thì không — xem cuối mục):
 
 - **Gloves: "Companions gain Onslaught for 4 seconds on Hitting your Marked targets"** — build vốn chạy Sniper's Mark / Charged Mark / Mark for Death, nên gần-miễn-phí và không đụng ward; vì proc trên Marked target nên uptime mượt nhất ở single-target/boss, còn lúc clear pack rời rạc thì spottier.
 - **Bucklers: "companions gain Onslaught when you parry"** — build chạy Reputation auto-parry (buckler), parry gần như liên tục → companion ăn Onslaught đều cả clear lẫn boss, cũng không đụng ward. Đây là cái anchor "build đã có sẵn" chắc nhất.
@@ -56,7 +56,7 @@ Phần thưởng thật là Onslaught cho cả zoo, không phải auto-clear. On
 - **Sceptres: "Minions in your Presence have Onslaught while you are on Low Runic Ward"** — chính là Warding Rune of Bodyguards, cái loop này dựng cả guồng máy để bật.
 - **"Companions in your Presence have Onslaught while you are Shapeshifted"** — đường của Druid, không liên quan build này.
 
-Đặt cạnh nhau thì Bodyguards là cái duy nhất bắt **đánh đổi lớp đệm 1-life** và (ở phiên bản rảnh tay) đốt thêm 30–90 Spirit để giữ Onslaught up. Hai nguồn build đã có — parry buckler và marks gloves — cho gần đúng cùng buff mà không hi sinh gì. Vì thế loop chỉ hợp lý khi đã không có cả hai nguồn kia.
+Đặt cạnh nhau thì Bodyguards là cái duy nhất bắt **đánh đổi lớp đệm 1-life** và (ở phiên bản rảnh tay) đốt thêm 30–90 Spirit để giữ Onslaught up. Trên bản carry, hai nguồn nó đã có — parry buckler và marks gloves — cho gần đúng cùng buff mà không hi sinh gì, nên loop chỉ hợp lý khi đã không có cả hai nguồn kia. Đó đúng là [bản zoo nguyên đàn no-weapon-swap](/builds/huntress/0-5-spirit-walker-companion-zoo): nó không chạy parry buckler, không Marks, không weapon-swap, nên Bodyguards-via-ward là nguồn Onslaught **chính** của nó chứ không phải lựa chọn dư — và vì skill self-clear vốn đã rút ward, cái giá còn lại chỉ là một slot rune cộng việc chạy ward cạn.
 
 ## Sustain và uptime theo số thật
 
@@ -80,7 +80,7 @@ Phiên bản rảnh tay đầy đủ tốn Blasphemy 60 + Verisium Manifestation
 
 ## Failure Modes
 
-- **Redundant với nguồn Onslaught build đã sẵn.** Parry buckler và marks gloves đều cấp companion Onslaught không đụng ward; on-kill 50% phủ lúc clear. Lấy Bodyguards là trả slot rune và 90 Spirit nếu chạy bản full, đổi về gần như 0 lợi ích ròng.
+- **Redundant với nguồn Onslaught bản carry đã sẵn.** Trên bản carry, parry buckler và marks gloves đều cấp companion Onslaught không đụng ward; on-kill 50% phủ lúc clear — lấy Bodyguards là trả slot rune và 90 Spirit nếu chạy bản full, đổi về gần như 0 lợi ích ròng. Failure Mode này **không** áp cho bản zoo no-weapon-swap: nó không có parry/marks nên loop không redundant, đây là engine Onslaught chính của nó.
 - **Đánh đổi phòng thủ thật.** Giữ Onslaught up = giữ ward ≤35% suốt trận = chạy lớp đệm 1-life gần rỗng đúng lúc boss cày DPS dài cần nó đầy. Build không HC-safe càng phơi ra.
 - **Onslaught biên mỏng.** ~11–15% additive sau khi Haste-tương-đương (Boar roll) + Commanding Rage + Snake Idol đã lấp bucket attack/cast speed — dễ không đáng một slot.
 - **Đường rảnh tay tựa lên mắt chưa test.** Trigger-chain "Repulsion Wave (đã trigger) → kích Manifest Rune của VM" chưa nguồn nào xác nhận; và dù chạy thì thừa với mọi build pilot còn tự attack.
@@ -111,5 +111,6 @@ Những thứ datamine không giải được, đo trong client trước khi com
 
 ## Relationships
 
-- **related_builds** [Tame Beast Companion Zoo Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-zoo) — build companion zoo có thể test loop này như một alt-path; ward pool ở đó vốn là lớp đệm 1-life, loop này drain chính nó, và build đã có parry-buckler + marks-gloves cấp Onslaught rẻ hơn.
+- **related_builds** [Tame Beast Companion Carry Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-carry) — ở bản carry loop này là **alt-path**, không phải core: ward pool ở đó là lớp đệm 1-life, loop drain chính nó, và build đã có parry-buckler + marks-gloves cấp Onslaught rẻ hơn không đụng ward.
+- **related_builds** [Tame Beast Companion Zoo Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-zoo) — ngược lại bản carry: bản zoo nguyên đàn no-weapon-swap không chạy parry/marks, nên loop này là engine Onslaught **chính** của nó. Ward-drain đến từ chính skill self-clear (Hollow Shell hoặc Spear Stab + Runic Confusion), char thật chạy tới Lv93 T15.
 - **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Runic Ward / Runeforging / Kalguuran skill mà loop khai thác.
