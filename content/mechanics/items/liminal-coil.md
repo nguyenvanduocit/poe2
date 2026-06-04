@@ -33,7 +33,7 @@ tags:
 
 # Liminal Coil
 
-Liminal Coil là wand unique trên base :wiki-link{url="https://www.poe2wiki.net/wiki/Twisted_Wand"} Twisted Wand, grant skill **Coiling Bolts** và đảo ngược toàn bộ cách chơi curse: nó vứt bỏ tác dụng gốc của curse để biến số lượng curse trên target thành multiplier sát thương. Hai dòng định nghĩa item là "Magnitudes of Curses you inflict are zero" cộng "Curses you inflict ignore Curse limit" — curse không còn debuff gì, nhưng được chồng vô số lên một target. Đổi lại, "Spell Hits Gain 27% of Damage as Extra Chaos Damage per Curse on target" và "27% of Damage as Extra Physical Damage per Curse on target" biến mỗi curse thành +27% extra chaos *và* +27% extra phys. Đây là lõi cho một caster curse-stacking thuần, không phải stat stick.
+Liminal Coil là wand unique trên base :wiki-link{url="https://www.poe2wiki.net/wiki/Twisted_Wand"} Twisted Wand, grant skill **Coiling Bolts** và đảo ngược toàn bộ cách chơi curse. Hai dòng định nghĩa item là "Magnitudes of Curses you inflict are zero" cộng "Curses you inflict ignore Curse limit" — curse không còn debuff gì, nhưng được chồng vô số lên một target. Đổi lại, "Spell Hits Gain 27% of Damage as Extra Chaos Damage per Curse on target" và "27% of Damage as Extra Physical Damage per Curse on target" biến mỗi curse thành +27% extra chaos *và* +27% extra phys. Đây là lõi cho một caster curse-stacking thuần, không phải stat stick.
 
 ## Item Stats
 
@@ -51,7 +51,7 @@ Spell Hits Gain 27% of Damage as Extra Chaos Damage per Curse on target
 Spell Hits Gain 27% of Damage as Extra Physical Damage per Curse on target
 ```
 
-Mod verbatim từ data poe2db 0.5.0. "Requires: Level 1" trên item có thể là placeholder; Coiling Bolts yêu cầu Level 72, 126 Intelligence để dùng — số lấy từ page Coiling Bolts, xác minh lại trong client khi league live.
+Mod verbatim từ data poe2db 0.5.0. "Requires: Level 1" trên item có thể là placeholder; Coiling Bolts yêu cầu Level 72 và 126 Intelligence để dùng — xác minh lại trong client khi league live.
 
 ## Why This Item Is Powerful
 
@@ -59,7 +59,7 @@ Cơ chế tự cân bằng nằm ở cặp "zero magnitude" và "ignore curse li
 
 Granted skill Coiling Bolts ăn khớp chính xác với cơ chế này. Nó "Simultaneously fires a Physical Projectile and a Chaos Projectile at the target. These projectiles Chain through any number of Cursed targets" — đúng hai loại damage mà item cộng extra (phys + chaos), và "chain through any number of Cursed targets" nghĩa là trong một phòng đầy enemy bị curse, projectile nhảy không giới hạn. Coiling Bolts deal 188-283 Physical + 165-306 Chaos base, Cost 0 Mana, nên spam thoải mái. Vòng lặp: curse lan ra pack → Coiling Bolts chain khắp pack → mỗi hit được nhân theo số curse trên từng target.
 
-Điểm cần test khi league live: nguồn apply nhiều curse cùng lúc (curse-on-hit support, :wiki-link{url="https://www.poe2wiki.net/wiki/Curse"} multiple curse skills, hoặc AoE curse) đủ nhanh để duy trì stack cao không, và "ignore curse limit" có cho phép chồng *cùng một* curse nhiều lần hay chỉ nhiều curse khác loại — wording chưa rõ, cần log in-game khi league live để xác minh.
+Khi vào league, log xem nguồn apply nhiều curse cùng lúc (curse-on-hit support, :wiki-link{url="https://www.poe2wiki.net/wiki/Curse"} multiple curse skills, hoặc AoE curse) có đủ nhanh để duy trì stack cao không. Một điểm cần tự đo thêm: "ignore curse limit" có cho phép chồng *cùng một* curse nhiều lần hay chỉ nhiều curse khác loại — wording chưa tường minh, kiểm trong client mới chốt được.
 
 ## Build Enabler Mechanics
 
@@ -69,7 +69,7 @@ Build không hợp Liminal Coil: bất kỳ build nào *dựa vào tác dụng d
 
 ## Acquisition
 
-Drop source chưa được GGG reveal tại 25/05 (league launch ~29/05). Theo pattern unique build-enabling của patch trước, khả năng từ Pinnacle boss hoặc reward league mechanic. Giá tuần đầu của một caster build-around wand thường biến động mạnh tùy meta — sẽ update khi market live.
+Drop source chưa được GGG reveal trước launch. Theo pattern unique build-enabling của patch trước, khả năng từ Pinnacle boss hoặc reward league mechanic. Giá tuần đầu của một caster build-around wand thường biến động mạnh tùy meta — sẽ update khi market live.
 
 ## Version History
 

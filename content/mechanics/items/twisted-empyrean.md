@@ -52,37 +52,37 @@ Attacks with this Weapon have Added Cold Damage equal to 6% to 10% of maximum Ma
 Convert 100% of Fire Damage with Mace Skills to Cold Damage
 ```
 
-Mod verbatim từ data poe2db 0.5.0. "Requires: Level 1" trên item có khả năng là placeholder datamine; Starborn Onslaught bản thân yêu cầu Level 78, 137 Strength để dùng — con số skill này lấy từ page Starborn Onslaught, cần xác minh trong client khi league live.
+Stat lấy từ poe2db 0.5.0. "Requires: Level 1" trên item có khả năng là placeholder datamine; Starborn Onslaught bản thân yêu cầu Level 78, 137 Strength để dùng — cần xác minh trong client khi league live.
 
-## Why This Item Is Powerful
+## Tại sao item này mạnh
 
 Sức nặng nằm ở chỗ một stat duy nhất — maximum Mana — gánh ba vai trò, nên mọi investment mana có hiệu suất gấp ba.
 
-**Mana thành damage.** "Adds 166 to 372 Cold Damage" là flat cộng thẳng, nhưng dòng đắt là "Added Cold Damage equal to 6% to 10% of maximum Mana". Với +319 mana từ chính item rồi cộng mana từ tree/gear, ví dụ một pool 2,000 mana cho thêm 120 đến 200 cold damage mỗi attack chỉ từ dòng này, độc lập với flat 166-372. Mana càng cao, cold added càng lớn — đây là lý do build commit hết vào mana thay vì life.
+**Mana thành damage.** "Adds 166 to 372 Cold Damage" là flat cộng thẳng, nhưng dòng đắt là "Added Cold Damage equal to 6% to 10% of maximum Mana". Với +319 mana từ chính item, cộng thêm mana từ tree/gear, một pool 2,000 mana cho thêm 120 đến 200 cold damage mỗi attack chỉ từ dòng này, độc lập với flat 166-372. Mana càng cao, cold added càng lớn — đây là lý do build commit hết vào mana thay vì life.
 
-**Mana thành EHP.** "10% of Damage is taken from Mana before Life" là một phần :wiki-link{url="https://www.poe2wiki.net/wiki/Mind_Over_Matter"} Mind over Matter rút gọn — 10% mỗi hit trừ vào mana trước. Pool mana lớn vốn dựng để scale damage giờ kiêm luôn lớp đệm, nên không phải đánh đổi giữa offense và defense như build life thường gặp.
+**Mana thành EHP.** "10% of Damage is taken from Mana before Life" là phiên bản rút gọn của :wiki-link{url="https://www.poe2wiki.net/wiki/Mind_Over_Matter"} Mind over Matter — 10% mỗi hit trừ vào mana trước. Pool mana lớn vốn dựng để scale damage giờ kiêm luôn lớp đệm, nên không phải đánh đổi giữa offense và defense như build life thường gặp.
 
 **Cold lock-in.** "Convert 100% of Fire Damage with Mace Skills to Cold Damage" gom mọi fire (từ Starborn Onslaught hoặc support) về cold, dồn scaling vào một element duy nhất. Starborn Onslaught đã "Converts 70% of Physical to Cold" ở tier thấp và 100% ở tier cao, nên gần như toàn bộ output là cold — chill/freeze threshold từ đó cũng dày hơn vì cold damage tập trung.
 
-## Build Enabler Mechanics
+## Build xoay quanh mana thay vì strength và life
 
-Item này định nghĩa một slam mace lấy mana làm trục thay vì strength/life. Skill mặc định Starborn Onslaught là AoE/Melee/Slam/Cold/Duration: Attack Damage 155% ở base lên tới 294% tier cao, tạo Fissure kéo dài (+8 seconds to Fissure duration ở tier sau) nhưng gated bởi "Requires 20 Glory to use" và "+1.2 seconds to Total Attack Time" — tức một đòn nặng, chậm, tích Glory rồi xả, không phải spam. Playstyle là build mana cao (tree mana nodes, gear +mana, :wiki-link{url="https://www.poe2wiki.net/wiki/Eldritch_Battery"} hoặc aura mana-scaling), giữ MoM 10% chống burst, rồi slam cold fissure vào pack/boss.
+Item này định nghĩa một slam mace lấy mana làm trục thay vì strength/life. Skill mặc định Starborn Onslaught là AoE/Melee/Slam/Cold/Duration: Attack Damage 155% ở base lên tới 294% tier cao, tạo Fissure kéo dài thêm 8 giây ở tier sau, nhưng gated bởi "Requires 20 Glory to use" và "+1.2 seconds to Total Attack Time" — tức một đòn nặng, chậm, tích Glory rồi xả, không phải spam. Playstyle là build mana cao (tree mana nodes, gear +mana, :wiki-link{url="https://www.poe2wiki.net/wiki/Eldritch_Battery"} hoặc aura mana-scaling), giữ MoM 10% chống burst, rồi slam cold fissure vào pack/boss.
 
 Build phải xoay quanh hai câu hỏi chưa test được khi league chưa live: Glory generation đủ nhanh để Starborn Onslaught không bị nghẽn không, và mana sustain có theo kịp khi vừa làm damage source vừa làm damage-taken buffer không. Cả hai cần log in-game đầu league.
 
 Item không hợp build life-stacker hay build không scale mana — mọi mod đắt giá ở đây đều quy về mana, bỏ mana thì còn lại chỉ là 94% increased Physical + flat cold tầm thường.
 
-## Acquisition
+## Nguồn drop và giá tuần đầu
 
-Drop source chưa được GGG reveal tại 25/05 (league launch ~29/05). Theo pattern unique mới của các patch trước, khả năng từ Pinnacle boss chain hoặc reward của league mechanic Remnant/Ocean Exploring. Giá tuần đầu của build-enabling weapon unique thường 3-15 divine rồi settle sau 2 tuần tùy meta pick-up — sẽ update khi market live.
+Drop source chưa được GGG reveal trước khi league launch. Theo pattern unique mới của các patch trước, khả năng từ Pinnacle boss chain hoặc reward của league mechanic Remnant/Ocean Exploring. Giá tuần đầu của build-enabling weapon unique thường 3-15 divine rồi settle sau 2 tuần tùy meta pick-up — sẽ update khi market live.
 
 ## Version History
 
-### Patch 0.5.0 (Return of the Ancients — 2026-05-29)
+### Patch 0.5.0 (2026-05-29)
 
-Item introduced. Mod verbatim đã có trên poe2db; build viability chưa test live.
+Item introduced. Stat đã có trên poe2db; build viability chưa test live.
 
-## Related Items & Alternatives
+## Item liên quan và lựa chọn thay thế
 
 - :wiki-link{url="https://www.poe2wiki.net/wiki/Mind_Over_Matter"} Mind over Matter — keystone full-version của dòng "damage taken from mana before life"; Twisted Empyrean cho sẵn 10% nên có thể chồng hoặc thay một phần.
 - [The Auspex](/mechanics/items/the-auspex) — unique cùng patch theo trend "một item gánh nhiều layer", đối chiếu cách 0.5 thiết kế unique build-around.

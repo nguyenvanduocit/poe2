@@ -24,15 +24,15 @@ tags:
 
 # Kế Hoạch League Start — Twister Spirit Walker, Runic Ward & Companion
 
-> **Quick Summary:** Kế hoạch league start của mình cho Return of the Ancients (Runes of Aldur, launch ~29/05). Starter là Twister Spirit Walker, lớp phòng thủ xoay quanh Runic Ward, companion beast làm character hai. Đây là phân tích vì sao chọn vậy và đâu là biến số cần test ngay ngày 1.
+> **Quick Summary:** Kế hoạch league start cho Return of the Ancients (Runes of Aldur, launch ~29/05). Starter là Twister Spirit Walker, lớp phòng thủ xoay quanh Runic Ward, companion beast làm character hai.
 
 ## Overview
 
 0.5.0 là patch lớn nhất POE2 trước 1.0: endgame viết lại toàn bộ (Atlas reset, Fortress, sáu storyline mới, Masters of the Atlas), hai ascendancy mới (Spirit Walker cho Huntress, Martial Artist cho Monk), và lần đầu game có hệ challenge. League mechanic **Runes of Aldur** xoay quanh Remnant + Verisium Runeforging + **Runic Ward** — lớp phòng thủ kích hoạt khi còn 1 life và hồi độc lập.
 
-Hai thứ GGG thay đổi nhiều nhất cũng chính là hai thứ định đoạt league start: build nào để leo cho nhanh, và dựng phòng thủ ra sao khi các lớp cũ bị nerf. Kế hoạch của mình gói gọn trong ba quyết định — starter là Twister Spirit Walker, phòng thủ build quanh Runic Ward thay vì ES recharge, và companion beast để dành làm character hai. Phần dưới là lý do từng quyết định và đâu là chỗ phải tự kiểm chứng trong tuần đầu.
+Hai thứ GGG thay đổi nhiều nhất cũng chính là hai thứ định đoạt league start: build nào để leo cho nhanh, và dựng phòng thủ ra sao khi các lớp cũ bị nerf. Ba quyết định đặt ra ngay từ đầu: starter là Twister Spirit Walker, phòng thủ build quanh Runic Ward thay vì ES recharge, và companion beast để dành làm character hai.
 
-## Tại Sao Twister Spirit Walker Là Starter
+## Tại sao Twister Spirit Walker là starter
 
 Quyết định starter dựa trên một tín hiệu rất cụ thể: GGG **không đụng một dòng nào** vào Twister hay Whirling Slash trong toàn bộ thay đổi skill, dù Twister đang giữ thời gian speedrun campaign nhanh nhất. Khi một skill đang quá mạnh mà patch lớn vẫn để yên, đó là GGG cố ý chừa flagship cho ascendancy mới — rủi ro bị nerf-từ-trên-trời trong tuần đầu gần như bằng không, đúng thứ mình cần ở một starter.
 
@@ -44,23 +44,23 @@ Trong campaign, mở đầu Whirling Slash rồi gắn ngay Twister + Cult Conta
 
 Một chỗ trong loop bị đổi cơ chế mà nhiều người sẽ tưởng là buff to: **Salvo Support** giờ cho 1 Seal mỗi giây tối đa 6, mỗi Seal 1 projectile, thay cho 1 Seal mỗi 2 giây tối đa 3, mỗi Seal 2 projectile. Tính kỹ thì cả ceiling (6 projectile) lẫn thời gian nạp đầy (6 giây) đều y hệt — thay đổi thực chất chỉ là granularity mượt hơn (cộng +1 mỗi giây thay vì +2 mỗi 2 giây), không phải buff sức mạnh. Đừng tính dư DPS vì cái này. Ngược lại freeze ramp thì yếu đi thật: Freezing Salvo còn 34-68% more Magnitude of Chill (trước 56-107%) và Ice Shot mất "25% more Freeze Buildup" trên Ice Shard, nên nguồn freeze phải dồn vào Frost Nexus + Freezing Mark.
 
-## Vì Sao Phòng Thủ Phải Là Runic Ward
+## Vì sao phòng thủ phải là Runic Ward
 
 Runic Ward không phải "thêm một lớp ES". Nó là **reverse ES**: damage đánh vào life trước, Ward nhận sau khi life về 0 — không cheat death, nhưng đảo ngược thứ tự hấp thụ. Hệ quả thực tế quan trọng nhất là dot (Burning Ground, bleed) đánh vào life trước, nên một setup life flask + Ward xử lý dot dễ hơn hẳn so với full ES vốn bị dot gặm thẳng. Keyword "Defences" giờ chỉ còn trỏ Armour/Evasion/ES và **không** apply cho Runic Ward, Resistance, Block — Ward là layer độc lập, có recovery riêng. Nguồn Ward là Ward Rune (+15 max) socket vào Augment slot trên trang bị từ remnant của league, kèm Warding Runes cho bonus khi đầy Ward.
 
-Lý do mình chuyển Runic Ward từ "đáng thử" sang "gần như bắt buộc" cho right-side tree nằm ở chi tiết kỹ thuật của đợt nerf ES. Hàng loạt notable bị đổi từ "increased Energy Shield Recharge Rate" sang "faster start of Energy Shield Recharge" — và hai cái này khác nhau về bản chất. "Recharge rate" quyết định ES hồi nhanh cỡ nào; "faster start" chỉ rút ngắn độ trễ trước khi bắt đầu hồi. Đổi rate thành start-delay nghĩa là một khi đã ăn hit và recharge khởi động, ES vẫn refill ở tốc độ base — yếu hơn nhiều cho việc đứng chịu damage liên tục. Rapid Recharge từ 25%/25% còn 12% start + 12% rate, Convalescence từ 40% start còn 20%, Essence Infusion mất hẳn 40% recharge rate, và small passive ES Recharge Rate bị gỡ khỏi tree. Ghost Dance cũng ăn nerf: Ghost Shroud mỗi 11.7-10.1 giây thay vì 7.6-6.1. Hai trụ phòng thủ quen của Huntress/Ranger/Monk/Mercenary — ES recharge tank và evasion + Ghost Shroud — đều bị rút sức cùng lúc, nên giữ life + Ward buffer hợp lý hơn ép full ES.
+Lý do mình chuyển Runic Ward từ "đáng thử" sang "gần như bắt buộc" cho right-side tree nằm ở chi tiết kỹ thuật của đợt nerf ES. Hàng loạt notable bị đổi từ "increased Energy Shield Recharge Rate" sang "faster start of Energy Shield Recharge" — và hai cái này khác nhau về bản chất. "Recharge rate" quyết định ES hồi nhanh cỡ nào; "faster start" chỉ rút ngắn độ trễ trước khi bắt đầu hồi. Đổi rate thành start-delay nghĩa là một khi đã ăn hit và recharge khởi động, ES vẫn refill ở tốc độ base — yếu hơn nhiều cho việc đứng chịu damage liên tục. Rapid Recharge từ 25%/25% còn 12% start + 12% rate, Convalescence từ 40% start còn 20%, Essence Infusion mất hẳn 40% recharge rate, và small passive ES Recharge Rate bị gỡ khỏi tree. Ghost Dance cũng ăn nerf: Ghost Shroud gain mỗi 11.7–10.1 giây thay vì 7.6–6.1 giây. Hai trụ phòng thủ quen của Huntress/Ranger/Monk/Mercenary — ES recharge tank và evasion + Ghost Shroud — đều bị rút sức cùng lúc, nên giữ life + Ward buffer hợp lý hơn ép full ES.
 
 Leech cũng không cứu được khoảng trống đó: leech giờ giới hạn 1 instance với cap 40k mỗi hit, và Vaal Pact bỏ instant leech (đổi lấy 50% more amount nhưng 67% less speed, không còn cấm life flask). Leech-tank cho big hit chết hẳn — càng đẩy mình về hướng life flask + Runic Ward làm lớp phòng thủ chính, test ngay từ ngày 1 trên setup low-life để biết Ward kích hoạt và hồi đúng nhịp với playstyle dodge roll hay không.
 
-## Companion Beast — Để Dành Làm Character Hai
+## Companion Beast để dành làm character hai
 
 Hướng companion mạnh hơn 0.4 đáng kể nhờ buff ngầm, đủ tốt để làm character hai nhưng chưa đủ chắc để mạo hiểm làm starter. Keystone **Trusted Kinship** giờ cho 30% more Reservation Efficiency cho Companion Skills (20% less cho non-Companion), bỏ "30% less Defences" cũ — đây mới là thứ khiến chạy một con tamed beast reservation lớn trở nên khả thi, vì spirit reservation chính là nút thắt của cả hướng này. Idolatry chồng thêm +10% companion damage + 2% reservation efficiency mỗi idol, đổi lại penalty khi augment thứ không phải idol. Tree thêm 19 passive companion, Rage Support giờ support được Minion Skill, Commanding Rage lên 2% minion attack speed mỗi 5 Rage.
 
-Cơ chế trung tâm là Tame Beast: engulf rare beast bằng hindering wisp, giết, rồi gem hóa Companion account-bound revive được, scale 84% more damage ở gem 20 và giờ triệu beast ngay khi đủ spirit. Companion giữ tối đa 4 regular monster mod (KHÔNG giữ Essence/Azmerian wisp mod), reservation scale theo power + số mod của beast, quality tăng reservation efficiency, disenchant để reset nếu bắt nhầm. Bear spirit scale 60% main hand weapon damage và không tính vào companion limit nên vẫn cộng thêm được một companion khác. The Natural Order cho bắt cả Unique beast (30% MS).
+Cơ chế trung tâm là Tame Beast: engulf rare beast bằng hindering wisp, giết, rồi gem hóa Companion account-bound revive được, scale 84% more damage ở gem 20 và giờ triệu beast ngay khi đủ spirit. Companion giữ tối đa 4 regular monster mod (KHÔNG giữ Essence/Azmerian wisp mod), reservation scale theo power + số mod của beast, quality tăng reservation efficiency, disenchant để reset nếu bắt nhầm. Bear spirit scale 60% main hand weapon damage và không tính vào companion limit nên vẫn cộng thêm được một companion khác. The Natural Order cho bắt cả Unique beast, kèm +30% Movement Speed cho chúng.
 
 Hai vấn đề thực tế giữ nó ở vị trí character hai: Bear spirit không unsummon được bằng weapon-swap trick (kiểu revive + swap reset minion chết như Infernal Legion cũ), và scepter unlimited companion stats vẫn tệ. Kèo lớn nhất là Verisium Rune có thể extract power của beast ra — nhưng đó là thứ phải tự test trong league, không nên đặt cược starter lên nó. Kế hoạch: ngày 1 săn beast base tốt sớm (modifier giữ lại nhiều khi quan trọng hơn base), rồi quyết định quanh ngày 3-5 nếu Tame Beast scale vượt trội.
 
-## Các Hướng Khác — Đánh Giá Nhanh
+## Các hướng khác
 
 Poison kiểu Fubgun tụt một bậc rõ. Poisonburst Arrow — delivery thống trị 0.4 — bị cắt duration xuống flat 3 giây (trước tới 4.9) và quality magnitude giảm nửa; Pathfinder Overwhelming Toxicity lên 50% less Poison Duration; Plaguefinger gloves giờ "Cannot inflict Elemental Ailments". Poison vẫn chơi được nhưng hết là free lunch, nhiều khả năng hướng này phải pivot sang bow/crit hoặc delivery khác. Mình không chọn poison làm starter vì rủi ro phải đổi lại toàn bộ delivery sau ngày 1.
 
@@ -68,15 +68,15 @@ Martial Artist Monk là hướng đáng test sau khi yên vị: Tempest Bell lê
 
 Low-life Runic Ward stacker là evolution tự nhiên từ Blood Mage 0.4, càng hợp khi Vitality Siphon lên 20% spell damage leeched as life (trước 10%). Ward kích hoạt ở 1 life + hồi riêng mở ra playstyle máu thấp không phụ thuộc ES recharge — đúng thứ vừa bị nerf, nên đây là góc đáng để mắt cho character sau.
 
-## Crafting & Economy Cần Chuẩn Bị
+## Crafting & Economy cần chuẩn bị
 
 Runeforging là core loop của league, không phải side content, nên stock Verisium và chuẩn bị crafting sớm là việc đáng làm. Armour dưới level 55 gần như được Runic Ward miễn phí; trên ngưỡng đó thường phải trade-off defense khác để có Ward. Unique Verisium Runeforging còn cho nâng base type của Unique Weapon/Armour rớt dưới 55 (weapon damage cao hơn, armour base defence cao hơn kèm Ward) — giúp unique thấp cạnh tranh ở map cao. Currency thì Greater/Perfect hiếm hơn chút, nhưng Greater Transmute/Augment giờ min mod level 44 (trước 55) và rớt từ Act 4, Divine cũng phổ biến hơn — early crafting dễ thở hơn cho league start. Nếu sau này đi hướng remnant-centric thì The Hollow Mask đáng nhắm: cấp Wildwood's Gifts, "Remnants you create affect Allies in your Presence", và 80-100% increased Reservation Efficiency of Remnant Skills.
 
-## Theo Dõi Ai Trong Tuần Đầu
+## Theo dõi ai trong tuần đầu
 
 Theo sát nhất là Lolcohol cho Twister + defence layer — test sớm trong private league và giải thích Runic Ward tương tác low life ra sao thay vì chỉ khoe build mạnh; SnooBAE85 là Twister specialist, và record campaign của Guy That Dies bằng Twister là cú hích lớn cho hype starter này. Spud the King dẫn hướng companion/Druid. GhazzyTV phụ trách góc minion nhưng dè dặt — đáng nghe vì anh ấy chỉ thẳng vấn đề kỹ thuật (không weapon-swap unsummon, scepter trash). Fubgun là barometer cho scaling damage và sẽ định đoạt poison hay bow lên ngôi. Zizaran và P4wnyhof mạnh ở phân tích layer (leech rewrite, ES recharge nerf, Runic Ward timing) — thứ quyết định build sống hay chết chứ không chỉ DPS. Mình dùng họ để đối chiếu, không để họ chọn build thay.
 
-## Việc Làm Ngay Khi League Live
+## Việc làm ngay khi league live
 
 Leo campaign bằng Twister theo gem sequence ở trên, ưu tiên body armor base armor cho survivability. Stock Verisium và chuẩn bị Runeforging vì đó là nguồn Runic Ward chính. Săn beast base tốt sớm để giữ kèo companion character hai. Và test Runic Ward trên setup low-life ngay ngày 1 để biết nó thay thế hay bổ sung ES/life thế nào dưới leech rewrite — đây là biến số lớn nhất, ai nắm được timing và slot nào cho Ward miễn phí sẽ có lợi thế rõ trong tuần đầu.
 

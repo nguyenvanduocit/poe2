@@ -40,9 +40,9 @@ Infernal Legion Lich là league starter mạnh nhất POE2 hiện tại — buil
 
 Build hoạt động theo loop đơn giản: minion tự burn qua Infernal Legion → ignite mọi enemy trong radius → player chỉ cần đi theo và lượm đồ. Damage source thực tế là ignite passive từ Infernal Legion support — gem text nói rõ *"ignite enemies as though dealing Base Fire Damage equal to 25% of Minion's Maximum Life"*. Vì damage scale 1:1 theo minion life chứ không theo spell damage hay weapon DPS, mọi investment vào minion life và gem level đều trực tiếp tăng output.
 
-Điểm đặc biệt của build là **3 phase progression** tự nhiên trong cùng 1 character, mỗi phase mạnh hơn phase trước mà không cần respec lớn. Phase 1 là :wiki-link{url="https://www.poe2wiki.net/wiki/Essence_Drain"} + :wiki-link{url="https://www.poe2wiki.net/wiki/Contagion"} standard Witch leveling (act 1 → level 22). Phase 2 là bomber setup: :wiki-link{url="https://www.poe2wiki.net/wiki/Bind_Spectre"} + :wiki-link{url="https://www.poe2wiki.net/wiki/Last_Gasp"} + :wiki-link{url="https://www.poe2wiki.net/wiki/Minion_Instability"} — IL self-burn hạ spectre xuống Low Life (≤35% life), MI trigger explosion deal 15% max life as fire damage, Last Gasp giữ spectre active thêm đúng 4 giây fixed (duration không extend được qua support) kéo dài burn window (level 22 → endgame mapping). Phase 3 là walking simulator thuần: tame một con Elephant Tortoise làm companion + Infernal Legion III pure burn, player AFK đi bộ trong khi companion nướng nguyên map (endgame min/maxed).
+Build tiến qua ba phase tự nhiên trong cùng một character, không cần respec lớn. Phase 1 là :wiki-link{url="https://www.poe2wiki.net/wiki/Essence_Drain"} + :wiki-link{url="https://www.poe2wiki.net/wiki/Contagion"} standard Witch leveling, chạy từ act 1 đến level 22. Phase 2 là bomber setup: :wiki-link{url="https://www.poe2wiki.net/wiki/Bind_Spectre"} + :wiki-link{url="https://www.poe2wiki.net/wiki/Last_Gasp"} + :wiki-link{url="https://www.poe2wiki.net/wiki/Minion_Instability"} — IL self-burn hạ spectre xuống Low Life (≤35% life), MI trigger explosion deal 15% max life as fire damage, Last Gasp giữ spectre active thêm đúng 4 giây fixed (duration không extend được qua support) kéo dài burn window, từ level 22 đến endgame mapping. Phase 3 là walking simulator thuần: tame một con Elephant Tortoise làm companion + Infernal Legion III pure burn, companion nướng nguyên map còn player đi lụm đồ.
 
-Defense layer scale theo investment. Sớm thì Lich CI cho chaos immunity + ES stacking đủ chịu campaign và early map. Muộn thì layer thêm :wiki-link{url="https://www.poe2wiki.net/wiki/Shavronne's_Satchel"} làm engine ES sustain — implicit *"Life Recovery from Flasks also applies to Energy Shield"* biến life flask thành ES top-up, trade off là -20-30% reduced Flask Life Recovery rate nên spam frequency phải cao. Lưu ý framing: build này KHÔNG phải "low-life sustain" như nhiều guide ghi nhầm — verbatim CI mechanics *"While CI is allocated, a player always counts as being on full life but can never be on low life."* Mọi modifier "while Low Life" (Pain Attunement family, low-life flask threshold suffix) đều không proc. Đúng là **frozen-life full-life loop**: life pool literal = 1, freeze ở 1 forever bởi Eternal Life clause "Your Life cannot change while you have Energy Shield." Thêm :wiki-link{url="https://www.poe2wiki.net/wiki/Ghost_Dance"} ES recovery on dodge, và :wiki-link{url="https://www.poe2wiki.net/wiki/Blasphemy"} + :wiki-link{url="https://www.poe2wiki.net/wiki/Temporal_Chains"} slow enemy để giảm incoming damage frequency. Endgame EHP nominal đạt 58,533 với physical max-hit cap 11,752 — max-hit là metric matter (single hit ≥ 11.75k phys → ES depleted + remainder tràn vào life=1 → instant die), không phải EHP raw. Armour + block + position là defensive layer chống one-shot, không phải ES pool.
+Defense layer scale theo investment. Sớm thì Lich CI cho chaos immunity + ES stacking đủ chịu campaign và early map. Muộn thì layer thêm :wiki-link{url="https://www.poe2wiki.net/wiki/Shavronne's_Satchel"} làm engine ES sustain — implicit *"Life Recovery from Flasks also applies to Energy Shield"* biến life flask thành ES top-up, trade off là -20-30% reduced Flask Life Recovery rate nên spam frequency phải cao. Lưu ý framing: build này KHÔNG phải "low-life sustain" như nhiều guide ghi nhầm — verbatim CI mechanics *"While CI is allocated, a player always counts as being on full life but can never be on low life."* Mọi modifier "while Low Life" (Pain Attunement family, low-life flask threshold suffix) đều không proc. Đúng là **frozen-life full-life loop**: life pool literal = 1, freeze ở 1 forever bởi Eternal Life clause "Your Life cannot change while you have Energy Shield." Thêm :wiki-link{url="https://www.poe2wiki.net/wiki/Ghost_Dance"} ES recovery on dodge, và :wiki-link{url="https://www.poe2wiki.net/wiki/Blasphemy"} + :wiki-link{url="https://www.poe2wiki.net/wiki/Temporal_Chains"} slow enemy để giảm incoming damage frequency. Endgame EHP nominal đạt 58,533, nhưng con số matter thật là physical max-hit cap 11,752 — một hit vượt ngưỡng đó là ES cạn, phần dư tràn vào life=1 và chết ngay. Armour + block + position mới là thứ chống one-shot, không phải ES pool to.
 
 Mobility xử lý qua weapon swap mechanic cốt lõi của build. Companion teleport theo player mỗi lần swap weapon set, kết hợp :wiki-link{url="https://www.poe2wiki.net/wiki/Blink"} trên swap set cho movement speed effective rất cao dù không có dedicated movement skill trên main set.
 
@@ -146,11 +146,11 @@ Lich tree là một flat list 9 notable kết nối qua prerequisite chain, khô
 
 Hai cái bẫy mechanic mà gần như không guide cộng đồng nào nói rõ:
 
-**Bẫy 1 — Soulless Form mana sustain dưới CI = 0**. GGG patch 0.2.0 verbatim: *"Setting a stat to a specific value (such as Chaos Inoculation setting your life to 1 or Blood Magic setting your mana to 0) now occurs before conversion is applied to that stat."* CI cap life=1 apply TRƯỚC Soulless Form đọc max life value. Effective mana regen = 6% × 1 = **0.06 mana/sec ≈ 0**. Mọi build guide claim "Soulless Form sustain mana cho CI Witch" đều sai math. Build thực tế sustain mana qua mana flask "of the Mixologist" + mana-on-kill ring affix. Soulless Form chỉ có giá trị duy nhất ở vai trò **prerequisite cho Eternal Life**, không phải mana sustain.
+**Bẫy 1: Soulless Form không sustain mana dưới CI**. GGG patch 0.2.0 verbatim: *"Setting a stat to a specific value (such as Chaos Inoculation setting your life to 1 or Blood Magic setting your mana to 0) now occurs before conversion is applied to that stat."* CI cap life=1 apply TRƯỚC Soulless Form đọc max life value. Effective mana regen = 6% × 1 = **0.06 mana/sec ≈ 0**. Mọi build guide claim "Soulless Form sustain mana cho CI Witch" đều sai math. Build thực tế sustain mana qua mana flask "of the Mixologist" + mana-on-kill ring affix. Soulless Form chỉ có giá trị duy nhất ở vai trò **prerequisite cho Eternal Life**, không phải mana sustain.
 
-**Bẫy 2 — Eternal Life defang 10% bypass clause = free 10% less damage**. Đọc penalty Soulless Form "10% damage bypass ES" tưởng là trade-off chết người dưới CI life=1, nhưng Eternal Life mechanics verbatim: *"The damage you would have taken to life that bypasses energy shield is ignored until energy shield is fully depleted, effectively granting an equivalent less damage taken modifier."* Hit 1000 → 100 bypass ES → bypass-portion-to-life ignored → effective 900 damage tới ES, 0 tới life. Net = **free 10% less damage taken** miễn là ES không cạn. Đây là layer defensive mà ai cũng miss khi đọc Soulless Form penalty đầu tiên.
+**Bẫy 2: Eternal Life biến penalty bypass thành free 10% less damage**. Đọc penalty Soulless Form "10% damage bypass ES" tưởng là trade-off chết người dưới CI life=1, nhưng Eternal Life mechanics verbatim: *"The damage you would have taken to life that bypasses energy shield is ignored until energy shield is fully depleted, effectively granting an equivalent less damage taken modifier."* Hit 1000 → 100 bypass ES → bypass-portion-to-life ignored → effective 900 damage tới ES, 0 tới life. Net = **free 10% less damage taken** miễn là ES không cạn. Đây là layer defensive mà ai cũng miss khi đọc Soulless Form penalty đầu tiên.
 
-**Failure mode**: Engine sụp khi single hit vượt full ES pool. Verbatim Eternal Life: *"If a single hit deals enough damage to fully deplete energy shield, the remainder of the damage is fully taken to life."* Hit 9k phys vào idle ES 7,987 → ES depleted + ~1k overflow vào life=1 → instant die, dù EHP nominal 58,533. **Max-hit cap (Pr3vie 11,752 phys) là metric matter**, không phải ES pool raw. Mitigation đến từ armour + block (~73% từ shield Bitterbind Point analog) + position (đừng đứng trong slam telegraph) + Eternal Life 10% less damage layer.
+**Failure mode**: Engine sụp khi single hit vượt full ES pool. Verbatim Eternal Life: *"If a single hit deals enough damage to fully deplete energy shield, the remainder of the damage is fully taken to life."* Một hit 9k phys vào ES 7,987 là ES cạn, ~1k overflow tràn vào life=1, chết ngay dù EHP nominal trên giấy là 58,533. **Max-hit cap 11,752 phys mới là con số cần giữ**, không phải ES pool. Mitigation đến từ armour + block (~73% từ shield Bitterbind Point analog) + position (đừng đứng trong slam telegraph) + Eternal Life 10% less damage layer.
 
 **Triple-application flask press**: Một life flask press dưới setup này trigger 3 sustain channel cùng lúc: (1) áp vào player life — wasted vì life=1 freeze, (2) áp vào player ES qua Shavronne implicit — engine ES sustain chính, (3) áp vào companion HP qua :wiki-link{url="https://www.poe2wiki.net/wiki/Nurturing_Guardian"} notable (main tree Companion cluster) verbatim *"Life Recovery from your Flasks also applies to your Companions."* Một button, 3 channel sustain — Tier-zero ROI cho passive tree path Companion cluster.
 
@@ -210,7 +210,7 @@ Số từ Pr3vie PoB endgame (character level 96, full gear):
 - **Attributes:** STR 67 / DEX 160 / INT 162 (Witch INT base + DEX cho evasion hybrid)
 - **Speed:** 1.32× attack/cast speed multiplier
 - **Crit:** Build không crit-based — damage chủ yếu DoT từ ignite
-- **Combined endgame DPS budget:** ~23M per Pr3vie PoB — đây là **combined-channel total** gộp tất cả damage source: IL synthesized ignite (primary, scale theo companion HP), Minion Instability explosion từ bomber phase, companion auto-attack hits, Last Gasp extended burn window, và curse-explosion pops từ Rupture the Soul. IL channel alone closed-form ≈ `0.05 × H × M_searingflame × M_other × D_target` — với companion HP `H=80,000`, `M_searingflame=2.0` (Searing Flame II), `M_other=1.4` (passive + jewel + ascendancy magnitude stack), `D_target=1.5` (Shock + Elemental Weakness + Frost Bomb exposure), DPS per target ≈ 16.8k, multi-target 5 enemies ≈ 84k effective. Để đạt 23M tổng, build dựa nặng vào combined-channel stacking, không phải IL alone.
+- **Combined endgame DPS budget:** ~23M per Pr3vie PoB — con số này là **combined-channel total** gộp IL synthesized ignite (primary), Minion Instability explosion từ bomber phase, companion auto-attack hits, Last Gasp burn window, và curse-explosion pops từ Rupture the Soul. IL channel alone tính closed-form ≈ `0.05 × H × M_searingflame × M_other × D_target` với companion HP `H=80,000`, Searing Flame II `M_searingflame=2.0`, passive/jewel/ascendancy `M_other=1.4`, Shock + Elem Weak + Frost Bomb `D_target=1.5` → ~16.8k DPS per target, 5 enemy cùng lúc ~84k effective. 23M tổng đến từ combined-channel stacking, không phải IL một mình.
 
 Stat priority khi gear:
 1. **+Level to Minion Skills** — single highest damage scaling, mỗi +1 level tăng companion HP → tăng IL ignite base. Best ROI lever toàn build vì IL channel scale linearly theo companion HP, không trần trên.
@@ -259,7 +259,7 @@ Mod bắt buộc Elephant phải có: **Increased Area of Effect** — push IL i
 
 Gear baseline early mapping: cap res 75% mọi element, +1 to all minion skills weapon, stack ES rolls mọi slot. CI keystone allocate sớm level 60-65 để drop chaos res requirement khỏi gear.
 
-### Endgame — Path Decision (A: Walking Simulator vs B: Triple Curse Bomber)
+### Hai archetype endgame: Walking Simulator hay Triple Curse Bomber
 
 Build có 2 archetype endgame phân nhánh tại Shavronne's Satchel vs Headhunter belt decision. Đây không phải item swap đơn lẻ — là **engine choice** ảnh hưởng survival model, IL host, và damage layer focus. Hai path không hybrid được vì 2 belt mutual exclusive.
 
@@ -269,7 +269,7 @@ Build có 2 archetype endgame phân nhánh tại Shavronne's Satchel vs Headhunt
 
 Recommend cho greenfield planning (build chưa chơi): **start Path B trước** vì (a) triple curse math áp dụng native, exploit insight video ngay; (b) không có 3-7h Elephant AoE-mod farm grind; (c) multi-spectre redundancy giảm rage-quit moment; (d) gem setup overlap ~80% với Path A nên pivot sau khi tích đủ currency easy. Pivot Path A khi farm Sim 15 + Arbiter pinnacle thường xuyên và cần ES sustain max.
 
-### Endgame Path A — Walking Simulator Gear
+### Endgame Path A: Walking Simulator Gear
 
 **Weapon (main):** Rattling Sceptre rare với +4 to Level of all Spell Skills, allies-and-presence damage, minion max life roll, spirit roll. Companion gem socket vào đây.
 
@@ -291,7 +291,7 @@ Recommend cho greenfield planning (build chưa chơi): **start Path B trước**
 
 **Jewels:** Prism of Belief (+3 skill levels), From Nothing (Glancing Blows path), Megalomaniac (target companion damage + life + AoE), :wiki-link{url="https://www.poe2wiki.net/wiki/Nascent_Hope"} (ES recharge on freeze), rare jewels stack companion stats.
 
-### Endgame Path B — Triple Curse Bomber Gear (per Ranny El video Lich PoB)
+### Endgame Path B: Triple Curse Bomber Gear
 
 **Weapon (main):** Chimeric Call rare Omen Sceptre — base loại sceptre có ignite-friendly implicit. Mods target: +4-5 to Level of all Minion Skills, allies-and-presence damage 80-90%, minion max life roll, spirit roll, Strength roll (qualify Grip of Kulemak ring 200 STR gate).
 
@@ -349,7 +349,7 @@ POE2 không có Pantheon và Bandit system. Section này cover **atlas tree prio
 
 ## Leveling Notes
 
-Leveling path đã được test bởi Oscrix (build creator) và jungroan (7 giờ fresh start → T-15 mapping):
+Leveling path đã test thực chiến — fresh start lên T-15 mapping dưới 7 giờ:
 
 **Act 1 (level 1-12):** Bắt đầu với :wiki-link{url="https://www.poe2wiki.net/wiki/Essence_Drain"} + :wiki-link{url="https://www.poe2wiki.net/wiki/Contagion"} — standard Witch opening. Bổ sung :wiki-link{url="https://www.poe2wiki.net/wiki/Skeletal_Arsonist"} (bomb-throwing skeleton có Command: Explosive Demise — detonate allied minion below life threshold deal 8% min life as fire) và :wiki-link{url="https://www.poe2wiki.net/wiki/Skeletal_Sniper"} command Gas Arrow cho extra damage. ED/Contagion clear pack, skeletal handle rares. Pick Lich ascendancy khi chọn class path. Lấy :wiki-link{url="https://www.poe2wiki.net/wiki/Tame_Beast"} skill gem khi unlock — tame bất kỳ beast nào trong Hunting Grounds để familiarize mechanic, beast này sẽ replace sau.
 
@@ -406,7 +406,7 @@ Leveling path đã được test bởi Oscrix (build creator) và jungroan (7 gi
 
 ## Summary
 
-- **Identity:** Witch Lich + Infernal Legion, 3-phase progression từ ED/Contagion → Bomber → Walking Simulator. League starter → endgame all-content trong cùng 1 character.
+- **Identity:** Witch Lich + Infernal Legion — ED/Contagion → Bomber → Walking Simulator, league starter đến endgame all-content trong cùng một character.
 - **Core mechanic:** IL ignite base = 25% minion max life, non-hit synthesized ignite. Searing Flame II ~2× magnitude là pillar multiplier chính. Companion HP scaling là best ROI lever. Xoph's Pyre uplift IL channel marginal (0-15%), value thật ở auto-attack hit channel và secondary skill.
 - **League start path:** Level 22 IL swap → Bramble Burrower → Bogfeld Commoner bomber → Elephant Tortoise walking simulator. T-15 dưới 7 giờ fresh start.
 - **Defense:** Lich CI + Shavronne's Satchel low-life sustain + Blasphemy Temp Chains slow. EHP 58,533 endgame.

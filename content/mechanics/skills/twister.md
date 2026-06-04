@@ -23,11 +23,11 @@ tags:
 
 # Twister — Spear Wind Projectile Skill
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Twister"} là spear attack skill tag Wind + Projectile + AoE + Duration trong POE2 patch 0.5, drop Tier 1 nên dùng được từ Act 1. Skill này không tự chạy — nó là half thứ hai của engine 2 tầng, half thứ nhất là :wiki-link{url="https://www.poe2wiki.net/wiki/Whirling_Slash"} (spawn Whirlwind), Twister đến và **consume Whirlwind** để nhân lên cả số lượng projectile lẫn damage multiplier. Hiểu Twister quan trọng vì 90% guide ngoài kia chỉ nói "scale projectile count" mà bỏ qua hai dòng wiki quyết định damage thật — hidden cap 0.66s same-target throttle, và sự khác biệt giữa "Gain" và "Convert" trong dòng elemental ground.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Twister"} là spear attack skill tag Wind + Projectile + AoE + Duration trong POE2 patch 0.5, drop Tier 1 nên dùng được từ Act 1. Skill này không tự chạy độc lập — nó là nửa sau của engine 2 tầng, nửa đầu là :wiki-link{url="https://www.poe2wiki.net/wiki/Whirling_Slash"} (spawn Whirlwind), Twister đến và **consume Whirlwind** để nhân lên cả số lượng projectile lẫn damage multiplier. Hiểu Twister quan trọng vì 90% guide ngoài kia chỉ nói "scale projectile count" mà bỏ qua hai dòng wiki quyết định damage thật: hidden cap 0.66s same-target throttle, và sự khác biệt giữa "Gain" và "Convert" trong dòng elemental ground.
 
 ## How It Works
 
-Twister sinh ra một tornado di chuyển forward erratically (lảo đảo random), blind enemy quanh nó, và **pierce all targets** (per gem text — luôn pierce, không cần support). Base attack damage scale theo gem level 80%→232% (lv 1→20), cast time = 80% base attack speed. Tornado tồn tại 3 giây với radius 0.5 metres, nảy quanh địa hình nếu chạm wall — đây là lý do build clear corridor map cực mạnh (tornado nảy liên tục giữa hai tường trong hành lang hẹp) nhưng yếu trong open arena (tornado dissipate trước khi nảy về).
+Twister sinh ra một tornado di chuyển lảo đảo về phía trước, blind enemy quanh nó, và **pierce all targets** (luôn pierce theo gem text, không cần support). Base attack damage scale theo gem level 80%→232% (lv 1→20), cast time = 80% base attack speed. Tornado tồn tại 3 giây với radius 0.5 metres, nảy quanh địa hình nếu chạm wall — đây là lý do build clear corridor map cực mạnh (tornado nảy liên tục giữa hai tường trong hành lang hẹp) nhưng yếu trong open arena (tornado dissipate trước khi nảy về).
 
 Damage thật của Twister đến từ cơ chế consume Whirlwind:
 
@@ -60,7 +60,7 @@ Ví dụ spear endgame T2-T3 flat physical 300 base DPS → mỗi cast Twister g
 
 ## Key Interactions
 
-**Twister × Whirling Slash (engine pair)** — hidden gotcha là Twister consume **Whirlwind aura standing on ground**, không phải skill use moment. Whirling Slash spawn Whirlwind có duration; nếu cast Twister BEFORE Whirling Slash → no Whirlwind exist → no consume → base damage only. Sequence chuẩn: spin Whirling Slash 3 lần (rank up qua Rage / Rapid Attacks support), Whirlwind đứng 3-stage trên ground, RỒI cast Twister. Đây là why build feel clunky Act 1 — chưa có Rage support, mỗi rank-up cần 3 spin manual, mất 1.5-2 giây trước mỗi Twister cast.
+**Twister × Whirling Slash (engine pair)** — hidden gotcha là Twister consume **Whirlwind aura standing on ground**, không phải skill use moment. Whirling Slash spawn Whirlwind có duration; nếu cast Twister BEFORE Whirling Slash → no Whirlwind exist → no consume → base damage only. Sequence chuẩn: spin Whirling Slash 3 lần (rank up qua Rage / Rapid Attacks support), Whirlwind đứng 3-stage trên ground, RỒI cast Twister. Đây là lý do build feel clunky ở Act 1: chưa có Rage support, mỗi rank-up cần 3 spin manual, mất 1.5-2 giây trước mỗi Twister cast.
 
 **Twister × :wiki-link{url="https://www.poe2wiki.net/wiki/Salvo_Support"} (random direction trade-off)** — Salvo grant +2 projectile per seal, max 3 seal = +6 projectile khi full stack (6 giây để max). Build thường gọi đây là "backbone projectile count" — đúng cho clear, sai cho boss. Salvo gem text rõ:
 
@@ -70,7 +70,7 @@ Implication: với boss single-target, P(projectile hướng boss) ≈ angular_s
 
 **Twister × Spirit Walker owl feather (:wiki-link{url="https://www.poe2wiki.net/wiki/Primal_Bounty"} + The Mhacha's Gift)** — Primal Bounty grant 1 owl feather per 4 giây, max 3 feather, dodge roll expend 1 → empower next projectile skill. The Mhacha's Gift (notable enhance Primal Bounty) cho phép dodge expend up to 3 feather cùng lúc với 100% more empowerment per additional feather, và feather rate 50% faster (4s → 2.67s). Cycle endgame: 3 feather × 2.67s = 8s per full stack, dodge expend cả 3 → empowerment ×3 (compound add tuyến tính). Owl feather là scaler **DIRECT** cho Twister projectile count + speed — đây là lý do Spirit Walker ascendancy chosen over Deadeye cho Twister build.
 
-Hidden gotcha: Mhacha "Dodging can expend up to 3 Owl Feathers" — dodge roll trigger, không phải skill use. Nếu player không dodge cadence ổn định → feather accumulate đến cap 3 rồi STOP generate. Boss fight cần dodge cadence match feather cycle (~8s) để maintain full empower window. Telegraph boss 10s pattern (Arbiter wave attack) fit cycle này naturally.
+Một điểm hay bị bỏ qua: Mhacha "Dodging can expend up to 3 Owl Feathers" — trigger là dodge roll, không phải skill use. Nếu không dodge đều tay → feather tích đến cap 3 rồi STOP generate. Boss fight cần dodge cadence match feather cycle (~8s) để maintain full empower window. Telegraph boss 10s pattern (Arbiter wave attack) fit cycle này naturally.
 
 **Twister × Chilled Ground generation** — Twister gain 50% added cold damage TRÊN Chilled Ground, nên build cần reliable Chilled Ground generator. Build doc nhiều người claim :wiki-link{url="https://www.poe2wiki.net/wiki/Wake_of_Destruction"} unique boots — đây là lệch hướng. Wake of Destruction text:
 
@@ -78,11 +78,11 @@ Hidden gotcha: Mhacha "Dodging can expend up to 3 Owl Feathers" — dodge roll t
 
 Shocked Ground (lightning ailment), không Chilled Ground. Đứng trên Shocked Ground → Twister gain +50% lightning damage, useless cho build cold scaling. Đúng hướng: :wiki-link{url="https://www.poe2wiki.net/wiki/Fangs_of_Frost"} (spear attack spawn Chilled Ground khi consume Parried Debuff — early campaign), hoặc Frost Nexus support gem chain freeze → spawn Chilled Ground sau ailment. Bỏ Wake of Destruction khỏi gear plan.
 
-**Twister × Ice-Tipped Arrows (ice fragment engine)** — Khi Ice-Tipped Arrows empower Barrage (hoặc projectile spear attack) rồi bắn Twister, mỗi hit của Twister lên enemy sẽ drop Ice Fragments trên ground. Những mảnh băng này nổ gây sát thương cold + shatter potential, đặc biệt mạnh khi kết hợp :wiki-link{url="https://www.poe2wiki.net/wiki/Herald_of_Ice"} (chuỗi nổ khi quái bị freeze). Đây là lý do clear "bỗng nhiên dễ chịu và visually satisfying" sau Act 2 pivot — Twister không chỉ là projectile gió mà còn là nguồn trigger hàng loạt ice explosion. Playtest cho thấy ngay cả khi không chủ động tạo Chilled Ground, fragment từ Twister hit vẫn tạo hiệu ứng chain mạnh.
+**Twister × Ice-Tipped Arrows (ice fragment engine)** — Khi Ice-Tipped Arrows empower Barrage (hoặc projectile spear attack) rồi bắn Twister, mỗi hit của Twister lên enemy sẽ drop Ice Fragments trên ground. Những mảnh băng này nổ gây sát thương cold + shatter potential, đặc biệt mạnh khi kết hợp :wiki-link{url="https://www.poe2wiki.net/wiki/Herald_of_Ice"} (chuỗi nổ khi quái bị freeze). Đây là lý do clear đột ngột dễ chịu hẳn sau Act 2 pivot — Twister không chỉ là projectile gió mà còn là nguồn trigger hàng loạt ice explosion. Playtest cho thấy ngay cả khi không chủ động tạo Chilled Ground, fragment từ Twister hit vẫn tạo hiệu ứng chain mạnh.
 
-## Hidden Cap — Same-Target Throttle 0.66s
+## Hidden cap: mỗi đợt twister chỉ hit cùng mục tiêu tối đa một lần mỗi 0.66 giây
 
-Dòng wiki không có trong 95% build guide ngoài kia, nhưng phá hoàn toàn thesis "stack projectile vô tận = boss DPS infinite":
+Dòng wiki này không xuất hiện trong 95% build guide ngoài kia, nhưng nó bác thẳng luận điểm "stack projectile vô tận = boss DPS infinite":
 
 > Twisters fired at the same time can Hit the same target no more than once every 0.66 seconds.
 
@@ -90,7 +90,7 @@ Implication math: với cast rate 0.8/s (cast time ~1.25s), mỗi cast spawn 10-
 
 Twister damage per boss hit (endgame Chilled Ground, no crit): ~12,400 raw → boss DPS Twister floor ~14.8k. Sau crit (×2.54), Wrath aura, Frenzy charge, Power Charge stack, curse Critical Weakness → realistic endgame boss DPS Twister channel ~80-150k. Không phải 500k+ như viral build claim.
 
-Counter-argument: cap text nói "fired at the **same time**". Nếu Barrage skill chia projectile thành waves rời rạc (each wave fire 0.1s sau wave trước), throttle có thể reset per wave (twister-ID khác nhau giữa waves). Cần test live game in-PoB để confirm. Đây là devil's advocate counter quan trọng nhất — chưa có patch 0.5 launch data để verify (snapshot wiki 2026-05-18, patch drop 29 May 2026).
+Có một phản lập đáng ghi nhớ: cap text nói "fired at the **same time**". Nếu Barrage skill chia projectile thành waves rời rạc, mỗi wave fire 0.1s sau wave trước, throttle có thể reset per wave vì twister-ID khác nhau giữa waves. Cần test live game để confirm — chưa có patch 0.5 launch data (snapshot wiki 2026-05-18, patch drop 29 May 2026).
 
 ## Common Mistakes
 
@@ -106,7 +106,7 @@ Counter-argument: cap text nói "fired at the **same time**". Nếu Barrage skil
 
 ## What Doesn't Work
 
-Twister **không scale theo attack speed** cho purpose damage — attack speed chỉ giảm cast time tooltip, không tăng damage per cast. Đây là why weapon set 1 (Twister damage) ưu tiên flat physical + flat cold + crit, weapon set 2 (Whirling Slash engine) ưu tiên attack speed.
+Twister **không scale theo attack speed** cho purpose damage — attack speed chỉ giảm cast time tooltip, không tăng damage per cast. Đó là lý do weapon set 1 (Twister damage) ưu tiên flat physical + flat cold + crit, weapon set 2 (Whirling Slash engine) ưu tiên attack speed.
 
 Twister **không trigger ailment qua Hit** trên elemental ground gain — phần 50% added element là Gain (added damage), không tạo separate ailment opportunity. Tức Twister trên Chilled Ground không freeze enemy reliably qua 50% cold layer; cần freeze build-up từ source khác (Freezing Mark curse, Frostbolt support, Ice Crash combo).
 
@@ -124,7 +124,7 @@ Twister **không scale từ "Gain X% of Damage as extra Y" modifier** trên elem
 
 ## Version History
 
-### Patch 0.5.0 (2026-05-29 — pre-launch, wiki snapshot 2026-05-18)
+### Patch 0.5.0 (pre-launch, wiki snapshot 2026-05-18, patch drop 2026-05-29)
 
 - Twister tag `Wind` thêm vào từ 0.4.0 — synergy với Spirit Walker class (multiple notable interact with Wind tag).
 - Spirit Walker ascendancy mới ra, featured "Stormbringer" build trong reveal trailer — confirm endgame viable.

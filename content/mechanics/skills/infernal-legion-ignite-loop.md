@@ -42,7 +42,7 @@ Synergy thứ hai là **IL × :wiki-link{url="https://www.poe2wiki.net/wiki/Last
 
 Synergy thứ ba là **IL × Searing Flame II**. SF II gem text có 2 effect lines tách biệt: "Supported Skills deal 30% less Damage with Hits" + "100% more Magnitude of Ignite inflicted with Supported Skills". Hit penalty chỉ áp lên hit damage — IL ignite không phải hit nên không bị 30% less. Ignite buff wording broad "inflicted with Supported Skills" — bao gồm cả IL synthesized ignite theo most natural reading vì IL ignite được inflict trên supported skill (Tame Beast / Bind Spectre). Gate ngoài "Supports any skill that **Hits** enemies" là gate trên skill, không trên ignite — companion có auto-attack hits → satisfy gate. Net effect: SF II doubles IL ignite base 25% → 50% of minion max life as effective fire damage. Wording broad nên working read là apply được — toggle SF II trong PoB để đo magnitude delta xác nhận khi vào league.
 
-Synergy thứ tư là **IL × :wiki-link{url="https://www.poe2wiki.net/wiki/Magnified_Area"} II**. MA II thêm 45% increased Area of Effect. POE2 standard formula: radius scale theo sqrt(area), nên radius bonus = sqrt(1.45) - 1 ≈ 20.4%. IL III base 2 m → effective ~2.41 m. Đáng kể nhưng không "double radius" như nhiều người tưởng. Cost multiplier 130% là trade-off đáng cân nhắc khi build spirit budget tight.
+Synergy thứ tư là **IL × :wiki-link{url="https://www.poe2wiki.net/wiki/Magnified_Area"} II**. MA II thêm 45% increased Area of Effect. POE2 standard formula: radius scale theo sqrt(area), nên radius bonus = sqrt(1.45) - 1 ≈ 20.4%. IL III base 2 m → effective ~2.41 m. Đáng kể nhưng không "double radius" như nhiều người tưởng. Cost multiplier 130% là trade-off cần cân khi spirit budget đã chật.
 
 Anti-synergy quan trọng nhất là **IL × :wiki-link{url="https://www.poe2wiki.net/wiki/Xoph%27s_Pyre"}**. Đây là claim gây tranh cãi nhất trong build doc — gem text Xoph's Pyre có 2 effect lines, cả hai đều Hit-gated explicit. Effect 1: "Chaos Damage **from Hits** with Supported Skills also Contributes to Flammability and Ignite Magnitudes" — double-gated trên Hit (cần chaos damage AND cần from Hit). IL ignite không có chaos damage, không từ Hit → effect 1 không fire. Effect 2: "Supported Skills **Gain** 40% of Fire Damage as Extra Chaos Damage" — modifier class "Gain X% of Damage as extra Y". Precedent từ Minion Instability wiki mechanics section: "Minion Instability does not scale with the Gain X% of Damage as Y modifier." Same modifier class → cùng pattern likely fail cho IL synthesized ignite. Net effect Xoph's Pyre × IL channel: **~0% direct uplift**. Channel duy nhất Xoph's Pyre amplify là companion auto-attack hits — channel này lại bị IL "ignite does not stack — only highest applies" rule override bởi IL synthesized base. Build doc claim "40-60% damage uplift từ Xoph's Pyre" likely overstated 5-10×. Realistic uplift: 0-15%.
 
@@ -50,7 +50,7 @@ Anti-synergy thứ hai là **IL × IL multi-companion**. Gem text IL skill-funct
 
 ## Parallel Hit Channel Chain (Companion Auto-Attack)
 
-Bên cạnh IL synthesized ignite channel (primary, non-hit, không scale với Hit-gated modifier), build chạy parallel **hit channel** từ companion auto-attack hits. Channel này thường được dismiss là "không matter vì IL ignite override", nhưng với gear stack đúng nó trở thành damage layer thứ 2 độc lập với IL channel.
+Bên cạnh IL synthesized ignite channel (primary, non-hit, không scale với Hit-gated modifier), build chạy song song **hit channel** từ companion auto-attack hits. Channel này hay bị bỏ qua vì IL ignite override, nhưng với gear stack đúng nó trở thành damage layer thứ 2 độc lập với IL channel.
 
 Chain unlock theo điều kiện gear-gate:
 
@@ -73,7 +73,7 @@ Per video Lich PoB (Ranny El) thực tế socket Despair + Heightened Curse + De
 - Pre-Xoph's Pyre: hit channel chaos extra exists qua Evergrasping nhưng không convert sang ignite contribution → enemy chỉ ăn flat chaos hit damage trên auto-attack tick frequency (small channel)
 - Full stack (Evergrasping + Xoph's Pyre + Despair): hit channel ignite contribution + IL synthesized ignite parallel, combined uplift ~30-50%
 
-Đây là gap mà mechanic doc trước đây không cover — chỉ analyze IL synthesized ignite single channel. Hit channel chain là parallel system, không thay thế IL channel mà add-on.
+Đây là phần mechanic doc trước chưa đề cập — chỉ phân tích IL synthesized ignite đơn channel. Hit channel chain là hệ thống song song, không thay thế IL channel mà bổ sung.
 
 ## Optimization
 
@@ -83,15 +83,15 @@ Lever thứ hai là **Searing Flame magnitude stacking**. SF II là +100% more M
 
 Lever thứ ba là **target's damage-taken multiplier**. Áp Elemental Weakness curse (-40 to -59% all elemental res per gem text 0.5 baseline) + Frost Bomb exposure (Potent Exposure -20% to -50% ramping) + Skeletal Storm Mage shock 20% increased damage taken. Combined có thể đẩy enemy damage-taken multiplier lên 1.5-1.8×. Stack với Lich's Rupture the Soul cho curse explosion 33% chance → quarter max life as chaos damage on cursed kill — synergy phụ.
 
-Spirit budget là constraint cứng. Elephant Tortoise 56.1% + Bind Spectre Persistent + Blasphemy/Temporal Chains aura + 1-2 utility minion (Skeletal Cleric heal, Skeletal Storm Mage shock) easily đẩy total reservation lên 80-90%. Tối ưu spirit reservation efficiency qua jewel mod hoặc body armour mod. Đừng cố stack 4-5 minion — quality > quantity.
+Spirit budget là ràng buộc cứng. Elephant Tortoise 56.1% + Bind Spectre Persistent + Blasphemy/Temporal Chains aura + 1-2 utility minion (Skeletal Cleric heal, Skeletal Storm Mage shock) dễ đẩy total reservation lên 80-90%. Tối ưu spirit reservation efficiency qua jewel mod hoặc body armour mod. Đừng cố stack 4-5 minion — quality hơn quantity.
 
-Phase progression matter. Phase 1-2 (level 1-22) chạy ED/Contagion standard — không touch IL vì gem tier không unlock. Phase 2 (level 22+) socket IL I + Minion Instability + Last Gasp lên Bind Spectre bomber. Phase 3 (endgame mapping, gem tier 5 unlock) swap sang Tame Beast + Elephant Tortoise + IL III. Đừng cố skip phase — gem tier requirement gate execution.
+Progression theo phase quan trọng. Phase 1-2 (level 1-22) chạy ED/Contagion standard — không touch IL vì gem tier chưa unlock. Phase 2 (level 22+) socket IL I + Minion Instability + Last Gasp lên Bind Spectre bomber. Phase 3 (endgame mapping, gem tier 5 unlock) swap sang Tame Beast + Elephant Tortoise + IL III. Đừng cố skip phase — gem tier requirement gate execution.
 
 ## Interactions with Other Content
 
 POE2 0.5 endgame content tương tác với IL build chủ yếu qua boss mechanics:
 
-- **Xesht, We That Are One** là drop source duy nhất của Xoph's Pyre lineage gem. Chicken-and-egg: cần Xoph's Pyre cho "endgame DPS jump" theo build doc, nhưng must clear Xesht first. Per gate-split analysis ở section trên, Xoph's Pyre × IL không cho jump lớn như doc claim — vẫn worth grab cho secondary skill (Frost Bomb, Storm Mage shock) nhưng không phải tier-zero priority.
+- **Xesht, We That Are One** là drop source duy nhất của Xoph's Pyre lineage gem. Chicken-and-egg: cần Xoph's Pyre cho "endgame DPS jump" theo build doc, nhưng phải clear Xesht trước. Per gate-split analysis ở section trên, Xoph's Pyre × IL không cho jump lớn như doc claim — vẫn đáng lấy cho secondary skill (Frost Bomb, Storm Mage shock) nhưng không phải tier-zero priority.
 - **King in the Mists** drops :wiki-link{url="https://www.poe2wiki.net/wiki/From_Nothing"} unique jewel (radius 2000, allocate passives near keystone). Build dùng cho Glancing Blows region pass-through — note rằng POE2 0.5 Glancing Blows wording đã bị change ("Chance to Evade is Unlucky. Chance to Deflect is Lucky", không phải POE1 block mechanic). Build skip GB không vì block penalty mà vì không stack evasion.
 - **Trials of Sekhemas / Trials of Chaos** grant ascendancy points cho Lich notable tree. Lich ascendancy không có "trial 1 cluster / trial 2 cluster" như POE1 — flat notable list với prerequisite chain.
 - **Simulacrum** drops :wiki-link{url="https://www.poe2wiki.net/wiki/Megalomaniac"} unique jewel (random 2-3 notables). Per 0.2.0 patch, không thể roll Witch/Sorceress starting-area notables → companion-specific notable pool limited, không reliable cho build planning.
@@ -112,7 +112,7 @@ Map mod compatibility: IL build chịu được hầu hết map mod nhờ compan
 
 **Last Gasp × non-Persistent minion KHÔNG hoạt động**. Gate gem text: "Supports skills that create **Persistent Minions**". POE2 0.5 không có gem SRS analog non-persistent — closest là Skeletal Arsonist (Persistent + Detonator tag, qualified). Nếu thử ghép Last Gasp với non-persistent gem, support sẽ greyed out trong UI.
 
-**Spectre/companion 1-shot KHÔNG trigger Minion Instability**. MI gem text mechanics: "must be **reduced** to Low Life to explode. Anything that causes a minion to die without ever having low life (e.g. dying in 1 hit, replacement, expiring duration) will not cause an explosion." Boss slam 1-shot companion → no explosion. Đây là why Last Gasp critical — bridge gap giữa "took heavy hit but not instant death" và "drop xuống Low Life threshold".
+**Spectre/companion 1-shot KHÔNG trigger Minion Instability**. MI gem text mechanics: "must be **reduced** to Low Life to explode. Anything that causes a minion to die without ever having low life (e.g. dying in 1 hit, replacement, expiring duration) will not cause an explosion." Boss slam 1-shot companion → no explosion. Đó là lý do Last Gasp quan trọng — nó lấp khoảng giữa "ăn đòn nặng nhưng không chết ngay" và "rớt xuống Low Life threshold".
 
 ## Common Mistakes
 

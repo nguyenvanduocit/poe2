@@ -25,7 +25,7 @@ tags:
 
 Fate of the Vaal là league chính của Path of Exile 2 trong giai đoạn patch 0.4 (trước khi 0.5 Return of the Ancients ra mắt với Runes of Aldur). Đây là mùa mà toàn bộ endgame POE2 đã ổn định hơn sau các bản Early Access, và meta build đạt đến mức đa dạng nhưng cũng rất tập trung vào một số archetype mạnh.
 
-Dữ liệu được lấy từ snapshot poe.ninja ngày 20/05/2026 (khoảng 124.114 characters, league slug `vaal`). Mặc dù sample top experience chỉ ~99 nhân vật, nhưng distributions skills/items/keystones phản ánh khá tốt xu hướng chung của cộng đồng.
+Snapshot poe.ninja ngày 20/05/2026 kéo khoảng 124.114 characters, league slug `vaal`. Sample top experience chỉ ~99 nhân vật, nhưng phân bố skills/items/keystones phản ánh đủ xu hướng chung của cộng đồng.
 
 ## Class & Ascendancy Distribution
 
@@ -39,52 +39,32 @@ Tiếp theo là Shaman (7.78%), Titan (5.83%), Invoker (5.23%), Stormweaver (5.0
 
 **Lich** (Witch) chỉ đạt 2.37% — thấp hơn nhiều so với kỳ vọng ban đầu và so với vị thế của minion builds ở các mùa trước. Điều này cho thấy các nerf trước đó (đặc biệt liên quan minion ignite) đã có tác động rõ rệt.
 
-## Các Archetype Mạnh Nhất
+## Các archetype mạnh nhất
 
 ### 1. Oracle Spellslinger (Druid)
 Build Oracle Druid dùng **Spellslinger** dẫn đầu ladder với **116 triệu DPS** (character Ithaax, account Ithax-6772, level 100).
 
-Đặc điểm chung:
-- Life pool thấp (~1.6k), defence mỏng (armour 323, evasion 367) → thuần glass cannon.
-- Dựa vào trigger Spellslinger + crit multiplier cao (4.81x trong một ví dụ).
-- Keystone nổi bật: **Resonance**.
-- Mana khổng lồ (7.6k+) để duy trì spam spell.
-
-Đây là archetype "nổ một phát chết" điển hình của POE2 0.4 — khi lên được thì clear map cực nhanh, nhưng đòi hỏi gear và tree cực kỳ tối ưu.
+Life pool thấp (~1.6k), defence mỏng (armour 323, evasion 367) — thuần glass cannon. Trigger Spellslinger đẩy crit multiplier lên 4.81x trong mẫu đo, keystone nổi bật là **Resonance**, mana 7.6k+ để spam spell không ngừng. Khi lên được thì clear map cực nhanh, nhưng đòi gear và tree tối ưu đến từng chi tiết.
 
 ### 2. Poisonburst Arrow Pathfinder
-Đây là archetype phổ biến và thực chiến nhất cho clear và mapping:
-
-- **Poisonburst Arrow** xuất hiện ở mức 25%+ trong các phân tích skill cluster.
-- Nhiều character Pathfinder đạt 1–27 triệu DPS trong top sample (peakAengus đạt 27M DPS / 34k EHP).
-- Kết hợp cực tốt với Herald of Ice/Blood, Wind Dancer, projectile speed, poison proliferation.
-- Giữ được EHP khá tốt (25–34k) so với các DPS thuần khác → vừa nhanh vừa bền.
+Đây là archetype phổ biến và thực chiến nhất cho mapping. **Poisonburst Arrow** chiếm 25%+ trong phân tích skill cluster, kết hợp tốt với Herald of Ice/Blood, Wind Dancer, projectile speed, và poison proliferation. Top sample chạy 1–27 triệu DPS — peakAengus đạt 27M DPS với 34k EHP, giữ được EHP 25–34k so với các DPS thuần khác, vừa nhanh vừa bền.
 
 Pathfinder Poisonburst là lựa chọn an toàn cho cả league start lẫn endgame mapping, và là một trong những lý do **Headhunter** xuất hiện ở gần 48% population.
 
-### 3. Blood Mage — Life Sacrifice & Chaos Explosion
-Blood Mage kết hợp life cost + chaos/fire explosion tạo ra playstyle rất đặc trưng:
-
-- Sử dụng các skill như Flame Wall, Fireball, hoặc các setup explosion.
-- Tăng trưởng mạnh giữa league cho thấy cộng đồng đã tìm ra cách tối ưu sau khi các bản nerf minion ignite ra đời.
-- Thường kết hợp với Sanguimancy, Blood Magic, hoặc CI hybrid.
+### 3. Blood Mage: life cost, chaos explosion, trỗi dậy giữa league
+Blood Mage kết hợp life cost với chaos/fire explosion tạo ra playstyle rất đặc trưng. Các skill chủ lực là Flame Wall, Fireball, và các setup explosion khác, thường đi cùng Sanguimancy, Blood Magic, hoặc CI hybrid. Tăng trưởng mạnh giữa league cho thấy cộng đồng đã tìm ra cách tối ưu sau khi các bản nerf minion ignite ra đời.
 
 ### 4. Companion & Bear Builds (Shaman / Druid)
-Shaman và một số Druid build dùng **Bear** (Ancestral Bear / Bear Rampage) vừa tank vừa clear:
-
-- Top EHP có Shaman Living Lightning và các bear setup.
-- Meta companion (Bear + minion ignite trước đây) vẫn còn sức hút mạnh, dù Lich giảm sút.
+Shaman và một số Druid build dùng **Bear** (Ancestral Bear / Bear Rampage) vừa tank vừa clear. Top EHP có Shaman Living Lightning và các bear setup. Meta companion — Bear cộng minion ignite — vẫn còn sức hút mạnh dù Lich giảm sút.
 
 Điều này cực kỳ quan trọng khi nhìn sang 0.5 — **Spirit Walker** (ascendancy mới của Huntress) được thiết kế xoay quanh companion beast hunt.
 
 ### 5. Tanky Setups (Smith of Kitava, Amazon, Warbringer)
-- **Smith of Kitava Shield Wall** dẫn đầu top EHP với 86k.
-- Amazon Impurity và một số setup thorns / block cao.
-- Thường kết hợp với high life/ES + các layer defence mới của POE2 (không chỉ armour/ES như POE1).
+**Smith of Kitava Shield Wall** dẫn đầu top EHP với 86k. Amazon Impurity và một số setup thorns/block cao cũng nằm trong nhóm này, thường kết hợp high life/ES với các layer defence mới của POE2 thay vì chỉ dựa armour/ES như POE1.
 
-## Items & Keystones Phổ Biến
+## Items và keystones phổ biến
 
-**Uniques "phải có"**:
+**Uniques phổ biến**:
 - **Headhunter** — 47.8% (gần một nửa population). Mapping speed meta.
 - Heart of the Well — 61%.
 - Nascent Hope — 42.5%.
@@ -98,13 +78,13 @@ Shaman và một số Druid build dùng **Bear** (Ancestral Bear / Bear Rampage)
 
 Rất nhiều build dùng hybrid defence (MoM + CI + life/ES conversion) thay vì thuần một loại.
 
-## Xu Hướng Trong League
+## Xu hướng trong league
 
-Blood Mage và Oracle tăng trưởng mạnh nhất từ đầu đến giữa league. Điều này cho thấy meta 0.4 không phải "static" — những archetype ban đầu yếu (hoặc bị nerf) đã được rework và lên ngôi.
+Blood Mage và Oracle tăng trưởng mạnh nhất từ đầu đến giữa league. Meta 0.4 không đứng yên — những archetype ban đầu yếu hoặc bị nerf đã tìm được cách tối ưu và lên ngôi giữa chừng.
 
 Poisonburst Pathfinder giữ vững vị thế từ đầu đến cuối, chứng minh sức mạnh ổn định của poison + projectile archetype.
 
-## Bài Học Cho 0.5 — Runes of Aldur
+## Bài học chuyển tiếp sang 0.5
 
 Fate of the Vaal để lại một số insight quan trọng khi chuyển sang Return of the Ancients:
 
@@ -120,7 +100,7 @@ Fate of the Vaal để lại một số insight quan trọng khi chuyển sang R
 
 6. **Challenge system** lần đầu xuất hiện ở POE2 → cần có kế hoạch farm giống kiểu 40/40 POE1, chứ không còn "chỉ cần push level và boss".
 
-## Kết Luận
+## Kết luận
 
 Fate of the Vaal là mùa của **Pathfinder Poisonburst**, **Oracle Spellslinger** bùng nổ, và sự trỗi dậy của **Blood Mage** + companion tanky. Nó chứng minh POE2 đã có meta đa dạng và có chiều sâu, đồng thời để lại nhiều bài học quý giá cho bản 0.5 — bản đại tu endgame lớn nhất từ trước đến nay.
 
