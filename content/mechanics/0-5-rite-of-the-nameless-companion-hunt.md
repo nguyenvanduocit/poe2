@@ -66,6 +66,7 @@ Rite of the Nameless ra mắt cùng Endgame rewrite — atlas mechanic mới kh�
 - **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — cơ chế tame + modifier retention nền tảng; doc này là cách lấy nhiều lần gặp boss để fish đúng mod.
 - **related_mechanics** [Nhồi Rare Modifier Lên Unique Tamed Beast](/mechanics/crafting/0-5-tame-unique-beast-modifiers) — trục bổ trợ: tablet stacking quyết định số mod mỗi spawn, Rite quyết định số lần spawn; hai trục nhân nhau.
 - **related_mechanics** [Tame Beast Damage Scaling](/mechanics/0-5-tame-beast-damage-scaling) — vì sao Extra Crits là mod đáng fish (chuỗi crit con carry).
+- **related_mechanics** [Farm rare tamed beast bằng Untainted Paradise và essence reset](/mechanics/0-5-rare-beast-farm-locations) — cách song song cho rare beast thường: Rite chain unique boss đắt tiền, doc kia farm rare rẻ ở overworld.
 - **related_builds** [Tame Beast Companion Carry Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-carry) — build dùng đường săn này để nâng cấp con carry sau khi pack online.
 - **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Endgame 0.5 + hệ Ritual atlas mà Rite of the Nameless thuộc về.
 

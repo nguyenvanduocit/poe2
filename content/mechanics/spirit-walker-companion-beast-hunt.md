@@ -106,3 +106,4 @@ Generic companion damage không phải stat duy nhất. Với Catha's Balance, m
 - **related_mechanics** [Twister](/mechanics/skills/twister) — Spirit Walker Twister có thể dùng companion như utility layer, nhưng damage chính vẫn là projectile engine.
 - **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Spirit Walker là một trong hai ascendancy mới ra mắt cùng patch 0.5.0 Return of the Ancients.
 - **used_by** [Twister Huntress](/builds/huntress/0-5-twister-huntress-starter) — Build có thể pivot sang companion utility nếu đủ spirit và tìm được beast/boss tốt.
+- **related_mechanics** [Farm rare tamed beast bằng Untainted Paradise và essence reset](/mechanics/0-5-rare-beast-farm-locations) — cơ chế tame ở đây, còn doc kia là săn ở đâu: Untainted Paradise cho volume 4-mod, essence reset cho đúng base.
