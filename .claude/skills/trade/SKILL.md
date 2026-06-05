@@ -51,11 +51,12 @@ Hệ quả: chạy `trade-search.ts` / `PoeTradeClient` / `poeFetch` back-to-bac
 
 ## Result Workflow — securable + narrow-by-`total` + rank top-10 (BẮT BUỘC khi tìm upgrade cho user)
 
-User chơi để **mua nhanh + đúng đồ tốt**. Mỗi lần đưa list offline sort-giá = lặp đúng lỗi user đã dặn bỏ. Ba rule cứng (cũng ở project memory):
+User chơi để **mua nhanh + đúng đồ tốt**. Mỗi lần đưa list offline sort-giá = lặp đúng lỗi user đã dặn bỏ. Bốn rule cứng (cũng ở project memory):
 
-1. **`status: { option: "securable" }`** — chỉ listing mua-ngay (instant buyout), KHÔNG `any`/`online`/offline. Offline whisper-rồi-chờ = vô dụng với user.
-2. **URL cuối phải TỰ NÓ ra ~10-15 item, không phải 400.** Dùng field `total` mỗi search làm feedback: **raise floor stat lên dần cho tới khi `total` ≈ 10-15** rồi mới đưa URL đó. ĐỪNG để floor thấp (total 400+) rồi chỉ rank top-10 phía mình — user mở URL ra vẫn phải cuộn 400. Quy trình: probe total → >25 siết tiếp, <8 nới một chút. Ưu tiên siết axis user quan tâm nhất (vd "ưu tiên evasion" → push `equipment_filters.ev.min` trước).
-3. **Trả top-10 cây TỐT NHẤT, không phải 10 cây rẻ nhất.** `sort:{price:"asc"}` một mình ra junk roll tối thiểu — **securable đặc biệt bị FLOOD bản sao junk mass-listed** (bulk currency-exchange) nên cheapest-first = 20 món y hệt. Phải: đặt floor cao (loại junk) → fetch batch (~16-20) → **rank cục bộ theo điểm** (stat user quan tâm) → present 10 con điểm cao nhất kèm giá. Đưa kèm cả URL đã-narrow.
+1. **Ưu tiên `pseudo.pseudo_total_*` thay vì `explicit.stat_*` cho Life / Resistance / Attribute.** Pseudo gom MỌI nguồn của một stat vào một filter (explicit + implicit + all-elemental-res + hybrid co-roll), nên pool securable rộng hơn nhiều. `explicit.stat_3372524247` (Fire Res) bỏ sót item có fire từ all-ele-res hoặc hybrid; `pseudo.pseudo_total_fire_resistance` bắt hết. Cùng floor, pseudo ra `total` cao gấp mấy lần → dễ tìm đúng đồ + dễ siết tới 10-15 (rule 3). Dùng `explicit.stat_*` CHỈ khi cần đúng một mod cụ thể mà pseudo không gộp (vd `+Level of all Minion Skills`, `#% increased Spirit`, một notable riêng). IDs ở "## Stat Filter Lookup".
+2. **`status: { option: "securable" }`** — chỉ listing mua-ngay (instant buyout), KHÔNG `any`/`online`/offline. Offline whisper-rồi-chờ = vô dụng với user.
+3. **URL cuối phải TỰ NÓ ra ~10-15 item, không phải 400.** Dùng field `total` mỗi search làm feedback: **raise floor stat lên dần cho tới khi `total` ≈ 10-15** rồi mới đưa URL đó. ĐỪNG để floor thấp (total 400+) rồi chỉ rank top-10 phía mình — user mở URL ra vẫn phải cuộn 400. Quy trình: probe total → >25 siết tiếp, <8 nới một chút. Ưu tiên siết axis user quan tâm nhất (vd "ưu tiên evasion" → push `equipment_filters.ev.min` trước).
+4. **Trả top-10 cây TỐT NHẤT, không phải 10 cây rẻ nhất.** `sort:{price:"asc"}` một mình ra junk roll tối thiểu — **securable đặc biệt bị FLOOD bản sao junk mass-listed** (bulk currency-exchange) nên cheapest-first = 20 món y hệt. Phải: đặt floor cao (loại junk) → fetch batch (~16-20) → **rank cục bộ theo điểm** (stat user quan tâm) → present 10 con điểm cao nhất kèm giá. Đưa kèm cả URL đã-narrow.
 
 ## Search pattern
 
@@ -212,9 +213,10 @@ bun -e 'import { poeFetch } from "./.claude/skills/poe-trade/ggg/transport"; con
 bun -e 'import { poeFetch } from "./.claude/skills/poe-trade/ggg/transport"; const r = await poeFetch("poe2", "GET", "/api/trade2/data/stats"); for (const g of r.data.result) for (const e of g.entries) if (e.id === "explicit.stat_<HASH>") console.log(JSON.stringify(e.option?.options));'
 ```
 
-Reference stat-id POE2 đã tra (CACHE — dùng thẳng, KHỎI fetch 738KB stats):
+Reference stat-id POE2 đã tra (CACHE — dùng thẳng, KHỎI fetch 738KB stats). **Mặc định dùng pseudo (Result Workflow rule 1); explicit chỉ khi target đúng 1 mod:**
 
-- **Defence/res:** max Life `explicit.stat_3299347043` · Fire Res `explicit.stat_3372524247` · Lightning Res `explicit.stat_1671376347` · all Elemental Res `explicit.stat_2901986750` · Evasion Rating `explicit.stat_2144192055` (local `explicit.stat_53045048`).
+- **Pseudo (ƯU TIÊN — 1 filter gom mọi nguồn):** Life `pseudo.pseudo_total_life` · ES `pseudo.pseudo_total_energy_shield` · Fire `pseudo.pseudo_total_fire_resistance` · Cold `pseudo.pseudo_total_cold_resistance` · Lightning `pseudo.pseudo_total_lightning_resistance` · Chaos `pseudo.pseudo_total_chaos_resistance` · all-Ele Res `pseudo.pseudo_total_all_elemental_resistances` · total Ele Res (cộng 3 ele) `pseudo.pseudo_total_elemental_resistance` · total Res (gồm cả chaos) `pseudo.pseudo_total_resistance` · Str/Dex/Int `pseudo.pseudo_total_strength`/`_dexterity`/`_intelligence` · all Attributes `pseudo.pseudo_total_all_attributes`. (verify từ `data/trade-static/stats.json`)
+- **Explicit (khi cần đúng 1 mod cụ thể, không gộp):** max Life `explicit.stat_3299347043` · Fire Res `explicit.stat_3372524247` · Lightning Res `explicit.stat_1671376347` · all Elemental Res `explicit.stat_2901986750` · Evasion Rating `explicit.stat_2144192055` (local `explicit.stat_53045048`).
 - **Attributes:** Intelligence `explicit.stat_328541901` · all Attributes `explicit.stat_1379411836`.
 - **Spirit:** `+# to Spirit` (flat, body/amulet) `explicit.stat_3981240776` (alt `explicit.stat_2704225257`) · `#% increased Spirit` (đòn bẩy sceptre) `explicit.stat_3984865854` (alt `explicit.stat_1416406066`).
 - **Minion/companion:** `+# Level of all Minion Skills` `explicit.stat_2162097452` · `+# Level of all Tamed Companion Skills` `explicit.stat_448592698` · `Allies in your Presence deal #% increased Damage` `explicit.stat_1798257884` · `Minions deal #% increased Damage` `explicit.stat_1589917703` · `Minions have #% increased maximum Life` `explicit.stat_770672621` · `Allies in your Presence have #% to all Elemental Resistances` `explicit.stat_3850614073`.

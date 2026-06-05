@@ -11,14 +11,14 @@ Usage:
   python .claude/skills/price-forecast/scripts/collect.py --leagues "Runes of Aldur"
   python .claude/skills/price-forecast/scripts/collect.py --force    # re-fetch everything
 
-NOTE: poe.ninja POE2 still uses the field name `chaosValue` for compat, but the
-value is denominated in the league's baseline currency — which is **Exalted Orb**
-for POE2 (NOT Chaos Orb as in POE1). All `MIN_PRICE` thresholds and downstream
-forecast outputs are in exalted unit.
+NOTE: record field giữ tên `price_chaos` (downstream contract với forecast.py +
+build.ts) nhưng giá trị denominated theo **Exalted Orb** — baseline currency của
+POE2 (NOT Chaos Orb như POE1). Giá lấy từ poe.ninja exchange: primaryValue (theo
+divine) × core.rates.exalted = giá Exalted.
 
-TODO khi 0.5 launch (~2026-05-29): verify exact ITEM_TYPES the new endpoint exposes;
-POE2 0.5 introduces Remnant/Alloy/AncientRune categories whose exact `type=` slugs
-need to be confirmed against `https://poe.ninja/poe2/api/data/index-state`.
+SOURCE: `https://poe.ninja/poe2/api/economy/exchange/current/overview?league=<display-name>&type=Currency`
+(display-name từ leagues.py, KHÔNG phải slug; endpoint cũ `stash/current/...` đã 404).
+Endpoint này chỉ phục vụ Currency — uniques/fragments cần poe2scout (xem TODO ở CURRENCY_TYPES).
 """
 
 import json
@@ -63,33 +63,21 @@ def daily_path(date_str):
 
 # POE2 leagues live in leagues.py (single source of truth shared with forecast.py).
 
-# POE2 item types. Verify against `/poe2/api/data/index-state` mỗi league mới.
-# Conservative list — start with types known stable across 0.3 → 0.4.
-# Khi 0.5 launch, populate Remnant/Alloy/AncientRune slugs sau khi fetch test.
-ITEM_TYPES = [
-    # Uniques — full gear economy (POE2 unique pool nhỏ hơn POE1 đáng kể)
-    "UniqueWeapon",
-    "UniqueArmour",
-    "UniqueAccessory",
-    "UniqueJewel",
-    # Maps replacement
-    "Waystone",
-    # Crafting consumables
-    "Catalyst",
-    "Essence",
-    "DistilledEmotion",
-    "Omen",
-    "SoulCore",
-    # 0.5 league-specific — verify exact slug post-launch:
-    #   "Remnant", "Alloy", "AncientRune", "RuneRecipe"
-]
+# poe.ninja POE2 economy chỉ expose endpoint `exchange/current/overview` cho
+# CURRENCY (currency-vs-currency barter). type=Fragment / Unique* trả HTTP 200
+# nhưng `lines` rỗng — uniques/fragments/waystone KHÔNG có public exchange feed.
+#
+# TODO(uniques & non-currency items): poe2scout (`.claude/skills/poe2scout`) có
+# per-item OHLC DailyStatsHistory cho cả 24 category gồm uniques/fragments/runes/
+# soulcores/omens — đó là nguồn đúng cho phần non-currency. Migrate sang poe2scout
+# là việc RIÊNG (đổi dedup key + history semantics, cần user quyết), không gộp vào
+# fix endpoint này.
+CURRENCY_TYPES = ["Currency"]
 
-# Currency endpoint shape (receive/pay), separate từ item overview endpoint.
-CURRENCY_TYPES = ["Currency", "Fragment"]
-
-# POE2 baseline = Exalted Orb. Set lower than POE1's MIN_CHAOS=20 because Exalted
-# has higher base value than Chaos. 5 ex ≈ entry threshold for "flippable" item.
-MIN_CHAOS = 5  # actually min EXALTED for POE2 — name kept for cross-script symmetry.
+# POE2 baseline = Exalted Orb. 5 ex ≈ entry threshold for "flippable" item.
+# Record field giữ tên `price_chaos` (downstream contract với forecast.py +
+# build.ts) dù giá trị denominated theo Exalted.
+MIN_EXALTED = 5
 
 
 def fetch_json(url):
@@ -182,107 +170,65 @@ def collect_league(league_info, existing_keys, force=False):
     print(f"{'=' * 60}\n")
 
     all_items = []
-    total_types = len(ITEM_TYPES) + len(CURRENCY_TYPES)
+    total_types = len(CURRENCY_TYPES)
     type_idx = 0
 
-    # Item overview types — uniques, scarabs, fossils, etc.
-    for item_type in ITEM_TYPES:
-        type_idx += 1
-        try:
-            data = fetch_json(
-                f"https://poe.ninja/poe2/api/economy/stash/current/item/overview?league={encoded}&type={item_type}"
-            )
-            lines = data.get("lines", [])
-            # Filter on chaosValue floor; do NOT filter on `links` — uniques like
-            # Doryani's Prototype are 6L-only and we want their canonical price.
-            candidates = [
-                item for item in lines if item.get("chaosValue", 0) >= MIN_CHAOS
-            ]
-            candidates.sort(key=lambda x: x.get("chaosValue", 0), reverse=True)
-
-            print(
-                f"  [{type_idx}/{total_types}] {item_type}: {len(lines)} total, {len(candidates)} ≥ {MIN_CHAOS}c"
-            )
-            collected = 0
-
-            for i, item in enumerate(candidates):
-                name = item.get("name", "")
-                variant = item.get("variant", "") or ""
-                price = item.get("chaosValue", 0)
-                listings = item.get("listingCount", 0)
-                spark = (item.get("sparkLine") or {}).get("data") or []
-
-                progress(i + 1, len(candidates), name, price)
-
-                history = derive_history_from_sparkline(
-                    price, spark, today, league_start
-                )
-                for day, day_price in history:
-                    league_day = (day - league_start).days
-                    all_items.append(
-                        {
-                            "league": league_name,
-                            "item": name,
-                            "variant": variant,
-                            "type": item_type,
-                            "date": day.strftime("%Y-%m-%d"),
-                            "league_day": league_day,
-                            "price_chaos": round(day_price, 2),
-                            "listings": listings,
-                            "day_of_week": day.weekday(),
-                        }
-                    )
-                collected += 1
-
-            print(f"\r    ✓ {collected} items snapshotted{' ' * 40}")
-
-        except Exception as e:
-            print(f"  [{type_idx}/{total_types}] {item_type}: ERROR ({e})")
-
-    # Currency overview types — different response shape (receive/get_currency_id)
+    # poe.ninja exchange overview — currency-vs-currency barter.
+    # Schema: core.rates.exalted = exalted per 1 divine; lines[] carry
+    # primaryValue (price quy theo DIVINE), volumePrimaryValue (trade throughput),
+    # sparkline.data (cumulative % delta, 7 điểm — cùng dạng sparkLine cũ); join
+    # lines[].id → items[].name. Quy giá ra Exalted (baseline POE2) = primaryValue × ex_rate.
     for currency_type in CURRENCY_TYPES:
         type_idx += 1
         try:
             data = fetch_json(
-                f"https://poe.ninja/poe2/api/economy/stash/current/currency/overview?league={encoded}&type={currency_type}"
+                f"https://poe.ninja/poe2/api/economy/exchange/current/overview?league={encoded}&type={currency_type}"
             )
+            ex_rate = (data.get("core", {}).get("rates", {}) or {}).get("exalted")
+            names = {it["id"]: it.get("name", it["id"]) for it in data.get("items", [])}
             lines = data.get("lines", [])
-            candidates = [
-                item
-                for item in lines
-                if item.get("receive", {}).get("value", 0) >= MIN_CHAOS
-            ]
+
+            candidates = []
+            for ln in lines:
+                pdiv = ln.get("primaryValue")
+                if pdiv is None or not ex_rate:
+                    continue
+                price_ex = pdiv * ex_rate
+                if price_ex < MIN_EXALTED:
+                    continue
+                candidates.append(
+                    {
+                        "name": names.get(ln.get("id"), ln.get("id", "")),
+                        "price": price_ex,
+                        "spark": (ln.get("sparkline") or {}).get("data") or [],
+                        "volume": ln.get("volumePrimaryValue", 0),
+                    }
+                )
+            candidates.sort(key=lambda x: x["price"], reverse=True)
 
             print(
-                f"  [{type_idx}/{total_types}] {currency_type}: {len(lines)} total, {len(candidates)} ≥ {MIN_CHAOS}c"
+                f"  [{type_idx}/{total_types}] {currency_type}: {len(lines)} total, {len(candidates)} ≥ {MIN_EXALTED} ex"
             )
             collected = 0
 
             for i, item in enumerate(candidates):
-                name = item.get("currencyTypeName", "")
-                price = item.get("receive", {}).get("value", 0)
-                listings = item.get("receive", {}).get("listing_count", 0) or item.get(
-                    "receive", {}
-                ).get("count", 0)
-                spark = (item.get("receiveSparkLine") or {}).get("data") or []
-
-                progress(i + 1, len(candidates), name, price)
+                progress(i + 1, len(candidates), item["name"], item["price"])
 
                 history = derive_history_from_sparkline(
-                    price, spark, today, league_start
+                    item["price"], item["spark"], today, league_start
                 )
                 for day, day_price in history:
                     league_day = (day - league_start).days
                     all_items.append(
                         {
                             "league": league_name,
-                            "item": name,
+                            "item": item["name"],
                             "variant": "",
                             "type": currency_type,
                             "date": day.strftime("%Y-%m-%d"),
                             "league_day": league_day,
                             "price_chaos": round(day_price, 2),
-                            "listings": listings,
+                            "listings": round(item["volume"]),
                             "day_of_week": day.weekday(),
                         }
                     )
@@ -311,9 +257,9 @@ def main():
 
     print(f"{'=' * 60}")
     print(f"  PoE Price Collector (currency & consumables)")
-    print(f"  {len(ITEM_TYPES)} item types + {len(CURRENCY_TYPES)} currency types")
+    print(f"  {len(CURRENCY_TYPES)} currency type(s) via poe.ninja exchange overview")
     print(
-        f"  Min {MIN_CHAOS}c | {'FORCE mode' if force else f'Progressive ({len(existing_keys)} items cached)'}"
+        f"  Min {MIN_EXALTED} ex | {'FORCE mode' if force else f'Progressive ({len(existing_keys)} items cached)'}"
     )
     print(f"{'=' * 60}")
 
