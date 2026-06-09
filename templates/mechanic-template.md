@@ -2,9 +2,6 @@
 template_path: templates/mechanic-template.md
 document_type: mechanic
 sections:
-  - how-it-works
-  - key-interactions
-  - optimization
   - "*"
   - version-history
   - relationships
@@ -37,48 +34,49 @@ fields:
 
 <!--
 Mechanic guide template — viết theo skill /write-mechanic-tutorial.
-Voice: tiếng Việt, owner-voice (KHÔNG "theo wiki"), prose-first, ≥1 ví dụ với số thật từ character mình.
-Title KHÔNG kèm league/patch.
-Term game (skill/item/scarab/monster) → bold + wiki link lần đầu.
-Cross-link → section ## Relationships ở cuối, mỗi dòng: - **predicate** [Title](/route) — reason.
+Voice: tiếng Việt, owner-voice (KHÔNG "theo wiki"), prose-first, ground bằng số thật.
+Title KHÔNG kèm league/patch. Term game → :wiki-link{url="..."} lần đầu.
+
+RIGHT-SIZING (quan trọng nhất): số section khớp ĐỘ PHỨC TẠP mechanic.
+  - Mechanic atomic (1 crafting trick / 1 interaction / 1 gambling play) → 3-5 section là đủ.
+  - League system / skill phức tạp → mới 8-12 section.
+  - Thêm section mỏng cho "đủ template" = VI PHẠM. Mỗi section ≥2 câu nội dung thật.
+HEADING: sentence-case tiếng Việt nói thẳng section làm gì (vd "## Toán break-even").
+  KHÔNG dash-subtitle "## X — Y". Tên archetype EN bên dưới chỉ là nhãn để biết LOẠI section.
+
+REQUIRED CORE (luôn có, tối thiểu 3): Intro + 1 section cơ chế + 1 section takeaway.
+OPTIONAL MENU (chỉ thêm khi mechanic cần — trigger dùng-khi/bỏ-khi ở mỗi placeholder dưới).
+Xem chi tiết: .claude/skills/write-mechanic-tutorial/SKILL.md "## Section structure".
 -->
 
-(Intro 2-3 câu. Câu 1: cơ chế là gì + xuất hiện ở đâu trong game. Câu 2: ai cần hiểu — build dùng / farming reliant / boss encounter. Câu 3 optional: nếu là league mechanic, version/patch ra mắt.)
+(Intro 2-4 câu, không heading. Cơ chế là gì + visual/tooltip anchor · xuất hiện/đổi ở patch nào · ai/build đang dùng (named hoặc % poe.ninja) · optional: vì sao quan tâm bây giờ. Câu nào không có nội dung thật thì bỏ.)
 
-## How It Works
+## [Cơ chế hoạt động thế nào]   <!-- REQUIRED · archetype How It Works -->
 
-(Sequential narrative explanation. Trigger → player action → game response → outcome. Visual cue nếu có. **Phải có ≥1 ví dụ cụ thể với số thật từ character mình** — vd "TheLeader_A có ES 6,114, áp Doryani's -200% lightning res lên enemy → Wretched Defiler DPS nhân ~3.5x lên ~23.2M". Section dài nhất, 2-4 đoạn prose. Section H2 giữ tiếng Anh để consistent với legacy + vault-keeper; prose tiếng Việt.)
+(Sequential narrative: trigger → player action → game response → outcome. Visual cue nếu có. Ground bằng số thật — từ character/PoB khi apply, else market snapshot / empirical run / wiki-poedb. Ambiguity → nhúng Hypothesis/Evidence/Kết luận. Đây thường là section dài nhất.)
 
-## Key Interactions
+<!-- ─────────── OPTIONAL MENU — xoá placeholder không dùng ───────────
 
-(Synergies — cái gì làm mechanic mạnh hơn. Anti-synergies — cái gì break. Mỗi interaction kèm cơ chế underlying, không chỉ "interact tốt với X". Mỗi interaction claim kèm 1 dòng `Exclusion check: <none | list>` confirm one-way block đã verify (Avatar of Fire, Eldritch Battery, Resolute Technique, Chaos Inoculation, etc.). Xem **Interaction Verification Protocol** trong CLAUDE.md hoặc invoke agent `interaction-mapper`.)
+## [Toán/derivation]              · dùng khi có scaling đa nguồn / phép tính không tầm thường (DPS/EHP/break-even/xác suất). Line-item → con số cuối. Single source → 1 câu note, không cần section.
+## [Tương tác chính]              · dùng khi synergy/anti-synergy đáng kể. Mỗi cái + cơ chế underlying + `Exclusion check: <none|list>`. Sub "wording distinction" nếu modifier dễ nhầm.
+## [Tối ưu]                       · dùng khi có lựa chọn đầu tư/thực thi cần ưu tiên. Kiểm breakpoint trước khi quote uplift %.
+## [Tương tác với league content] · dùng cho league mechanic overlay (Delirium/Breach/Harvest). Bỏ cho skill/item thường.
+## [Cái không hoạt động]          · dùng khi có kỳ vọng sai phổ biến (mod không proc, support không scale).
+## [Lỗi hay gặp]                  · dùng khi có lỗi thật tốn kém. "Sai — Đúng — Lý do" + cost/loss number.
+## [Chi phí & ràng buộc]          · dùng khi setup tốn currency / có exclusion / gating / downside thật.
+────────────────────────────────────────────────────────────────── -->
 
-## Optimization
+## [Tổng kết / Verdict]   <!-- REQUIRED · archetype Verdict & Open Questions -->
 
-(Atlas tree node, scarab, map mod, character-side investment — skill / item / passive. Execution tip. Prioritise theo impact. Prose, không bullet 30 node. Nếu mechanic có breakpoint (action speed, resist cap, suppress threshold, minion cap, animation cancel) → kiểm breakpoint trước khi quote uplift %; document explicit. Xem **Breakpoint Awareness** trong CLAUDE.md.)
+(Recap gọn. Khi doc có phán quyết → verdict label BUFF/NERF/NEUTRAL/EXPLOITABLE/OUTDATED + open question. Mechanic thuần giải thích thì recap không cần verdict label giả.)
 
-## Interactions with Other Content
-
-(Mechanic này khi overlay với league content khác — Delirium, Breach, Harvest, Mirage. Quan trọng cho league mechanic; có thể skip cho skill/item nếu không apply.)
-
-## What Doesn't Work
-
-(Anti-pattern. Mech nào không proc, support nào không scale, item nào không stack. Explicit như maxroll — "Penance Brand NEEDS Shaper of Flames, không có thì không ignite".)
-
-## Common Mistakes
-
-(Mỗi mistake giải thích **cả mistake lẫn correct approach lẫn lý do**. Format prose: "Sai — ... Đúng — ... Lý do — ...". Hoặc numbered list nếu ≥3 mistake.)
-
-## Summary
-
-(3-5 bullet recap. Chỗ duy nhất bullet thoải mái.)
-
-## Version History
+## Version History   <!-- OPTIONAL · dùng khi lịch sử patch ảnh hưởng tính hợp lệ advice -->
 
 ### Patch X.Y.Z
-- (Significant change — ngày, change content, tác động đến advice trong doc.)
+(Prose 1-3 câu narrative kết nối — ngày, change content, tác động đến advice.)
 
-## Relationships
+## Relationships   <!-- OPTIONAL · cross-link nội bộ, đặt cuối doc -->
+
 
 ```yaml section-rules
 required: false

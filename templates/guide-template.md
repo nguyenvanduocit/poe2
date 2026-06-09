@@ -31,35 +31,31 @@ fields:
 
 # [Guide Title]
 
-> **Quick Summary:** [1-2 sentence what this guide teaches and who it's for.]
+<!--
+Guide tutorial template. Voice: tiếng Việt, owner-voice, prose-first. Title KHÔNG kèm league/patch.
+Term game → :wiki-link{url="..."} lần đầu (POE2 → poe2wiki.net).
 
-## Overview
+RIGHT-SIZING: guide là tutorial tuần tự — required-core = Intro + các bước (Step-by-Step) + Tips/Pitfalls.
+CẮT section không cần, ĐỪNG pad. KHÔNG mở `## Quick Summary`/`## Overview` meta-summary ("guide này dạy gì,
+cho ai") — vào thẳng. Cross-link đặt ở `## Relationships`, KHÔNG mở `## Related Resources` trùng nó.
+Heading: sentence-case tiếng Việt nói thẳng (vd `## Mở khoá atlas`), KHÔNG dash-subtitle `## X — Y`.
+-->
 
-[Who this guide is for, what they will learn, prerequisites.]
+(Intro 2-3 câu — không heading. Guide làm được gì cho người đọc + prerequisite (gear/build state) gói gọn vào đây, đừng mở section Overview riêng.)
 
-## Prerequisites
+## [Bước 1: tên giai đoạn]
 
-- [Prior knowledge or gear required]
-- [Build state (e.g. "any league-start build", or "this build at level 70+")]
+(Mô tả, key decision. Tutorial tuần tự — mỗi bước một H2 hoặc H3 tuỳ độ dài.)
 
-## Step-by-Step
+## [Bước 2: tên giai đoạn]
 
-### Step 1: [Phase Name]
-
-[Description, screenshots if helpful, key decisions.]
-
-### Step 2: [Phase Name]
-
-[…]
+(…)
 
 ## Tips & Pitfalls
 
-- [Tip 1]
-- [Common mistake 1]
+(Omit nếu tip đã gói trong từng bước.)
 
-## Related Resources
-
-[Cross-links to builds, mechanics, farming strategies that build on or extend this guide.]
+- [Tip / lỗi hay gặp]
 
 ## Relationships
 

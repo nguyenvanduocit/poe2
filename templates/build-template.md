@@ -49,33 +49,39 @@ fields:
 
 <!--
 Build guide template — viết theo skill /write-build-tutorial.
-Voice: tiếng Việt, owner-voice (KHÔNG "theo Fubgun"), prose-first.
-Title KHÔNG kèm league/patch (site auto-concat).
-Mọi term game (skill/support/unique/scarab/jewel/flask) → bold + wiki link lần đầu.
-Cross-link → section ## Relationships ở cuối, mỗi dòng: - **predicate** [Title](/route) — reason.
+Voice: tiếng Việt, owner-voice (KHÔNG "theo Fubgun"), prose-first. Title KHÔNG kèm league/patch.
+Term game (skill/support/unique/jewel/flask) → :wiki-link{url="..."} lần đầu (POE2 → poe2wiki.net).
+
+RIGHT-SIZING: build vốn nhiều mặt (skill/tree/gear/defense/leveling) nên thường 8-12 section —
+nhưng CẮT section không áp dụng, ĐỪNG pad, ĐỪNG lặp. Section mỏng/độn hoặc trùng section khác = vi phạm.
+Doc mẫu lean: warrior/shield-wall-warbringer (8 heading topic-driven, zero filler).
+Heading: giữ tên chuẩn dưới HOẶC sentence-case tiếng Việt nói thẳng — KHÔNG dash-subtitle `## X — Y`.
+Section REQUIRED `## Failure Modes` PHẢI giữ ĐÚNG literal đó (validator key theo heading text — KHÔNG Vietnamese-ize, KHÔNG thêm subtitle); tự do heading tiếng Việt CHỈ áp dụng cho section optional.
+POE2 KHÔNG có hệ Pantheon/Bandit → KHÔNG viết section đó.
+
+REQUIRED (luôn có): Intro + Build Overview + Failure Modes (validator-enforced) + Verdict.
+OPTIONAL (include khi build cần, OMIT cả section khi không — đừng để placeholder rỗng):
+  Skill Gems · Ascendancy · Passive Tree · Stat Priorities (+Ratings) · Gear Progression ·
+  Flasks · Leveling Notes · Budget & Investment · Resources · Changelog.
 -->
 
-(Intro paragraph 2-3 câu — không heading. Câu 1: build là gì + ai chơi sẽ thích. Câu 2-3: core mechanic + content focus.)
+(Intro 2-3 câu — không heading. Build là gì + ai chơi sẽ thích · core mechanic + content focus.)
 
 ## Build Overview
 
-(1-2 đoạn prose. Damage source → scaling vector → defense layer → mobility. Trả lời "build này hoạt động ra sao?")
+(1-2 đoạn prose. Damage source → scaling vector → defense layer → mobility. "Build này hoạt động ra sao?")
 
 ## Skill Gems & Links
 
-(Main 6L + aura + movement + utility. Mỗi support 1 câu why — interaction nó gây ra, không phải tên. Nếu build dùng combo có exclusion clause (vd Avatar of Fire + cold/lightning, Eldritch Battery + CI, Resolute Technique + crit) → document `Exclusion check: <none | list>` sau setup. Xem **Interaction Verification Protocol** trong CLAUDE.md.)
+(Main 6L + aura + movement + utility. Mỗi support 1 câu why — interaction nó gây ra, không phải tên. Combo có exclusion clause (Avatar of Fire + cold/lightning, Eldritch Battery + CI, Resolute Technique + crit) → `Exclusion check: <none | list>`. Xem **Interaction Verification Protocol** trong CLAUDE.md.)
 
-**Main Skill (6L):** [Skill] + [Support] + [Support] + [Support] + [Support] + [Support]
-
+**Main Skill (6L):** [Skill] + [Support] ×5
 **Aura Setup:** [Aura 1] + [Aura 2] + ...
-
-**Movement:** [Movement Skill] + ...
-
-**Utility:** [Curse / CWDT / Trigger / etc.]
+**Movement / Utility:** [Movement] · [Curse / CWDT / Trigger]
 
 ## Ascendancy
 
-(Thứ tự lab: Lab 1 → Lab 2 → Lab 3 → Uber + lý do từng node. Prose; bullet chỉ khi liệt kê 4 node độc lập.)
+(Thứ tự ascend + lý do từng node. Prose; bullet chỉ khi liệt kê node độc lập. Omit nếu đã gói trong Build Overview.)
 
 ## Passive Tree & Mastery
 
@@ -83,99 +89,71 @@ Cross-link → section ## Relationships ở cuối, mỗi dòng: - **predicate**
 
 ## Stat Priorities & Defenses
 
-(Số thật từ PoB hoặc character file. Bullet OK đây vì purely data points. DPS claim ≥ 100k và EHP claim phải có PoB link bên dưới — không quote raw number không reference. EHP layer order (0.5+): armor → evasion → block → max res → ES/Life pool → **Runic Ward** → recovery rate. Xem **Math Chain Bắt Buộc cho Big Number** trong CLAUDE.md.)
+(Số thật từ PoB hoặc character file. Bullet OK đây vì purely data points. DPS ≥ 100k và EHP claim phải có PoB link — không quote raw number không reference; multi-source → math chain (xem **Math Chain Bắt Buộc cho Big Number**). EHP layer 0.5+: armor → evasion → block → max res → ES/Life → **Runic Ward** → recovery.)
 
-- **ES / Life:** X
-- **Armour / Evasion:** X / X
-- **Block / Spell Block:** X% / X%
-- **EHP:** X
-- **Resistances:** Fire X% / Cold X% / Lightning X% / Chaos X%
-- **Max Hit per type:** Phys X / Fire X / Cold X / Lightning X / Chaos X
-- **Charges max:** Endurance X / Frenzy X / Power X
-- **Movement Speed:** X%
+- **ES / Life:** X · **Armour / Evasion:** X / X · **Block / Spell Block:** X% / X%
+- **EHP:** X · **Resistances:** F X / C X / L X / Chaos X
+- **Max Hit per type:** Phys X / Fire X / Cold X / Light X / Chaos X
+- **Charges:** End X / Frenzy X / Power X · **Movement Speed:** X%
 
 ### Performance Ratings
 
-(Body section thay frontmatter `ratings:` block. Điền đủ 6 dimension dưới đây,
-mỗi cái 1-5 — đây là convention của build doc, viết tay khi soạn bài.)
+(Convention build doc — điền 6 dimension 1-5, viết tay khi soạn.)
 
-| Aspect          | Rating (1-5) |
-|-----------------|--------------|
-| clear_speed     | 3            |
-| boss_damage     | 3            |
-| survivability   | 3            |
-| mobility        | 3            |
-| league_start    | 3            |
-| budget_scaling  | 3            |
-
-## Resources
-
-(External link: gắn ≥1 PoB pastebin chính — pobb.in / pob.party /
-pathofexile.com/.../character/. Optional: video guide YouTube, forum guide
-forum.pathofexile.com, character profile.)
-
-- **PoB:** https://pobb.in/[build-id]
-- **Video guide:** [optional]
-- **Forum guide:** [optional]
+| Aspect | Rating (1-5) |
+|---|---|
+| clear_speed | 3 |
+| boss_damage | 3 |
+| survivability | 3 |
+| mobility | 3 |
+| league_start | 3 |
+| budget_scaling | 3 |
 
 ## Gear Progression
 
 ### Gear theo slot
-(Equip-reference: bullet 1 dòng/slot cho MỌI slot — weapon, off-hand/shield, helmet, body,
-gloves, boots, belt, amulet, ring ×2, jewel (+ charm nếu game có). Mỗi dòng: item/base +
-2-4 mod ưu tiên (dòng nào quan trọng) + 1 câu why. Dẫn bằng 1 đoạn priority order: cap res
-trước → Life → attribute floor cho gem → damage stat chính → +skill level → reservation/utility
-→ defense layer. Unique → :wiki-link. KHÔNG dùng table — bullet-per-slot (cột site hẹp). Slot
-nào đã có mục cơ chế riêng (vd body unique, weapon-axis) thì tóm 1 câu + cross-ref, đừng lặp.)
+(Bullet 1 dòng/slot cho mọi slot — weapon, off-hand, helmet, body, gloves, boots, belt, amulet, ring ×2, jewel (+ charm). Mỗi dòng: item/base + 2-4 mod ưu tiên + 1 câu why. Dẫn bằng 1 đoạn priority order: cap res → Life → attribute floor cho gem → damage stat chính → +skill level → reservation/utility → defense. Unique → :wiki-link. KHÔNG table. Slot đã có mục cơ chế riêng thì tóm 1 câu + cross-ref.)
 
-### Leveling
-(Item base + key mod tier 1-9.)
-
-### Early Mapping
-(Yellow/red maps — gear breakpoint để cap res, đủ DPS clear T16.)
-
-### Endgame
-(T17 / Pinnacle viable. Item base + key mod + lý do.)
-
-### Mirror Tier (BiS)
-(Optional. Cluster jewel, mirror item, max-roll Mageblood. Diminishing returns kicks in.)
+### Leveling → Early Mapping → Endgame → Mirror Tier (BiS, optional)
+(Item base + key mod tier theo từng giai đoạn. Bỏ giai đoạn không có gì khác biệt để nói.)
 
 ## Flasks
 
-(5 flask + lý do. Mageblood-build: note mod cần roll. Flask link wiki lần đầu.)
-
-## Pantheon & Bandits
-
-**Major:** [God] — [Why]  
-**Minor:** [God] — [Why]  
-**Bandits:** [passive / Oak / Kraityn / Alira] — [Why]
+(Flask + lý do. Mageblood-build: note mod cần roll. Flask :wiki-link lần đầu. Omit nếu build chỉ dùng flask thường, không có gì để note.)
 
 ## Leveling Notes
 
-(Skill transition theo act, gem swap, gear breakpoint. Câu 1 campaign skill chính, câu 2 act mấy swap sang main skill.)
+(Skill transition theo act, gem swap, gear breakpoint. Câu 1 campaign skill chính, câu 2 act mấy swap sang main skill. Omit nếu trùng Gear Progression > Leveling.)
 
 ## Budget & Investment
 
-(Investment curve: min chaos để chạy → divine breakpoint → mirror tier. Diminishing returns kicks in ở đâu.)
+(Investment curve: min để chạy → divine breakpoint → mirror tier. Diminishing returns kicks in ở đâu.)
 
-## Strengths & Limitations
+## Resources
 
-(Honest. 2-3 thứ build làm tốt + 2-3 thứ build struggle, vd reflect, no-leech map, specific boss.)
+<!-- OMIT cả section nếu build chưa materialize — KHÔNG ship placeholder "PoB: PENDING" -->
+
+- **PoB:** https://pobb.in/[build-id]
+- **Video / Forum guide:** [optional]
 
 ## Failure Modes
 
-(Bắt buộc ≥ 3 scenario build gãy, cover các category:
+```yaml section-rules
+required: true
+```
+
+(≥ 3 scenario gãy, cover các category:
 - **Map mod hostile** — mod nào make build unplayable (no regen, less recovery, reflect, ele weakness, additional projectile)
-- **One-shot encounter** — boss pattern nào kill bất chấp EHP spreadsheet (T17 slam, Uber pinnacle, Simulacrum wave 25+)
-- **Gear / currency floor** — investment cần đạt để build chạy như paper math (vd "cần Mageblood + 6L mới ra số DPS này")
-- **Patch sensitivity** — mechanic nào nếu nerf sẽ kill build (vd "build depend Doryani's -200% lightning res — nerf prototype = build chết")
-- **League start viability** — build có chạy được không gear cố định không
+- **One-shot encounter** — boss pattern nào kill bất chấp EHP (T17 slam, Uber pinnacle, Simulacrum wave 25+)
+- **Gear / currency floor** — investment cần đạt để build chạy như paper math
+- **Patch sensitivity** — mechanic nào nếu nerf sẽ kill build
+- **League start viability** — chạy được không gear cố định không
 
-Prose 1 đoạn per category đáng cover. Xem **Failure Mode / Devil's Advocate** trong CLAUDE.md.)
+Mở đầu gói luôn 2-3 thứ build làm tốt (thay section Strengths riêng), rồi 1 đoạn prose per category gãy. Xem **Failure Mode / Devil's Advocate** trong CLAUDE.md.)
 
-## Summary
+## Verdict
 
-(3-5 bullet recap. Đây là chỗ DUY NHẤT bullet thoải mái trong build guide.)
+(Prose takeaway 2-4 câu, KHÔNG bullet-recap toàn bài. Build hợp với ai, ngưỡng đầu tư để chạy như paper, verdict gọn. Confidence ở frontmatter `confidence_level` — KHÔNG nhãn HIGH/MEDIUM/LOW trong prose.)
 
 ## Changelog
 

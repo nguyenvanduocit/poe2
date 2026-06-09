@@ -48,6 +48,8 @@ Snapshot LUÔN từ live fetch `.claude/skills/pob/scripts/pob.sh fetch "<charna
 Title KHÔNG kèm league/patch.
 Đây KHÔNG phải tutorial — là live tracking note.
 Cross-link → section ## Relationships ở cuối, mỗi dòng: - **predicate** [Title](/route) — reason.
+
+RIGHT-SIZING: required-core = Snapshot + Current Goals + Progress Log. Challenge Tracking optional (đã đánh dấu dưới). CẮT section không dùng, ĐỪNG pad. Heading sentence-case, KHÔNG dash-subtitle.
 -->
 
 (Intro 1-2 câu. Câu 1: class/ascendancy/level + current stage — campaign / mapping / endgame / 40-40 push. Câu 2 optional: primary goal hiện tại + ETA nếu có.)

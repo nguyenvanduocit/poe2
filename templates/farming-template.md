@@ -54,6 +54,10 @@ POE2 endgame KHÔNG có scarab. Vocabulary đúng: Waystone (map item), Precurso
 
 Waystone/tablet/atlas keystone/unique/currency/fragment → `:wiki-link{url="https://www.poe2wiki.net/wiki/<page>"}` MDC component (auto link ra poe2wiki.net + price tooltip).
 Cross-link → section ## Relationships ở cuối, mỗi dòng: - **predicate** [Title](/route) — reason.
+
+RIGHT-SIZING: CẮT section không áp dụng, ĐỪNG pad, ĐỪNG lặp. Section mỏng/độn hoặc trùng section khác = vi phạm. Heading giữ tên chuẩn HOẶC sentence-case tiếng Việt — KHÔNG dash-subtitle. Section REQUIRED `## Failure Modes` PHẢI giữ ĐÚNG literal đó (validator key theo heading text); tự do heading tiếng Việt CHỈ cho section optional.
+REQUIRED (luôn có): Intro + Strategy Overview + Loot Breakdown (profit math) + Failure Modes (validator-enforced) + Quick Reference Card.
+OPTIONAL (include khi cần, omit khi không): Setup · Gameplay · Profit Optimization · Alternatives · Data & Testing · Changelog. Risk/saturation gói thẳng vào Failure Modes — KHÔNG mở section Market Context riêng trùng nó.
 -->
 
 (Intro 2-3 câu. Câu 1: strategy là gì + tier. Câu 2: core mechanism — content nào farm, drop nào make money. Câu 3: ai nên chạy — early league / endgame / specific build. Restate frontmatter metric inline: "Tier B, investment Medium, ~5-10 div/h tính đến YYYY-MM-DD".)
@@ -98,13 +102,13 @@ expected_profit_per_hour =
 
 **Số có timestamp** — "tính đến YYYY-MM-DD, [item] sells X per unit, map yields Y units → Z div/map". Reference snapshot file `data/poe-ninja/<league>/snapshots/<date>.json` hoặc trade query date. Snapshot > 7 ngày → re-fetch trước khi quote. Xem **Market Data Freshness** trong CLAUDE.md.)
 
-## Market Context & Risk
-
-(Price trend (rising/falling), saturation risk, patch nerf risk, league phase. Honest về sustainability — "strategy này compete với X, week 2-3 prices likely compress".)
-
 ## Failure Modes
 
-(Bắt buộc ≥ 3 scenario strategy gãy:
+```yaml section-rules
+required: true
+```
+
+(Mở 1-2 câu market risk: price trend, saturation, patch nerf, league phase — honest về sustainability ("compete với X, week 2-3 prices likely compress"). Rồi ≥ 3 scenario strategy gãy:
 - **Market saturation** — drop key bị flood, giá compress > X% (vd week 2-3 league)
 - **Sustain failure** — tablet/waystone base/atlas key node không sustain với farming rate
 - **Build floor** — strategy require clear speed Y maps/h hoặc DPS Z; dưới ngưỡng = không lãi
@@ -124,10 +128,6 @@ Prose 1-2 đoạn cover risk thực tế nhất. Xem **Failure Mode / Devil's Ad
 ## Data & Testing
 
 (Evidence cho profit claim. Personal sample size + condition. Source link — poe.ninja, poe2scout, /trade output. Market data recency.)
-
-## Summary
-
-(3-5 bullet recap. Chỗ duy nhất bullet thoải mái.)
 
 ## Quick Reference Card
 
