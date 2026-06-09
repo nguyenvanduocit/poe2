@@ -34,7 +34,7 @@ Skill này viết hoặc update character progress note trong `content/character
 File `.md` trong `content/characters/` với:
 
 - Frontmatter pass `bun run validate --path <file>` zero CRITICAL.
-- 6 H2 section theo đúng thứ tự (Snapshot, Goals, Priority Actions, Gear Summary, Challenge Tracking, Progress Log).
+- Required core 5 section (Snapshot, Current Goals, Priority Actions, Gear Summary, Progress Log) + optional Challenge Tracking — không pad section rỗng.
 - **Snapshot section** lấy số live từ `.claude/skills/pob/scripts/pob.sh fetch "<charname>" [--spectre "<name>"]`. Số mặc kệ là current state, KHÔNG static từ frontmatter.
 - **Progress Log** cập nhật entry mới ở TOP với format `### YYYY-MM-DD` (reverse-chrono).
 - 100% voice rule tuân thủ.
@@ -77,7 +77,9 @@ Replace bằng character-specific:
 - Challenge Tracking (nếu character đang chase 40/40 hoặc challenge specific — optional section)
 - Progress Log (reverse-chrono session log)
 
-## Section structure (6 H2 theo thứ tự)
+## Section structure — required core + optional
+
+(Required core 5: Snapshot · Current Goals · Priority Actions · Gear Summary · Progress Log. Optional: Challenge Tracking. CẮT section không dùng, ĐỪNG pad. Heading literal cho vault-keeper match.)
 
 1. **(Intro paragraph, không heading)** — 1-2 câu. Câu 1: class/ascendancy/level + current stage (campaign / mapping / endgame / 40-40 push). Câu 2 (optional): primary goal hiện tại + ETA nếu có.
 2. **## Snapshot** — Defenses + offense tại thời điểm fetch. Heading literal là `## Snapshot` (không parenthetical date) để vault-keeper match. Note timestamp ở dòng đầu section: `*Live fetch: YYYY-MM-DD*` (italic, dưới heading). Format khuyến khích bullet stat-dump (đây là exception cho prose-first vì purely data points):
@@ -131,7 +133,7 @@ Draft 1 dòng/section nói updates gì. **Human checkpoint** — user duyệt n�
 **Success criteria**: Mode `full update` → user approve outline. Mode `log-only` / `snapshot-only` → skip step.
 
 ### 5. Viết / append prose
-- **Full update**: viết 6 section theo Section structure.
+- **Full update**: viết required core 5 section (+ Challenge Tracking nếu áp dụng) theo Section structure.
 - **Log-only**: prepend new `### YYYY-MM-DD` entry ở TOP của Progress Log section. Cập nhật `updated:` frontmatter field. Cập nhật `level:`, `current_progress:` nếu user mention thay đổi.
 - **Snapshot-only**: replace Snapshot section block, cập nhật `updated:` frontmatter.
 

@@ -33,7 +33,7 @@ Skill này viết tutorial farming strategy trong `content/farming/` theo **cấ
 File `.md` trong `content/farming/` với:
 
 - Frontmatter pass `bun run validate --path <file>` zero CRITICAL error.
-- 12 H2 section + Relationships theo đúng thứ tự (xem "Section structure").
+- **Section right-sized** — required core (Intro + Strategy Overview + Loot Breakdown + Failure Modes + Quick Reference Card) + optional menu, không ép số section cố định (xem "Section structure").
 - Frontmatter `strategy_tier` / `investment_tier` / `confidence_level` + profit/hour (state inline có timestamp, KHÔNG phải frontmatter field) re-state ở intro paragraph (không lặp 2 chỗ same wording).
 - Mọi số (profit, tablet cost, drop value) **có timestamp** ("tính đến 2026-06-05, Omen of Sinistral Erasure ~3 div/cái") — số không có timestamp = fabricate.
 - Mọi tablet / waystone / atlas keystone / unique / fragment / currency / Master → `:wiki-link{url="https://www.poe2wiki.net/wiki/..."}`.
@@ -63,26 +63,27 @@ File `.md` trong `content/farming/` với:
 - **Concrete numbers** — input cost, output value, profit/map, time/map.
 - **Pro Tip inline bolded** — `**Pro Tip:** ...` thay vì callout box.
 
-## Section structure (12 H2 + Relationships theo thứ tự)
+## Section structure — required core + optional menu, right-sized
 
-1. **(Intro paragraph, không heading)** — 2-3 câu hook. Câu 1: strategy là gì + tier (S/A/B). Câu 2: core mechanism (content nào farm, drop nào make money). Câu 3: ai nên chạy (early league / endgame / specific build).
-2. **## Strategy Overview** — 1 đoạn prose: tại sao strategy này làm ra tiền trong meta hiện tại. Mention key tablets/fragments/atlas nodes unlock profit + lý do.
-3. **## Setup**
-   - **### Atlas Passive Tree** — Cluster chính path + mechanic subtree (Ritual/Breach tree) chọn node nào + Masters of the Atlas (Jado, Hilda...) assignment + lý do. Link tới atlas tree builder nếu có. Prose, không list 30 node bullet.
-   - **### Tablets & Map Device** — Precursor tablet loadout (gồm unique tablet) + lý do từng cái. Số tablet slot theo số modifier waystone (6-mod = 3 slot); City biome map + notable Industrial Improvements mở slot 4. Tower = nguồn rớt tablet, không phải nơi cắm. Map device fragment cho pinnacle / Ocean Exploring nếu có. `:wiki-link` mỗi tablet.
-   - **### Waystone & Map Choice** — Waystone tier + biome (city/grass/forest/desert) + lý do (layout, density, spawn rate). `:wiki-link` cho map name.
-   - **### Build Requirements** — Min DPS, clear speed, survivability ngưỡng. HC viable không? League-start budget character chạy được không?
-4. **## Gameplay** — Step-by-step trong map: activate gì trước, clear order, what to pick up, when to leave. Prose 1-2 đoạn, không bullet 20 step.
-5. **## Loot Breakdown & Economic Analysis** — Drop expected: currency / unique / fragment. Math: input cost X ex / map → output Y div / map → profit Z. **Số phải có timestamp**.
-6. **## Market Context & Risk** — Price trend (rising/falling), saturation risk, patch nerf risk, league phase (early/mid/late). Honest về sustainability.
-7. **## Failure Modes** — Bắt buộc ≥ 3 scenario strategy gãy (market saturation, sustain failure, build floor, patch nerf, time investment). Prose 1-2 đoạn. Xem CLAUDE.md "Failure Mode / Devil's Advocate" — note thiếu section này = chưa xong.
-8. **## Profit Optimization** — Advanced tip: atlas node upgrade path từ B → A tier, tablet roll min-max, bulk vs individual sale, fleet use. Prose.
-9. **## Alternatives & Variations** — Strategy cạnh tranh + when to switch. Variant strategy (vd add Delirium overlay).
-10. **## Data & Testing** — Evidence cho profit claim. Personal sample size, source link (poe2scout, /trade), market data recency.
-11. **## Summary** — 3-5 bullet recap (chỗ duy nhất bullet thoải mái).
-12. **## Quick Reference Card** — Setup cost / Profit / Time / Waystone / Atlas nodes / Masters / Tablets / Fragments. Đây là chỗ definition list được khuyến khích.
-13. **## Changelog** — `### YYYY-MM-DD` reverse-chrono.
-14. **## Relationships** — cross-link nội bộ, mỗi dòng `- **predicate** [Title](/route) — reason`.
+**Right-sizing: CẮT section không áp dụng, ĐỪNG pad, ĐỪNG lặp.** Section mỏng/độn hoặc trùng section khác = vi phạm. Heading sentence-case tiếng Việt HOẶC tên chuẩn — KHÔNG dash-subtitle. **Section REQUIRED `## Failure Modes` PHẢI giữ ĐÚNG literal đó** (validator key theo heading text); tự do heading tiếng Việt CHỈ cho section optional. **KHÔNG mở section Market Context riêng** (risk gói vào Failure Modes), **KHÔNG mở Summary bullet-recap** (đã có Quick Reference Card).
+
+### Required core (luôn có)
+
+1. **Intro (không heading)** — 2-3 câu: strategy là gì + tier · core mechanism (content nào farm, drop nào make money) · ai nên chạy. Restate frontmatter metric inline ("Tier B, ~5-10 div/h tính đến YYYY-MM-DD").
+2. **## Strategy Overview** — tại sao strategy làm ra tiền trong meta hiện tại; key tablets/fragments/atlas nodes unlock profit + lý do.
+3. **## Loot Breakdown & Economic Analysis** — profit math: input cost X ex/map → output Y div/map → profit Z. **Số phải có timestamp** (snapshot file hoặc trade query date). Xem **Market Data Freshness** trong CLAUDE.md.
+4. **## Failure Modes** — **validator-enforced `required: true`**. Mở 1-2 câu market risk (price trend, saturation, patch nerf, league phase — honest về sustainability), rồi ≥3 scenario gãy: market saturation · sustain failure · build floor · patch nerf · time investment. Xem **Failure Mode / Devil's Advocate** trong CLAUDE.md.
+5. **## Quick Reference Card** — Setup cost / Profit / Time / Waystone / Atlas nodes / Masters / Tablets / Fragments. Definition list được khuyến khích. Bản scan nhanh — KHÔNG kèm Summary trùng nội dung.
+
+### Optional (include khi cần, omit khi không)
+
+- **## Setup** — `### Atlas Passive Tree` (cluster + mechanic subtree + Masters assignment) · `### Tablets & Map Device` (loadout + lý do; slot theo số mod waystone, 6-mod=3 slot; Tower = nguồn rớt không phải nơi cắm; `:wiki-link` mỗi tablet) · `### Waystone & Map Choice` · `### Build Requirements`.
+- **## Gameplay** — step-by-step trong map: activate gì trước, clear order, pick up gì, when to leave. Prose, không bullet 20 step.
+- **## Profit Optimization** — atlas node upgrade B→A, tablet roll min-max, bulk vs individual sale, fleet use.
+- **## Alternatives & Variations** — strategy cạnh tranh + when to switch.
+- **## Data & Testing** — evidence cho profit claim: sample size, source link (poe2scout, /trade), market data recency.
+- **## Changelog** — `### YYYY-MM-DD` reverse-chrono.
+- **## Relationships** — cross-link nội bộ, mỗi dòng `- **predicate** [Title](/route) — reason`.
 
 ## Pre-write checklist
 
@@ -128,7 +129,7 @@ Follow Voice rules + Section structure. Atlas tree section: prose + image link n
 - Bảng (table) cho atlas tree / tablet list (site stack-column vỡ layout)
 - Game term không dùng `:wiki-link` ở lần đầu
 
-**Success criteria**: 11 H2 đã viết, mọi số có timestamp, mọi game term dùng `:wiki-link`.
+**Success criteria**: required core + đúng các optional section cần — mỗi section ≥2 câu nội dung thật, không section độn; mọi số có timestamp; mọi game term dùng `:wiki-link`.
 
 ### 6. Validate
 `bun run validate --path <file>`.

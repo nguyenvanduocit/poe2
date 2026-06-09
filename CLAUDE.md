@@ -15,6 +15,7 @@ Mọi command trong workspace này trỏ POE2. Không có command POE1 — muố
 - `/pob` → PoB2 calculator (community fork POE2)
 - `/poewiki` → wiki mirror poe2wiki.net (qua `data/wiki/`)
 - `/poedb` → database mirror poe2db.tw per patch (qua `data/poedb/<patch>/`)
+- `/poeforum` → đọc GGG forum (listing + thread) trả JSON (anonymous browser-UA curl, read-only)
 - `/update-release-note` → fetch patch notes từ official GGG forum thread → `data/release-notes/`
 - `/passive-skill-tree` → passive tree
 - `/atlas-tree` → atlas passive tree
@@ -52,6 +53,17 @@ Lưu ý: POE2 hiện chủ yếu dùng poe.ninja snapshot / pobb.in / mobalytics
 /passive-skill-tree       → passive nodes, paths, stats (0.5+)
 /atlas-tree               → atlas passive tree (0.5+)
 ```
+
+### Read forum (builds / feedback / threads)
+
+```
+.claude/skills/poeforum/scripts/forum.sh list 2216           # POE2 Builds forum -> threads[] JSON
+.claude/skills/poeforum/scripts/forum.sh thread 3931901      # 1 page of posts -> posts[] JSON
+.claude/skills/poeforum/scripts/forum.sh thread 3931901 --all # every page (1.2s spacing)
+```
+
+- Anonymous read-only browser-UA curl trang forum public — KHÔNG auth, KHÔNG GGG API, KHÔNG playwriter (xem skill `/poeforum`). Forum id hay dùng: `2216` = POE2 Builds.
+- Trả JSON sạch (author/date/staff/content/links + pagination), pipe `jq` để cắt. Dùng để survey build forum, đọc megathread, trích link PoB/mobalytics. KHÔNG dùng cho patch notes (đó là `/update-release-note`).
 
 ### Fetch release notes / patch notes
 

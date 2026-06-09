@@ -20,7 +20,7 @@ context: inline
 
 # write-mechanic-tutorial — Viết mechanic guide kiểu maxroll, giọng owner Việt
 
-Skill này viết tutorial mechanic guide trong `content/mechanics/` (subfolder `skills/`, `items/`, `leagues/`, `classes/`, `atlas/`, `crafting/`) theo **cấu trúc explanation-first** mượn từ maxroll (Basics → Detail → Interactions → Optimization → Common Mistakes → What Doesn't Work → Summary), NHƯNG giọng giữ project rule: **tiếng Việt, owner voice, prose-first, ví dụ với số thật từ character/build hiện tại**.
+Skill này viết tutorial mechanic guide trong `content/mechanics/` (subfolder `skills/`, `items/`, `leagues/`, `classes/`, `atlas/`, `crafting/`) theo **cấu trúc explanation-first** mượn từ maxroll, NHƯNG **section right-sized theo độ phức tạp mechanic** (required core + optional menu, không ép bộ section cố định — xem "Section structure") và giọng giữ project rule: **tiếng Việt, owner voice, prose-first, ground bằng số thật**.
 
 ## Inputs
 
@@ -33,10 +33,10 @@ Skill này viết tutorial mechanic guide trong `content/mechanics/` (subfolder 
 File `.md` trong `content/mechanics/<sub>/` với:
 
 - Frontmatter pass `bun run validate --path <file>` zero CRITICAL.
-- 11 H2 section theo đúng thứ tự (xem "Section structure").
+- **Section right-sized theo độ phức tạp mechanic** — required core + optional menu, không ép số section cố định (xem "Section structure").
 - Mọi số (damage scaling %, drop rate %, charge gain) **chính xác từ in-game / poewiki**, không guess.
 - Mọi game term (skill, support, item, scarab, monster) → `:wiki-link{url="https://www.poewiki.net/wiki/..."}`.
-- Ít nhất 1 ví dụ cụ thể với số thật từ `content/characters/*.json` hoặc PoB của character hiện tại.
+- **Grounding bằng số thật** — ví dụ từ character/PoB hiện tại khi mechanic apply; nếu là economy/crafting/league mechanic không gắn character thì ground bằng số live (market snapshot, empirical run, wiki/poedb).
 - 100% voice rule tuân thủ.
 
 ## Voice rules (project luôn win — Dreamcore method 11 rules)
@@ -79,77 +79,62 @@ File `.md` trong `content/mechanics/<sub>/` với:
 
 9. **No filler** — Mỗi câu phải carry ≥1 trong: số / comparison / mechanic detail / verdict / cross-link. Câu chỉ "đoạn này nói về X" → DELETE. Câu chỉ "có rất nhiều điều thú vị về Y" → DELETE. Câu chỉ recap câu trước → DELETE.
 
-10. **Verdict-with-open-question close** — Section "## Verdict & Open Questions" (section 10) luôn kết bằng:
+10. **Closing takeaway** — Doc luôn đóng bằng một section takeaway (đặt tên tự nhiên: verdict, tổng kết, khi nào dùng…). Khi doc có **phán quyết** (mechanic đáng dùng không / buff hay nerf / có lời không) thì kết bằng:
     - (a) Verdict label rõ (BUFF / NERF / NEUTRAL / EXPLOITABLE / OUTDATED) — KHÔNG kèm nhãn confidence HIGH/MEDIUM/LOW (confidence là reasoning gate nội bộ, không viết vào content; xem `../CLAUDE.md ## Confidence`)
-    - (b) Open question / next test / "waiting for patch notes [X]" / "needs character test [Y]"
+    - (b) Open question / next test / "waiting for patch notes [X]" / "needs character test [Y]" nếu còn điểm chưa chốt.
 
-    Vd: "Verdict: EXPLOITABLE. Open question: liệu Wretched Defiler có bị nerf trong 3.29 không? Sẽ theo dõi patch notes sau 2026-06-15."
+    Vd: "Verdict: EXPLOITABLE. Open question: liệu Wretched Defiler có bị nerf trong 3.29 không? Sẽ theo dõi patch notes sau 2026-06-15." Mechanic thuần giải thích (không có gì để phán) thì takeaway chỉ cần recap gọn — không ép gắn verdict label giả.
 11. **Rewrite fresh, đừng vá doc cũ — vault luôn ở thì hiện tại** — Khi input là doc đã tồn tại: viết LẠI nguyên bài theo patch/meta **hiện tại**, KHÔNG bò vào vá lẻ từng dòng rồi chừa đoạn outdate "để giữ lịch sử", KHÔNG nhúng note nhật ký ("phải viết lại", "chờ datamine", "đổi gì cho build của mình"). Số stale thay thẳng (không chú thích "(cần update)"); mechanic/interaction/item đã chết theo patch thì gỡ hẳn, không archive trong body. Lịch sử chỉ sống ở `## Patch Evolution` (record gọn một dòng/patch) hoặc `git log` — doc hiện tại chỉ chứa trạng thái đúng-bây-giờ. Bài xong phải đứng được như sinh ra hôm nay ở patch hiện tại. Ref: CLAUDE.md `## Content Writing Voice` → "Rewrite fresh, đừng vá doc cũ".
 
 ## Maxroll patterns we adopt
 
-- **Explanation-first structure** — Basics (visual/recognition) → Mechanic (how it works) → Interactions (synergies) → Optimization → Mistakes → What Doesn't Work → Summary.
-- **Sequential narrative** cho cơ chế complex — outdoor encounter → choose wish → portal → inside mirage → break chains → rewards. Reader follow visual cue.
-- **Concrete numbers** — `4% chance`, `+130 Attributes`, `100% Currency found inside Mirage area`. Không "tốt", phải số.
+- **Explanation-first ordering** — khi doc có nhiều section, sắp theo dòng hiểu: nhận diện → cơ chế → tương tác → tối ưu → sai lầm → tổng kết. Đây là *thứ tự khi có*, KHÔNG phải checklist bắt buộc đủ mặt.
+- **Sequential narrative** cho cơ chế phức tạp — encounter → choose → portal → inside → reward. Reader follow visual cue.
+- **Concrete numbers** — `4% chance`, `+130 Attributes`. Không "tốt", phải số.
 - **Visual anchor** mention nếu có (vd "purple shimmer", "golden volatile").
 - **Pro Tip inline bolded** thay vì callout.
 
-## Section structure (11 H2 theo thứ tự — Dreamcore method)
+## Section structure — required core + optional menu, right-sized
 
-**Quan trọng**: Section H2 viết bằng **tiếng Anh** (consistent với legacy + vault-keeper extract literal heading). Prose bên trong section viết bằng tiếng Việt.
+**Nguyên tắc số một: số section khớp độ phức tạp mechanic, KHÔNG ép một bộ cố định.** Mechanic atomic (một crafting trick, một interaction, một gambling play) có thể chỉ 3-4 section; một league system hay skill phức tạp mới cần 8-12. **Thêm một section mỏng/rỗng cho "đủ template" là vi phạm** — ít section dày đặc thắng nhiều section độn. Doc mẫu đúng tầm: `content/mechanics/crafting/talisman-crafting.md` (heading tiếng Việt theo nội dung, dừng đúng chỗ). Anti-mẫu: doc bị nhồi 11 section khi mechanic chỉ cần 4.
 
-1. **(Intro paragraph, không heading)** — 4 câu pattern Dreamcore:
-   - Câu 1: cơ chế là gì + visual/tooltip anchor (vd "the Wretched Defiler là spectre cast Conductivity curse on hit, drop từ Foothills tier 16+").
-   - Câu 2: xuất hiện patch nào, last changed patch nào (vd "added patch 3.20, buffed patch 3.25 với higher cast rate, unchanged through 3.28").
-   - Câu 3: ai/build nào đang dùng (named build hoặc % poe.ninja, vd "TheLeader_A đang chạy live; 29 chars Mirage poe.ninja Spectre Necro setup tương tự").
-   - Câu 4 (optional): tại sao quan tâm bây giờ (vd "patch sau có nerf rumor → cần lock decision tuần này").
+**Heading**: viết **sentence-case tiếng Việt nói thẳng section làm gì** (theo natural-voice rule — vd `## Vì sao Heavy Belt là base đáng chance`, `## Toán break-even`). Tên archetype tiếng Anh (How It Works, Optimization…) bên dưới chỉ là nhãn để tác giả biết *loại* section — heading thật trong doc dùng tiếng Việt tự nhiên. CẤM dash-subtitle `## X — Y`. (English heading vẫn validate nếu thật sự hợp, nhưng default là tiếng Việt — validator chỉ cần H2 hợp lệ, không ép tên cụ thể.)
 
-2. **## How It Works** — Sequential narrative explanation. Trigger → player action → game response → outcome. Visual cue nếu có. Ví dụ cụ thể với số thật. Đây là section dài nhất, 2-4 đoạn prose. **NEW**: khi mechanic có ambiguity (vd skill mới chưa test, interaction chưa verify), nhúng Hypothesis Trail sub-pattern:
+### Required core (mọi doc đều có — tối thiểu 3)
+
+1. **Intro paragraph (không heading)** — 2-4 câu: cơ chế là gì + visual/tooltip anchor · xuất hiện/đổi ở patch nào · ai/build đang dùng (named hoặc % poe.ninja) · (optional) vì sao quan tâm bây giờ. Câu nào không có nội dung thật thì bỏ, đừng độn cho đủ 4.
+
+2. **Một section giải thích cơ chế** (archetype *How It Works*) — spine của doc. Sequential narrative: trigger → player action → game response → outcome. Visual cue nếu có. Ground bằng số thật. Khi mechanic có ambiguity (skill mới chưa test, interaction chưa verify) → nhúng Hypothesis Trail:
    ```
    Hypothesis: <X có thể work vì reference mechanic Y>
    Evidence: <footage / wiki text / PoB test / forum post>
-   Kết luận: <conclusion khẳng định; nếu chưa chắc thì nêu test-plan cụ thể ("log Z khi vào league") — KHÔNG dán nhãn HIGH/MEDIUM/LOW>
+   Kết luận: <khẳng định; chưa chắc thì nêu test-plan "log Z khi vào league" — KHÔNG nhãn HIGH/MEDIUM/LOW>
    ```
 
-3. **## Math Chain** ⭐ NEW — Line-item adders với format CỨNG:
-   ```markdown
-   - Entity name (source: passive/support/jewel/rune/unique/ascendancy) — số
-   - Entity name (source) — số
-   ...
-   **Total — số**
-   ```
-   Bắt buộc nếu mechanic có scaling từ multiple sources. Nếu single source → skip section + thay bằng 1 câu note "Math: single source <X>, không có chain". PoB-verified number = HIGH confidence, hand-calc ≥3 multiplier = MEDIUM, theory = LOW (flag).
+3. **Một section takeaway đóng bài** (archetype *Verdict / Tổng kết*) — recap gọn; verdict label + open question khi doc có phán quyết (xem Voice rule 10). Mechanic thuần giải thích thì recap không cần verdict label giả.
 
-4. **## Key Interactions** — Synergies + anti-synergies. Mỗi interaction kèm cơ chế underlying, không chỉ "interact tốt với X". **NEW**: khi mechanic có modifier nghe giống cái khác đã tồn tại trong game → thêm Wording Distinction subsection compare verbatim:
-   ```markdown
-   ### Wording distinction — "X" vs "Y"
-   - "<modifier A>" trên <item A> — <giải thích cơ chế A>
-   - "<modifier B>" trên <item B> — <giải thích cơ chế B>
-   - Hệ quả: <tại sao 2 modifier hoạt động khác nhau>
-   ```
-   Vd: "no chance to block" (Kongming, base removed) vs "cannot block" (Eternal Apple, hard prevent); "less damage taken" (multiplicative) vs "reduced damage taken" (additive).
+### Optional menu (chỉ thêm khi mechanic THẬT SỰ cần — mỗi cái có trigger dùng-khi/bỏ-khi)
 
-5. **## Optimization** — Atlas tree nodes, scarabs, map mods, character-side investments (skill/item/passive), execution tips. Prioritise theo impact. Prose, không bullet 30 node.
+- **Toán/derivation** (archetype *Math Chain*) — **dùng khi** có scaling đa nguồn hoặc một phép tính không tầm thường (DPS/EHP/break-even/xác suất); **bỏ khi** mechanic thuần định tính. Trình bày line-item dẫn tới con số cuối — damage adder (`- Entity (source) — số` … `**Total — số**`), hoặc cost breakdown, hoặc probability chain — miễn mọi số lớn truy được về derivation đã show. Single source → một câu "Math: single source <X>, không có chain", không cần section.
 
-6. **## Interactions with Other Content** — Mechanic này khi overlay với league content khác (Delirium, Breach, Harvest...). Vd: Mirage trong Delirium map có gì khác. Section quan trọng cho league mechanic, optional cho skill/item.
+- **Tương tác chính** (archetype *Key Interactions*) — **dùng khi** mechanic synergy/anti-synergy đáng kể với entity khác; **bỏ khi** standalone. Mỗi interaction kèm cơ chế underlying + 1 dòng `Exclusion check: <none | list>` (xem Interaction Verification Protocol trong CLAUDE.md hoặc agent `interaction-mapper`).
+  - **Wording distinction** (sub) — **dùng khi** có modifier nghe giống cái khác dễ nhầm; compare verbatim 2 wording + hệ quả. Mặc định bỏ.
 
-7. **## What Doesn't Work** — Anti-pattern. Mech nào không proc, support nào không scale, item nào không stack. Section này maxroll dùng rất explicit.
+- **Tối ưu** (archetype *Optimization*) — **dùng khi** có lựa chọn đầu tư/thực thi cần ưu tiên (atlas node, scarab, map mod, gear, execution tip); **bỏ khi** không có gì để tối ưu. Kiểm breakpoint trước khi quote uplift % (xem Breakpoint Awareness).
 
-8. **## Common Mistakes** — Mỗi mistake giải thích **cả mistake lẫn correct approach**. Format: "Sai: ... — Đúng: ... — Lý do: ...". **NEW**: mỗi mistake kèm cost/loss number explicit (vd "lose ~5div nếu craft sai prefix", "lose 30% DPS nếu pick wrong spectre type").
+- **Tương tác với league content khác** (archetype *Interactions with Other Content*) — **dùng cho** league mechanic overlay (Delirium/Breach/Harvest…); **bỏ cho** skill/item thường.
 
-9. **## Cost & Restrictions** ⭐ NEW — Mỗi setup proposed có:
-   - **Cost**: currency tier (chaos / div / mirror), gear tier (rare crafted / unique / mirror-tier), support slot loss
-   - **Restriction**: cooldown (Xs), exclusion ("Cannot block from base"), gating (boss drop only, league-locked)
-   - **Downside**: life/mana/ES penalty nếu có (vd "Zer's impatience -25% life mana ES on use")
+- **Cái không hoạt động** (archetype *What Doesn't Work*) — **dùng khi** có kỳ vọng sai phổ biến (mod không proc, support không scale, item không stack); **bỏ khi** không có.
 
-   Đây là Devil's Advocate as a section — explicit về chi phí + cản trở thực thi, KHÁC `What Doesn't Work` (anti-pattern technical) vì CR là downside của setup *đang work*.
+- **Lỗi hay gặp** (archetype *Common Mistakes*) — **dùng khi** có lỗi thật tốn kém; mỗi lỗi "Sai — … Đúng — … Lý do — …" + cost/loss number nếu có; **bỏ khi** trivial.
 
-10. **## Verdict & Open Questions** (rename Summary) — 3-5 bullet recap + verdict label + open question:
-    - Verdict label rõ: BUFF / NERF / NEUTRAL / EXPLOITABLE / OUTDATED
-    - Open question / next test / "waiting for patch notes [X]" / "needs character test [Y]"
-    - Vd: "Verdict: EXPLOITABLE — HIGH confidence. Open question: liệu Wretched Defiler có bị nerf trong 3.29 không? Sẽ theo dõi patch notes sau 2026-06-15."
+- **Chi phí & ràng buộc** (archetype *Cost & Restrictions*) — **dùng khi** setup có chi phí currency / exclusion / gating / downside thật (Devil's Advocate của setup *đang work*); **bỏ khi** free + unrestricted.
 
-11. **## Patch Evolution** (rename Version History) — `### Patch X.Y.Z` reverse-chrono, body là prose 1-3 câu narrative kết nối ("3.25 nerf → 3.26 jewel introduced → 3.27 foul → 3.28 core") thay vì bullet rời rạc. Quan trọng để reader biết advice còn valid không.
+- **Lịch sử patch** (archetype *Patch Evolution / Version History*) — **dùng khi** lịch sử patch ảnh hưởng tính hợp lệ của advice (đặc biệt mechanic vừa đổi ở patch hiện tại); `### Patch X.Y.Z` reverse-chrono, prose narrative kết nối; **bỏ khi** chưa có lịch sử đáng kể.
+
+- **Custom section** — **tự do tạo** section đặt tên tự nhiên khi nội dung cần một chỗ mà menu trên không phủ (vd `## Farm white base ở đâu hiệu quả`, `## Mô hình xác suất trúng`). Vẫn theo voice rule (sentence-case, no dash-subtitle, prose-first).
+
+- **## Relationships** (cuối doc, nếu có) — cross-link nội bộ; mỗi dòng `- **predicate** [Title](/route) — reason`. Thêm khi có concept liên quan để link.
 
 ## Pre-write checklist
 
@@ -176,10 +161,10 @@ Read target file. Đọc 1-2 mechanic doc cùng subfolder để align voice.
 
 **Success criteria**: ≥3 số chính xác sẵn sàng cite + 1 ví dụ từ character thật.
 
-### 4. Outline 11 section
-Draft 1 dòng/section (11 H2 mới theo Dreamcore structure). **Human checkpoint** — user duyệt.
+### 4. Outline section (right-sized)
+Chọn section từ required core (3) + optional menu — chỉ lấy section mechanic thật sự cần. Draft 1 dòng/section + heading tiếng Việt dự kiến. Mechanic atomic → dừng ở 3-5 section; league/skill phức tạp → mới nhiều hơn. **Human checkpoint** — user duyệt danh sách section trước khi viết (để bắt sớm nếu thừa/thiếu).
 
-**Success criteria**: User approve.
+**Success criteria**: User approve; không có section nào dự kiến <2 câu nội dung thật.
 
 ### 5. Viết prose
 Follow Voice rules + Section structure. Cách hoạt động section dài 2-4 đoạn, không tóm gọn.
@@ -190,24 +175,31 @@ Follow Voice rules + Section structure. Cách hoạt động section dài 2-4 đ
 - Bullet rời rạc cho mechanic explanation (chuyển prose hoặc numbered narrative)
 - Game term không dùng `:wiki-link`
 
-**Success criteria**: 11 H2 viết (skip Cost & Restrictions / Wording Distinction nếu mechanic không qualify), ≥1 ví dụ số thật, ≥1 math chain hoặc explicit single-source note, mọi game term dùng `:wiki-link`.
+**Success criteria**: required core (intro + cơ chế + takeaway) + đúng các optional section mechanic cần — mỗi section ≥2 câu nội dung thật, không section độn; ground bằng ≥1 số thật; mọi game term dùng `:wiki-link`.
 
-### 6a. Dreamcore Signature Self-Check (BẮT BUỘC trước Validate)
+### 6a. Self-check (BẮT BUỘC trước Validate)
 
-Trước khi chạy validate, self-check 8 trait Dreamcore. Mỗi line phải tick `[x]` hoặc note explicit lý do skip:
+**Gate 1 — Right-sizing (luôn check):**
 
-- [ ] Trait 1 — Atomic scope: doc covers exactly 1 mechanic (không 2-3 mechanic gộp)
-- [ ] Trait 2 — Verbatim tooltip + visual anchor: Intro có ≥1 observation về tooltip/visual cue
-- [ ] Trait 3 — Hypothesis Trail: How It Works có ≥1 trail format (Hypothesis/Evidence/Verdict) HOẶC explicit "no ambiguity, well-documented mechanic"
-- [ ] Trait 4 — Math Chain section có line-item entity+source+số + Total HOẶC explicit "single-source no chain" note
-- [ ] Trait 5 — Wording Distinction: Key Interactions có Wording Distinction subsection nếu mechanic có modifier similar (skip nếu không có modifier similar)
-- [ ] Trait 6 — Patch Evolution: section 11 có ≥2 patch milestones (added → changed → current)
-- [ ] Trait 7 — Named adoption proof: Intro câu 3 hoặc Patch Evolution có ≥1 named build/player HOẶC % poe.ninja với số cụ thể
-- [ ] Trait 8 — Cost & Restrictions section có cost number + restriction explicit per major setup
+- [ ] Mỗi section có ≥2 câu nội dung thật — section nào mỏng hơn thì fold vào section khác hoặc cắt.
+- [ ] Không section nào thêm chỉ để "đủ template" — mọi section trả lời một câu hỏi reader thật sự có.
+- [ ] Doc dừng đúng chỗ: mechanic atomic không bị kéo dài bằng section thừa.
 
-Self-check FAIL → loop back step 5 (Viết prose) refine. KHÔNG bypass.
+**Gate 2 — Quality lenses (chỉ check cái APPLY, cái không liên quan thì bỏ qua, không cần ghi):**
 
-**Success criteria**: 8 trait tick hoặc skip với lý do explicit.
+- [ ] Atomic scope — doc covers đúng 1 mechanic (không gộp 2-3).
+- [ ] Tooltip/visual anchor — Intro có observation về tooltip/visual cue (nếu mechanic có).
+- [ ] Hypothesis Trail — chỗ ambiguity có format Hypothesis/Evidence/Kết luận (nếu có ambiguity; mechanic well-documented thì bỏ qua).
+- [ ] Derivation — số lớn truy được về line-item/cost/probability chain đã show (nếu có số lớn).
+- [ ] Wording distinction — có subsection nếu mechanic có modifier dễ nhầm (mặc định bỏ qua).
+- [ ] Named adoption — có ≥1 named build/player HOẶC % poe.ninja (nếu mechanic có người dùng để dẫn).
+- [ ] Cost/restriction — setup nêu cost number + restriction (nếu doc đề xuất setup tốn currency/gated).
+
+**Gate 3 — Voice (luôn check):** numeric discipline (hype word kèm số) · entity full-name lần đầu · no filler · no dash-subtitle heading · no meta-summary ("theo wiki/Reddit", "doc này"). Grep nhanh: `mạnh|tốt|đáng kể|powerful|insane` mỗi match có số kèm.
+
+Gate FAIL → loop back step 5 refine. KHÔNG bypass.
+
+**Success criteria**: Gate 1 + Gate 3 pass; Gate 2 các lens apply đã thoả.
 
 ### 6b. Validate
 `bun run validate --path <file>`.
