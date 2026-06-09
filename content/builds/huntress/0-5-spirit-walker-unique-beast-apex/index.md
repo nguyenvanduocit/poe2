@@ -116,10 +116,6 @@ Trần flat nằm ở Giant's Blood two-hander cầm một tay: :wiki-link{url="
 
 POE2 0.5 dùng life/mana flask đơn giản cộng charm, không có hệ flask phức tạp như POE1. Ưu tiên một :wiki-link{url="https://www.poe2wiki.net/wiki/Life_Flask"} instant/recovery để sống qua spike khi con thú chưa kịp tank, một :wiki-link{url="https://www.poe2wiki.net/wiki/Mana_Flask"} nếu skill clear nhân vật tốn mana, và charm chống ailment nguy hiểm nhất với playstyle đứng sau — thường là freeze/stun, vì khi mình bị khoá thì con thú vẫn đánh nhưng mình không reposition được. Chốt charm cụ thể theo content sau khi vào league.
 
-## Pantheon & Bandits
-
-POE2 0.5 không có hệ Pantheon hay Bandit như POE1 — không có lựa chọn nào ở mục này. Reward campaign của POE2 đi theo cơ chế khác và không cần khai báo trong build doc.
-
 ## Leveling Notes
 
 Companion build không phải hướng leveling mượt nhất, nhưng vẫn ổn nếu chơi đúng. Câu chuyện act 1-3: leveling như một attack-Huntress bình thường (spear/bow), giữ một :wiki-link{url="https://www.poe2wiki.net/wiki/Tame_Beast"} gem rỗng trong túi để bắt thử mỗi khi gặp rare Beast ngon — con thú tạm giúp tank và chia aggro suốt campaign. Engine companion thật chỉ online ở giai đoạn map: lúc đó mới đủ spirit, lấy được The Natural Order để mở Unique Beast slot, và có :wiki-link{url="https://www.poe2wiki.net/wiki/The_Catha%27s_Balance"} để chuyển scaling sang vũ khí. Mốc pivot rõ ràng: ngay khi vào maps + có Catha, đổi main-hand sang vũ khí flat cao và đi săn một Unique Beast attack-based. Trước mốc đó, đừng đầu tư vào weapon flat — con thú chưa thừa hưởng được.

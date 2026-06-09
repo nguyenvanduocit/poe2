@@ -218,7 +218,7 @@ Các multiplier đều verified; cái chưa biết là `companion_base_damage` (
 
 EHP layer order 0.5: armour → evasion → **Ghost Dance (ES regen ~2% evasion/giây khi vừa bị hit)** → block → max res → ES/Life pool → **Runic Ward** → recovery. Runic Ward là pool riêng không scale bằng inc-defence, PoB2 chưa model — nên EHP cũng chờ đo in-client. Mục tiêu thực dụng: cap 75% res, evasion/ES vừa đủ sống sau lưng companion, đo Runic Ward thực tế trong maps (PoB2 không model).
 
-## Failure Modes — 5 cách build gãy
+## Failure Modes
 
 **1. Minion Splash không apply lên native attack của tamed beast → mất AoE-upside, KHÔNG sụp build.** Clear floor giao Twister giữ xuyên suốt, nên kịch bản xấu nhất là "companion single-target + một nút Twister quét trash" thay vì "companion tự clear cả màn". Field đã xác nhận floor này đứng tới T15. *Test: link Minion Splash lên con strike-beast, đứng trước pack white, xem strike có splash không.*
 

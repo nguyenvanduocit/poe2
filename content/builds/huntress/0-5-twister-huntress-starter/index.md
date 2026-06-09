@@ -162,10 +162,6 @@ Mageblood mới được thêm vào unique drop pool trong 0.5 — đây là goa
 
 Sau Act 3, swap flask theo encounter — đừng giữ setup cố định. Boss fire-heavy thì swap Sapphire ra Ruby; map có nhiều physical reflect thì giữ Granite uptime tốt hơn.
 
-## Pantheon & Bandits
-
-POE2 không có hai hệ thống này. Decision tương đương trong patch 0.5 là chọn ascendancy (Spirit Walker hoặc Deadeye — phân tích trong section Ascendancy) và chọn Atlas Master (Doryani's Science / Hilda's Hunting / Jado's Spycraft — hệ thống mới của 0.5 cho phép allocate cả ba master cùng lúc, đổi quick-select trước mỗi map). Hilda's Hunting hợp với Twister vì cấp bonus cho rare monster pack — nguồn loot chính khi đang farm currency cho gear upgrade.
-
 ## Leveling Notes
 
 Đừng đánh giá build qua vài khu đầu Act 1. Lúc này còn thiếu attack speed, thiếu projectile speed, và phải dùng combo 5-nút (Parry → Fangs of Frost → Whirling Slash spin → Twister cast → Pounce reposition). Patch 0.5 còn crop Parry mất Attack Distance bonus nên Act 1 combo càng cramped, càng nên rush Act 2 nhanh để pivot sớm.
@@ -188,7 +184,7 @@ Mageblood là goal mirror-tier nhưng đầu tư quá sâu vào mirror gear chư
 
 Lưu ý về giá: tính tới 30/05/2026 economy league chưa hình thành (day-2 launch — poe2scout chưa populate Runes of Aldur, poe.ninja gần như 0 char index), nên mọi con số exalt/divine ở trên là baseline ước tính, re-snapshot khi economy ổn định (cỡ một tuần sau launch). Riêng 48h đầu cần caveat thêm: Twister là build phổ biến nhất league nên spear có projectile speed/count + +level projectile là loại gear bị tranh giá mạnh nhất, và trade site gần như không dùng được trong ~6h đầu — 5-10 exalt là kỳ vọng lạc quan. Tuần đầu nên tự nhặt/craft flat phys + AS thay vì cố mua spear "đúng meta".
 
-## Strengths & Limitations
+## Failure Modes
 
 **Điểm mạnh**
 

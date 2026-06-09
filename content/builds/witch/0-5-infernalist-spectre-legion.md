@@ -153,10 +153,6 @@ Stack tối đa +Spirit (flat), % increased Spirit, và reservation efficiency t
 
 Build đi ES nên flask nghiêng về Energy Shield và utility. Một :wiki-link{url="https://www.poe2wiki.net/wiki/Life_Flask"} vẫn nên giữ vì nó mở khoá một panic-button cực mạnh: :wiki-link{url="https://www.poe2wiki.net/wiki/Umbilicus_Immortalis"} (belt) cho "Minions cannot Die while affected by a Life Flask" + "Your Life Flask also applies to your Minions" — đây là câu trả lời trực tiếp cho failure mode boss AoE xoá bầy. Pyromantic Pact xoá Mana chứ không xoá Life, nên Life Flask (và belt này) vẫn chạy kể cả trên variant Infernal Flame. Còn lại: một flask kháng ailment (freeze/stun), một flask movement/speed, và một slot tùy content. **Quan trọng:** nếu lấy Pyromantic Pact, KHÔNG dùng :wiki-link{url="https://www.poe2wiki.net/wiki/Mana_Flask"} vì pool Mana không còn.
 
-## Pantheon & Bandits
-
-POE2 0.5 không dùng hệ Pantheon kiểu POE1. Điểm tương đương là các lựa chọn ascendancy và atlas đã cover ở trên — không có god power riêng để gán. Bandit/quest reward trong campaign cứ lấy passive point (luôn đáng hơn buff cố định cho summoner). Phần này giữ để đúng cấu trúc template; cơ chế thật của 0.5 nằm ở ascendancy + atlas tree.
-
 ## Leveling Notes
 
 Điểm quan trọng nhất cho người mới: **không** level bằng spectre từ level 1. Act 1-3 chơi bằng minion Int cơ bản — skeleton và zombie gem-independent, summon ngay, không cần gear hay corpse đặc biệt. :wiki-link{url="https://www.poe2wiki.net/wiki/Skeletal_Arsonist"} là cầu nối tuyệt vời: nó là reviving minion (auto-revive sau 7 giây), và có "Command: Explosive Demise" detonate một minion gần đó cho 300% base attack damage + 8% max Life của minion đó dạng fire — vừa làm body phụ vừa cho một nút bom dọn pack. Dùng *cùng bộ support* cho Skeletal Arsonist và Bind Spectre (Magnified Area II + Minion Mastery + Elemental Army + Last Gasp).

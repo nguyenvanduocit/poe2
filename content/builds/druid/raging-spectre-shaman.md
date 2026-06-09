@@ -110,10 +110,6 @@ Trần đầu tư là max-roll mọi slot ES + spirit, +minion levels trên amul
 
 Build CI nên flask Life vô dụng; thay vào đó chạy hai Mana flask để đỡ chi phí warcry, và các flask utility nếu slot cho phép. Tuy nhiên đây là điểm đánh đổi cốt lõi: vì để trống cả 3 charm slot cho Sacred Flow, mình **không có** ailment immunity / freeze removal / bleed removal thường lấy từ charm. Đó là lý do Reactive Growth (giảm elemental damage) và pool ES dày phải gánh phần phòng thủ mà charm bỏ lại. Khi vào league nếu thấy chết vì freeze/ignite quá nhiều, cân nhắc hi sinh một phần Spirit để lấy lại một charm slot.
 
-## Pantheon & Bandits
-
-POE2 0.5 không có hệ Pantheon/Bandit như POE1 — không có god power hay bandit reward để chọn. Phần phòng thủ tương đương được lo qua ascendancy (Reactive Growth) và keystone trên cây (Chaos Inoculation). Mục này giữ lại để khớp cấu trúc template; với POE2 hiện tại nó không áp dụng.
-
 ## Leveling Notes
 
 Campaign chạy minion tạp bất kỳ cho tới khi bind được Gargantuan Wasp ở Ashen Forest (Third Interlude) thì chuyển hẳn sang nó làm trục. Trong giai đoạn đầu campaign, :wiki-link{url="https://www.poe2wiki.net/wiki/Infernal_Legion"} có thể cắt vào bằng Uncut Support Gem đầu tiên (Level 2) như một boost damage rẻ — nhưng chỉ dùng tạm thời ở campaign, không phải engine endgame (lý do ở ## Failure Modes). Lấy Sacred Flow ở Trial đầu để spike spirit, bỏ trống charm, rồi đi Druidic Champion → Furious Wellspring → Reactive Growth qua các Trial sau. Khi ES gear đủ dày (~5-6k, thường quanh lvl 79) thì allocate Chaos Inoculation.

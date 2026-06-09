@@ -130,10 +130,6 @@ Weapon trục là một sceptre như :wiki-link{url="https://www.poe2wiki.net/wi
 
 Hai charm/flask slot dành cho ailment mình hay chết nhất: :wiki-link{url="https://www.poe2wiki.net/wiki/Thawing_Charm"} chống freeze (đứng yên cast giữa bầy mà bị freeze là chết) và :wiki-link{url="https://www.poe2wiki.net/wiki/Staunching_Charm"} chống bleed. Life/mana flask theo nhu cầu — vì Soulless Form đã cấp mana từ life nên mana flask ít cần, ưu tiên flask life/ES instant để chữa burst xuyên ES. Slot còn lại linh hoạt theo map mod (granite/quartz cho phòng thủ tức thời).
 
-## Pantheon & Bandits
-
-PoE 2 0.5 không có hệ Pantheon/Bandit như PoE 1; "lựa chọn ngoài tree" tương đương là phân bổ điểm Atlas và Idol. Với build mapping thuần, ưu tiên Atlas node tăng mật độ quái (để có nhiều xác và nhiều mob cho construct cày) hơn là node boss. Idol (socket vào sceptre/helmet ở 0.5) chọn loại buff "Allies in your Presence" — tăng tốc/res cho cả bầy — thay cho cơ chế Haste aura cũ vốn không tồn tại trong PoE 2.
-
 ## Leveling Notes
 
 Campaign chạy minion mặc định của Witch tới Act 2-3, swap dần sang Unearth làm trục một khi có đủ corpse-generation và vào được Lich. Opener mỗi map/boss dùng tech weapon-swap: để :wiki-link{url="https://www.poe2wiki.net/wiki/Sacrifice"} (reservation skill, "Must be active in both Weapon Sets") trên set 2 cùng một minion rẻ spirit như :wiki-link{url="https://www.poe2wiki.net/wiki/Terracotta_Soldier"}, swap sang set 2 để Sacrifice cho phép dùng chính minion làm xác, cast Unearth ra một loạt construct, rồi swap về set 1 mà đi.

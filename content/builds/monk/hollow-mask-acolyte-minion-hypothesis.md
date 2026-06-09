@@ -166,10 +166,6 @@ Double-corrupt The Hollow Mask (extra spirit + remnant potency), mirror rares fu
 
 Life flask emergency, mana flask cho channeled aura/reservation, charm slot cho stun/freeze immunity. :wiki-link{url="https://www.poe2wiki.net/wiki/Wildwood's_Gifts"} (cấp 19 từ mũ) spawn Ancient Bloom liên tục — flask charge gần như không bao giờ hết trong mapping dài.
 
-## Pantheon & Bandits
-
-POE2 không có Pantheon system. Bandits reward trong campaign thường lấy passive chaos resistance hoặc spirit — chọn theo ngân sách spirit lúc đó.
-
 ## Leveling Notes
 
 - Act 1-2: Hollow Palm Quarterstaff + ascendancy point sớm vào Waking Dream hoặc Inner Turmoil.
@@ -190,7 +186,7 @@ The Hollow Mask là gate duy nhất của build.
 
 Budget scaling trung bình vì sau khi có mũ, gear chủ yếu là rare minion + spirit, không cần unique đắt khác ngoài mũ.
 
-## Strengths & Limitations
+## Failure Modes
 
 **Điểm mạnh:**
 

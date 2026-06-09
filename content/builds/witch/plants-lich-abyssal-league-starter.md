@@ -39,6 +39,6 @@ Spell Totem là nâng cấp single-target lớn cho phase sau. Với :wiki-link{
 
 Mình thấy build này hợp với người muốn league start "cozy", ít spike khó, và có đường lên rõ ràng. Không phải nhanh nhất, cũng không phải mạnh nhất endgame, nhưng nó ổn và dễ chịu. Nếu mày ghét spam skill phức tạp và muốn thứ gì đó mượt từ đầu đến maps thì đáng để thử.
 
-Cần lưu ý là Bone Storm movement trick cần luyện. Làm sai là mất tốc độ. Spirit là constraint căng nhất ở phase sau: 150 Spirit cho 2 totem chồng lên reservation của companion, nên phải chọn — hoặc full 2 totem cho single-target, hoặc hạ xuống 1 totem để giữ companion mạnh. Khi vào league cần đo Spirit pool thực tế ở mốc allocate Ancestral Bond để chốt cấu hình.
+## Failure Modes
 
-Nguồn là video full campaign của DEADR4BB1T. Transcript nằm trong repo news. Mình sẽ cập nhật sau khi league ra, đặc biệt phần Spell Totem có thực sự ngon như anh ta nói không.
+Bone Storm movement trick là execution risk lớn nhất — channel tap-hold vừa di chuyển, làm sai là mất tốc độ kiting boss. Spirit là constraint căng nhất phase sau: 150 Spirit cho 2 Bone Storm totem chồng lên reservation companion, nên phải chọn full 2 totem cho single-target hay hạ 1 totem giữ companion mạnh — khi vào league đo Spirit pool thực tế ở mốc allocate :wiki-link{url="https://www.poe2wiki.net/wiki/Ancestral_Bond"} để chốt cấu hình. Build floor thấp (ít phụ thuộc crafted gear đắt, chủ yếu cần +level gems + generic damage) nên league-start viability tốt, nhưng đó cũng là trần endgame — không phải nhanh nhất hay mạnh nhất single-target ở Pinnacle. Map mod no-regen / less-recovery bóp sustain vì build dựa Life Flask + minion, không có leech.
