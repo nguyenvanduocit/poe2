@@ -28,7 +28,7 @@ POE2 không có một con số "giảm damage" duy nhất — thay vào đó, su
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Armour"} giảm physical damage từ hit theo một công thức phụ thuộc vào cỡ của đòn. Cách dễ nhớ nhất: cần armour **gấp 10 lần** damage của cú hit để giảm được 50%. Có 1.000 armour trước đòn 100? Giảm 50%. Có 1.000 armour trước đòn 1.000? Chỉ giảm được khoảng 9%.
 
-Điều này có nghĩa là armour rất mạnh khi đứng trong pack và hứng hàng trăm cú hit nhỏ liên tục — gần như không cảm thấy gì. Nhưng trước một boss slam lớn, cùng lượng armour đó chỉ cắt được một phần nhỏ. Cap của armour là 90% reduction, và chỉ áp dụng cho physical damage — elemental hit đi xuyên qua hoàn toàn.
+Tức là armour rất mạnh khi đứng trong pack và hứng hàng trăm cú hit nhỏ liên tục — gần như không cảm thấy gì. Nhưng trước một boss slam lớn, cùng lượng armour đó chỉ cắt được một phần nhỏ. Cap của armour là 90% reduction, và chỉ áp dụng cho physical damage — elemental hit đi xuyên qua hoàn toàn.
 
 Warrior và Titan là class tự nhiên nhất cho armour build vì có sẵn strength scaling. Playstyle phù hợp: đứng yên hứng đòn trong combat, không cần né nhiều.
 

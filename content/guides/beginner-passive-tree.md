@@ -35,7 +35,7 @@ Cuối cùng là **jewel socket** — ô tròn trên tree cho phép gắn :wiki-
 
 Tree chia ba vùng chính theo attribute. Phía tây-nam tập trung Strength: fire damage, armour, melee, endurance charge, warcry, block. Phía đông-nam là Dexterity: lightning damage, evasion, ranged, frenzy charge, deflection, accuracy, flask. Phía bắc là Intelligence: cold và chaos damage, energy shield, spell, minion, mana, curse.
 
-Mỗi class xuất phát tại một điểm trên vòng tròn trung tâm của tree, gần vùng attribute chính của class đó. Warrior xuất phát ở vùng Strength phía tây-nam; Witch xuất phát ở vùng Intelligence phía bắc; Huntress ở vùng Dexterity. Điều này có nghĩa là node có ích nhất cho playstyle tương ứng cũng gần nhất vị trí xuất phát.
+Mỗi class xuất phát tại một điểm trên vòng tròn trung tâm của tree, gần vùng attribute chính của class đó. Warrior xuất phát ở vùng Strength phía tây-nam; Witch xuất phát ở vùng Intelligence phía bắc; Huntress ở vùng Dexterity. Nghĩa là node có ích nhất cho playstyle tương ứng cũng nằm gần vị trí xuất phát nhất.
 
 Nếu chơi build evasion-based thì Huntress hay Ranger xuất phát gần đúng cluster. Nếu chọn class Strength nhưng lại đi lấy energy shield ở vùng Intelligence xa phía bắc, bạn sẽ tốn thêm 5-10 điểm chỉ để "đi đường" qua small passive không liên quan — tiết kiệm được số điểm này bằng cách chọn class phù hợp ngay từ đầu.
 

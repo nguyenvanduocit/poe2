@@ -50,15 +50,15 @@ Bốn class còn lại (Marauder, Duelist, Shadow, Templar) vẫn chưa mở, đ
 
 Mỗi class có hai đến ba ascendancy, mỗi cái định nghĩa một archetype riêng. Vài cái dễ tiếp cận và mạnh ngay cho người mới.
 
-**Titan** (Warrior) đẩy armour và stun lên rất cao, tank đòn dễ, playstyle đơn giản. **Infernalist** (Witch) cho dog companion và demon form, minion gánh damage nên người chơi chỉ cần đứng an toàn — một trong những hướng tha thứ nhất cho người mới. **Stormweaver** (Sorceress) maintain shock để mọi đòn nguyên tố cộng thêm 20% damage, caster mạnh và rõ ràng. **Deadeye** (Ranger) đẩy projectile và tốc độ clear pack rất nhanh. **Gemling Legionnaire** (Mercenary) linh hoạt về attribute và gem, dễ lắp nhiều build khác nhau.
+**Titan** (Warrior) đẩy armour và stun lên rất cao, tank đòn dễ, playstyle đơn giản. **Infernalist** (Witch) cho dog companion và demon form, minion gánh damage nên người chơi chỉ cần đứng an toàn — một trong những hướng dễ chơi nhất cho người mới. **Stormweaver** (Sorceress) maintain shock để mọi đòn nguyên tố cộng thêm 20% damage, caster mạnh và rõ ràng. **Deadeye** (Ranger) đẩy projectile và tốc độ clear pack rất nhanh. **Gemling Legionnaire** (Mercenary) linh hoạt về attribute và gem, dễ lắp nhiều build khác nhau.
 
 Hai ascendancy mới của 0.5 đáng thử nếu thích hướng riêng: Spirit Walker (Huntress) gọi companion beast đánh thay — chi tiết ở [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt). Martial Artist (Monk) đánh tay không, triệu illusory bell và dùng rune khắc lên cơ thể.
 
 ## Chọn class nào để bắt đầu
 
-Người mới nên ưu tiên class tha thứ lỗi hơn class đòi hỏi execution. Warrior tank đòn dễ sống. Sorceress và Mercenary đánh tầm xa nên ít bị áp sát. Witch hướng minion để minion chịu trận thay mình. Ba hướng này dễ hoàn thành campaign nhất khi chưa quen game.
+Người mới nên ưu tiên class dễ sống — đánh hụt hay đứng sai một nhịp vẫn không chết ngay — hơn là class đòi hỏi thao tác chuẩn từng đòn. Warrior tank đòn dễ sống. Sorceress và Mercenary đánh tầm xa nên ít bị áp sát. Witch hướng minion để minion chịu trận thay mình. Ba hướng này dễ hoàn thành campaign nhất khi chưa quen game.
 
-Monk và Huntress thưởng cho người chơi tốt timing và combo, nhưng phạt nặng khi đứng sai chỗ — để dành khi đã quen nhịp combat. Quan trọng nhất: chọn class theo skill muốn chơi, không phải theo class "mạnh nhất" trên giấy. Mọi class đều dùng được mọi gem miễn đủ attribute, nên class chỉ định hướng tự nhiên chứ không khoá cứng build.
+Monk và Huntress chơi quen tay thì rất mạnh nhờ timing và combo, nhưng sai một nhịp là dễ chết — để dành khi đã quen combat. Quan trọng nhất: chọn class theo skill muốn chơi, không phải theo class "mạnh nhất" trên giấy. Mọi class đều dùng được mọi gem miễn đủ attribute, nên class chỉ định hướng tự nhiên chứ không khoá cứng build.
 
 ## Relationships
 

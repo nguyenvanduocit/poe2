@@ -26,7 +26,7 @@ Khi vào endgame, mỗi map có thể chứa một hoặc nhiều loại content
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Breach"} mở một vết nứt, quái tràn ra ồ ạt theo đồng hồ đếm ngược — giết càng nhanh càng nhiều splinter rơi, gom đủ thành Breachstone để vào Breach domain. Trong 0.5, Breach gắn với hệ craft **The Genesis Tree** tạo ring, amulet, belt base mới, và Catalyst giờ chỉ rơi từ đây. Breach dày quái nên là một trong những nguồn loot theo số lượng tốt nhất, nhưng dễ ngợp nếu build clear chậm.
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Delirium"} là tấm gương đặt giữa map; bước qua thì sương phủ ra, quái mạnh và dày dần theo độ sâu đổi lấy reward cao hơn. Đi quá sâu khi build chưa đủ mạnh là chết — đây là content thưởng cho người biết lượng sức. :wiki-link{url="https://www.poe2wiki.net/wiki/Simulacrum"} là phiên bản arena 7 wave dẫn tới boss riêng.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Delirium"} là tấm gương đặt giữa map; bước qua thì sương phủ ra, quái mạnh và dày dần theo độ sâu đổi lấy reward cao hơn. Đi quá sâu khi build chưa đủ mạnh là chết, nên biết sức mình tới đâu thì dừng tới đó. :wiki-link{url="https://www.poe2wiki.net/wiki/Simulacrum"} là phiên bản arena 7 wave dẫn tới boss riêng.
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Ritual"} cho đàn châu chấu chỉ đường tới altar; giết hết quái trong vòng tròn rồi tiêu tribute tại altar để mua lại đồ chúng rơi. Trong 0.5 reward Ritual endgame chỉ còn Unique hoặc Omen. Ritual an toàn vì quái bị nhốt trong vòng — chọn lúc nào đánh được.
 
