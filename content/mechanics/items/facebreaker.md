@@ -2,15 +2,16 @@
 template: templates/item-template.md
 document_type: item
 title: Facebreaker
-status: draft
+status: published
 author: duocnv
 created: '2026-05-19'
-updated: '2026-05-19'
+updated: '2026-06-09'
 league: '0.5'
 patch: 0.5.0
 rarity: unique
 item_class: Gloves
-level_requirement: 0
+level_requirement: 38
+sub_class: items
 item_tags:
 - gloves
 - unique
@@ -18,18 +19,11 @@ item_tags:
 - mace-skills
 - strength-stacking
 - boss-tracking
-- pre-launch
 - remake
-meta_tags:
-- patch-preview
-- build-enabling
-- monk-martial-artist
-- warrior-titan
 tags:
 - item
 - unique
 - gloves
-- pre-launch
 - 0-5
 - return-of-the-ancients
 - facebreaker
@@ -40,102 +34,103 @@ tags:
 
 # Facebreaker
 
-Patch 0.5 **Return of the Ancients** remake Facebreaker từ POE1 thành POE2 unique gloves[^1] — không còn là +%damage stick mà thành **build-enabler item**. Mod chính: **khi equipped + hands empty, dùng được toàn bộ mace skill bằng nắm đấm**[^1]. Đi kèm là **boss teeth tracker** trên map — mỗi boss đã pulverised grant added physical damage cho character, tạo progression-based scaling kéo dài cả campaign. Strength stacking apply cả offensive lẫn defensive layer. Từ trailer thấy rõ hai hướng build: **Monk Martial Artist** dùng :wiki-link{url="https://www.poe2wiki.net/wiki/Way_of_the_Stonefist"} Way of the Stonefist ascendancy notable để bù pool stat thiếu, và **Warrior/Titan** strength-stacker dùng :wiki-link{url="https://www.poe2wiki.net/wiki/Hammer_of_the_Gods"} Hammer of the Gods nhưng punch animation (trailer joke "Fist of the Gods"[^1]).
+:wiki-link{url="https://www.poe2wiki.net/wiki/Facebreaker"} là gloves unique Stocky Mitts ra mắt 0.5.0, yêu cầu Level 38 và 48 Strength. Hai mechanic core: **mace skill access khi tay không** (cả hai hand slot trống thì dùng được toàn bộ One Hand Mace skill pool) và **boss teeth tracker** (mỗi world boss campaign đã kill cộng thêm added physical damage tích lũy). Strength vừa tăng damage qua "1% more Unarmed Damage per 5 Strength", vừa tăng phòng thủ qua "+1 to Armour per Strength" — build strength-stacking ăn cả hai chiều từ cùng một stat.
 
-## Chỉ số item
+:wiki-link{url="https://www.poe2wiki.net/wiki/Way_of_the_Stonefist"} Way of the Stonefist (Martial Artist ascendancy notable) không amplify Facebreaker mà **chuyển đổi hoàn toàn** base type của gloves đang mang sang Fists of Stone — một bộ mod khác, dùng Intelligence thay Strength và fire damage thay physical. Đây là hai archetype riêng biệt từ cùng một item slot.
 
-Số chính xác sẽ public sau patch notes 2026-05-21[^5].
+## Item Stats
 
 ```
 Facebreaker
-[Base Type — TBD Gloves base]
-Requires Level [TBD]
-Requires [TBD] Strength
+Stocky Mitts
+Armour: ~15 (tăng theo Strength qua +1 to Armour per Strength)
+Requires Level 38, 48 Str
 
-While equipped and your hands are empty, you can use all Mace skills
-  with just your fists
-Track bosses you have pulverised on your map
-Each boss pulverised grants [TBD] added Physical Damage
-[Strength-scaling offensive modifier — exact wording TBD]
-[Strength-scaling defensive modifier — exact wording TBD]
+Has 8 to 12 Physical damage, +3 to +4 per Boss's Face Broken
+(30–50)% increased Stun Buildup
+1% more Unarmed Damage per 5 Strength
++0.3 metres to Melee Strike Range while Unarmed
++1 to Armour per Strength
+Can Attack as though using a One Handed Mace while both of your hand slots are empty
+Unarmed Attacks that would use an Equipped One Hand Mace's damage use this Item's damage
 
-"Follow in the footsteps of the Red Wolf with his legendary gloves..."
+"You think us savages?" mused the Red Wolf, as
+he pulled teeth from the Eternal's skull. "I will
+show your kind the way of tooth and claw."
 ```
 
-Đã chốt từ trailer: empty-hands + mace skill access, boss teeth tracker, strength offensive+defensive scaling, "Fist of the Gods" visual reskin. Base type là Gloves chắc chắn (POE1 Facebreaker = Strapped Mitts), dù base cụ thể của POE2 chưa confirm. Còn phải đọc trong client khi patch notes drop: exact strength scaling formula, exact added phys per boss, level requirement, total boss count cần pulverise.
+Drop: The Market.
 
-## Tại sao item này mạnh
+## Boss teeth tích lũy suốt campaign
 
-POE1 Facebreaker là **flat damage multiplier** — +600-800% unarmed damage, đẩy unarmed lên ngang weapon endgame. POE2 Facebreaker chuyển hướng: không cho damage trực tiếp mà mở **qualitative access** + **progression-scaling stack**. Ba layer power thực:
+"Boss's Face Broken" là counter đếm số world boss đã pulverised trong campaign. Mỗi boss kill cộng thêm +3 đến +4 added physical damage lên con số base 8–12. Counter gắn với character, không phải account — character mới phải farm lại từ đầu. Map boss Endgame không count.
 
-**Layer 1: mace skill access không cần weapon.** POE2 weapon-class gate khá nghiêm: mace skill như :wiki-link{url="https://www.poe2wiki.net/wiki/Hammer_of_the_Gods"} Hammer of the Gods, :wiki-link{url="https://www.poe2wiki.net/wiki/Sunder"} Sunder, :wiki-link{url="https://www.poe2wiki.net/wiki/Boneshatter"} Boneshatter, :wiki-link{url="https://www.poe2wiki.net/wiki/Earthshatter"} Earthshatter, :wiki-link{url="https://www.poe2wiki.net/wiki/Leap_Slam"} Leap Slam, :wiki-link{url="https://www.poe2wiki.net/wiki/Tectonic_Slams"} Tectonic Slams đều require mace equipped. Facebreaker **xóa requirement** này — empty hands cũng dùng được. Hệ quả: damage skill scale theo character stat (strength + added phys) thay vì weapon DPS gate. Build có thể đầu tư hết vào gloves slot, chest slot, jewel — không cần chase mirror-tier mace.
+Đây là con số mà mọi mace skill scale từ khi tay không — không phải từ weapon, mà từ chính item này.
 
-**Layer 2: progression scaling qua boss teeth.** Cơ chế chưa từng có trong POE1/POE2 trước đây. Boss đã giết được tracked trên map; mỗi boss grant added physical damage. Math chain (giá trị cụ thể chưa lộ nên cần đo lại khi vào league): nếu campaign POE2 có ~25 boss (10 act-end boss + 15 mini-boss) và mỗi boss grant 5-15 added phys, tổng stack endgame = 125-375 added phys flat. Combo với strength scaling và mace skill base damage = scaling cấp số nhân khi player vào endgame. Đặc biệt strong cho character bắt đầu fresh league — leveling experience trực tiếp boost endgame DPS.
+## Vì sao Strength vừa tấn công vừa phòng thủ
 
-**Layer 3: strength vừa tấn công vừa phòng thủ.** :wiki-link{url="https://www.poe2wiki.net/wiki/Strength"} Strength trong POE2 base bonus +2 max life / 1 strength + 0.2% melee damage / 1 strength (confirm trên wiki). Facebreaker đẩy thêm modifier scale theo strength ở cả 2 hướng — nghĩa là mỗi strength point gain 3 lần: base strength bonus + Facebreaker offensive scaling + Facebreaker defensive scaling. Build :wiki-link{url="https://www.poe2wiki.net/wiki/Titan"} Titan ascendancy đã có notable đẩy strength → +1% AOE/effect → giờ thêm Facebreaker × strength = quadruple-dip.
+Hai mod Strength của Facebreaker hoạt động độc lập và không triệt tiêu nhau.
 
-## Ba archetype build
+**Offensive — 1% more Unarmed Damage per 5 Strength.** "More" là nhân tử riêng biệt, không gộp vào pool "increased" của passive tree. Tại 300 Str: 60% more = ×1.60. Tại 500 Str: 100% more = ×2.0 lên toàn bộ unarmed damage, trên nền boss teeth đã tích lũy.
 
-Ba archetype chính:
+**Defensive — +1 to Armour per Strength.** Flat Armour thêm thẳng trước khi tính % increased trên tree. Tại 500 Str: +500 Armour ngoài base ~15 của item. Với :wiki-link{url="https://www.poe2wiki.net/wiki/Titan"} Titan ascendancy vốn có nhiều node Armour% increased, con số flat này nhân tương ứng.
 
-**A. Monk Martial Artist Stonefist + Facebreaker** — khớp trực tiếp hai mechanic vừa reveal.
+Hệ quả của cả hai: mỗi điểm Strength đầu tư vào passive tree hoặc gear đồng thời push damage và tăng layer phòng thủ. :wiki-link{url="https://www.poe2wiki.net/wiki/Strength"} Strength trong POE2 tự base bonus cho 2 max life + 0.2% melee damage mỗi điểm — cộng thêm hai Facebreaker mod, Strength trở thành triple-dip stat.
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Way_of_the_Stonefist"} Way of the Stonefist (Martial Artist notable) transform equipped gloves prefix/suffix vào "more powerful versions of related modifiers"[^2]. Stonefist scale gloves stat lên — Facebreaker base + Stonefist multiplier = endgame gloves slot mạnh nhất game. Monk vốn channel skill bằng tay không, giờ thêm mace skill access = full Warrior skill pool available trên Monk character. Hammer of the Gods Monk = combo Way of the Stonefist (gloves) + Facebreaker (gloves) + Martial Artist mirage skill stack — đây có thể là build OP day-1.
+## Mace skill access khi tay không
 
-**B. Warrior/Titan strength-stack với Hammer of the Gods**.
+POE2 gate mace skill theo weapon class khá nghiêm: :wiki-link{url="https://www.poe2wiki.net/wiki/Hammer_of_the_Gods"} Hammer of the Gods, :wiki-link{url="https://www.poe2wiki.net/wiki/Sunder"} Sunder, :wiki-link{url="https://www.poe2wiki.net/wiki/Boneshatter"} Boneshatter, :wiki-link{url="https://www.poe2wiki.net/wiki/Earthshatter"} Earthshatter, :wiki-link{url="https://www.poe2wiki.net/wiki/Leap_Slam"} Leap Slam đều require mace equipped. Facebreaker xóa requirement đó khi cả hai hand slot trống.
 
-Titan ascendancy strength-stacking core, Facebreaker bù vào gloves slot grant double-duty offense/defense. Build path: investment strength qua passive tree (Strength of the Bear, Strength of Stone nodes), Voidstones cho strength implicit, jewel với +strength. Skill chính Hammer of the Gods (visual "Fist of the Gods" trong trailer[^1]) — slam damage scale theo strength × added phys (boss teeth). Defense layer = high life + armour. Tank skill bằng tay không thay vì 2H mace.
+Quan trọng hơn: khi skill đang dùng mace damage thì "weapon damage" không lấy từ mace thật mà từ chính con số của Facebreaker — 8–12 base + boss teeth accumulation. Điều này có nghĩa skill scale theo Facebreaker flat damage × Strength multiplier, không phụ thuộc weapon item level hay quality. Build không cần chase mirror-tier mace; đầu tư Strength trên tree và gear khác là đủ.
 
-**C. Hollow Palm/Unarmed Monk legacy build path**.
+## Way of the Stonefist biến Facebreaker thành Fists of Stone
 
-Trong POE1, Hollow Palm Technique là keystone passive cho unarmed melee. POE2 0.4 đã có Hollow Palm Monk emerging[^3]. Facebreaker reopens path này nhưng chuyển focus sang **mace skill access** thay vì pure unarmed strike. Build dùng mace skill (Sunder/Boneshatter) bằng tay không + Monk movement skill (Whirling Blow, Tempest Bell) — hybrid unarmed-mace. Chưa rõ Hollow Palm có port qua POE2 không — cần check passive tree khi 0.5 tree export ra.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Way_of_the_Stonefist"} Way of the Stonefist là Martial Artist ascendancy notable thay đổi base type của gloves đang equip thành **Fists of Stone** — một bộ mod hoàn toàn khác. Đây không phải "amplify" Facebreaker, mà là transformation:
 
-Build không hợp Facebreaker: **bất kỳ character cần weapon-specific stat** (bow Ranger, staff Witch, dual-wield duelist) vì empty-hands clause exclude weapon. **Crit-focused mace build** — POE2 crit hiện chưa được rebalance cho unarmed, weapon-based crit có thể vẫn ăn đứt added-phys flat scaling.
+- Damage chuyển từ Physical sang Fire, base cao hơn Facebreaker gốc
+- Scaling stat chuyển từ Strength sang Intelligence — "more" per 5 Int thay vì per 5 Str
+- Thêm increased Area of Effect for Unarmed Attacks per Intelligence
+- Evasion và ES scale theo player level, không cần đầu tư gear
+- Item grant thêm skill Smash to Smithereens sẵn
+- Stun Buildup mod và "+1 to Armour per Strength" biến mất — không còn defensive layer từ Strength
 
-## Cách kiếm item
+Boss teeth counter và mace access clause giữ nguyên — hai mechanic đó không đổi qua transformation.
 
-Drop source chưa được GGG reveal. POE1 Facebreaker drop từ pool unique chung — POE2 version khả năng cũng global pool. Pattern league launch:
+## Tương tác với Hollow Palm Technique
 
-1. **Drop từ campaign boss** — nếu boss teeth là mechanic core, có khả năng Facebreaker locked behind 1 boss specific (Brutus của campaign Act 1 logic) → giải thích lore "Red Wolf" và "Ezomytes vs Eternal Empire"
-2. **Verisium Anvil forge** — league mechanic 0.5 cho phép forge unique[^4], Facebreaker có thể trong pool forge result
-3. **Random global** — drop rate cực thấp, pool unique chung
+:wiki-link{url="https://www.poe2wiki.net/wiki/Hollow_Palm_Technique"} Hollow Palm Technique là keystone passive cho phép dùng quarterstaff skill khi tay không, với base damage riêng. Facebreaker và Hollow Palm Technique coexist:
 
-Price tuần 1 launch khó dự đoán pre-launch, cần theo dõi trade khi league mở. Pattern build-enabling unique 0.4 đợt đầu thường settle 2-10 divine sau 1 tuần. Nếu Monk Stonefist + Facebreaker thành meta day-1 build: price spike lên 10-20d tuần đầu, settle ~3-5d sau 2 tuần. Nếu meta không pick up: ~1-2d.
+Facebreaker cấp base damage cho skill dùng One Hand Mace; Hollow Palm cấp base damage cho skill dùng Quarterstaff. Với skill có thể dùng cả mace lẫn quarterstaff, Facebreaker's flat damage được ưu tiên — Hollow Palm's flat damage không áp. Tuy nhiên, attack speed và crit chance từ Hollow Palm (áp qua Evasion Rating) vẫn hoạt động bình thường. Build muốn kết hợp cả hai cần phân biệt rõ skill nào chạy qua mace-gate, skill nào qua quarterstaff-gate.
 
-Update section này sau patch notes drop 2026-05-21[^5].
+## Hai hướng build từ cùng một item
 
-## Lịch sử phiên bản
+**Warrior / Titan strength-stacking** là hướng natural của Facebreaker gốc. Core đẩy Strength tối đa — passive tree, gear, jewel. Skill chính từ mace pool: Hammer of the Gods hoặc Sunder cho AOE, Boneshatter cho single target. Titan ascendancy có thêm node Strength → Area of Effect, thêm một trục nữa cho Strength. Defense layer từ +1 Armour/Str tự grow theo Strength đầu tư.
 
-### Patch 0.5.0 (Return of the Ancients — 2026-05-29)
+**Monk / Martial Artist (Stonefist)** là hướng khác — Way of the Stonefist transform Facebreaker thành Fists of Stone. Mace skill pool vẫn mở nhưng damage bây giờ là fire và scale theo Intelligence. Monk đầu tư Intelligence thay vì Strength; Evasion và ES tăng theo player level tự nhiên. Archetype này mạnh ở phase leveling vì Evasion/ES không cần gear — tự tăng theo level. Khi transformation xảy ra, stun buildup mod và str-armour mod mất — không còn defensive layer từ Strength.
 
-POE2 remake của POE1 Facebreaker, ra mắt cùng patch này. Mod values, base type, level requirement, và exact strength scaling formula chưa public. Mechanic core đã đổi từ flat unarmed damage multiplier sang **mace skill access + progression boss teeth tracker + strength double-duty**.
+Build không hợp Facebreaker: bất kỳ class dùng weapon chính ở hand slot (bow, 2H staff, dual-wield). Cả hai hand slot phải trống — một weapon bất kỳ là mất toàn bộ cơ chế.
 
-### POE1 Facebreaker (reference)
+## Common Mistakes
 
-POE1 version là Strapped Mitts unique grant lớn % increased physical damage with unarmed attacks + accuracy bonus + unarmed-attack ailment damage scaling[^6]. Build core: empty-hands + slam/strike skill compatible với unarmed attack tag. POE2 version diverge mạnh — không cho damage multiplier trực tiếp, focus vào mace skill access (qualitative) và progression scaling (boss teeth) thay vì flat damage buff.
+Nghĩ boss teeth counter count map boss Endgame. Chỉ campaign boss, per character. Map boss Endgame không count.
 
-## Item liên quan và lựa chọn thay thế
+Đặt weapon vào một hand slot rồi mong mace skill vẫn chạy. Điều kiện là cả hai hand slot trống — không có exception.
 
-- [The Auspex](/mechanics/items/the-auspex) — body slot unique cùng patch, synergy qua Monk Martial Artist Stonefist build path (3 unique combo: Facebreaker gloves + Auspex chest + Stonefist ascendancy).
-- :wiki-link{url="https://www.poe2wiki.net/wiki/Titan_Mitts"} Titan Mitts — gloves base type của Titan/Warrior strength scaling. So sánh Facebreaker khi build không muốn empty-hands constraint.
-- :wiki-link{url="https://www.poewiki.net/wiki/Facebreaker"} POE1 Facebreaker — reference cho voice của community pre-launch về remake direction (POE2 version diverge mạnh khỏi gameplay POE1).
+Nghĩ Way of the Stonefist "mạnh hơn Facebreaker gốc". Stonefist không cường hóa Facebreaker, nó biến item thành bộ mod khác hoàn toàn — đổi Strength sang Intelligence, physical sang fire. Đây là two separate archetypes, không phải upgrade path.
 
----
+Nhầm "1% more per 5 Strength" với "increased". More là nhân tử riêng. Tại 500 Str: 100% more = ×2.0 lên toàn bộ unarmed damage, nhân với mọi "increased" khác đã có.
 
-## References
+## Version History
 
-[^1]: GGG official YouTube — *"Path of Exile 2: New Unique Items - The Auspex and Facebreaker"* (2026-05-18). Mark Roberts giới thiệu. Facebreaker segment 1:39-2:54: "Follow in the footsteps of the Red Wolf with his legendary gloves... While equipped and your hands are empty, you can use all Mace skills... with just your fists." Track bosses pulverised on map, each granting added physical damage. Strength stacking offensive + defensive. Demo "Fist of the Gods" reskin của Hammer of the Gods. <https://www.youtube.com/watch?v=e2QZNDtJhoM>
+### Patch 0.5.1
 
-[^2]: Mobalytics — *"PoE 2 Martial Artist Ascendancy Class: Tree & Passives"* (2026-05-08). Way of the Stonefist notable transform equipped gloves prefix/suffix *"into more powerful versions of related Modifiers"*. <https://mobalytics.gg/poe-2/guides/martial-artist>
+Fixed a bug where Attack Damage gained as extra Physical Damage Modifiers on Fists of Stone were not functioning unless the gloves also had an Attack Damage gained as extra Lightning Damage Modifier.
 
-[^3]: Maxroll — *"The Build Meta - Path of Exile 2"* (2025-12-12). Historical 0.3 era meta — Hollow Palm Monk emerging archetype. <https://maxroll.gg/poe2/meta/the-build-meta>
+### Patch 0.5.0 (Return of the Ancients)
 
-[^4]: Patch overview tổng hợp tại [Return of the Ancients](/mechanics/leagues/return-of-the-ancients). Verisium Runeforging forge new unique.
-
-[^5]: Game8 — *"0.5.0 Patch Notes Release Date | Path of Exile 2"* (2026-05-07). Patch notes drop 2026-05-21, launch 2026-05-29. <https://game8.co/games/Path-of-Exile-2/archives/582194>
-
-[^6]: POE Wiki — *Facebreaker* (POE1). Strapped Mitts unique gloves, mod core "increased Physical Damage with Unarmed Attacks" + accuracy + ailment damage scaling unarmed. Exact stat ranges verify trên wiki khi mirror sync. <https://www.poewiki.net/wiki/Facebreaker>
+New Unique item: Facebreaker. POE2 remake từ POE1 Facebreaker với cơ chế hoàn toàn mới — thay vì flat unarmed damage multiplier, version POE2 dùng mace skill access + boss teeth progression tracker + strength double-duty. Đi kèm là Way of the Stonefist (Martial Artist ascendancy) transform item thành Fists of Stone cho Intelligence archetype.
 
 ## Relationships
 
-- **synergizes_with** [The Auspex](/mechanics/items/the-auspex)
+- **synergizes_with** [The Auspex](/mechanics/items/the-auspex) — body slot unique cùng patch, synergy qua Monk Martial Artist Stonefist build path.
+- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview patch 0.5.0 gồm các unique mới.

@@ -1,316 +1,122 @@
 ---
-document_type: mechanic
-title: Talisman Crafting — Budget to Min-Max
-mechanic_type: Crafting
-league: '0.4'
-patch: 0.4.0
-status: published
-author: CaptainLance9 (Synthesized)
-created: '2025-12-22'
-updated: '2026-03-03'
-tags:
-- poe2
-- crafting
-- talisman
-- physical-damage
-- guide
-- druid
-- shaman
-- budget
-- endgame
 template: templates/mechanic-template.md
+document_type: mechanic
+title: Talisman crafting
+status: published
+author: duocnv
+created: '2025-12-22'
+updated: '2026-06-09'
+league: '0.5'
+patch: 0.5.0
+sub_class: crafting
+tags:
+  - talisman
+  - crafting
+  - physical-damage
+  - druid
+  - endgame
+  - poe2
+  - mechanic
 ---
 
-# Talisman Crafting — Budget to Min-Max
+# Talisman crafting
 
-## Overview
+:wiki-link{url="https://www.poe2wiki.net/wiki/Talisman"} là two-handed weapon cho Druid, unlock shapeshift vào Bear, Werewolf, và Wyvern form. Physical attack builds chạy Bear slam hay Werewolf strike scale damage trực tiếp từ weapon physical damage, nên weapon pDPS là stat đầu tư đáng nhất. :wiki-link{url="https://www.poe2wiki.net/wiki/Maji_Talisman"} là base endgame cao nhất dòng này — và sau khi Recombinator bị disable trong 0.5.0, cách craft nó thu gọn còn ba hướng rõ ràng.
 
-Talisman là weapon type chính cho nhiều physical-based attack builds trong POE2, đặc biệt là [Meteor Bear Shaman](/builds/druid/meteor-bear-shaman/). Có 5 crafting method từ 1 divine đến 8+ divine investment, craft được Talisman phù hợp với budget hiện tại và upgrade dần theo progression.
+## Maji Talisman là base duy nhất đáng nhắm ở endgame
 
-### Method Comparison
+:wiki-link{url="https://www.poe2wiki.net/wiki/Maji_Talisman"} yêu cầu level 79 (100 Str, 67 Int), base physical damage 61-114, APS 1.25, crit 8% — base pDPS 109.4 trước bất kỳ mod nào. :wiki-link{url="https://www.poe2wiki.net/wiki/Fury_Talisman"} (level 59) chỉ có base pDPS 87.5. Chênh lệch ~22 pDPS từ base nhân qua tất cả %physical mods ở endgame thành khoảng cách không thể bỏ qua — Fury Talisman chỉ đáng dùng khi attribute chưa đủ để equip Maji.
 
-| Method | Cost | PDPS Range | Difficulty |
-|--------|------|------------|------------|
-| **Budget (Hybrid)** | ~15-25x | 450-550 | Easy |
-| **Recombinator** | ~50-75x + gold | 550-650 | Medium |
-| **Transmute Spam** | Variable | 500-600 | Medium |
-| **Buy Magic Base** | ~3 divine | 550-650 | Easy |
-| **Fracture Min-Max** | 5+ divine | 700+ | Hard |
+Implicit của Maji Talisman là +7-10 Maximum Rage sau 0.5.0 (nerf từ +8-12; item đang có implicit cũ reroll được bằng Divine Orb). Item level 75+ bắt buộc để pool T1 flat physical damage modifier — base dưới ilvl 75 không có T1 trong pool nên mọi crafting effort đều bị ceiling thấp hơn. Về socket: nhiều socket cho nhiều rune augment slot, ưu tiên mua base có socket count cao nhất trong tầm giá.
 
-### Base Selection
+## Ba method crafting còn lại sau 0.5.0
 
-**QUAN TRỌNG:** Luôn dùng **Magi Talisman** (KHÔNG phải Fury Talisman) - base damage cao hơn đáng kể.
+0.5.0 disable Recombinator và xóa Omen of Recombination. Method trung gian dựa vào Recombinator — ghép T1 flat phys với T4 %phys để ra base 550-650 pDPS — không còn tồn tại. Ba method còn lại:
 
-**Item Level:** Cần ilvl 75+ để roll T1 flat physical damage.
+- **Budget Hybrid (~1 divine, 450-550 pDPS):** tìm magic base đã có hybrid %physical, apply Abrasion để thêm flat phys, unveil attack speed qua Jawbone.
+- **Mua magic base sẵn và finish (~3-4 divine, 600-650 pDPS):** bỏ qua bước tự roll base, mua thẳng T1-T2 %phys trên trade rồi finish.
+- **Fracture min-max (5+ divine, 700+ pDPS):** fractured T2 %phys rồi chaos spam cho T1 flat phys — ceiling cao nhất trong league.
 
-### Build Context
+## Budget hybrid từ magic base (~1 divine)
 
-Các method này nhắm physical-based attack builds, đặc biệt là [Meteor Bear Shaman](/builds/druid/meteor-bear-shaman/) sử dụng Talisman làm main weapon.
+Đây là entry point cho early mapping, không cần đầu tư trước mà vẫn ra weapon usable trong vài ngày đầu league.
 
-Target Stats cho Meteor Bear:
-- High pDPS (550+)
-- +Attack Skill Levels (Battle Essence)
-- Attack Speed (Amamanu's Desecrate unveil)
-- Gain Physical as Extra (endgame prefix)
+Mua magic Maji Talisman đã có hybrid %physical damage trên trade. Filter "NOT accuracy" — hybrid accuracy là mod riêng, không phải %physical thuần. Roll khoảng 80% increased physical là đủ cho method này, không cần T1.
 
-## How It Works
+Apply :wiki-link{url="https://www.poe2wiki.net/wiki/Greater_Essence_of_Abrasion"} — Essence upgrade magic item thành rare và guarantee thêm prefix flat physical. Trên two-handed weapon, Greater Abrasion add 23-35 to 39-59 physical damage. Một prefix slot bị lock bởi Essence này.
 
-### Method 1: Budget Hybrid (15-25x)
+Sau khi Essence xong, đưa weapon đến Amamanu để unveil attack speed: dùng :wiki-link{url="https://www.poe2wiki.net/wiki/Ancient_Jawbone"} hoặc tier cao hơn để add Desecrated modifier lên weapon, rồi unveil tại Amamanu. Amamanu chỉ có 3 options cho Talisman — attack speed 18%, spirit reservation reduction, và một option kém hơn — nên xác suất 1/3 mỗi lần. Nếu không ra attack speed, scour suffix rồi Jawbone lại.
 
-Phương pháp rẻ nhất, phù hợp cho early mapping.
+Finish với Battle Essence (đặt cuối cùng, cần prefix slot trống) rồi Vaal Infuser để push quality.
 
-**Step-by-Step:**
+Kết quả kỳ vọng: ~450-550 pDPS tùy roll hybrid và flat.
 
-1. **Mua base:** Search Magic Magi Talisman với Hybrid %Physical. Filter: NOT accuracy (tránh hybrid accuracy). Cost: ~10x per base.
+**Cách source base nhanh hơn:** mua 20-30 white Maji Talisman base (~4x/base), spam Perfect Transmute rồi Perfect Augment tất cả. Hybrid %phys base chiếm khoảng 15-20% trong batch — lọc lấy cái roll cao nhất rồi vào quy trình trên. T1 flat phys base từ batch này không còn chỗ dùng sau khi Recombinator chết, scour rồi resell.
 
-2. **Apply Abrasion:** Greater Essence of Abrasion cho T3 flat physical. Cost: ~3x.
+## Mua magic base sẵn rồi finish (~3-4 divine)
 
-3. **Prefix Jawbone:** Add Amamanu's Desecrate modifier. Unveil -> rolling cho %Physical Damage.
+Skip bước tự roll base, mua thẳng magic Maji Talisman T2+ %physical damage (90%+ increased physical) trên trade. T2 %phys khoảng 3 divine, T1 (130%+) cao hơn đáng kể. Đây là approach nhanh nhất cho mid-game: base đã chất lượng cao, chỉ cần finish đúng thứ tự.
 
-4. **Repeat:** Nếu không hit %phys -> mua base mới, repeat.
+Finish từ magic base T2 %phys:
 
-**Expected Results:**
-- Hybrid %phys: ~80%
-- Abrasion flat: T3
-- Unveiled %phys: 60-100%
-- Total: ~450-550 PDPS
-- Cost per attempt: ~13-15x
-- Average attempts: 3-5 cho decent %phys roll
+1. Greater Essence of Abrasion → upgrade sang rare, guarantee flat phys prefix.
+2. Suffix Exalt để lock một suffix slot trước khi unveil — tránh Jawbone roll bị overwrite.
+3. Jawbone + Amamanu unveil → chọn attack speed 18%.
+4. Nếu muốn Gain Physical as Extra prefix, dùng kỹ thuật Omen Dextral Erasure + Perfect Gain Physical Essence — xem phần riêng bên dưới.
+5. Battle Essence cuối cùng cho +5 Melee Skill Levels.
+6. Vaal Infuser để push quality 25%+.
 
-**Finishing Budget Base:**
+Kết quả: 600-650 pDPS với T2 base. T1 %phys đẩy ceiling cao hơn.
 
-Vì suffixes đã full (từ Jawbone unveil), chỉ cần:
+## Fracture min-max để đạt pDPS tối đa (5+ divine)
 
-1. **Perfect Battle Essence:** ~50c-1d, cho +5 to Attack Skills
-2. **Optional - Vaal Infuser:** 5/6 chance add quality (không corrupt), push 20% -> 25%+ quality
+Method này nhắm ceiling 700-800 pDPS, phù hợp khi đã có clear speed ổn định và muốn upgrade vũ khí một lần dứt điểm. Mỗi lần fail fracture thì mất base, nên budget buffer tối thiểu cho 3-4 lần thử mới đáng vào.
 
-### Method 2: Recombinator (~50-75x + gold)
+Mua 3-socket Maji Talisman white ilvl 75+, khoảng 20x/base. Spam Perfect Nullification + Perfect Augmentation cho đến khi ra T2 %physical (Tyrannical — 160%+ increased physical). T1 quá khó để hit random; T2 đủ để fracture vì sau khi fractured nó không bị overwrite bởi Chaos Orb.
 
-Phương pháp cost-efficient nhất cho high PDPS bases.
+Apply Greater Abrasion để có T3 flat phys prefix. Add thêm một suffix craft để có đủ mods trước khi fracture. Dùng Fracturing Orb — xác suất fracture đúng %phys là 1/3 khi weapon có 3 mods. Nếu fail, base die và bắt đầu lại.
 
-**Core Concept:** Recombinator ưu tiên giữ base có mod hiếm hơn. T1 flat phys (rare) + T4 %phys (common) -> likely giữ base với flat phys.
+Sau khi fracture thành công: Annul off các suffix thừa chỉ giữ một, rồi spam Chaos Orb cho đến khi ra T1 flat physical (61-90 added physical damage). Fractured prefix không bị chaos overwrite nên chỉ cần kiên nhẫn chờ flat phys hit.
 
-**Setup:**
+Finish với Gain Physical as Extra (kỹ thuật bên dưới), Battle Essence +5, Vaal Infuser. Kết quả perfect: T2 %phys fractured (160%+), T1 flat phys (61-90), Gain Physical, +5 Melee Skills, 18% attack speed, 25%+ quality — 750-800 pDPS.
 
-| Component | Requirements | Cost |
-|-----------|-------------|------|
-| **Base A (Magi Talisman)** | T1 hoặc T2 flat physical damage, ilvl 75+ | 10-15x per base |
-| **Base B (Any Talisman)** | T4 %physical damage (134%+), ilvl 75+, NOT accuracy | 1-3x per base |
-| **Lucky Recombinator Omen** | Doubles success chance (~10% -> ~20%) | ~25x |
+## Ép mod Gain Physical as Extra
 
-**Process:**
+Prefix "Gain X% of Physical Damage as Extra" là mod offensive cao cấp nhất trên Talisman và không roll được bằng random crafting thông thường. Để force nó dùng combo :wiki-link{url="https://www.poe2wiki.net/wiki/Omen_of_Dextral_Erasure"} + Perfect Gain Physical Essence:
 
-1. Put T1 flat phys base (Magi) in left slot
-2. Put T4 %phys base in right slot
-3. Use Lucky Omen
-4. Recombinate
+1. Exalt một suffix để chỉ còn đúng một suffix trống — Omen Dextral Erasure cần có suffix để xóa.
+2. Apply Omen of Dextral Erasure (~165x) — xóa một suffix random, giải phóng slot.
+3. Ngay sau đó apply Perfect Essence of Abrasion (Gain Physical variant) — Essence guarantee thêm Gain Physical prefix ngay cả trên rare weapon.
 
-**Success Rate:** ~20-25% với Lucky Omen. Expected result: 550-650+ PDPS base.
+Combo này expensive (~165x cho Omen) nên chỉ đáng trên base đã có T1-T2 %phys và flat phys tốt. Waste Omen vào budget base không thu hồi được.
 
-**Common Mistakes:**
-- Wrong item level: Base B cần có thể roll T1 flat phys (ilvl 75+), nếu không -> reduced success chance
-- Wrong base type: Mua Fury Talisman thay vì Magi - Fury có base damage thấp hơn
-- Hybrid accuracy mods: Luôn filter "NOT accuracy" - hybrid accuracy không phải pure %phys
+## Battle Essence và Vaal Infuser
 
-### Method 3: Transmute Spam (Variable)
+Battle Essence guarantee prefix "+5 to Level of all Melee Skill Gems" trên two-handed weapon trong 0.5.0 (nerf từ +7 xuống +5). Đây luôn là bước cuối cùng trong chuỗi prefix — Essence cần một prefix slot trống để apply; nếu prefixes đã full thì Essence fail và mất tiền. Kiểm tra prefix count trước khi apply.
 
-Mass rolling cho người thích gambling.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Vaal_Infuser"} add quality với 5/6 xác suất không corrupt weapon, và 1/6 xác suất corrupt (block mọi crafting tiếp theo). Spam Infuser cho đến khi corrupt — kết quả thường 24-27% quality. Mỗi 1% quality = 1% base physical damage thêm vào, impact trực tiếp lên pDPS. Áp dụng sau khi đã finish mọi mod.
 
-**Process:**
+## Lỗi hay gặp
 
-1. Mua 20-30 white Magi Talisman bases (~4x per base)
-2. Perfect Transmute all bases
-3. Perfect Augment all bases
-4. Sort results:
-   - T1 flat phys -> Save cho Recombinator
-   - Hybrid %phys -> Budget method
-   - Main %phys (RARE) -> Jackpot
-   - Trash -> Scour hoặc sell
-
-**Expected Distribution (per 30 bases):**
-- T1 flat phys: 2-3 bases (Recom fodder)
-- Hybrid %phys: 4-6 bases (Budget craft)
-- Main %phys: 0-1 bases (Best outcome)
-- Trash: 20+ bases (Resale value)
+Mua Fury Talisman vì giá thấp hơn Maji. Floor pDPS thấp hơn ~20% ngay từ base — sau khi nhân qua tất cả %physical mods ở endgame thành cách biệt không bù lại được bằng roll tốt.
 
-### Method 4: Buy Magic Base (~3 divine)
+Không filter "NOT accuracy" khi tìm hybrid %phys base. Hybrid accuracy trông giống %physical trên tooltip nhưng là mod khác — mua nhầm sẽ lãng phí Abrasion và Jawbone step.
 
-Skip crafting, mua thẳng.
+Mua hoặc craft base dưới ilvl 75. T1 flat physical damage không có trong pool dưới ilvl 75. Check item level trước bất kỳ bước craft nào.
 
-**Trade Search Filters:**
-- Base: Magi Talisman
-- Rarity: Magic
-- %Physical Damage: 90%+ (T2+)
-- Item Level: 75+
-- Cost: ~3 divine cho T1-T2 %phys
+Apply Battle Essence khi prefixes đã full. Essence fail khi không có prefix slot trống, mất cả essence lẫn tiền. Battle Essence luôn là bước cuối trong chuỗi prefix.
 
-**Finishing:**
+Rush vào Fracture method khi chưa đủ buffer. Trung bình 3 lần thử mới fracture thành công — tức 60x chỉ cho base cost, chưa tính công roll T2 %phys mỗi lần. Chỉ vào method này khi có currency buffer cho tối thiểu 4-5 lần thử.
 
-1. Apply Abrasion -> T3 flat phys
-2. Suffix Exalt -> Force suffix
-3. Dextral Essence Omen + Gain Phys Essence -> Force prefix
-4. Amamanu's Desecrate -> Attack speed unveil
-5. Battle Essence -> +5 attack skills
-6. Vaal Infuser -> Quality 25%+
+## Version History
 
-### Method 5: Fracture Min-Max (5+ divine)
+### Patch 0.5.0 (Return of the Ancients)
 
-Highest PDPS potential, most expensive.
-
-**Base:** 3-socket Magi Talisman (ilvl 75+), ~20x per base.
-
-**Target:** T2 %physical damage (Tyrannical) + T1 flat physical (via chaos spam after fracture).
-
-**Process:**
-
-1. Null + Aug until T2 %phys
-2. Apply Abrasion -> T3 flat
-3. Roll suffix với +5 attack speed craft
-4. Add Amamanu's Desecrate (suffix)
-5. Fracture (1/3 chance hit %phys)
-6. If success: Anul off suffixes except one, chaos spam for T1 flat phys
-7. Finish với gain mod, battle essence, etc.
-
-**Expected Result (Perfect craft):**
-- T2 %phys (fractured): 160%+
-- T1 flat phys: 61-90
-- Gain physical as extra
-- +5 Attack Skills
-- Attack Speed 18%
-- Total: 750-800+ PDPS
-
-## Strategy & Tips
-
-### Finishing Techniques
-
-**Forcing Gain Physical as Extra:**
-
-1. **Suffix Exalt:** Force một suffix slot (~5x)
-2. **Dextral Essence Omen:** "Essence removes random suffix" (~165x)
-3. **Perfect Gain Physical Essence:** Guarantees gain phys prefix (~3x)
-4. Apply Dextral Omen, sau đó apply Gain Phys Essence - Essence removes suffix, adds gain phys
-
-**Amamanu's Desecrate Unveil:**
-
-Amamanu chỉ có 3 unveil options:
-- **Attack Speed (18%)** <- TARGET
-- Spirit Reservation
-- Fishers
-
-Process: Desecrate với Amamanu modifier -> Prefix Jawbone -> Unveil -> pick Attack Speed (1/3 guaranteed outcomes).
-
-**Vaal Infuser Quality:**
-- 5/6 chance: Add quality (không corrupt)
-- 1/6 chance: Corrupts (stops at current quality)
-- Strategy: Spam until corrupt, typical result 24-27% quality
-- Mỗi 1% quality = significant PDPS increase
-
-### Panic Recovery
-
-Nếu slam bad suffix (như +melee levels):
-
-- **Problem:** Battle Essence cần không có +levels
-- **Solution 1:** Amamanu's Desecrate (suffix) -> 1/3 remove bad mod
-- **Solution 2:** Perfect Essence of Haste -> 50% remove/replace
-- **Warning:** Có thể remove good mods, risky!
-
-**Best Practices:**
-- Luôn dùng Magi Talisman, KHÔNG phải Fury
-- Filter "NOT accuracy" khi mua bases
-- Check ilvl 75+ trước khi craft
-- Dùng Lucky Recombinator Omen cho Recombinator method
-- Battle Essence là finishing step cuối cùng
-- Vaal Infuser cho quality boost với minimal risk
-
-**Common Mistakes:**
-- Mua Fury Talisman thay vì Magi (base damage thấp hơn)
-- Không filter hybrid accuracy mods
-- Wrong item level (cần 75+ cho T1 flat phys)
-- Apply Battle Essence khi còn bad suffix (wastes essence)
-- Rush Fracture method khi chưa đủ budget
-
-## Cost Analysis
-
-### Budget Build (Early Maps)
-
-| Item | Cost | Purpose |
-|------|------|---------|
-| Bases (3-5) | ~40x | Hybrid %phys bases |
-| Abrasions | ~15x | T3 flat phys |
-| Battle Essence | ~50c | +5 Attack Skills |
-| **Total** | **~1 divine** | **450-500 PDPS** |
-
-Time: 15-30 minutes.
-
-### Mid-Game (T11+)
-
-| Item | Cost | Purpose |
-|------|------|---------|
-| T1 flat bases (3) | ~45x | Recombinator input |
-| %phys bases (3) | ~9x | Recombinator input |
-| Lucky Omens (3) | ~75x | Double success chance |
-| Finishing | ~1 divine | Essences, Jawbone |
-| **Total** | **~2-3 divine** | **550-600 PDPS** |
-
-Time: 30-60 minutes.
-
-### Endgame Min-Max
-
-| Item | Cost | Purpose |
-|------|------|---------|
-| Base crafting | ~2 divine | Recombinator + bases |
-| Dextral Omen | ~165x | Force gain phys mod |
-| Essences | ~1 divine | Battle + Gain Phys |
-| Finishing | ~2 divine | Quality, unveils |
-| **Total** | **~5-8 divine** | **700+ PDPS** |
-
-Time: 1-2 hours.
-
-## Trade Search Templates
-
-### T1 Flat Phys Base (Recombinator)
-
-- Type: Magi Talisman
-- Rarity: Magic
-- Added Physical Damage: 61+ (to attacks)
-- Item Level: 75+
-- Implicit: Max Rage (optional)
-
-### T4 %Phys Base (Recombinator)
-
-- Type: Any Talisman
-- Rarity: Magic
-- %Increased Physical Damage: 134+
-- Item Level: 75+
-- NOT: Accuracy (exclude hybrid)
-
-### Finished Weapon Check
-
-- Type: Any Talisman
-- Implicit: Max Rage
-- PDPS: 600+
-- NOT: Attack Speed (để compare raw base)
-
-## Related Content
-
-- [Meteor Bear Shaman Build](/builds/druid/meteor-bear-shaman/) - Primary build sử dụng weapon này
-- [CaptainLance9 Video Guide](https://www.youtube.com/watch?v=TlhN3_yPpnM) - Original video source
-
-## Changelog
-
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0.0 | 2025-12-22 | Guide đầu tiên từ video CaptainLance9 |
-| 2.0.0 | 2026-03-03 | Digested từ research sang mechanics/crafting section |
-
-## Interactions with Other Content
-
-<!-- TODO: polish section này qua /write-mechanic-tutorial. Cần ≥1 ví dụ với số thật từ character. -->
-
-## What Doesn't Work
-
-<!-- TODO: polish section này qua /write-mechanic-tutorial. Cần ≥1 ví dụ với số thật từ character. -->
+- Recombinator bị disable vĩnh viễn; Omen of Recombination bị xóa — item đang hold bị xóa ngay khi login. Method ghép T1 flat phys + T4 %phys để ra base 550-650 pDPS không còn khả thi.
+- Implicit Maximum Rage của Maji, Fury, và Rabid Talisman giảm từ +8-12 xuống +7-10. Update item cũ bằng Divine Orb.
+- Battle Essence T1 trên two-handed attack weapon giảm từ +7 xuống +5 to Level of all Melee Skills.
 
 ## Relationships
 
-- **related_mechanics** [Meteor Bear Shaman - Walking Calamity](/builds/druid/meteor-bear-shaman)
+- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview thay đổi 0.5.0 bao gồm disable Recombinator và rune crafting hệ mới.
+- **related_mechanics** [Shapeshifting](/mechanics/shapeshifting) — cơ chế Bear/Werewolf/Wyvern form mà Talisman unlock, context cho việc scale physical attack damage từ weapon.

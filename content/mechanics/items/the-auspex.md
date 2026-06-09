@@ -1,126 +1,109 @@
 ---
-template: templates/item-template.md
-document_type: item
+template: templates/mechanic-template.md
+document_type: mechanic
 title: The Auspex
-status: draft
+status: published
 author: duocnv
 created: '2026-05-19'
-updated: '2026-05-19'
+updated: '2026-06-09'
 league: '0.5'
 patch: 0.5.0
-rarity: unique
-item_class: Unknown
-level_requirement: 0
-item_tags:
-- body-armour
-- unique
-- minion
-- mist-raven
-- madness
-- slow
-- low-life
-- pre-launch
-meta_tags:
-- patch-preview
-- build-enabling
-- minion-utility
-- single-minion
+sub_class: items
 tags:
-- item
-- unique
-- minion
-- pre-launch
-- 0-5
-- return-of-the-ancients
-- mist-raven
-- gruelling-madness
+  - item
+  - unique
+  - body-armour
+  - mist-raven
+  - gruelling-madness
+  - deflect
+  - low-life
+  - evasion
+  - delirium
+  - poe2
+  - mechanic
 ---
 
 # The Auspex
 
-Patch 0.5 **Return of the Ancients** (launch 2026-05-29) thêm một unique attire tên The Auspex — slot suy đoán là body armour dựa trên chữ "attire" trong trailer[^1]. Item có 4 layer độc lập: **summon một con Mist Raven duy nhất** thay vì cả đàn, **enemy bị Raven cull → player nhận :wiki-link{url="https://www.poe2wiki.net/wiki/Frenzy_Charge"} Frenzy Charge**, **enemy trong presence range nhận debuff "Gruelling Madness" — slow và buff các slow khác mạnh hơn**, và **deflect chance thành lucky khi :wiki-link{url="https://www.poe2wiki.net/wiki/Low_Life"} low life**. Build target dự kiến là hybrid utility-melee hoặc low-life caster muốn 1 con minion strong-single thay vì swarm — pattern ngược với meta 0.4 đang bị dominated bởi Skeletal Storm Mages + Skeletal Sniper deep-swarm.
+The Auspex là unique Exquisite Vest từ loot pool Delirium, grouped với :wiki-link{url="https://www.poe2wiki.net/wiki/Sadist%27s_Mercy"} Sadist's Mercy, :wiki-link{url="https://www.poe2wiki.net/wiki/Horror%27s_Flight"} Horror's Flight và :wiki-link{url="https://www.poe2wiki.net/wiki/Veilpiercer"} Veilpiercer — tất cả đều liên quan đến The Raven Trickster, boss mới của Delirium trong 0.5.0. Chest đóng gói bốn cơ chế độc lập: con Mist Raven duy nhất với vòng cull-frenzy, vùng :wiki-link{url="https://www.poe2wiki.net/wiki/Presence"} Presence áp Gruelling Madness mỗi giây, :wiki-link{url="https://www.poe2wiki.net/wiki/Deflect"} Deflect trở thành Lucky khi ở :wiki-link{url="https://www.poe2wiki.net/wiki/Low_Life"} Low Life, và attribute requirements nhân đôi toàn bộ gear. Bốn layer này phục vụ archetype evasion-deflect running ở low life — không phải mọi build evasion đều muốn cái đổi trận này.
 
-## Item Stats
-
-Số chính xác sẽ public sau patch notes 2026-05-21[^3].
+## Chỉ số và base type
 
 ```
 The Auspex
-[Base Type — TBD, suspected Body Armour]
-Requires Level [TBD]
+Exquisite Vest
+Requires Level 65
 
-Summons a singular Mist Raven
-Mist Raven has a unique command skill that causes it to dive at your
-  targets, shattering reality and creating an explosion of madness
-Enemies culled by the Mist Raven grant you Frenzy Charges
-Enemies in your presence gain Gruelling Madness — a slowing debuff
-Your other slows are more potent against enemies with Gruelling Madness
-Your deflect chance is Lucky while on Low Life
+Grants Skill: Level 18 Mist Raven
+(210–240)% increased Evasion Rating
++(70–120) to maximum Life
+100% increased Attribute Requirements
+Chance to Deflect is Lucky while on Low Life
+Enemies in your Presence gain 1 Gruelling Madness each second
 
-"Ravens gathered and mists descended... following him...
-driving him deeper and deeper into madness."
+"The boy is a bad omen," he cried. "Ravens gather
+before him!" That night, a new raven appeared, and
+shadowed the Auspex for the rest of his days.
 ```
 
-5 dòng mod trên đều có trong trailer nguyên văn[^1]. Slot suy đoán là body armour vì chữ "attire" thường ám chỉ chest. Khi patch notes drop, cần đọc trong client để xác minh base type cụ thể, level requirement, số % cho slow magnitude và deflect lucky threshold.
+(210–240)% increased Evasion Rating trên base Exquisite Vest cho một slot body thuần evasion đóng góp rất lớn vào tổng evasion. Khác với phần lớn unique build-around chỉ một trục, chest còn kèm +(70–120) maximum Life nên không bỏ trống hẳn mặt life — dù vẫn cần gánh thêm life từ slot khác để đủ pool ở endgame.
 
-## Vì sao item này mạnh
+## Mist Raven và vòng cull-frenzy
 
-Đọc nhanh thì thấy "1 con minion + slow + lucky deflect" — đọc kỹ thì 4 layer stack với nhau tạo ra một archetype chưa có trong POE2 0.4.
+Mist Raven là companion đơn được chest grant trực tiếp — không phải swarm, không liên quan đến skeleton hay spectre slot. Con chim có một command skill dive: player chủ động ra lệnh để nó lao vào target, tạo burst damage tập trung. Điểm cốt lõi của skill này: **enemy bị Mist Raven cull sẽ grant player :wiki-link{url="https://www.poe2wiki.net/wiki/Frenzy_Charge"} Frenzy Charge**.
 
-**Layer 1: single-minion density.** Build minion POE2 hiện tại chia làm 2 nhánh: swarm (5-12 con minion Storm Mage / Sniper / Reaver) hoặc companion (1-2 con Beast/Spectre). Auspex force player vào nhánh single-minion. Hệ quả: mọi investment minion damage / minion AOE / minion attack speed dồn hết vào 1 entity thay vì share-divisor 6-8. So sánh thô — nếu Skeletal Storm Mage push ~2M DPS mỗi con với 5 con total = 10M tổng, một Mist Raven với cùng investment có thể đẩy single-target DPS lên ~10M concentrated, hữu ích cho boss/conqueror encounter hơn mapping clear — cần đo lại khi stat scaling của Raven lộ trong patch notes.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Frenzy_Charge"} Frenzy Charge trong POE2 cho 4% more damage và 4% attack/cast speed per charge. Class nào không có nguồn Frenzy tự nhiên từ skill hay ascendancy — Huntress, Ranger, một số Warrior build — đều dùng được Raven làm passive charge generator. :wiki-link{url="https://www.poe2wiki.net/wiki/Cull"} Cull kích hoạt ở 35% HP còn lại với enemy thông thường. Loop kín: Raven dive → enemy low HP → Raven cull → player nhận Frenzy → Frenzy buff cả Raven damage → cull nhanh hơn ở tiếp theo.
 
-**Layer 2: cull → Frenzy loop.** :wiki-link{url="https://www.poe2wiki.net/wiki/Cull"} Cull trong POE2 = instant kill enemy dưới 10% HP. Khi Raven cull, player nhận :wiki-link{url="https://www.poe2wiki.net/wiki/Frenzy_Charge"} Frenzy Charge — solo charge generation cho class không có frenzy gem hoặc ascendancy notable. Frenzy POE2 standard = 4% more damage + 4% attack/cast speed per charge, giữ parity với POE1. Trailer nói "giving the Raven extra utility" → khả năng Raven cũng inherit frenzy charge của player để scale damage; cần đọc tooltip khi item lên live để xác minh. Loop kín: Raven damage → enemy low HP → Raven cull → frenzy → Raven mạnh hơn → cull nhanh hơn.
+## Gruelling Madness tích lũy trong Presence
 
-**Layer 3: Gruelling Madness stack multiplier.** Debuff "Gruelling Madness" áp lên enemy trong :wiki-link{url="https://www.poe2wiki.net/wiki/Presence"} presence range — vùng ~6-8m AOE quanh player. Bản thân debuff là slow, nhưng câu key trong trailer là *"empowers your other slows to be even more potent"*[^1] — Madness là **multiplicative slow potency** với mọi nguồn slow khác player apply (chill, freeze threshold, :wiki-link{url="https://www.poe2wiki.net/wiki/Temporal_Chains"} Temporal Chains). Slow-stacking archetype (frost Witch, kite Ranger với :wiki-link{url="https://www.poe2wiki.net/wiki/Glacial_Cascade"} Glacial Cascade) ăn full layer này.
+Mỗi giây, enemy đứng trong vùng Presence của player nhận 1 stack Gruelling Madness — debuff slow stacking không giới hạn theo thời gian đứng gần. Sau 10 giây một boss đứng im, nó mang 10 stacks; sau 20 giây, 20 stacks. Gruelling Madness amplify các slow source khác đang đồng thời áp lên cùng enemy: chill, freeze threshold, Temporal Chains và các slow effect đều mạnh hơn khi stacks tích đủ cao.
 
-**Layer 4: lucky deflect khi low life.** :wiki-link{url="https://www.poe2wiki.net/wiki/Deflect"} Deflect là defensive layer 0.4 — roll % để negate hit hoàn toàn. "Lucky" = roll 2 lần, take higher. Low life POE2 standard = HP ≤ 50%. Effective deflect chance lên 1.5-2x khi player ở low life — combo với reservation aura giảm max life để pin character vào threshold low-life permanent; cách sustain low-life ổn định trong POE2 vẫn cần test khi vào league.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Sadist%27s_Mercy"} Sadist's Mercy cùng loot pool cũng dùng Gruelling Madness, nhưng theo chiều ngược: nó apply 2–5 stacks mỗi đòn đánh rồi convert stacks thành Power của enemy. Đây là cơ chế khác hoàn toàn với The Auspex — Auspex muốn enemy bị slow nặng hơn, Sadist's Mercy muốn enemy mạnh hơn để đổi lấy một mechanic khác của build đó. Không nên dùng cả hai.
 
-## Build nào hưởng lợi từ item này
+## Lucky Deflect khi ở Low Life
 
-3 archetype nhìn ra ngay:
+Low Life trong POE2 là ≤35% maximum HP. Khi ở Low Life, mỗi roll Deflect trở thành Lucky — nghĩa là roll 2 lần và lấy kết quả cao hơn. Công thức: nếu base deflect chance là *p*, effective deflect khi Lucky = 1 − (1 − p)².
 
-**A. Low-life Lich/Witch với Raven utility.** Lich đã có Mist mechanic + minion presence — Auspex stack thêm 1 minion strong-single + Frenzy gen. Low-life setup qua reservation aura đẩy player vào "low life" threshold permanent → lucky deflect always on. Raven cull boss-add → player frenzy → spell DPS scale. Build này không cần dedicated minion build path, Auspex là utility chest.
+Ví dụ với số cụ thể:
 
-**B. :wiki-link{url="https://www.poe2wiki.net/wiki/Martial_Artist"} Martial Artist Stonefist với Raven distraction** — còn cần xác minh Auspex slot có compatible với Monk armour scaling không khi item lộ base type. Monk Martial Artist ascendancy notable :wiki-link{url="https://www.poe2wiki.net/wiki/Way_of_the_Stonefist"} Way of the Stonefist transform gloves prefix/suffix into stronger versions — đẩy investment vào gloves. Auspex bù vào chest/body slot bằng utility (Raven cull + presence slow + low-life deflect). Combo natural với [Facebreaker](/mechanics/items/facebreaker) — Monk có thể empty-hands + Auspex chest + Facebreaker gloves = 3 unique synergy.
+- Base 40% → Lucky: 1 − 0,6² = **64%**
+- Base 50% → Lucky: 1 − 0,5² = **75%**
+- Base 60% → Lucky: 1 − 0,4² = **84%**
 
-**C. Slow-control freeze Witch.** Gruelling Madness boost slow potency multiplicative. Witch build dùng :wiki-link{url="https://www.poe2wiki.net/wiki/Frost_Wall"} Frost Wall + :wiki-link{url="https://www.poe2wiki.net/wiki/Glacial_Cascade"} Glacial Cascade freeze threshold sẽ thấy enemy freeze duration extend đáng kể khi đứng trong presence của player có Auspex. Không phục vụ map clear — boss/rare bị khống chế lâu hơn nên giảm nguy cơ bị phản đòn.
+Với evasion cao từ chest cộng gear evasion từ các slot khác, một build đầu tư Deflect có thể đạt base 40–50% tương đối dễ. Pin character ở Low Life permanent qua reservation aura (hoặc CI với 1 HP) là điều kiện để lucky always-on — khi đó 64–75% deflect kết hợp với evasion cao tạo ra lớp phòng thủ khá vững, đặc biệt với hit nhỏ và mid-size.
 
-Build không hợp Auspex: **swarm minion builder** (Skeletal Storm Mage spammer) vì single-minion clause khả năng disable extra minion từ source khác — pending tooltip xác nhận. **Pure ranged kiter** vì presence range yêu cầu player gần enemy.
+## Attribute requirements nhân đôi là drawback thật
 
-## Drop source và giá dự kiến
+100% increased Attribute Requirements làm tăng gấp đôi attribute requirements trên tất cả gear đang trang bị. Một vũ khí cần 120 Dex giờ cần 240. Một helmet cần 80 Str giờ cần 160. Bất kỳ item nào có mixed Str/Int requirements đột nhiên đòi hỏi rất nhiều attribute.
 
-Drop source chưa được GGG reveal. Pattern 3 patch trước (0.2, 0.3, 0.4): unique mới của league thường drop từ:
+Hệ quả: build dùng Auspex gần như buộc phải đi thuần Dex gear — evasion armour từ đầu đến chân, weapons Dex-based (bow, dagger, claw, spear cho Huntress), ring và amulet ưu tiên Dex hoặc resist/life. Str/Int investment bị doubled requirements nuốt trọn. Đây là lý do Class phù hợp nhất là Huntress (Ranger), vốn cap Dex tự nhiên từ ascendancy và passive tree. Class Str/Int như Warrior hay Witch cần đầu tư attribute rất nặng — không phải không dùng được, nhưng chi phí gear tăng rõ rệt.
 
-1. **Pinnacle boss của league** — Auspex có thể drop từ Kalguuran Tomb pinnacle chain (Medved/Uhtred/Olroth/unrevealed)[^2] hoặc 5 league cũ pinnacle mới (Xesht, Kulemak, King in the Mists)[^2]
-2. **League mechanic reward** — drop từ Ezomyte Remnant high-tier encounter, hoặc Verisium Anvil forge[^2]
-3. **Random global** — pool unique chung, drop rate cực thấp
+## Build archetypes phù hợp
 
-Price tuần 1 launch dự kiến **3-15 divine** dựa trên pattern build-enabling unique 0.4 — Storm Mage staff chạm ~5d ngày 7, Companion staff ~10d. Sau 2 tuần khi market settle, nếu build viable thì stabilize ~5-8d; nếu meta không pick up thì ~1-3d.
+Evasion-deflect Huntress/Ranger là core user tự nhiên: cap Dex sẵn, gear thuần evasion dễ tìm, Deflect dễ đầu tư từ passive tree, và low-life through reservation aura là pattern sẵn có. Raven cull-frenzy stack tốt với attack build vì Frenzy buff cả attack speed lẫn damage.
 
-Update section này sau patch notes drop 2026-05-21[^3].
+Monk Martial Artist với [Facebreaker](/mechanics/items/facebreaker) là combo hợp lý về concept — Raven utility kết hợp gloves unique cùng patch — nhưng Monk là Str/Int class. Doubled Attribute Requirements sẽ taxing nặng nếu build muốn đeo bất kỳ item Str/Int nào, kể cả Facebreaker (Facebreaker có Str requirement). Khả thi nhưng attribute investment cao hơn bình thường đáng kể.
+
+Build swarm minion không hợp vì The Auspex grant đúng một companion duy nhất — lợi thế nằm ở utility của Raven, không phải số lượng. Build kiter xa cũng mất phần Gruelling Madness hoàn toàn vì không ở gần enemy.
+
+## Failure modes
+
+**Attribute trap khi gear lên**: doubled requirements làm phần lớn BiS rare roll khó pass hơn, đặc biệt weapons với physical damage cao thường có Dex+Str mixed requirement.
+
+**Low life là ngưỡng nguy hiểm**: 35% HP là ngưỡng mà một hit lớn có thể one-shot. Lucky deflect giảm xác suất bị hit, không loại trừ. Nếu EHP không đủ, duy trì low-life permanent tạo rủi ro cao ở T15+ hoặc Pinnacle.
+
+**Gruelling Madness không stack vs boss mobile**: Boss teleport, rush hay di chuyển nhiều sẽ liên tục thoát Presence, stacks reset hoặc không đủ thời gian tích. Layer này thực sự chỉ mạnh với boss đứng yên (Simulacrum Scions, Pinnacle melee-range).
+
+**Mist Raven cạnh tranh Spirit**: Nếu build đang run nhiều aura reservation và Trusted Kinship, thêm một companion (Raven) sẽ cắt vào Spirit budget. Cần tính trước reservation khi planning Spirit allocation.
+
+**No Regen map mod**: nếu build dựa vào life flask để maintain low life ổn định, No Regen làm vòng lặp bất ổn.
 
 ## Version History
 
-### Patch 0.5.0 (Return of the Ancients — 2026-05-29)
+### Patch 0.5.0 (Return of the Ancients)
 
-Item introduced. Mod values, base type, level requirement chưa public.
-
-## Related Items & Alternatives
-
-- [Facebreaker](/mechanics/items/facebreaker) — unique gloves cùng patch, synergy với Auspex qua Monk Martial Artist Stonefist build path.
-- :wiki-link{url="https://www.poe2wiki.net/wiki/The_Hollow_Mask"} The Hollow Mask — chest unique 0.4 với mechanic minion (Minion Instability + chaos). Auspex là alternative cho slot body khi build muốn minion utility thay vì raw damage trigger.
-- :item-badge{name="Doryani's Prototype"} — POE1 chest có chung pattern "negative defensive layer for offensive trade". Auspex theo trend "chest layer up 4 power source vs trade-off" POE2 đang push.
-
----
-
-## References
-
-[^1]: GGG official YouTube — *"Path of Exile 2: New Unique Items - The Auspex and Facebreaker"* (2026-05-18). Mark Roberts giới thiệu 2 unique. Auspex segment 0:08-1:37 cover Mist Raven minion, dive command skill, frenzy cull mechanic, Gruelling Madness slow buff, lucky deflect on low life. <https://www.youtube.com/watch?v=e2QZNDtJhoM>
-
-[^2]: Patch overview tổng hợp tại [Return of the Ancients](/mechanics/leagues/return-of-the-ancients). Bao gồm Origins of Divinity endgame overhaul, 5 league cũ revamp, Atlas redesign.
-
-[^3]: Game8 — *"0.5.0 Patch Notes Release Date | Path of Exile 2"* (2026-05-07). Confirms patch notes drop 2026-05-21, launch 2026-05-29. <https://game8.co/games/Path-of-Exile-2/archives/582194>
+Item được giới thiệu. Thuộc loot pool Delirium, grouped với The Raven Trickster boss — cùng nhóm Sadist's Mercy, Horror's Flight, Veilpiercer.
 
 ## Relationships
 
-- **synergizes_with** [Facebreaker](/mechanics/items/facebreaker)
+- **synergizes_with** [Facebreaker](/mechanics/items/facebreaker) — unique gloves cùng patch 0.5.0, được GGG reveal cùng lúc với Auspex; synergy concept với Monk Martial Artist Stonefist build path.

@@ -18,7 +18,7 @@ tags:
 
 Đây là patch note chính thức của Path of Exile 2 — Content Update 0.5.0 "Return of the Ancients", do Grinding Gear Games đăng ngày 21/05/2026 tại [pathofexile2.com/ancients](https://www.pathofexile2.com/ancients), kèm ba bản cập nhật bổ sung ngày 22, 25 và 26/05/2026. Bản này chép nguyên văn từ thread patch note chính thức trên forum GGG ([forum thread 3932540](https://www.pathofexile.com/forum/view-thread/3932540) — nguồn authoritative cao nhất), fetch ngày 27/05/2026; file gốc nằm trong repo tại `data/release-notes/Version_0.5.0.md`.
 
-Doc này có hai phần. Phần đầu là **changelog đầy đủ chép nguyên văn từng dòng để tra cứu** — thuật ngữ game giữ nguyên tiếng Anh, không diễn giải. Phần cuối — mục **"0.5.0 đổi gì cho build & mechanic của mình"** ở cuối doc — là ghi chú riêng về những thay đổi tác động trực tiếp tới các build/mechanic mình đang theo, viết bằng giọng chủ quan để tự định hướng việc cần làm sau patch. Bản tóm tắt định hướng ngắn gọn hơn (chỉ giữ thay đổi đủ lớn để đổi cách chơi) ở [Return of the Ancients](/mechanics/leagues/return-of-the-ancients).
+Đây là changelog đầy đủ của 0.5.0, chép nguyên văn từng dòng để tra cứu — thuật ngữ game giữ nguyên tiếng Anh, không diễn giải. Bản tóm tắt định hướng ngắn gọn hơn, chỉ giữ những thay đổi đủ lớn để đổi cách chơi, nằm ở [Return of the Ancients](/mechanics/leagues/return-of-the-ancients).
 
 Expansion **Return of the Ancients** mang đến một league mới, một cuộc đại tu toàn bộ Endgame của Path of Exile 2, với sáu storyline Endgame mới và 2 Ascendancy class mới, cùng một lượng nội dung khổng lồ khác.
 
@@ -850,39 +850,11 @@ GGG đăng đợt cập nhật cuối trước launch ngày 26/05/2026.
 - Cải thiện reward của quest Tribal Medicine. Nâng cấp MTX: Originator's Weapon Effect và Celestial Emperor Rare Finisher Effect giờ dùng được trong POE2.
 - Bug fix: Fire Skill dùng bởi Spell Totem / Visage (Align Fate) không còn tạo Raging Spirit; sửa overlap giá trị mod "Lord's" Increased Spirit (giờ 20-26%, trước 30-36%); sửa lỗi Chaos Inoculation override max life thành 1 ảnh hưởng nhầm ngưỡng stun/ailment (nổi bật là CI + một số mod Stun Threshold khiến nhân vật miễn Heavy Stun); sửa Eternal Youth + 0 ES; sửa hiển thị crit damage của Gore Spike; sửa queued skill không update target; sửa Killing Palm / Staggering Palm dash trượt target; sửa projectile của Arbiter of Ash tàng hình khi tạo quá xa người chơi.
 
-## 0.5.0 đổi gì cho build & mechanic của mình
-
-Đây là phần ghi chú riêng — soi nguyên đống note trong kho của mình xem patch 0.5.0 đụng tới cái gì, xếp theo mức độ phải bắt tay làm.
-
-### Phải viết lại từ đầu
-
-[Dinomancer Lich Elephant](/builds/witch/dinomancer-lich-elephant) là build đau nhất. Engine của nó là tier 5 :wiki-link{url="https://www.poe2wiki.net/wiki/Infernal_Legion"} cho phase "walking simulator" pure burn — mà 0.5.0 xoá hẳn Infernal Legion III khỏi game, đồng thời halve self-burn + ignite base của tier I/II từ 20% xuống 10%, cộng thêm fix bug khiến IL luôn tính crit. Toàn bộ math damage của build sụp, không phải lệch số mà gãy nền tảng. Phải re-PoB từ đầu và trả lời câu hỏi IL có còn viable không — nếu không thì pivot sang :wiki-link{url="https://www.poe2wiki.net/wiki/Tame_Beast"} pure damage (vừa được buff mạnh, xem bên dưới) hoặc hướng Minion Instability bomber tận dụng biến thể Spectre mới của Bogfelled Commoner. Đi kèm là note mechanic [Infernal Legion Ignite Loop](/mechanics/skills/infernal-legion-ignite-loop): concept synthesized-ignite vẫn đúng nhưng mọi con số ví dụ (IL III 30%/25%, I/II 20%) phải viết lại theo 10% tier I/II và bỏ hẳn tier III.
-
-[Talisman Crafting](/mechanics/crafting/talisman-crafting) mất nguyên Method 2 vì GGG disable hẳn :wiki-link{url="https://www.poe2wiki.net/wiki/Recombinator"} và remove Omen of Recombination — cả farming path đó chết. Phải retire Method 2 và viết lại quanh các hệ craft mới: Verisium Runeforging, Alloy, Genesis Tree. Talisman implicit Max Rage cũng giảm nhẹ (+8-12 → +7-10), nên advice base damage cần chỉnh theo.
-
-### Chỉ cần refresh số
-
-[Hollow Mask Acolyte minion](/builds/monk/hollow-mask-acolyte-minion-hypothesis) thắng lớn: :wiki-link{url="https://www.poe2wiki.net/wiki/The_Hollow_Mask"} giờ có stat chính thức khớp đúng giả thuyết của note (cấp Wildwood's Gifts skill, "Remnants you create affect Allies in your Presence", 80-100% increased Reservation Efficiency of Remnant Skills), còn Acolyte of Chayula buff leech Into the Breach 15%→20%. Build chỉ cần cập nhật số là mạnh hơn. [Twister Huntress starter](/builds/huntress/0-5-twister-huntress-starter) thì đã được viết kèm patch từ trước (Salvo rework và Pounce nerf đều ghi đúng); Twister bản thân không bị đụng nên đây vẫn là league starter hạng S — chỉ cần verify lại implicit Quiver projectile (+2 → +1). [Tame Beast Companion Carry Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-carry) và note [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) hưởng trực tiếp cú buff Tame Beast (Summoned Beast +40% more damage ở Gem 9, lên 84% ở Gem 20, summon ngay khi đủ spirit, min level hạ 9→7) — cập nhật lại DPS math là xong. [Guide prep 0.5](/guides/poe2-0-5-prep) cần soi kỹ nhất ở phần keystone vì :wiki-link{url="https://www.poe2wiki.net/wiki/Trusted_Kinship"} bị rework đổi hẳn cơ chế dual-companion, kèm Vaal Pact và Ancestral Bond cũng đổi.
-
-### Content mới của 0.5 chờ verify rồi publish
-
-Note [Energy Shield Recovery](/mechanics/energy-shield-recovery) chính là bản mổ xẻ đợt nerf ES recharge này, số khớp patch verbatim — chỉ chờ PoB2 0.5 ra để đổi từ draft sang published. Cùng nhóm là [Return of the Ancients](/mechanics/leagues/return-of-the-ancients), [New Unique Items 0.5](/mechanics/0-5-new-unique-items), [Olroth's Legacy](/mechanics/olroth-s-legacy) và [Armour Defensive Scaling](/mechanics/armour-defensive-scaling): patch confirm phần lớn claim, cần đối chiếu nốt từng số rồi publish dần.
-
-### Cơ hội mới đáng nghiên cứu
-
-Cú buff Tame Beast làm companion damage lần đầu tự đứng được mà không cần mượn IL ignite — đáng dựng hẳn một build Tame Beast pure-damage. Hai ascendancy mới Martial Artist (Monk, đánh tay không) ghép :wiki-link{url="https://www.poe2wiki.net/wiki/Facebreaker"} và Spirit Walker spectral companion đều chưa có build doc. Về crafting, Genesis Tree (qua Breach) mở path mới thay chỗ Recombinator vừa chết, còn :wiki-link{url="https://www.poe2wiki.net/wiki/Runic_Ward"} defense layer mới và cơ chế "phá unique thành rune" của Olroth's Legacy đều xứng một deep-dive mechanic riêng.
-
-### Item chờ datamine
-
-Facebreaker, The Auspex, Liminal Coil, Sylvan's Effigy và Twisted Empyrean được patch xác nhận tồn tại (đúng tên trong mục New Unique item) nhưng chưa kèm stat block — phải chờ datamine từ poe2db.tw / poe2wiki sau launch mới chốt được số. Riêng The Hollow Mask đã có stat đầy đủ nên verify được ngay.
-
 ## Relationships
 
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — bản tóm tắt định hướng đã digest của chính patch 0.5.0 này.
-- **related_mechanics** [Energy Shield Recovery](/mechanics/energy-shield-recovery) — mổ xẻ đợt nerf ES recharge ghi trong changelog.
-- **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — ascendancy companion mới + cú buff Tame Beast trong changelog này.
-- **related_mechanics** [Infernal Legion Ignite Loop](/mechanics/skills/infernal-legion-ignite-loop) — note phải viết lại sau nerf Infernal Legion.
-- **related_mechanics** [Talisman Crafting](/mechanics/crafting/talisman-crafting) — mất Method 2 vì Recombinator bị disable.
-- **related_builds** [Dinomancer Lich Elephant](/builds/witch/dinomancer-lich-elephant) — build chịu tác động nặng nhất từ nerf Infernal Legion.
-- **related_builds** [Hollow Mask Acolyte Minion](/builds/monk/hollow-mask-acolyte-minion-hypothesis) — The Hollow Mask được xác nhận stat trong changelog.
-- **related_guides** [POE2 0.5 Prep](/guides/poe2-0-5-prep) — guide league-start chịu ảnh hưởng từ loạt rework keystone.
+- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview định hướng đã digest của patch 0.5.0.
+- **related_mechanics** [Energy Shield Recovery](/mechanics/energy-shield-recovery) — đợt nerf ES recharge của patch này.
+- **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — ascendancy companion mới và buff Tame Beast.
+- **related_mechanics** [Infernal Legion Ignite Loop](/mechanics/skills/infernal-legion-ignite-loop) — cơ chế ignite của Infernal Legion sau nerf 0.5.0.
+- **related_mechanics** [Talisman Crafting](/mechanics/crafting/talisman-crafting) — đường craft talisman sau khi Recombinator bị disable.
+- **related_builds** [Hollow Mask Acolyte Minion](/builds/monk/hollow-mask-acolyte-minion-hypothesis) — The Hollow Mask có stat xác nhận trong patch này.

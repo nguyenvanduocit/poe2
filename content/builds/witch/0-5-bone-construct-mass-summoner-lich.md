@@ -181,7 +181,6 @@ Hạn chế thì nhiều và thật. Build **clunky** — Bone Construct là min
 ## Relationships
 
 - **alternative_to** [Infernalist Spectre Legion](/builds/witch/0-5-infernalist-spectre-legion) — hướng summoner khác cùng class Witch, dùng spectre vĩnh viễn làm damage thay vì construct tạm thời; so sánh độ ổn định vs fantasy số đông.
-- **alternative_to** [Dinomancer Lich Elephant](/builds/witch/dinomancer-lich-elephant) — cùng ascendancy Lich nhưng dồn vào companion + Infernal Legion thay vì đạo quân construct.
 - **related_guides** [Minion Army Build Comparison](/guides/0-5-minion-army-build-comparison) — so sánh các hướng minion-army 0.5 (construct tạm thời vs spectre vĩnh viễn vs companion) theo trần quân số, spirit và độ ổn định.
 - **related_mechanics** [Energy Shield recovery](/mechanics/energy-shield-recovery) — bối cảnh lớp ES mà Soulless Form chọc thủng 10%, lý do không coi ES là tường tuyệt đối.
 - **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview league 0.5.0, context endgame và meta summoner đang nghiên cứu.

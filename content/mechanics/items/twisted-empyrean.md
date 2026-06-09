@@ -1,47 +1,42 @@
 ---
-template: templates/item-template.md
-document_type: item
+template: templates/mechanic-template.md
+document_type: mechanic
 title: Twisted Empyrean
-status: draft
+status: published
 author: duocnv
 created: '2026-05-25'
-updated: '2026-05-25'
+updated: '2026-06-09'
 league: '0.5'
 patch: 0.5.0
-rarity: unique
-item_class: Two Hand Mace
-level_requirement: 1
-item_tags:
-- two-hand-mace
-- unique
-- cold
-- mana
-- slam
-- pre-launch
-meta_tags:
-- patch-preview
-- build-enabling
-- mana-stacking
+sub_class: items
 tags:
-- item
-- unique
-- 0-5
-- return-of-the-ancients
-- cold-conversion
-- mana-before-life
+  - twisted-empyrean
+  - unique
+  - two-hand-mace
+  - cold-conversion
+  - mana-before-life
+  - glory
+  - starborn-onslaught
+  - poe2
+  - mechanic
 ---
 
 # Twisted Empyrean
 
-Twisted Empyrean là two-hand mace unique trên base :wiki-link{url="https://www.poe2wiki.net/wiki/Aberrant_Sledge"} Aberrant Sledge, grant skill **Starborn Onslaught** và biến mana pool thành cả nguồn damage lẫn nguồn EHP cùng lúc. Ba dòng mod ăn khớp nhau — "+319 to maximum Mana", "Attacks with this Weapon have Added Cold Damage equal to 6% to 10% of maximum Mana", và "10% of Damage is taken from Mana before Life" — khiến mọi điểm mana vừa cộng sát thương cold vừa cộng lớp đệm máu. Cộng thêm "Convert 100% of Fire Damage with Mace Skills to Cold Damage", item ép toàn bộ build commit về cold, biến nó thành lõi cho một slam mace mana-tank thay vì life/str-stacker thông thường.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Twisted_Empyrean"} là unique Two Hand Mace trên base Aberrant Sledge, yêu cầu Level 78 và 163 Strength. Item grant skill Starborn Onslaught Level 18 — một đòn slam cold gated bởi Glory, nhảy lùi rồi phóng cây búa xuống như sao băng. Ba mod đặc trưng trên item cùng phục vụ một trục: mana. "+319 maximum Mana" tăng pool, "Attacks with this Weapon have Added Cold Damage equal to 6% to 10% of maximum Mana" biến mana thành flat damage per attack, và "10% of Damage is taken from Mana before Life" biến mana thành lớp đệm nhận damage. Cộng thêm "Convert 100% of Fire Damage with Mace Skills to Cold Damage", item ép toàn bộ output về cold và yêu cầu build commit hết vào mana thay vì life hay strength thuần.
 
-## Item Stats
+## Stats
 
 ```
 Twisted Empyrean
-Aberrant Sledge
-Requires: Level 1
---------
+Aberrant Sledge — Two Hand Mace
+Physical Damage: 144–299
+Cold Damage: 166–372
+Critical Hit Chance: 9.43%
+Attacks per Second: 1.20
+Weapon Range: 1.3 metres
+Requires: Level 78, 163 Str
+──────────────────────────────────────────────
 Grants Skill: Level 18 Starborn Onslaught
 94% increased Physical Damage
 Adds 166 to 372 Cold Damage
@@ -50,44 +45,64 @@ Adds 166 to 372 Cold Damage
 10% of Damage is taken from Mana before Life
 Attacks with this Weapon have Added Cold Damage equal to 6% to 10% of maximum Mana
 Convert 100% of Fire Damage with Mace Skills to Cold Damage
+──────────────────────────────────────────────
+"Infinite mutations over endless eons borne upon it in a singular moment."
 ```
 
-Stat lấy từ poe2db 0.5.0. "Requires: Level 1" trên item có khả năng là placeholder datamine; Starborn Onslaught bản thân yêu cầu Level 78, 137 Strength để dùng — cần xác minh trong client khi league live.
+## Mana làm cả damage lẫn EHP cùng lúc
 
-## Tại sao item này mạnh
+Điểm cốt lõi của item là maximum Mana gánh hai vai trò song song, nên mỗi điểm đầu tư vào mana có hiệu quả kép.
 
-Sức nặng nằm ở chỗ một stat duy nhất — maximum Mana — gánh ba vai trò, nên mọi investment mana có hiệu suất gấp ba.
+Về damage: "Added Cold Damage equal to 6% to 10% of maximum Mana" thêm flat cold vào mỗi attack. Với pool 2.000 mana, mỗi đòn thêm 120–200 cold damage, cộng thêm vào flat cold 166–372 từ mod Adds sẵn trên weapon. Hai nguồn flat đó cộng lại trước khi nhân với multiplier: total flat cold mỗi attack ở pool 2.000 là 286–572. Đưa pool lên 3.000, flat từ trục mana riêng đã là 180–300 — scale tuyến tính theo investment mana.
 
-**Mana thành damage.** "Adds 166 to 372 Cold Damage" là flat cộng thẳng, nhưng dòng đắt là "Added Cold Damage equal to 6% to 10% of maximum Mana". Với +319 mana từ chính item, cộng thêm mana từ tree/gear, một pool 2,000 mana cho thêm 120 đến 200 cold damage mỗi attack chỉ từ dòng này, độc lập với flat 166-372. Mana càng cao, cold added càng lớn — đây là lý do build commit hết vào mana thay vì life.
+Về EHP: "10% of Damage is taken from Mana before Life" là partial :wiki-link{url="https://www.poe2wiki.net/wiki/Mind_Over_Matter"}. Mỗi hit drain thêm 10% lượng damage từ mana pool trước khi chạm vào life. Con số 10% này nhỏ — một hit 3.000 damage chỉ drain 300 mana. Pool mana dùng để scale damage đó kiêm luôn vai trò cushion mà không cần đánh đổi offensive stat nào. Đây không phải full MoM 30% của keystone, nhưng với pool mana lớn thì lớp đệm vẫn đáng kể.
 
-**Mana thành EHP.** "10% of Damage is taken from Mana before Life" là phiên bản rút gọn của :wiki-link{url="https://www.poe2wiki.net/wiki/Mind_Over_Matter"} Mind over Matter — 10% mỗi hit trừ vào mana trước. Pool mana lớn vốn dựng để scale damage giờ kiêm luôn lớp đệm, nên không phải đánh đổi giữa offense và defense như build life thường gặp.
+## Starborn Onslaught và cơ chế Glory
 
-**Cold lock-in.** "Convert 100% of Fire Damage with Mace Skills to Cold Damage" gom mọi fire (từ Starborn Onslaught hoặc support) về cold, dồn scaling vào một element duy nhất. Starborn Onslaught đã "Converts 70% of Physical to Cold" ở tier thấp và 100% ở tier cao, nên gần như toàn bộ output là cold — chill/freeze threshold từ đó cũng dày hơn vì cold damage tập trung.
+Starborn Onslaught yêu cầu 20 Glory để kích hoạt. Glory tích bằng cách Chill hoặc Freeze enemy — mỗi lần chill/freeze một enemy tạo ra Glory bằng Power của enemy đó, tối đa một lần cứ 0,5 giây trên mỗi enemy. Normal monster có ~1 Power, Unique luôn là 20 Power.
 
-## Build xoay quanh mana thay vì strength và life
+Ở pack play: weapon tự có flat cold 166–372 per attack cộng trục mana, đủ để chill nhiều enemy một swing. Pack 10 enemy = 10 Glory từ một đòn. Với APS 1,20, bạn đạt đủ 20 Glory sau 2–3 giây đánh pack đầu tiên. Không có bottleneck thực sự ở đây.
 
-Item này định nghĩa một slam mace lấy mana làm trục thay vì strength/life. Skill mặc định Starborn Onslaught là AoE/Melee/Slam/Cold/Duration: Attack Damage 155% ở base lên tới 294% tier cao, tạo Fissure kéo dài thêm 8 giây ở tier sau, nhưng gated bởi "Requires 20 Glory to use" và "+1.2 seconds to Total Attack Time" — tức một đòn nặng, chậm, tích Glory rồi xả, không phải spam. Playstyle là build mana cao (tree mana nodes, gear +mana, :wiki-link{url="https://www.poe2wiki.net/wiki/Eldritch_Battery"} hoặc aura mana-scaling), giữ MoM 10% chống burst, rồi slam cold fissure vào pack/boss.
+Ở boss play: Unique monster có 20 Power cố định. Chill boss lần đầu = 20 Glory ngay lập tức — bạn vào fight với Starborn sẵn dùng sau đúng một hit mở đầu. Glory decay 2/giây nếu không tích thêm trong 15 giây, nhưng trong boss fight bạn liên tục đánh nên không bao giờ rơi vào idle decay.
 
-Build phải xoay quanh hai câu hỏi chưa test được khi league chưa live: Glory generation đủ nhanh để Starborn Onslaught không bị nghẽn không, và mana sustain có theo kịp khi vừa làm damage source vừa làm damage-taken buffer không. Cả hai cần log in-game đầu league.
+Khi kích hoạt: Impact jump lùi rồi đập xuống, +1,2 giây Total Attack Time (đòn chủ ý nặng và chậm), Impact radius 2,5m, tạo 3 Fissure kéo dài 8 giây (Fissure branch 2 lần, limit 8). Đồng thời 20 Stars rơi xuống khu vực — Star Fall component deal 294% Attack Damage và convert 100% physical sang cold, 2m radius mỗi star. Tổng damage của một lần kích hoạt vượt xa attack thường vì gom cả Impact + Fissure + Stars.
 
-Item không hợp build life-stacker hay build không scale mana — mọi mod đắt giá ở đây đều quy về mana, bỏ mana thì còn lại chỉ là 94% increased Physical + flat cold tầm thường.
+Impact convert 70% physical sang cold; Star Fall convert 100%. Weapon mod convert 100% fire sang cold cho mọi mace skill. Kết quả là hầu như toàn bộ damage output là cold.
 
-## Nguồn drop và giá tuần đầu
+## Cold lock-in và tại sao không scale lửa
 
-Drop source chưa được GGG reveal trước khi league launch. Theo pattern unique mới của các patch trước, khả năng từ Pinnacle boss chain hoặc reward của league mechanic Remnant/Ocean Exploring. Giá tuần đầu của build-enabling weapon unique thường 3-15 divine rồi settle sau 2 tuần tùy meta pick-up — sẽ update khi market live.
+"Convert 100% of Fire Damage with Mace Skills to Cold" không cho phép dual-element. Mọi fire damage từ support gem hay passive node đều bị gom về cold trước khi áp — không còn fire để scale riêng. Fire Penetration, node "increased Fire Damage", support có fire tag: tất cả vô nghĩa vì damage chạy về cold hết.
+
+Scaling đúng là cold resistance reduction (:wiki-link{url="https://www.poe2wiki.net/wiki/Elemental_Weakness"}, Cold Exposure) và cold multiplier từ support gem. Starborn Onslaught có tag Cold nên nó ăn mọi modifier cold bình thường.
+
+Điểm hay là vòng tự reinforcing: cold damage chill enemy, chill tích Glory cho Starborn, Starborn tạo thêm cold damage. Build không cần nguồn Glory riêng — output của chính nó làm sạch đường cho mình.
+
+## Mana sustain khi mana gánh ba việc
+
+Mana gánh cả damage scaling, EHP buffer, và skill cost — đây là điểm cần quản lý chặt nhất.
+
+Sustain trong combat thực tế không phải vấn đề: 10% damage-taken-from-mana là con số nhỏ. Hit 500 damage từ enemy trung bình chỉ drain 50 mana. Pool 2.000 chịu được rất nhiều hit như vậy và regen từ Intelligence passives bù đắp đủ.
+
+Áp lực thật đến từ reservation: aura, companion skill, hay bất kỳ nguồn reserve mana nào đều cắt trực tiếp vào pool đang làm việc. Pool 2.000 mana bị reserve 30% cho một aura thì effective pool còn 1.400, flat cold per attack giảm xuống 84–140, EHP buffer cũng giảm theo. Khi build Twisted Empyrean, mana reservation phải tính cẩn thận như một hard constraint — không phải afterthought.
+
+## Lỗi hay gặp
+
+- Đọc "Requires: Level 1" từ datamine phụ trên poedb và nghĩ item dùng được từ Level 1. Data block gốc của item ghi rõ Level 78, 163 Str — khớp với requirement của chính Starborn Onslaught. Level 1 là artifact của một data block riêng, không phải item requirement thật.
+- Stack fire damage node vì thấy item có fire→cold. Convert 100% nghĩa là toàn bộ fire đã chạy về cold — không còn fire nào để scale. Đổ hết sang cold multiplier và cold resistance reduction.
+- Bỏ qua reservation khi lên kế hoạch build. Mana là offensive stat, defensive layer, và resource pool đồng thời — bất kỳ reservation nào cũng cắt cả ba cùng lúc.
+- Vào boss với 0 Glory vì switch combat đủ lâu để bị idle decay (2/giây sau 15 giây không tích). Chill một mob ngoài portal trước khi bước vào là đủ để có 20 Glory từ đầu fight.
+
+## Drop source
+
+Twisted Empyrean drop từ Expedition pinnacle boss trong Runes of Aldur. Item drop-restricted — không chance được bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Orb_of_Chance"}.
 
 ## Version History
 
-### Patch 0.5.0 (2026-05-29)
+### Patch 0.5.0 (Return of the Ancients)
 
-Item introduced. Stat đã có trên poe2db; build viability chưa test live.
-
-## Item liên quan và lựa chọn thay thế
-
-- :wiki-link{url="https://www.poe2wiki.net/wiki/Mind_Over_Matter"} Mind over Matter — keystone full-version của dòng "damage taken from mana before life"; Twisted Empyrean cho sẵn 10% nên có thể chồng hoặc thay một phần.
-- [The Auspex](/mechanics/items/the-auspex) — unique cùng patch theo trend "một item gánh nhiều layer", đối chiếu cách 0.5 thiết kế unique build-around.
+Item introduced. Drop từ Expedition pinnacle boss, exclusive cho Runes of Aldur league.
 
 ## Relationships
 
-- **part_of** [Đợt Unique Mới và Meta Shift](/mechanics/0-5-new-unique-items) — một trong các damage carry đã lộ stat của đợt 0.5
-- **synergizes_with** [The Auspex](/mechanics/items/the-auspex) — cùng nhóm unique build-enabling 0.5
+- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview các unique mới và meta shift 0.5.0, gồm Expedition rework tạo ra Expedition pinnacle boss là nguồn drop của item này.
+- **related_mechanics** [The Auspex](/mechanics/items/the-auspex) — unique cùng patch theo design philosophy một item gánh nhiều defensive layer.

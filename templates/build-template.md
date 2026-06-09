@@ -120,6 +120,14 @@ forum.pathofexile.com, character profile.)
 
 ## Gear Progression
 
+### Gear theo slot
+(Equip-reference: bullet 1 dòng/slot cho MỌI slot — weapon, off-hand/shield, helmet, body,
+gloves, boots, belt, amulet, ring ×2, jewel (+ charm nếu game có). Mỗi dòng: item/base +
+2-4 mod ưu tiên (dòng nào quan trọng) + 1 câu why. Dẫn bằng 1 đoạn priority order: cap res
+trước → Life → attribute floor cho gem → damage stat chính → +skill level → reservation/utility
+→ defense layer. Unique → :wiki-link. KHÔNG dùng table — bullet-per-slot (cột site hẹp). Slot
+nào đã có mục cơ chế riêng (vd body unique, weapon-axis) thì tóm 1 câu + cross-ref, đừng lặp.)
+
 ### Leveling
 (Item base + key mod tier 1-9.)
 

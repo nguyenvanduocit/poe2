@@ -1,11 +1,11 @@
 ---
 template: templates/guide-template.md
 document_type: guide
-title: "Hoàn Thành 8 Challenge — Knight of Aldur & Totem Hideout"
+title: "Hoàn thành 8 challenge lấy Knight of Aldur"
 status: draft
 author: POE AIO
 created: '2026-05-27'
-updated: '2026-05-27'
+updated: '2026-06-09'
 game: poe2
 league: '0.5'
 patch: 0.5.0
@@ -20,106 +20,115 @@ tags:
   - endgame
 ---
 
-# Hoàn Thành 8 Challenge — Knight of Aldur & Totem Hideout
+# Hoàn thành 8 challenge lấy Knight of Aldur
 
-> **Quick Summary:** Lần đầu tiên POE2 có hệ challenge. Tám challenge, cứ mỗi hai cái xong nhả một mảnh giáp cosmetic Knight of Aldur, đủ tám thì có thêm totem trang trí hideout. Đây là lộ trình đẩy từng challenge một — cái nào dễ bundle vào map loop, cái nào phải chuẩn bị riêng, và đâu là chỗ tốn nhất.
+> **Quick Summary:** Đây là challenge system đầu tiên của POE2. Tám challenge, cứ mỗi hai cái xong nhả một mảnh giáp Knight of Aldur, và mỗi challenge bất kỳ đều thêm một đốt vào Totem Pole hideout. Lộ trình này xếp tám cái theo độ khó thật, chỉ rõ cái nào tự xong trong map loop và cái nào phải chuẩn bị key + build đủ mạnh.
 
-## Tám Challenge, Bốn Tier Reward
+## Tám challenge và bốn mốc reward
 
-Return of the Ancients đem hệ challenge vào POE2 lần đầu. Chỉ có tám challenge — scope nhỏ hơn POE1 (40 cái) rất nhiều — và chúng xếp từ dễ tới khó theo đúng thứ tự game hiển thị khi bấm `H` mở challenge screen. Phần thưởng chia bốn mốc: cứ mỗi hai challenge hoàn thành thì nhả một mảnh của bộ giáp cosmetic **Knight of Aldur**, nên 2/4/6/8 là các điểm rơi reward. Hoàn thành cả tám còn cho thêm một **totem decoration** cho hideout — vật này hiện vĩnh viễn, ai trade với mình về sau đều thấy mình đã clear league. Toàn bộ reward chỉ tồn tại trong league window; sang Standard không lấy được nữa, nên áp lực là hoàn thành trong vòng đời league.
+Runes of Aldur đem challenge system vào POE2 lần đầu, scope nhỏ gọn hơn POE1 rất nhiều: chỉ tám challenge, không có 40/40, không có portal effect riêng theo tier. Phần thưởng chia hai nhánh. Cứ hoàn thành 2, 4, 6, 8 challenge thì rớt một mảnh bộ giáp cosmetic **Knight of Aldur** theo đúng thứ tự Boots ở mốc 2, Gloves ở mốc 4, Body Armour ở mốc 6, Helmet ở mốc 8. Song song, từ challenge đầu tiên trở đi mỗi cái hoàn thành đều thêm một đốt vào **Runes of Aldur Totem Pole** trong hideout — cột totem này hiện vĩnh viễn và cho ai ghé hideout thấy mình clear được mấy challenge trong league. Toàn bộ reward chỉ tồn tại trong league window, sang Standard không lấy được nữa, nên áp lực là xong trong vòng đời league.
 
-Target mặc định của mình là **8/8**. Lý do đơn giản: scope nhỏ, chi phí marginal để đi từ 6 lên 8 không đáng kể so với việc có full set giáp thay vì vài mảnh rời, và totem hideout chỉ mở khi đủ tám. Nếu chỉ muốn một mảnh chest thì dừng ở mốc tương ứng cũng được, nhưng với hệ challenge gọn thế này thì cày hết là rule of thumb. Sáu challenge đầu nằm trọn trong endgame loop bình thường — gần như tự xong khi chơi. Hai challenge cuối (**The Cartographer** và **The Vanquisher**) là phần thật sự tốn công, cần chuẩn bị key và build đủ mạnh để hạ pinnacle boss.
+Target mặc định là **8/8**. Scope nhỏ nên chi phí marginal để đi từ 6 lên 8 không đáng so với việc có full set giáp thay vì vài mảnh rời, và muốn Helmet thì bắt buộc phải chạm mốc 8. Sáu trong tám challenge gần như tự xong khi leo campaign rồi cày endgame bình thường. Hai cái thật sự tốn công là **The Cartographer** và **The Vanquisher** — chúng cần build trưởng thành và key pinnacle, nên để làm mốc cuối.
 
-> **Lưu ý nguồn:** Video reveal chính chủ GGG (27/05) chỉ đi qua **7 trong 8** challenge. Challenge thứ tám chưa được công bố tại thời điểm viết — section cuối để trống có chủ đích, sẽ điền khi league mở `H` panel ngày 29/05. Một số tên boss/region trong video là phụ đề tự động nên có thể sai chính tả; mình mô tả theo mechanic (chắc chắn từ patch notes) và để tên tạm trong ngoặc để nhận diện. Mỗi section challenge dưới đây có nút tick riêng — trạng thái lưu trong trình duyệt (localStorage), nên lần sau mở lại guide vẫn còn.
+## Cái nào tự xong, cái nào phải chuẩn bị
 
-## Challenge 1 — The Rune Seeker
+The Runeseeker, The Artisan và The Reliquarian bám thẳng vào việc chơi league: chạy Remnant và identify unique là chúng tự nhích. The Hunter là sáu boss campaign, leo story là gặp. The Ascendant là tám điểm ascendancy mình muốn có sẵn cho power. The Master chỉ là cán mốc Level 90, đến tự nhiên khi cày endgame. Năm sáu cái đầu này không cần kế hoạch riêng, chỉ cần không bỏ sót. Trọng tâm chuẩn bị dồn vào The Cartographer (allocate sạch Atlas tree) và The Vanquisher (hạ ba pinnacle boss).
 
-:memorable-check{id="rune-seeker-craft" label="Craft item từ Remnant nhiều slot trong map loop" storageKey="poe2-runes-of-aldur-challenges"}
-:memorable-check{id="rune-seeker-7slot" label="Craft thành công Remnant 7-slot (sống qua 6 wave)" storageKey="poe2-runes-of-aldur-challenges"}
+Character đang chạy là Huntress Spirit Walker companion ở Lv90, đã sâu trong endgame, nên The Master coi như xong, và đàn companion có đủ DPS lẫn EHP để hạ ba pinnacle ở quest version. Build nào leo xong endgame và clear map ổn định đều nằm trong envelope của cả tám challenge — không cái nào đòi build đặc thù, chỉ đòi build đủ trưởng thành cho hai cái pinnacle.
 
-Đây là challenge gắn trực tiếp với league mechanic, nên nó tự tiến triển khi mình chơi Remnant. Yêu cầu là tìm :wiki-link{url="https://www.poe2wiki.net/wiki/Remnant"} có số slot ngày càng nhiều rồi dùng chúng craft item mới qua Runic Recipe. Remnant slot ít thì an toàn, nhưng để tick được mốc cao mình phải mở những craft nhiều slot. Bản craft bảy slot là chỗ khó: nó đi kèm sáu wave quái, và càng nhiều slot thì encounter càng nguy hiểm vì phần thưởng lớn đổi bằng rủi ro chết. Cách đẩy là chơi Remnant liên tục trong map loop và chủ động chọn remnant slot cao khi build đã đủ tanky để sống qua sáu wave — đừng ép craft bảy slot lúc còn yếu, một wave dồn là mất cả encounter.
+## Challenge 1: The Runeseeker
 
-## Challenge 2 — The Hunter
+:memorable-check{id="rune-seeker-craft" label="Inscribe runeshape mỗi độ dài 2/3/4/5/6 tại Remnant" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="rune-seeker-7slot" label="Inscribe runeshape dài 7+ (sống qua wave encounter)" storageKey="poe2-runes-of-aldur-challenges"}
 
-:memorable-check{id="hunter-campaign" label="Hạ 4 optional boss gặp tự nhiên khi đi campaign" storageKey="poe2-runes-of-aldur-challenges"}
-:memorable-check{id="hunter-aki" label="Hạ Aki the Final Sting (theo lòng sông khô)" storageKey="poe2-runes-of-aldur-challenges"}
-:memorable-check{id="hunter-anund" label="Hạ Anund the Sandworm (theo lòng sông khô)" storageKey="poe2-runes-of-aldur-challenges"}
+Challenge này gắn trực tiếp với league mechanic nên nó tự tiến triển khi mình chơi :wiki-link{url="https://www.poe2wiki.net/wiki/Remnant"}. Yêu cầu là inscribe runeshape ở đủ mỗi độ dài: 2, 3, 4, 5, 6, và 7 rune trở lên. Mỗi runeshape thêm vào để craft sẽ tăng số wave quái phải dọn và mỗi wave lại cộng thêm runic modifier lên đám quái, nên runeshape càng dài thì encounter càng gắt nhưng item craft ra càng hiếm. Remnant rớt với số slot bất kỳ từ 2 tới 10, số càng cao càng hiếm. Phần dễ là các độ dài thấp, mình tick chúng mà gần như không nhận ra. Mốc khó là 7+: cần một Remnant đủ slot và build đủ tanky để sống qua chuỗi wave dài. Cách đẩy là cứ chơi Remnant mọi map, và khi đã đủ thủ thì chủ động chọn runeshape dài thay vì craft an toàn — đừng ép 7+ lúc còn yếu, một wave dồn là mất cả encounter lẫn item.
 
-Trong suốt campaign rải rác nhiều optional boss, và challenge này yêu cầu hạ **sáu** trong số đó. Bốn con đầu gặp tự nhiên khi đi campaign nên không phải lo. Hai con cuối khó tìm hơn hẳn vì chúng nằm khuất trong một vùng sa mạc của campaign: cách định vị là **đi theo lòng sông khô** (dry riverbed), arena của chúng nằm ở cuối đường. Cứ bám lòng sông khô là ra. Hai boss đó tên tạm là *Aki the Final Sting* và *Anund the Sandworm* ở vùng *Kari Crossing* — tên lấy từ phụ đề video nên có thể sai chính tả, đọc lại tên chính xác trong client khi vào game. Với một starter leo campaign bình thường thì sáu optional boss này nằm trọn trong envelope, chỉ cần không bỏ sót khi chạy qua vùng sa mạc.
+## Challenge 2: The Hunter
 
-## Challenge 3 — The Ascendant
+:memorable-check{id="hunter-campaign" label="Hạ 4 boss campaign: Crowbell, Kabala, Blackjaw, Great White One" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="hunter-aki" label="Hạ Akthi, the Final Sting (The Khari Crossing)" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="hunter-anund" label="Hạ Anundr, the Sandworm (cùng arena với Akthi)" storageKey="poe2-runes-of-aldur-challenges"}
 
-:memorable-check{id="ascendant-4pts" label="Lấy 4 điểm ascendancy đầu (trial cơ bản)" storageKey="poe2-runes-of-aldur-challenges"}
-:memorable-check{id="ascendant-final" label="Đủ 8 điểm: hạ Zarokh (Sekhemas) hoặc Trial Master (Chaos)" storageKey="poe2-runes-of-aldur-challenges"}
+Yêu cầu là hạ sáu optional boss rải trong campaign. Bốn con đầu — :wiki-link{url="https://www.poe2wiki.net/wiki/The_Crowbell"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Kabala,_Constrictor_Queen"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Blackjaw,_the_Remnant"} và :wiki-link{url="https://www.poe2wiki.net/wiki/Great_White_One"} — gặp tự nhiên trên đường leo story nên không phải lo, chỉ cần ghé side area khi thấy. Hai con cuối khó tìm hơn vì nằm trong vùng sa mạc :wiki-link{url="https://www.poe2wiki.net/wiki/The_Khari_Crossing"} của Interlude 2: :wiki-link{url="https://www.poe2wiki.net/wiki/Akthi,_the_Final_Sting"} và :wiki-link{url="https://www.poe2wiki.net/wiki/Anundr,_the_Sandworm"} dùng chung một arena, nên vào đúng chỗ là dọn được cả hai trong một lần. Với starter leo campaign bình thường thì sáu boss này nằm trọn trong envelope, rủi ro duy nhất là chạy lướt qua Khari Crossing mà quên ghé arena của cặp boss sa mạc.
 
-Yêu cầu là đạt đủ **tám điểm ascendancy** cho class của mình qua các ascendancy trial. Bốn điểm đầu lấy dễ, phần khó là set điểm cuối cùng. Có hai con đường và phải chọn một: hoặc hạ *Zarokh* ở tầng bốn của :wiki-link{url="https://www.poe2wiki.net/wiki/Trial_of_the_Sekhemas"}, hoặc hạ Trial Master của :wiki-link{url="https://www.poe2wiki.net/wiki/Trial_of_Chaos"} bằng cách tìm đủ ba key. Tradeoff rõ ràng: Trial of Chaos tốn thời gian hơn nhiều vì phải chạy trial nhiều lần để gom đủ key, nhưng Trial of the Sekhemas lại khó hơn về độ gắt của encounter (honor system, một chuỗi tầng không được chết). Mình chọn đường nào tuỳ build — build tanky chịu được Sekhemas thì đi Sekhemas cho nhanh; build squishy hơn nhưng có dư thời gian thì grind Chaos key an toàn hơn. Dù sao tám điểm ascendancy cũng là thứ mình muốn có cho power, nên challenge này gần như free.
+## Challenge 3: The Ascendant
 
-## Challenge 4 — The Reliquarian
+:memorable-check{id="ascendant-4pts" label="Clear First + Second Trial (4 điểm đầu)" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="ascendant-final" label="Đủ 8 điểm — clear Final Trial (Zarokh / Trial Master)" storageKey="poe2-runes-of-aldur-challenges"}
 
-:memorable-check{id="reliquarian-jado" label="Bật Jado (Atlas master) để tăng unique drop" storageKey="poe2-runes-of-aldur-challenges"}
+Yêu cầu là đủ **tám điểm ascendancy** qua các Trials of Ascendancy, chia thành bốn trial mỗi cái cho hai điểm. Hai trial đầu lấy nhẹ nhàng, phần khó dồn vào Final Trial. Có hai con đường và phải chọn một: hoặc hạ :wiki-link{url="https://www.poe2wiki.net/wiki/Zarokh,_the_Eternal"} ở tầng cuối :wiki-link{url="https://www.poe2wiki.net/wiki/Trial_of_the_Sekhemas"}, hoặc hạ Trial Master ở :wiki-link{url="https://www.poe2wiki.net/wiki/Trial_of_Chaos"}. Tradeoff rõ: Trial of Chaos tốn thời gian hơn vì phải gom đủ key chạy nhiều lần, còn Trial of the Sekhemas gắt hơn về encounter vì honor system bắt đi một chuỗi tầng không được chết. Build tanky chịu được honor thì đi Sekhemas cho nhanh; build squishy nhưng dư thời gian thì grind Chaos key an toàn hơn. Dù sao tám điểm ascendancy cũng là thứ mình muốn cho power, nên challenge này gần như free.
+
+## Challenge 4: The Master
+
+:memorable-check{id="master-90" label="Đạt Level 90" storageKey="poe2-runes-of-aldur-challenges"}
+
+Đơn giản nhất về cơ chế nhưng tốn thời gian thật: **đạt Level 90**. Không có trick, chỉ là cày đủ XP. Một character leo xong campaign rồi vào endgame map loop sẽ chạm 90 trước khi kịp tính, đặc biệt khi đang farm sẵn cho The Reliquarian và The Cartographer. Không cần làm gì riêng cho nó — cứ map đều là tới. Nếu thấy chậm gần mốc, ưu tiên map T15+ và tránh chết liên tục (mỗi death mất một phần XP) là level nhanh hơn.
+
+## Challenge 5: The Reliquarian
+
+:memorable-check{id="reliquarian-jado" label="Bật Jado (Atlas master) khi muốn đẩy nhanh unique drop" storageKey="poe2-runes-of-aldur-challenges"}
 :memorable-check{id="reliquarian-50" label="Identify đủ 50 unique item khác nhau" storageKey="poe2-runes-of-aldur-challenges"}
 
-Đơn giản nhất trong nhóm: **identify 50 unique item khác nhau**. Không yêu cầu giữ hay drop từ nguồn cụ thể, chỉ cần identify đủ 50 loại unique riêng biệt. Cái này tự xong khi chạy endgame và nhặt unique rớt. Nếu thấy chậm, Atlas master **Jado** có nhiều ability chuyên tăng tỉ lệ tìm unique — bật Jado (qua Masters of the Atlas, mỗi map chọn một master active) khi muốn đẩy nhanh challenge này. Cứ identify mọi unique nhặt được thay vì vendor thẳng là sẽ tới 50 trước khi nhận ra.
+Yêu cầu là **identify 50 unique item khác nhau**. Không cần giữ hay drop từ nguồn cụ thể, chỉ cần identify đủ 50 loại :wiki-link{url="https://www.poe2wiki.net/wiki/Unique_Item"} riêng biệt. Cái này tự xong khi cày endgame và nhặt unique, miễn là identify mọi unique nhặt được thay vì vendor thẳng. Nếu thấy chậm, Atlas master **Jado** có nhiều ability tăng tỉ lệ tìm unique — bật Jado active qua Masters of the Atlas trong những map muốn đẩy challenge này. Cứ identify đều thì 50 đến trước khi nhận ra.
 
-## Challenge 5 — The Artisan
+## Challenge 6: The Artisan
 
-:memorable-check{id="artisan-diverse" label="Dùng đủ các loại crafting item khác nhau từ Remnant" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="artisan-diverse" label="Craft bằng đủ cả 14 loại Verisium Ingredient" storageKey="poe2-runes-of-aldur-challenges"}
 
-Yêu cầu dùng một loạt **crafting item khác nhau**, tất cả đều đến từ Remnant encounter. Vì challenge này gắn với cùng hệ Runeforging như The Rune Seeker, hai cái đẩy song song: càng chơi Remnant mở nhiều craft thì càng tiêu thụ nhiều loại crafting item khác nhau, tick cả hai challenge cùng lúc. Điểm cần chú ý là phải dùng *đa dạng* loại item chứ không phải spam một loại — nên khi craft, chủ động xài hết các loại crafting currency từ remnant thay vì chỉ dùng một hai cái quen thuộc.
+Yêu cầu là craft một item bằng **mỗi loại Verisium Ingredient** ít nhất một lần, tất cả đều đến từ Remnant. Vì gắn cùng hệ Runeforging như The Runeseeker nên hai cái đẩy song song, nhưng điểm khác là Artisan đòi *đủ loại* chứ không phải số lần, nên phải chủ động xài hết danh sách thay vì spam một hai cái quen. Đủ bộ gồm:
 
-## Challenge 6 — The Cartographer
+- :wiki-link{url="https://www.poe2wiki.net/wiki/Verisium"} và Exceptional Verisium
+- Runic Alloy, Adaptive Alloy, Protective Alloy, Expansive Alloy, Swift Alloy
+- Cyclonic Alloy, Prismatic Alloy, Mystic Alloy, Sovereign Alloy, Celestial Alloy
+- Một Kalguurian Crest bất kỳ
+- Một :wiki-link{url="https://www.poe2wiki.net/wiki/Flux"} bất kỳ
 
-:memorable-check{id="cartographer-citadel" label="Tìm Citadel (cột sáng) để lấy key trận Arbiter" storageKey="poe2-runes-of-aldur-challenges"}
-:memorable-check{id="cartographer-arbiter" label="Hạ Arbiter of Divinity đủ số lần (4–5, verify live)" storageKey="poe2-runes-of-aldur-challenges"}
-:memorable-check{id="cartographer-300" label="Allocate đủ 300 node Atlas tree" storageKey="poe2-runes-of-aldur-challenges"}
+Các Alloy cao cấp (Cyclonic, Prismatic, Mystic, Sovereign, Celestial) là chỗ kẹt lâu nhất vì chúng hiếm hơn và unlock muộn hơn qua chuỗi quest của Farrow. Cứ tích trữ rồi mỗi vài map mở một Remnant để tiêu đúng loại còn thiếu là tick hết.
 
-Đây là một trong hai challenge nặng nhất: **allocate toàn bộ Atlas tree, cả 300 node**. Có hai cách. Cách chậm là hoàn thành mọi map trong Fortress để gom đủ Atlas point cho 300 node — khả thi nhưng rất dài. Cách nhanh dựa vào :wiki-link{url="https://www.poe2wiki.net/wiki/Arbiter_of_Divinity"}: mỗi lần hạ Arbiter of Divinity, mình mở khả năng tự động hoàn thành một mảng lớn của Fortress. Key vào trận Arbiter lấy bằng cách tìm :wiki-link{url="https://www.poe2wiki.net/wiki/Citadel"} trên Atlas — mỗi Citadel có cột sáng lớn (glowing beam) nên thấy được qua màn sương. Hạ Arbiter đủ số lần thì toàn bộ Fortress được complete và mình có đủ point cho cả 300 node.
+## Challenge 7: The Cartographer
 
-> **Số lần hạ Arbiter — cần verify live.** Video nói "bốn lần", nhưng patch note 0.5.0 ghi "kill the Arbiter of Divinity **5 times** to complete different sections of the fortress automatically". Khả năng cách hiểu là bốn lần đủ phần lớn section còn lần năm max-out toàn bộ, hoặc thật sự là năm. Khi vào league, đếm số section còn lại sau mỗi kill trước khi farm dư key — patch note nghiêng về **4–5 lần**.
+:memorable-check{id="cartographer-citadel" label="Mở đường vào Fortress qua chuỗi Origins of Divinity" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="cartographer-arbiter" label="Hạ Arbiter of Divinity 5 lần (auto-clear section Fortress)" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="cartographer-300" label="Allocate xong toàn bộ main Atlas Passive Tree" storageKey="poe2-runes-of-aldur-challenges"}
 
-## Challenge 7 — The Vanquisher
+Một trong hai challenge nặng nhất: **allocate sạch toàn bộ main Atlas Passive Tree** (hơn 300 node). Cách chậm là hoàn thành đủ map trong Fortress để gom point từng chút — khả thi nhưng rất dài. Cách nhanh dựa vào :wiki-link{url="https://www.poe2wiki.net/wiki/Arbiter_of_Divinity"}: mỗi lần hạ Arbiter of Divinity trong Fortress, game tự hoàn thành một section của Fortress để cho Atlas point, và hạ **năm lần** thì các section được auto-clear đủ để full cây. Đường vào Fortress mở qua chuỗi Origins of Divinity. Toàn bộ lộ trình giết con gì, theo thứ tự nào nằm trong [walkthrough mở khóa atlas](/guides/0-5-atlas-unlock-walkthrough) — bám nó để không cày thừa map. Lưu ý "main" Atlas tree là cây chính, tách biệt với các sub-tree theo mechanic như Ritual Atlas tree; challenge chỉ tính cây chính.
 
-:memorable-check{id="vanquisher-delirium" label="Hạ Delirium pinnacle (key từ Simulacrum)" storageKey="poe2-runes-of-aldur-challenges"}
-:memorable-check{id="vanquisher-ritual" label="Hạ Ritual pinnacle (key từ Rite of the Nameless)" storageKey="poe2-runes-of-aldur-challenges"}
-:memorable-check{id="vanquisher-abyss" label="Hạ Abyss pinnacle ở full strength (không làm yếu boss)" storageKey="poe2-runes-of-aldur-challenges"}
+## Challenge 8: The Vanquisher
 
-Challenge khó nhất: hạ **ba pinnacle boss**, những trận gắt nhất game. Ba con này là pinnacle của ba league mechanic Delirium, Ritual và Abyss, nên muốn tick challenge mình phải chạy ba quest line tương ứng để mở đường tới từng pinnacle. Cụ thể theo patch notes: pinnacle **Delirium** mở bằng key từ :wiki-link{url="https://www.poe2wiki.net/wiki/Simulacrum"} (giờ là encounter 7 wave, hoàn thành nhả key); pinnacle **Ritual** mở bằng key gom từ Rite of the Nameless (mỗi map trong chuỗi cho một element của key); pinnacle **Abyss** mở qua Abyssal Depths. Tên ba boss theo phụ đề video là *Tangazu* (Delirium), *the Bodark* (Ritual) và *Vessel of Coolark* (Abyss) — chính tả lấy từ phụ đề tự động nên có thể sai; mình bám mechanic ở trên là chắc chắn, đọc lại tên cụ thể trong client khi vào game.
+:memorable-check{id="vanquisher-delirium" label="Hạ Tangmazu — Delirium pinnacle (key từ Simulacrum)" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="vanquisher-ritual" label="Hạ The Bodach — Ritual pinnacle (key từ Rite of the Nameless)" storageKey="poe2-runes-of-aldur-challenges"}
+:memorable-check{id="vanquisher-abyss" label="Hạ Vessel of Kulemak ở full strength — Abyss pinnacle" storageKey="poe2-runes-of-aldur-challenges"}
 
-Một điểm bắt buộc với pinnacle Abyss: phải hạ nó **ở full strength**. Tức là phải chấp nhận rủi ro item trong trận — return cái finger (fragment) và đánh boss ở dạng mạnh nhất thay vì làm yếu nó đi. Nếu làm yếu boss để dễ thắng thì không tick được challenge.
+Challenge khó nhất: hạ **ba pinnacle boss**, mỗi con là đỉnh của một league mechanic, nên phải chạy ba chuỗi tương ứng để mở đường tới từng con. :wiki-link{url="https://www.poe2wiki.net/wiki/Tangmazu"} là Delirium pinnacle — hoàn thành một :wiki-link{url="https://www.poe2wiki.net/wiki/Simulacrum"} (giờ là encounter 7 wave) nhả key vào trận. :wiki-link{url="https://www.poe2wiki.net/wiki/The_Bodach"} là Ritual pinnacle, đánh ở Caer Tarth: chạy Rite of the Nameless gồm năm map liên tiếp, mỗi map cho một element của key, đủ năm element thì mở trận. :wiki-link{url="https://www.poe2wiki.net/wiki/Vessel_of_Kulemak"} là Abyss pinnacle ở The Black Cathedral, vào bằng Kulemak's Invitation.
 
-Vì cả ba đều có **quest version deterministic** (patch note: mọi pinnacle boss giờ có quest version truy cập chắc chắn, cạnh repeatable infinite-farm version gắt hơn), mình ưu tiên quest version cho challenge — rẻ và chắc chắn hơn version infinite-farm. Đây là challenge định đoạt việc có đạt 8/8 hay không, nên build phải đủ DPS và EHP để hạ pinnacle ở quest tier trước khi tính chuyện đẩy mốc cuối.
+Với Vessel of Kulemak có ràng buộc riêng: phải hạ nó **ở full strength**. Trong encounter Abyss mình có lựa chọn làm boss yếu đi để dễ thắng, nhưng làm thế thì challenge không tick — phải đánh nó ở dạng mạnh nhất. Đây là điểm dễ hụt nhất của cả challenge nếu quen tay bấm làm yếu boss.
 
-## Challenge 8 — Chưa Công Bố
+Cả ba pinnacle giờ đều có **quest version truy cập deterministic**, đặt cạnh repeatable version gắt hơn cho người farm vô hạn. Cho challenge thì ưu tiên quest version — rẻ và chắc chắn hơn. Đây là challenge định đoạt 8/8, nên build phải đủ DPS lẫn EHP để hạ pinnacle ở quest tier trước khi tính chuyện gì khác.
 
-:memorable-check{id="challenge-8" label="Challenge 8 — chờ công bố (mở H panel ngày 29/05)" storageKey="poe2-runes-of-aldur-challenges"}
+## Atlas loop để compound mọi thứ
 
-Challenge screen có đủ tám challenge, nhưng video reveal chính chủ (27/05) chỉ đi qua bảy cái ở trên. Challenge thứ tám chưa được công bố tại thời điểm viết.
+Atlas 0.5 dùng Masters of the Atlas: mỗi map active một master trong ba người (Doryani, Hilda, Jado), nên xoay master theo challenge đang đẩy — để **Jado** active khi cày The Reliquarian cho unique drop, còn khi farm Fortress cho The Cartographer thì chọn master tối ưu sustain map. Atlas tree mới hơn 300 node và tablet cùng loại stack được, nên gộp tất cả vào một loop duy nhất: chạy map có Remnant để tick The Runeseeker và The Artisan, identify mọi unique cho The Reliquarian, cày Fortress + hạ Arbiter cho The Cartographer, và mở ba chuỗi league cho key pinnacle của The Vanquisher. Thứ tự hợp lý là để Cartographer và Vanquisher làm mốc cuối vì cả hai cần build đã trưởng thành — chi tiết node atlas nên lấy trước xem [guide sustain endgame](/guides/0-5-endgame-mapping-sustain).
 
-- **Trạng thái:** chưa public trong reveal hôm nay — chưa điền requirement vì không suy diễn, không bịa.
-- **Hành động:** mở `H` panel ngày **29/05** khi league live, đọc requirement của challenge còn lại và điền vào section này.
+## Những lỗi cần tránh
 
-## Atlas + Execution Loop
+POE2 không có scarab, không có map roll kiểu POE1, không có voidstone — đừng adapt advice cũ. Vài chỗ dễ vướng cụ thể trong league này. Ép craft runeshape 7+ lúc build còn yếu sẽ chết giữa chuỗi wave và mất cả encounter, nên chờ tanky rồi mới đẩy độ dài cao. Với Vessel of Kulemak, nếu quen tay làm yếu boss để dễ thắng thì challenge không tick — phải đánh full strength. Với The Artisan, đừng spam một loại currency quen thuộc; challenge tính đủ loại nên phải xài hết cả 14 ingredient. League-specific Tablet giờ không còn rớt từ Simulacrum, Abyssal Depths hay Twisted Domain nữa, nên đừng farm những chỗ đó để kiếm tablet — source chúng từ map. Với The Hunter, dễ chạy lướt qua Khari Crossing mà bỏ sót arena của Akthi và Anundr. Và với The Ascendant, chọn đường Sekhemas hay Chaos *trước* khi đổ thời gian, vì đi nửa đường rồi quay sang đường kia là phí.
 
-Sáu challenge đầu (Rune Seeker, Hunter, Ascendant, Reliquarian, Artisan, một phần Cartographer) gần như tự xong khi chạy endgame loop bình thường, nên trọng tâm chuẩn bị là dồn vào hai cái nặng. Atlas 0.5 dùng Masters of the Atlas — mỗi map active một master (Doryani's Science / Hilda's Hunting / Jado's Spycraft), nên khi muốn đẩy Reliquarian thì để **Jado** active cho unique drop, còn khi farm Citadel key cho Cartographer thì chọn master tối ưu cho map sustain. Atlas tree mới 300 node và tablet cùng loại stack được, nên compound mọi thứ vào một loop: chạy map có Remnant (tick Rune Seeker + Artisan), nhặt và identify mọi unique (Reliquarian), săn Citadel beam cho Arbiter key (Cartographer), và chạy ba quest line league cho pinnacle key (Vanquisher). Thứ tự đẩy hợp lý là để Cartographer và Vanquisher làm mốc cuối vì chúng cần build đã trưởng thành.
+## Checklist sau mỗi session
 
-## Pitfalls — Không Làm Những Thứ Này
-
-POE2 không có scarab, không có map roll kiểu POE1, không có voidstone — đừng adapt advice cũ. Vài cái dễ vướng: ép craft Remnant bảy slot khi build còn yếu sẽ chết giữa sáu wave và mất cả encounter, nên chờ tanky rồi mới đẩy slot cao. Với pinnacle Abyss, nếu vô tình làm yếu boss để dễ thắng thì challenge không tick — phải đánh full strength. Với Cartographer, đừng farm dư Arbiter key trước khi đếm số section Fortress còn lại sau mỗi kill (số lần 4 hay 5 còn cần verify). Với The Hunter, dễ chạy lướt qua vùng sa mạc mà bỏ sót hai optional boss cuối — bám lòng sông khô để tìm. Và với Ascendant, chọn đường Sekhemas hay Chaos *trước* khi đổ thời gian, vì đi nửa đường này rồi quay sang đường kia là phí.
-
-## Checklist Sau Mỗi Session
-
-- Đếm challenge done hiện tại (`X/8`) qua `H` panel, đối chiếu mốc reward gần nhất (2/4/6/8).
-- Rune Seeker + Artisan: đã craft Remnant slot cao + dùng đủ loại crafting item chưa.
-- Reliquarian: số unique đã identify (mục tiêu 50) — bật Jado nếu chậm.
-- Cartographer: số node Atlas tree đã allocate / 300, số lần đã hạ Arbiter.
-- Vanquisher: đã mở quest line nào trong Delirium / Ritual / Abyss, đã có key pinnacle nào chưa.
-- **Abort condition:** nếu một pinnacle key (đặc biệt infinite-farm version) đội giá quá cao so với quest version, dừng farm key đó và đi quest version deterministic.
+- Đếm challenge done hiện tại (`X/8`) qua `H` panel, đối chiếu mốc reward gần nhất (Boots 2 / Gloves 4 / Body 6 / Helmet 8).
+- The Runeseeker + The Artisan: đã inscribe runeshape dài nào, đã tiêu đủ loại Verisium ingredient nào còn thiếu.
+- The Reliquarian: số unique đã identify trên 50 — bật Jado nếu chậm.
+- The Master: còn cách Level 90 bao nhiêu.
+- The Cartographer: số node main Atlas tree đã allocate, đã hạ Arbiter mấy trong năm lần.
+- The Vanquisher: đã mở chuỗi nào trong Delirium / Ritual / Abyss, đã có key pinnacle nào.
+- **Abort condition:** nếu một key pinnacle (đặc biệt repeatable version) đội giá quá cao so với quest version, dừng farm key đó và đi quest version deterministic.
 
 ## Related Resources
 
-Lộ trình này giả định một character league-start đã leo xong endgame. Build và lớp phòng thủ chi tiết xem kế hoạch league start; cơ chế companion cho character hai xem doc Spirit Walker.
+Lộ trình này giả định một character đã leo xong endgame với build và lớp phòng thủ ổn định. Cơ chế companion cho Spirit Walker xem doc riêng; còn đường full Atlas tree cho The Cartographer thì walkthrough atlas lo trọn.
 
 ## Relationships
 
-- **related_guides** [Kế Hoạch League Start — Twister Spirit Walker, Runic Ward & Companion](/guides/poe2-0-5-prep) — build league-start để leo endgame trước khi đẩy challenge
-- **related_mechanics** [Spirit Walker — Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — ascendancy mới + companion, liên quan The Hunter và The Ascendant
+- **related_guides** [Mở Khóa Toàn Bộ Atlas Endgame](/guides/0-5-atlas-unlock-walkthrough) — đường Origins of Divinity → Fortress → Arbiter ×5 cho The Cartographer
+- **related_guides** [Endgame Mapping & Sustain](/guides/0-5-endgame-mapping-sustain) — node atlas nên lấy trước, cách giữ map sustain khi cày challenge
+- **related_mechanics** [Spirit Walker — Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — ascendancy + companion, liên quan The Hunter và The Ascendant

@@ -5,9 +5,9 @@ title: Refutation — Runic Ward Block Buff Skill
 status: draft
 author: duocnv
 created: '2026-06-03'
-updated: '2026-06-03'
+updated: '2026-06-09'
 league: '0.5'
-patch: 0.5.0
+patch: 0.5.1
 sub_class: skills
 confidence_level: MEDIUM
 tags:
@@ -19,7 +19,9 @@ tags:
   - parried
   - brass-dome
   - kalguuran-skill
+  - olroths-resolve
   - 0-5
+  - 0-5-1
   - poe2
   - mechanic
 ---
@@ -42,36 +44,29 @@ Cơ chế tự-giới-hạn nằm ở chính cái paradox phòng thủ: bạn kh
 
 ## Math Chain
 
-Stun Threshold của người chơi base = maximum Life (ward không đóng góp — 0.5 đã gỡ Runic Ward khỏi keyword "Defences"). Trong cửa sổ buff, hai modifier chồng lên base đó, cả hai đều là `more` multiplier nên nhân riêng:
+Stun Threshold của người chơi base = maximum Life (ward không đóng góp — 0.5 đã gỡ Runic Ward khỏi keyword "Defences"). Flat stun threshold từ gear như Brass Dome cộng vào base này trước khi nhân. Trong cửa sổ buff, Refutation chồng lên base đó hai dòng: "50% less Stun Threshold" và "5% more Stun Threshold per 10 Runic Ward spent" (= 0.5% mỗi 1 Ward đốt). Trong engine cả hai dồn vào đúng một stat buff — `stun threshold +% final from runic fortress` — và chính cái "đúng một stat" là chỗ math chưa khoá được: có hai cách nó cộng, hai cách cho hai con break-even chênh nhau gấp đôi.
 
-- Base Stun Threshold = max Life (+ flat từ gear như Brass Dome, cộng vào base trước khi nhân)
-- ×0.5 — dòng "50% less Stun Threshold while Buff is active"
-- ×(1 + 0.005 × Ward_spent) — dòng "5% more Stun Threshold per 10 Ward spent" = 0.5% more mỗi 1 Ward đốt
+Cách multiplicative theo đúng quy ước "more/less" của POE, mỗi dòng một multiplier riêng:
 
 ```
-net_threshold = base × 0.5 × (1 + 0.005 × Ward_spent)
+net = base × 0.5 × (1 + 0.005 × Ward_spent)
 ```
 
-Break-even khi net = base:
+Break-even (net = base) khi 0.5 × (1 + 0.005W) = 1 → **W = 200**; ở 1400 Ward đốt → 0.5 × 8.0 = **×4.0** (+300% net).
+
+Cách additive gộp mọi dòng vào một "+% final" duy nhất, khớp với việc engine chỉ phơi một stat:
 
 ```
-0.5 × (1 + 0.005 × W) = 1
-1 + 0.005W = 2  →  W = 200
+net = base × (0.5 + 0.005 × Ward_spent)
 ```
 
-**Break-even = đúng 200 Ward đốt.** Đây là dòng phần lớn guide bỏ qua: đốt **dưới 200 Ward** thì net multiplier < 1 — Refutation làm Stun Threshold của bạn **tụt xuống dưới base**, tức buff khiến bạn dễ bị stun hơn lúc không có buff. Đốt 100 Ward → ×0.5 × 1.5 = ×0.75, mất 25% threshold. Phải vượt 200 Ward thì dòng "more per 10 Ward" mới gánh nổi cái ×0.5 và biến net thành dương.
+Break-even khi 0.5 + 0.005W = 1 → **W = 100**; ở 1400 Ward → 0.5 + 7.0 = **×7.5** (+650% net).
 
-Trên break-even, scaling tuyến tính theo Ward đốt: 400 Ward → ×1.5 (+50%), 600 → ×2.0 (+100%), 1000 → ×3.0 (+200%), và 1400 Ward → ×0.5 × 8.0 = **×4.0**, tức **+300% net**. Con số "+700%" trôi nổi trong vài guide đến từ việc chỉ đọc dòng upside "+5% per 10 Ward" (1400 Ward → +700% more) mà **bỏ luôn cái ×0.5** — net thật là ×4.0, không phải ×8.0.
+Tên stat đơn lẻ nghiêng về cách additive — và đó cũng là lý do con "+700%" trôi trong guide gần đúng chứ không hẳn lỗi: additive net ở 1400 Ward là +650%, sát +700% (chênh đúng cái −50). Chỉ ở cách multiplicative thì "+700%" mới là quên mất ×0.5, net thật ×4.0. Datamine một mình không phân định được, phải đọc Stun Threshold thật trong client. Phép đo gọn nhất là đốt đúng 200 Ward rồi nhìn số: multiplicative cho đúng ×1.0 (về base), additive cho ×1.5 (+50%) — một lần đọc ở mốc đó chốt luôn cả hai con break-even.
 
-Quality thêm multiplier thứ ba: 20% quality cho +20% more Stun Threshold (cộng +1 giây buff). Math đầy đủ ở 1000 Ward + 20% quality:
+Hướng tổng quát giữ nguyên dù theo cách nào: Ward đốt càng nhiều net càng lên, và có một sàn Ward mà dưới đó buff hạ Stun Threshold xuống dưới base — multiplicative đặt sàn ở 200, additive ở 100. Đốt 100 Ward: multiplicative cho ×0.75 (mất 25%), additive cho hoà ×1.0. Build muốn chắc net dương theo cả hai cách thì nhắm pool ≥ 200 Ward; dải 100-200 Ward đúng là vùng câu trả lời đổi dấu tuỳ engine. Quality cộng thêm +20% vào cùng cái stat đó (kèm +1 giây buff), kéo sàn xuống (cỡ 130 Ward multiplicative, 60 additive) và bù thẳng lên net — ở 1000 Ward + 20% quality, multiplicative ~×3.6 còn additive ~×6.5, khoảng cách hai model giãn rất rộng ở Ward cao nên đo sớm ngay khi dựng ward-stacker.
 
-```
-net = base × 0.5 × (1 + 0.005 × 1000) × 1.20 = base × 0.5 × 6.0 × 1.20 = base × 3.6
-```
-
-Quality cũng kéo break-even xuống ~167 Ward. Cả hai dòng stun-threshold đều là `more` type, công thức trên giả định chúng là hai entry nhân độc lập với nhau — hướng của phép tính chắc, nhưng exact stacking form trong engine cần xác nhận bằng cách đo Stun Threshold thật ở vài mốc Ward đã biết trong client khi vào league.
-
-Uptime thì không có chỗ cho hype "permanent". Buff 4s base (5s với 20% quality), cooldown 10.0s ở lvl 20:
+Uptime thì không có chỗ cho hype "permanent", và 0.5.1 khoá chặt thêm cái trần đó. Patch line "Refutation's Cooldown no longer recovers while the Buff is active" nghĩa là 4 giây buff không tính vào 10 giây cooldown — cooldown chỉ chạy sau khi buff tắt, nên mỗi cycle là 4 + 10 chứ không phải max(4, 10). Đây là một nerf so với lúc launch, khi cooldown vẫn hồi trong buff cho uptime cao hơn. Buff 4s base (5s với 20% quality), cooldown 10.0s ở lvl 20:
 
 ```
 uptime_base = 4 / (4 + 10) = ~28.6%
@@ -82,11 +77,11 @@ Stack tối đa support — Prolonged Duration II (35% more duration → 5.4s) +
 
 ## Key Interactions
 
-**Refutation × Runic Ward pool (nhiên liệu)** — Refutation không tạo ra giá trị từ con số nào ngoài lượng Ward bạn nạp trước khi cast. Pool Ward vừa là điều kiện để vượt break-even 200 (math ở trên), vừa là toàn bộ phía stun-threshold-upside. Build muốn Refutation net dương buộc phải đầu tư Ward qua gear — và vì 0.5 không có node Runic Ward nào trên passive tree, toàn bộ pool đến từ gear/runeforging, không phải tree.
+**Refutation × Runic Ward pool (nhiên liệu)** — Refutation không tạo ra giá trị từ con số nào ngoài lượng Ward bạn nạp trước khi cast. Pool Ward vừa là điều kiện để vượt sàn Ward (math ở trên), vừa là toàn bộ phía stun-threshold-upside. Build muốn Refutation net dương buộc phải đầu tư Ward qua gear — và vì 0.5 không có node Runic Ward nào trên passive tree, toàn bộ pool đến từ gear/runeforging, không phải tree.
 
 **Refutation × Parried (cửa sổ công)** — Parried cho 50% more Attack Damage và ở lvl 20 dài 3.9s, gần trùng khít buff 4s. Vì enemy dính Parried ngay khi block hit đầu tiên, attack build có cả cửa sổ buff để xả vào target bị khuếch đại. Cast/attack speed không ảnh hưởng timing block (block là passive trong cửa sổ buff) — cái quyết định bao nhiêu damage tận dụng được Parried là tốc độ land attack sau khi block, không phải tốc độ block. Parried của Refutation dùng chung debuff với Parry của buckler (cùng tên, cùng 50% more attack damage) nên hai nguồn không stack riêng.
 
-**Refutation × ward regen timing** — Runic Ward hồi 5%/giây của max pool. Với pool 1000 max, break-even 200 Ward = 20% pool = 20%/5%ps = ~4 giây để nạp lại từ 0. Tức ở pool ~1000, lượng Ward cần để cast Refutation tiếp theo net-dương được hồi lại trong đúng ~4 giây — gần khớp thời lượng buff. Pool và regen rate quyết định bạn có giữ được nhịp cast mỗi cooldown hay không; pool quá nhỏ thì không kịp nạp qua 200 trước cast kế.
+**Refutation × ward regen timing** — Runic Ward hồi 5%/giây của max pool. Với pool 1000 max, nạp lại 200 Ward = 20% pool mất ~4 giây từ 0, nạp 100 Ward mất ~2 giây — tức lượng Ward cần để cast Refutation kế net-dương (qua sàn 100-200 tuỳ engine) hồi xong trong 2-4 giây, gần khớp hoặc nhanh hơn cửa sổ buff. Olroth's Resolve flask thêm một nguồn nạp thứ hai: bản rework đã live từ 0.5.0 nhưng tới patch note 0.5.1 mới được ghi, giờ cho "Regenerate 2.5-5% of maximum Runic Ward per second during Effect" — chồng lên 5%/giây nền là tới ~10%/giây, halve thời gian rebuild pool, cộng "Gain Guard equal to current Runic Ward for 10 seconds when effect ends" cho một lớp Guard ăn theo pool ngay khi flask hết. Pool và regen rate quyết định bạn có giữ được nhịp cast mỗi cooldown hay không; pool quá nhỏ thì không kịp nạp qua sàn trước cast kế.
 
 ### Wording distinction
 
@@ -94,11 +89,11 @@ Hai chỗ wording dễ nhầm, cả hai đều load-bearing.
 
 "Block all Blockable Hits" của Refutation là block **guaranteed, không roll** — khác hẳn block chance thông thường (một xác suất % phải trúng mỗi hit). Trong cửa sổ buff, mọi Blockable Hit bị chặn 100%, không có lần "trượt block". Đây là lý do Refutation đáng giá phía thủ ngay cả khi Ward thấp: phần block-all không phụ thuộc lượng Ward, chỉ phần stun-threshold mới phụ thuộc.
 
-"50% less Stun Threshold" là multiplicative ×0.5, và điểm phải nói rõ: phía stun-threshold-upside của Refutation đến **chỉ từ Ward đã đốt**, **chỉ trong lúc buff active**. Việc đơn thuần *có* Ward trong pool không feed Stun Threshold — pool Runic Ward thụ động không nằm trong keyword Defences và chưa bao giờ đóng góp stun threshold (xem [Runic Ward Onslaught Loop cho Minion](/mechanics/0-5-runic-ward-onslaught-loop)). Refutation là cơ chế riêng: nó *spend* Ward để đổi lấy một bonus stun-threshold tạm thời, không phải Ward tự nhiên cho stun threshold. Giữ ward thấp suốt trận (như loop Onslaught) không cho stun threshold; đốt ward qua Refutation thì cho — nhưng chỉ trong 4 giây và phải vượt 200 Ward để net dương.
+"50% less Stun Threshold" là multiplicative ×0.5, và điểm phải nói rõ: phía stun-threshold-upside của Refutation đến **chỉ từ Ward đã đốt**, **chỉ trong lúc buff active**. Việc đơn thuần *có* Ward trong pool không feed Stun Threshold — pool Runic Ward thụ động không nằm trong keyword Defences và chưa bao giờ đóng góp stun threshold (xem [Runic Ward Onslaught Loop cho Minion](/mechanics/0-5-runic-ward-onslaught-loop)). Refutation là cơ chế riêng: nó *spend* Ward để đổi lấy một bonus stun-threshold tạm thời, không phải Ward tự nhiên cho stun threshold. Giữ ward thấp suốt trận (như loop Onslaught) không cho stun threshold; đốt ward qua Refutation thì cho — nhưng chỉ trong 4 giây và phải qua sàn Ward (≥200 cho chắc) để net dương.
 
 ## Optimization
 
-Việc đầu tiên không phải minmax mà là **vượt cái downside**: stack Ward đủ qua 200 (lý tưởng 600+ để net ≥ ×2.0), nếu không thì Refutation là một nút bấm khiến bạn dễ stun hơn. Sau khi pool đủ lớn, 20% quality là khoản đầu tư đáng (+20% more stun threshold + 1 giây buff), kéo break-even xuống ~167 Ward và bù trực tiếp lên phía net.
+Việc đầu tiên không phải minmax mà là **vượt cái downside**: stack Ward đủ qua sàn (nhắm ≥200 cho chắc cả hai model, lý tưởng 600+ để net cao), nếu không thì Refutation là một nút bấm khiến bạn dễ stun hơn. Sau khi pool đủ lớn, 20% quality là khoản đầu tư đáng (+20% more stun threshold + 1 giây buff), kéo sàn Ward xuống (cỡ 130 multiplicative, 60 additive) và bù trực tiếp lên phía net.
 
 Uptime nâng qua increased Skill Effect Duration (Prolonged Duration II = 35% more → 5.4s) cộng Cooldown Recovery (CDR I = 25% increased → CD 8.0s), đẩy trần lên ~40%. Grounded in the Earth notable cho dual benefit (16% increased Skill Effect Duration + 16% increased Stun Threshold) nên đặc biệt hợp.
 
@@ -120,13 +115,13 @@ Refutation chỉ block **Hit**, nên mọi thứ không phải Hit đi xuyên qu
 
 Spell build nhận đủ phía block-all nhưng **0 giá trị Parried** — Parried chỉ khuếch đại Attack Damage, không đụng spell. Build spell dùng Refutation chỉ nên tính nó như công cụ thủ thuần; cửa sổ Parried là damage amplification bị phí.
 
-Chạy **dưới 200 Ward** biến buff thành net-negative stun threshold (×0.5 × dưới ×2.0 = dưới ×1.0) — bạn bấm một nút làm mình dễ stun hơn lúc không bấm. Đây không phải edge case mà là cấu hình mặc định của build chưa đầu tư Ward.
+Chạy **dưới sàn Ward** (100 nếu engine additive, 200 nếu multiplicative) biến buff thành net-negative stun threshold — bạn bấm một nút làm mình dễ stun hơn lúc không bấm. Đây không phải edge case mà là cấu hình mặc định của build chưa đầu tư Ward; nhắm pool ≥200 thì net dương theo cả hai cách tính.
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Lifetap"} là bẫy: nó đổi cost của skill sang Life. Refutation chạy bằng việc đốt Ward, và toàn bộ phía stun-threshold-upside scale theo "Ward spent". Lifetap khiến skill tiêu Life thay vì Ward → không còn Ward đốt → dòng "5% more per 10 Ward spent" thành 0 → chỉ còn cái ×0.5 penalty trần trụi. Lifetap phá đúng core loop của skill.
 
 ## Common Mistakes
 
-**Sai: Cast Refutation với pool dưới 200 Ward.** Đúng: nạp pool qua 200 (lý tưởng 600+) trước khi coi Refutation là defensive button. Lý do: dưới 200 Ward, net = ×0.5 × (dưới ×2.0) < ×1.0 — ví dụ 100 Ward cho ×0.75, mất 25% Stun Threshold; buff đang chủ động hạ khả năng chống stun của bạn.
+**Sai: Cast Refutation với pool dưới sàn Ward.** Đúng: nạp pool qua sàn — 100 Ward nếu engine cộng additive, 200 nếu multiplicative, nhắm ≥200 cho chắc (lý tưởng 600+) — trước khi coi Refutation là defensive button. Lý do: dưới sàn, net < base; ví dụ 100 Ward cho ×1.0 (additive, hoà) tới ×0.75 (multiplicative, mất 25% Stun Threshold), ở dải thấp buff có thể đang chủ động hạ khả năng chống stun của bạn. Đọc Stun Threshold ở mốc 200 Ward đốt trong client để biết engine theo cách nào.
 
 **Sai: Trông đợi uptime gần permanent.** Đúng: tính theo trần ~40% (5.4s buff / 8.0s CD với full support), chừa kế hoạch thủ cho ~6 giây hở mỗi cycle. Lý do: buff 4s base không scale gem level, CD 10s ở lvl 20; ngay cả Prolonged Duration II + Cooldown Recovery I cũng chỉ đạt ~40.3% — quãng giữa cast là cửa sổ phơi mình.
 
@@ -138,23 +133,30 @@ Chạy **dưới 200 Ward** biến buff thành net-negative stun threshold (×0.
 
 Cost lớn nhất không phải Ward cost (skill spends sạch pool bất kể) mà là **gap cooldown**: trần uptime ~40% để lại cửa sổ ~6 giây mỗi cycle hoàn toàn không có buff, và build phải sống sót quãng đó bằng lớp thủ nền. Refutation là burst-window, không phải lớp thủ thường trực.
 
-Ward sustain là cost thứ hai. Pool phải được nạp lại liên tục — Runic Ward hồi 5%/giây của max, nên pool lớn hồi nhanh hơn về tuyệt đối nhưng vẫn cần thời gian; cast Refutation kế tiếp chỉ net-dương nếu pool kịp vượt 200 Ward trước đó. Build cast Refutation mỗi khi off cooldown trên một pool nhỏ sẽ thường xuyên đốt dưới break-even.
+Ward sustain là cost thứ hai. Pool phải được nạp lại liên tục — Runic Ward hồi 5%/giây của max, nên pool lớn hồi nhanh hơn về tuyệt đối nhưng vẫn cần thời gian; cast Refutation kế tiếp chỉ net-dương nếu pool kịp vượt sàn Ward trước đó. Build cast Refutation mỗi khi off cooldown trên một pool nhỏ sẽ thường xuyên đốt dưới sàn.
 
 Gear cost là cost ẩn nặng nhất. Runeforging **đánh đổi base defence lấy Ward** — body armour runeforge để có pool ward lớn là body đã từ bỏ một phần Armour/Evasion/ES gốc. Build ward-stacker cho Refutation hi sinh defence thường trực để mua một burst-window 40% uptime; đó là một trade-off thật, không phải buff cộng thêm miễn phí.
 
 ## Verdict & Open Questions
 
 - Refutation là defensive burst đáng giá khi build đầu tư đúng (Ward > 200, 20% quality, attack-based để ăn Parried), nhưng vô dụng phía công với spell build và net-negative nếu Ward thấp.
-- Math thật: net = base × 0.5 × (1 + 0.005 × Ward đốt); break-even 200 Ward; ×4.0 (+300%) ở 1400 Ward; "+700%" của guide bỏ quên ×0.5.
-- Uptime trần ~40% — "permanent block" là cường điệu, ~6 giây hở mỗi cycle là điểm chết.
+- Math có hai model tuỳ cách engine gộp `stun threshold +% final from runic fortress`: multiplicative (break-even 200 Ward, ×4.0 ở 1400) hoặc additive (break-even 100, ×7.5 ở 1400). Datamine một-stat nghiêng additive; đốt 200 Ward đọc Stun Threshold trong client để chốt (×1.0 = multiplicative, ×1.5 = additive). "+700%" của guide gần đúng nếu additive, là lỗi quên ×0.5 nếu multiplicative.
+- Uptime trần ~40% và 0.5.1 khoá nó lại ("Cooldown no longer recovers while Buff active" — nerf so với launch); "permanent block" là cường điệu, ~6 giây hở mỗi cycle là điểm chết.
 - Brass Dome giúp trên hai trục: +200-300 flat stun threshold (base) và pool ward nếu runeforge; base không cho ward.
 - Block-all chỉ chặn Hit — DoT, ground degen, unblockable đi xuyên qua hoàn toàn.
 
 **Verdict: NEUTRAL-to-strong nhưng overhyped.** Đầu tư đúng thì block-all 4 giây + Parried là một burst-window mạnh cho attack build chạy 600+ Ward; nhưng pitch "thay lớp phòng thủ chính" và "permanent" sụp khi đặt cạnh uptime 40%, downside ×0.5, và việc nó không làm gì trước DoT. Nó là một lớp chồng thêm, không phải nền tảng thủ.
 
-Cần đo trong client khi vào league: exact in-engine stacking form của hai dòng stun-threshold (đo Stun Threshold thật ở vài mốc Ward đã biết để xác nhận `base × 0.5 × (1 + 0.005·W)`); stun buildup tích qua block có chạm Heavy-Stun-self nhanh hơn dự kiến không (block too much → mất buff); lượng ward thật của một Brass Dome đã runeforge; CDR II %; và trong 7 Kalguuran Support cái nào support được Spell như Refutation (Runic Infusion confirmed Attack-only nên loại).
+Cần đo trong client (league đã live): stacking form của stat stun-threshold — đốt 200 Ward rồi đọc Stun Threshold, ×1.0 là multiplicative còn ×1.5 là additive, một mốc đó chốt cả hai con break-even; stun buildup tích qua block có chạm Heavy-Stun-self nhanh hơn dự kiến không (block too much → mất buff — và lưu ý 0.5.1 đã chặn đường logout-để-thoát-heavy-stun, buildup giờ giữ qua relog); lượng ward thật của một Brass Dome đã runeforge; CDR II %; và trong các Kalguuran Support cái nào support được Spell như Refutation (Runic Infusion confirmed Attack-only nên loại).
 
 ## Patch Evolution
+
+### Patch 0.5.1
+
+- "Refutation's Cooldown no longer recovers while the Buff is active" — khoá uptime ở 4 + 10 mỗi cycle (~28.6% base, ~40% với full support), nerf so với launch khi cooldown còn hồi trong lúc buff active.
+- Olroth's Resolve flask: 0.5.1 ghi lại dòng đã live âm thầm từ 0.5.0 — "Regenerate 2.5-5% of maximum Runic Ward per second during Effect" cộng "Gain Guard equal to current Runic Ward for 10 seconds when effect ends". Đây là nguồn nạp ward chồng lên 5%/giây nền (tới ~10%/giây) cộng một lớp Guard ăn theo pool, hợp với ward-stacker chạy Refutation.
+- "Logging out and in again now preserves your heavy stun buildup" — chặn đường logout để thoát Heavy Stun, nên không còn cheese được cái "block too much → Heavy Stun → mất buff" bằng relog.
+- :wiki-link{url="https://www.poe2wiki.net/wiki/Repulsion"} Triggered Wave thêm base Critical Strike Chance 6% — không đụng Refutation trực tiếp nhưng liên quan loop ward-drain dùng chung hệ (xem [Runic Ward Onslaught Loop cho Minion](/mechanics/0-5-runic-ward-onslaught-loop)).
 
 ### Patch 0.5.0
 

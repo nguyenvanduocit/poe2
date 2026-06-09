@@ -5,9 +5,9 @@ title: Runic Ward Onslaught Loop cho Minion
 status: published
 author: duocnv
 created: '2026-06-02'
-updated: '2026-06-04'
+updated: '2026-06-09'
 league: '0.5'
-patch: 0.5.0
+patch: 0.5.1
 confidence_level: MEDIUM
 tags:
   - runic-ward
@@ -20,7 +20,9 @@ tags:
   - warding-rune-of-bodyguards
   - blasphemy
   - repulsion
+  - olroths-resolve
   - 0-5
+  - 0-5-1
   - poe2
 ---
 
@@ -38,7 +40,7 @@ Verisium Manifestations gate bằng đúng một dòng: "While active, Hitting w
 
 ## Đường rảnh tay qua Repulsion thừa và còn một mắt chưa test
 
-Khung "auto-summon không bấm gì" chỉ có nghĩa cho một build pilot **không** tự đánh. Lúc đó nguồn hit phải đến từ minion: minion đánh trúng enemy đang dính Repulsion → Repulsion là hex (Blasphemy-compatible, không phải Mark), gắn nó vào Blasphemy phủ Fragility thành aura quanh mình (60 Spirit/curse). "Hitting these enemies causes the Curse to Trigger an explosion" — bất kỳ hit nào lên cursed-target cũng nổ Repulsion Wave, một "Physical Attack damage in an area around the Cursed target". Repulsion Wave là một Attack, nên về lý thuyết nó có thể thoả gate "Hitting with an Attack" của VM.
+Khung "auto-summon không bấm gì" chỉ có nghĩa cho một build pilot **không** tự đánh. Lúc đó nguồn hit phải đến từ minion: minion đánh trúng enemy đang dính Repulsion → Repulsion là hex (Blasphemy-compatible, không phải Mark), gắn nó vào Blasphemy phủ Fragility thành aura quanh mình (60 Spirit/curse). "Hitting these enemies causes the Curse to Trigger an explosion" — bất kỳ hit nào lên cursed-target cũng nổ Repulsion Wave, một "Physical Attack damage in an area around the Cursed target". Repulsion Wave là một Attack, nên về lý thuyết nó có thể thoả gate "Hitting with an Attack" của VM. 0.5.1 cho Repulsion Wave thêm base Critical Strike Chance 6% — một buff nhỏ cho nhánh này, nhưng không động tới câu hỏi trigger-chain bên dưới.
 
 Mắt xích thật sự chưa chắc nằm ở chỗ khác: VM kích bằng "Trigger Manifest Rune on Hitting with an Attack" — một trigger. Repulsion Wave cũng là một skill được **trigger**. Liệu một Attack đã-được-trigger (Repulsion Wave) có kích tiếp được Manifest Rune của VM hay không là câu hỏi trigger-chain mà datamine không trả lời được, phải đo trong client. Quan trọng hơn: ngay cả khi nó chạy, đường này **thừa** với bất kỳ build nào pilot còn vung skill attack — Twister đã thoả gate trực tiếp, đường minion→Repulsion là vòng vo không thêm gì. Nên Blasphemy + Repulsion chỉ phục vụ một build thật-sự-AFK, và đúng lúc đó nó lại tựa trọn vào mắt chưa test. Đừng bán loop này như "rảnh tay tự dọn màn".
 
@@ -70,6 +72,8 @@ Bất kể nhánh nào, Onslaught có một khoảng grace khi ngừng đánh: w
 
 Vì uptime tốt khi đang đánh, vấn đề thật không phải Onslaught tắt — mà là **giữ nó on đồng nghĩa giữ ward ≤35% suốt trận**. Runic Ward là lớp phòng thủ chót: kích hoạt khi life chạm 1, hồi 5%/giây độc lập, là thanh đệm cứu-mạng-cuối theo EHP order. Cố tình rút nó xuống dải thấp để thoả Low Runic Ward nghĩa là chạy lớp đệm đó gần rỗng đúng vào lúc cày DPS boss kéo dài — chính lúc một cú one-shot cần thanh ward đầy nhất. Đó là cái giá thật, và trên một build vốn không HC-safe nó là survivability cost có thật, không phải buff miễn phí.
 
+Một bẫy item của 0.5.1 phải tránh đi kèm cái giá đó: Olroth's Resolve flask giờ "Regenerate 2.5-5% of maximum Runic Ward per second during Effect" (bản rework đã live từ 0.5.0, patch note 0.5.1 mới ghi). Hay cho build ward-stacker, nhưng đi ngược hẳn loop này — đang cố giữ ward ≤35% mà flask bơm ward lên 2.5-5%/giây thì dễ đẩy vượt ngưỡng và rớt Onslaught. Đừng đội Olroth's Resolve với loop ward-drain; nó là mặt đối nghịch đúng nghĩa với cách [Refutation](/mechanics/skills/refutation) cần ward đầy để đốt — cùng một pool, hai hướng ngược nhau.
+
 Một điểm dễ hiểu nhầm phải nói rõ: giữ ward thấp **không** mất stun threshold. 0.5 gỡ Runic Ward khỏi keyword "Defences" (giờ chỉ còn Armour/Evasion/ES), và mọi nguồn stun threshold đều key theo Life/ES — ward chưa bao giờ feed stun threshold. Dòng Bonded của Warding Rune of Bodyguards ("Damage of Enemies Hitting you is Unlucky if your Runic Ward has been damaged Recently") chỉ bù một phần và chỉ kích *sau khi* ward đã ăn damage — quá trễ cho một phát one-shot.
 
 ## Spirit accounting
@@ -96,6 +100,13 @@ Những thứ datamine không giải được, đo trong client trước khi com
 4. **Hành vi cap + ward equilibrium:** VM ở 10/10 manifestation có block (ngừng tiêu ward) hay thay con cũ nhất (tiếp tục tiêu); với gear thật (max ward + ward cost efficiency từ boots) dải ward in-combat đứng ở đâu, breakpoint giữa ward-cost-per-summon và 5%-của-max-pool nghiêng bên nào, và stretch không-đánh bao lâu thì Onslaught tắt.
 
 ## Version History
+
+### 2026-06-09 — fold 0.5.1
+
+- 0.5.1 (05/06) không động tới lõi loop: Verisium Manifestations, Warding Rune of Bodyguards, Onslaught, Trusted Kinship và reservation efficiency đều giữ nguyên — loop ổn định về cơ chế qua hết point-release đầu tiên. 0.5.1 còn fix một crash "Number of shared states is different on client and server" do Unique Tamed Beast gây ra, đỡ cho build companion.
+- Repulsion Triggered Wave thêm base Critical Strike Chance 6% (0.5.1) — buff nhỏ cho nhánh Repulsion tuỳ chọn, không đổi câu hỏi trigger-chain.
+- Thêm cảnh báo Olroth's Resolve: bản rework (live từ 0.5.0, patch note 0.5.1 mới ghi) regen 2.5-5% maximum Runic Ward/giây nên đi ngược loop — đừng đội với ward-drain.
+- VM cap behavior và trigger-chain Repulsion vẫn để ngỏ làm test-plan: chưa có live reading nào để chốt.
 
 ### 2026-06-03 — verification pass
 

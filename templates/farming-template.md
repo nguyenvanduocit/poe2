@@ -46,32 +46,35 @@ fields:
 # [Strategy Name]
 
 <!--
-Farming strategy template — viết theo skill /write-farming-tutorial.
+Farming strategy template (POE2 0.5+ "Return of the Ancients" Atlas) — viết theo skill /write-farming-tutorial.
 Voice: tiếng Việt, owner-voice, prose-first, số có timestamp.
 Title KHÔNG kèm league/patch.
-Waystone/tablet/atlas keystone/unique → `:wiki-link{url="https://www.poe2wiki.net/wiki/<page>"}` MDC component (auto link ra wiki + price tooltip).
+
+POE2 endgame KHÔNG có scarab. Vocabulary đúng: Waystone (map item), Precursor Tablet (đặt vào Map Device — số slot theo số modifier của waystone: 1-2 mod=1 slot, 3-5 mod=2, 6+ mod=3; City biome map mở thêm slot thứ 4 qua atlas notable Industrial Improvements), unique tablet (vd Freedom of Faith), Precursor Tower (map area chạy được — hoàn thành thì rớt 1 tablet + mở tầm nhìn atlas, KHÔNG phải nơi socket tablet), Atlas Passive Tree + mechanic subtree (Ritual/Breach tree), Masters of the Atlas (Jado, Hilda...), Map Device + fragment (Ocean Exploring / pinnacle boss), biome (city/grass/forest/desert/swamp). Currency nền giao dịch = Exalted Orb (ex), high-end = Divine Orb (div).
+
+Waystone/tablet/atlas keystone/unique/currency/fragment → `:wiki-link{url="https://www.poe2wiki.net/wiki/<page>"}` MDC component (auto link ra poe2wiki.net + price tooltip).
 Cross-link → section ## Relationships ở cuối, mỗi dòng: - **predicate** [Title](/route) — reason.
 -->
 
-(Intro 2-3 câu. Câu 1: strategy là gì + tier. Câu 2: core mechanism — content nào farm, drop nào make money. Câu 3: ai nên chạy — early league / endgame / specific build. Restate frontmatter metric inline: "Tier B, investment Medium, profit ~5-10 div/h".)
+(Intro 2-3 câu. Câu 1: strategy là gì + tier. Câu 2: core mechanism — content nào farm, drop nào make money. Câu 3: ai nên chạy — early league / endgame / specific build. Restate frontmatter metric inline: "Tier B, investment Medium, ~5-10 div/h tính đến YYYY-MM-DD".)
 
 ## Strategy Overview
 
-(1 đoạn prose: tại sao strategy này làm ra tiền trong meta hiện tại. Mention key scarabs/fragments unlock profit + lý do mỗi cái worth cost.)
+(1 đoạn prose: tại sao strategy này làm ra tiền trong meta hiện tại. Mention key tablets/fragments/atlas nodes unlock profit + lý do mỗi cái worth cost.)
 
 ## Setup
 
 ### Atlas Passive Tree
 
-(Cluster chính path + lý do. Link tới atlas tree builder nếu có. Prose, không list 30 node bullet rời rạc.)
+(Cluster chính path + lý do. Mechanic subtree (vd Ritual/Breach tree) chọn node nào + tại sao. Masters of the Atlas assignment nếu strategy dùng. Link tới atlas tree builder nếu có. Prose, không list 30 node bullet rời rạc.)
 
-### Scarabs & Map Device
+### Tablets & Map Device
 
-(Scarab combo 4 slot + lý do từng cái. Map device fragment nếu có. Bold + wiki link mỗi scarab lần đầu — nhắc routing `atlas/`.)
+(Precursor tablet loadout + lý do từng cái — gồm cả unique tablet. Số tablet slot do số modifier của waystone quyết định (6-mod = 3 slot); City biome map + atlas notable Industrial Improvements mở slot thứ 4. Tower là nguồn rớt tablet, không phải nơi cắm. Map device fragment cho pinnacle / Ocean Exploring nếu có. Bold + wiki link mỗi tablet lần đầu.)
 
-### Map Choice
+### Waystone & Map Choice
 
-(Map base + lý do — layout, density, encounter spawn rate. Bold + wiki link map name.)
+(Waystone tier + biome (city/grass/forest/desert) + layout/density + encounter spawn rate. Bold + wiki link map name.)
 
 ### Build Requirements
 
@@ -89,7 +92,7 @@ Cross-link → section ## Relationships ở cuối, mỗi dòng: - **predicate**
 expected_profit_per_hour =
   (drop_rate_per_map × stack_size × current_market_price)
   × maps_per_hour
-  − cost_per_map (scarab/tablet/key/sextant đầu vào)
+  − cost_per_map (tablet/waystone/fragment/key đầu vào)
   − opportunity_cost (atlas points, sustain time)
 ```
 
@@ -103,16 +106,16 @@ expected_profit_per_hour =
 
 (Bắt buộc ≥ 3 scenario strategy gãy:
 - **Market saturation** — drop key bị flood, giá compress > X% (vd week 2-3 league)
-- **Sustain failure** — scarab/map base/atlas key node không sustain với farming rate
+- **Sustain failure** — tablet/waystone base/atlas key node không sustain với farming rate
 - **Build floor** — strategy require clear speed Y maps/h hoặc DPS Z; dưới ngưỡng = không lãi
-- **Patch nerf risk** — mechanic nào nếu nerf sẽ kill strategy (atlas tree shift, scarab rework, drop rate change)
+- **Patch nerf risk** — mechanic nào nếu nerf sẽ kill strategy (atlas tree shift, tablet rework, drop rate change)
 - **Time investment** — setup cost so với expected sample size, có break-even nổi không
 
 Prose 1-2 đoạn cover risk thực tế nhất. Xem **Failure Mode / Devil's Advocate** trong CLAUDE.md.)
 
 ## Profit Optimization
 
-(Advanced tip: atlas node upgrade path B → A tier, craft combo, bulk vs individual sale, fleet use. Prose.)
+(Advanced tip: atlas node upgrade path B → A tier, tablet roll min-max, bulk vs individual sale, fleet use. Prose.)
 
 ## Alternatives & Variations
 
@@ -120,7 +123,7 @@ Prose 1-2 đoạn cover risk thực tế nhất. Xem **Failure Mode / Devil's Ad
 
 ## Data & Testing
 
-(Evidence cho profit claim. Personal sample size + condition. Source link — poe.ninja, /trade output. Market data recency.)
+(Evidence cho profit claim. Personal sample size + condition. Source link — poe.ninja, poe2scout, /trade output. Market data recency.)
 
 ## Summary
 
@@ -128,13 +131,14 @@ Prose 1-2 đoạn cover risk thực tế nhất. Xem **Failure Mode / Devil's Ad
 
 ## Quick Reference Card
 
-**Setup cost / map:** ~X chaos  
+**Setup cost / map:** ~X ex  
 **Profit / map:** ~Y div  
 **Time / map:** ~Z minutes  
-**Map choice:** [Map base]  
-**Atlas key nodes:** [Nodes]  
-**Scarabs:** [Scarab 1] + [Scarab 2] + [Scarab 3] + [Scarab 4]  
-**Fragments:** [Fragment setup if applicable]
+**Waystone / map:** [Waystone tier + biome]  
+**Atlas key nodes:** [Nodes + mechanic subtree]  
+**Masters of the Atlas:** [Master + bonus]  
+**Tablets:** [Tablet 1] + [Tablet 2] + [Tablet 3] + [Tablet 4]  
+**Fragments:** [Map device fragment / unique nếu applicable]
 
 ## Changelog
 

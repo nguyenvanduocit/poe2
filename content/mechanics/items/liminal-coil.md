@@ -2,24 +2,22 @@
 template: templates/item-template.md
 document_type: item
 title: Liminal Coil
-status: draft
+status: published
 author: duocnv
 created: '2026-05-25'
-updated: '2026-05-25'
+updated: '2026-06-09'
 league: '0.5'
 patch: 0.5.0
 rarity: unique
 item_class: Wand
-level_requirement: 1
+level_requirement: 65
 item_tags:
 - wand
 - unique
 - curse
 - chaos
 - spell
-- pre-launch
 meta_tags:
-- patch-preview
 - build-enabling
 - curse-stacking
 tags:
@@ -28,61 +26,57 @@ tags:
 - 0-5
 - return-of-the-ancients
 - curse
-- chaos-conversion
 ---
 
 # Liminal Coil
 
-Liminal Coil là wand unique trên base :wiki-link{url="https://www.poe2wiki.net/wiki/Twisted_Wand"} Twisted Wand, grant skill **Coiling Bolts** và đảo ngược toàn bộ cách chơi curse. Hai dòng định nghĩa item là "Magnitudes of Curses you inflict are zero" cộng "Curses you inflict ignore Curse limit" — curse không còn debuff gì, nhưng được chồng vô số lên một target. Đổi lại, "Spell Hits Gain 27% of Damage as Extra Chaos Damage per Curse on target" và "27% of Damage as Extra Physical Damage per Curse on target" biến mỗi curse thành +27% extra chaos *và* +27% extra phys. Đây là lõi cho một caster curse-stacking thuần, không phải stat stick.
+Liminal Coil là wand unique trên base :wiki-link{url="https://www.poe2wiki.net/wiki/Twisted_Wand"} Twisted Wand, drop từ The Market trong Ritual. Hai dòng cốt lõi là "Curses you inflict ignore Curse limit" cộng "Spell Hits Gain (23–31)% of Damage as Extra Chaos/Physical Damage per Curse on target" — curse vẫn debuff bình thường, nhưng giờ player chồng được nhiều curse khác loại lên cùng một target, và mỗi curse trên target cộng thêm một lớp extra damage vào spell hit. Đây là nền cho caster muốn vừa bóc res/slow target vừa scale damage theo số lượng curse.
 
 ## Item Stats
 
 ```
 Liminal Coil
 Twisted Wand
-Requires: Level 1
+Requires: Level 65, 114 Int
 --------
-Grants Skill: Level 17 Coiling Bolts
-71% increased Spell Damage
-11% increased Cast Speed
-Magnitudes of Curses you inflict are zero
+(71–113)% increased Spell Damage
+(7–13)% increased Cast Speed
 Curses you inflict ignore Curse limit
-Spell Hits Gain 27% of Damage as Extra Chaos Damage per Curse on target
-Spell Hits Gain 27% of Damage as Extra Physical Damage per Curse on target
+Spell Hits Gain (23–31)% of Damage as Extra Chaos Damage per Curse on target
+Spell Hits Gain (23–31)% of Damage as Extra Physical Damage per Curse on target
 ```
 
-Mod verbatim từ data poe2db 0.5.0. "Requires: Level 1" trên item có thể là placeholder; Coiling Bolts yêu cầu Level 72 và 126 Intelligence để dùng — xác minh lại trong client khi league live.
+## Vì sao item mạnh
 
-## Why This Item Is Powerful
+Không có gì cắt bớt curse — magnitude vẫn nguyên, nghĩa là :wiki-link{url="https://www.poe2wiki.net/wiki/Despair"} Despair vẫn giảm chaos res, :wiki-link{url="https://www.poe2wiki.net/wiki/Temporal_Chains"} Temporal Chains vẫn slow, :wiki-link{url="https://www.poe2wiki.net/wiki/Conductivity"} Conductivity vẫn giảm lightning res. "Ignore curse limit" chỉ xoá giới hạn một curse mỗi target, cho phép tất cả curse khác loại cùng tồn tại trên một enemy. Hệ quả: curse làm đủ việc debuff lẫn làm bộ đếm để bơm damage.
 
-Cơ chế tự cân bằng nằm ở cặp "zero magnitude" và "ignore curse limit". Curse bình thường bị giới hạn 1 curse mỗi target (trừ khi có node tăng limit), và giá trị curse đến từ magnitude của nó. Liminal Coil bỏ cả hai: magnitude về 0 nên curse không làm gì *trực tiếp*, nhưng limit bị gỡ nên player chồng được bao nhiêu curse tùy nguồn cung. Mỗi curse trên target sau đó cộng "27% of Damage as Extra Chaos" và "27% as Extra Physical" vào spell hit — với 4 curse, đó là +108% extra chaos và +108% extra phys, cộng dồn trên damage gốc của spell.
+Mỗi curse trên target cộng (23–31)% extra chaos *và* (23–31)% extra physical vào mỗi spell hit. Với 3 curse khác nhau, đó là 69–93% extra chaos và 69–93% extra physical từ riêng cơ chế này — cộng dồn trên top của spell damage gốc, không phải thay thế. Roll cap (31%) trên cả hai dòng là mục tiêu khi craft lại hoặc chọn copy tốt, vì khoảng cách từ roll thấp nhất (23%) lên cao nhất (31%) đã là chênh lệch 35% per-curse.
 
-Granted skill Coiling Bolts ăn khớp chính xác với cơ chế này. Nó "Simultaneously fires a Physical Projectile and a Chaos Projectile at the target. These projectiles Chain through any number of Cursed targets" — đúng hai loại damage mà item cộng extra (phys + chaos), và "chain through any number of Cursed targets" nghĩa là trong một phòng đầy enemy bị curse, projectile nhảy không giới hạn. Coiling Bolts deal 188-283 Physical + 165-306 Chaos base, Cost 0 Mana, nên spam thoải mái. Vòng lặp: curse lan ra pack → Coiling Bolts chain khắp pack → mỗi hit được nhân theo số curse trên từng target.
+## Cơ chế enable build
 
-Khi vào league, log xem nguồn apply nhiều curse cùng lúc (curse-on-hit support, :wiki-link{url="https://www.poe2wiki.net/wiki/Curse"} multiple curse skills, hoặc AoE curse) có đủ nhanh để duy trì stack cao không. Một điểm cần tự đo thêm: "ignore curse limit" có cho phép chồng *cùng một* curse nhiều lần hay chỉ nhiều curse khác loại — wording chưa tường minh, kiểm trong client mới chốt được.
+Liminal Coil kéo caster theo hướng curse rộng, không phải curse sâu. Thay vì đổ điểm vào "increased curse effect" (scale debuff của một curse), player đầu tư vào càng nhiều curse source càng tốt để đẩy số curse trên target lên cao. Curse-on-hit support, trigger curse qua multiple skills, và AoE curse đều trở nên quan trọng vì mỗi curse type thêm vào = thêm một lớp (23–31)% extra damage.
 
-## Build Enabler Mechanics
+Bản thân wand cho (71–113)% increased Spell Damage và (7–13)% increased Cast Speed — baseline stat tốt cho caster, nhưng không đủ nếu bỏ qua curse count. Build ăn rõ nhất khi duy trì 3–4 curse khác nhau lên target trước khi bắt đầu spam spell, vì damage ramp lên tuyến tính theo từng curse. Không có penalty hay tradeoff nào khác ngoài yêu cầu phải đa dạng curse source — curse vẫn debuff bình thường nên investment vào curse effect vẫn có giá trị phụ.
 
-Item này dựng một caster lấy curse count làm thước damage. Player commit vào: nhiều curse skill / curse-on-hit để đẩy số curse trên target lên cao, scale spell damage gốc (71% increased Spell Damage trên chính wand là điểm khởi đầu), và chaos/phys không cần res penetration vì extra damage đến từ multiplier curse chứ không từ ailment. Vì magnitude curse bằng 0, không cần curse effect — bỏ qua hoàn toàn nhánh đầu tư "increased curse effect" mà build curse truyền thống phải gánh, dồn điểm vào spell damage và cast speed.
+Build không phù hợp: caster muốn dùng một curse duy nhất, hoặc build không có cách apply curse nhanh (melee không có AoE curse reach, minion build không apply curse trực tiếp).
 
-Build không hợp Liminal Coil: bất kỳ build nào *dựa vào tác dụng debuff của curse* (vd dùng :wiki-link{url="https://www.poe2wiki.net/wiki/Despair"} Despair để giảm chaos res, hay :wiki-link{url="https://www.poe2wiki.net/wiki/Temporal_Chains"} Temporal Chains để slow) — vì zero magnitude tắt hết những hiệu ứng đó. Item chỉ dùng curse như một bộ đếm.
+## Nguồn drop
 
-## Acquisition
-
-Drop source chưa được GGG reveal trước launch. Theo pattern unique build-enabling của patch trước, khả năng từ Pinnacle boss hoặc reward league mechanic. Giá tuần đầu của một caster build-around wand thường biến động mạnh tùy meta — sẽ update khi market live.
+Dropped by The Market trong :wiki-link{url="https://www.poe2wiki.net/wiki/Ritual"} Ritual. Là drop có địa chỉ rõ, không random từ pool chung — farming lặp Ritual encounter là con đường chắc chắn nhất.
 
 ## Version History
 
 ### Patch 0.5.0 (Return of the Ancients — 2026-05-29)
 
-Item introduced. Mod verbatim đã có trên poe2db; build viability chưa test live.
+Item introduced.
 
-## Related Items & Alternatives
+## Item liên quan và thay thế
 
-- :wiki-link{url="https://www.poe2wiki.net/wiki/Despair"} Despair — curse chaos res tiêu chuẩn; lưu ý Liminal Coil *vô hiệu* magnitude của nó, nên hai thứ không chồng theo cách thông thường.
-- [The Auspex](/mechanics/items/the-auspex) — unique build-around cùng patch, đối chiếu thiết kế "đánh đổi một mặt để mở một archetype" của 0.5.
+- :wiki-link{url="https://www.poe2wiki.net/wiki/Despair"} Despair — curse giảm chaos res; chạy cùng Liminal Coil vừa debuff vừa đóng góp một lớp extra damage.
+- :wiki-link{url="https://www.poe2wiki.net/wiki/Temporal_Chains"} Temporal Chains — curse slow; kết hợp được vì ignore curse limit cho phép cả hai lên cùng target.
+- [The Auspex](/mechanics/items/the-auspex) — unique build-around cùng patch, cùng thiết kế "một mod bỏ giới hạn, một mod khai thác việc bỏ đó".
 
 ## Relationships
 
-- **part_of** [Đợt Unique Mới và Meta Shift](/mechanics/0-5-new-unique-items) — trục curse-stacking đã lộ stat của đợt 0.5
+- **part_of** [Đợt Unique Mới và Meta Shift](/mechanics/0-5-new-unique-items) — trục curse-stacking của đợt unique 0.5
 - **synergizes_with** [Twisted Empyrean](/mechanics/items/twisted-empyrean) — cùng nhóm unique build-enabling 0.5
