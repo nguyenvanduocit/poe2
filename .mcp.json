@@ -1,13 +1,12 @@
 {
   "mcpServers": {
-    "reddit-mcp-buddy": {
+    "reddit": {
       "type": "stdio",
-      "command": "npx",
+      "command": "bash",
       "args": [
-        "-y",
-        "reddit-mcp-buddy"
-      ],
-      "env": {}
+        "-c",
+        "set -a; [ -f /Users/firegroup/projects/poe/poe2/.env ] && . /Users/firegroup/projects/poe/poe2/.env; set +a; exec npx -y reddit-mcp-server"
+      ]
     }
   }
 }

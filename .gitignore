@@ -84,6 +84,9 @@ data/pob-source/
 data/trade-static/
 # per-character export JSON (instance data)
 data/character-exports/
+# curated POE OSS clones for study (each has own .git/, ~1.3G) — ignore clones, keep index README
+data/github-research/*
+!data/github-research/README.md
 raw-data/
 tmp/*
 !tmp/.gitkeep
