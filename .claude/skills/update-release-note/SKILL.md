@@ -33,6 +33,7 @@ Output: `data/release-notes/Version_X.Y.Z.md` plus a refreshed `latest.md` symli
 There is no auto-detect — each patch is its own forum thread, so the id is looked up by hand from GGG's announcement/news forum. Known ids:
 
 - **0.5.0 "Return of the Ancients"** → `3932540`
+- **0.5.1** (mid-patch, posted in *Early Access Announcements* as a "Patch Notes Preview") → `3949114` — pass the version explicitly (`fetch.sh 3949114 0.5.1`); preview threads open with "deploying Patch X.Y.Z" and lack the "Content Update X.Y" title, though the parser now reads the "deploying Patch" line as a fallback.
 
 When a new patch drops, grab the new thread id from the GGG forum announcement and pass it in. Record it here so the next person does not have to hunt for it.
 
@@ -55,7 +56,7 @@ curl (browser UA)  →  forum HTML
   →  sed cleanup        (drop layout <div> wrappers, '-' → '*' bullets, squeeze blanks)
 ```
 
-`extract-forum.py` anchors on the `<h2>` patch title and walks up to its enclosing `div.content`, then fails loudly if that structure is missing — a loud failure means the fetch was blocked or GGG redesigned the forum, either of which should stop the pipeline rather than emit a half file.
+`extract-forum.py` anchors on the `<h2>` patch title and walks up to its enclosing `div.content`. GGG's mid-patch *"Patch Notes Preview"* threads (e.g. 0.5.1) ship no `<h2>` — sections start at `<h3>` — so for those it falls back to the first `tr.newsPost` post cell, re-parsed with `lxml` (which reconstructs the malformed forum DOM; `html.parser` mis-nests the unclosed empty content div these threads carry). It fails loudly only if **neither** anchor resolves — a loud failure means the fetch was blocked or GGG redesigned the forum, either of which should stop the pipeline rather than emit a half file.
 
 ## Re-fetching an existing version
 

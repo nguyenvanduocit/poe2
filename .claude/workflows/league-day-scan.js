@@ -20,7 +20,7 @@ const OUT_DIR = A.outDir || 'tmp'
 
 const RECENCY = `Content publish/post >= ${LAUNCH_DATE} = POST-LAUNCH (current). Cũ hơn = PRE-LEAGUE THEORYCRAFT — tag rõ, ĐỪNG trình bày như current meta. Ghi lại ngày publish/post của mỗi item.`
 const WEBTOOLS = `Load web tools trước: ToolSearch('select:WebSearch,WebFetch'). Nếu WebFetch bị chặn, fallback Bash: 'markitdown <url>' hoặc 'curl -sL -A "Mozilla/5.0" <url>'.`
-const REDDIT_TOOLS = `Load Reddit MCP: ToolSearch('select:mcp__reddit-mcp-buddy__browse_subreddit,mcp__reddit-mcp-buddy__search_reddit,mcp__reddit-mcp-buddy__get_post_details'). Dùng các tool này (KHÔNG WebFetch reddit).`
+const REDDIT_TOOLS = `Load Reddit MCP: ToolSearch('select:mcp__reddit__browse_subreddit,mcp__reddit__search_reddit,mcp__reddit__get_post_comments,mcp__reddit__get_reddit_post'). Dùng các tool này (KHÔNG WebFetch reddit).`
 const HONESTY = `Đây là league DAY 1-2 — data thật sự mỏng. Nếu nguồn không có data current thật, set dataAvailable:false và nói rõ trong gaps. KHÔNG bịa giá/tier/build để lấp schema. Vài finding verified > một đống padding.`
 const NUDGE = `BẮT BUỘC: kết thúc bằng việc gọi StructuredOutput đúng schema, KHÔNG trả prose.`
 
@@ -81,7 +81,7 @@ ${REDDIT_TOOLS}
 Đo sentiment + meta + bug + economy chatter từ cộng đồng:
 1. browse_subreddit r/pathofexile2 (sort=hot, và sort=top timeframe=week) — lấy top threads.
 2. search_reddit "Runes of Aldur" và "league start" (thử cả r/pathofexile2, r/pathofexile).
-3. get_post_details trên 4-6 thread nhiều upvote/comment nhất (megathread, "what are you playing", tier list, bug report, "how's the league").
+3. get_reddit_post + get_post_comments trên 4-6 thread nhiều upvote/comment nhất (megathread, "what are you playing", tier list, bug report, "how's the league").
 Trích: build người ta đang chơi & feedback (build), class/ascendancy/skill mạnh-yếu + balance sentiment + phản ứng nerf/buff (meta), giá/currency/early money-maker chatter (economy).
 ${RECENCY} Mỗi finding kèm url permalink + confidence (LOW nếu chỉ opinion 1 người, MEDIUM nếu nhiều người đồng thuận).
 ${HONESTY} ${NUDGE}`,
@@ -91,7 +91,7 @@ const redditBuildsLane = () => agent(
 `Reddit build-focus lane cho POE2 "${LEAGUE_NAME}".
 ${REDDIT_TOOLS}
 1. search_reddit "Runes of Aldur build", "POE2 league start build", "what to play 0.5" — thử r/PathOfExileBuilds, r/PathOfExile2Builds (nếu tồn tại), r/pathofexile2.
-2. browse_subreddit các build sub tìm được; get_post_details trên thread build hữu ích nhất.
+2. browse_subreddit các build sub tìm được; get_post_comments trên thread build hữu ích nhất.
 Tập trung angle 'build': skill + ascendancy + class combo đang được khuyến nghị / đang work, leveling path, gear floor. Ghi cả meta verdict nếu thread xếp hạng builds.
 ${RECENCY} url + confidence mỗi finding. ${HONESTY} ${NUDGE}`,
   { label: 'harvest:reddit-builds', phase: 'Harvest', schema: HARVEST_SCHEMA })
@@ -122,7 +122,7 @@ Dùng Bash skill (KHÔNG web trade API). Chạy không tham số để xem usage
   bash .claude/skills/poe2scout/scripts/api.sh leagues
   bash .claude/skills/poe2scout/scripts/api.sh categories ${SCOUT_LEAGUE}
   bash .claude/skills/poe2scout/scripts/api.sh list ${SCOUT_LEAGUE} <currency-category>   (giá currency hiện tại)
-  (secondary: poe-ninja economy endpoint nếu poe2scout trống)
+  bash .claude/skills/poe2scout/scripts/api.sh pairs ${SCOUT_LEAGUE}                       (Currency Exchange: volume trade thật + ex/div)
 Đo: tỉ giá Divine<->Exalted, currency đắt, unique đắt sớm, early money-maker. ${RECENCY}
 HONESTY: poe2scout đã báo "1 div = 0 Exalted Orb" cho slug ${SCOUT_LEAGUE} = volume trade chưa có (day 1-2). Nếu giá 0/trống → dataAvailable:false, gaps nói "economy chưa hình thành, re-check day 3-7". KHÔNG bịa giá. confidence theo volume. ${NUDGE}`,
   { label: 'harvest:economy', phase: 'Harvest', schema: HARVEST_SCHEMA })

@@ -25,14 +25,14 @@ POE2 0.5 league: **Runes of Aldur** (launch ~2026-05-29). Permanent equivalent: 
 
 Khi gõ league trong payload, dùng EXACT casing như UI hiển thị — plain string `{league:"Runes of Aldur"}` (CLI/client tự URL-encode khi build upstream path). Verify tên chính xác trên `https://www.pathofexile.com/trade2/` rồi cập nhật snippet bên dưới.
 
-## Prerequisite — logged-in Chrome tab
+## Prerequisite — Chrome đã login + Playwriter bật
 
-Page-context fetch cần một tab www.pathofexile.com sẵn sàng. Trước khi chạy call thật:
+Page-context fetch chạy trong Chrome thật của user. Cần đủ:
 
-- Chrome đang **mở**, có một tab **www.pathofexile.com đã login** (vào `/trade2/` cho chắc cookie + cf_clearance còn tươi).
-- Tab đó đã **bật Playwriter extension** (click icon extension trên tab). Không có path headless — fetch luôn chạy trong tab thật.
+- Chrome đang **mở** và **đã login pathofexile.com** (session cookie + cf_clearance còn tươi — vào `/trade2/` một lần cho chắc).
+- Playwriter extension **đã bật** trên một tab bất kỳ (click icon extension). Không có path headless.
 
-Nếu chưa bật extension, `poeFetch` báo lỗi rõ ràng ("Playwriter extension not connected. Open Chrome, log into www.pathofexile.com, and click the Playwriter extension icon on that tab.").
+KHÔNG cần tự mở sẵn tab trade: nếu chưa có tab `www.pathofexile.com` nào, transport tự `context.newPage()` → goto `/trade2/` rồi reuse tab đó cho mọi call sau (cookie session làm nó logged-in). Chỉ khi Playwriter chưa connect Chrome thì `poeFetch` mới báo lỗi rõ ("...click the Playwriter extension icon on a tab"). Tab user chưa login → call trả 401/403 thật, transport không auto-login.
 
 Cho ad-hoc snippet (mục bên dưới), tạo session một lần: `playwriter session new` → in ra session id (vd `1`), reuse cho mọi `playwriter -s <id>` sau đó. Lớp TS tự gọi `ensureSession()` nên primary path không cần bước này.
 

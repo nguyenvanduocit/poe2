@@ -39,7 +39,7 @@ File `.md` trong `content/mechanics/<sub>/` với:
 - Ít nhất 1 ví dụ cụ thể với số thật từ `content/characters/*.json` hoặc PoB của character hiện tại.
 - 100% voice rule tuân thủ.
 
-## Voice rules (project luôn win — Dreamcore method 10 rules)
+## Voice rules (project luôn win — Dreamcore method 11 rules)
 
 **Rule 1-5 — owner voice nền tảng (project rule):**
 
@@ -84,6 +84,7 @@ File `.md` trong `content/mechanics/<sub>/` với:
     - (b) Open question / next test / "waiting for patch notes [X]" / "needs character test [Y]"
 
     Vd: "Verdict: EXPLOITABLE. Open question: liệu Wretched Defiler có bị nerf trong 3.29 không? Sẽ theo dõi patch notes sau 2026-06-15."
+11. **Rewrite fresh, đừng vá doc cũ — vault luôn ở thì hiện tại** — Khi input là doc đã tồn tại: viết LẠI nguyên bài theo patch/meta **hiện tại**, KHÔNG bò vào vá lẻ từng dòng rồi chừa đoạn outdate "để giữ lịch sử", KHÔNG nhúng note nhật ký ("phải viết lại", "chờ datamine", "đổi gì cho build của mình"). Số stale thay thẳng (không chú thích "(cần update)"); mechanic/interaction/item đã chết theo patch thì gỡ hẳn, không archive trong body. Lịch sử chỉ sống ở `## Patch Evolution` (record gọn một dòng/patch) hoặc `git log` — doc hiện tại chỉ chứa trạng thái đúng-bây-giờ. Bài xong phải đứng được như sinh ra hôm nay ở patch hiện tại. Ref: CLAUDE.md `## Content Writing Voice` → "Rewrite fresh, đừng vá doc cũ".
 
 ## Maxroll patterns we adopt
 

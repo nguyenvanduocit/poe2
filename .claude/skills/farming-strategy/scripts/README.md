@@ -10,7 +10,7 @@ POE1 version (`.claude/skills/farming-strategy/scripts/`) dùng `poe-watch` API 
 import { fetchAPI, getCurrentLeague, type ItemData } from "../poe-watch/poe-watch";
 ```
 
-**poe.watch hiện chỉ support POE1.** Port 1:1 sẽ fail ngay import. POE2 data source phải đổi sang **poe.ninja/poe2** + **trade API** — schema, endpoint, rate limit khác.
+**poe.watch hiện chỉ support POE1.** Port 1:1 sẽ fail ngay import. POE2 price source là **poe2scout** (`.claude/skills/poe2scout/scripts/api.sh`) + **trade API** cho spot-check — schema, endpoint, rate limit khác. poe.ninja CHỈ còn cho build/meta, KHÔNG phải giá.
 
 Cũng không nên copy `analyze.ts` rồi find-replace category name. `STRATEGIES` record POE1 (delirium/essence/harvest/scarab/expedition/bossing) reference POE1 mechanic không tồn tại POE2 (scarab category, deliriumOrb category, Vivid/Wild/Primal Lifeforce). Phải re-author STRATEGIES từ archetype list trong SKILL.md.
 
@@ -19,13 +19,13 @@ Cũng không nên copy `analyze.ts` rồi find-replace category name. `STRATEGIE
 **Goal:** equivalent của `farming-strategy/scripts/market-snapshot.ts` nhưng cho POE2 economy.
 
 **Data source decision:**
-- **Primary:** poe.ninja/poe2 protobuf endpoint. Skill `/poe-ninja` (root project skill) đã có infrastructure POE2 — read `.claude/skills/poe-ninja/SKILL.md` để xem helper hiện có.
-- **Fallback / cross-check:** trade API qua CDP Relay (xem `/trade` skill). Trade2 cho real-time listing nhưng rate-limit chặt — chỉ dùng cho spot-check không cho bulk snapshot.
+- **Primary:** poe2scout qua `.claude/skills/poe2scout/scripts/api.sh` — `list <cat>` (price + listed-stock + Δ7d, 24 category), `pairs` (traded-volume + ex/div từ Currency Exchange), `item` (per-item OHLC). Reuse skill, đừng gọi API tay. Cân nhắc gọi luôn `/economy-scan` đã orchestrate sẵn.
+- **Fallback / cross-check:** trade API qua playwriter page-context (xem `/trade` skill). Trade2 cho real-time listing nhưng rate-limit chặt — chỉ dùng cho spot-check không cho bulk snapshot.
 
 **Schema diff vs POE1:**
 - POE1 category: `scarab`, `fragment`, `map`, `essence`, `fossil`, `resonator`, `oil`, `deliriumOrb`, `card`, `gem`, `jewel`, `accessory`, `armour`, `weapon`, `flask`.
 - POE2 category (verify khi 0.5 live — best guess từ patch note 0.5.0):
-  - **Input:** `tablet`, `waystone`, `breachstone`, `logbook` (Ocean Logbook), `remnant` (nếu poe.ninja list rarity tier), `key-fragment` (Pinnacle/Citadel)
+  - **Input:** `tablet`, `waystone`, `breachstone`, `logbook` (Ocean Logbook), `remnant` (nếu poe2scout list rarity tier), `key-fragment` (Pinnacle/Citadel)
   - **Currency:** `exalted`, `divine`, `chaos`, `mirror`, `verisium` (new POE2 0.5), `alloy` (13 mới), `ancient-rune` (13 mới), `flux` (3 mới), `liquid-emotion` (Delirium), `wombgift` + `hiveblood` (Breach Genesis Tree input)
   - **Output:** `unique-armour`, `unique-weapon`, `kalguuran-skill` (21 mới), `kalguuran-support` (8 mới), `lineage-support` (~21 mới), `catalyst` (12 mới, Genesis Tree only), `corrupted-idol` (3 mới Ritual), `timelost-jewel` (Delirium), `runic-ward-rune`, `idol` (8 mới Azmerian)
 
@@ -89,8 +89,8 @@ bun .claude/skills/farming-strategy/scripts/analyze.ts --strategy remnant-runic 
 
 ## Wire-up checklist khi league live
 
-1. [ ] Verify poe.ninja/poe2 endpoint stable + schema fields (price, change, volume, lowConfidence) — read `/poe-ninja` skill SKILL.md cho helper hiện có.
-2. [ ] Verify list category thực tế trên poe.ninja/poe2 — confirm hoặc adjust category map ở TODO 1.
+1. [ ] Reuse poe2scout `api.sh` (đã wire + verified) cho price/volume — `api.sh categories` cho category map thực tế, `api.sh list/pairs` cho data. Không cần tự build fetch layer.
+2. [ ] Verify category map ở TODO 1 khớp `api.sh categories <league>` thực tế (24 category poe2scout).
 3. [ ] Implement `market-snapshot.ts` reference POE1 `farming-strategy/scripts/market-snapshot.ts` cho code structure (cùng pattern: fetch → trending → categorize → meta-signal → output formatter).
 4. [ ] Implement `analyze.ts` reference POE1 `farming-strategy/scripts/analyze.ts` cho code structure (cùng pattern: STRATEGIES record → priceStrategy() → calculateProfit() → format output / compare table).
 5. [ ] Author STRATEGIES record từ 10 archetype trong SKILL.md, mỗi cái với realistic input quantity + maps_per_hour estimate (verify với in-game testing tuần đầu league).
@@ -100,6 +100,6 @@ bun .claude/skills/farming-strategy/scripts/analyze.ts --strategy remnant-runic 
 
 ## Confidence labels
 
-- **Category list POE2 (TODO 1):** MEDIUM — best guess từ patch note 0.5.0 fields. Verify với poe.ninja/poe2 thực tế khi league live.
+- **Category list POE2 (TODO 1):** MEDIUM — best guess từ patch note 0.5.0 fields. Verify với `api.sh categories` (poe2scout) thực tế khi league live.
 - **STRATEGIES archetype (TODO 2):** HIGH cho existence (patch note confirm mọi mechanic) + MEDIUM cho profit estimate (no market data yet) + LOW cho specific atlas node naming (Atlas Tree 300+ node, names chưa fully documented).
 - **Build requirement field:** LOW — POE2 0.5 character chưa final, meta build chưa stabilize. Update sau tuần 1 league.

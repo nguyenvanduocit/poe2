@@ -10,6 +10,8 @@
 #   api.sh trends [league]                      Opt-in: pull all histories + multi-window trends (slow ~15 min)
 #   api.sh reference [league]                   Reference currency rates (chaos/divine/exalted)
 #   api.sh snapshot [league]                    Fast catalog snapshot only (~30s, no rate-limit)
+#   api.sh pairs [league] [top]                 Currency Exchange pairs — REAL traded volume (cxapi-derived)
+#   api.sh ticks <name-or-id> [league] [count]  Raw per-tick price history (Price/Time/Quantity, count÷4)
 #
 # Env overrides:
 #   POE2SCOUT_LEAGUE   Default league slug (otherwise auto-detect IsCurrent softcore)
@@ -394,6 +396,53 @@ cmd_snapshot() {
   bun "$SCRIPT_DIR/snapshot.ts" --realm "$REALM" --league "$league"
 }
 
+# Currency Exchange pairs — REAL traded volume (cxapi-derived, NOT listing asks).
+# Each pair reports VolumeTraded + HighestStock per side; the currency price
+# aggregation poe2scout serves is built from exactly these snapshots.
+cmd_pairs() {
+  local league; league="$(resolve_league "${1:-}")"; [[ $# -gt 0 ]] && shift
+  local top="${1:-30}"
+  echo "## Currency Exchange pairs — league=$league realm=$REALM (real traded volume, top $top)"
+  echo ""
+  http_get "$BASE_URL/$REALM/Leagues/$league/SnapshotPairs" | jq -r --argjson top "$top" '
+    sort_by(-((.Volume // "0") | tonumber))[:$top] | .[] |
+    "- **\(.CurrencyOne.Text) ⇄ \(.CurrencyTwo.Text)** — pair vol \(((.Volume // "0") | tonumber) | floor)"
+    + "\n    · \(.CurrencyOne.Text): traded \(.CurrencyOneData.VolumeTraded) · stock \(.CurrencyOneData.HighestStock) · rel \(((.CurrencyOneData.RelativePrice // "0") | tonumber * 10000 | floor) / 10000)"
+    + "\n    · \(.CurrencyTwo.Text): traded \(.CurrencyTwoData.VolumeTraded) · stock \(.CurrencyTwoData.HighestStock) · rel \(((.CurrencyTwoData.RelativePrice // "0") | tonumber * 10000 | floor) / 10000)"
+  '
+}
+
+# Raw per-tick price history — Price/Time/Quantity straight from price_log.
+# Currency = every snapshot; uniques = every 6th (server log_frequency). count must be ÷4.
+cmd_ticks() {
+  local query="${1:-}"; shift || true
+  [[ -z "$query" ]] && die "Usage: api.sh ticks <name-or-id> [league] [count]"
+  local league; league="$(resolve_league "${1:-}")"; [[ $# -gt 0 ]] && shift
+  local count="${1:-40}"
+  (( count % 4 != 0 )) && die "count must be a multiple of 4 (API constraint)"
+
+  local item_id name
+  if [[ "$query" =~ ^[0-9]+$ ]]; then
+    item_id="$query"; name="item $query"
+  else
+    local cat_json
+    cat_json="$(resolve_item "$league" "$query")" \
+      || die "No catalog match for '$query'. Run \`api.sh snapshot\` first, or pass a numeric ItemId."
+    item_id="$(echo "$cat_json" | jq -r '.itemId')"
+    name="$(echo "$cat_json" | jq -r '.text')"
+  fi
+
+  echo "## Raw price ticks — $name (id $item_id) — league=$league, last $count"
+  echo ""
+  http_get "$BASE_URL/$REALM/Leagues/$league/Items/$item_id/History?LogCount=$count" | jq -r '
+    (.PriceHistory // []) as $h |
+    (if ($h | length) == 0 then "_(no ticks)_"
+     else ($h | map("- \(.Time)  price \(.Price)  qty \(.Quantity)") | join("\n"))
+     end)
+    + (if .HasMore then "\n_(more available — raise count)_" else "" end)
+  '
+}
+
 # ===== Dispatcher =====
 
 case "${1:-}" in
@@ -405,8 +454,10 @@ case "${1:-}" in
   trends)     shift; cmd_trends "$@" ;;
   reference)  shift; cmd_reference "$@" ;;
   snapshot)   shift; cmd_snapshot "$@" ;;
+  pairs)      shift; cmd_pairs "$@" ;;
+  ticks)      shift; cmd_ticks "$@" ;;
   ""|-h|--help|help)
-    sed -n '2,14p' "$0"
+    sed -n '2,18p' "$0"
     ;;
   *)
     die "Unknown subcommand: $1. Run api.sh help."

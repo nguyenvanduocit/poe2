@@ -18,8 +18,10 @@
  *     next call until the restriction clears.
  *   - a lockfile serialises calls so two skill runs never hit GGG in parallel.
  *
- * Prerequisite: the user's Chrome is open with a logged-in www.pathofexile.com
- * tab that has the Playwriter extension enabled. There is no headless path.
+ * Prerequisite: the user's Chrome is open and logged into pathofexile.com with
+ * the Playwriter extension enabled on a tab. If no www.pathofexile.com tab is
+ * open, the transport opens a /trade2/ one itself (session cookies keep it
+ * logged-in). There is no headless path.
  *
  * Config (all optional):
  *   POE_PLAYWRITER_BIN       playwriter launcher (default: `playwriter`,
@@ -30,13 +32,12 @@
 
 import { spawnSync } from 'node:child_process';
 import { mkdtempSync, openSync, closeSync, readFileSync, writeFileSync, rmSync, unlinkSync } from 'node:fs';
-import { homedir, tmpdir } from 'node:os';
+import { homedir } from 'node:os';
 import { join } from 'node:path';
 
 const STATE_FILE = join(homedir(), '.poe-playwriter-state.json');
 const LOCK_FILE = join(homedir(), '.poe-playwriter.lock');
 const MIN_SPACING_MS = Number(process.env.POE_PLAYWRITER_SPACING) || 2000;
-const RESULT_MARKER = '__POEFETCH_RESULT__';
 const MAX_BLOCK_WAIT_MS = 90_000; // refuse to silently sleep longer than this on a penalty
 
 export type Game = 'poe1' | 'poe2';
@@ -134,23 +135,36 @@ function releaseLock(): void {
 }
 
 /**
- * The script run inside playwriter's sandbox. Finds the logged-in
- * www.pathofexile.com tab and runs the fetch in its page-context, returning the
- * status + rate-limit headers + parsed body on a single marked stdout line.
+ * The script run inside playwriter's sandbox. Reuses a logged-in
+ * www.pathofexile.com tab — or opens a /trade2/ one itself if none exists — and
+ * runs the fetch in its page-context, writing {status, rate-limit headers, body}
+ * as JSON to `resultPath` (playwriter caps console.log at ~10KB, too small for a
+ * full fetch-detail body, so the result travels by file, not stdout).
  */
-function buildScript(req: { method: Method; path: string; body?: unknown }): string {
+function buildScript(req: { method: Method; path: string; body?: unknown }, resultPath: string): string {
   return `
 const __req = ${JSON.stringify(req)};
-const __marker = ${JSON.stringify(RESULT_MARKER)};
 let __out;
 try {
   const __tabs = context.pages().filter((p) => {
     try { return new URL(p.url()).hostname === 'www.pathofexile.com'; } catch { return false; }
   });
-  if (__tabs.length === 0) {
-    __out = { status: 0, ratelimit: {}, data: '__NO_POE_TAB__', error: 'No logged-in www.pathofexile.com tab with Playwriter enabled. Open + log in + click the Playwriter extension icon on a www.pathofexile.com tab.' };
-  } else {
-    const __page = __tabs[0];
+  let __page = __tabs[0];
+  if (!__page) {
+    // No www.pathofexile.com tab is open, but the playwriter sandbox is running
+    // — the extension IS attached to Chrome — so open a /trade2/ tab ourselves.
+    // The user's session cookies make it logged-in. Leave it open so later calls
+    // find it via context.pages() (one tab, no repeat opens).
+    try {
+      __page = await context.newPage();
+      await __page.goto('https://www.pathofexile.com/trade2/', { waitUntil: 'domcontentloaded', timeout: 30000 });
+      await new Promise((r) => setTimeout(r, 2000));
+    } catch (e) {
+      __page = undefined;
+      __out = { status: 0, ratelimit: {}, data: '__NO_POE_TAB__', error: 'No www.pathofexile.com tab open and auto-open failed (' + String(e && e.message || e) + '). Open Chrome, log into www.pathofexile.com, and click the Playwriter extension icon on a tab.' };
+    }
+  }
+  if (__page && __out === undefined) {
     __out = await __page.evaluate(async (req) => {
       const init = { method: req.method, credentials: 'include', headers: {} };
       // The site's own trade calls go through an XHR wrapper that sets
@@ -182,7 +196,7 @@ try {
 } catch (e) {
   __out = { status: 0, ratelimit: {}, data: String(e && e.message || e), error: 'playwriter sandbox error' };
 }
-console.log(__marker + JSON.stringify(__out));
+require('fs').writeFileSync(${JSON.stringify(resultPath)}, JSON.stringify(__out));
 `.trim();
 }
 
@@ -244,28 +258,34 @@ export async function poeFetch<T = any>(
 
     // --- run the fetch in the logged-in tab ---
     const session = ensureSession();
-    const dir = mkdtempSync(join(tmpdir(), 'poefetch-'));
+    // Under /tmp, not os.tmpdir(): playwriter's ScopedFS always allows /tmp but
+    // its os.tmpdir() resolves to /tmp too (TMPDIR unset in its process), so the
+    // sandbox cannot write into the macOS per-user $TMPDIR (/var/folders/...).
+    const dir = mkdtempSync(join('/tmp', 'poefetch-'));
     const scriptPath = join(dir, 'call.js');
-    writeFileSync(scriptPath, buildScript({ method, path, body }), 'utf8');
+    const resultPath = join(dir, 'result.json');
+    writeFileSync(scriptPath, buildScript({ method, path, body }, resultPath), 'utf8');
 
+    // The sandbox writes its JSON result to `resultPath` via fs — playwriter caps
+    // console.log output at ~10KB, so stdout can't carry a full fetch-detail body.
     let stdout = '', stderr = '', status: number | null = null;
+    let rawResult = '';
     try {
       ({ stdout, stderr, status } = runPlaywriter(['-s', session, '-f', scriptPath]));
+      try { rawResult = readFileSync(resultPath, 'utf8'); } catch { rawResult = ''; }
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }
 
     writeState({ lastCallMs: Date.now() });
 
-    const line = stdout.split('\n').find((l) => l.includes(RESULT_MARKER));
-    if (!line) {
+    if (!rawResult) {
       const hint = /not connected|no browser tabs|enable/i.test(stderr + stdout)
         ? '\nPlaywriter extension not connected. Open Chrome, log into www.pathofexile.com, and click the Playwriter extension icon on that tab.'
         : '';
       throw new Error(`playwriter returned no result (status ${status}).${hint}\n${stderr || stdout}`.trim());
     }
-    const parsed = JSON.parse(line.slice(line.indexOf(RESULT_MARKER) + RESULT_MARKER.length)) as
-      PoeFetchResponse<T> & { error?: string };
+    const parsed = JSON.parse(rawResult) as PoeFetchResponse<T> & { error?: string };
 
     // --- adaptive backoff on penalty / 429 ---
     const penalty = Math.max(penaltyMs(parsed.ratelimit || {}), parsed.status === 429 ? retryAfterMs(parsed.ratelimit || {}) || 10_000 : 0);

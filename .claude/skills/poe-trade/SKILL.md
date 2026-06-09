@@ -26,12 +26,13 @@ Thư viện TypeScript gọi Path of Exile 2 trade API qua **page-context fetch 
 | `poe-graph.ts` | Phân tích subgraph passive-tree (classify allocated node leaf/bridge/interior) — test-only, không có CLI/production consumer |
 | `poe-utils.ts` | Tiện ích chung (parse listing price, format output) |
 
-## Prerequisite — Chrome tab mở sẵn
+## Prerequisite — Chrome đã login + Playwriter bật
 
-Transport chạy trong page-context của tab www.pathofexile.com đã login — **không có headless path**.
+Transport chạy trong page-context của Chrome thật — **không có headless path**.
 
-- Chrome phải mở với ít nhất một tab đã đăng nhập `www.pathofexile.com`
-- Playwriter extension phải được bật trong Chrome đó
+- Chrome phải mở và **đã login** `www.pathofexile.com` (session cookie còn tươi)
+- Playwriter extension phải được bật trên một tab bất kỳ trong Chrome đó
+- KHÔNG cần mở sẵn tab trade: nếu chưa có tab `www.pathofexile.com`, transport tự `context.newPage()` → goto `/trade2/` rồi reuse cho mọi call sau
 - Env optional: `POE_PLAYWRITER_BIN`, `POE_PLAYWRITER_SESSION`, `POE_PLAYWRITER_SPACING` (đều có sane defaults)
 
 Transport tự enforce ≥2s spacing (persisted qua lockfile), đọc `x-rate-limit-*` headers, tự back-off khi gặp 429.

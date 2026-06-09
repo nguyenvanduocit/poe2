@@ -5,13 +5,15 @@ pipeline. collect.py and forecast.py both import from here so the slug/start
 mapping never drifts between the two scripts.
 
 Each entry:
-  name  — canonical league name (matches poe.ninja `economyLeagues[].name`)
+  name  — canonical league name; collect.py matches this to poe2scout `Leagues[].Value`
+          to resolve the poe2scout slug, so it MUST match poe2scout's display name exactly.
   start — league launch date (YYYY-MM-DD), used to compute league_day
   end   — transition date into the next league, or None if still active
-  slug  — value passed as `league=` in poe.ninja URLs (URL-encoded by callers)
+  slug  — legacy field (poe.ninja-style); collect.py no longer reads it (resolves
+          poe2scout ShortName dynamically). Kept for any other consumer.
 
-Verify slugs + dates against poe.ninja each time a new league launches:
-  curl -sL https://poe.ninja/poe2/api/data/index-state | python3 -m json.tool
+Verify names + dates against poe2scout each time a new league launches:
+  curl -sL https://api.poe2scout.com/poe2/Leagues | python3 -c "import sys,json;[print(l['Value'],l['ShortName'],l.get('IsCurrent')) for l in json.load(sys.stdin)]"
 """
 
 from datetime import datetime

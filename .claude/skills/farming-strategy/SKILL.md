@@ -34,10 +34,10 @@ Khi adapt strategy thinking từ POE1, hold giùm những khác biệt sau:
 
 **Currency primary là Exalted, không phải Chaos.** POE2 Exalted Orb = currency baseline (re-roll prefix/suffix), Divine = high-tier (re-roll value). Chaos Orb POE2 hoạt động khác POE1 — giờ có thể dùng lên Tablet. Mọi price snapshot phải quy về Exalted (hoặc Divine cho high-tier item), không Chaos.
 
-**Không có poe.watch.** poe.watch API hiện chỉ support POE1. POE2 economy data lấy từ:
-- **poe.ninja/poe2** — overview giá, trending, currency rate
-- **trade API** (pathofexile.com/trade2) — current listing, demand indicator — dùng qua skill `/trade` hoặc CDP Relay
-- **poe-ninja skill** đã support POE2 (xem `/poe-ninja` README)
+**Nguồn giá = poe2scout.** POE2 economy data lấy từ:
+- **poe2scout** — giá/volume/Δ7d/history cho currency + uniques (nguồn GIÁ duy nhất). `/poe2scout` lookup tay, `/economy-scan` survey, `/price-forecast` Chronos forecast.
+- **trade API** (pathofexile.com/trade2) — current listing, demand indicator — dùng qua skill `/trade` (playwriter page-context)
+- **poe-ninja** — CHỈ build/meta distribution (class/skill popularity), KHÔNG phải nguồn giá (xem `/poe-ninja`)
 
 **Crafting endgame là Remnant + Runic Recipe.** Mỗi area Runes of Aldur có Remnant với 2–10 slot. Mỗi Runeshape khắc thêm tăng wave + runic modifier monster. Slot count cao → hiếm hơn → craft được item hiếm hơn. Đây là wave-encounter risk-vs-reward loop — equivalent gần nhất với "scarab loop" của POE1 về mặt input/output economics.
 
@@ -49,11 +49,11 @@ Khi adapt strategy thinking từ POE1, hold giùm những khác biệt sau:
 
 ## Scripts
 
-> **Status: SCAFFOLD.** Cả 2 script POE2 chưa implement. POE2 0.5 launch ~29/05/2026 — sau khi poe.ninja/poe2 endpoint stable + character chạy thật, follow TODO trong `scripts/README.md` để wire data layer. Mục đích file này là khai báo command surface + data assumption.
+> **Status: SCAFFOLD.** Cả 2 script POE2 chưa implement. Trước khi tự viết script, dùng `/poe2scout` (`api.sh list/pairs/item`) + `/economy-scan` đã có sẵn cho price/volume — chúng đã wire poe2scout. Follow TODO trong `scripts/README.md` nếu cần snapshot riêng. Mục đích file này là khai báo command surface + data assumption.
 
 ### 1. Market Snapshot (`scripts/market-snapshot.ts` — TODO)
 
-Fetch economy overview từ poe.ninja/poe2: trending item, input cost (Tablet, Waystone, Remnant slot count), output value (Unique armour/weapon, Alloy, Ancient Rune, Kalguuran Skill/Support), currency rate (Exalted/Divine/Chaos), và auto-detected meta signal.
+Fetch economy overview từ poe2scout: trending item, input cost (Tablet, Waystone, Remnant slot count), output value (Unique armour/weapon, Alloy, Ancient Rune, Kalguuran Skill/Support), currency rate (Exalted/Divine từ Currency Exchange pairs), và auto-detected meta signal. Reuse `.claude/skills/poe2scout/scripts/api.sh` thay vì gọi API tay.
 
 ```bash
 # Default: top 20 trending + categorized inputs/outputs + meta signals
@@ -264,9 +264,9 @@ bun .claude/skills/farming-strategy/scripts/analyze.ts --strategy <best> --maps-
 - **DarthMicrotransaction**: POE2 build + endgame
 
 ### Market Data
-- **poe.ninja/poe2** — trending + currency rate POE2 (via `/poe-ninja` skill)
-- **Trade2 API** — current listing POE2 (via `/trade` skill, CDP Relay)
-- **NOT poe.watch** — POE1 only
+- **poe2scout** — nguồn GIÁ duy nhất: price + volume + Δ7d + history cho currency/uniques (via `/poe2scout`, `/economy-scan`, `/price-forecast`)
+- **Trade2 API** — current listing POE2 (via `/trade` skill, playwriter page-context)
+- **poe-ninja** — CHỈ build/meta distribution, KHÔNG phải nguồn giá
 
 ### Community
 - r/PathOfExile2 — general discussion

@@ -11,10 +11,15 @@ table-based layout. Feeding the whole page to pandoc/markitdown leaves a wall of
 raw HTML (or silently truncates). Handing the converter ONLY the post-body
 fragment lets it emit clean Markdown headings and bullet lists.
 
-Selector is semantic, not positional: we anchor on the ``<h2>`` title and walk
-up to its enclosing ``div.content``. Fails loudly if the structure is missing —
-that signals a blocked fetch (Cloudflare) or a forum redesign, both of which
-should stop the pipeline rather than emit a partial file.
+Selector is semantic, not positional. Full patch-notes threads carry an ``<h2>``
+patch title, so we anchor on it and walk up to its enclosing ``div.content``.
+GGG's mid-patch *"Patch Notes Preview"* threads instead start sections at ``<h3>``
+with no ``<h2>``; for those we fall back to the first ``tr.newsPost`` post cell and
+take its ``div.content`` body, re-parsed with ``lxml`` (which reconstructs the
+malformed forum DOM like a browser — ``html.parser`` mis-nests the unclosed empty
+content div these threads ship). Fails loudly if neither anchor resolves — that
+signals a blocked fetch (Cloudflare) or a forum redesign, both of which should
+stop the pipeline rather than emit a partial file.
 
 GGG sometimes packs several patch-note entries into a single ``<li>``, one
 entry per line, separated by a newline or a ``<br>``. With ``pandoc --wrap=none``
@@ -75,26 +80,48 @@ def main() -> None:
     html = open(src, encoding="utf-8", errors="replace").read()
     soup = BeautifulSoup(html, "html.parser")
 
+    # Full patch-notes thread: anchor on the <h2> title, walk up to its div.content.
     title = soup.find("h2")
-    if title is None:
-        sys.exit(
-            "extract-forum: no <h2> patch title found — fetch was blocked "
-            "(Cloudflare) or the forum layout changed"
-        )
+    if title is not None:
+        node = title.find_parent("div", class_="content")
+        if node is None:
+            sys.exit(
+                "extract-forum: <h2> title has no enclosing <div class='content'> "
+                "— forum post structure changed"
+            )
+        for img in node.find_all("img"):
+            img.decompose()
+        split_packed_list_items(node, soup)
+        sys.stdout.write(str(node))
+        return
 
-    node = title.find_parent("div", class_="content")
+    # Preview thread (h3 sections, no h2): re-parse with lxml so the OP body sits
+    # in a non-empty div.content inside the first newsPost cell, then emit that.
+    try:
+        soup = BeautifulSoup(html, "lxml")
+    except Exception:
+        sys.exit(
+            "extract-forum: preview-thread layout (no <h2>) needs the 'lxml' parser "
+            "— install with: pip install lxml"
+        )
+    post = soup.find("tr", class_="newsPost")
+    cell = post.find("td") if post else None
+    node = cell.find("div", class_="content") if cell else None
+    if node is None or not node.get_text(strip=True):
+        node = cell  # whole post cell when the content div is empty/absent
     if node is None:
         sys.exit(
-            "extract-forum: <h2> title has no enclosing <div class='content'> "
-            "— forum post structure changed"
+            "extract-forum: no <h2> title and no newsPost post body found — fetch "
+            "was blocked (Cloudflare) or the forum layout changed"
         )
 
     for img in node.find_all("img"):
         img.decompose()
-
+    for div in node.find_all("div", class_="content"):
+        if not div.get_text(strip=True):  # drop empty layout wrappers only
+            div.decompose()
     split_packed_list_items(node, soup)
-
-    sys.stdout.write(str(node))
+    sys.stdout.write(node.decode_contents())
 
 
 if __name__ == "__main__":

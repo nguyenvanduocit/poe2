@@ -1,33 +1,44 @@
 #!/usr/bin/env python3
 """
-Collect POE2 price history từ poe.ninja POE2 endpoint — currency, fragment,
-waystone, catalyst, essence, distilled emotion, omen, soul core, và (sau 0.5
-launch) Remnant / Alloy / Ancient Rune categories.
+Collect POE2 price history từ poe2scout.com — nguồn giá DUY NHẤT của workspace.
 
-Progressive: skips items already collected for today. Fetches every day from league start.
+poe2scout là registered GGG partner (OAuth scope service:cxapi) nên re-publish ra
+api.poe2scout.com (public, no-auth):
+  - Currency: volume-weighted từ Currency Exchange (volume trade THẬT).
+  - Uniques: floor-ask securable từ trade2, quy về Exalted.
+Cả 24 category (currency + fragments + runes + uniques + ...) đều có per-item
+DailyStatsHistory (OHLC + Volume) full-league — không còn giới hạn 7d sparkline.
+
+Progressive theo dedup key (league, item, variant, type, date): chạy lại trong ngày
+ghi đè record hôm nay; ngày khác cùng tồn tại.
+
+NOTE: record field giữ tên `price_chaos` (downstream contract với forecast.py +
+build.ts) nhưng giá trị denominated theo **Exalted Orb** — baseline POE2. poe2scout
+DailyStatsHistory đã denominate theo BaseCurrencyApiId="exalted" cho league hiện tại,
+nên map THẲNG từ DailyStats.Average (fallback Close) — KHÔNG cần convert như poe.ninja.
+`listings` = DailyStats.Volume (volume giao dịch trong ngày). `type` = category Label
+(currency category → "Currency", giữ forecast.py `--type Currency`).
+
+SOURCE:
+  GET https://api.poe2scout.com/poe2/Leagues                      → resolve slug (Value→ShortName)
+  GET .../Leagues/{slug}/Items/Categories                         → 24 category
+  GET .../Leagues/{slug}/{Currencies|Uniques}/ByCategory?...      → item list + CurrentPrice
+  GET .../Leagues/{slug}/Items/{ItemId}/DailyStatsHistory?DayCount=365  → daily OHLC + Volume
 
 Usage:
   python .claude/skills/price-forecast/scripts/collect.py
   python .claude/skills/price-forecast/scripts/collect.py --leagues "Runes of Aldur"
-  python .claude/skills/price-forecast/scripts/collect.py --force    # re-fetch everything
-
-NOTE: record field giữ tên `price_chaos` (downstream contract với forecast.py +
-build.ts) nhưng giá trị denominated theo **Exalted Orb** — baseline currency của
-POE2 (NOT Chaos Orb như POE1). Giá lấy từ poe.ninja exchange: primaryValue (theo
-divine) × core.rates.exalted = giá Exalted.
-
-SOURCE: `https://poe.ninja/poe2/api/economy/exchange/current/overview?league=<display-name>&type=Currency`
-(display-name từ leagues.py, KHÔNG phải slug; endpoint cũ `stash/current/...` đã 404).
-Endpoint này chỉ phục vụ Currency — uniques/fragments cần poe2scout (xem TODO ở CURRENCY_TYPES).
+  python .claude/skills/price-forecast/scripts/collect.py --force    # drop old history for re-fetched items
 """
 
 import json
-import urllib.request
 import os
 import ssl
 import sys
 import time
-from datetime import datetime, timedelta
+import urllib.parse
+import urllib.request
+from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from leagues import LEAGUES
@@ -53,258 +64,214 @@ os.makedirs(DAILY_DIR, exist_ok=True)
 # Master file accumulates one record per (league, item, variant, type, date).
 MASTER_FILE = os.path.join(DATA_DIR, "master.json")
 
+BASE = "https://api.poe2scout.com/poe2"
 
-# Per-day raw crawl snapshot. Overwritten on every crawl within the same day,
-# so it always reflects the latest 3-hourly fetch. Audit trail; the master can
-# be reconstructed from these if merge logic ever drifts.
+# POE2 baseline = Exalted Orb. Only track items ≥ 5 ex (flippable threshold) so we
+# don't fetch DailyStatsHistory for hundreds of vendor-trash uniques.
+MIN_EXALTED = 5
+
+# Politeness delay between per-item history calls — poe2scout rate-limits bulk pulls
+# (the reason its own skill went lazy-cache). 0.12s keeps a full crawl ~1-2 min.
+HISTORY_DELAY_SEC = 0.12
+
+
+# Per-day raw crawl snapshot. Overwritten on every crawl within the same day, so it
+# always reflects the latest fetch. Audit trail; master can be reconstructed from these.
 def daily_path(date_str):
     return os.path.join(DAILY_DIR, f"{date_str}.json")
 
 
-# POE2 leagues live in leagues.py (single source of truth shared with forecast.py).
-
-# poe.ninja POE2 economy chỉ expose endpoint `exchange/current/overview` cho
-# CURRENCY (currency-vs-currency barter). type=Fragment / Unique* trả HTTP 200
-# nhưng `lines` rỗng — uniques/fragments/waystone KHÔNG có public exchange feed.
-#
-# TODO(uniques & non-currency items): poe2scout (`.claude/skills/poe2scout`) có
-# per-item OHLC DailyStatsHistory cho cả 24 category gồm uniques/fragments/runes/
-# soulcores/omens — đó là nguồn đúng cho phần non-currency. Migrate sang poe2scout
-# là việc RIÊNG (đổi dedup key + history semantics, cần user quyết), không gộp vào
-# fix endpoint này.
-CURRENCY_TYPES = ["Currency"]
-
-# POE2 baseline = Exalted Orb. 5 ex ≈ entry threshold for "flippable" item.
-# Record field giữ tên `price_chaos` (downstream contract với forecast.py +
-# build.ts) dù giá trị denominated theo Exalted.
-MIN_EXALTED = 5
-
-
 def fetch_json(url):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=15, context=SSL_CTX) as r:
+    with urllib.request.urlopen(req, timeout=20, context=SSL_CTX) as r:
         return json.loads(r.read())
 
 
 def load_existing():
-    """Load master.json (the accumulated history). Returns (records, keys-by-day)."""
+    """Load master.json (accumulated history). Returns the record list."""
     if not os.path.exists(MASTER_FILE):
-        return [], set()
+        return []
     with open(MASTER_FILE) as f:
-        data = json.load(f)
-    # Key includes `date` so progressive mode skips items already collected
-    # for *today specifically* — re-running tomorrow does pick them back up.
-    today = datetime.now().strftime("%Y-%m-%d")
-    keys = set()
-    for d in data:
-        if d.get("date") == today:
-            keys.add((d["league"], d["item"], d.get("variant", ""), d["type"]))
-    return data, keys
+        return json.load(f)
 
 
-def progress(current, total, name, price=None, skipped=0):
+def progress(current, total, name, price=None):
     pct = current / total * 100 if total else 0
     bar_len = 20
     filled = int(bar_len * current / total) if total else 0
     bar = "█" * filled + "░" * (bar_len - filled)
-    extra = f" {price:,.0f}c" if price else ""
-    skip_info = f" skip:{skipped}" if skipped else ""
+    extra = f" {price:,.0f}ex" if price else ""
     print(
-        f"\r    [{bar}] {current}/{total} ({pct:.0f}%) {name}{extra}{skip_info}    ",
+        f"\r    [{bar}] {current}/{total} ({pct:.0f}%) {name}{extra}    ",
         end="",
         flush=True,
     )
 
 
-def derive_history_from_sparkline(current_value, sparkline_data, today, league_start):
+def resolve_scout_slug(league_name):
+    """Map a leagues.py display name → poe2scout ShortName slug (via live Leagues API)."""
+    try:
+        leagues = fetch_json(f"{BASE}/Leagues")
+    except Exception as e:
+        print(f"  ! could not fetch poe2scout leagues: {e}")
+        return None
+    for lg in leagues:
+        if lg.get("Value") == league_name:
+            return lg.get("ShortName")
+    return None
+
+
+def fetch_category_items(slug, kind, category_api_id):
+    """Paginate ByCategory → all items (kind = 'Currencies' | 'Uniques')."""
+    items = []
+    page = 1
+    while True:
+        url = (
+            f"{BASE}/Leagues/{slug}/{kind}/ByCategory"
+            f"?Category={urllib.parse.quote(category_api_id)}&Page={page}&PerPage=100"
+        )
+        body = fetch_json(url)
+        items.extend(body.get("Items", []))
+        if page >= body.get("Pages", 1):
+            break
+        page += 1
+    return items
+
+
+def collect_league(league_info):
     """
-    poe.ninja's overview response includes a `sparkLine.data` array of cumulative
-    percentage deltas from a 7-day-ago baseline. Combined with the current
-    `chaosValue` (which equals baseline × (1 + totalChange/100)), we can recover
-    the absolute price for each of the past 7 days without a second API call.
-
-    Defensively coerces None/missing entries — poe.ninja returns null in
-    sparkLine for days where the item had no listings.
+    For each category, list items ≥ MIN_EXALTED, then pull each item's full-league
+    DailyStatsHistory (OHLC + Volume) → one record per day. Prices already in Exalted.
     """
-    # Always include today's snapshot first; even if sparkLine is empty/junk
-    # we still want a single price point for the current day.
-    if not current_value or current_value <= 0:
-        return []
-
-    clean = [p for p in (sparkline_data or []) if isinstance(p, (int, float))]
-    if not clean:
-        return [(today, current_value)]
-
-    total_change_pct = clean[-1]
-    denom = 1 + total_change_pct / 100
-    baseline = current_value / denom if denom != 0 else current_value
-    days = []
-    n = len(clean)
-    for i, pct in enumerate(clean):
-        # data[0] = oldest (baseline), data[-1] = today
-        days_ago = n - 1 - i
-        day = today - timedelta(days=days_ago)
-        if day < league_start:
-            continue
-        days.append((day, baseline * (1 + pct / 100)))
-    # Override the sparkLine's today-approximation with the authoritative current_value
-    days.append((today, current_value))
-    return days
-
-
-def collect_league(league_info, existing_keys, force=False):
-    """
-    Collect a snapshot per item from poe.ninja's economy overview endpoints.
-    Each item in the response carries a `sparkLine` array we expand to 7 daily
-    data points (oldest-first), so a single API call per type yields a week of
-    history without needing the now-removed itemhistory endpoint.
-    """
-    league = league_info["slug"]
     league_name = league_info["name"]
     league_start = datetime.strptime(league_info["start"], "%Y-%m-%d")
-    encoded = urllib.request.quote(league)
-    today = datetime.now()
 
     print(f"\n{'=' * 60}")
     print(f"  {league_name} (start: {league_info['start']})")
     print(f"{'=' * 60}\n")
 
-    all_items = []
-    total_types = len(CURRENCY_TYPES)
-    type_idx = 0
+    slug = resolve_scout_slug(league_name)
+    if not slug:
+        print(f"  ! poe2scout has no league matching {league_name!r} — skipped")
+        return []
+    print(f"  poe2scout slug: {slug}")
 
-    # poe.ninja exchange overview — currency-vs-currency barter.
-    # Schema: core.rates.exalted = exalted per 1 divine; lines[] carry
-    # primaryValue (price quy theo DIVINE), volumePrimaryValue (trade throughput),
-    # sparkline.data (cumulative % delta, 7 điểm — cùng dạng sparkLine cũ); join
-    # lines[].id → items[].name. Quy giá ra Exalted (baseline POE2) = primaryValue × ex_rate.
-    for currency_type in CURRENCY_TYPES:
-        type_idx += 1
+    try:
+        cats = fetch_json(f"{BASE}/Leagues/{slug}/Items/Categories")
+    except Exception as e:
+        print(f"  ! could not fetch categories: {e}")
+        return []
+
+    groups = [("Currencies", c) for c in cats.get("CurrencyCategories", [])] + [
+        ("Uniques", c) for c in cats.get("UniqueCategories", [])
+    ]
+
+    records = []
+    for gi, (kind, cat) in enumerate(groups, 1):
+        cat_api = cat["ApiId"]
+        cat_label = cat.get("Label", cat_api)
         try:
-            data = fetch_json(
-                f"https://poe.ninja/poe2/api/economy/exchange/current/overview?league={encoded}&type={currency_type}"
-            )
-            ex_rate = (data.get("core", {}).get("rates", {}) or {}).get("exalted")
-            names = {it["id"]: it.get("name", it["id"]) for it in data.get("items", [])}
-            lines = data.get("lines", [])
+            items = fetch_category_items(slug, kind, cat_api)
+        except Exception as e:
+            print(f"  [{gi}/{len(groups)}] {cat_label}: ERROR listing ({e})")
+            continue
 
-            candidates = []
-            for ln in lines:
-                pdiv = ln.get("primaryValue")
-                if pdiv is None or not ex_rate:
+        flippable = [it for it in items if (it.get("CurrentPrice") or 0) >= MIN_EXALTED]
+        print(
+            f"  [{gi}/{len(groups)}] {cat_label}: {len(items)} items, "
+            f"{len(flippable)} ≥ {MIN_EXALTED} ex"
+        )
+
+        collected = 0
+        for i, it in enumerate(flippable):
+            item_id = it["ItemId"]
+            item_name = it.get("Text") or it.get("Name") or str(item_id)
+            progress(i + 1, len(flippable), item_name, it.get("CurrentPrice"))
+
+            try:
+                hist = fetch_json(
+                    f"{BASE}/Leagues/{slug}/Items/{item_id}/DailyStatsHistory?DayCount=365"
+                )
+            except Exception:
+                continue  # skip a flaky item, keep the crawl going
+
+            for ds in hist.get("DailyStats", []):
+                try:
+                    day = datetime.strptime(ds["Time"], "%Y-%m-%d")
+                except (KeyError, ValueError):
                     continue
-                price_ex = pdiv * ex_rate
-                if price_ex < MIN_EXALTED:
+                if day < league_start:
                     continue
-                candidates.append(
+                price = ds.get("Average") or ds.get("Close")
+                if not price or price <= 0:
+                    continue
+                records.append(
                     {
-                        "name": names.get(ln.get("id"), ln.get("id", "")),
-                        "price": price_ex,
-                        "spark": (ln.get("sparkline") or {}).get("data") or [],
-                        "volume": ln.get("volumePrimaryValue", 0),
+                        "league": league_name,
+                        "item": item_name,
+                        "variant": "",
+                        "type": cat_label,
+                        "date": day.strftime("%Y-%m-%d"),
+                        "league_day": (day - league_start).days,
+                        "price_chaos": round(price, 2),
+                        "listings": round(ds.get("Volume") or 0),
+                        "day_of_week": day.weekday(),
                     }
                 )
-            candidates.sort(key=lambda x: x["price"], reverse=True)
+            collected += 1
+            time.sleep(HISTORY_DELAY_SEC)
 
-            print(
-                f"  [{type_idx}/{total_types}] {currency_type}: {len(lines)} total, {len(candidates)} ≥ {MIN_EXALTED} ex"
-            )
-            collected = 0
+        print(f"\r    ✓ {collected} items snapshotted{' ' * 40}")
 
-            for i, item in enumerate(candidates):
-                progress(i + 1, len(candidates), item["name"], item["price"])
-
-                history = derive_history_from_sparkline(
-                    item["price"], item["spark"], today, league_start
-                )
-                for day, day_price in history:
-                    league_day = (day - league_start).days
-                    all_items.append(
-                        {
-                            "league": league_name,
-                            "item": item["name"],
-                            "variant": "",
-                            "type": currency_type,
-                            "date": day.strftime("%Y-%m-%d"),
-                            "league_day": league_day,
-                            "price_chaos": round(day_price, 2),
-                            "listings": round(item["volume"]),
-                            "day_of_week": day.weekday(),
-                        }
-                    )
-                collected += 1
-
-            print(f"\r    ✓ {collected} items snapshotted{' ' * 40}")
-        except Exception as e:
-            print(f"  [{type_idx}/{total_types}] {currency_type}: ERROR ({e})")
-
-    return all_items
+    return records
 
 
 def main():
     start_time = time.time()
 
-    # Parse args
     filter_leagues = None
     force = "--force" in sys.argv
     for i, arg in enumerate(sys.argv[1:], 1):
         if arg == "--leagues" and i < len(sys.argv) - 1:
             filter_leagues = [l.strip() for l in sys.argv[i + 1].split(",")]
 
-    # Load existing data for progressive mode
-    existing_data, existing_keys = load_existing()
-    now = datetime.now()
+    existing_data = load_existing()
 
     print(f"{'=' * 60}")
-    print(f"  PoE Price Collector (currency & consumables)")
-    print(f"  {len(CURRENCY_TYPES)} currency type(s) via poe.ninja exchange overview")
+    print(f"  PoE2 Price Collector — source: poe2scout.com (single price source)")
     print(
-        f"  Min {MIN_EXALTED} ex | {'FORCE mode' if force else f'Progressive ({len(existing_keys)} items cached)'}"
+        f"  Min {MIN_EXALTED} ex | {'FORCE (drop old history for re-fetched)' if force else 'Merge mode'}"
     )
     print(f"{'=' * 60}")
 
-    # Determine which leagues to collect
+    # Which leagues: explicit filter, else active leagues + any ended league we lack data for.
     leagues = LEAGUES
     if filter_leagues:
         leagues = [l for l in LEAGUES if l["name"] in filter_leagues]
         print(f"\nFiltered to: {[l['name'] for l in leagues]}")
     else:
-        # Auto-select: only active leagues, or ended leagues we haven't collected yet
         active = []
         for l in LEAGUES:
             if l["end"] is None:
                 active.append(l)
-            else:
-                end = datetime.strptime(l["end"], "%Y-%m-%d")
-                # Include ended leagues if we have no data for them
-                if not any(d["league"] == l["name"] for d in existing_data):
-                    active.append(l)
+            elif not any(d["league"] == l["name"] for d in existing_data):
+                active.append(l)
         leagues = active
         print(f"\nAuto-selected leagues: {[l['name'] for l in leagues]}")
 
     new_data = []
     for league in leagues:
-        items = collect_league(league, existing_keys, force)
+        items = collect_league(league)
         new_data.extend(items)
         print(f"\n  → {len(items):,} new data points from {league['name']}")
-        time.sleep(1)
 
     if not new_data and not existing_data:
         print("\n❌ No data collected!")
         return
 
-    # Merge into master: NEW wins for any (league, item, variant, type, date)
-    # collision. This handles the 3-hour cron correctly — when the same day's
-    # record gets re-fetched, the latest crawl's value replaces the earlier
-    # one (poe.ninja revises sparkLine intraday). Across days, both records
-    # coexist because `date` is part of the dedupe key.
-    #
-    # `--force` skips the merge entirely: NEW data only. Use sparingly — old
-    # history is dropped for items re-fetched, kept for items that aren't.
-    if force:
-        all_records = new_data
-    else:
-        all_records = new_data + existing_data
+    # Merge into master: NEW wins for any (league, item, variant, type, date) collision.
+    # --force keeps only NEW data (old history dropped for re-fetched items, kept otherwise).
+    all_records = new_data if force else new_data + existing_data
 
     seen = set()
     merged = []
@@ -314,22 +281,17 @@ def main():
             seen.add(key)
             merged.append(d)
 
-    # Atomic master write (temp → rename) so a crash mid-write can't corrupt
-    # the source of truth that build.ts depends on.
+    # Atomic master write so a crash mid-write can't corrupt the source build.ts depends on.
     tmp_master = MASTER_FILE + ".tmp"
     with open(tmp_master, "w") as f:
         json.dump(merged, f)
     os.replace(tmp_master, MASTER_FILE)
 
-    # Per-day audit snapshot — captures EXACTLY what came back from poe.ninja
-    # this crawl (no merge, no dedupe with history). Overwritten by later
-    # crawls within the same UTC day, so it always reflects the most recent
-    # 3-hour fetch — sufficient resolution for an audit trail without
-    # blowing up disk with 8 files/day.
+    # Per-day audit snapshot — exactly what came back this crawl (no merge).
     today = datetime.now().strftime("%Y-%m-%d")
-    daily_file = daily_path(today)
     todays_crawl = [d for d in new_data if d["date"] == today]
     if todays_crawl:
+        daily_file = daily_path(today)
         tmp_daily = daily_file + ".tmp"
         with open(tmp_daily, "w") as f:
             json.dump(todays_crawl, f)
@@ -337,28 +299,25 @@ def main():
         print(f"  Audit snapshot: daily/{today}.json ({len(todays_crawl)} records)")
 
     elapsed = time.time() - start_time
-    minutes = int(elapsed // 60)
-    seconds = int(elapsed % 60)
-
     print(f"\n{'=' * 60}")
-    print(f"  DONE in {minutes}m {seconds}s")
+    print(f"  DONE in {int(elapsed // 60)}m {int(elapsed % 60)}s")
     print(
         f"  {len(new_data):,} new + {len(existing_data):,} existing → {len(merged):,} total (deduped)"
     )
     print(f"  Saved to {MASTER_FILE}")
-    deduped = merged  # alias for the loop below
-    leagues_found = set(d["league"] for d in deduped)
-    items_found = set(d["item"] for d in deduped)
-    print(f"  {len(leagues_found)} leagues, {len(items_found)} unique items")
-    for league in sorted(leagues_found):
-        league_data = [d for d in deduped if d["league"] == league]
+    leagues_found = sorted(set(d["league"] for d in merged))
+    print(
+        f"  {len(leagues_found)} leagues, {len(set(d['item'] for d in merged))} unique items"
+    )
+    for league in leagues_found:
+        league_data = [d for d in merged if d["league"] == league]
         days = set(d["league_day"] for d in league_data)
-        uitems = len(set(d["item"] for d in league_data))
-        types = set(d["type"] for d in league_data)
+        types = sorted(set(d["type"] for d in league_data))
         print(
-            f"    {league}: {len(league_data):,} pts, days {min(days)}→{max(days)}, {uitems} items"
+            f"    {league}: {len(league_data):,} pts, days {min(days)}→{max(days)}, "
+            f"{len(set(d['item'] for d in league_data))} items"
         )
-        print(f"      types: {', '.join(sorted(types))}")
+        print(f"      types: {', '.join(types)}")
     print(f"{'=' * 60}")
 
 

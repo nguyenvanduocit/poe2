@@ -204,7 +204,7 @@ html+=`<h2 id="rank">Xếp hạng bottleneck — cung hẹp vs cầu cao</h2><ta
   (R.ranking||[]).map(r=>{const ty=TYPES[r.type]||TYPES.stable;return `<tr><td>${mark(r.chain)}</td><td style="color:${ty.color};font-weight:700">${ty.label}</td><td>${mark(r.evidence)}</td></tr>`;}).join("")+`</tbody></table>`;
 html+=`<h2 id="prov">Nguồn & độ tin</h2><ul style="font-size:14px;max-width:82ch">`+(R.provenance||[]).map(p=>`<li>${mark(p)}</li>`).join("")+`</ul>`;
 html+=(R.warnings||[]).map(w=>`<div class="callout warn"><strong>${esc(w.title)}</strong>${mark(w.body)}</div>`).join("");
-html+=`<footer>Snapshot ${esc(M.date)} · League ${esc(M.league)} · 1 Divine = ${esc(M.exPerDiv)} Exalted<br>Edges: patch notes 0.5.0 + poe2db/poe2wiki · Giá: poe2scout + poe.ninja exchange · Sinh từ /economy-scan</footer>`;
+html+=`<footer>Snapshot ${esc(M.date)} · League ${esc(M.league)} · 1 Divine = ${esc(M.exPerDiv)} Exalted<br>Edges: patch notes 0.5.0 + poe2db/poe2wiki · Giá: poe2scout (list + Currency Exchange) · Sinh từ /economy-scan</footer>`;
 document.getElementById("main").innerHTML=html;
 
 /* TOC */

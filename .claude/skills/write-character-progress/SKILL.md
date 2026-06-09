@@ -39,7 +39,7 @@ File `.md` trong `content/characters/` với:
 - **Progress Log** cập nhật entry mới ở TOP với format `### YYYY-MM-DD` (reverse-chrono).
 - 100% voice rule tuân thủ.
 
-## Voice rules (project luôn win — restate top 5)
+## Voice rules (project luôn win — restate top 6)
 
 1. **Owner voice** — đây là note của character mình tự chơi, KHÔNG ai khác chơi character này. CẤM third-person summary: "character này được build với...", "owner đã chọn...". Dùng first-person hoặc direct: *"đã transition từ life sang CI ngày 2026-04-15 vì..."*, *"Wretched Defiler chọn vì scale lightning qua Doryani's"*.
 2. **Prose-first** — Goal section, Priority Actions, Progress Log entry đều prose narrative. Bullet chỉ cho (a) gear list (item slot có structure), (b) numbered priority actions (≥3 ngang hàng), (c) defense stat dump trong Snapshot.
@@ -58,6 +58,7 @@ File `.md` trong `content/characters/` với:
    ```
 
 5. **Title KHÔNG kèm league/patch** — `"TheLeader_A — Progress Tracker"` đúng. `"TheLeader_A — Mirage 3.28 Tracker"` SAI (site auto-concat từ `league_name`/`patch`).
+6. **Snapshot luôn ở thì hiện tại, đừng vá** — Các section trạng thái (Snapshot stats, Gear Summary, Goal, bottleneck) phải viết LẠI thành con số/trang bị **hiện tại** mỗi lần update, KHÔNG để số cũ rồi chú thích "(đã đổi)" bên cạnh, KHÔNG chừa gear cũ "để so sánh". Chỉ `## Progress Log` mới mang tính thời gian (reverse-chrono session entries) — đó là chỗ DUY NHẤT lịch sử sống trong doc; mọi section khác là trạng thái đúng-bây-giờ. Ref: CLAUDE.md `## Content Writing Voice` → "Rewrite fresh, đừng vá doc cũ".
 
 ## Maxroll patterns we don't apply here
 

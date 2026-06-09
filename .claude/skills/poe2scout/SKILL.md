@@ -9,12 +9,14 @@ tags: [economy, poe2scout, api, price, history, volume, ohlc, poe2]
 
 API: `https://api.poe2scout.com` — public REST, **no auth**, JSON, CORS-enabled. Site track cả POE1 lẫn POE2 (realm `pc` vs `poe2`).
 
+**Đây là nguồn GIÁ duy nhất của workspace.** poe2scout là registered GGG partner (OAuth scope `service:cxapi`) nên re-publish data Currency Exchange (currency = volume-weighted, volume trade thật) + trade2 floor-ask (uniques) ra API công khai — mình consume free, không cần partner. Mọi price/volume/history (chat, content, `/price-forecast`, `/economy-scan`, `/farming-strategy`) đến từ đây. poe.ninja CHỈ còn cho build/meta.
+
 **Realm constants for this workspace:**
 - Realm: `poe2`
 - Auto-detected default league: current softcore (vd `vaal`). Override env `POE2SCOUT_LEAGUE=<slug>`.
 - Coverage: 15 Currency categories + 7 Unique categories.
 
-> **Scope**: poe2scout = poe2scout.com interactive per-item OHLC lookup (catalog + on-demand history). Cho ML 7-day forecast / BUY-SELL-HOLD recommendation từ poe.ninja, dùng [`/price-forecast`](../price-forecast/SKILL.md) — đó là analysis layer, không phải duplicate của skill này.
+> **Scope**: poe2scout = interactive lookup tay (catalog + per-item OHLC + raw ticks + exchange pairs). Cho ML 7-day forecast / BUY-SELL-HOLD — dùng [`/price-forecast`](../price-forecast/SKILL.md), nó ăn cùng data poe2scout này (collect.py kéo DailyStatsHistory) rồi chạy Chronos. Cùng nguồn, khác lớp: skill này lookup ngay, price-forecast là pipeline tự động.
 
 ## Architecture (v3 — lazy cache)
 
@@ -37,6 +39,8 @@ Base: `https://api.poe2scout.com`, realm path = `poe2`.
 | `GET /poe2/Leagues/{league}/Items/Categories` | `cmd_categories`, snapshot |
 | `GET /poe2/Leagues/{league}/{Currencies\|Uniques}/ByCategory?Category=...&Page=...&PerPage=...` | snapshot, list, item-fallback |
 | `GET /poe2/Leagues/{league}/Items/{itemId}/DailyStatsHistory?DayCount=365` | **lazy item history fetch** |
+| `GET /poe2/Leagues/{league}/Items/{itemId}/History?LogCount=N` | `cmd_ticks` — raw per-tick (Price/Time/Quantity, N÷4) |
+| `GET /poe2/Leagues/{league}/SnapshotPairs` | `cmd_pairs` — Currency Exchange, real traded volume |
 | `GET /poe2/Leagues/{league}/ReferenceCurrencies` | `cmd_reference` |
 
 DailyStatsHistory response (raw):
@@ -75,6 +79,13 @@ DailyStatsHistory response (raw):
 # Reference rates
 .claude/skills/poe2scout/scripts/api.sh reference
 
+# Currency Exchange pairs — REAL traded volume + ex/div (cxapi-derived)
+.claude/skills/poe2scout/scripts/api.sh pairs runes 30
+
+# Raw per-tick price history (ML / fine-grain) — name or numeric ItemId, count÷4
+.claude/skills/poe2scout/scripts/api.sh ticks "mirror" runes 40
+.claude/skills/poe2scout/scripts/api.sh ticks 295 runes 8
+
 # Opt-in: full multi-item trends (slow ~15 min, hits rate limit risk)
 .claude/skills/poe2scout/scripts/api.sh trends
 ```
@@ -88,6 +99,8 @@ DailyStatsHistory response (raw):
 | `history <name>` | 0.6s | Force refresh single item (TTL=0, write fresh cache) |
 | `trends` | ~15 min | OPT-IN: pull all items' history + multi-window ranking → `trends.json` |
 | `list <cat> [n]` | 0.5s | Top N items by current price (7d Δ via ByCategory) |
+| `pairs [n]` | 0.4s | Currency Exchange pairs — REAL traded volume + ex/div |
+| `ticks <name-or-id> [n]` | 0.4s | Raw per-tick price history (Price/Time/Quantity, n÷4) |
 | `leagues` | 0.2s | List leagues with current marker |
 | `categories` | 0.3s | List currency + unique categories for league |
 | `reference` | 0.3s | Chaos/Divine/Exalted rates |

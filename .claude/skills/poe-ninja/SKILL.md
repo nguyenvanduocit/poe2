@@ -152,9 +152,9 @@ Verify chính xác slug bằng:
 .claude/skills/poe-ninja/scripts/builds-api.sh leagues
 ```
 
-## Economy / Price Data
+## Economy / Price Data — KHÔNG phải việc của skill này
 
-poe.ninja economy/price → `/price-forecast` (`collect.py`). Skill này chỉ crawl build distribution.
+Skill này **chỉ** crawl build/meta distribution (class/skill/item/keystone popularity). **poe.ninja KHÔNG còn là nguồn giá** của workspace — mọi giá/volume/history đến từ **poe2scout** (`/poe2scout` cho lookup tay, `/price-forecast` cho Chronos forecast, `/economy-scan` cho survey). Đừng dùng poe.ninja economy endpoint cho giá.
 
 ## File Structure
 

@@ -14,17 +14,17 @@ Usage:
   python .claude/skills/price-forecast/scripts/forecast.py --top 20
   python .claude/skills/price-forecast/scripts/forecast.py --json
 
-League is auto-detected from poe.ninja POE2 endpoint. Previous POE2 league data is
-prepended as extra history for cross-league pattern learning (limited — POE2
-history is shorter than POE1 because POE2 EA only started 2024-12).
+League is auto-detected from poe2scout (Leagues IsCurrent). Previous POE2 league
+data is prepended as extra history for cross-league pattern learning (limited —
+POE2 history is shorter than POE1 because POE2 EA only started 2024-12).
 
-POE2 baseline currency = Exalted Orb (NOT Chaos Orb). Prices labeled `chaos`
-in raw poe.ninja response are actually exalted-denominated.
+POE2 baseline currency = Exalted Orb (NOT Chaos Orb). The record field is named
+`price_chaos` for the downstream contract but values are exalted-denominated
+(poe2scout DailyStatsHistory denominates in the league base currency = exalted).
 """
 
 import json
 import os
-import ssl
 import sys
 import urllib.request
 import pandas as pd
@@ -46,7 +46,7 @@ DATA_FILE = os.path.join(
     "price-history",
     "master.json",
 )
-INDEX_STATE_URL = "https://poe.ninja/poe2/api/data/index-state"
+LEAGUES_URL = "https://api.poe2scout.com/poe2/Leagues"
 MIN_HISTORY_DAYS = 5
 
 # LEAGUE_STARTS ({name: datetime(start)}) comes from leagues.py — the single
@@ -54,20 +54,18 @@ MIN_HISTORY_DAYS = 5
 
 
 def fetch_current_league():
-    """Detect current league from poe.ninja index-state API."""
+    """Detect current league (display name) from poe2scout Leagues API."""
     try:
-        ctx = ssl.create_default_context()
-        ctx.check_hostname = False
-        ctx.verify_mode = ssl.CERT_NONE
-        req = urllib.request.Request(
-            INDEX_STATE_URL, headers={"User-Agent": "Mozilla/5.0"}
-        )
-        data = json.loads(urllib.request.urlopen(req, context=ctx, timeout=10).read())
-        leagues = data.get("economyLeagues", [])
-        # First non-hardcore economy league is the current temp league
-        for lg in leagues:
-            name = lg.get("name", "")
-            if "Hardcore" not in name and "Standard" not in name:
+        req = urllib.request.Request(LEAGUES_URL, headers={"User-Agent": "Mozilla/5.0"})
+        data = json.loads(urllib.request.urlopen(req, timeout=10).read())
+        # Current non-hardcore softcore league = the temp league we forecast.
+        for lg in data:
+            name = lg.get("Value", "")
+            if (
+                lg.get("IsCurrent")
+                and "Hardcore" not in name
+                and not name.startswith("HC")
+            ):
                 return name
     except Exception as e:
         print(f"  Warning: could not fetch current league ({e})")

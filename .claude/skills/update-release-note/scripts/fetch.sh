@@ -118,6 +118,10 @@ if [[ -n "$REQUESTED_VER" ]]; then
   VER="$REQUESTED_VER"
 else
   VER="$(grep -oE 'Content Update [0-9]+\.[0-9]+(\.[0-9]+)?' "${WORK}/body.md" | head -1 | grep -oE '[0-9]+\.[0-9]+(\.[0-9]+)?' || true)"
+  # Preview threads have no "Content Update X.Y" line but open with "deploying Patch X.Y.Z".
+  if [[ -z "$VER" ]]; then
+    VER="$(grep -oiE 'deploying Patch [0-9]+\.[0-9]+(\.[0-9]+)?' "${WORK}/body.md" | head -1 | grep -oE '[0-9]+\.[0-9]+(\.[0-9]+)?' || true)"
+  fi
   if [[ -z "$VER" ]]; then
     echo "ERROR: could not parse version from the page; pass it explicitly: $0 ${THREAD_ID} <version>" >&2
     exit 1

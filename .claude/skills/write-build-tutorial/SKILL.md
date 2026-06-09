@@ -38,7 +38,7 @@ File `.md` trong `content/builds/<class>/` với:
 - Số thật từ PoB hoặc character file (`content/characters/*.json`), zero fabrication.
 - 100% voice rule tuân thủ.
 
-## Voice rules (project luôn win — restate top 6)
+## Voice rules (project luôn win — restate top 7)
 
 1. **Owner voice** — viết như người tự chơi/test/rút kinh nghiệm. **CẤM** cụm meta-summary: "theo Fubgun/Empyrean/Goratha…", "bài này tổng hợp từ…", "trong note này chúng ta sẽ…", "tóm lại". State numbers as own knowledge: *"Wretched Defiler đẩy ~23.2M DPS với setup hiện tại"* không phải *"PoB tính ra Wretched Defiler ~23.2M DPS theo report"*.
 2. **Prose-first** — đoạn văn 2-4 câu có flow narrative ("vì… do đó… tuy nhiên…"). Bullet CHỈ khi (a) ≥3 item cùng category enumerative, (b) checklist hành động theo thứ tự, (c) data points rời rạc không có flow tự nhiên. Bullet rời rạc 5+ liền → viết lại prose.
@@ -53,6 +53,7 @@ File `.md` trong `content/builds/<class>/` với:
 
 5. **Title KHÔNG kèm league/patch** — `title:` frontmatter và H1 chỉ concept. Sai: `"Spectre Necromancer — Mirage 3.28"`. Đúng: `"Spectre Necromancer"`. Site auto-concat từ `league_name` + `patch` khi render.
 6. **Natural VN voice — heading sentence-case, không dash-subtitle, không văn dịch** — Heading nói thẳng section nói gì (`## Ascendancy đi theo thứ tự nào`), KHÔNG pattern `X — Y` (dash + subtitle). Câu ngắn, English game term inline, KHÔNG nhồi stat trong ngoặc giữa câu, KHÔNG gạch nối từ Việt (`đàn-đông`), KHÔNG câu dịch gượng ("Vì X đứng được hay không nằm trọn ở Y"). Check đồng âm (vd "đàn đông"≈"đàn ông" → "cả đàn / nguyên đàn"). **Khi match sibling cũ: lấy cấu trúc/format, KHÔNG kế thừa dash-subtitle heading + parenthetical-stat của nó** — nhiều doc cũ trong `content/` vi phạm. Áp cho mọi skill `write-*-tutorial`. Ref: memory `feedback_natural_game_native_voice` + CLAUDE.md `## Content Writing Voice`.
+7. **Rewrite fresh, đừng vá doc cũ — vault luôn ở thì hiện tại** — Khi input là Path tới doc đã tồn tại: viết LẠI nguyên bài theo patch/meta **hiện tại**, KHÔNG bò vào vá lẻ từng dòng rồi chừa đoạn outdate "để giữ lịch sử", KHÔNG thêm note/comment kiểu nhật ký ("phải viết lại", "chờ datamine", "đổi gì cho build của mình"). Số stale thay thẳng (không chú thích "(cần update)"); gear/skill/passive đã chết theo patch thì gỡ hẳn, không archive trong doc. Lịch sử chỉ sống ở `## Version History` (record gọn một dòng/patch) hoặc `git log` — doc hiện tại chỉ chứa trạng thái đúng-bây-giờ. Bài xong phải đứng được như sinh ra hôm nay. Ref: CLAUDE.md `## Content Writing Voice` → "Rewrite fresh, đừng vá doc cũ".
 
 ## Maxroll patterns we adopt
 
@@ -72,7 +73,7 @@ File `.md` trong `content/builds/<class>/` với:
 4. **## Ascendancy** — Thứ tự lab (Lab 1 → Lab 2 → Lab 3 → Uber) + lý do từng node. Prose; bullet chỉ khi liệt kê 4 node độc lập.
 5. **## Passive Tree & Mastery** — Cluster chính + lý do. Link PoB cho allocation chính xác, prose giải thích intent ("path qua Whispers of Doom để dual curse").
 6. **## Stat Priorities & Defenses** — Số thật: ES/Life, Armour/Evasion, Block %, Spell Block %, EHP, Resistances cap, Max Hit per damage type, Charges max. Lấy từ PoB hoặc character file. Đây là CHỖ bullet được khuyến khích vì purely data points.
-7. **## Gear Progression** — H3 sub: `### Leveling` / `### Early Mapping` / `### Endgame` / `### Mirror Tier (BiS)`. Mỗi tier: item base + key mod + lý do. Unique → `:wiki-link`.
+7. **## Gear Progression** — H3 sub: `### Gear theo slot` (equip-reference bullet-per-slot: MỌI slot weapon→jewel, mỗi slot item/base + 2-4 mod ưu tiên + 1 câu why, dẫn bằng priority order cap-res-trước; KHÔNG table; slot đã có mục cơ chế riêng thì tóm + cross-ref) rồi `### Leveling` / `### Early Mapping` / `### Endgame` / `### Mirror Tier (BiS)` cho progression theo tier. Mỗi tier: item base + key mod + lý do. Unique → `:wiki-link`.
 8. **## Flasks** — 5 flask + lý do. Mageblood-build: note mod cần roll. Flask → `:wiki-link`.
 9. **## Pantheon & Bandits** — Major/Minor pantheon + lý do; Bandit choice (passive vs Oak/Kraityn/Alira) + lý do.
 10. **## Leveling Notes** — Skill transition theo act, gem swap, gear breakpoint. Câu 1 campaign skill chính, câu 2 act mấy swap sang main skill.

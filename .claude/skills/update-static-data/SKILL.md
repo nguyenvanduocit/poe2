@@ -13,7 +13,7 @@ tags: [poe2, trade, static, datamine, stat-id, catalog, update]
 
 Pull toàn bộ dữ liệu tham chiếu từ POE2 trade API vào `data/trade-static/` qua **playwriter page-context fetch trong tab www.pathofexile.com đã login**. Chạy một lần để bootstrap, chạy lại khi patch mới hoặc stat-id lookup bị thiếu.
 
-**Prerequisite:** Chrome phải mở với tab đã đăng nhập `www.pathofexile.com` và Playwriter extension bật — không có headless path.
+**Prerequisite:** Chrome mở + đã login `www.pathofexile.com` + Playwriter extension bật — không có headless path. Không cần mở sẵn tab trade: transport tự mở `/trade2/` nếu chưa có tab nào.
 
 ## Lệnh chạy
 

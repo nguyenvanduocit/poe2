@@ -1,9 +1,9 @@
 export const meta = {
   name: 'economy-scan',
-  description: 'POE2 economy survey — price + volume + 7d trend từ poe2scout + poe.ninja exchange, map supply-chain mechanic→output, suy ra người ta đang farm/flip gì. Cross-source, inference-labeled.',
+  description: 'POE2 economy survey — price + volume + 7d trend từ poe2scout (nguồn giá duy nhất: listed-stock + traded-volume), map supply-chain mechanic→output, suy ra người ta đang farm/flip gì. Inference-labeled.',
   whenToUse: 'Chạy bất kỳ ngày nào của POE2 live league để chụp tình hình kinh tế: tỉ giá div/ex, item đắt, currency thanh khoản cao, chuỗi cung ứng (mechanic nào ra output nào), bottleneck crafting. Re-runnable — file output stamp theo ngày.',
   phases: [
-    { title: 'Harvest', detail: 'poe2scout (24 category: price+stock+Δ7d) + poe.ninja exchange (price+throughput+7d) + demand/supply map (builds + patch notes)' },
+    { title: 'Harvest', detail: 'poe2scout (24 category: price+stock+Δ7d) + Currency Exchange pairs (traded-volume + ex/div) + demand/supply map (poe.ninja builds + patch notes)' },
     { title: 'Synthesize', detail: '2 angle: economy-state, what-is-farmed (throughput≠output)' },
     { title: 'ValueChain', detail: 'dựng chuỗi giá trị farm→drop→craft→item→sink→buyer cho item nóng; edge SOURCE từ patch+poe2db; phân loại bottleneck cung/cầu/sốc' },
     { title: 'Critique', detail: 'cross-source price conflict, volume-vs-price misread, data-vs-inference, freshness' },
@@ -13,24 +13,20 @@ export const meta = {
 
 // ---- config — slug/display-name ổn định nhiều tháng; DATE stamp lúc report (date +%F) ----
 const A = (typeof args !== 'undefined' && args && typeof args === 'object') ? args : {}
-const SCOUT_LEAGUE   = A.scoutLeague   || 'runes'             // poe2scout slug
-const NINJA_DISPLAY  = A.ninjaDisplay  || 'Runes of Aldur'    // poe.ninja exchange API dùng DISPLAY NAME (space→+), KHÔNG phải slug
-const NINJA_SLUG     = A.ninjaSlug      || 'runesofaldur'      // poe.ninja builds API dùng slug
-const WATCH_LEAGUE   = A.watchLeague    || 'Runes of Aldur'    // poe.watch dùng display name + game=poe2 (Cloudflare-gated → browser only)
+const SCOUT_LEAGUE   = A.scoutLeague   || 'runes'             // poe2scout slug (nguồn giá DUY NHẤT)
+const LEAGUE_DISPLAY = A.leagueDisplay || 'Runes of Aldur'    // tên hiển thị (title + builds API)
+const NINJA_SLUG     = A.ninjaSlug      || 'runesofaldur'      // poe.ninja builds API dùng slug (CHỈ builds/meta, KHÔNG phải giá)
 const PATCH_FILE     = A.patchFile      || 'data/release-notes/Version_0.5.0.md'
 const OUT_DIR        = A.outDir         || 'tmp'
 const CHAIN_TEMPLATE = A.chainTemplate  || '.claude/workflows/templates/economy-supply-chains.template.html'
 
-// poe.ninja exchange endpoint dùng + cho space trong league name
-const NINJA_LG_ENC = NINJA_DISPLAY.replace(/ /g, '+')
-
-// ---- ngữ nghĩa volume — phải tách bạch, KHÔNG conflate ----
-const VOL_SEMANTICS = `NGỮ NGHĨA VOLUME (BẮT BUỘC tách bạch — đừng gộp):
-- poe2scout 'list' vol = CurrentQuantity = SỐ LƯỢNG ĐANG LIST BÁN ngay bây giờ (stock/độ sâu thanh khoản). KHÔNG phải số đã trade.
-- poe.ninja volumePrimaryValue = TRADE THROUGHPUT (flow, quy ra divine) = lượng đổi tay. KHÁC stock của scout.
+// ---- ngữ nghĩa volume — poe2scout cho 2 tín hiệu volume KHÁC NHAU, đừng gộp ----
+const VOL_SEMANTICS = `NGỮ NGHĨA VOLUME (BẮT BUỘC tách bạch — poe2scout có 2 loại):
+- 'list' vol = CurrentQuantity (từ api.sh list) = SỐ LƯỢNG ĐANG LIST BÁN ngay bây giờ (stock/độ sâu thanh khoản). KHÔNG phải số đã trade.
+- 'pairs' traded vol = VolumeTraded (từ api.sh pairs, Currency Exchange) = lượng ĐÃ ĐỔI TAY thật trong snapshot. Đây là volume giao dịch thực, khác stock.
 - KHÔNG cái nào = "lượng người ta farm ra". Cả hai chỉ là proxy MỨC HOẠT ĐỘNG THỊ TRƯỜNG. Item có thể volume cao vì ai cũng dùng (Divine), không phải vì ai cũng farm nó.`
 
-const INFERENCE_RULE = `KỶ LUẬT DATA-vs-INFERENCE (override mọi thứ): price/volume/Δ% là DATA poe2scout/poe.ninja báo. "Mechanic nào sinh ra item này", "người ta đang farm cái này", "đây là chuỗi cung ứng" là INFERENCE từ patch-note map + domain knowledge — KHÔNG phải con số nào báo cả. Mỗi điểm phải tách rõ: dataPoint (số literal) vs inference (diễn giải). KHÔNG viết "người ta farm X" như thể scout báo thế.`
+const INFERENCE_RULE = `KỶ LUẬT DATA-vs-INFERENCE (override mọi thứ): price/volume/Δ% là DATA poe2scout báo. "Mechanic nào sinh ra item này", "người ta đang farm cái này", "đây là chuỗi cung ứng" là INFERENCE từ patch-note map + domain knowledge — KHÔNG phải con số nào báo cả. Mỗi điểm phải tách rõ: dataPoint (số literal) vs inference (diễn giải). KHÔNG viết "người ta farm X" như thể scout báo thế.`
 
 const HONESTY = `Số THẬT > schema đầy. Nguồn nào trống/lỗi → dataAvailable:false + nói rõ trong notes, ĐỪNG bịa giá/volume. League đã ~ngày 7 nên economy đã hình thành (1 div ≈ 90 ex), volume thật có.`
 const NUDGE = `BẮT BUỘC: kết thúc bằng gọi StructuredOutput đúng schema, KHÔNG trả prose.`
@@ -120,39 +116,22 @@ const scoutMechanics = scoutLane('harvest:scout-mechanics',
 const scoutUniques = scoutLane('harvest:scout-uniques',
   ['weapon', 'armour', 'accessory', 'jewel', 'flask', 'map'], 12)
 
-// — poe.ninja exchange lane (headless curl, SECONDARY — vol = trade-throughput, cross-check giá) —
-const ninjaLane = () => agent(
-`poe.ninja exchange harvest lane — POE2 economy, league "${NINJA_DISPLAY}".
-Chạy headless (KHÔNG cần browser — endpoint này curl được). Lấy currency market thật + tỉ giá div/ex:
-\`\`\`bash
-curl -sL -A "Mozilla/5.0" "https://poe.ninja/poe2/api/economy/exchange/current/overview?league=${NINJA_LG_ENC}&type=Currency" -o /tmp/ninja_cur.json
-python3 - <<'PY'
-import json
-d=json.load(open('/tmp/ninja_cur.json'))
-ex=d['core']['rates'].get('exalted')            # exalted per 1 divine
-names={it['id']:it['name'] for it in d.get('items',[])}
-print("EX_PER_DIV", ex)
-rows=[]
-for ln in d.get('lines',[]):
-    pdiv=ln.get('primaryValue')                  # giá theo DIVINE
-    rows.append((names.get(ln['id'],ln['id']),
-                 round(pdiv*ex,4) if (pdiv is not None and ex) else None,  # priceExalted
-                 ln.get('volumePrimaryValue'),                            # throughput (divine-denom)
-                 ln.get('sparkline',{}).get('totalChange')))              # Δ7d %
-for n,pex,vol,chg in sorted(rows,key=lambda r:(r[1] or 0),reverse=True):
-    print(f"{n}\t{pex}\t{vol}\t{chg}")
-PY
-\`\`\`
-EX_PER_DIV = exalted per 1 divine (tỉ giá chính → field exPerDiv). Mỗi dòng còn lại: name, priceExalted, volume(=throughput), Δ7d.
-Map vào rows: name, category='Currency', priceExalted, volume (đặt volumeKind='trade-throughput'), change7dPct. Lấy hết.
+// — poe2scout Currency Exchange pairs lane (headless bash — REAL traded volume + ex/div) —
+const scoutPairsLane = () => agent(
+`poe2scout Currency Exchange pairs lane — POE2 league slug "${SCOUT_LEAGUE}".
+Chạy bash skill (headless, KHÔNG web):
+  bash .claude/skills/poe2scout/scripts/api.sh pairs ${SCOUT_LEAGUE} 40
+Mỗi pair in: "**A ⇄ B** — pair vol N" + 2 dòng con "· <currency>: traded X · stock Y · rel Z".
+- exPerDiv: tìm pair "Divine Orb ⇄ Exalted Orb", lấy rel của **Divine Orb** (≈ số exalted cho 1 divine) → field exPerDiv.
+- rows: mỗi currency → name, category='currency', volume = traded X (VolumeTraded — lượng ĐÃ đổi tay thật, đặt volumeKind='trade-throughput'), priceExalted = rel khi đối ứng là Exalted Orb (else bỏ trống). Lấy hết.
+Đây là volume GIAO DỊCH THẬT từ Currency Exchange — bổ sung cho listed-stock của lane 'list' (cùng nguồn poe2scout, hai góc volume khác nhau).
 ${VOL_SEMANTICS}
-Đây là nguồn GIÁ ĐỘC LẬP thứ 2 (khác poe2scout) — mục đích để cross-check. Báo exPerDiv để so với poe2scout.
 ${HONESTY} ${NUDGE}`,
-  { label: 'harvest:ninja-currency', phase: 'Harvest', model: 'haiku', schema: PRICE_SCHEMA })
+  { label: 'harvest:scout-pairs', phase: 'Harvest', model: 'haiku', schema: PRICE_SCHEMA })
 
 // — demand + supply-chain map lane (poe.ninja builds + patch notes) —
 const demandLane = () => agent(
-`Demand-driver + supply-chain map lane cho POE2 economy "${NINJA_DISPLAY}".
+`Demand-driver + supply-chain map lane cho POE2 economy "${LEAGUE_DISPLAY}".
 Hai phần:
 (1) DEMAND — ai mua currency? Chạy: bash .claude/skills/poe-ninja/scripts/builds-api.sh overview ${NINJA_SLUG}
     Lấy top class/ascendancy/skill/unique phổ biến → demandDrivers (kind + sharePct nếu có). Với mỗi cái, suy luận nó TIÊU THỤ currency/item gì (field consumes, đây là inference). Nếu sample quá nhỏ → ghi notes, dataAvailable theo sample.
@@ -164,20 +143,7 @@ ${INFERENCE_RULE}
 ${HONESTY} ${NUDGE}`,
   { label: 'harvest:demand-supply', phase: 'Harvest', model: 'sonnet', schema: DEMAND_SCHEMA })
 
-// — poe.watch cross-check lane (best-effort, Cloudflare-gated → cần browser; redundant với 2 nguồn trên) —
-const watchLane = () => agent(
-`poe.watch currency-ratio cross-check lane cho POE2 "${WATCH_LEAGUE}" (BEST-EFFORT, có thể unavailable).
-api.poe.watch nằm sau Cloudflare → headless curl bị chặn. Endpoint thật: https://api.poe.watch/currencyRatios?league=${WATCH_LEAGUE}&game=poe2
-Thử qua playwriter page-context fetch (chạy trong Chrome đã login — same-origin né Cloudflare):
-  1. SID=$(playwriter session new 2>/dev/null | grep -oE 'Session [0-9]+' | grep -oE '[0-9]+'); nếu trống/lỗi → dataAvailable:false, notes "playwriter/Chrome không sẵn", KẾT THÚC.
-  2. playwriter -s $SID -e 'state.p=context.pages().find(p=>p.url().includes("poe.watch"))||await context.newPage(); if(!state.p.url().includes("poe.watch")) await state.p.goto("https://poe.watch/poe2/exchange?league=${WATCH_LEAGUE.replace(/ /g, "%20")}",{waitUntil:"domcontentloaded"}); const j=await state.p.evaluate(async()=>{const r=await fetch("https://api.poe.watch/currencyRatios?league=${WATCH_LEAGUE}&game=poe2");return await r.json()}); console.log(JSON.stringify(Array.isArray(j)?j.slice(0,40):j).slice(0,4000))'
-  3. Nếu fetch timeout/lỗi sau 1 lần thử → dataAvailable:false (ĐỪNG retry nhiều, ĐỪNG hammer). Đây chỉ là cross-check phụ, redundant với poe.ninja+poe2scout.
-Map ra rows currency-ratio nếu lấy được (name, priceExalted nếu suy được, volumeKind='trade-throughput'). exPerDiv nếu có.
-LƯU Ý cho user: data poe.watch trùng phần lớn với 2 nguồn kia; giá trị chính là một con mắt thứ 3 để bắt outlier.
-${HONESTY} ${NUDGE}`,
-  { label: 'harvest:watch-crosscheck', phase: 'Harvest', model: 'haiku', schema: PRICE_SCHEMA })
-
-const LANES = [scoutCore, scoutMechanics, scoutUniques, ninjaLane, demandLane, watchLane]
+const LANES = [scoutCore, scoutMechanics, scoutUniques, scoutPairsLane, demandLane]
 const harvest = (await parallel(LANES)).filter(Boolean)
 
 // gom data
@@ -221,7 +187,7 @@ const exJSON = JSON.stringify(exRates)
 const ANGLES = [
   {
     key: 'economy-state', label: 'synth:state',
-    focus: `Tình hình kinh tế tổng quan: tỉ giá div/ex (so exPerDiv giữa nguồn ${exJSON} — flag nếu lệch >10%), item ĐẮT nhất mỗi nhóm, currency lạm phát/giảm phát theo Δ7d (tăng mạnh = khan/được săn, giảm mạnh = thừa/devalue), phân tầng currency (top-tier vs commodity).`,
+    focus: `Tình hình kinh tế tổng quan: tỉ giá div/ex (exPerDiv từ poe2scout Currency Exchange ${exJSON}), item ĐẮT nhất mỗi nhóm, currency lạm phát/giảm phát theo Δ7d (tăng mạnh = khan/được săn, giảm mạnh = thừa/devalue), phân tầng currency (top-tier vs commodity).`,
   },
   {
     key: 'what-is-farmed', label: 'synth:farming',
@@ -230,7 +196,7 @@ const ANGLES = [
 ]
 
 const synths = (await parallel(ANGLES.map(a => () => agent(
-`Synthesize angle "${a.key.toUpperCase()}" cho economy scan POE2 "${NINJA_DISPLAY}".
+`Synthesize angle "${a.key.toUpperCase()}" cho economy scan POE2 "${LEAGUE_DISPLAY}".
 
 PRICE ROWS (mọi nguồn, mỗi row có source/category/priceExalted/volume/volumeKind/change7dPct) — JSON:
 ${priceJSON}
@@ -247,7 +213,7 @@ Tập trung: ${a.focus}
 ${VOL_SEMANTICS}
 ${INFERENCE_RULE}
 - points: mỗi điểm tách dataPoint (số literal) vs inference (diễn giải) + confidence + sources (nguồn nào).
-- contradictions: nơi 2 nguồn lệch giá/volume, hoặc data vs kỳ vọng.
+- contradictions: nơi traded-volume (pairs) vs listed-stock (list) kể chuyện khác nhau, hoặc data vs kỳ vọng.
 - dataQuality: angle này tin tới đâu (sample, freshness, throughput vs stock).
 KHÔNG bịa lấp schema. ${NUDGE}`,
   { label: a.label, phase: 'Synthesize', model: 'sonnet', schema: SYNTH_SCHEMA })))).filter(Boolean)
@@ -301,7 +267,7 @@ const CHAIN_REPORT_SCHEMA = {
 
 phase('ValueChain')
 const valueChain = await agent(
-`Dựng BẢN ĐỒ CHUỖI GIÁ TRỊ cho economy POE2 "${NINJA_DISPLAY}". Một item là 1 node, KHÔNG phải chuỗi — phải vẽ đủ đường: farm content nào → rớt raw gì → craft bước nào → ra item → tiêu vào sink nào → build nào mua, đệ quy tới gốc farmable.
+`Dựng BẢN ĐỒ CHUỖI GIÁ TRỊ cho economy POE2 "${LEAGUE_DISPLAY}". Một item là 1 node, KHÔNG phải chuỗi — phải vẽ đủ đường: farm content nào → rớt raw gì → craft bước nào → ra item → tiêu vào sink nào → build nào mua, đệ quy tới gốc farmable.
 
 PRICE ROWS (giá/volume/Δ7d mọi nguồn) — JSON:
 ${priceJSON}
@@ -331,7 +297,7 @@ QUY TẮC: Giá/volume = DATA. Edge mechanic = SOURCED (patch/poe2db). "Vì sao 
 const CRITIQUE_SCHEMA = {
   type: 'object',
   properties: {
-    crossSourcePriceConflicts: { type: 'array', items: { type: 'string' } },
+    priceConsistencyChecks: { type: 'array', items: { type: 'string' } },
     volumeMisreadRisks: { type: 'array', items: { type: 'string' } },
     dataVsInferenceLeaks: { type: 'array', items: { type: 'string' }, description: 'chỗ nào synth trình bày inference như data' },
     freshnessWarnings: { type: 'array', items: { type: 'string' } },
@@ -343,7 +309,7 @@ const CRITIQUE_SCHEMA = {
 
 phase('Critique')
 const critique = await agent(
-`Devil's-advocate critic cho economy scan POE2 "${NINJA_DISPLAY}".
+`Devil's-advocate critic cho economy scan POE2 "${LEAGUE_DISPLAY}".
 2 synthesis (state/farming) — JSON:
 ${JSON.stringify(synths)}
 
@@ -354,7 +320,7 @@ EX rates: ${exJSON}
 Harvest notes: ${harvestNotes.join('\n')}
 
 Soi:
-- crossSourcePriceConflicts: poe.ninja vs poe2scout lệch giá/tỉ giá ở đâu (>10%)? exPerDiv có khớp?
+- priceConsistencyChecks: trong poe2scout, list-price (catalog) vs rate suy từ pairs có khớp cho cùng currency? exPerDiv (từ Divine⇄Exalted pair) có khớp giá Divine ở catalog không?
 - volumeMisreadRisks: chỗ nào dễ đọc nhầm throughput↔stock, hoặc suy "volume cao = được farm" sai? Đặc biệt: chain nào phân loại 'supply' (bottleneck cung) nhưng stock thực ra DÀY (đáng lẽ 'demand')? — bottleneck misclassification là lỗi nặng.
 - dataVsInferenceLeaks: chỗ nào synth/value-chain viết suy luận (mechanic/farm/chuỗi/bottleneck) NHƯ THỂ là số nguồn báo? Edge nào không có nhãn [patch]/[poe2db] mà vẫn trình bày như fact? (liệt kê hết)
 - freshnessWarnings: data nguồn nào cũ/stale, snapshot lúc nào?
@@ -366,7 +332,7 @@ ${NUDGE}`,
 // ============ Phase 4: Report ============
 phase('Report')
 const report = await agent(
-`Viết FINAL economy pulse report cho POE2 "${NINJA_DISPLAY}".
+`Viết FINAL economy pulse report cho POE2 "${LEAGUE_DISPLAY}".
 Lấy ngày: Bash 'date +%F' → <DATE> cho tên file + tiêu đề.
 
 INPUT — 2 synthesis JSON (economy-state / what-is-farmed):
@@ -382,18 +348,18 @@ INPUT — ex rates: ${exJSON}
 INPUT — harvest notes: ${harvestNotes.join('\n')}
 
 Viết Markdown, giọng Việt-Anh code-switching (giữ game term tiếng Anh). Đây là intel report cho user đọc — ĐƯỢC cite nguồn + endpoint + confidence (khác content note: attribution là feature). Cấu trúc:
-# POE2 ${NINJA_DISPLAY} — Economy Pulse <DATE>
+# POE2 ${LEAGUE_DISPLAY} — Economy Pulse <DATE>
 (2-3 câu mở: league ngày mấy + độ tin tổng thể từ critique.confidenceCalibration)
 ## ⚡ TL;DR — 5-7 bullet quan trọng nhất NGAY BÂY GIỜ (tỉ giá div/ex, 2-3 item nóng, 1-2 bottleneck, 1 cảnh báo).
-## 💱 Tình hình kinh tế — tỉ giá div/ex (cross-check 2 nguồn, flag nếu lệch), item đắt nhất mỗi nhóm, lạm phát/giảm phát theo Δ7d.
-## 🔥 Người ta đang flip/farm gì — xếp theo volume, NHƯNG tách rõ: "[DATA] throughput/stock cao" vs "[SUY LUẬN] mechanic nguồn / hành vi farm". Đừng trình bày inference như số liệu.
+## 💱 Tình hình kinh tế — tỉ giá div/ex (poe2scout Currency Exchange), item đắt nhất mỗi nhóm, lạm phát/giảm phát theo Δ7d.
+## 🔥 Người ta đang flip/farm gì — xếp theo volume, NHƯNG tách rõ: "[DATA] traded-volume/listed-stock cao" vs "[SUY LUẬN] mechanic nguồn / hành vi farm". Đừng trình bày inference như số liệu.
 ## 🔗 Chuỗi cung ứng — từ value-chain map: mỗi chuỗi farm→drop→craft→item→sink→buyer, phân loại rõ bottleneck CUNG (content-gated, đáng farm) vs áp lực CẦU (stock dày, sẽ về trung bình) vs SỐC cung (nguồn bị cắt). ĐỪNG gọi mọi thứ "scarce". Bản đồ trực quan đầy đủ ở file HTML kèm theo (economy-supply-chains-<DATE>.html).
-## ⚠️ Mâu thuẫn & độ tươi — từ critique: lệch giá chéo nguồn, rủi ro đọc nhầm volume, chỗ data-vs-inference, freshness.
+## ⚠️ Mâu thuẫn & độ tươi — từ critique: nhất quán giá nội bộ (list vs pairs), rủi ro đọc nhầm volume (traded vs stock), chỗ data-vs-inference, freshness.
 ## 🔁 Re-check — từ critique.recheckPlan.
-## 📡 Nguồn & phương pháp — liệt kê endpoint thật đã dùng:
-   - poe2scout: bash api.sh list <cat> ${SCOUT_LEAGUE} (24 category, vol=listed-stock)
-   - poe.ninja: GET /poe2/api/economy/exchange/current/overview?league=${NINJA_LG_ENC}&type=Currency (vol=trade-throughput) — LƯU Ý collector cũ data/price-history dùng endpoint stash/current + slug nên 404; endpoint đúng là exchange/current + display-name.
-   - poe.watch: api.poe.watch/currencyRatios?league=...&game=poe2 — Cloudflare-gated, browser-only, redundant cross-check.
+## 📡 Nguồn & phương pháp — poe2scout là nguồn GIÁ duy nhất; liệt kê endpoint thật đã dùng:
+   - poe2scout list: bash api.sh list <cat> ${SCOUT_LEAGUE} (24 category, vol=listed-stock = CurrentQuantity)
+   - poe2scout pairs: bash api.sh pairs ${SCOUT_LEAGUE} (Currency Exchange, vol=traded thật + ex/div từ Divine⇄Exalted)
+   - poe.ninja builds: bash .claude/skills/poe-ninja/scripts/builds-api.sh overview ${NINJA_SLUG} (CHỈ demand/meta — KHÔNG phải nguồn giá)
 
 QUY TẮC: KHÔNG bịa số. Mỗi claim kinh tế kèm con số thật. Phân biệt rạch ròi DATA (giá/volume nguồn báo) vs INFERENCE (farm/mechanic/chuỗi). Volume = market activity, KHÔNG = lượng farm.
 
@@ -401,7 +367,7 @@ Sau khi viết: Bash 'mkdir -p ${OUT_DIR}', dùng Write tool ghi vào '${OUT_DIR
   { label: 'report', phase: 'Report', model: 'sonnet' })
 
 // ---- HTML value-chain report: fill data-driven template với valueChain ----
-const exPerDiv = (exRates.find(r => /ninja/i.test(r.source)) || exRates[0] || {}).exPerDiv || ''
+const exPerDiv = (exRates[0] || {}).exPerDiv || ''
 const htmlReport = await agent(
 `Sinh file HTML value-chain report bằng cách FILL template data-driven (KHÔNG tự code HTML).
 
@@ -414,7 +380,7 @@ Các bước CHÍNH XÁC:
 3. Inject vào template + ghi file (python wrap meta + thay token, KHÔNG sửa template gốc):
 \`\`\`bash
 DATE=$(date +%F)
-python3 - "$DATE" "${NINJA_DISPLAY}" "${exPerDiv}" <<'PY'
+python3 - "$DATE" "${LEAGUE_DISPLAY}" "${exPerDiv}" <<'PY'
 import json, sys
 date, league, exdiv = sys.argv[1], sys.argv[2], sys.argv[3]
 vc = json.load(open('${OUT_DIR}/_vc.json'))
