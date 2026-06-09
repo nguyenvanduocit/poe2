@@ -5,7 +5,7 @@ title: "Mở Khóa Toàn Bộ Atlas Endgame"
 status: draft
 author: duocnv
 created: '2026-06-05'
-updated: '2026-06-05'
+updated: '2026-06-06'
 league: '0.5'
 patch: 0.5.0
 guide_type: endgame-progression
@@ -24,79 +24,87 @@ tags:
 
 # Mở Khóa Toàn Bộ Atlas Endgame
 
-> **Quick Summary:** Cách đi từ map đầu tiên tới chỗ bật được cả 300+ node atlas tree — chuỗi quest Origins of Divinity, giết Arbiter of Divinity 5 lần để tự clear từng mảng Fortress, và mở ba Master cùng các subtree league mechanic. Đây là phần "đi đâu, giết con gì theo thứ tự nào", còn lấy node nào trước thì để [guide sustain](/guides/0-5-endgame-mapping-sustain) lo.
+> **Quick Summary:** Cách bật sạch atlas 0.5 — cả main tree hơn 300 node lẫn tối đa ba Master (Doryani, Jado, Hilda). Đường xương sống là chuỗi Origins of Divinity dẫn qua Fortress, rồi giết Arbiter of Divinity năm lần để mỗi lần tự clear một section thay vì cày tay cả trăm map. Node nào nên lấy trước thì để [guide sustain](/guides/0-5-endgame-mapping-sustain) lo, ở đây chỉ bàn đi đâu, giết con gì, theo thứ tự nào.
 
-## Hai đường tiến trình song song
+## Full atlas gồm những gì
 
-Atlas 0.5 reset sạch và tách point ra làm hai nguồn, hiểu rõ hai nguồn này trước khi cắm đầu chạy map.
+Atlas 0.5 reset sạch, point cũ mất hết, và muốn có point trở lại thì phải chạy chuỗi quest Origins of Divinity — không còn cách lấy point nào khác. "Full" ở đây là ba thứ khác nhau.
 
-Nguồn thứ nhất là **main atlas point** — point chung áp lên *mọi* map mình chạy. Đây là đám node "natural juice": increased rare monster, rare bị nhân đôi, tablet effect, magic pack size. Vì nó buff toàn bộ map nên buff luôn cả các league mechanic chạy bên trong map, nên đây là thứ phải gom xong trước khi đầu tư sâu vào mechanic riêng. Point này chỉ ra từ map trong **Fortress** — cách lấy point cũ đã bỏ hoàn toàn.
+Thứ nhất là **main atlas tree** — hơn 300 node buff lên *mọi* map mình chạy: increased rare monster, rare nhân đôi, tablet effect, magic pack size, essence, shrine. Vì nó áp lên toàn map nên buff luôn cả league mechanic chạy bên trong, đây là phần phải bật xong trước khi đầu tư sâu vào chỗ khác. Point cho tree này chỉ ra từ map trong **Fortress**.
 
-Nguồn thứ hai là **subtree của từng league mechanic** — Abyss, Breach, Delirium, Ritual, Expedition. Cũng rất mạnh, nhưng không bắt buộc làm hết: ghét Ritual thì bỏ Ritual, không mất gì. Chỉ làm mechanic mình thật sự muốn farm.
+Thứ hai là **ba Master của Atlas** — tầng kiểu ascendancy cho endgame, mỗi Master một bộ 12 node chọn-4, mở bằng cách làm mission riêng. Đây là phần mạnh nhất nhưng cũng dễ bỏ quên vì nó nằm tách khỏi tree chính.
 
-Vì cuối cùng đằng nào cũng bật được *toàn bộ* tree (cày đủ Fortress là dư point cho cả 300+ node, multi-choice node đổi qua lại tùy ý, không có respec mà cũng không cần), nên thứ duy nhất đáng tính là **thứ tự** — làm gì trước để vòng cày chạy sớm.
+Thứ ba là **subtree của từng league mechanic** — Delirium, Breach, Ritual, Abyss, Fate of the Vaal. Không bắt buộc: ghét Ritual thì bỏ Ritual, slot tablet trống vẫn tự nhả league content nên không mất gì. Chỉ làm mechanic mình thật sự muốn farm — phần này [guide sustain](/guides/0-5-endgame-mapping-sustain) xếp thứ tự sẵn.
 
-## Chuỗi Origins of Divinity từ đầu tới Arbiter of Divinity
+Cày đủ Fortress là dư point cho cả hơn 300 node main tree, multi-choice node đổi qua lại tùy ý, không có respec mà cũng không cần. Nên thứ duy nhất đáng tính là **thứ tự** — làm gì trước để vòng cày chạy sớm.
 
-Đây là quest line chính dẫn mình xuyên Fortress. Cứ bám breadcrumb mà chạy, đừng dừng lại cày từng map vội.
+## Fortress mọc lên sau khi xong tháp đầu tiên
 
-Vào map đầu tiên, một **Precursor Tower** hiện lên ngay. Rush tower đó, hoàn thành, thì **Fortress** trồi lên từ đất — đây là khu khổng lồ chứa toàn bộ point main atlas, mỗi map bên trong nhả một (hoặc nhiều) point, mấy điểm trọng yếu có mũi tên trên đầu cho tới 3 point một lần. Fortress dễ làm mình ngợp vì có hơn 150 map, nhưng đừng cày sạch — cứ beeline theo quest.
+Vào map đầu tiên, một **Precursor Tower** hiện ngay. Rush hết tower đó thì **Fortress** trồi lên từ đất — khu khổng lồ chứa toàn bộ point main atlas, chia thành **năm section**. Mỗi map bên trong nhả một hoặc nhiều point, mấy điểm trọng yếu có mũi tên trên đầu cho tới ba point một lần.
 
-Quest dẫn tới **Burning Monolith**, rồi tách ra hai nhánh: **Western Gateway** và **Eastern Gateway**. Mỗi gateway mở vào một **Enigma chamber** chứa quest version của Crisis fragment — đánh như một trận citadel boss, ai chơi league cũ rồi thì quen pattern này. Làm xong cả hai chamber thì quay về Burning Monolith đánh **Arbiter of Ash**, pinnacle boss đầu tiên. Hạ Arbiter of Ash thì khu cuối mở ra.
+Fortress dễ làm mình ngợp vì có cả đống map — trên dưới 150 map trải khắp năm section theo mình đếm dọc đường, con số này còn phải cày thêm để chốt. Nhưng đừng cày sạch lúc đang chạy quest: cứ beeline theo breadcrumb, phần clear hàng loạt để dành cho đường tắt 5-kill ở dưới, nhanh hơn nhiều.
 
-Khu cuối lặp lại đúng công thức nhưng quanh **Origin Tower**: rush tower, nhận quest đi gom spark từ hai chỗ. Đây là hai trận boss kiểu citadel — trong game gọi là **Patriarch's Call** và **Matriarch's Call**, nhìn trên atlas y hệt citadel với cùng cái beam sáng. Giết hai con này mở ra trận cuối: **Arbiter of Divinity**, pinnacle boss chính.
+## Gateway và Citadel là hai thứ khác nhau
 
-Arbiter of Divinity khá nặng nếu character chưa đủ gear hoặc còn mới, nên chuẩn bị thủ tử tế trước khi vào. Bù lại nó cho **vô số lần thử** — chết đi chết lại bao nhiêu cũng được, cứ riu rít vào lại.
+Đây là chỗ dễ nhầm nhất trong cả endgame 0.5, và nhầm thì lạc đường. Bên trong Fortress có hai loại cấu trúc trông na ná nhưng phục vụ hai mục đích tách biệt.
 
-## Giết Arbiter of Divinity 5 lần để bật cả tree
+**Gateway map** dẫn tới Arbiter of Ash. Có ba Gateway với hai boss mới, mỗi cái mở vào một section khác của Fortress. Quest dẫn qua **Western Gateway** và **Eastern Gateway**, mỗi gateway thông vào một **Enigma chamber** chứa quest version của Crisis fragment — đánh như một trận citadel boss, ai chơi league cũ thì quen pattern. Làm xong cả hai chamber thì quay về **Burning Monolith** đánh **Arbiter of Ash**. Arbiter of Ash là pinnacle boss cũ, lần này được dời hẳn vào trong Fortress chứ không phải boss mới.
 
-Đây là chỗ grind bắt đầu, và cũng là đường tắt chính thức của 0.5.
+**Citadel map** dẫn tới Arbiter of Divinity. Có hai Citadel map với hai boss mới, và đây là đường hoàn toàn riêng: boss Citadel rơi **key** mở **Arbiter of Divinity** — pinnacle boss mới của 0.5, khác hẳn Arbiter of Ash. Hai con này là hai trận khác nhau, đừng gộp làm một.
 
-Mỗi lần hạ Arbiter of Divinity, mình được chọn một trong năm tượng đá, mỗi tượng ứng với một mảng (section) của Fortress. Bấm tượng thì **toàn bộ map trong mảng đó tự hoàn thành và nhả hết point cùng lúc** — khỏi phải cày tay 150 map lẻ. Nhưng cái cửa sổ chọn này chỉ hiện *mỗi lần kill*, nên muốn bật sạch tree thì phải giết Arbiter of Divinity **5 lần**, mỗi lần clear một mảng.
+Tóm gọn để khỏi lạc: Gateway → Enigma → Arbiter of **Ash** (boss cũ relocated); Citadel → key → Arbiter of **Divinity** (boss mới). Cả hai cùng nằm trong Fortress nhưng không liên quan nhau.
 
-Từ đây có hai cách tiến:
+## Đường nhanh nhất là giết Arbiter of Divinity năm lần
 
-**Cách một — cày sạch map trong Fortress.** Trên 150 map, làm hết cũng bật full tree. Chạy được, nhưng chậm và buồn ngủ.
+Đây là đường tắt chính thức của 0.5, và là lý do không cần cày tay cả trăm Fortress map.
 
-**Cách hai (nên làm) — săn Patriarch's Call và Matriarch's Call bên ngoài Fortress để mở lại trận Arbiter of Divinity.** Hai trận spark này tái xuất rải rác ngoài atlas, nhìn y như citadel với cùng cái beam, lẫn trong vùng tối. Mỗi cụm cần giết hai con (một patriarch + một matriarch) để mở lại Arbiter of Divinity — đúng cơ chế như Arbiter of Ash, chỉ là hai con thay vì ba. Trận quest trong Fortress tính là lần một, rồi tìm thêm bốn cụm ngoài Fortress cho đủ năm. Tổng cộng phải lùng tầm tám trận spark (bốn patriarch + bốn matriarch).
+Mỗi lần hạ Arbiter of Divinity, game hiện ra **năm tượng đá**, mỗi tượng ứng một section của Fortress. Bấm một tượng thì **toàn bộ map trong section đó tự hoàn thành và nhả hết point cùng lúc**. Cửa sổ chọn này chỉ hiện mỗi lần kill, nên muốn bật sạch tree phải giết Arbiter of Divinity **năm lần**, mỗi lần dứt một section — năm section là trọn cả tree.
 
-Cách hai đáng làm hơn vì trong lúc lùng patriarch/matriarch mình **khám phá luôn cả atlas** — gặp citadel thật, unique map, Jade Island, corrupted nexus, mở luôn các quest Master. Lấy point mà tiện tay mở mọi thứ khác, hơn hẳn cắm mặt cày 150 map một chỗ. Cả tiến trình này tốn kha khá thời gian — bật full tree mất cỡ 30 tiếng — nhưng đáng nếu định cắm league lâu.
+Vấn đề là mở lại Arbiter của lần thứ hai trở đi. Lần một là trận quest ngay trong Fortress, tính luôn vào năm. Bốn lần còn lại phải đi lùng ngoài Fortress: rải rác trên atlas có các cặp boss spark đứng trong vùng tối, nhận ra bằng cột beam sáng giống citadel. Mỗi cụm là một cặp — giết cả hai con để rơi key mở lại một lượt Arbiter of Divinity — nên lùng bốn cụm, tầm tám trận spark, là đủ bốn lần kill còn lại. Hai con này mình tạm gọi **Patriarch's Call** và **Matriarch's Call**, tên còn chờ chốt; cứ thấy cặp beam ngoài Fortress là tới đánh, không cần để ý tên hiện ra là gì.
 
-## Mở subtree league mechanic
+Đi đường này đáng hơn cày Fortress vì trong lúc lùng patriarch/matriarch mình **khám phá luôn cả atlas** — gặp citadel thật, unique map, Jade Island, corruption nexus, mở luôn các quest Master tiện tay. Vừa bật tree vừa feed mọi thứ khác.
 
-Mấy quest này đơn giản hơn nhiều so với chuỗi chính.
+Còn bao lâu thì tùy build. Nếu character đủ mạnh để hạ Arbiter of Divinity gọn mỗi lượt, cả năm kill chỉ tốn vài tiếng — nhanh hơn hẳn con số ~30 tiếng hay bị quote, vì ~30 tiếng là nhịp cày tay trọn Fortress map từng cái một chứ không phải đi đường tắt. Build còn yếu hoặc chết nhiều ở Arbiter thì mới đội lên gần mức đó. Bù lại Arbiter of Divinity cho **vô số lần thử** — chết bao nhiêu cũng vào lại được, nên rào cản thật là damage chứ không phải thời gian.
 
-Mỗi league mechanic mở quest khi mình **hoàn thành nó một lần trong map**. Ví dụ làm một Abyss trong map bất kỳ, vùng tối quanh khu hub của Abyss lập tức hiện trên atlas. Đi tới đó, làm hết map trong vùng (Delirium có hub riêng tên **The Withered Willow** ở tây-nam chỗ khởi đầu), là gom đủ point cho subtree mechanic đó. Boss ở đây nhẹ hơn chuỗi chính nhiều, và point thì rất mạnh.
+## Ba Master của Atlas mở thế nào
 
-Chỉ làm mechanic mình muốn farm. Thứ tự đáng làm trước thì xem [phần subtree trong guide sustain](/guides/0-5-endgame-mapping-sustain) — Abyss đang lãi nhất kể cả không đầu tư, Ritual có combo fracturing orb mạnh nhất.
+Song song tree chính là ba **Master** kiểu ascendancy cho endgame: **Doryani's Science**, **Jado's Spycraft**, **Hilda's Hunting**. Đây là tầng buff mạnh nhất và đáng mở sớm.
 
-## Ba Master của Atlas
+Cấu trúc ba Master giống hệt nhau. Mỗi Master 12 node xếp thành **bốn hàng, mỗi hàng ba node**, và một lúc chỉ chọn được **bốn node** trên mỗi Master. Mở từng hàng ba node bằng cách làm mission cho Master đó — số mission mỗi hàng thì cày tới đâu đếm tới đó, in-game không ghi sẵn. Cả ba Master allocate song song được, và đổi bốn node đang chọn tùy ý trước mỗi map qua nút quick-select. Nên đây là tầng tinh chỉnh theo từng map, không phải cam kết cứng — set Master cho map farm Breach khác với map đi boss.
 
-Song song atlas tree là ba **Master** kiểu ascendancy cho endgame: **Doryani's Science**, **Jado's Spycraft**, **Hilda's Hunting**. Mỗi Master có 12 node, chọn 4 một lúc, và cả ba allocate song song được — đổi node tùy ý trước mỗi map qua nút quick-select, nên đây là tầng tinh chỉnh theo từng map chứ không phải cam kết cứng. Mở từng hàng 3 node bằng cách làm mission cho Master đó.
+Điều kiện mở mỗi Master khác nhau:
 
-Điều kiện mở mỗi Master:
+- **Hilda's Hunting** dễ nhất: ghé **Hilda's Campsite** ngay tây-nam chỗ khởi đầu trên atlas, bả tự mở questline.
+- **Jado's Spycraft**: hoàn thành một **anomaly map** gần chỗ khởi đầu để mở — Jade Island là một dạng anomaly map. Trọn questline cần làm bốn anomaly map theo mình chạy được tới giờ.
+- **Doryani's Science**: clear một **corruption nexus** để mở. Trọn questline còn cần thêm vài nexus nữa và có vẻ chốt bằng một trận nexus boss; quest log liệt kê từng bước, cứ bám theo.
 
-- **Doryani's Science** — clear một corruption nexus. Làm trọn questline cần ba corruption nexus cộng một trận nexus boss; quest log sẽ liệt kê từng bước.
-- **Jado's Spycraft** — hoàn thành một anomaly map gần chỗ khởi đầu (Jade Island là một dạng anomaly map). Trọn questline cần bốn anomaly map.
-- **Hilda's Hunting** — ghé **Hilda's Campsite** ngay tây-nam chỗ khởi đầu trên atlas, bả tự mở.
+Vì Master swap được giữa map nên không có lý do bỏ con nào — mở hết cả ba rồi chọn bốn node hợp với map đang chạy.
+
+## Bật full tree rồi thì được gì
+
+Full allocation không chỉ là loot nhiều hơn, nó còn **mở khóa content bị gate sau atlas passive**. Một số thứ trong 0.5 thẳng tay yêu cầu specialise mới dùng được: **Exceptional Items**, **Fracturing Orbs**, và cả **Basic** lẫn **Overseer Precursor Tablet** đều nằm sau node atlas. Chưa bật node tương ứng thì những thứ này không xuất hiện hoặc không hoạt động, nên "full điểm" cũng là điều kiện để craft và farm những lớp content cao hơn.
+
+Một điểm tiện liên quan: mỗi slot tablet để trống tự thêm league content ngẫu nhiên không-tablet vào khu. Nghĩa là **không cần** hoàn thành subtree của league mình không định chạy — lắp đủ tablet cho mechanic mình farm là chỉ thấy đúng content đó, bỏ trống thì game tự rải linh tinh. Đây là lý do chọn lọc subtree theo sở thích chứ không phải nghĩa vụ bật hết.
 
 ## Thứ tự nên làm
 
 Đừng cố làm tất cả cùng lúc, sắp theo nhịp này cho đỡ rối:
 
 1. Chạy thẳng chuỗi Origins of Divinity tới khi hạ Arbiter of Divinity **một lần**. Đây là khung xương, mở ra cả đường tắt 5-kill lẫn quyền clear section.
-2. Chọn **một** league mechanic muốn farm (mình hay chọn Abyss) và bắt đầu làm nó để có currency vào — bật tablet cho mechanic đó để juice luôn.
-3. Vừa kiếm currency từ mechanic đó, vừa lùng bốn cụm Patriarch/Matriarch còn lại ngoài Fortress để đủ năm lần kill Arbiter of Divinity. Một công đôi việc: cày tiền và bật tree cùng lúc.
+2. Ghé Hilda's Campsite và làm một anomaly map sớm để mở **Hilda** và **Jado** — hai Master này rẻ, mở được là có buff dùng ngay. Doryani đợi gặp corruption nexus đầu tiên.
+3. Chọn **một** league mechanic muốn farm (mình hay chọn Abyss) và bắt đầu làm để có currency vào — bật tablet cho mechanic đó để juice luôn.
+4. Vừa kiếm currency, vừa lùng bốn cụm Patriarch/Matriarch ngoài Fortress cho đủ năm lần kill Arbiter of Divinity. Một công đôi việc: cày tiền, bật tree, và mở thêm citadel/nexus/unique map dọc đường.
 
-Về node ưu tiên ở những point đầu: mở **essence** và **shrine** trước, rồi gom hết đám natural juice — increased rare monster, tablet effect, magic pack size — vì đây là thứ nhân loot trên mọi map. Gõ "rare" trong ô tìm node lấy sạch node rare, gõ "tablet" lấy sạch node tablet. Nhớ lấy **Partial Translation** khi mở được (node này khóa sau khi giết Arbiter of Divinity) vì nó kéo tablet lên 4 mod. Phần giữa atlas — khu Fortress core — để lấy sau cùng, vì nếu chọn cách hai (săn patriarch/matriarch ngoài Fortress) thì mình đâu cày trong Fortress mấy. Chi tiết đường đi node và giá trị từng node thì [guide sustain](/guides/0-5-endgame-mapping-sustain) đã vẽ sẵn.
+Về node ưu tiên ở những point đầu: mở **essence** và **shrine** trước, rồi gom hết đám natural juice — increased rare monster, tablet effect, magic pack size — vì đây là thứ nhân loot trên mọi map. Gõ "rare" trong ô tìm node lấy sạch node rare, gõ "tablet" lấy sạch node tablet. Nhớ lấy **Partial Translation** khi mở được — node này khóa sau khi giết Arbiter of Divinity và kéo tablet lên 4 mod. Khu giữa Fortress để lấy sau cùng, vì đi đường 5-kill thì mình đâu cày trong Fortress mấy. Đường đi node và giá trị từng node thì [guide sustain](/guides/0-5-endgame-mapping-sustain) vẽ sẵn.
 
 ## Tips và lỗi hay gặp
 
-- **Đừng cày từng map Fortress lúc đang chạy quest.** Beeline theo breadcrumb tới Arbiter of Divinity trước; clear map để sau qua đường 5-kill cho nhanh gấp nhiều lần.
-- **Arbiter of Divinity cho vô số lần thử** — chết không mất gì, cứ vào lại tới khi quen pattern. Nhưng vẫn thủ tử tế trước lần đầu nếu character còn yếu.
-- **Patriarch/Matriarch nhìn y như citadel** (cùng beam sáng) — đừng nhầm chúng với citadel thật khi quét atlas; cứ thấy beam là tới kiểm tra.
-- **Cách hai (săn ngoài Fortress) mở thêm rất nhiều thứ** — citadel, unique map, Jade Island, corrupted nexus — nên nó vừa bật tree vừa feed các quest Master và farm. Ưu tiên cách này hơn cày 150 map.
-- **Hilda có thể bị bug đầu league** không chịu hiện ở campsite. Nếu chưa mở được thì để đó, GGG đang fix; xem thêm [các bug đầu league cần né](/guides/0-5-endgame-mapping-sustain).
+- **Đừng cày từng map Fortress lúc đang chạy quest.** Beeline tới Arbiter of Divinity trước; clear hàng loạt để sau qua đường 5-kill cho nhanh gấp nhiều lần.
+- **Arbiter of Divinity cho vô số lần thử** — chết không mất gì, cứ vào lại tới khi quen pattern. Nhưng vẫn thủ tử tế trước lần đầu nếu character còn yếu, vì rào cản là damage chứ không phải thời gian.
+- **Đừng nhầm Arbiter of Ash với Arbiter of Divinity.** Ash là boss cũ trong Burning Monolith đi qua đường Gateway; Divinity là boss mới đi qua đường Citadel và là con cho 5-kill clear section.
+- **Patriarch/Matriarch nhìn y như citadel** với cùng cái beam sáng — đừng nhầm với citadel thật khi quét atlas; cứ thấy beam là tới kiểm tra.
+- **Mở cả ba Master** dù mới dùng một — vì swap được giữa map nên không có lý do bỏ con nào, và Hilda với Jado mở rất rẻ.
+- **Hilda có thể bị bug đầu league** không chịu hiện ở campsite. Chưa mở được thì để đó, GGG đang fix; xem thêm [các bug đầu league cần né](/guides/0-5-endgame-mapping-sustain).
 
 ## Related Resources
 
@@ -109,7 +117,9 @@ Về node ưu tiên ở những point đầu: mở **essence** và **shrine** tr
 ## Version History
 
 ### Patch 0.5.0
-- 05/06/2026 — Viết walkthrough chuỗi unlock atlas endgame. Cơ chế (Origins of Divinity storyline thay cách lấy point cũ, Fortress = nguồn point duy nhất, Burning Monolith + Arbiter of Ash trong Fortress, ba Gateway map, hai Enigma chamber chứa quest Crisis fragment, hai Citadel boss nhả key, Arbiter of Divinity 5-kill clear 5 section, Masters 12-node/chọn-4 với điều kiện unlock Doryani/Jado/Hilda) đối chiếu patch note 0.5.0. Tên Patriarch's Call/Matriarch's Call và con số ~150 map/section, ~30 tiếng full unlock, Doryani 3 nexus + 1 boss, Jado 4 anomaly map là quan sát in-game đầu league — chốt lại khi cày thêm. Section bug đầu league trỏ sang guide sustain, gỡ khi GGG hotfix.
+- 06/06/2026 — Rà lại toàn bộ chuỗi unlock đối chiếu patch note 0.5.0. Khung xương xác nhận chắc: Fortress là nguồn point duy nhất, atlas reset cần Origins of Divinity, Gateway (3 map, 2 boss → section + Enigma chamber → Arbiter of Ash) tách hẳn Citadel (2 map, 2 boss → key → Arbiter of Divinity), cơ chế 5-kill clear 5 section, ba Master 12-node/4-hàng-3/chọn-4 mở rows bằng mission. Sửa cách khung thời gian: ~30 tiếng là nhịp cày tay trọn Fortress, không phải con số duy nhất — đường 5-kill cho build mạnh chỉ tốn vài tiếng. Bổ sung phần content bị gate sau atlas passive (Exceptional Items, Fracturing Orbs, Basic/Overseer Precursor Tablet) và ghi chú slot tablet trống.
+- Mấy số còn phải log thêm in-game để chốt: tên hai boss Citadel (đang ghi Patriarch's Call/Matriarch's Call theo quan sát, chưa có nguồn ngoài đối chiếu), tổng ~150 map Fortress và phân bổ theo section, trọn questline Doryani (số nexus + boss) và Hilda, và số mission mở mỗi hàng node Master. Con số 4 anomaly map cho Jado cũng là quan sát đầu league.
+- 05/06/2026 — Bản walkthrough đầu, dựng từ patch note 0.5.0 và quan sát in-game đầu league.
 
 ## Relationships
 
