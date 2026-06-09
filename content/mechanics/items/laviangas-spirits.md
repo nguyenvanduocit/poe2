@@ -22,7 +22,7 @@ tags:
 
 # Lavianga's Spirits
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Lavianga%27s_Spirits"} là unique :wiki-link{url="https://www.poe2wiki.net/wiki/Gargantuan_Mana_Flask"} yêu cầu Level 49, định nghĩa bởi một dòng: "This Flask cannot be Used but applies its Effect constantly." Flask không có activation, không tốn charge, chỉ phục hồi mana liên tục trong suốt combat mà không cần micro. Trong sample top-XP của poe.ninja ở Runes of Aldur, 42.6% build trang bị nó — phần lớn là caster và build chạy nhiều aura reservation cần mana sustain thụ động thay vì dựa vào flask chủ động.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Lavianga%27s_Spirits"} là unique :wiki-link{url="https://www.poe2wiki.net/wiki/Gargantuan_Mana_Flask"} yêu cầu Level 49, định nghĩa bởi một dòng: "This Flask cannot be Used but applies its Effect constantly." Flask không có activation, không tốn charge, chỉ phục hồi mana liên tục trong suốt combat mà không cần micro. Phần lớn build trang bị nó là caster và build chạy nhiều aura reservation, cần mana sustain thụ động thay vì dựa vào flask chủ động.
 
 ## Chỉ số
 
@@ -57,7 +57,7 @@ Lượng mana phục hồi mỗi giây phụ thuộc vào roll của "(70–80)%
 - Best roll + 20% quality: 66.6 mana / 2s = **33.3 mana/sec**
 - Worst roll + 20% quality: 44.4 mana / 2s = **22.2 mana/sec**
 
-Có một điểm cần biết khi build: mod tăng Flask Duration (từ passive tree hay flask suffix) **không tăng tổng mana phục hồi** — nó chỉ kéo dài chu kỳ 2 giây ra, làm tốc độ phục hồi mỗi giây giảm xuống trong khi tổng lượng mỗi chu kỳ không đổi. Ví dụ với +50% duration: chu kỳ kéo dài lên 3s, cùng 37–55.5 mana nhưng chia trên 3s → chỉ còn 12.3–18.5 mana/sec. Build nào tình cờ có nhiều flask duration modifier trên tree hoặc gear cần tính đến hiệu ứng này.
+Có một điểm cần biết khi build: mod tăng Flask Duration (từ passive tree) **không tăng tổng mana phục hồi** — nó chỉ kéo dài chu kỳ 2 giây ra, làm tốc độ phục hồi mỗi giây giảm xuống trong khi tổng lượng mỗi chu kỳ không đổi. Ví dụ với +50% duration: chu kỳ kéo dài lên 3s, cùng 37–55.5 mana nhưng chia trên 3s → chỉ còn 12.3–18.5 mana/sec. Build nào tình cờ có nhiều flask duration modifier trên tree hoặc gear cần tính đến hiệu ứng này.
 
 ## Build nào cần nhất
 
@@ -65,15 +65,11 @@ Lavianga's Spirits đặc biệt có giá trị với build có chi phí mana ca
 
 **Caster chạy nhiều aura reservation:** Aura reservation cắt maximum mana, khiến pool còn lại mỏng hơn để chi cho skill cost. Khi pool mana bị bó như vậy, một hit burst mana cost dễ cạn pool và phải dừng cast. Flask always-on bù mana liên tục mà không đòi hỏi click giữa combat, tốt hơn hẳn so với flask mana thường — đặc biệt trong những encounter dài không có downtime để uống flask.
 
-**Skill có mana cost cao per cast:** Spell build spam tốc độ cao với cast speed lớn, hoặc skill hỗ trợ qua nhiều :wiki-link{url="https://www.poe2wiki.net/wiki/Support_Skill"} làm cost mỗi cast tăng lên đáng kể. 18.5–27.75 mana/sec thụ động giảm tải cho mana regen tự nhiên từ Intelligence và passive tree.
+**Skill có mana cost cao per cast:** Spell build spam tốc độ cao với cast speed lớn, hoặc skill hỗ trợ qua nhiều :wiki-link{url="https://www.poe2wiki.net/wiki/Support_Skill"} làm cost mỗi cast tăng lên đáng kể. 18.5–27.75 mana/sec thụ động giảm tải cho base mana regeneration (tỷ lệ % max mana) và passive tree.
 
 Ngược lại, build không gặp vấn đề mana — ví dụ attack build dùng ít skill cost, hoặc build đã có nhiều "mana gained on kill" / "mana leech" — không cần flask này. Một flask mana thường roll tốt sẽ cho burst recovery cao hơn nhiều trong 2–4s active window khi cần, còn Lavianga's Spirits chỉ thắng ở chiều duy trì liên tục không cần micro.
 
 Flask cũng không tương thích với setup dùng flask chủ động để trigger hiệu ứng on-use hay on-flask-use passives, vì không có "use" event nào xảy ra.
-
-## Kết luận
-
-Lavianga's Spirits giải quyết đúng một vấn đề: mana leak dần theo thời gian combat mà không cần để ý. 18.5–27.75 mana/sec (lên tới 22.2–33.3 với quality 20%) không phải con số lớn nếu so với burst flask thường, nhưng nó hoàn toàn không phụ thuộc vào thời điểm uống hay charge sustain — đây là lý do build caster nhiều reservation coi nó là slot belt mặc định thay vì thứ gì đó phải quản lý. Flask duration modifier là điểm duy nhất cần kiểm lại khi lên build — nếu vô tình stack flask duration cao, recovery per second sẽ giảm đáng kể dù tooltip không hiển thị rõ điều đó.
 
 ## Version History
 
