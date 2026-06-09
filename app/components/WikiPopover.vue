@@ -35,7 +35,7 @@ const { floatingStyles } = useFloating(
       size({
         padding: 10,
         apply({ availableHeight, availableWidth, elements }) {
-          elements.floating.style.maxWidth = `${Math.max(220, availableWidth)}px`
+          elements.floating.style.maxWidth = `${Math.max(190, availableWidth)}px`
           elements.floating.style.maxHeight = `${Math.max(80, availableHeight)}px`
         },
       }),
@@ -145,11 +145,11 @@ const headerClass = computed(() => itemData.value?.baseType ? '-double' : '-sing
   box-sizing: border-box;
   border: 1px solid var(--rc);
   padding: 2px;
-  min-width: 220px;
-  max-width: 520px;
+  min-width: 190px;
+  max-width: 430px;
   text-align: center;
   font-family: FontinSmallCaps, Fontin-SmallCaps, Verdana, Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1.265;
   font-weight: normal;
   font-style: normal;
@@ -173,7 +173,7 @@ const headerClass = computed(() => itemData.value?.baseType ? '-double' : '-sing
   position: relative;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 20px;
+  font-size: 17px;
   color: var(--rc);
   background-repeat: no-repeat, no-repeat, repeat-x;
 }
@@ -210,7 +210,7 @@ const headerClass = computed(() => itemData.value?.baseType ? '-double' : '-sing
 .poe-box.-divination .poe-header.-double,
 .poe-box.-gem .poe-header.-double { background-position: left 0px, right -108px, center -54px; }
 
-.poe-group { padding: 0 18px; }
+.poe-group { padding: 0 14px; }
 
 .poe-stats > .poe-group:nth-last-child(n+2)::after {
   display: block;
@@ -227,7 +227,7 @@ const headerClass = computed(() => itemData.value?.baseType ? '-double' : '-sing
 
 .poe-desc {
   color: rgb(127, 127, 127);
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.4;
 }
 .poe-box.-gem .poe-desc { color: rgb(27, 162, 155); }
@@ -239,7 +239,7 @@ const headerClass = computed(() => itemData.value?.baseType ? '-double' : '-sing
   gap: 8px;
   padding: 8px 12px;
   color: rgb(170, 170, 170);
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .poe-spinner {
