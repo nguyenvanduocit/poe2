@@ -73,7 +73,7 @@ Chọn nhầm Ascendancy không phải hết đường. Để đổi, cần ba b
 
 ## Relationships
 
-- **related** [Beginner: Passive tree và cách allocate điểm](/guides/beginner-passive-tree) — ascendancy tree truy cập từ trung tâm passive tree, nắm passive tree trước sẽ dễ navigate hơn
-- **related** [Beginner: Spirit là gì và tại sao cần quan tâm](/guides/beginner-spirit) — Spirit Walker ascendancy đặc biệt phụ thuộc vào Spirit resource, cần đọc thêm nếu chọn hướng đó
+- **related** [Passive skill tree: cách đọc và phân bổ điểm](/guides/beginner-passive-tree) — ascendancy tree truy cập từ trung tâm passive tree, nắm passive tree trước sẽ dễ navigate hơn
+- **related** [Spirit: tài nguyên reservation của POE2](/guides/beginner-spirit) — Spirit Walker ascendancy đặc biệt phụ thuộc vào Spirit resource, cần đọc thêm nếu chọn hướng đó
 - **related_mechanics** [Spirit Walker: Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — chi tiết cơ chế và build direction của Spirit Walker ascendancy
 - **related_guides** [Mở khóa toàn bộ atlas endgame](/guides/0-5-atlas-unlock-walkthrough) — sau khi có 4 điểm từ campaign, tiếp theo là atlas progression để lấy nốt 4 điểm còn lại

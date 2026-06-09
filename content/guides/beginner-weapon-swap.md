@@ -47,7 +47,7 @@ Cắm **Discipline** hoặc một herald ở equipment thuộc Set 1, bật lên
 
 Điểm cần chú ý: Spirit pool tính lại theo set đang active. Nếu Set 1 có ít Spirit hơn Set 2 (ví dụ Set 2 cầm sceptre cho thêm Spirit), swap về Set 1 thì trần Spirit giảm xuống — một số persistent skill có thể bị tắt vì vượt trần mới. Phải đảm bảo Spirit của hai set xấp xỉ nhau nếu build cần persistent skill chạy liên tục.
 
-## Usecase phổ biến cần weapon swap
+## Các trường hợp thường dùng weapon swap
 
 **Snapshot debuff cho boss.** Spirit Walker Huntress companion carry dùng Set 2 cầm buckler grant skill **Parry** để áp debuff "+50% more Attack Damage taken" lên boss, rồi swap về Set 1 (spear + sceptre) để companion gánh damage. Debuff đã áp xong vẫn còn hiệu lực sau khi swap — build tận dụng đúng điểm này.
 
@@ -60,5 +60,5 @@ Một lưu ý với build minion và companion: **swap weapon set làm companion
 ## Relationships
 
 - **related_guides** [Spirit: tài nguyên reservation của POE2](/guides/beginner-spirit) — Spirit pool thay đổi theo set đang active; hiểu Spirit là prerequisite để setup dual-set an toàn.
-- **related_guides** [Skill gem và gem socket trong POE2](/guides/beginner-skill-gem) — cơ chế gắn gem vào equipment, cần biết trước khi assign gem per weapon set.
+- **related_guides** [Skill gem và Support gem: hệ thống Uncut Gem của POE2](/guides/beginner-skill-gem) — cơ chế gắn gem vào equipment, cần biết trước khi assign gem cho từng weapon set.
 - **related_builds** [Tame Beast Companion Carry Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-carry) — build dùng Parry snapshot qua weapon swap cho boss, ví dụ thực tế nhất của cơ chế này.

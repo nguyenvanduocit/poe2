@@ -56,7 +56,7 @@ Flask và charm cùng gắn trên belt nhưng không dùng chung slot. Muốn ch
 
 ## Relationships
 
-- **related** [Beginner: defence layers](/guides/beginner-defence-layers) — flask là một trong các lớp defensive; bài này đặt flask vào bức tranh toàn cảnh.
-- **related** [Beginner: life, ES, mana](/guides/beginner-life-es-mana) — hiểu các resource flask đang hồi.
-- **related** [Beginner: ailments](/guides/beginner-ailments) — charm bảo vệ khỏi các ailment như freeze, shock, bleed; đọc thêm về từng ailment để biết charm nào cần trang bị.
-- **related** [Beginner: resistances](/guides/beginner-resistances) — Ruby/Sapphire/Topaz Charm cho resistance tạm thời khi ăn hit; complement cho capping res.
+- **related** [Ba lớp phòng thủ vật lý: Armour, Evasion và Block](/guides/beginner-defence-layers) — flask là một trong các lớp phòng thủ; bài này đặt flask vào bức tranh toàn cảnh.
+- **related** [Ba pool tài nguyên: Life, Energy Shield và Mana](/guides/beginner-life-es-mana) — hiểu các resource flask đang hồi.
+- **related** [Ailment và status effect trong POE2](/guides/beginner-ailments) — charm bảo vệ khỏi các ailment như freeze, shock, bleed; đọc thêm về từng ailment để biết charm nào cần trang bị.
+- **related** [Resistance và cơ chế cap 75%](/guides/beginner-resistances) — Ruby/Sapphire/Topaz Charm cho resistance tạm thời khi ăn hit; bổ trợ cho việc cap resistance.
