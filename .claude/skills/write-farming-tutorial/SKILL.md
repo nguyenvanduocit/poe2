@@ -54,6 +54,7 @@ File `.md` trong `content/farming/` với:
    ```
 
 6. **Rewrite fresh, đừng vá doc cũ — vault luôn ở thì hiện tại** — Khi update strategy đã tồn tại: viết LẠI nguyên bài theo meta/giá **hiện tại**, KHÔNG vá lẻ rồi chừa số/tablet/atlas đã outdate "để giữ lịch sử". Profit/giá stale thay thẳng (kèm timestamp mới); strategy đã chết theo patch (tablet removed, mod nerfed, content disabled) thì gỡ hẳn hoặc xoá doc, không archive trong body. Lịch sử chỉ ở `git log` — doc hiện tại chỉ chứa trạng thái đúng-bây-giờ. Bài xong phải đứng được như sinh ra hôm nay. Ref: CLAUDE.md `## Content Writing Voice` → "Rewrite fresh, đừng vá doc cũ".
+7. **Banned-lexicon — tra `templates/voice-lexicon-vi.md` TRƯỚC khi viết** — cấm calque «trục/đòn bẩy/cốt lõi/đáng kể/một cách + adj/trả về/vòng lặp», động từ «dựng/cấp/chèn» cho buff-stat, pivot AI «— đây là lý do/cách», «Hệ quả thực tế:», «Điều này có nghĩa là», mở đoạn «Đây là X» lặp; xưng hô «mình» hoặc câu vô chủ ngữ. Hook `content-voice-lint` bắt phần grep được — sửa sạch warning trước khi báo xong.
 
 ## Maxroll patterns we adopt
 

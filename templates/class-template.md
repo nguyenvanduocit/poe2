@@ -36,6 +36,9 @@ fields:
   league:
     required: true
     pattern: "^\\d+\\.\\d+(\\.\\d+)?$"
+  patch:
+    required: true
+    pattern: "^\\d+\\.\\d+(\\.\\d+)?$"
 ---
 
 # [Class Name]

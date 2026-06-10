@@ -35,6 +35,7 @@ fields:
     pattern: "^\\d+\\.\\d+(\\.\\d+)?$"
   patch:
     required: true
+    pattern: "^\\d+\\.\\d+(\\.\\d+)?$"
   league_phase:
     required: true
     enum: [Early, Mid, Late, End]

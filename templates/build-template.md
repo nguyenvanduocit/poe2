@@ -34,6 +34,7 @@ fields:
     pattern: "^\\d+\\.\\d+(\\.\\d+)?$"
   patch:
     required: true
+    pattern: "^\\d+\\.\\d+(\\.\\d+)?$"
   budget_tier:
     required: true
     enum: [league-starter, low-budget, medium-budget, high-budget, mirror-tier]

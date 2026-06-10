@@ -86,6 +86,8 @@ File `.md` trong `content/mechanics/<sub>/` với:
     Vd: "Verdict: EXPLOITABLE. Open question: liệu Wretched Defiler có bị nerf trong 3.29 không? Sẽ theo dõi patch notes sau 2026-06-15." Mechanic thuần giải thích (không có gì để phán) thì takeaway chỉ cần recap gọn — không ép gắn verdict label giả.
 11. **Rewrite fresh, đừng vá doc cũ — vault luôn ở thì hiện tại** — Khi input là doc đã tồn tại: viết LẠI nguyên bài theo patch/meta **hiện tại**, KHÔNG bò vào vá lẻ từng dòng rồi chừa đoạn outdate "để giữ lịch sử", KHÔNG nhúng note nhật ký ("phải viết lại", "chờ datamine", "đổi gì cho build của mình"). Số stale thay thẳng (không chú thích "(cần update)"); mechanic/interaction/item đã chết theo patch thì gỡ hẳn, không archive trong body. Lịch sử chỉ sống ở `## Patch Evolution` (record gọn một dòng/patch) hoặc `git log` — doc hiện tại chỉ chứa trạng thái đúng-bây-giờ. Bài xong phải đứng được như sinh ra hôm nay ở patch hiện tại. Ref: CLAUDE.md `## Content Writing Voice` → "Rewrite fresh, đừng vá doc cũ".
 
+12. **Banned-lexicon — tra `templates/voice-lexicon-vi.md` TRƯỚC khi viết** — cấm calque «trục/đòn bẩy/cốt lõi/đáng kể/một cách + adj/trả về/vòng lặp», động từ «dựng/cấp/chèn» cho buff-stat, pivot AI «— đây là lý do/cách», «Hệ quả thực tế:», «Điều này có nghĩa là», mở đoạn «Đây là X» lặp; xưng hô «mình» hoặc câu vô chủ ngữ, không trộn register trong một bài. Hook `content-voice-lint` bắt phần grep được — sửa sạch warning trước khi báo xong.
+
 ## Maxroll patterns we adopt
 
 - **Explanation-first ordering** — khi doc có nhiều section, sắp theo dòng hiểu: nhận diện → cơ chế → tương tác → tối ưu → sai lầm → tổng kết. Đây là *thứ tự khi có*, KHÔNG phải checklist bắt buộc đủ mặt.

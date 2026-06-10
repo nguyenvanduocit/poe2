@@ -59,6 +59,7 @@ File `.md` trong `content/characters/` với:
 
 5. **Title KHÔNG kèm league/patch** — `"TheLeader_A — Progress Tracker"` đúng. `"TheLeader_A — Mirage 3.28 Tracker"` SAI (site auto-concat từ `league_name`/`patch`).
 6. **Snapshot luôn ở thì hiện tại, đừng vá** — Các section trạng thái (Snapshot stats, Gear Summary, Goal, bottleneck) phải viết LẠI thành con số/trang bị **hiện tại** mỗi lần update, KHÔNG để số cũ rồi chú thích "(đã đổi)" bên cạnh, KHÔNG chừa gear cũ "để so sánh". Chỉ `## Progress Log` mới mang tính thời gian (reverse-chrono session entries) — đó là chỗ DUY NHẤT lịch sử sống trong doc; mọi section khác là trạng thái đúng-bây-giờ. Ref: CLAUDE.md `## Content Writing Voice` → "Rewrite fresh, đừng vá doc cũ".
+7. **Banned-lexicon — tra `templates/voice-lexicon-vi.md` TRƯỚC khi viết** — cấm calque «trục/đòn bẩy/cốt lõi/đáng kể/một cách + adj/trả về/vòng lặp», động từ «dựng/cấp/chèn» cho buff-stat, pivot AI «— đây là lý do/cách», «Hệ quả thực tế:», «Điều này có nghĩa là»; xưng hô «mình» hoặc câu vô chủ ngữ. Hook `content-voice-lint` bắt phần grep được — sửa sạch warning trước khi báo xong.
 
 ## Maxroll patterns we don't apply here
 

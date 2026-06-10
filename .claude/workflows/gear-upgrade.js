@@ -103,7 +103,7 @@ const FRAGMENT_SCHEMA = {
 const PHILOSOPHIES = [
   { key: 'cheap-cap', angle: 'CHEAPEST path to cap all three resistances while keeping Int and Spirit intact. Minimal swaps (1-2 slots). Favour all-elemental / two-stone bases that fix multiple resistances in one suffix.' },
   { key: 'eva-life', angle: 'Cap resistances AND maximise Evasion + Life (the build defensive identity). You may touch more slots (boots, body, belt). Never chase Armour.' },
-  { key: 'spirit-minion', angle: 'Cap resistances but route the amulet/body toward Spirit + minion_level (the companion-zoo scaler), accepting a higher tier/cost. State clearly that minion/companion value is hand-reasoned, not PoB-verified.' },
+  { key: 'spirit-minion', angle: 'Cap resistances but route the amulet/body toward Spirit + minion_level (the companion-pack scaler), accepting a higher tier/cost. State clearly that minion/companion value is hand-reasoned, not PoB-verified.' },
   { key: 'per-slot', angle: 'Independent single-slot upgrades — one plan per slot — so the user can buy items one at a time. Each plan swaps exactly one slot and must still keep every hard constraint via that slot alone where possible.' },
 ];
 

@@ -34,6 +34,9 @@ fields:
   league:
     required: true
     pattern: "^\\d+\\.\\d+(\\.\\d+)?$"
+  patch:
+    required: true
+    pattern: "^\\d+\\.\\d+(\\.\\d+)?$"
   current_progress:
     required: true
     enum: [campaign, white-maps, yellow-maps, red-maps, t16-farming, endgame-bosses, uber-content]
