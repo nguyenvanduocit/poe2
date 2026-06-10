@@ -7,6 +7,7 @@ author: duocnv
 created: '2026-05-29'
 updated: '2026-05-29'
 league: '0.5'
+patch: 0.5.0
 ---
 
 # Minion Army Build Comparison

@@ -56,5 +56,4 @@ Skill được cấp từ ascendancy có số support slot tự tăng theo level
 
 ## Relationships
 
-- **related_mechanics** [Spirit Walker và Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — giải thích Spirit resource; cần hiểu Spirit trước khi dùng Uncut Spirit Gem cho persistent buff skill và minion thường trực.
-- **related_mechanics** [Tame Beast Damage Scaling](/mechanics/0-5-tame-beast-damage-scaling) — ví dụ thực tế về cách chọn support gem tối ưu cho một skill cụ thể trong build Tame Beast.
+- **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — giải thích Spirit resource và chuỗi support gem cho companion (Pain Offering package); cần hiểu Spirit trước khi dùng Uncut Spirit Gem cho persistent buff skill và minion thường trực.

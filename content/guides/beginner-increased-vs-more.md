@@ -56,4 +56,4 @@ Khi chọn support gem để cắm: nhìn con số More trên gem là mức tăn
 ## Relationships
 
 - **related** [Spirit: tài nguyên reservation của POE2](/guides/beginner-spirit) — guide cơ bản tương đương, giải thích Spirit reservation theo cùng góc nhìn beginner.
-- **related** [Tame Beast Damage Scaling](/mechanics/0-5-tame-beast-damage-scaling) — ví dụ thực tế về More multiplier trong companion build, áp dụng nguyên tắc guide này ở cấp độ nâng cao.
+- **related** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — ví dụ thực tế về More multiplier trong companion build (bốn trục nhân damage con carry), áp dụng nguyên tắc guide này ở cấp độ nâng cao.

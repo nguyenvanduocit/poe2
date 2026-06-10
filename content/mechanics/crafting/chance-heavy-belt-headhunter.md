@@ -3,7 +3,7 @@ document_type: mechanic
 title: Chance Heavy Belt Săn Headhunter
 mechanic_type: Crafting
 league: '0.5'
-patch: 0.5.0
+patch: 0.5.1
 status: draft
 author: nguyenvanduocit
 created: '2026-06-09'

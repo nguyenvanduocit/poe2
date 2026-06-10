@@ -7,7 +7,7 @@ author: duocnv
 created: '2026-06-10'
 updated: '2026-06-10'
 league: '0.5'
-patch: 0.5.0
+patch: 0.5.1
 sub_class: items
 tags:
   - item

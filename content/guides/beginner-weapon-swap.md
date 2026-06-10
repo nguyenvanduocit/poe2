@@ -61,4 +61,4 @@ Một lưu ý với build minion và companion: **swap weapon set làm companion
 
 - **related_guides** [Spirit: tài nguyên reservation của POE2](/guides/beginner-spirit) — Spirit pool thay đổi theo set đang active; hiểu Spirit là prerequisite để setup dual-set an toàn.
 - **related_guides** [Skill gem và Support gem: hệ thống Uncut Gem của POE2](/guides/beginner-skill-gem) — cơ chế gắn gem vào equipment, cần biết trước khi assign gem cho từng weapon set.
-- **related_builds** [Tame Beast Companion Carry Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-carry) — build dùng Parry snapshot qua weapon swap cho boss, ví dụ thực tế nhất của cơ chế này.
+- **related_builds** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — build companion giữ nguyên Parry setup ở set 2 nhưng chơi no-swap vì swap làm cả đàn despawn, ví dụ thực tế nhất của rủi ro này.

@@ -100,7 +100,7 @@ Một mẹo vận hành: gom buyer cùng khoảng level vào chung nhóm để m
 
 ## Relationships
 
-- **related_builds** [Tame Beast Companion Carry Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-carry) — nhân vật map đang chạy, nền của một carry service nếu clear đủ nhanh.
+- **related_builds** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — nhân vật map đang chạy, nền của một carry service nếu clear đủ nhanh.
 - **related_guides** [Leveling Tracker](/leveling) — bám route campaign theo Client.txt, công cụ chị em của bảng party này.
 - **synergizes_with** [Ritual Belt Hunting](/farming/0-5-ritual-belt-hunting) — farm endgame chạy song song, loot vẫn về mình khi kéo carry trong cùng map.
 

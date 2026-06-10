@@ -21,7 +21,7 @@ tags:
 
 ## Companion items
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Sylvan's_Effigy"} (Stoic Sceptre, Lv62) là item định nghĩa lại trần số lượng companion. Dòng "You can have any number of Companions of different types" phá bỏ giới hạn vốn chỉ cho một con mỗi loại, và không passive hay keystone nào thay thế được chức năng đó. Item cũng cho (50-75)% increased Spirit, Companions deal (50-100)% increased damage to your Marked targets, và grants Level 18 Discipline cùng Level 18 Azmerian Wolf sẵn trong weapon. Ai chạy [Companion Zoo Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-zoo) mà không cầm Sylvan's Effigy là đang thiếu nửa build.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Sylvan's_Effigy"} (Stoic Sceptre, Lv62) là item định nghĩa lại trần số lượng companion. Dòng "You can have any number of Companions of different types" phá bỏ giới hạn vốn chỉ cho một con mỗi loại, và không passive hay keystone nào thay thế được chức năng đó. Item cũng cho (50-75)% increased Spirit, Companions deal (50-100)% increased damage to your Marked targets, và grants Level 18 Discipline cùng Level 18 Azmerian Wolf sẵn trong weapon. Ai chạy [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) mà không cầm Sylvan's Effigy là đang thiếu nửa build.
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Forgotten_Warden"} (Primal Markings, Lv78) là body armour companion-tank trên base Evasion/ES hybrid. Item không có player life, không có res — toàn bộ survival phải đến từ slot khác. Đổi lại, 200–300% increased Evasion and Energy Shield, và cơ chế phòng thủ co giãn: +70–100 to Deflection Rating per 50 missing Energy Shield, tức deflection rating tăng dần khi ES bị ăn mòn. Khi ES chạm 0, deflection rating đạt cực đại. Dòng quan trọng nhất là "10–15% of Damage from Deflected Hits is taken from Damageable Companion's Life before you" — companion không chỉ deal damage, chúng hấp thụ một phần damage deflect cho player. Companion có 30–50% increased maximum Life để gánh vai trò đó. Item cũng grants Level 18 Spirit Vessel cho Spirit management. Ở roll sample: +90 Deflection per 50 missing ES, 285% increased Evasion and ES, 48% companion max life, 11% redirect.
 
@@ -96,6 +96,6 @@ Mua một trong ba Berek ring chỉ vì res mà không chạy Wind Skills: trụ
 ## Relationships
 
 - **related_mechanics** [Spirit Walker — Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — Sylvan's Effigy và Forgotten Warden cắm thẳng vào trục companion
-- **used_by** [Companion Zoo Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-zoo) — Sylvan's Effigy là enabler không thay thế được của build zoo
+- **used_by** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — Sylvan's Effigy là enabler không thay thế được của hướng nguyên đàn
 - **related_mechanics** [Infernal Legion Ignite Loop](/mechanics/skills/infernal-legion-ignite-loop) — The Raven's Flock hỗ trợ minion build gồm cả setup IL; Gruelling Madness từ staff stack với ignite
 - **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview league 0.5 gồm Remnant/Runic Ward context cho The Hollow Mask và Eventide Petals

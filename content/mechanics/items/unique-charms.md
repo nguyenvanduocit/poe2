@@ -154,4 +154,4 @@ Mọi charm trừ Golden Charm bị halve maximum Charges và halve Charges per 
 
 - **related** [Unique Items Mới](/mechanics/0-5-new-unique-items) — danh mục unique nổi bật của 0.5; charm bổ sung lớp trinket cho bức tranh trang bị đó.
 - **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview league 0.5 và meta trang bị hiện tại.
-- **used_by** [Spirit Walker Companion Carry](/builds/huntress/0-5-spirit-walker-companion-carry) — build chạy 2 charm slot trên belt Vengeance Harness, đúng loại slot các charm này nhắm tới.
+- **used_by** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — build chạy belt 3 charm slot cộng slot thứ tư từ quest reward, đúng loại slot các charm này nhắm tới.

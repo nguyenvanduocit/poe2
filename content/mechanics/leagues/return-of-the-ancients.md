@@ -121,4 +121,4 @@ Mặt khác, minion-summoner nhận nhiều buff. Tame Beast lên 84% more damag
 
 - **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — Spirit Walker là một trong hai ascendancy mới của 0.5.0, companion system đủ phức tạp để có note riêng.
 - **related_mechanics** [Infernal Legion Ignite Loop](/mechanics/skills/infernal-legion-ignite-loop) — phân tích chi tiết cơ chế IL sau nerf 0.5.0, gate-split modifier, và vai trò IL trong meta hiện tại.
-- **related_builds** [Spirit Walker Companion Zoo](/builds/huntress/0-5-spirit-walker-companion-zoo) — build Huntress khai thác Trusted Kinship + Sylvan's Effigy sau rework 0.5.0.
+- **related_builds** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — build Huntress khai thác Trusted Kinship + Sylvan's Effigy sau rework 0.5.0.
