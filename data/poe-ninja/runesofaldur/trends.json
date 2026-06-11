@@ -1,11 +1,11 @@
 {
-  "current_date": "2026-06-10",
+  "current_date": "2026-06-11",
   "compared_to": {
     "since_league_day_1": "poe.ninja time machine label=day-1",
     "since_league_week_1": "poe.ninja time machine label=week-1"
   },
   "total_characters": {
-    "current": 124162,
+    "current": 124226,
     "since_league_day_1": 74819,
     "since_league_week_1": 124264
   },
@@ -18,218 +18,209 @@
             "current_pct": 24.68,
             "prev_pct": 0.81,
             "delta_pct_pts": 23.87,
-            "current_count": 30638,
+            "current_count": 30653,
             "prev_count": 606,
-            "delta_count": 30032
+            "delta_count": 30047
           },
           {
             "name": "Ritualist",
-            "current_pct": 13.04,
+            "current_pct": 12.79,
             "prev_pct": 3.65,
-            "delta_pct_pts": 9.39,
-            "current_count": 16185,
+            "delta_pct_pts": 9.14,
+            "current_count": 15885,
             "prev_count": 2730,
-            "delta_count": 13455
-          },
-          {
-            "name": "Amazon",
-            "current_pct": 5.37,
-            "prev_pct": 0.47,
-            "delta_pct_pts": 4.9,
-            "current_count": 6668,
-            "prev_count": 352,
-            "delta_count": 6316
+            "delta_count": 13155
           },
           {
             "name": "Witchhunter",
-            "current_pct": 4.11,
-            "prev_pct": 0.56,
-            "delta_pct_pts": 3.55,
-            "current_count": 5107,
-            "prev_count": 419,
-            "delta_count": 4688
-          },
-          {
-            "name": "Acolyte of Chayula",
-            "current_pct": 3.33,
+            "current_pct": 5.37,
             "prev_pct": 0.47,
-            "delta_pct_pts": 2.86,
-            "current_count": 4131,
-            "prev_count": 349,
-            "delta_count": 3782
+            "delta_pct_pts": 4.9,
+            "current_count": 6669,
+            "prev_count": 352,
+            "delta_count": 6317
           },
           {
             "name": "Lich",
-            "current_pct": 2.8,
+            "current_pct": 4.1,
             "prev_pct": 1.11,
-            "delta_pct_pts": 1.69,
-            "current_count": 3472,
+            "delta_pct_pts": 2.99,
+            "current_count": 5090,
             "prev_count": 832,
-            "delta_count": 2640
+            "delta_count": 4258
           },
           {
-            "name": "Gemling Legionnaire",
-            "current_pct": 1.98,
-            "prev_pct": 0.54,
-            "delta_pct_pts": 1.44,
-            "current_count": 2458,
-            "prev_count": 403,
-            "delta_count": 2055
-          },
-          {
-            "name": "Abyssal Lich",
-            "current_pct": 2.79,
-            "prev_pct": 1.51,
-            "delta_pct_pts": 1.28,
-            "current_count": 3465,
-            "prev_count": 1128,
-            "delta_count": 2337
-          },
-          {
-            "name": "Blood Mage",
-            "current_pct": 3.32,
-            "prev_pct": 2.32,
-            "delta_pct_pts": 1.0,
-            "current_count": 4128,
-            "prev_count": 1736,
-            "delta_count": 2392
-          },
-          {
-            "name": "Sorceress",
-            "current_pct": 2.86,
-            "prev_pct": 2.04,
-            "delta_pct_pts": 0.82,
-            "current_count": 3548,
-            "prev_count": 1527,
-            "delta_count": 2021
-          },
-          {
-            "name": "Warbringer",
-            "current_pct": 1.93,
-            "prev_pct": 1.25,
-            "delta_pct_pts": 0.68,
-            "current_count": 2395,
-            "prev_count": 935,
-            "delta_count": 1460
+            "name": "Shaman",
+            "current_pct": 3.54,
+            "prev_pct": 1.24,
+            "delta_pct_pts": 2.3,
+            "current_count": 4395,
+            "prev_count": 926,
+            "delta_count": 3469
           },
           {
             "name": "Chronomancer",
-            "current_pct": 3.69,
-            "prev_pct": 3.48,
-            "delta_pct_pts": 0.21,
-            "current_count": 4582,
-            "prev_count": 2605,
-            "delta_count": 1977
+            "current_pct": 2.01,
+            "prev_pct": 0.54,
+            "delta_pct_pts": 1.47,
+            "current_count": 2497,
+            "prev_count": 403,
+            "delta_count": 2094
+          },
+          {
+            "name": "Disciple of Varashta",
+            "current_pct": 2.83,
+            "prev_pct": 1.51,
+            "delta_pct_pts": 1.32,
+            "current_count": 3519,
+            "prev_count": 1128,
+            "delta_count": 2391
+          },
+          {
+            "name": "Abyssal Lich",
+            "current_pct": 3.43,
+            "prev_pct": 2.32,
+            "delta_pct_pts": 1.11,
+            "current_count": 4255,
+            "prev_count": 1736,
+            "delta_count": 2519
+          },
+          {
+            "name": "Gemling Legionnaire",
+            "current_pct": 1.54,
+            "prev_pct": 0.47,
+            "delta_pct_pts": 1.07,
+            "current_count": 1907,
+            "prev_count": 349,
+            "delta_count": 1558
+          },
+          {
+            "name": "Stormweaver",
+            "current_pct": 3.57,
+            "prev_pct": 2.67,
+            "delta_pct_pts": 0.9,
+            "current_count": 4432,
+            "prev_count": 1996,
+            "delta_count": 2436
+          },
+          {
+            "name": "Warbringer",
+            "current_pct": 1.8,
+            "prev_pct": 1.25,
+            "delta_pct_pts": 0.55,
+            "current_count": 2241,
+            "prev_count": 935,
+            "delta_count": 1306
+          },
+          {
+            "name": "Amazon",
+            "current_pct": 1.08,
+            "prev_pct": 0.56,
+            "delta_pct_pts": 0.52,
+            "current_count": 1338,
+            "prev_count": 419,
+            "delta_count": 919
           }
         ],
         "falling": [
           {
             "name": "Deadeye",
-            "current_pct": 0.89,
+            "current_pct": 0.98,
             "prev_pct": 12.49,
-            "delta_pct_pts": -11.6,
-            "current_count": 1101,
+            "delta_pct_pts": -11.51,
+            "current_count": 1213,
             "prev_count": 9344,
-            "delta_count": -8243
+            "delta_count": -8131
           },
           {
             "name": "Smith of Kitava",
-            "current_pct": 2.85,
+            "current_pct": 2.84,
             "prev_pct": 13.95,
-            "delta_pct_pts": -11.1,
-            "current_count": 3535,
+            "delta_pct_pts": -11.11,
+            "current_count": 3527,
             "prev_count": 10440,
-            "delta_count": -6905
+            "delta_count": -6913
           },
           {
             "name": "Pathfinder",
-            "current_pct": 18.69,
+            "current_pct": 18.79,
             "prev_pct": 23.11,
-            "delta_pct_pts": -4.42,
-            "current_count": 23212,
+            "delta_pct_pts": -4.32,
+            "current_count": 23340,
             "prev_count": 17287,
-            "delta_count": 5925
+            "delta_count": 6053
           },
           {
             "name": "Spirit Walker",
-            "current_pct": 0.75,
-            "prev_pct": 4.86,
-            "delta_pct_pts": -4.11,
-            "current_count": 932,
-            "prev_count": 3633,
-            "delta_count": -2701
-          },
-          {
-            "name": "Invoker",
-            "current_pct": 1.12,
-            "prev_pct": 4.45,
-            "delta_pct_pts": -3.33,
-            "current_count": 1387,
-            "prev_count": 3330,
-            "delta_count": -1943
-          },
-          {
-            "name": "Disciple of Varashta",
             "current_pct": 0.74,
+            "prev_pct": 4.86,
+            "delta_pct_pts": -4.12,
+            "current_count": 922,
+            "prev_count": 3633,
+            "delta_count": -2711
+          },
+          {
+            "name": "Acolyte of Chayula",
+            "current_pct": 0.71,
             "prev_pct": 3.7,
-            "delta_pct_pts": -2.96,
-            "current_count": 920,
+            "delta_pct_pts": -2.99,
+            "current_count": 881,
             "prev_count": 2765,
-            "delta_count": -1845
+            "delta_count": -1884
           },
           {
             "name": "#27",
             "current_pct": 0.0,
             "prev_pct": 2.76,
             "delta_pct_pts": -2.76,
-            "current_count": 2,
+            "current_count": 1,
             "prev_count": 2068,
-            "delta_count": -2066
+            "delta_count": -2067
           },
           {
             "name": "#26",
             "current_pct": 0.0,
             "prev_pct": 1.88,
             "delta_pct_pts": -1.88,
-            "current_count": 5,
+            "current_count": 3,
             "prev_count": 1403,
-            "delta_count": -1398
+            "delta_count": -1400
+          },
+          {
+            "name": "Invoker",
+            "current_pct": 2.75,
+            "prev_pct": 4.45,
+            "delta_pct_pts": -1.7,
+            "current_count": 3412,
+            "prev_count": 3330,
+            "delta_count": 82
+          },
+          {
+            "name": "Monk",
+            "current_pct": 0.0,
+            "prev_pct": 1.67,
+            "delta_pct_pts": -1.67,
+            "current_count": 3,
+            "prev_count": 1249,
+            "delta_count": -1246
           },
           {
             "name": "Ranger",
             "current_pct": 0.0,
-            "prev_pct": 1.67,
-            "delta_pct_pts": -1.67,
-            "current_count": 2,
-            "prev_count": 1249,
-            "delta_count": -1247
-          },
-          {
-            "name": "Huntress",
-            "current_pct": 0.0,
             "prev_pct": 1.33,
             "delta_pct_pts": -1.33,
-            "current_count": 3,
+            "current_count": 5,
             "prev_count": 995,
-            "delta_count": -992
+            "delta_count": -990
           },
           {
-            "name": "Tactician",
-            "current_pct": 0.28,
+            "name": "Blood Mage",
+            "current_pct": 0.26,
             "prev_pct": 1.51,
-            "delta_pct_pts": -1.23,
-            "current_count": 342,
+            "delta_pct_pts": -1.25,
+            "current_count": 322,
             "prev_count": 1131,
-            "delta_count": -789
-          },
-          {
-            "name": "Stormweaver",
-            "current_pct": 1.51,
-            "prev_pct": 2.67,
-            "delta_pct_pts": -1.16,
-            "current_count": 1873,
-            "prev_count": 1996,
-            "delta_count": -123
+            "delta_count": -809
           },
           {
             "name": "#29",
@@ -250,6 +241,15 @@
             "delta_count": -758
           },
           {
+            "name": "Witch",
+            "current_pct": 1.08,
+            "prev_pct": 2.04,
+            "delta_pct_pts": -0.96,
+            "current_count": 1345,
+            "prev_count": 1527,
+            "delta_count": -182
+          },
+          {
             "name": "#28",
             "current_pct": 0.0,
             "prev_pct": 0.73,
@@ -264,212 +264,212 @@
         "rising": [
           {
             "name": "Pathfinder",
-            "current_pct": 18.69,
+            "current_pct": 18.79,
             "prev_pct": 14.48,
-            "delta_pct_pts": 4.21,
-            "current_count": 23212,
+            "delta_pct_pts": 4.31,
+            "current_count": 23340,
             "prev_count": 17999,
-            "delta_count": 5213
-          },
-          {
-            "name": "Witchhunter",
-            "current_pct": 4.11,
-            "prev_pct": 0.94,
-            "delta_pct_pts": 3.17,
-            "current_count": 5107,
-            "prev_count": 1163,
-            "delta_count": 3944
-          },
-          {
-            "name": "Blood Mage",
-            "current_pct": 3.32,
-            "prev_pct": 0.37,
-            "delta_pct_pts": 2.95,
-            "current_count": 4128,
-            "prev_count": 465,
-            "delta_count": 3663
-          },
-          {
-            "name": "Amazon",
-            "current_pct": 5.37,
-            "prev_pct": 2.77,
-            "delta_pct_pts": 2.6,
-            "current_count": 6668,
-            "prev_count": 3442,
-            "delta_count": 3226
-          },
-          {
-            "name": "Sorceress",
-            "current_pct": 2.86,
-            "prev_pct": 1.15,
-            "delta_pct_pts": 1.71,
-            "current_count": 3548,
-            "prev_count": 1426,
-            "delta_count": 2122
-          },
-          {
-            "name": "Chronomancer",
-            "current_pct": 3.69,
-            "prev_pct": 2.06,
-            "delta_pct_pts": 1.63,
-            "current_count": 4582,
-            "prev_count": 2563,
-            "delta_count": 2019
-          },
-          {
-            "name": "Lich",
-            "current_pct": 2.8,
-            "prev_pct": 1.32,
-            "delta_pct_pts": 1.48,
-            "current_count": 3472,
-            "prev_count": 1637,
-            "delta_count": 1835
+            "delta_count": 5341
           },
           {
             "name": "Abyssal Lich",
-            "current_pct": 2.79,
+            "current_pct": 3.43,
+            "prev_pct": 0.37,
+            "delta_pct_pts": 3.06,
+            "current_count": 4255,
+            "prev_count": 465,
+            "delta_count": 3790
+          },
+          {
+            "name": "Lich",
+            "current_pct": 4.1,
+            "prev_pct": 1.32,
+            "delta_pct_pts": 2.78,
+            "current_count": 5090,
+            "prev_count": 1637,
+            "delta_count": 3453
+          },
+          {
+            "name": "Witchhunter",
+            "current_pct": 5.37,
+            "prev_pct": 2.77,
+            "delta_pct_pts": 2.6,
+            "current_count": 6669,
+            "prev_count": 3442,
+            "delta_count": 3227
+          },
+          {
+            "name": "Disciple of Varashta",
+            "current_pct": 2.83,
             "prev_pct": 1.99,
-            "delta_pct_pts": 0.8,
-            "current_count": 3465,
+            "delta_pct_pts": 0.84,
+            "current_count": 3519,
             "prev_count": 2479,
-            "delta_count": 986
+            "delta_count": 1040
+          },
+          {
+            "name": "Shaman",
+            "current_pct": 3.54,
+            "prev_pct": 2.71,
+            "delta_pct_pts": 0.83,
+            "current_count": 4395,
+            "prev_count": 3365,
+            "delta_count": 1030
+          },
+          {
+            "name": "Tactician",
+            "current_pct": 2.84,
+            "prev_pct": 2.06,
+            "delta_pct_pts": 0.78,
+            "current_count": 3527,
+            "prev_count": 2563,
+            "delta_count": 964
           },
           {
             "name": "Warbringer",
-            "current_pct": 1.93,
+            "current_pct": 1.8,
             "prev_pct": 1.4,
-            "delta_pct_pts": 0.53,
-            "current_count": 2395,
+            "delta_pct_pts": 0.4,
+            "current_count": 2241,
             "prev_count": 1741,
-            "delta_count": 654
+            "delta_count": 500
           },
           {
-            "name": "Witch",
-            "current_pct": 1.14,
+            "name": "Sorceress",
+            "current_pct": 1.13,
             "prev_pct": 0.75,
-            "delta_pct_pts": 0.39,
-            "current_count": 1413,
+            "delta_pct_pts": 0.38,
+            "current_count": 1403,
             "prev_count": 934,
-            "delta_count": 479
+            "delta_count": 469
           },
           {
             "name": "Deadeye",
-            "current_pct": 0.89,
+            "current_pct": 0.98,
             "prev_pct": 0.62,
-            "delta_pct_pts": 0.27,
-            "current_count": 1101,
+            "delta_pct_pts": 0.36,
+            "current_count": 1213,
             "prev_count": 775,
-            "delta_count": 326
-          },
-          {
-            "name": "Smith of Kitava",
-            "current_pct": 2.85,
-            "prev_pct": 2.71,
-            "delta_pct_pts": 0.14,
-            "current_count": 3535,
-            "prev_count": 3364,
-            "delta_count": 171
+            "delta_count": 438
           },
           {
             "name": "Oracle",
-            "current_pct": 1.1,
+            "current_pct": 1.16,
             "prev_pct": 1.0,
-            "delta_pct_pts": 0.1,
-            "current_count": 1366,
+            "delta_pct_pts": 0.16,
+            "current_count": 1439,
             "prev_count": 1243,
-            "delta_count": 123
+            "delta_count": 196
+          },
+          {
+            "name": "Amazon",
+            "current_pct": 1.08,
+            "prev_pct": 0.94,
+            "delta_pct_pts": 0.14,
+            "current_count": 1338,
+            "prev_count": 1163,
+            "delta_count": 175
+          },
+          {
+            "name": "Smith of Kitava",
+            "current_pct": 2.84,
+            "prev_pct": 2.71,
+            "delta_pct_pts": 0.13,
+            "current_count": 3527,
+            "prev_count": 3364,
+            "delta_count": 163
           }
         ],
         "falling": [
           {
             "name": "Ritualist",
-            "current_pct": 13.04,
+            "current_pct": 12.79,
             "prev_pct": 18.12,
-            "delta_pct_pts": -5.08,
-            "current_count": 16185,
+            "delta_pct_pts": -5.33,
+            "current_count": 15885,
             "prev_count": 22517,
-            "delta_count": -6332
+            "delta_count": -6632
           },
           {
-            "name": "Tactician",
-            "current_pct": 0.28,
+            "name": "Blood Mage",
+            "current_pct": 0.26,
             "prev_pct": 4.99,
-            "delta_pct_pts": -4.71,
-            "current_count": 342,
+            "delta_pct_pts": -4.73,
+            "current_count": 322,
             "prev_count": 6200,
-            "delta_count": -5858
-          },
-          {
-            "name": "Invoker",
-            "current_pct": 1.12,
-            "prev_pct": 4.4,
-            "delta_pct_pts": -3.28,
-            "current_count": 1387,
-            "prev_count": 5467,
-            "delta_count": -4080
-          },
-          {
-            "name": "Stormweaver",
-            "current_pct": 1.51,
-            "prev_pct": 4.05,
-            "delta_pct_pts": -2.54,
-            "current_count": 1873,
-            "prev_count": 5035,
-            "delta_count": -3162
-          },
-          {
-            "name": "Shaman",
-            "current_pct": 1.04,
-            "prev_pct": 2.71,
-            "delta_pct_pts": -1.67,
-            "current_count": 1286,
-            "prev_count": 3365,
-            "delta_count": -2079
-          },
-          {
-            "name": "Disciple of Varashta",
-            "current_pct": 0.74,
-            "prev_pct": 2.38,
-            "delta_pct_pts": -1.64,
-            "current_count": 920,
-            "prev_count": 2963,
-            "delta_count": -2043
+            "delta_count": -5878
           },
           {
             "name": "Gemling Legionnaire",
-            "current_pct": 1.98,
+            "current_pct": 1.54,
+            "prev_pct": 3.45,
+            "delta_pct_pts": -1.91,
+            "current_count": 1907,
+            "prev_count": 4288,
+            "delta_count": -2381
+          },
+          {
+            "name": "Acolyte of Chayula",
+            "current_pct": 0.71,
+            "prev_pct": 2.38,
+            "delta_pct_pts": -1.67,
+            "current_count": 881,
+            "prev_count": 2963,
+            "delta_count": -2082
+          },
+          {
+            "name": "Invoker",
+            "current_pct": 2.75,
+            "prev_pct": 4.4,
+            "delta_pct_pts": -1.65,
+            "current_count": 3412,
+            "prev_count": 5467,
+            "delta_count": -2055
+          },
+          {
+            "name": "Chronomancer",
+            "current_pct": 2.01,
             "prev_pct": 2.53,
-            "delta_pct_pts": -0.55,
-            "current_count": 2458,
+            "delta_pct_pts": -0.52,
+            "current_count": 2497,
             "prev_count": 3138,
-            "delta_count": -680
+            "delta_count": -641
+          },
+          {
+            "name": "Stormweaver",
+            "current_pct": 3.57,
+            "prev_pct": 4.05,
+            "delta_pct_pts": -0.48,
+            "current_count": 4432,
+            "prev_count": 5035,
+            "delta_count": -603
           },
           {
             "name": "Titan",
             "current_pct": 24.68,
             "prev_pct": 24.88,
             "delta_pct_pts": -0.2,
-            "current_count": 30638,
+            "current_count": 30653,
             "prev_count": 30916,
-            "delta_count": -278
-          },
-          {
-            "name": "Acolyte of Chayula",
-            "current_pct": 3.33,
-            "prev_pct": 3.45,
-            "delta_pct_pts": -0.12,
-            "current_count": 4131,
-            "prev_count": 4288,
-            "delta_count": -157
+            "delta_count": -263
           },
           {
             "name": "Spirit Walker",
-            "current_pct": 0.75,
+            "current_pct": 0.74,
             "prev_pct": 0.86,
-            "delta_pct_pts": -0.11,
-            "current_count": 932,
+            "delta_pct_pts": -0.12,
+            "current_count": 922,
             "prev_count": 1068,
-            "delta_count": -136
+            "delta_count": -146
+          },
+          {
+            "name": "Witch",
+            "current_pct": 1.08,
+            "prev_pct": 1.15,
+            "delta_pct_pts": -0.07,
+            "current_count": 1345,
+            "prev_count": 1426,
+            "delta_count": -81
           }
         ]
       }
@@ -478,276 +478,276 @@
       "since_league_day_1": {
         "rising": [
           {
-            "name": "Spear",
-            "current_pct": 11.6,
-            "prev_pct": 1.67,
-            "delta_pct_pts": 9.93,
-            "current_count": 14407,
-            "prev_count": 1249,
-            "delta_count": 13158
+            "name": "Quarterstaff",
+            "current_pct": 17.86,
+            "prev_pct": 2.31,
+            "delta_pct_pts": 15.55,
+            "current_count": 22187,
+            "prev_count": 1726,
+            "delta_count": 20461
           },
           {
-            "name": "Staff",
-            "current_pct": 7.27,
-            "prev_pct": 0.06,
-            "delta_pct_pts": 7.21,
-            "current_count": 9028,
-            "prev_count": 45,
-            "delta_count": 8983
+            "name": "Spear",
+            "current_pct": 11.79,
+            "prev_pct": 1.67,
+            "delta_pct_pts": 10.12,
+            "current_count": 14650,
+            "prev_count": 1249,
+            "delta_count": 13401
           },
           {
             "name": "Crossbow",
-            "current_pct": 8.34,
+            "current_pct": 8.0,
             "prev_pct": 1.5,
-            "delta_pct_pts": 6.84,
-            "current_count": 10359,
+            "delta_pct_pts": 6.5,
+            "current_count": 9940,
             "prev_count": 1126,
-            "delta_count": 9233
+            "delta_count": 8814
           },
           {
-            "name": "Quarterstaff",
-            "current_pct": 18.02,
-            "prev_pct": 11.39,
-            "delta_pct_pts": 6.63,
-            "current_count": 22377,
-            "prev_count": 8522,
-            "delta_count": 13855
+            "name": "Spear / Sceptre",
+            "current_pct": 2.89,
+            "prev_pct": 0.16,
+            "delta_pct_pts": 2.73,
+            "current_count": 3589,
+            "prev_count": 122,
+            "delta_count": 3467
           },
           {
-            "name": "Sceptre / Focus",
-            "current_pct": 4.31,
-            "prev_pct": 0.07,
-            "delta_pct_pts": 4.24,
-            "current_count": 5347,
-            "prev_count": 53,
-            "delta_count": 5294
-          },
-          {
-            "name": "Unknown / Sceptre",
-            "current_pct": 7.68,
-            "prev_pct": 3.44,
-            "delta_pct_pts": 4.24,
-            "current_count": 9536,
-            "prev_count": 2572,
-            "delta_count": 6964
+            "name": "Wand / Focus",
+            "current_pct": 3.26,
+            "prev_pct": 0.74,
+            "delta_pct_pts": 2.52,
+            "current_count": 4046,
+            "prev_count": 555,
+            "delta_count": 3491
           },
           {
             "name": "Unknown",
-            "current_pct": 4.81,
+            "current_pct": 5.02,
             "prev_pct": 2.56,
-            "delta_pct_pts": 2.25,
-            "current_count": 5970,
+            "delta_pct_pts": 2.46,
+            "current_count": 6241,
             "prev_count": 1916,
-            "delta_count": 4054
+            "delta_count": 4325
           },
           {
-            "name": "Talisman",
-            "current_pct": 2.81,
-            "prev_pct": 0.74,
-            "delta_pct_pts": 2.07,
-            "current_count": 3486,
-            "prev_count": 555,
-            "delta_count": 2931
+            "name": "Staff",
+            "current_pct": 7.26,
+            "prev_pct": 5.63,
+            "delta_pct_pts": 1.63,
+            "current_count": 9022,
+            "prev_count": 4212,
+            "delta_count": 4810
           },
           {
-            "name": "Sceptre / Shield",
-            "current_pct": 1.05,
-            "prev_pct": 0.18,
-            "delta_pct_pts": 0.87,
-            "current_count": 1302,
-            "prev_count": 134,
-            "delta_count": 1168
+            "name": "Sceptre / Focus",
+            "current_pct": 4.36,
+            "prev_pct": 3.44,
+            "delta_pct_pts": 0.92,
+            "current_count": 5422,
+            "prev_count": 2572,
+            "delta_count": 2850
+          },
+          {
+            "name": "Staff / Focus",
+            "current_pct": 0.89,
+            "prev_pct": 0.11,
+            "delta_pct_pts": 0.78,
+            "current_count": 1105,
+            "prev_count": 83,
+            "delta_count": 1022
           },
           {
             "name": "Dual Mace",
             "current_pct": 0.78,
             "prev_pct": 0.09,
             "delta_pct_pts": 0.69,
-            "current_count": 969,
+            "current_count": 970,
             "prev_count": 65,
-            "delta_count": 904
+            "delta_count": 905
+          },
+          {
+            "name": "Talisman / Sceptre",
+            "current_pct": 0.88,
+            "prev_pct": 0.24,
+            "delta_pct_pts": 0.64,
+            "current_count": 1095,
+            "prev_count": 176,
+            "delta_count": 919
+          },
+          {
+            "name": "Sceptre / Shield",
+            "current_pct": 0.99,
+            "prev_pct": 0.49,
+            "delta_pct_pts": 0.5,
+            "current_count": 1226,
+            "prev_count": 363,
+            "delta_count": 863
           },
           {
             "name": "Unarmed",
-            "current_pct": 0.72,
-            "prev_pct": 0.11,
-            "delta_pct_pts": 0.61,
-            "current_count": 892,
-            "prev_count": 83,
-            "delta_count": 809
+            "current_pct": 0.67,
+            "prev_pct": 0.2,
+            "delta_pct_pts": 0.47,
+            "current_count": 835,
+            "prev_count": 146,
+            "delta_count": 689
           },
           {
-            "name": "Spear / Sceptre",
-            "current_pct": 2.89,
-            "prev_pct": 2.31,
-            "delta_pct_pts": 0.58,
-            "current_count": 3583,
-            "prev_count": 1726,
-            "delta_count": 1857
+            "name": "Wand / Unknown",
+            "current_pct": 0.53,
+            "prev_pct": 0.07,
+            "delta_pct_pts": 0.46,
+            "current_count": 655,
+            "prev_count": 53,
+            "delta_count": 602
           },
           {
             "name": "Sceptre / Buckler",
             "current_pct": 0.26,
             "prev_pct": 0.01,
             "delta_pct_pts": 0.25,
-            "current_count": 323,
-            "prev_count": 7,
-            "delta_count": 316
-          },
-          {
-            "name": "Dual Unknown",
-            "current_pct": 0.26,
-            "prev_pct": 0.05,
-            "delta_pct_pts": 0.21,
-            "current_count": 323,
-            "prev_count": 41,
-            "delta_count": 282
-          },
-          {
-            "name": "Two Handed Mace / Unknown",
-            "current_pct": 0.17,
-            "prev_pct": 0.01,
-            "delta_pct_pts": 0.16,
-            "current_count": 207,
-            "prev_count": 8,
-            "delta_count": 199
+            "current_count": 318,
+            "prev_count": 11,
+            "delta_count": 307
           }
         ],
         "falling": [
           {
             "name": "Two Handed Mace / Shield",
-            "current_pct": 0.36,
+            "current_pct": 0.38,
             "prev_pct": 12.56,
-            "delta_pct_pts": -12.2,
-            "current_count": 441,
+            "delta_pct_pts": -12.18,
+            "current_count": 471,
             "prev_count": 9399,
-            "delta_count": -8958
+            "delta_count": -8928
           },
           {
-            "name": "Unarmed / Shield",
-            "current_pct": 0.01,
-            "prev_pct": 7.74,
-            "delta_pct_pts": -7.73,
-            "current_count": 9,
-            "prev_count": 5794,
-            "delta_count": -5785
+            "name": "Two Handed Mace",
+            "current_pct": 0.17,
+            "prev_pct": 11.39,
+            "delta_pct_pts": -11.22,
+            "current_count": 211,
+            "prev_count": 8522,
+            "delta_count": -8311
           },
           {
             "name": "Mace / Shield",
-            "current_pct": 1.17,
+            "current_pct": 1.15,
             "prev_pct": 8.58,
-            "delta_pct_pts": -7.41,
-            "current_count": 1448,
+            "delta_pct_pts": -7.43,
+            "current_count": 1430,
             "prev_count": 6422,
-            "delta_count": -4974
-          },
-          {
-            "name": "Talisman / Sceptre",
-            "current_pct": 0.87,
-            "prev_pct": 7.52,
-            "delta_pct_pts": -6.65,
-            "current_count": 1086,
-            "prev_count": 5626,
-            "delta_count": -4540
-          },
-          {
-            "name": "Two Handed Mace / Sceptre",
-            "current_pct": 1.88,
-            "prev_pct": 5.63,
-            "delta_pct_pts": -3.75,
-            "current_count": 2332,
-            "prev_count": 4212,
-            "delta_count": -1880
-          },
-          {
-            "name": "Wand / Sceptre",
-            "current_pct": 4.26,
-            "prev_pct": 7.61,
-            "delta_pct_pts": -3.35,
-            "current_count": 5293,
-            "prev_count": 5693,
-            "delta_count": -400
-          },
-          {
-            "name": "Staff / Focus",
-            "current_pct": 0.89,
-            "prev_pct": 3.14,
-            "delta_pct_pts": -2.25,
-            "current_count": 1103,
-            "prev_count": 2348,
-            "delta_count": -1245
-          },
-          {
-            "name": "Wand / Focus",
-            "current_pct": 3.29,
-            "prev_pct": 4.45,
-            "delta_pct_pts": -1.16,
-            "current_count": 4081,
-            "prev_count": 3333,
-            "delta_count": 748
-          },
-          {
-            "name": "Unarmed / Quiver",
-            "current_pct": 0.02,
-            "prev_pct": 1.12,
-            "delta_pct_pts": -1.1,
-            "current_count": 31,
-            "prev_count": 840,
-            "delta_count": -809
-          },
-          {
-            "name": "Bow / Quiver",
-            "current_pct": 13.52,
-            "prev_pct": 14.32,
-            "delta_pct_pts": -0.8,
-            "current_count": 16784,
-            "prev_count": 10714,
-            "delta_count": 6070
-          },
-          {
-            "name": "Spear / Shield",
-            "current_pct": 0.23,
-            "prev_pct": 0.5,
-            "delta_pct_pts": -0.27,
-            "current_count": 281,
-            "prev_count": 377,
-            "delta_count": -96
+            "delta_count": -4992
           },
           {
             "name": "Unknown / Focus",
-            "current_pct": 0.14,
-            "prev_pct": 0.39,
-            "delta_pct_pts": -0.25,
-            "current_count": 178,
-            "prev_count": 290,
-            "delta_count": -112
+            "current_pct": 0.17,
+            "prev_pct": 7.52,
+            "delta_pct_pts": -7.35,
+            "current_count": 206,
+            "prev_count": 5626,
+            "delta_count": -5420
+          },
+          {
+            "name": "Two Handed Mace / Sceptre",
+            "current_pct": 1.98,
+            "prev_pct": 7.61,
+            "delta_pct_pts": -5.63,
+            "current_count": 2458,
+            "prev_count": 5693,
+            "delta_count": -3235
+          },
+          {
+            "name": "Sceptre / Unknown",
+            "current_pct": 0.11,
+            "prev_pct": 1.12,
+            "delta_pct_pts": -1.01,
+            "current_count": 134,
+            "prev_count": 840,
+            "delta_count": -706
+          },
+          {
+            "name": "Bow / Quiver",
+            "current_pct": 13.31,
+            "prev_pct": 14.32,
+            "delta_pct_pts": -1.01,
+            "current_count": 16540,
+            "prev_count": 10714,
+            "delta_count": 5826
+          },
+          {
+            "name": "Mace / Unknown",
+            "current_pct": 0.12,
+            "prev_pct": 0.5,
+            "delta_pct_pts": -0.38,
+            "current_count": 148,
+            "prev_count": 377,
+            "delta_count": -229
+          },
+          {
+            "name": "Talisman",
+            "current_pct": 2.8,
+            "prev_pct": 3.14,
+            "delta_pct_pts": -0.34,
+            "current_count": 3476,
+            "prev_count": 2348,
+            "delta_count": 1128
+          },
+          {
+            "name": "Wand / Sceptre",
+            "current_pct": 4.34,
+            "prev_pct": 4.45,
+            "delta_pct_pts": -0.11,
+            "current_count": 5386,
+            "prev_count": 3333,
+            "delta_count": 2053
           },
           {
             "name": "Bow",
             "current_pct": 0.08,
-            "prev_pct": 0.24,
-            "delta_pct_pts": -0.16,
-            "current_count": 101,
-            "prev_count": 176,
-            "delta_count": -75
+            "prev_pct": 0.17,
+            "delta_pct_pts": -0.09,
+            "current_count": 104,
+            "prev_count": 130,
+            "delta_count": -26
           },
           {
-            "name": "Spear / Focus",
-            "current_pct": 0.06,
-            "prev_pct": 0.17,
-            "delta_pct_pts": -0.11,
-            "current_count": 77,
-            "prev_count": 130,
+            "name": "Unarmed / Quiver",
+            "current_pct": 0.02,
+            "prev_pct": 0.11,
+            "delta_pct_pts": -0.09,
+            "current_count": 30,
+            "prev_count": 83,
             "delta_count": -53
           },
           {
-            "name": "Sceptre / Unknown",
-            "current_pct": 0.1,
-            "prev_pct": 0.2,
-            "delta_pct_pts": -0.1,
-            "current_count": 124,
-            "prev_count": 146,
-            "delta_count": -22
+            "name": "Mace / Buckler",
+            "current_pct": 0.01,
+            "prev_pct": 0.1,
+            "delta_pct_pts": -0.09,
+            "current_count": 11,
+            "prev_count": 78,
+            "delta_count": -67
+          },
+          {
+            "name": "Wand / Buckler",
+            "current_pct": 0.31,
+            "prev_pct": 0.39,
+            "delta_pct_pts": -0.08,
+            "current_count": 390,
+            "prev_count": 290,
+            "delta_count": 100
+          },
+          {
+            "name": "Dual Two Handed Mace",
+            "current_pct": 0.04,
+            "prev_pct": 0.08,
+            "delta_pct_pts": -0.04,
+            "current_count": 47,
+            "prev_count": 58,
+            "delta_count": -11
           }
         ]
       },
@@ -755,275 +755,275 @@
         "rising": [
           {
             "name": "Quarterstaff",
-            "current_pct": 18.02,
-            "prev_pct": 0.79,
-            "delta_pct_pts": 17.23,
-            "current_count": 22377,
-            "prev_count": 983,
-            "delta_count": 21394
-          },
-          {
-            "name": "Staff",
-            "current_pct": 7.27,
-            "prev_pct": 0.1,
-            "delta_pct_pts": 7.17,
-            "current_count": 9028,
-            "prev_count": 129,
-            "delta_count": 8899
+            "current_pct": 17.86,
+            "prev_pct": 3.23,
+            "delta_pct_pts": 14.63,
+            "current_count": 22187,
+            "prev_count": 4010,
+            "delta_count": 18177
           },
           {
             "name": "Crossbow",
-            "current_pct": 8.34,
+            "current_pct": 8.0,
             "prev_pct": 2.87,
-            "delta_pct_pts": 5.47,
-            "current_count": 10359,
+            "delta_pct_pts": 5.13,
+            "current_count": 9940,
             "prev_count": 3562,
-            "delta_count": 6797
-          },
-          {
-            "name": "Unknown / Sceptre",
-            "current_pct": 7.68,
-            "prev_pct": 3.56,
-            "delta_pct_pts": 4.12,
-            "current_count": 9536,
-            "prev_count": 4425,
-            "delta_count": 5111
+            "delta_count": 6378
           },
           {
             "name": "Bow / Quiver",
-            "current_pct": 13.52,
+            "current_pct": 13.31,
             "prev_pct": 10.09,
-            "delta_pct_pts": 3.43,
-            "current_count": 16784,
+            "delta_pct_pts": 3.22,
+            "current_count": 16540,
             "prev_count": 12542,
-            "delta_count": 4242
-          },
-          {
-            "name": "Wand / Focus",
-            "current_pct": 3.29,
-            "prev_pct": 1.27,
-            "delta_pct_pts": 2.02,
-            "current_count": 4081,
-            "prev_count": 1572,
-            "delta_count": 2509
-          },
-          {
-            "name": "Spear",
-            "current_pct": 11.6,
-            "prev_pct": 10.39,
-            "delta_pct_pts": 1.21,
-            "current_count": 14407,
-            "prev_count": 12907,
-            "delta_count": 1500
-          },
-          {
-            "name": "Sceptre / Focus",
-            "current_pct": 4.31,
-            "prev_pct": 3.23,
-            "delta_pct_pts": 1.08,
-            "current_count": 5347,
-            "prev_count": 4015,
-            "delta_count": 1332
-          },
-          {
-            "name": "Sceptre / Shield",
-            "current_pct": 1.05,
-            "prev_pct": 0.14,
-            "delta_pct_pts": 0.91,
-            "current_count": 1302,
-            "prev_count": 170,
-            "delta_count": 1132
+            "delta_count": 3998
           },
           {
             "name": "Wand / Sceptre",
-            "current_pct": 4.26,
-            "prev_pct": 3.38,
-            "delta_pct_pts": 0.88,
-            "current_count": 5293,
-            "prev_count": 4195,
-            "delta_count": 1098
+            "current_pct": 4.34,
+            "prev_pct": 1.27,
+            "delta_pct_pts": 3.07,
+            "current_count": 5386,
+            "prev_count": 1572,
+            "delta_count": 3814
           },
           {
-            "name": "Unarmed",
-            "current_pct": 0.72,
-            "prev_pct": 0.05,
-            "delta_pct_pts": 0.67,
-            "current_count": 892,
-            "prev_count": 68,
-            "delta_count": 824
+            "name": "Talisman",
+            "current_pct": 2.8,
+            "prev_pct": 0.47,
+            "delta_pct_pts": 2.33,
+            "current_count": 3476,
+            "prev_count": 580,
+            "delta_count": 2896
           },
           {
-            "name": "Talisman / Sceptre",
-            "current_pct": 0.87,
-            "prev_pct": 0.37,
-            "delta_pct_pts": 0.5,
-            "current_count": 1086,
-            "prev_count": 454,
-            "delta_count": 632
+            "name": "Spear",
+            "current_pct": 11.79,
+            "prev_pct": 10.39,
+            "delta_pct_pts": 1.4,
+            "current_count": 14650,
+            "prev_count": 12907,
+            "delta_count": 1743
           },
           {
-            "name": "Wand / Unknown",
-            "current_pct": 0.49,
+            "name": "Sceptre / Shield",
+            "current_pct": 0.99,
             "prev_pct": 0.06,
-            "delta_pct_pts": 0.43,
-            "current_count": 603,
+            "delta_pct_pts": 0.93,
+            "current_count": 1226,
             "prev_count": 76,
-            "delta_count": 527
+            "delta_count": 1150
+          },
+          {
+            "name": "Sceptre / Focus",
+            "current_pct": 4.36,
+            "prev_pct": 3.56,
+            "delta_pct_pts": 0.8,
+            "current_count": 5422,
+            "prev_count": 4425,
+            "delta_count": 997
           },
           {
             "name": "Staff / Focus",
             "current_pct": 0.89,
-            "prev_pct": 0.47,
-            "delta_pct_pts": 0.42,
-            "current_count": 1103,
-            "prev_count": 580,
-            "delta_count": 523
+            "prev_pct": 0.26,
+            "delta_pct_pts": 0.63,
+            "current_count": 1105,
+            "prev_count": 323,
+            "delta_count": 782
           },
           {
-            "name": "Sceptre / Buckler",
-            "current_pct": 0.26,
-            "prev_pct": 0.01,
-            "delta_pct_pts": 0.25,
-            "current_count": 323,
-            "prev_count": 10,
-            "delta_count": 313
+            "name": "Talisman / Sceptre",
+            "current_pct": 0.88,
+            "prev_pct": 0.32,
+            "delta_pct_pts": 0.56,
+            "current_count": 1095,
+            "prev_count": 392,
+            "delta_count": 703
+          },
+          {
+            "name": "Unarmed",
+            "current_pct": 0.67,
+            "prev_pct": 0.33,
+            "delta_pct_pts": 0.34,
+            "current_count": 835,
+            "prev_count": 409,
+            "delta_count": 426
+          },
+          {
+            "name": "Staff",
+            "current_pct": 7.26,
+            "prev_pct": 7.05,
+            "delta_pct_pts": 0.21,
+            "current_count": 9022,
+            "prev_count": 8757,
+            "delta_count": 265
+          },
+          {
+            "name": "Wand / Buckler",
+            "current_pct": 0.31,
+            "prev_pct": 0.12,
+            "delta_pct_pts": 0.19,
+            "current_count": 390,
+            "prev_count": 150,
+            "delta_count": 240
+          },
+          {
+            "name": "Mace",
+            "current_pct": 0.27,
+            "prev_pct": 0.1,
+            "delta_pct_pts": 0.17,
+            "current_count": 336,
+            "prev_count": 129,
+            "delta_count": 207
+          },
+          {
+            "name": "Two Handed Mace / Unknown",
+            "current_pct": 0.17,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 0.17,
+            "current_count": 206,
+            "prev_count": 0,
+            "delta_count": 206
           }
         ],
         "falling": [
           {
-            "name": "Unarmed / Shield",
-            "current_pct": 0.01,
+            "name": "Unknown / Sceptre",
+            "current_pct": 7.75,
             "prev_pct": 19.74,
-            "delta_pct_pts": -19.73,
-            "current_count": 9,
+            "delta_pct_pts": -11.99,
+            "current_count": 9632,
             "prev_count": 24535,
-            "delta_count": -24526
+            "delta_count": -14903
           },
           {
             "name": "Unknown",
-            "current_pct": 4.81,
+            "current_pct": 5.02,
             "prev_pct": 14.67,
-            "delta_pct_pts": -9.86,
-            "current_count": 5970,
+            "delta_pct_pts": -9.65,
+            "current_count": 6241,
             "prev_count": 18226,
-            "delta_count": -12256
+            "delta_count": -11985
+          },
+          {
+            "name": "Wand / Focus",
+            "current_pct": 3.26,
+            "prev_pct": 6.99,
+            "delta_pct_pts": -3.73,
+            "current_count": 4046,
+            "prev_count": 8681,
+            "delta_count": -4635
+          },
+          {
+            "name": "Wand / Unknown",
+            "current_pct": 0.53,
+            "prev_pct": 3.23,
+            "delta_pct_pts": -2.7,
+            "current_count": 655,
+            "prev_count": 4015,
+            "delta_count": -3360
           },
           {
             "name": "Two Handed Mace / Sceptre",
-            "current_pct": 1.88,
-            "prev_pct": 7.05,
-            "delta_pct_pts": -5.17,
-            "current_count": 2332,
-            "prev_count": 8757,
-            "delta_count": -6425
+            "current_pct": 1.98,
+            "prev_pct": 3.38,
+            "delta_pct_pts": -1.4,
+            "current_count": 2458,
+            "prev_count": 4195,
+            "delta_count": -1737
           },
           {
-            "name": "Talisman",
-            "current_pct": 2.81,
-            "prev_pct": 6.99,
-            "delta_pct_pts": -4.18,
-            "current_count": 3486,
-            "prev_count": 8681,
-            "delta_count": -5195
-          },
-          {
-            "name": "Two Handed Mace",
-            "current_pct": 0.2,
-            "prev_pct": 3.94,
-            "delta_pct_pts": -3.74,
-            "current_count": 246,
-            "prev_count": 4902,
-            "delta_count": -4656
-          },
-          {
-            "name": "Wand / Buckler",
-            "current_pct": 0.3,
+            "name": "Dual Unknown",
+            "current_pct": 0.29,
             "prev_pct": 1.48,
-            "delta_pct_pts": -1.18,
-            "current_count": 377,
+            "delta_pct_pts": -1.19,
+            "current_count": 364,
             "prev_count": 1841,
-            "delta_count": -1464
-          },
-          {
-            "name": "Unknown / Shield",
-            "current_pct": 0.12,
-            "prev_pct": 1.21,
-            "delta_pct_pts": -1.09,
-            "current_count": 144,
-            "prev_count": 1507,
-            "delta_count": -1363
+            "delta_count": -1477
           },
           {
             "name": "Spear / Sceptre",
             "current_pct": 2.89,
-            "prev_pct": 3.23,
-            "delta_pct_pts": -0.34,
-            "current_count": 3583,
-            "prev_count": 4010,
-            "delta_count": -427
+            "prev_pct": 3.94,
+            "delta_pct_pts": -1.05,
+            "current_count": 3589,
+            "prev_count": 4902,
+            "delta_count": -1313
+          },
+          {
+            "name": "Sceptre / Buckler",
+            "current_pct": 0.26,
+            "prev_pct": 1.21,
+            "delta_pct_pts": -0.95,
+            "current_count": 318,
+            "prev_count": 1507,
+            "delta_count": -1189
+          },
+          {
+            "name": "Two Handed Mace",
+            "current_pct": 0.17,
+            "prev_pct": 0.79,
+            "delta_pct_pts": -0.62,
+            "current_count": 211,
+            "prev_count": 983,
+            "delta_count": -772
+          },
+          {
+            "name": "Unknown / Focus",
+            "current_pct": 0.17,
+            "prev_pct": 0.37,
+            "delta_pct_pts": -0.2,
+            "current_count": 206,
+            "prev_count": 454,
+            "delta_count": -248
+          },
+          {
+            "name": "Mace / Shield",
+            "current_pct": 1.15,
+            "prev_pct": 1.32,
+            "delta_pct_pts": -0.17,
+            "current_count": 1430,
+            "prev_count": 1644,
+            "delta_count": -214
           },
           {
             "name": "Bow",
             "current_pct": 0.08,
-            "prev_pct": 0.32,
-            "delta_pct_pts": -0.24,
-            "current_count": 101,
-            "prev_count": 392,
-            "delta_count": -291
-          },
-          {
-            "name": "Sceptre / Unknown",
-            "current_pct": 0.1,
-            "prev_pct": 0.33,
-            "delta_pct_pts": -0.23,
-            "current_count": 124,
-            "prev_count": 409,
-            "delta_count": -285
-          },
-          {
-            "name": "Spear / Focus",
-            "current_pct": 0.06,
             "prev_pct": 0.24,
-            "delta_pct_pts": -0.18,
-            "current_count": 77,
+            "delta_pct_pts": -0.16,
+            "current_count": 104,
             "prev_count": 300,
-            "delta_count": -223
-          },
-          {
-            "name": "Mace / Shield",
-            "current_pct": 1.17,
-            "prev_pct": 1.32,
-            "delta_pct_pts": -0.15,
-            "current_count": 1448,
-            "prev_count": 1644,
             "delta_count": -196
           },
           {
-            "name": "Mace / Focus",
-            "current_pct": 0.0,
+            "name": "Unarmed / Shield",
+            "current_pct": 0.01,
             "prev_pct": 0.12,
-            "delta_pct_pts": -0.12,
-            "current_count": 2,
+            "delta_pct_pts": -0.11,
+            "current_count": 13,
             "prev_count": 153,
-            "delta_count": -151
+            "delta_count": -140
           },
           {
             "name": "Wand",
-            "current_pct": 0.06,
-            "prev_pct": 0.17,
+            "current_pct": 0.07,
+            "prev_pct": 0.18,
             "delta_pct_pts": -0.11,
-            "current_count": 74,
-            "prev_count": 211,
-            "delta_count": -137
+            "current_count": 85,
+            "prev_count": 228,
+            "delta_count": -143
           },
           {
-            "name": "Unarmed / Quiver",
-            "current_pct": 0.02,
-            "prev_pct": 0.08,
-            "delta_pct_pts": -0.06,
-            "current_count": 31,
-            "prev_count": 102,
-            "delta_count": -71
+            "name": "Unknown / Buckler",
+            "current_pct": 0.07,
+            "prev_pct": 0.17,
+            "delta_pct_pts": -0.1,
+            "current_count": 89,
+            "prev_count": 211,
+            "delta_count": -122
           }
         ]
       }
@@ -1033,138 +1033,138 @@
         "rising": [
           {
             "name": "Rare Ring",
-            "current_pct": 96.61,
+            "current_pct": 96.54,
             "prev_pct": 1.7,
-            "delta_pct_pts": 94.91,
-            "current_count": 119957,
+            "delta_pct_pts": 94.84,
+            "current_count": 119929,
             "prev_count": 1270,
-            "delta_count": 118687
+            "delta_count": 118659
           },
           {
             "name": "Rare Boots",
             "current_pct": 92.47,
             "prev_pct": 0.0,
             "delta_pct_pts": 92.47,
-            "current_count": 114816,
+            "current_count": 114868,
             "prev_count": 0,
-            "delta_count": 114816
+            "delta_count": 114868
           },
           {
             "name": "Rare Jewel",
-            "current_pct": 94.65,
+            "current_pct": 94.7,
             "prev_pct": 4.54,
-            "delta_pct_pts": 90.11,
-            "current_count": 117523,
+            "delta_pct_pts": 90.16,
+            "current_count": 117646,
             "prev_count": 3400,
-            "delta_count": 114123
+            "delta_count": 114246
           },
           {
             "name": "Magic Flask",
-            "current_pct": 94.34,
+            "current_pct": 93.75,
             "prev_pct": 16.7,
-            "delta_pct_pts": 77.64,
-            "current_count": 117132,
+            "delta_pct_pts": 77.05,
+            "current_count": 116460,
             "prev_count": 12498,
-            "delta_count": 104634
-          },
-          {
-            "name": "Rare Belt",
-            "current_pct": 62.45,
-            "prev_pct": 7.05,
-            "delta_pct_pts": 55.4,
-            "current_count": 77538,
-            "prev_count": 5278,
-            "delta_count": 72260
+            "delta_count": 103962
           },
           {
             "name": "Rare Helmet",
-            "current_pct": 76.68,
-            "prev_pct": 24.81,
-            "delta_pct_pts": 51.87,
-            "current_count": 95203,
-            "prev_count": 18563,
-            "delta_count": 76640
+            "current_pct": 76.62,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 76.62,
+            "current_count": 95181,
+            "prev_count": 0,
+            "delta_count": 95181
           },
           {
-            "name": "Lavianga's Spirits",
-            "current_pct": 45.31,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 45.31,
-            "current_count": 56259,
-            "prev_count": 0,
-            "delta_count": 56259
+            "name": "Rare Belt",
+            "current_pct": 60.22,
+            "prev_pct": 7.05,
+            "delta_pct_pts": 53.17,
+            "current_count": 74810,
+            "prev_count": 5278,
+            "delta_count": 69532
           },
           {
             "name": "Nascent Hope",
-            "current_pct": 44.92,
+            "current_pct": 47.72,
             "prev_pct": 0.0,
-            "delta_pct_pts": 44.92,
-            "current_count": 55773,
+            "delta_pct_pts": 47.72,
+            "current_count": 59286,
             "prev_count": 0,
-            "delta_count": 55773
+            "delta_count": 59286
           },
           {
-            "name": "Magic Charm",
-            "current_pct": 72.59,
-            "prev_pct": 43.87,
-            "delta_pct_pts": 28.72,
-            "current_count": 90127,
-            "prev_count": 32826,
-            "delta_count": 57301
+            "name": "Lavianga's Spirits",
+            "current_pct": 47.33,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 47.33,
+            "current_count": 58800,
+            "prev_count": 0,
+            "delta_count": 58800
           },
           {
             "name": "The Fall of the Axe",
-            "current_pct": 27.01,
+            "current_pct": 29.64,
             "prev_pct": 0.0,
-            "delta_pct_pts": 27.01,
-            "current_count": 33539,
+            "delta_pct_pts": 29.64,
+            "current_count": 36819,
             "prev_count": 0,
-            "delta_count": 33539
+            "delta_count": 36819
+          },
+          {
+            "name": "Magic Charm",
+            "current_pct": 70.33,
+            "prev_pct": 43.87,
+            "delta_pct_pts": 26.46,
+            "current_count": 87369,
+            "prev_count": 32826,
+            "delta_count": 54543
           },
           {
             "name": "Beira's Anguish",
-            "current_pct": 20.41,
+            "current_pct": 21.24,
             "prev_pct": 0.0,
-            "delta_pct_pts": 20.41,
-            "current_count": 25336,
+            "delta_pct_pts": 21.24,
+            "current_count": 26389,
             "prev_count": 0,
-            "delta_count": 25336
+            "delta_count": 26389
           },
           {
             "name": "Rare Quarterstaff",
-            "current_pct": 18.81,
+            "current_pct": 18.7,
             "prev_pct": 0.0,
-            "delta_pct_pts": 18.81,
-            "current_count": 23350,
+            "delta_pct_pts": 18.7,
+            "current_count": 23227,
             "prev_count": 0,
-            "delta_count": 23350
-          },
-          {
-            "name": "Rare Sceptre",
-            "current_pct": 15.64,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 15.64,
-            "current_count": 19425,
-            "prev_count": 0,
-            "delta_count": 19425
+            "delta_count": 23227
           },
           {
             "name": "From Nothing",
-            "current_pct": 14.73,
+            "current_pct": 16.24,
             "prev_pct": 0.0,
-            "delta_pct_pts": 14.73,
-            "current_count": 18283,
+            "delta_pct_pts": 16.24,
+            "current_count": 20171,
             "prev_count": 0,
-            "delta_count": 18283
+            "delta_count": 20171
           },
           {
-            "name": "Rare Bow",
-            "current_pct": 13.25,
+            "name": "Rare Sceptre",
+            "current_pct": 15.34,
             "prev_pct": 0.0,
-            "delta_pct_pts": 13.25,
-            "current_count": 16453,
+            "delta_pct_pts": 15.34,
+            "current_count": 19053,
             "prev_count": 0,
-            "delta_count": 16453
+            "delta_count": 19053
+          },
+          {
+            "name": "Lochtonial Caress",
+            "current_pct": 12.93,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 12.93,
+            "current_count": 16064,
+            "prev_count": 0,
+            "delta_count": 16064
           }
         ],
         "falling": [
@@ -1188,48 +1188,39 @@
           },
           {
             "name": "Mageblood",
-            "current_pct": 6.48,
+            "current_pct": 7.61,
             "prev_pct": 81.41,
-            "delta_pct_pts": -74.93,
-            "current_count": 8049,
+            "delta_pct_pts": -73.8,
+            "current_count": 9448,
             "prev_count": 60911,
-            "delta_count": -52862
+            "delta_count": -51463
           },
           {
             "name": "Skysliver",
-            "current_pct": 9.84,
+            "current_pct": 10.07,
             "prev_pct": 81.14,
-            "delta_pct_pts": -71.3,
-            "current_count": 12215,
+            "delta_pct_pts": -71.07,
+            "current_count": 12515,
             "prev_count": 60708,
-            "delta_count": -48493
+            "delta_count": -48193
           },
           {
             "name": "The Ordained",
-            "current_pct": 7.33,
+            "current_pct": 8.01,
             "prev_pct": 75.07,
-            "delta_pct_pts": -67.74,
-            "current_count": 9104,
+            "delta_pct_pts": -67.06,
+            "current_count": 9945,
             "prev_count": 56168,
-            "delta_count": -47064
+            "delta_count": -46223
           },
           {
             "name": "Amor Mandragora",
-            "current_pct": 11.13,
+            "current_pct": 11.4,
             "prev_pct": 47.72,
-            "delta_pct_pts": -36.59,
-            "current_count": 13817,
+            "delta_pct_pts": -36.32,
+            "current_count": 14166,
             "prev_count": 35702,
-            "delta_count": -21885
-          },
-          {
-            "name": "Heart of the Well",
-            "current_pct": 53.08,
-            "prev_pct": 87.61,
-            "delta_pct_pts": -34.53,
-            "current_count": 65904,
-            "prev_count": 65550,
-            "delta_count": 354
+            "delta_count": -21536
           },
           {
             "name": "Silks of Veneration",
@@ -1241,13 +1232,22 @@
             "delta_count": -24667
           },
           {
+            "name": "Heart of the Well",
+            "current_pct": 56.07,
+            "prev_pct": 87.61,
+            "delta_pct_pts": -31.54,
+            "current_count": 69649,
+            "prev_count": 65550,
+            "delta_count": 4099
+          },
+          {
             "name": "Rare Body Armour",
-            "current_pct": 70.08,
+            "current_pct": 68.43,
             "prev_pct": 95.37,
-            "delta_pct_pts": -25.29,
-            "current_count": 87009,
+            "delta_pct_pts": -26.94,
+            "current_count": 85010,
             "prev_count": 71352,
-            "delta_count": 15657
+            "delta_count": 13658
           },
           {
             "name": "The Brass Dome",
@@ -1259,16 +1259,25 @@
             "delta_count": -15755
           },
           {
-            "name": "Normal Body Armour",
-            "current_pct": 0.0,
-            "prev_pct": 13.86,
-            "delta_pct_pts": -13.86,
-            "current_count": 0,
-            "prev_count": 10370,
-            "delta_count": -10370
+            "name": "For Utopia",
+            "current_pct": 6.16,
+            "prev_pct": 24.81,
+            "delta_pct_pts": -18.65,
+            "current_count": 7652,
+            "prev_count": 18563,
+            "delta_count": -10911
           },
           {
-            "name": "Maligaro's Virtuosity",
+            "name": "Undying Hate",
+            "current_pct": 0.0,
+            "prev_pct": 13.73,
+            "delta_pct_pts": -13.73,
+            "current_count": 0,
+            "prev_count": 10269,
+            "delta_count": -10269
+          },
+          {
+            "name": "Darkness Enthroned",
             "current_pct": 0.0,
             "prev_pct": 13.3,
             "delta_pct_pts": -13.3,
@@ -1277,7 +1286,7 @@
             "delta_count": -9951
           },
           {
-            "name": "Normal Focus",
+            "name": "The Black Cat",
             "current_pct": 0.0,
             "prev_pct": 12.85,
             "delta_pct_pts": -12.85,
@@ -1287,160 +1296,151 @@
           },
           {
             "name": "Rare Crossbow",
-            "current_pct": 7.54,
+            "current_pct": 7.27,
             "prev_pct": 19.9,
-            "delta_pct_pts": -12.36,
-            "current_count": 9366,
+            "delta_pct_pts": -12.63,
+            "current_count": 9035,
             "prev_count": 14891,
-            "delta_count": -5525
-          },
-          {
-            "name": "Liminal Coil",
-            "current_pct": 0.0,
-            "prev_pct": 8.6,
-            "delta_pct_pts": -8.6,
-            "current_count": 0,
-            "prev_count": 6437,
-            "delta_count": -6437
+            "delta_count": -5856
           }
         ]
       },
       "since_league_week_1": {
         "rising": [
           {
+            "name": "Rare Helmet",
+            "current_pct": 76.62,
+            "prev_pct": 3.93,
+            "delta_pct_pts": 72.69,
+            "current_count": 95181,
+            "prev_count": 4879,
+            "delta_count": 90302
+          },
+          {
             "name": "Rare Belt",
-            "current_pct": 62.45,
+            "current_pct": 60.22,
             "prev_pct": 0.0,
-            "delta_pct_pts": 62.45,
-            "current_count": 77538,
+            "delta_pct_pts": 60.22,
+            "current_count": 74810,
             "prev_count": 0,
-            "delta_count": 77538
+            "delta_count": 74810
           },
           {
             "name": "Nascent Hope",
-            "current_pct": 44.92,
+            "current_pct": 47.72,
             "prev_pct": 9.35,
-            "delta_pct_pts": 35.57,
-            "current_count": 55773,
+            "delta_pct_pts": 38.37,
+            "current_count": 59286,
             "prev_count": 11619,
-            "delta_count": 44154
+            "delta_count": 47667
           },
           {
             "name": "Lavianga's Spirits",
-            "current_pct": 45.31,
+            "current_pct": 47.33,
             "prev_pct": 14.42,
-            "delta_pct_pts": 30.89,
-            "current_count": 56259,
+            "delta_pct_pts": 32.91,
+            "current_count": 58800,
             "prev_count": 17917,
-            "delta_count": 38342
-          },
-          {
-            "name": "The Fall of the Axe",
-            "current_pct": 27.01,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 27.01,
-            "current_count": 33539,
-            "prev_count": 0,
-            "delta_count": 33539
+            "delta_count": 40883
           },
           {
             "name": "Heart of the Well",
-            "current_pct": 53.08,
+            "current_pct": 56.07,
             "prev_pct": 31.42,
-            "delta_pct_pts": 21.66,
-            "current_count": 65904,
+            "delta_pct_pts": 24.65,
+            "current_count": 69649,
             "prev_count": 39045,
-            "delta_count": 26859
+            "delta_count": 30604
           },
           {
             "name": "Beira's Anguish",
-            "current_pct": 20.41,
+            "current_pct": 21.24,
             "prev_pct": 0.0,
-            "delta_pct_pts": 20.41,
-            "current_count": 25336,
+            "delta_pct_pts": 21.24,
+            "current_count": 26389,
             "prev_count": 0,
-            "delta_count": 25336
+            "delta_count": 26389
+          },
+          {
+            "name": "The Fall of the Axe",
+            "current_pct": 29.64,
+            "prev_pct": 8.83,
+            "delta_pct_pts": 20.81,
+            "current_count": 36819,
+            "prev_count": 10975,
+            "delta_count": 25844
           },
           {
             "name": "Rare Quarterstaff",
-            "current_pct": 18.81,
+            "current_pct": 18.7,
             "prev_pct": 0.0,
-            "delta_pct_pts": 18.81,
-            "current_count": 23350,
+            "delta_pct_pts": 18.7,
+            "current_count": 23227,
             "prev_count": 0,
-            "delta_count": 23350
-          },
-          {
-            "name": "Rare Bow",
-            "current_pct": 13.25,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 13.25,
-            "current_count": 16453,
-            "prev_count": 0,
-            "delta_count": 16453
+            "delta_count": 23227
           },
           {
             "name": "Rare Staff",
-            "current_pct": 11.46,
+            "current_pct": 11.55,
             "prev_pct": 0.0,
-            "delta_pct_pts": 11.46,
-            "current_count": 14223,
+            "delta_pct_pts": 11.55,
+            "current_count": 14351,
             "prev_count": 0,
-            "delta_count": 14223
+            "delta_count": 14351
           },
           {
             "name": "Amor Mandragora",
-            "current_pct": 11.13,
+            "current_pct": 11.4,
             "prev_pct": 0.0,
-            "delta_pct_pts": 11.13,
-            "current_count": 13817,
+            "delta_pct_pts": 11.4,
+            "current_count": 14166,
             "prev_count": 0,
-            "delta_count": 13817
+            "delta_count": 14166
           },
           {
-            "name": "Serpent's Egg",
-            "current_pct": 10.96,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 10.96,
-            "current_count": 13610,
-            "prev_count": 0,
-            "delta_count": 13610
-          },
-          {
-            "name": "Arakaali's Gift",
-            "current_pct": 10.3,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 10.3,
-            "current_count": 12791,
-            "prev_count": 0,
-            "delta_count": 12791
-          },
-          {
-            "name": "Cadiro's Gambit",
-            "current_pct": 9.97,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 9.97,
-            "current_count": 12377,
-            "prev_count": 0,
-            "delta_count": 12377
+            "name": "Rare Sceptre",
+            "current_pct": 15.34,
+            "prev_pct": 3.96,
+            "delta_pct_pts": 11.38,
+            "current_count": 19053,
+            "prev_count": 4916,
+            "delta_count": 14137
           },
           {
             "name": "From Nothing",
-            "current_pct": 14.73,
+            "current_pct": 16.24,
             "prev_pct": 4.9,
-            "delta_pct_pts": 9.83,
-            "current_count": 18283,
+            "delta_pct_pts": 11.34,
+            "current_count": 20171,
             "prev_count": 6095,
-            "delta_count": 12188
+            "delta_count": 14076
           },
           {
-            "name": "Lochtonial Caress",
-            "current_pct": 13.16,
-            "prev_pct": 3.47,
-            "delta_pct_pts": 9.69,
-            "current_count": 16342,
-            "prev_count": 4306,
-            "delta_count": 12036
+            "name": "Serpent's Egg",
+            "current_pct": 10.88,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 10.88,
+            "current_count": 13519,
+            "prev_count": 0,
+            "delta_count": 13519
+          },
+          {
+            "name": "Rite of Passage",
+            "current_pct": 15.47,
+            "prev_pct": 4.97,
+            "delta_pct_pts": 10.5,
+            "current_count": 19216,
+            "prev_count": 6170,
+            "delta_count": 13046
+          },
+          {
+            "name": "Cadiro's Gambit",
+            "current_pct": 10.15,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 10.15,
+            "current_count": 12608,
+            "prev_count": 0,
+            "delta_count": 12608
           }
         ],
         "falling": [
@@ -1454,16 +1454,16 @@
             "delta_count": -92185
           },
           {
-            "name": "Rare Quiver",
-            "current_pct": 0.0,
-            "prev_pct": 29.02,
-            "delta_pct_pts": -29.02,
-            "current_count": 0,
-            "prev_count": 36064,
-            "delta_count": -36064
+            "name": "For Utopia",
+            "current_pct": 6.16,
+            "prev_pct": 79.83,
+            "delta_pct_pts": -73.67,
+            "current_count": 7652,
+            "prev_count": 99198,
+            "delta_count": -91546
           },
           {
-            "name": "Yoke of Suffering",
+            "name": "Rare Two Handed Mace",
             "current_pct": 0.0,
             "prev_pct": 25.16,
             "delta_pct_pts": -25.16,
@@ -1472,7 +1472,7 @@
             "delta_count": -31261
           },
           {
-            "name": "Evergrasping Ring",
+            "name": "Runeseeker's Call",
             "current_pct": 0.0,
             "prev_pct": 20.26,
             "delta_pct_pts": -20.26,
@@ -1490,16 +1490,25 @@
             "delta_count": -22620
           },
           {
-            "name": "Morior Invictus",
-            "current_pct": 0.0,
-            "prev_pct": 14.67,
-            "delta_pct_pts": -14.67,
-            "current_count": 0,
-            "prev_count": 18227,
-            "delta_count": -18227
+            "name": "Rare Bow",
+            "current_pct": 13.04,
+            "prev_pct": 29.02,
+            "delta_pct_pts": -15.98,
+            "current_count": 16204,
+            "prev_count": 36064,
+            "delta_count": -19860
           },
           {
-            "name": "Revered Resin",
+            "name": "Magic Charm",
+            "current_pct": 70.33,
+            "prev_pct": 84.58,
+            "delta_pct_pts": -14.25,
+            "current_count": 87369,
+            "prev_count": 105099,
+            "delta_count": -17730
+          },
+          {
+            "name": "Grip of Kulemak",
             "current_pct": 0.0,
             "prev_pct": 13.0,
             "delta_pct_pts": -13.0,
@@ -1508,7 +1517,7 @@
             "delta_count": -16150
           },
           {
-            "name": "Undying Hate",
+            "name": "Vestige of Darkness",
             "current_pct": 0.0,
             "prev_pct": 12.87,
             "delta_pct_pts": -12.87,
@@ -1517,16 +1526,7 @@
             "delta_count": -15992
           },
           {
-            "name": "Magic Charm",
-            "current_pct": 72.59,
-            "prev_pct": 84.58,
-            "delta_pct_pts": -11.99,
-            "current_count": 90127,
-            "prev_count": 105099,
-            "delta_count": -14972
-          },
-          {
-            "name": "Loreweave",
+            "name": "Magic Jewel",
             "current_pct": 0.0,
             "prev_pct": 10.55,
             "delta_pct_pts": -10.55,
@@ -1535,13 +1535,22 @@
             "delta_count": -13105
           },
           {
-            "name": "Atziri's Disdain",
-            "current_pct": 0.0,
-            "prev_pct": 10.09,
-            "delta_pct_pts": -10.09,
-            "current_count": 0,
-            "prev_count": 12534,
-            "delta_count": -12534
+            "name": "Rare Body Armour",
+            "current_pct": 68.43,
+            "prev_pct": 78.54,
+            "delta_pct_pts": -10.11,
+            "current_count": 85010,
+            "prev_count": 97600,
+            "delta_count": -12590
+          },
+          {
+            "name": "Morior Invictus",
+            "current_pct": 5.28,
+            "prev_pct": 14.67,
+            "delta_pct_pts": -9.39,
+            "current_count": 6558,
+            "prev_count": 18227,
+            "delta_count": -11669
           },
           {
             "name": "Nebuloch",
@@ -1553,31 +1562,22 @@
             "delta_count": -11220
           },
           {
-            "name": "Rare Two Handed Mace",
+            "name": "Uhtred's Chalice",
             "current_pct": 0.0,
-            "prev_pct": 8.83,
-            "delta_pct_pts": -8.83,
+            "prev_pct": 8.31,
+            "delta_pct_pts": -8.31,
             "current_count": 0,
-            "prev_count": 10975,
-            "delta_count": -10975
+            "prev_count": 10329,
+            "delta_count": -10329
           },
           {
-            "name": "Rare Body Armour",
-            "current_pct": 70.08,
-            "prev_pct": 78.54,
-            "delta_pct_pts": -8.46,
-            "current_count": 87009,
-            "prev_count": 97600,
-            "delta_count": -10591
-          },
-          {
-            "name": "Darkness Enthroned",
+            "name": "Forsaken Bangle",
             "current_pct": 0.0,
-            "prev_pct": 8.32,
-            "delta_pct_pts": -8.32,
+            "prev_pct": 8.26,
+            "delta_pct_pts": -8.26,
             "current_count": 0,
-            "prev_count": 10336,
-            "delta_count": -10336
+            "prev_count": 10260,
+            "delta_count": -10260
           }
         ]
       }
@@ -1587,138 +1587,138 @@
         "rising": [
           {
             "name": "Herald of Ice",
-            "current_pct": 30.91,
+            "current_pct": 30.93,
             "prev_pct": 0.0,
-            "delta_pct_pts": 30.91,
-            "current_count": 38383,
+            "delta_pct_pts": 30.93,
+            "current_count": 38421,
             "prev_count": 0,
-            "delta_count": 38383
+            "delta_count": 38421
           },
           {
             "name": "Maul",
-            "current_pct": 25.76,
+            "current_pct": 26.53,
             "prev_pct": 0.0,
-            "delta_pct_pts": 25.76,
-            "current_count": 31990,
+            "delta_pct_pts": 26.53,
+            "current_count": 32956,
             "prev_count": 0,
-            "delta_count": 31990
+            "delta_count": 32956
           },
           {
             "name": "Barrage",
-            "current_pct": 23.42,
+            "current_pct": 23.49,
             "prev_pct": 0.0,
-            "delta_pct_pts": 23.42,
-            "current_count": 29073,
+            "delta_pct_pts": 23.49,
+            "current_count": 29176,
             "prev_count": 0,
-            "delta_count": 29073
+            "delta_count": 29176
           },
           {
             "name": "Hollow Focus",
-            "current_pct": 21.04,
+            "current_pct": 21.0,
             "prev_pct": 0.0,
-            "delta_pct_pts": 21.04,
-            "current_count": 26123,
+            "delta_pct_pts": 21.0,
+            "current_count": 26090,
             "prev_count": 0,
-            "delta_count": 26123
-          },
-          {
-            "name": "Remnant Potency III",
-            "current_pct": 18.44,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 18.44,
-            "current_count": 22895,
-            "prev_count": 0,
-            "delta_count": 22895
+            "delta_count": 26090
           },
           {
             "name": "Shock",
-            "current_pct": 18.22,
+            "current_pct": 18.4,
             "prev_pct": 0.0,
-            "delta_pct_pts": 18.22,
-            "current_count": 22624,
+            "delta_pct_pts": 18.4,
+            "current_count": 22862,
             "prev_count": 0,
-            "delta_count": 22624
+            "delta_count": 22862
           },
           {
-            "name": "Elemental Weakness",
-            "current_pct": 17.67,
+            "name": "Entangle",
+            "current_pct": 18.37,
             "prev_pct": 0.0,
-            "delta_pct_pts": 17.67,
-            "current_count": 21939,
+            "delta_pct_pts": 18.37,
+            "current_count": 22821,
             "prev_count": 0,
-            "delta_count": 21939
+            "delta_count": 22821
+          },
+          {
+            "name": "Remnant Potency III",
+            "current_pct": 17.97,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 17.97,
+            "current_count": 22325,
+            "prev_count": 0,
+            "delta_count": 22325
           },
           {
             "name": "Lightning Penetration",
-            "current_pct": 16.64,
+            "current_pct": 16.7,
             "prev_pct": 0.0,
-            "delta_pct_pts": 16.64,
-            "current_count": 20663,
+            "delta_pct_pts": 16.7,
+            "current_count": 20743,
             "prev_count": 0,
-            "delta_count": 20663
+            "delta_count": 20743
           },
           {
             "name": "Lightning Attunement",
-            "current_pct": 16.29,
+            "current_pct": 15.78,
             "prev_pct": 0.0,
-            "delta_pct_pts": 16.29,
-            "current_count": 20224,
+            "delta_pct_pts": 15.78,
+            "current_count": 19606,
             "prev_count": 0,
-            "delta_count": 20224
+            "delta_count": 19606
           },
           {
             "name": "Whirling Assault",
-            "current_pct": 15.05,
+            "current_pct": 14.96,
             "prev_pct": 0.0,
-            "delta_pct_pts": 15.05,
-            "current_count": 18682,
+            "delta_pct_pts": 14.96,
+            "current_count": 18590,
             "prev_count": 0,
-            "delta_count": 18682
+            "delta_count": 18590
           },
           {
-            "name": "Durability",
-            "current_pct": 15.01,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 15.01,
-            "current_count": 18638,
-            "prev_count": 0,
-            "delta_count": 18638
-          },
-          {
-            "name": "Devour",
+            "name": "Thrill of the Kill II",
             "current_pct": 14.84,
             "prev_pct": 0.0,
             "delta_pct_pts": 14.84,
-            "current_count": 18423,
+            "current_count": 18430,
             "prev_count": 0,
-            "delta_count": 18423
+            "delta_count": 18430
+          },
+          {
+            "name": "Frozen Spite",
+            "current_pct": 14.75,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 14.75,
+            "current_count": 18329,
+            "prev_count": 0,
+            "delta_count": 18329
           },
           {
             "name": "Whirling Slash",
-            "current_pct": 13.58,
+            "current_pct": 13.76,
             "prev_pct": 0.0,
-            "delta_pct_pts": 13.58,
-            "current_count": 16861,
+            "delta_pct_pts": 13.76,
+            "current_count": 17088,
             "prev_count": 0,
-            "delta_count": 16861
-          },
-          {
-            "name": "Concentrated Area",
-            "current_pct": 13.16,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 13.16,
-            "current_count": 16345,
-            "prev_count": 0,
-            "delta_count": 16345
+            "delta_count": 17088
           },
           {
             "name": "Twister",
-            "current_pct": 13.11,
+            "current_pct": 13.26,
             "prev_pct": 0.0,
-            "delta_pct_pts": 13.11,
-            "current_count": 16278,
+            "delta_pct_pts": 13.26,
+            "current_count": 16474,
             "prev_count": 0,
-            "delta_count": 16278
+            "delta_count": 16474
+          },
+          {
+            "name": "Pounce",
+            "current_pct": 13.04,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 13.04,
+            "current_count": 16202,
+            "prev_count": 0,
+            "delta_count": 16202
           }
         ],
         "falling": [
@@ -1750,7 +1750,7 @@
             "delta_count": -7954
           },
           {
-            "name": "Brutality III",
+            "name": "Her Declaration",
             "current_pct": 0.0,
             "prev_pct": 10.37,
             "delta_pct_pts": -10.37,
@@ -1759,7 +1759,7 @@
             "delta_count": -7755
           },
           {
-            "name": "Her Declaration",
+            "name": "Prolonged Duration II",
             "current_pct": 0.0,
             "prev_pct": 10.2,
             "delta_pct_pts": -10.2,
@@ -1777,7 +1777,7 @@
             "delta_count": -5921
           },
           {
-            "name": "Lightning Mastery",
+            "name": "Concussive Spells",
             "current_pct": 0.0,
             "prev_pct": 7.56,
             "delta_pct_pts": -7.56,
@@ -1813,7 +1813,7 @@
             "delta_count": -3883
           },
           {
-            "name": "Heightened Curse",
+            "name": "Flash Grenade",
             "current_pct": 0.0,
             "prev_pct": 4.69,
             "delta_pct_pts": -4.69,
@@ -1822,7 +1822,7 @@
             "delta_count": -3510
           },
           {
-            "name": "Companion: Starlit Harvester",
+            "name": "Haemocrystals",
             "current_pct": 0.0,
             "prev_pct": 4.58,
             "delta_pct_pts": -4.58,
@@ -1831,7 +1831,7 @@
             "delta_count": -3430
           },
           {
-            "name": "Mace Strike",
+            "name": "Fire Spell on Hit",
             "current_pct": 0.0,
             "prev_pct": 4.4,
             "delta_pct_pts": -4.4,
@@ -1840,7 +1840,7 @@
             "delta_count": -3291
           },
           {
-            "name": "Slow Potency",
+            "name": "Chain I",
             "current_pct": 0.0,
             "prev_pct": 4.27,
             "delta_pct_pts": -4.27,
@@ -1849,7 +1849,7 @@
             "delta_count": -3197
           },
           {
-            "name": "Comet",
+            "name": "Disengage",
             "current_pct": 0.0,
             "prev_pct": 4.27,
             "delta_pct_pts": -4.27,
@@ -1863,143 +1863,143 @@
         "rising": [
           {
             "name": "Maul",
-            "current_pct": 25.76,
+            "current_pct": 26.53,
             "prev_pct": 0.0,
-            "delta_pct_pts": 25.76,
-            "current_count": 31990,
+            "delta_pct_pts": 26.53,
+            "current_count": 32956,
             "prev_count": 0,
-            "delta_count": 31990
-          },
-          {
-            "name": "Remnant Potency III",
-            "current_pct": 18.44,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 18.44,
-            "current_count": 22895,
-            "prev_count": 0,
-            "delta_count": 22895
+            "delta_count": 32956
           },
           {
             "name": "Shock",
-            "current_pct": 18.22,
+            "current_pct": 18.4,
             "prev_pct": 0.0,
-            "delta_pct_pts": 18.22,
-            "current_count": 22624,
+            "delta_pct_pts": 18.4,
+            "current_count": 22862,
             "prev_count": 0,
-            "delta_count": 22624
+            "delta_count": 22862
           },
           {
-            "name": "Elemental Weakness",
-            "current_pct": 17.67,
+            "name": "Entangle",
+            "current_pct": 18.37,
             "prev_pct": 0.0,
-            "delta_pct_pts": 17.67,
-            "current_count": 21939,
+            "delta_pct_pts": 18.37,
+            "current_count": 22821,
             "prev_count": 0,
-            "delta_count": 21939
+            "delta_count": 22821
+          },
+          {
+            "name": "Remnant Potency III",
+            "current_pct": 17.97,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 17.97,
+            "current_count": 22325,
+            "prev_count": 0,
+            "delta_count": 22325
+          },
+          {
+            "name": "Lightning Penetration",
+            "current_pct": 16.7,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 16.7,
+            "current_count": 20743,
+            "prev_count": 0,
+            "delta_count": 20743
           },
           {
             "name": "Lightning Attunement",
-            "current_pct": 16.29,
+            "current_pct": 15.78,
             "prev_pct": 0.0,
-            "delta_pct_pts": 16.29,
-            "current_count": 20224,
+            "delta_pct_pts": 15.78,
+            "current_count": 19606,
             "prev_count": 0,
-            "delta_count": 20224
+            "delta_count": 19606
           },
           {
             "name": "Whirling Assault",
-            "current_pct": 15.05,
+            "current_pct": 14.96,
             "prev_pct": 0.0,
-            "delta_pct_pts": 15.05,
-            "current_count": 18682,
+            "delta_pct_pts": 14.96,
+            "current_count": 18590,
             "prev_count": 0,
-            "delta_count": 18682
+            "delta_count": 18590
           },
           {
-            "name": "Durability",
-            "current_pct": 15.01,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 15.01,
-            "current_count": 18638,
-            "prev_count": 0,
-            "delta_count": 18638
-          },
-          {
-            "name": "Devour",
+            "name": "Thrill of the Kill II",
             "current_pct": 14.84,
             "prev_pct": 0.0,
             "delta_pct_pts": 14.84,
-            "current_count": 18423,
+            "current_count": 18430,
             "prev_count": 0,
-            "delta_count": 18423
+            "delta_count": 18430
+          },
+          {
+            "name": "Frozen Spite",
+            "current_pct": 14.75,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 14.75,
+            "current_count": 18329,
+            "prev_count": 0,
+            "delta_count": 18329
           },
           {
             "name": "Concentrated Area",
-            "current_pct": 13.16,
+            "current_pct": 12.97,
             "prev_pct": 0.0,
-            "delta_pct_pts": 13.16,
-            "current_count": 16345,
+            "delta_pct_pts": 12.97,
+            "current_count": 16110,
             "prev_count": 0,
-            "delta_count": 16345
+            "delta_count": 16110
           },
           {
-            "name": "Bleed II",
-            "current_pct": 12.65,
+            "name": "Ritual Sacrifice",
+            "current_pct": 12.7,
             "prev_pct": 0.0,
-            "delta_pct_pts": 12.65,
-            "current_count": 15710,
+            "delta_pct_pts": 12.7,
+            "current_count": 15780,
             "prev_count": 0,
-            "delta_count": 15710
+            "delta_count": 15780
           },
           {
-            "name": "Blind I",
-            "current_pct": 12.36,
+            "name": "Durability",
+            "current_pct": 12.28,
             "prev_pct": 0.0,
-            "delta_pct_pts": 12.36,
-            "current_count": 15342,
+            "delta_pct_pts": 12.28,
+            "current_count": 15253,
             "prev_count": 0,
-            "delta_count": 15342
+            "delta_count": 15253
           },
           {
-            "name": "Cluster Grenade",
-            "current_pct": 11.32,
+            "name": "Earthshatter",
+            "current_pct": 10.43,
             "prev_pct": 0.0,
-            "delta_pct_pts": 11.32,
-            "current_count": 14051,
+            "delta_pct_pts": 10.43,
+            "current_count": 12962,
             "prev_count": 0,
-            "delta_count": 14051
+            "delta_count": 12962
           },
           {
             "name": "Cackling Companions",
-            "current_pct": 10.62,
+            "current_pct": 10.24,
             "prev_pct": 0.0,
-            "delta_pct_pts": 10.62,
-            "current_count": 13186,
+            "delta_pct_pts": 10.24,
+            "current_count": 12716,
             "prev_count": 0,
-            "delta_count": 13186
+            "delta_count": 12716
           },
           {
-            "name": "Skeletal Cleric",
-            "current_pct": 10.51,
+            "name": "Armour Demolisher I",
+            "current_pct": 10.23,
             "prev_pct": 0.0,
-            "delta_pct_pts": 10.51,
-            "current_count": 13044,
+            "delta_pct_pts": 10.23,
+            "current_count": 12711,
             "prev_count": 0,
-            "delta_count": 13044
-          },
-          {
-            "name": "Meditate",
-            "current_pct": 10.18,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 10.18,
-            "current_count": 12639,
-            "prev_count": 0,
-            "delta_count": 12639
+            "delta_count": 12711
           }
         ],
         "falling": [
           {
-            "name": "Berserk",
+            "name": "Overwhelming Presence",
             "current_pct": 0.0,
             "prev_pct": 20.59,
             "delta_pct_pts": -20.59,
@@ -2026,7 +2026,7 @@
             "delta_count": -22990
           },
           {
-            "name": "Ratha's Assault",
+            "name": "Blind II",
             "current_pct": 0.0,
             "prev_pct": 16.28,
             "delta_pct_pts": -16.28,
@@ -2044,24 +2044,6 @@
             "delta_count": -19357
           },
           {
-            "name": "Explosive Shot",
-            "current_pct": 0.0,
-            "prev_pct": 14.97,
-            "delta_pct_pts": -14.97,
-            "current_count": 0,
-            "prev_count": 18597,
-            "delta_count": -18597
-          },
-          {
-            "name": "Mórrigan's Insight",
-            "current_pct": 0.0,
-            "prev_pct": 14.79,
-            "delta_pct_pts": -14.79,
-            "current_count": 0,
-            "prev_count": 18373,
-            "delta_count": -18373
-          },
-          {
             "name": "Mana Remnants",
             "current_pct": 0.0,
             "prev_pct": 14.29,
@@ -2071,7 +2053,7 @@
             "delta_count": -17756
           },
           {
-            "name": "Oisín's Oath",
+            "name": "Crossbow Shot",
             "current_pct": 0.0,
             "prev_pct": 13.74,
             "delta_pct_pts": -13.74,
@@ -2089,7 +2071,7 @@
             "delta_count": -16081
           },
           {
-            "name": "Earthshatter",
+            "name": "Navira's Fracturing",
             "current_pct": 0.0,
             "prev_pct": 12.78,
             "delta_pct_pts": -12.78,
@@ -2098,7 +2080,7 @@
             "delta_count": -15879
           },
           {
-            "name": "Explosive Grenade",
+            "name": "Explosive Shot",
             "current_pct": 0.0,
             "prev_pct": 12.29,
             "delta_pct_pts": -12.29,
@@ -2107,7 +2089,7 @@
             "delta_count": -15274
           },
           {
-            "name": "Companion: Hyena Demon",
+            "name": "Stormfire",
             "current_pct": 0.0,
             "prev_pct": 11.06,
             "delta_pct_pts": -11.06,
@@ -2116,7 +2098,7 @@
             "delta_count": -13749
           },
           {
-            "name": "Concoct II",
+            "name": "Hourglass",
             "current_pct": 0.0,
             "prev_pct": 10.94,
             "delta_pct_pts": -10.94,
@@ -2125,13 +2107,31 @@
             "delta_count": -13600
           },
           {
-            "name": "Her Declaration",
+            "name": "Prolonged Duration II",
             "current_pct": 0.0,
             "prev_pct": 10.12,
             "delta_pct_pts": -10.12,
             "current_count": 0,
             "prev_count": 12575,
             "delta_count": -12575
+          },
+          {
+            "name": "Syzygy",
+            "current_pct": 0.0,
+            "prev_pct": 9.49,
+            "delta_pct_pts": -9.49,
+            "current_count": 0,
+            "prev_count": 11794,
+            "delta_count": -11794
+          },
+          {
+            "name": "Spell Echo",
+            "current_pct": 0.0,
+            "prev_pct": 9.24,
+            "delta_pct_pts": -9.24,
+            "current_count": 0,
+            "prev_count": 11476,
+            "delta_count": -11476
           }
         ]
       }
@@ -2141,21 +2141,21 @@
         "rising": [
           {
             "name": "Normal",
-            "current_pct": 99.84,
+            "current_pct": 99.85,
             "prev_pct": 81.75,
-            "delta_pct_pts": 18.09,
-            "current_count": 123967,
+            "delta_pct_pts": 18.1,
+            "current_count": 124040,
             "prev_count": 61161,
-            "delta_count": 62806
+            "delta_count": 62879
           },
           {
             "name": "Triggered",
-            "current_pct": 13.45,
+            "current_pct": 13.98,
             "prev_pct": 1.57,
-            "delta_pct_pts": 11.88,
-            "current_count": 16696,
+            "delta_pct_pts": 12.41,
+            "current_count": 17370,
             "prev_count": 1178,
-            "delta_count": 15518
+            "delta_count": 16192
           }
         ],
         "falling": []
@@ -2164,21 +2164,21 @@
         "rising": [
           {
             "name": "Triggered",
-            "current_pct": 13.45,
+            "current_pct": 13.98,
             "prev_pct": 11.1,
-            "delta_pct_pts": 2.35,
-            "current_count": 16696,
+            "delta_pct_pts": 2.88,
+            "current_count": 17370,
             "prev_count": 13799,
-            "delta_count": 2897
+            "delta_count": 3571
           },
           {
             "name": "Normal",
-            "current_pct": 99.84,
+            "current_pct": 99.85,
             "prev_pct": 99.81,
-            "delta_pct_pts": 0.03,
-            "current_count": 123967,
+            "delta_pct_pts": 0.04,
+            "current_count": 124040,
             "prev_count": 124032,
-            "delta_count": -65
+            "delta_count": 8
           }
         ],
         "falling": []
@@ -2189,143 +2189,143 @@
         "rising": [
           {
             "name": "Way of the Stonefist",
-            "current_pct": 24.47,
+            "current_pct": 24.51,
             "prev_pct": 0.0,
-            "delta_pct_pts": 24.47,
-            "current_count": 30384,
+            "delta_pct_pts": 24.51,
+            "current_count": 30449,
             "prev_count": 0,
-            "delta_count": 30384
+            "delta_count": 30449
           },
           {
             "name": "Hollow Focus Technique",
-            "current_pct": 20.66,
+            "current_pct": 20.59,
             "prev_pct": 0.0,
-            "delta_pct_pts": 20.66,
-            "current_count": 25655,
+            "delta_pct_pts": 20.59,
+            "current_count": 25580,
             "prev_count": 0,
-            "delta_count": 25655
+            "delta_count": 25580
           },
           {
             "name": "Runic Meridians",
-            "current_pct": 19.85,
+            "current_pct": 20.21,
             "prev_pct": 0.0,
-            "delta_pct_pts": 19.85,
-            "current_count": 24648,
+            "delta_pct_pts": 20.21,
+            "current_count": 25112,
             "prev_count": 0,
-            "delta_count": 24648
-          },
-          {
-            "name": "Wild Protector",
-            "current_pct": 18.33,
-            "prev_pct": 1.1,
-            "delta_pct_pts": 17.23,
-            "current_count": 22759,
-            "prev_count": 825,
-            "delta_count": 21934
+            "delta_count": 25112
           },
           {
             "name": "Hollow Palm Technique",
-            "current_pct": 18.5,
+            "current_pct": 19.34,
             "prev_pct": 1.44,
-            "delta_pct_pts": 17.06,
-            "current_count": 22970,
+            "delta_pct_pts": 17.9,
+            "current_count": 24026,
             "prev_count": 1078,
-            "delta_count": 21892
+            "delta_count": 22948
           },
           {
-            "name": "Beidat's Hand",
-            "current_pct": 14.63,
+            "name": "Wild Protector",
+            "current_pct": 18.49,
+            "prev_pct": 1.1,
+            "delta_pct_pts": 17.39,
+            "current_count": 22968,
+            "prev_count": 825,
+            "delta_count": 22143
+          },
+          {
+            "name": "Barya of Navira",
+            "current_pct": 14.39,
             "prev_pct": 0.0,
-            "delta_pct_pts": 14.63,
-            "current_count": 18160,
+            "delta_pct_pts": 14.39,
+            "current_count": 17877,
             "prev_count": 0,
-            "delta_count": 18160
+            "delta_count": 17877
           },
           {
             "name": "Dance with Death",
-            "current_pct": 13.2,
+            "current_pct": 13.37,
             "prev_pct": 0.0,
-            "delta_pct_pts": 13.2,
-            "current_count": 16391,
+            "delta_pct_pts": 13.37,
+            "current_count": 16610,
             "prev_count": 0,
-            "delta_count": 16391
+            "delta_count": 16610
           },
           {
             "name": "Gathering Winds",
-            "current_pct": 12.45,
+            "current_pct": 12.31,
             "prev_pct": 0.0,
-            "delta_pct_pts": 12.45,
-            "current_count": 15459,
+            "delta_pct_pts": 12.31,
+            "current_count": 15291,
             "prev_count": 0,
-            "delta_count": 15459
+            "delta_count": 15291
           },
           {
             "name": "Projectile Proximity Specialisation",
-            "current_pct": 12.11,
+            "current_pct": 11.83,
             "prev_pct": 0.0,
-            "delta_pct_pts": 12.11,
-            "current_count": 15041,
+            "delta_pct_pts": 11.83,
+            "current_count": 14701,
             "prev_count": 0,
-            "delta_count": 15041
+            "delta_count": 14701
           },
           {
             "name": "Endless Munitions",
-            "current_pct": 11.97,
+            "current_pct": 11.71,
             "prev_pct": 0.0,
-            "delta_pct_pts": 11.97,
-            "current_count": 14859,
+            "delta_pct_pts": 11.71,
+            "current_count": 14552,
             "prev_count": 0,
-            "delta_count": 14859
+            "delta_count": 14552
           },
           {
             "name": "Mystic Attunement",
-            "current_pct": 11.5,
+            "current_pct": 11.21,
             "prev_pct": 0.0,
-            "delta_pct_pts": 11.5,
-            "current_count": 14275,
+            "delta_pct_pts": 11.21,
+            "current_count": 13929,
             "prev_count": 0,
-            "delta_count": 14275
+            "delta_count": 13929
           },
           {
             "name": "Primal Bounty",
-            "current_pct": 10.33,
+            "current_pct": 10.4,
             "prev_pct": 0.0,
-            "delta_pct_pts": 10.33,
-            "current_count": 12831,
+            "delta_pct_pts": 10.4,
+            "current_count": 12920,
             "prev_count": 0,
-            "delta_count": 12831
+            "delta_count": 12920
           },
           {
-            "name": "Mirage Deadeye",
-            "current_pct": 11.18,
-            "prev_pct": 2.64,
-            "delta_pct_pts": 8.54,
-            "current_count": 13879,
-            "prev_count": 1972,
-            "delta_count": 11907
-          },
-          {
-            "name": "Overwhelming Toxicity",
-            "current_pct": 8.45,
+            "name": "Motoric Implants",
+            "current_pct": 8.47,
             "prev_pct": 0.0,
-            "delta_pct_pts": 8.45,
-            "current_count": 10492,
+            "delta_pct_pts": 8.47,
+            "current_count": 10528,
             "prev_count": 0,
-            "delta_count": 10492
+            "delta_count": 10528
           },
           {
             "name": "Idolatry",
-            "current_pct": 8.44,
+            "current_pct": 8.47,
             "prev_pct": 0.0,
-            "delta_pct_pts": 8.44,
-            "current_count": 10479,
+            "delta_pct_pts": 8.47,
+            "current_count": 10519,
             "prev_count": 0,
-            "delta_count": 10479
+            "delta_count": 10519
+          },
+          {
+            "name": "Mirage Deadeye",
+            "current_pct": 11.09,
+            "prev_pct": 2.64,
+            "delta_pct_pts": 8.45,
+            "current_count": 13776,
+            "prev_count": 1972,
+            "delta_count": 11804
           }
         ],
         "falling": [
           {
-            "name": "Barya of Ruzhan",
+            "name": "Knightly Tenets",
             "current_pct": 0.0,
             "prev_pct": 16.78,
             "delta_pct_pts": -16.78,
@@ -2389,12 +2389,12 @@
           },
           {
             "name": "The Lesser Harm",
-            "current_pct": 5.34,
+            "current_pct": 5.35,
             "prev_pct": 10.92,
-            "delta_pct_pts": -5.58,
-            "current_count": 6635,
+            "delta_pct_pts": -5.57,
+            "current_count": 6647,
             "prev_count": 8173,
-            "delta_count": -1538
+            "delta_count": -1526
           },
           {
             "name": "Primal Hunger",
@@ -2424,7 +2424,7 @@
             "delta_count": -3209
           },
           {
-            "name": "Baryanic Leylines",
+            "name": "Instruments of Power",
             "current_pct": 0.0,
             "prev_pct": 4.02,
             "delta_pct_pts": -4.02,
@@ -2451,7 +2451,7 @@
             "delta_count": -2622
           },
           {
-            "name": "Beidat's Gaze",
+            "name": "Far Shot",
             "current_pct": 0.0,
             "prev_pct": 3.38,
             "delta_pct_pts": -3.38,
@@ -2464,144 +2464,144 @@
       "since_league_week_1": {
         "rising": [
           {
-            "name": "Beidat's Hand",
-            "current_pct": 14.63,
+            "name": "Barya of Navira",
+            "current_pct": 14.39,
             "prev_pct": 0.0,
-            "delta_pct_pts": 14.63,
-            "current_count": 18160,
+            "delta_pct_pts": 14.39,
+            "current_count": 17877,
             "prev_count": 0,
-            "delta_count": 18160
+            "delta_count": 17877
           },
           {
             "name": "Mystic Attunement",
-            "current_pct": 11.5,
+            "current_pct": 11.21,
             "prev_pct": 0.0,
-            "delta_pct_pts": 11.5,
-            "current_count": 14275,
+            "delta_pct_pts": 11.21,
+            "current_count": 13929,
             "prev_count": 0,
-            "delta_count": 14275
+            "delta_count": 13929
           },
           {
             "name": "The Mhacha's Gift",
-            "current_pct": 9.83,
+            "current_pct": 9.95,
             "prev_pct": 0.0,
-            "delta_pct_pts": 9.83,
-            "current_count": 12201,
+            "delta_pct_pts": 9.95,
+            "current_count": 12362,
             "prev_count": 0,
-            "delta_count": 12201
+            "delta_count": 12362
           },
           {
             "name": "Sacred Unity",
-            "current_pct": 9.32,
+            "current_pct": 9.51,
             "prev_pct": 0.0,
-            "delta_pct_pts": 9.32,
-            "current_count": 11577,
+            "delta_pct_pts": 9.51,
+            "current_count": 11820,
             "prev_count": 0,
-            "delta_count": 11577
+            "delta_count": 11820
           },
           {
-            "name": "Overwhelming Toxicity",
-            "current_pct": 8.45,
+            "name": "Motoric Implants",
+            "current_pct": 8.47,
             "prev_pct": 0.0,
-            "delta_pct_pts": 8.45,
-            "current_count": 10492,
+            "delta_pct_pts": 8.47,
+            "current_count": 10528,
             "prev_count": 0,
-            "delta_count": 10492
+            "delta_count": 10528
           },
           {
             "name": "Idolatry",
-            "current_pct": 8.44,
+            "current_pct": 8.47,
             "prev_pct": 0.0,
-            "delta_pct_pts": 8.44,
-            "current_count": 10479,
+            "delta_pct_pts": 8.47,
+            "current_count": 10519,
             "prev_count": 0,
-            "delta_count": 10479
-          },
-          {
-            "name": "Crimson Assault",
-            "current_pct": 8.18,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 8.18,
-            "current_count": 10161,
-            "prev_count": 0,
-            "delta_count": 10161
+            "delta_count": 10519
           },
           {
             "name": "Wild Protector",
-            "current_pct": 18.33,
+            "current_pct": 18.49,
             "prev_pct": 10.17,
-            "delta_pct_pts": 8.16,
-            "current_count": 22759,
+            "delta_pct_pts": 8.32,
+            "current_count": 22968,
             "prev_count": 12640,
-            "delta_count": 10119
+            "delta_count": 10328
+          },
+          {
+            "name": "Implanted Gems",
+            "current_pct": 8.23,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 8.23,
+            "current_count": 10229,
+            "prev_count": 0,
+            "delta_count": 10229
           },
           {
             "name": "Hollow Palm Technique",
-            "current_pct": 18.5,
+            "current_pct": 19.34,
             "prev_pct": 11.71,
-            "delta_pct_pts": 6.79,
-            "current_count": 22970,
+            "delta_pct_pts": 7.63,
+            "current_count": 24026,
             "prev_count": 14554,
-            "delta_count": 8416
+            "delta_count": 9472
           },
           {
-            "name": "Path of the Warrior",
-            "current_pct": 6.57,
+            "name": "Advanced Thaumaturgy",
+            "current_pct": 6.85,
             "prev_pct": 0.0,
-            "delta_pct_pts": 6.57,
-            "current_count": 8153,
+            "delta_pct_pts": 6.85,
+            "current_count": 8513,
             "prev_count": 0,
-            "delta_count": 8153
-          },
-          {
-            "name": "The Lesser Harm",
-            "current_pct": 5.34,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 5.34,
-            "current_count": 6635,
-            "prev_count": 0,
-            "delta_count": 6635
-          },
-          {
-            "name": "Entwined Realities",
-            "current_pct": 5.28,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 5.28,
-            "current_count": 6559,
-            "prev_count": 0,
-            "delta_count": 6559
+            "delta_count": 8513
           },
           {
             "name": "Scarred Faith",
-            "current_pct": 5.26,
+            "current_pct": 5.63,
             "prev_pct": 0.0,
-            "delta_pct_pts": 5.26,
-            "current_count": 6531,
+            "delta_pct_pts": 5.63,
+            "current_count": 6992,
             "prev_count": 0,
-            "delta_count": 6531
+            "delta_count": 6992
           },
           {
-            "name": "Bolstering Implants",
-            "current_pct": 5.21,
+            "name": "The Lesser Harm",
+            "current_pct": 5.35,
             "prev_pct": 0.0,
-            "delta_pct_pts": 5.21,
-            "current_count": 6475,
+            "delta_pct_pts": 5.35,
+            "current_count": 6647,
             "prev_count": 0,
-            "delta_count": 6475
+            "delta_count": 6647
+          },
+          {
+            "name": "Entwined Realities",
+            "current_pct": 5.31,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 5.31,
+            "current_count": 6595,
+            "prev_count": 0,
+            "delta_count": 6595
+          },
+          {
+            "name": "Now and Again",
+            "current_pct": 5.28,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 5.28,
+            "current_count": 6553,
+            "prev_count": 0,
+            "delta_count": 6553
           },
           {
             "name": "Mind Over Matter",
-            "current_pct": 4.93,
+            "current_pct": 4.98,
             "prev_pct": 0.0,
-            "delta_pct_pts": 4.93,
-            "current_count": 6121,
+            "delta_pct_pts": 4.98,
+            "current_count": 6190,
             "prev_count": 0,
-            "delta_count": 6121
+            "delta_count": 6190
           }
         ],
         "falling": [
           {
-            "name": "In for the Kill",
+            "name": "Weapon Master",
             "current_pct": 0.0,
             "prev_pct": 14.56,
             "delta_pct_pts": -14.56,
@@ -2637,7 +2637,7 @@
             "delta_count": -11556
           },
           {
-            "name": "The Mórrigan's Guidance",
+            "name": "Ritual Cadence",
             "current_pct": 0.0,
             "prev_pct": 8.11,
             "delta_pct_pts": -8.11,
@@ -2646,7 +2646,7 @@
             "delta_count": -10080
           },
           {
-            "name": "Grasping Wounds",
+            "name": "Elemental Equilibrium",
             "current_pct": 0.0,
             "prev_pct": 7.99,
             "delta_pct_pts": -7.99,
@@ -2655,16 +2655,7 @@
             "delta_count": -9927
           },
           {
-            "name": "Crimson Power",
-            "current_pct": 0.0,
-            "prev_pct": 7.13,
-            "delta_pct_pts": -7.13,
-            "current_count": 0,
-            "prev_count": 8855,
-            "delta_count": -8855
-          },
-          {
-            "name": "Ruzhan's Trap",
+            "name": "Sacrifice of Mind",
             "current_pct": 0.0,
             "prev_pct": 5.36,
             "delta_pct_pts": -5.36,
@@ -2674,24 +2665,15 @@
           },
           {
             "name": "Endless Munitions",
-            "current_pct": 11.97,
+            "current_pct": 11.71,
             "prev_pct": 16.73,
-            "delta_pct_pts": -4.76,
-            "current_count": 14859,
+            "delta_pct_pts": -5.02,
+            "current_count": 14552,
             "prev_count": 20784,
-            "delta_count": -5925
+            "delta_count": -6232
           },
           {
-            "name": "Critical Strike",
-            "current_pct": 0.0,
-            "prev_pct": 4.75,
-            "delta_pct_pts": -4.75,
-            "current_count": 0,
-            "prev_count": 5897,
-            "delta_count": -5897
-          },
-          {
-            "name": "Predatory Instinct",
+            "name": "Obsessive Rituals",
             "current_pct": 0.0,
             "prev_pct": 4.75,
             "delta_pct_pts": -4.75,
@@ -2700,16 +2682,25 @@
             "delta_count": -5901
           },
           {
-            "name": "Ancestral Bond",
+            "name": "Ceremonial Ablution",
             "current_pct": 0.0,
-            "prev_pct": 4.3,
-            "delta_pct_pts": -4.3,
+            "prev_pct": 4.75,
+            "delta_pct_pts": -4.75,
             "current_count": 0,
-            "prev_count": 5341,
-            "delta_count": -5341
+            "prev_count": 5897,
+            "delta_count": -5897
           },
           {
-            "name": "Crystalline Phylactery",
+            "name": "Sunder my Enemies...",
+            "current_pct": 0.0,
+            "prev_pct": 4.75,
+            "delta_pct_pts": -4.75,
+            "current_count": 0,
+            "prev_count": 5898,
+            "delta_count": -5898
+          },
+          {
+            "name": "Sacred Rituals",
             "current_pct": 0.0,
             "prev_pct": 4.04,
             "delta_pct_pts": -4.04,
@@ -2727,13 +2718,22 @@
             "delta_count": -4537
           },
           {
-            "name": "Whoever Pays Best",
+            "name": "Grasping Wounds",
             "current_pct": 0.0,
             "prev_pct": 3.56,
             "delta_pct_pts": -3.56,
             "current_count": 0,
             "prev_count": 4428,
             "delta_count": -4428
+          },
+          {
+            "name": "Storm's Recollection",
+            "current_pct": 0.0,
+            "prev_pct": 3.54,
+            "delta_pct_pts": -3.54,
+            "current_count": 0,
+            "prev_count": 4395,
+            "delta_count": -4395
           }
         ]
       }
@@ -2742,228 +2742,97 @@
       "since_league_day_1": {
         "rising": [
           {
-            "name": "Thaumaturgic Generator",
-            "current_pct": 10.18,
+            "name": "Spectral Ward",
+            "current_pct": 10.23,
             "prev_pct": 0.01,
-            "delta_pct_pts": 10.17,
-            "current_count": 12635,
-            "prev_count": 5,
-            "delta_count": 12630
+            "delta_pct_pts": 10.22,
+            "current_count": 12712,
+            "prev_count": 4,
+            "delta_count": 12708
           },
           {
-            "name": "First Principle of the Hollow",
-            "current_pct": 6.79,
+            "name": "Conservative Casting",
+            "current_pct": 6.73,
             "prev_pct": 0.0,
-            "delta_pct_pts": 6.79,
-            "current_count": 8428,
-            "prev_count": 0,
-            "delta_count": 8428
+            "delta_pct_pts": 6.73,
+            "current_count": 8364,
+            "prev_count": 2,
+            "delta_count": 8362
           },
           {
             "name": "The Frenzied Bear",
-            "current_pct": 3.62,
-            "prev_pct": 0.02,
-            "delta_pct_pts": 3.6,
-            "current_count": 4496,
-            "prev_count": 17,
-            "delta_count": 4479
+            "current_pct": 3.98,
+            "prev_pct": 0.03,
+            "delta_pct_pts": 3.95,
+            "current_count": 4938,
+            "prev_count": 26,
+            "delta_count": 4912
           },
           {
-            "name": "Well of Power",
-            "current_pct": 3.29,
+            "name": "Trained Deflection",
+            "current_pct": 3.49,
             "prev_pct": 0.0,
-            "delta_pct_pts": 3.29,
-            "current_count": 4089,
+            "delta_pct_pts": 3.49,
+            "current_count": 4338,
             "prev_count": 0,
-            "delta_count": 4089
+            "delta_count": 4338
           },
           {
-            "name": "Harness the Elements",
-            "current_pct": 3.25,
+            "name": "Lasting Trauma",
+            "current_pct": 3.36,
             "prev_pct": 0.0,
-            "delta_pct_pts": 3.25,
-            "current_count": 4034,
-            "prev_count": 0,
-            "delta_count": 4034
+            "delta_pct_pts": 3.36,
+            "current_count": 4179,
+            "prev_count": 3,
+            "delta_count": 4176
           },
           {
             "name": "Vulgar Methods",
-            "current_pct": 2.72,
+            "current_pct": 2.84,
             "prev_pct": 0.0,
-            "delta_pct_pts": 2.72,
-            "current_count": 3372,
+            "delta_pct_pts": 2.84,
+            "current_count": 3534,
             "prev_count": 2,
-            "delta_count": 3370
+            "delta_count": 3532
           },
           {
-            "name": "Run and Gun",
-            "current_pct": 2.04,
+            "name": "Augmented Flesh",
+            "current_pct": 2.16,
             "prev_pct": 0.0,
-            "delta_pct_pts": 2.04,
-            "current_count": 2527,
+            "delta_pct_pts": 2.16,
+            "current_count": 2687,
             "prev_count": 0,
-            "delta_count": 2527
-          },
-          {
-            "name": "Tides of Change",
-            "current_pct": 1.8,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 1.8,
-            "current_count": 2240,
-            "prev_count": 0,
-            "delta_count": 2240
+            "delta_count": 2687
           },
           {
             "name": "Zarokh's Gift",
-            "current_pct": 1.47,
+            "current_pct": 1.98,
             "prev_pct": 0.04,
-            "delta_pct_pts": 1.43,
-            "current_count": 1819,
+            "delta_pct_pts": 1.94,
+            "current_count": 2465,
             "prev_count": 33,
-            "delta_count": 1786
+            "delta_count": 2432
+          },
+          {
+            "name": "Gem Enthusiast",
+            "current_pct": 1.74,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 1.74,
+            "current_count": 2167,
+            "prev_count": 0,
+            "delta_count": 2167
           },
           {
             "name": "Efficient Inscriptions",
-            "current_pct": 1.41,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 1.41,
-            "current_count": 1756,
-            "prev_count": 3,
-            "delta_count": 1753
-          },
-          {
-            "name": "The Howling Primate",
-            "current_pct": 1.16,
-            "prev_pct": 0.01,
-            "delta_pct_pts": 1.15,
-            "current_count": 1445,
-            "prev_count": 7,
-            "delta_count": 1438
-          },
-          {
-            "name": "Beastial Skin",
-            "current_pct": 1.13,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 1.13,
-            "current_count": 1405,
-            "prev_count": 0,
-            "delta_count": 1405
-          },
-          {
-            "name": "The Spring Hare",
-            "current_pct": 1.13,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 1.13,
-            "current_count": 1409,
-            "prev_count": 2,
-            "delta_count": 1407
+            "current_pct": 1.54,
+            "prev_pct": 0.02,
+            "delta_pct_pts": 1.52,
+            "current_count": 1917,
+            "prev_count": 17,
+            "delta_count": 1900
           },
           {
             "name": "Preservation",
-            "current_pct": 1.1,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 1.1,
-            "current_count": 1371,
-            "prev_count": 0,
-            "delta_count": 1371
-          },
-          {
-            "name": "Stimulants",
-            "current_pct": 1.05,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 1.05,
-            "current_count": 1304,
-            "prev_count": 0,
-            "delta_count": 1304
-          }
-        ],
-        "falling": []
-      },
-      "since_league_week_1": {
-        "rising": [
-          {
-            "name": "Thaumaturgic Generator",
-            "current_pct": 10.18,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 10.18,
-            "current_count": 12635,
-            "prev_count": 0,
-            "delta_count": 12635
-          },
-          {
-            "name": "First Principle of the Hollow",
-            "current_pct": 6.79,
-            "prev_pct": 0.17,
-            "delta_pct_pts": 6.62,
-            "current_count": 8428,
-            "prev_count": 215,
-            "delta_count": 8213
-          },
-          {
-            "name": "The Frenzied Bear",
-            "current_pct": 3.62,
-            "prev_pct": 0.51,
-            "delta_pct_pts": 3.11,
-            "current_count": 4496,
-            "prev_count": 635,
-            "delta_count": 3861
-          },
-          {
-            "name": "Harness the Elements",
-            "current_pct": 3.25,
-            "prev_pct": 0.45,
-            "delta_pct_pts": 2.8,
-            "current_count": 4034,
-            "prev_count": 563,
-            "delta_count": 3471
-          },
-          {
-            "name": "Vulgar Methods",
-            "current_pct": 2.72,
-            "prev_pct": 0.2,
-            "delta_pct_pts": 2.52,
-            "current_count": 3372,
-            "prev_count": 245,
-            "delta_count": 3127
-          },
-          {
-            "name": "Well of Power",
-            "current_pct": 3.29,
-            "prev_pct": 1.02,
-            "delta_pct_pts": 2.27,
-            "current_count": 4089,
-            "prev_count": 1268,
-            "delta_count": 2821
-          },
-          {
-            "name": "Run and Gun",
-            "current_pct": 2.04,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 2.04,
-            "current_count": 2527,
-            "prev_count": 0,
-            "delta_count": 2527
-          },
-          {
-            "name": "Tides of Change",
-            "current_pct": 1.8,
-            "prev_pct": 0.22,
-            "delta_pct_pts": 1.58,
-            "current_count": 2240,
-            "prev_count": 271,
-            "delta_count": 1969
-          },
-          {
-            "name": "Zarokh's Gift",
-            "current_pct": 1.47,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 1.47,
-            "current_count": 1819,
-            "prev_count": 0,
-            "delta_count": 1819
-          },
-          {
-            "name": "Efficient Inscriptions",
             "current_pct": 1.41,
             "prev_pct": 0.0,
             "delta_pct_pts": 1.41,
@@ -2973,53 +2842,184 @@
           },
           {
             "name": "The Howling Primate",
-            "current_pct": 1.16,
+            "current_pct": 1.3,
             "prev_pct": 0.0,
-            "delta_pct_pts": 1.16,
-            "current_count": 1445,
-            "prev_count": 0,
-            "delta_count": 1445
+            "delta_pct_pts": 1.3,
+            "current_count": 1616,
+            "prev_count": 2,
+            "delta_count": 1614
           },
           {
-            "name": "Beastial Skin",
+            "name": "Run and Gun",
+            "current_pct": 1.14,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 1.14,
+            "current_count": 1416,
+            "prev_count": 0,
+            "delta_count": 1416
+          },
+          {
+            "name": "Illuminated Crown",
             "current_pct": 1.13,
             "prev_pct": 0.0,
             "delta_pct_pts": 1.13,
-            "current_count": 1405,
+            "current_count": 1399,
             "prev_count": 0,
-            "delta_count": 1405
+            "delta_count": 1399
+          },
+          {
+            "name": "Lord of Horrors",
+            "current_pct": 1.14,
+            "prev_pct": 0.01,
+            "delta_pct_pts": 1.13,
+            "current_count": 1416,
+            "prev_count": 4,
+            "delta_count": 1412
+          }
+        ],
+        "falling": []
+      },
+      "since_league_week_1": {
+        "rising": [
+          {
+            "name": "Spectral Ward",
+            "current_pct": 10.23,
+            "prev_pct": 1.82,
+            "delta_pct_pts": 8.41,
+            "current_count": 12712,
+            "prev_count": 2256,
+            "delta_count": 10456
+          },
+          {
+            "name": "Conservative Casting",
+            "current_pct": 6.73,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 6.73,
+            "current_count": 8364,
+            "prev_count": 0,
+            "delta_count": 8364
+          },
+          {
+            "name": "Trained Deflection",
+            "current_pct": 3.49,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 3.49,
+            "current_count": 4338,
+            "prev_count": 0,
+            "delta_count": 4338
+          },
+          {
+            "name": "The Frenzied Bear",
+            "current_pct": 3.98,
+            "prev_pct": 0.54,
+            "delta_pct_pts": 3.44,
+            "current_count": 4938,
+            "prev_count": 677,
+            "delta_count": 4261
+          },
+          {
+            "name": "Lasting Trauma",
+            "current_pct": 3.36,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 3.36,
+            "current_count": 4179,
+            "prev_count": 0,
+            "delta_count": 4179
+          },
+          {
+            "name": "Vulgar Methods",
+            "current_pct": 2.84,
+            "prev_pct": 0.2,
+            "delta_pct_pts": 2.64,
+            "current_count": 3534,
+            "prev_count": 245,
+            "delta_count": 3289
+          },
+          {
+            "name": "Zarokh's Gift",
+            "current_pct": 1.98,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 1.98,
+            "current_count": 2465,
+            "prev_count": 0,
+            "delta_count": 2465
+          },
+          {
+            "name": "Augmented Flesh",
+            "current_pct": 2.16,
+            "prev_pct": 0.22,
+            "delta_pct_pts": 1.94,
+            "current_count": 2687,
+            "prev_count": 271,
+            "delta_count": 2416
+          },
+          {
+            "name": "Gem Enthusiast",
+            "current_pct": 1.74,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 1.74,
+            "current_count": 2167,
+            "prev_count": 0,
+            "delta_count": 2167
+          },
+          {
+            "name": "Preservation",
+            "current_pct": 1.41,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 1.41,
+            "current_count": 1756,
+            "prev_count": 0,
+            "delta_count": 1756
+          },
+          {
+            "name": "The Howling Primate",
+            "current_pct": 1.3,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 1.3,
+            "current_count": 1616,
+            "prev_count": 0,
+            "delta_count": 1616
+          },
+          {
+            "name": "Run and Gun",
+            "current_pct": 1.14,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 1.14,
+            "current_count": 1416,
+            "prev_count": 0,
+            "delta_count": 1416
+          },
+          {
+            "name": "Illuminated Crown",
+            "current_pct": 1.13,
+            "prev_pct": 0.0,
+            "delta_pct_pts": 1.13,
+            "current_count": 1399,
+            "prev_count": 0,
+            "delta_count": 1399
           },
           {
             "name": "The Spring Hare",
-            "current_pct": 1.13,
+            "current_pct": 1.09,
             "prev_pct": 0.0,
-            "delta_pct_pts": 1.13,
-            "current_count": 1409,
+            "delta_pct_pts": 1.09,
+            "current_count": 1360,
             "prev_count": 0,
-            "delta_count": 1409
+            "delta_count": 1360
           },
           {
-            "name": "Stimulants",
-            "current_pct": 1.05,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 1.05,
-            "current_count": 1304,
-            "prev_count": 0,
-            "delta_count": 1304
-          },
-          {
-            "name": "Infernal Limit",
-            "current_pct": 0.91,
-            "prev_pct": 0.0,
-            "delta_pct_pts": 0.91,
-            "current_count": 1132,
-            "prev_count": 0,
-            "delta_count": 1132
+            "name": "Efficient Inscriptions",
+            "current_pct": 1.54,
+            "prev_pct": 0.51,
+            "delta_pct_pts": 1.03,
+            "current_count": 1917,
+            "prev_count": 635,
+            "delta_count": 1282
           }
         ],
         "falling": [
           {
-            "name": "Protraction",
+            "name": "Molten Being",
             "current_pct": 0.0,
             "prev_pct": 7.87,
             "delta_pct_pts": -7.87,
@@ -3029,15 +3029,15 @@
           },
           {
             "name": "Thin Ice",
-            "current_pct": 0.41,
+            "current_pct": 0.45,
             "prev_pct": 5.71,
-            "delta_pct_pts": -5.3,
-            "current_count": 505,
+            "delta_pct_pts": -5.26,
+            "current_count": 555,
             "prev_count": 7097,
-            "delta_count": -6592
+            "delta_count": -6542
           },
           {
-            "name": "Molten Being",
+            "name": "Blessing of the Moon",
             "current_pct": 0.0,
             "prev_pct": 2.23,
             "delta_pct_pts": -2.23,
@@ -3046,7 +3046,7 @@
             "delta_count": -2774
           },
           {
-            "name": "Ancient Aegis",
+            "name": "Protraction",
             "current_pct": 0.0,
             "prev_pct": 1.86,
             "delta_pct_pts": -1.86,
@@ -3055,13 +3055,13 @@
             "delta_count": -2316
           },
           {
-            "name": "Spectral Ward",
+            "name": "Blade Flurry",
             "current_pct": 0.0,
             "prev_pct": 1.82,
             "delta_pct_pts": -1.82,
             "current_count": 0,
-            "prev_count": 2256,
-            "delta_count": -2256
+            "prev_count": 2259,
+            "delta_count": -2259
           },
           {
             "name": "Dangerous Blossom",
@@ -3073,25 +3073,25 @@
             "delta_count": -2218
           },
           {
-            "name": "Patient Barrier",
-            "current_pct": 0.59,
-            "prev_pct": 1.82,
-            "delta_pct_pts": -1.23,
-            "current_count": 731,
-            "prev_count": 2259,
-            "delta_count": -1528
-          },
-          {
-            "name": "Blood of Rage",
+            "name": "The Raging Ox",
             "current_pct": 0.0,
-            "prev_pct": 0.97,
-            "delta_pct_pts": -0.97,
+            "prev_pct": 1.09,
+            "delta_pct_pts": -1.09,
             "current_count": 0,
-            "prev_count": 1204,
-            "delta_count": -1204
+            "prev_count": 1350,
+            "delta_count": -1350
           },
           {
-            "name": "Colossal Weapon",
+            "name": "Crushing Judgement",
+            "current_pct": 0.0,
+            "prev_pct": 1.02,
+            "delta_pct_pts": -1.02,
+            "current_count": 0,
+            "prev_count": 1268,
+            "delta_count": -1268
+          },
+          {
+            "name": "Greatest Defence",
             "current_pct": 0.0,
             "prev_pct": 0.84,
             "delta_pct_pts": -0.84,
@@ -3100,7 +3100,7 @@
             "delta_count": -1041
           },
           {
-            "name": "Serrated Edges",
+            "name": "Brinerot Ferocity",
             "current_pct": 0.0,
             "prev_pct": 0.79,
             "delta_pct_pts": -0.79,
@@ -3109,34 +3109,25 @@
             "delta_count": -980
           },
           {
-            "name": "Lord of Horrors",
+            "name": "Climate Change",
             "current_pct": 0.0,
-            "prev_pct": 0.69,
-            "delta_pct_pts": -0.69,
+            "prev_pct": 0.66,
+            "delta_pct_pts": -0.66,
             "current_count": 0,
-            "prev_count": 854,
-            "delta_count": -854
+            "prev_count": 822,
+            "delta_count": -822
           },
           {
-            "name": "Supportive Ancestors",
-            "current_pct": 0.41,
-            "prev_pct": 1.09,
-            "delta_pct_pts": -0.68,
-            "current_count": 506,
-            "prev_count": 1350,
-            "delta_count": -844
-          },
-          {
-            "name": "Reaching Strike",
+            "name": "Crystallised Immunities",
             "current_pct": 0.0,
-            "prev_pct": 0.54,
-            "delta_pct_pts": -0.54,
+            "prev_pct": 0.58,
+            "delta_pct_pts": -0.58,
             "current_count": 0,
-            "prev_count": 677,
-            "delta_count": -677
+            "prev_count": 722,
+            "delta_count": -722
           },
           {
-            "name": "Overwhelming Strike",
+            "name": "Patient Barrier",
             "current_pct": 0.0,
             "prev_pct": 0.49,
             "delta_pct_pts": -0.49,
@@ -3152,6 +3143,15 @@
             "current_count": 0,
             "prev_count": 595,
             "delta_count": -595
+          },
+          {
+            "name": "Lightning Rod",
+            "current_pct": 0.0,
+            "prev_pct": 0.47,
+            "delta_pct_pts": -0.47,
+            "current_count": 0,
+            "prev_count": 590,
+            "delta_count": -590
           }
         ]
       }
