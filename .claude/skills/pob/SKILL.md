@@ -1,7 +1,7 @@
 ---
 skill_name: pob
 description: Analyze and calculate Path of Building 2 (POE2) builds from poe.ninja, mobalytics.gg, or pobb.in URLs
-version: 2.4.0
+version: 2.7.1
 tags: [pob, path-of-building, builds, decoder, pobb.in, poe.ninja, mobalytics, poe2, calculations, dps]
 ---
 
@@ -14,6 +14,23 @@ Analyze PoE2 builds from **poe.ninja**, **mobalytics.gg**, or **pobb.in** URLs.
 - User needs DPS/defensive calculations
 - User wants to compare build stats
 - User asks about equipment, gems, or keystones
+
+## Analysis Discipline — read every mod before any verdict (MANDATORY)
+
+Lesson burned in from a real session (2026-06-12, ThaoCamVienSaiGon): three wrong verdicts in a row — "the pack has no crit" (Zekoa carried the **Extra Crits** retained mod), "Uruk's Smelting is dead on Repulsion" (Mark for Death II makes **all hits** vs Marked break armour, and Repulsion Wave hits ~2/s, so the placement was correct), "Healing Runes is dead, no Ward source" (Refutation costs 11 Ward and was a core active skill — the pool existed). Every one came from reasoning off gem **names** and PoB Lua **paraphrases** instead of reading the actual mods. Do not repeat this.
+
+Before ANY interaction claim or build verdict about a character:
+
+1. **Dump and read the full gem text first — every group, every gem, every line.** The poe.ninja model JSON (`data/character-exports/export-<char>.json`) carries the real in-game tooltips under `charModel.skills[].allGems[].itemData`:
+   - `gemTabs[].pages[].stats` — verbatim stat lines per gem and per sub-skill
+   - `properties` — Level / Quality / **Reservation** (flat vs % spirit lives here)
+   - `socketedItems[]` — each support's actual stats + `SupportGemCategory` (exclusion group)
+   - `tamedBeastProperties` — **retained monster mods on tamed beasts** (Extra Crits, All Damage Shocks, auras live HERE, not in any gem name)
+2. **Item mods too, every array:** `explicitMods`, `runeMods`, `craftedMods`, `fracturedMods`, `desecratedMods`, `enchantMods` (anoint), `grantedSkills` per slot. Granted skills from weapon-set-2 items are dormant — listed but not reserving.
+3. **Source order: in-game tooltip (export JSON) > PoB Lua data > patch notes/poedb > intuition.** PoB Lua `description` fields are paraphrases and HAVE misled before. Quote the verbatim stat line as evidence for every interaction verdict.
+4. **Absence claims need a full scan.** "The build has no X" is only valid after grepping the entire export (all gems + all items + quest stats + beast mods). One retained beast mod invalidates the verdict.
+5. **Support exclusion comes from `SupportGemCategory` in the tooltip**, not from memory: e.g. Romira's Requital and Loyalty share category "Loyalty" (per-skill exclusion); Lineage supports are one copy each per build.
+6. **When the player contradicts your read, they are looking at the client and you are looking at a snapshot.** Re-dump, re-read, then answer — never defend an unverified claim.
 
 ## Quick Start
 
@@ -455,6 +472,7 @@ The PoB code may be corrupted or in an unsupported format. Try:
 
 ## Version History
 
+- **2.7.1** - Added mandatory "Analysis Discipline" section: read every gem/support/beast-mod verbatim from the export JSON before any build verdict; tooltip > PoB Lua paraphrase; absence claims require a full scan. Born from the 2026-06-12 session where three verdicts (no-crit pack, Uruk's-dead, Healing-Runes-dead) were wrong because they were reasoned from gem names instead of mods.
 - **2.7.0** - Added `--oauth` / `--token` (`fetch-oauth.py`) — fetch a live POE2 character via the `client_id=pob` PKCE flow (the OAuth API `/character/poe2/<name>` is the only source of POE2 charData incl. passives/skills) and emit a PoB code through `export-pob`. PKCE base64url + state check, `localhost:49082` redirect catcher (GGG's registered loopback for `client_id=pob`), curl token-exchange + Bearer char fetch, token cached + auto-refreshed in `tmp/.poe-oauth.json` (gitignored). Verified: ThaoCamVienSaiGon → full charData (16 equipment + passives + 9 skills) → 9584-char code → `calc` shows Huntress / Spirit Walker / Lv66, keystone Trusted Kinship, real defense (Life 1173 / ES 158 / Armour 555 / Eva 825 / res 56-55-59). Companion (Tame Beast) DPS unmodelled by PoB2 → `combinedDPS` 0 (`pob_coverage: PARTIAL`).
 - **2.6.0** - Added `export-pob.sh` / `export-pob.lua` — convert a GGG character-API JSON into a PoB2 import code by reusing PoB's own `ImportItemsAndSkills` / `ImportPassiveTreeAndJewels` + `base64(Deflate(SaveDB("code")))`; no engine edits, no in-tool network (new untracked files copied by setup.sh). Captures the file arg before `dofile(HeadlessWrapper)` (Launch.lua rewrites global `arg`); normalises missing `skills`/`jewels` arrays so equipment-only inputs import; settles calc with double `OnFrame` so the stat readout matches the round-trip.
 - **2.5.0** - Added `fetch-live.sh` — pull LIVE character equipment from the pathofexile2.com website internal-api via Playwriter (no OAuth, no token replay; intercepts the SPA's own DPoP-authed response). name→id resolved from the SPA `localStorage` roster; equipment re-fetched fresh per visit (tagged `source:"live"`, falls back to `source:"cache"` only if the live intercept misses). Persists one Playwriter session + reuses a single tab across runs (no tab-per-run; dead session auto-recreated). Saves `data/character-exports/live-<name>.json`. Scope is equipment-only — passives/skills/quest-stats stay on `fetch-poeninja.sh`. Interim Playwriter transport (extension reimpl later).
