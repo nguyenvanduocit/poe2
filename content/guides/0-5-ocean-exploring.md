@@ -28,6 +28,11 @@ tags:
 
 Cơ chế Logbook cũ của :wiki-link{url="https://www.poe2wiki.net/wiki/Expedition"} bị thay bằng **Ocean Exploring** — dùng logbook giờ không mở thẳng một khu expedition mà hé lộ cả một vùng đại dương đầy đảo để khám phá. Đây là endgame storyline của Runes of Aldur: đi cùng NPC **Farrow** thám hiểm đại dương, lục các lăng mộ Kalguuran đã ngã xuống, và tìm tới hố thiên thạch — một mảnh Verisium nguyên chất rơi từ trời mà mình muốn rèn thành đồ mạnh, nếu sống nổi qua thứ đang chờ ở đó. Hub là :wiki-link{url="https://www.poe2wiki.net/wiki/Ruins_of_Kingsmarch"}, phía đông nam điểm khởi đầu trên atlas, lộ ra sau khi nói chuyện với Farrow ở Ziggurat Encampment. Vì Expedition league tạm tắt trên Standard để nhường chỗ cho Runes of Aldur, Ocean Exploring chính là phiên bản endgame của expedition trong league này — và nó là một vòng farm hoàn chỉnh: map nuôi logbook, logbook nuôi đại dương, đại dương nuôi leader, leader mở pinnacle.
 
+Khi đang nổ thì liếc cheatsheet dưới đây cho nhanh: remnant slot mấy thì chạy, suffix nào nối, prefix nào né, tablet roll gì, rumour ra biome nào. Tag BUILD đánh dấu prefix giết đúng build companion mình đang chơi (phys + evasion + chaos chưa cap). Bấm pop-out để nó nổi hẳn trên cửa sổ game (Chrome/Edge):
+
+::expedition-cheatsheet
+::
+
 ## Ocean Exploring hoạt động thế nào
 
 Một cuốn :wiki-link{url="https://www.poe2wiki.net/wiki/Expedition_Logbook"} giờ ghi "Reveals an Ocean Biome on the Atlas" — tiêu nó tại một Logbook Expedition node trên atlas là mở ra một mảng đại dương với nhiều đảo, mỗi đảo một loại nội dung. Có đảo là **Grand Expedition** — bản phóng to của expedition thường, chứa được cả các loại Remnant đặc biệt; đây chính là gameplay logbook cũ, đặt thuốc nổ khai quật rồi đánh đám quái bật lên. Có đảo là nơi đối đầu một trong bốn **Faction Leader**. Trong lúc chạy expedition còn lộ ra nhiều khu ngầm mới để đào sâu thêm — Smuggler's Den, Sulphur Mines, Gilded Deposit, Ancient Cache và cả chục site khác, mỗi loại đảo chỉ mở một nhóm site nhất định. Riêng đảo **Plunder's Point** khóa cho tới khi nộp đủ 4 Map Pieces ở Kingsmarch.
