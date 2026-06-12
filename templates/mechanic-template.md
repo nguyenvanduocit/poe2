@@ -7,7 +7,7 @@ sections:
   - relationships
 fields:
   $path:
-    pattern: "^content/(en/)?(mechanics|skilltree)/.+\\.md$"
+    pattern: "^content/(en/)?(guides|crafting)/.+\\.md$"
   template:
     required: true
     pattern: "^templates/mechanic-template\\.md$"

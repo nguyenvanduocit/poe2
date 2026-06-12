@@ -6,7 +6,7 @@ sections:
   - relationships
 fields:
   $path:
-    pattern: "^content/(en/)?mechanics/items/.+\\.md$"
+    pattern: "^content/(en/)?guides/.+\\.md$"
   template:
     required: true
     pattern: "^templates/item-template\\.md$"
