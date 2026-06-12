@@ -13,6 +13,7 @@
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { LEVELING_DATA, type LevelingAct, type LevelingZone } from '~/composables/data/leveling-poe2-0-5'
 import { latestEnteredZone, pickForwardIndex, pickLatestIndex } from '~/composables/leveling-match'
+import { usePictureInPicture } from '~/composables/usePictureInPicture'
 
 const STORAGE_KEY = 'poe2-leveling-0-5'
 const IDB_NAME = 'poe2-leveling'
@@ -372,78 +373,31 @@ export function useLeveling() {
     stopMonitor() // clears the timer, nulls the handle, flips connected off
   }
 
-  // ---- Picture-in-Picture (Document PiP API) ----
-  const pipSupported = computed(() => mounted.value && 'documentPictureInPicture' in window)
-  const pipActive = ref(false)
-  // The page sets these: `host` is the overlay node to relocate, `anchor` is
-  // an empty placeholder it gets re-inserted before when PiP closes.
-  const pipHost = ref<HTMLElement | null>(null)
-  const pipAnchor = ref<HTMLElement | null>(null)
-  let pipWindow: Window | null = null
-
-  function cloneStyles(target: Window): void {
-    // PiP windows inherit no CSS. Copy same-origin rules into a <style>, and
-    // clone <link>/<style> nodes for anything whose cssRules can't be read
-    // (cross-origin) or that carries @font-face/@import.
-    for (const sheet of Array.from(document.styleSheets)) {
-      try {
-        const css = Array.from(sheet.cssRules).map(r => r.cssText).join('\n')
-        const style = target.document.createElement('style')
-        style.textContent = css
-        target.document.head.appendChild(style)
-      }
-      catch {
-        const node = sheet.ownerNode
-        if (node) target.document.head.appendChild(node.cloneNode(true))
-      }
-    }
-  }
-
-  async function openPip(): Promise<void> {
-    if (!pipSupported.value || !pipHost.value) return
-    try {
-      pipWindow = await (window as unknown as {
-        documentPictureInPicture: { requestWindow: (o?: object) => Promise<Window> }
-      }).documentPictureInPicture.requestWindow({ width: 380, height: 520 })
-      cloneStyles(pipWindow)
-      pipWindow.document.body.className = 'leveling-pip-body'
-      Object.assign(pipWindow.document.body.style, { margin: '0', height: '100vh', overflow: 'hidden' })
-      pipWindow.document.body.appendChild(pipHost.value)
-      // On the page the frame hugs its content (auto height, capped max-height);
-      // inside PiP it must fill the whole window instead. Inline styles win over
-      // the cloned scoped rule outright and revert cleanly in closePip — no
-      // specificity gamble across the relocated stylesheet.
-      Object.assign(pipHost.value.style, { height: '100vh', maxHeight: 'none', border: '0', boxShadow: 'none' })
-      pipActive.value = true
-      pipWindow.addEventListener('pagehide', closePip, { once: true })
-    }
-    catch (e) {
-      // requestWindow rejects if transient activation was lost or the user
-      // dismissed the prompt — surface it instead of failing silently.
-      pipActive.value = false
-      pipWindow = null
-      monitorError.value = e instanceof Error ? `Không mở được overlay: ${e.message}` : 'Không mở được overlay'
-    }
-  }
-
-  function closePip(): void {
-    // Move the overlay back into the page before the PiP document tears down,
-    // dropping the PiP-only inline overrides so it returns to hug-content.
-    if (pipHost.value) {
-      Object.assign(pipHost.value.style, { height: '', maxHeight: '', border: '', boxShadow: '' })
-      if (pipAnchor.value?.parentNode) {
-        pipAnchor.value.parentNode.insertBefore(pipHost.value, pipAnchor.value)
-      }
-    }
-    pipActive.value = false
-    if (pipWindow && !pipWindow.closed) pipWindow.close()
-    pipWindow = null
-  }
-
-  function togglePip(): void {
-    if (pipActive.value) closePip()
-    else void openPip()
-  }
+  // ---- Picture-in-Picture: pop the overlay over the game (shared engine) ----
+  // The relocate-node + clone-style + lifecycle plumbing lives in
+  // usePictureInPicture; here we only feed it the leveling-specific bits:
+  // the PiP-fill overrides and routing PiP errors into the same monitorError
+  // banner. The page still wires pipHost/pipAnchor and calls togglePip.
+  const {
+    supported: pipSupported,
+    active: pipActive,
+    host: pipHost,
+    anchor: pipAnchor,
+    toggle: togglePip,
+  } = usePictureInPicture({
+    width: 380,
+    height: 520,
+    bodyClass: 'leveling-pip-body',
+    // On the page the frame hugs its content (auto height, capped max-height);
+    // inside PiP it must fill the whole window instead.
+    onOpen: (el) => {
+      Object.assign(el.style, { height: '100vh', maxHeight: 'none', border: '0', boxShadow: 'none' })
+    },
+    onClose: (el) => {
+      Object.assign(el.style, { height: '', maxHeight: '', border: '', boxShadow: '' })
+    },
+    onError: (message) => { monitorError.value = `Không mở được overlay: ${message}` },
+  })
 
   // ---- Lifecycle ----
   onMounted(async () => {
@@ -461,7 +415,7 @@ export function useLeveling() {
 
   onBeforeUnmount(() => {
     stopMonitor()
-    if (pipActive.value) closePip()
+    // PiP teardown is handled by usePictureInPicture's own onBeforeUnmount.
   })
 
   return {

@@ -89,7 +89,32 @@ export default defineNuxtConfig({
   // hreflang stay owned by @nuxtjs/i18n (see `site`/`seo` config below) — the
   // SEO modules defer to i18n for those, so each page emits exactly one
   // canonical.
-  modules: ['@nuxtjs/i18n', '@nuxtjs/seo'],
+  modules: [
+    '@nuxtjs/i18n',
+    '@nuxtjs/seo',
+    // This project shadows the theme's prose components by name (ProseA: the
+    // local one adds footnote popovers ON TOP of the theme's external-link
+    // `_blank` defaulting). @nuxt/content registers `components/content` for
+    // EVERY layer via a `components:dirs` hook without a priority, and scanned
+    // components default to priority 1 — two ProseA at equal priority makes
+    // Nuxt warn "Two component files resolving to the same name" and leaves
+    // the winner contractually ambiguous. Priority is the framework mechanism
+    // for a deterministic override, but it must be set on the hook-injected
+    // dir entry, which only exists after @nuxt/content's own hook has run —
+    // hence registering via `modules:done` (hooks run in registration order).
+    function prioritizeAppContentComponents(_options, nuxt) {
+      nuxt.hook('modules:done', () => {
+        nuxt.hook('components:dirs', (dirs) => {
+          const appContentDir = resolve(nuxt.options.srcDir, 'components/content')
+          for (const dir of dirs) {
+            if (typeof dir !== 'string' && resolve(dir.path) === appContentDir) {
+              dir.priority = 2
+            }
+          }
+        })
+      })
+    },
+  ],
 
   // Single source of truth for the production origin, consumed by sitemap,
   // robots, og-image, schema-org, and seo-utils. MUST match the real custom
