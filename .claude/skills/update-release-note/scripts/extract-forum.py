@@ -17,9 +17,13 @@ GGG's mid-patch *"Patch Notes Preview"* threads instead start sections at ``<h3>
 with no ``<h2>``; for those we fall back to the first ``tr.newsPost`` post cell and
 take its ``div.content`` body, re-parsed with ``lxml`` (which reconstructs the
 malformed forum DOM like a browser — ``html.parser`` mis-nests the unclosed empty
-content div these threads ship). Fails loudly if neither anchor resolves — that
-signals a blocked fetch (Cloudflare) or a forum redesign, both of which should
-stop the pipeline rather than emit a partial file.
+content div these threads ship). Patch notes posted as a REGULAR forum thread
+(0.5.2 = thread 3960375 — no news layout at all, sections at ``<h3>``) have
+neither anchor; for those we take the OP body: first row of
+``table.forumPostListTable`` → ``td.content-container`` → ``div.content``.
+Fails loudly if no anchor resolves — that signals a blocked fetch (Cloudflare)
+or a forum redesign, both of which should stop the pipeline rather than emit a
+partial file.
 
 GGG sometimes packs several patch-note entries into a single ``<li>``, one
 entry per line, separated by a newline or a ``<br>``. With ``pandoc --wrap=none``
@@ -109,10 +113,20 @@ def main() -> None:
     node = cell.find("div", class_="content") if cell else None
     if node is None or not node.get_text(strip=True):
         node = cell  # whole post cell when the content div is empty/absent
+
+    # Regular forum thread (no news layout at all, e.g. 0.5.2 = 3960375):
+    # the OP body is the div.content of the first post row.
+    if node is None:
+        table = soup.find("table", class_="forumPostListTable")
+        row = table.find("tr") if table else None
+        op_cell = row.find("td", class_="content-container") if row else None
+        node = op_cell.find("div", class_="content") if op_cell else None
+
     if node is None:
         sys.exit(
-            "extract-forum: no <h2> title and no newsPost post body found — fetch "
-            "was blocked (Cloudflare) or the forum layout changed"
+            "extract-forum: no <h2> title, no newsPost post body, and no "
+            "forumPostListTable OP body found — fetch was blocked (Cloudflare) "
+            "or the forum layout changed"
         )
 
     for img in node.find_all("img"):

@@ -34,6 +34,7 @@ There is no auto-detect — each patch is its own forum thread, so the id is loo
 
 - **0.5.0 "Return of the Ancients"** → `3932540`
 - **0.5.1** (mid-patch, posted in *Early Access Announcements* as a "Patch Notes Preview") → `3949114` — pass the version explicitly (`fetch.sh 3949114 0.5.1`); preview threads open with "deploying Patch X.Y.Z" and lack the "Content Update X.Y" title, though the parser now reads the "deploying Patch" line as a fallback.
+- **0.5.2** → `3960375` — posted as a REGULAR forum thread in *Early Access Patch Notes* (no news layout; sections are bold text, not `<h3>`). Pass the version explicitly (`fetch.sh 3960375 0.5.2`); the extractor reads the OP body via `table.forumPostListTable` (third layout, T-046).
 
 When a new patch drops, grab the new thread id from the GGG forum announcement and pass it in. Record it here so the next person does not have to hunt for it.
 
