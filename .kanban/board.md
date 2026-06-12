@@ -5,6 +5,7 @@
 
 ## Todo
 
+- [T-047](tasks/T-047-web-price-check-clipboard-pip.md) Web-based price check — Ctrl+C clipboard + PiP overlay — high/M
 - [T-021](tasks/T-021-generated-og-images.md) Per-page generated OG images (nuxt-og-image takumi, verify on CF) — medium/M
 - [T-005](tasks/T-005-mobalytics-skill-cloudflare-stale-query.md) Mobalytics skill hỏng — Cloudflare 403 + stale query + profile-URL slug — medium/M
 - [T-019](tasks/T-019-export-pob-drops-runemastered-unique.md) export-pob drops runemastered-unique body armour (+ mis-slots weapon) — high/M
@@ -16,6 +17,8 @@
 - [T-020](tasks/T-020-seo-full-support-gsc-bing.md) Full SEO support (@nuxtjs/seo) + GSC DNS-TXT + Bing registration — high/L
 
 ## Done
+
+- [T-048](tasks/T-048-wikilink-trade-affordance.md) WikiLink trade affordance — icon + popover button thay plain `[trade]` link — medium/S (DONE 2026-06-12: trade link trong content render thành chữ "trade" coral chen prose — user "nhìn gớm". Đưa trade vào `WikiLink.vue` qua prop optional `trade` (URL): chip item giữ nguyên + icon shopping-cart compact ngay sau tên (default `--c-muted`, hover `--c-primary`, `color-mix` bg, token-only no hex mới), truyền xuống `WikiPopover.vue` render nút "MỞ TRADE" cart-icon ở đáy card giá. Root từ `<a>` → `<span class="wl" white-space:nowrap>` bọc 2 anchor + ClientOnly popover. Rewrite 27 link doc spirit-and-spirit-reservation từ `:wiki-link{url} [trade](url)` → `:wiki-link{url trade=url}` (0 leftover markdown link). URL trade = durable `trade2/search/poe2/<league>?q=<json>` name/type per item, status online, ASCII apostrophe — verified live qua trade API (name=unique, type=Solar Amulet/Soul Core/Mystic Alloy/Dialla's/Atziri's) + e2e navigation Matsya(12)/Sylvan's(12 apostrophe). Parser remark-mdc xác nhận trade attr attach đúng component, 0 stray link node, apostrophe-URL nguyên. Verify: generate 882 routes/0 err/0 warn/0 fail; static HTML 27 `<a.wl-trade>` icon + 27 trade2 href; screenshot live :3000 inline cart + popover button on-theme. Skip non-tradeable: quest skulls (bound)/keystones/skill gems/Uhtred's Boon. Amanamu's Gaze valid nhưng 0 online listing lúc check. Trade link league-bound Runes of Aldur (mọi trade URL đều vậy). PRD card T-048.)
 
 - [T-046](tasks/T-046-extract-forum-regular-thread-layout.md) extract-forum.py parse patch-notes thread layout thường (0.5.2) — high/XS (DONE 2026-06-12: GGG post 0.5.2 Patch Notes (`3960375`) như thread forum thường — không h2 news-post, không tr.newsPost, section là bold text. Thêm layout thứ 3 vào extract-forum.py: first row `table.forumPostListTable` → `td.content-container` → `div.content`; fail-loud message liệt kê đủ 3 anchor. Verified: 0.5.2 fetch sạch 139 dòng 6 section; regression dry-run 0.5.1 byte-identical, 0.5.0 chỉ thiếu addendum curate tay (expected T-028). SKILL.md ghi id 3960375 + curated header Version_0.5.2.md gồm 3 hotfix thread mới: 0.5.1 HF9 `3957958` (chặn direct trade hideout async), 0.5.2 HF1 `3960639` (revert 3 quality Advanced Thaumaturgy), HF2 `3960751` (crash Loathsome Mire).)
 
