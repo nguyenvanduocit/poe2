@@ -5,7 +5,7 @@ title: Spirit Walker Companion Beast Hunt
 status: draft
 author: nguyenvanduocit
 created: '2026-05-20'
-updated: '2026-06-10'
+updated: '2026-06-12'
 league: '0.5'
 patch: 0.5.1
 tags:
@@ -23,7 +23,7 @@ tags:
 
 # Spirit Walker Companion Beast Hunt
 
-Trên một build :wiki-link{url="https://www.poe2wiki.net/wiki/Spirit_Walker"} companion carry, damage của nhân vật chính là damage của một con beast — con mình tame bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Tame_Beast"} rồi bind làm companion. Cả vòng lặp gói trong năm việc: hiểu cách tame và retention modifier, chọn con beast đáng làm carry, săn nó ở đâu, nhồi đúng bộ modifier lên người nó, và xếp các multiplier ngoài để con carry đập ra số. Doc này đi trọn vòng đó. Con carry tự seek mục tiêu và tự đánh, nên min-max không phải xoay skill tay mà là dựng đúng pipeline săn rồi chồng multiplier lên con đã bắt.
+Trên một build :wiki-link{url="https://www.poe2wiki.net/wiki/Spirit_Walker"} companion carry, damage của nhân vật chính là damage của một con beast — con mình tame bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Tame_Beast"} rồi bind làm companion. Cả pipeline gói trong năm việc: hiểu cách tame và retention modifier, chọn con beast đáng làm carry, săn nó ở đâu, nhồi đúng bộ modifier lên người nó, và xếp các multiplier ngoài để con carry đập ra số. Doc này đi trọn vòng đó. Con carry tự seek mục tiêu và tự đánh, nên min-max không phải xoay skill tay mà là ráp đúng pipeline săn rồi chồng multiplier lên con đã bắt.
 
 ## Cơ chế tame hoạt động thế nào
 
@@ -37,6 +37,31 @@ Tamed beast **account-bound**: khi một beast gắn vào gem, gem thành Summon
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Bind_Spectre"} là cơ chế cùng họ nhưng khác mục tiêu: nó bắt gần như mọi non-unique monster làm reviving minion, trong khi Tame Beast chỉ nhắm rare Beast và biến thành companion. Tame Beast mạnh hơn ở support-oriented modifier; Bind Spectre hợp hơn khi muốn một minion có skill cụ thể.
 
+## Reservation nền của từng loại beast
+
+Mỗi monster variety có một mức reservation nền — phần trăm spirit pool mà bản companion chiếm khi summon, trước mọi efficiency stack và trước phần cộng thêm từ mod giữ lại. Damage% và Life% là hệ số stat của bản companion so với monster chuẩn cùng level, và reservation nền bám theo stat budget đó: con càng mạnh càng chiếm pool sâu. Catalog tameable trải từ 9.3% của Hatchling tới 56.1% của Elephant Tortoise; những mốc đáng nhớ:
+
+| Beast | Dmg% / Life% | Reservation |
+|---|---|---|
+| Hatchling | 10 / 0 | 9.3% |
+| Feral Primate | 65 / 65 | 24% |
+| Winged Fiend | 80 / 80 | 26.7% |
+| Hungry Wolf | 100 / 100 | 30% |
+| Diretusk Boar | 170 / 170 | 39% |
+| Alpha Primate | 175 / 175 | 39.6% |
+| Bramble Hulk | 200 / 200 | 42.3% |
+| Antlion Charger | 200 / 200 | 42.3% |
+| Quadrilla Sergeant | 462 / 250 | 42.3% |
+| Zekoa / Silverfist | 463 / 250 | 47.4% |
+| Morvak, the Infernal | 500 / 313 | 47.4% |
+| The Black Crow | 375 / 250 | 47.4% |
+| Azmerian Wolf | 243 / 270 | 49.2% |
+| Elephant Tortoise | 245 / 350 | 56.1% |
+
+Phần lớn unique boss beast đứng chung mức 47.4% bất kể Damage%, nên trong nhóm đó cứ nhắm con Damage% cao nhất — Morvak 500 và Zekoa/Silverfist 463 đứng đầu, The Black Crow 375 trả cùng giá spirit mà thua hẳn về pool damage. Quadrilla Sergeant là dòng đáng dừng mắt nhất bảng: Damage% 462 ngang Zekoa nhưng nền 42.3% và là rare — không cần The Natural Order, không chiếm slot Unique, săn ở Jungle Ruins cùng pool với rare Quadrilla. Tame thử một con và đọc tooltip attack pool trong client trước khi đầu tư mod cho nó như một carry thứ hai. Đầu rẻ của bảng là chỗ chọn filler: Winged Fiend 26.7% là base aura-bot tiêu chuẩn — săn bản giữ mod All Damage Shocks làm slot shred — còn Feral Primate với Hungry Wolf lấp chỗ giai đoạn campaign.
+
+Hai caveat khi áp số. Mức nền tính cho con 0-mod, mỗi rare modifier giữ lại lúc tame đẩy reservation lên trên nền này. Và số chỉ áp cho bản tame bằng gem — companion granted từ item, như Azmerian Wolf qua Sylvan's Effigy hay Spirit Vessel qua Forgotten Warden, reserve theo item grant nó: đọc tooltip trong client thay vì lấy số bảng.
+
 ## The Natural Order mở hướng Unique carry
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/The_Natural_Order"} là node ascendancy của Spirit Walker, và nó là cánh cửa duy nhất biến Tame Beast từ rare-beast utility thành unique-beast carry. Node cho Tame Beast bắt **Unique Beast**, nhưng chỉ một Unique Tamed Beast tại một thời điểm; con Unique được +30% Movement Speed; và nó bị possess bởi một **Azmeri Spirit ngẫu nhiên, đổi mỗi 20 giây**.
@@ -47,7 +72,7 @@ Vì chỉ giữ được một Unique Tamed Beast, con boss companion không tha
 
 ## Con beast nào đáng làm carry
 
-Con carry crit tiêu biểu là hai con ape, và chúng chia hai tier theo base crit — đây là chỗ dễ gán nhầm nhất. :wiki-link{url="https://www.poe2wiki.net/wiki/Alpha_Primate"} (monkey) là con base crit cao (~25%): chỉ cần một mod Extra Crits là cap, vì 25% × 4 = 100%. :wiki-link{url="https://www.poe2wiki.net/wiki/Mighty_Silverfist"} — bản map-boss của nó là :wiki-link{url="https://www.poe2wiki.net/wiki/Zekoa,_The_Headcrusher"} — đọc tại tooltip ~5% base, nên Extra Crits một mình chỉ ra 5% × 4 = 20%, cần lớp thêm :wiki-link{url="https://www.poe2wiki.net/wiki/Critical_Weakness"} mới chạm ngưỡng đáng kể. Hai số base (5% và 25%) là tooltip read, mốc tham chiếu chứ không phải hằng số min-max — và có dấu hiệu chính Silverfist mới là con high-crit (đọc tới ~250% crit-damage, mà 250% đó không sinh từ Extra Crits vì mod chỉ cho crit *chance*, không chạm crit damage). Muốn chốt cứng thì tame trắng từng con, đọc crit + crit-damage của companion đã summon trong client.
+Con carry crit tiêu biểu là hai con ape, và chúng chia hai tier theo base crit — đây là chỗ dễ gán nhầm nhất. :wiki-link{url="https://www.poe2wiki.net/wiki/Alpha_Primate"} (monkey) là con base crit cao (~25%): chỉ cần một mod Extra Crits là cap, vì 25% × 4 = 100%. :wiki-link{url="https://www.poe2wiki.net/wiki/Mighty_Silverfist"} — bản map-boss của nó là :wiki-link{url="https://www.poe2wiki.net/wiki/Zekoa,_The_Headcrusher"} — đọc tại tooltip ~5% base, nên Extra Crits một mình chỉ ra 5% × 4 = 20%, cần lớp thêm :wiki-link{url="https://www.poe2wiki.net/wiki/Critical_Weakness"} mới lên được ~60%. Hai số base (5% và 25%) là tooltip read, mốc tham chiếu chứ không phải hằng số min-max — và có dấu hiệu chính Silverfist mới là con high-crit (đọc tới ~250% crit-damage, mà 250% đó không sinh từ Extra Crits vì mod chỉ cho crit *chance*, không chạm crit damage). Muốn chốt cứng thì tame trắng từng con, đọc crit + crit-damage của companion đã summon trong client.
 
 Mighty Silverfist là một Unique monster ở Act 3 :wiki-link{url="https://www.poe2wiki.net/wiki/Jungle_Ruins"} (Level 34), thuộc monster type :wiki-link{url="https://www.poe2wiki.net/wiki/Quadrilla"} — một silverback ape khổng lồ dùng thân cây làm vũ khí, không phải "monkey" theo nghĩa đen. Lý do nó là carry phổ biến nhất: attack pool damage cao, xuất hiện ở nhiều map nên dễ roll đúng bộ mod.
 
@@ -55,7 +80,7 @@ Ngoài hướng crit, các nhánh carry khác chia theo damage type. :wiki-link{
 
 Trước khi đổ tiền vào một con, định nghĩa vai trò của nó. Nếu build thiếu phòng thủ, ưu tiên beast có aura/defensive utility thay vì cố tìm DPS. Nếu thiếu ailment setup, tìm beast có ground effect hoặc guaranteed ailment để mở scaling cho main skill. Beast chỉ đáng dùng khi có nhiệm vụ rõ — utility beast cần aura/ground effect/debuff đáng giữ, damage beast cần attack pool tốt và scaling path không phá character chính. Boss nguy hiểm với player chưa chắc là companion tốt: nhiều boss giết player vì skill khó né hay arena pressure, những thứ đó không tự chuyển thành damage khi boss thành minion.
 
-## Bốn trục nhân damage con carry
+## Bốn nguồn nhân damage con carry
 
 Con carry không có "skill của mình" để scale — nó chạy attack pool của con monster gốc, và mọi thứ mình làm là cộng multiplier từ ngoài vào pool đó. Bốn nguồn nằm ở bốn bucket khác nhau nên compound chứ không giẫm chân nhau.
 
@@ -113,21 +138,21 @@ Hai cách chạy, đánh đổi giữa số mod và số lần thử:
 
 **Run rare 4-mod — 2 revive, soi-rồi-reroll.** Waystone rare bốn-mod cho 2 respawn attempt, mở ra một mẹo: vào boss room, tắt damage (turn off minions), soi modifier của Zekoa. Nếu xấu thì để boss giết mình — respawn ở checkpoint **ngoài** boss room, và lúc đó chỉ còn boss present. Mỗi respawn attempt là một lần soi mod mới, nên một lượt dùng tablet cho nhiều lần thử thay vì một. Người mới nên chạy chế độ này để có lưới.
 
-Soi nhầm bộ mod xấu thì lượt đó coi như phí — nhưng con beast vừa bắt không vứt đi được nếu nó đang chiếm con Tame Beast 6-link đã đầu tư. Cách thoát là **disenchant** con Tame Beast gem ở vendor: thao tác này clear con monster đã lưu, trả về một con Tame Beast trắng giữ nguyên level, quality, sockets, để tái dùng đi bắt phiên bản khác mà không phải mua 6-link mới. Nên thủ thêm một con Tame Beast thứ hai rẻ (Lv18, 5-link) làm standby để soi mod, chỉ dồn link xịn sang sau khi đã trúng bộ mod đáng giữ.
+Soi nhầm bộ mod xấu thì lượt đó coi như phí — nhưng con beast vừa bắt không vứt đi được nếu nó đang chiếm con Tame Beast 6-link đã đầu tư. Cách thoát là **disenchant** con Tame Beast gem ở vendor: thao tác này clear con monster đã lưu, cho lại một con Tame Beast trắng giữ nguyên level, quality, sockets, để tái dùng đi bắt phiên bản khác mà không phải mua 6-link mới. Nên thủ thêm một con Tame Beast thứ hai rẻ (Lv18, 5-link) làm standby để soi mod, chỉ dồn link xịn sang sau khi đã trúng bộ mod đáng giữ.
 
 ## Chain con boss bằng Rite of the Nameless
 
 Mỗi map chỉ một boss, và trên atlas chỉ có vài map có đúng con mình cần — đó là nghẽn cứng cho việc fish mod trên con carry. **Rite of the Nameless** phá nghẽn đó bằng cách nhân số lần gặp lại con boss target lên.
 
-Chuỗi bắt đầu từ :wiki-link{url="https://www.poe2wiki.net/wiki/The_King_in_the_Mists"}: giết nó drop **The Head of the King**, mang key tới hub **Caer Tarth** để khởi động Rite of the Nameless — chọn một chuỗi 5 map chạy chung một ritual liên tục. Monster của mỗi ritual, gồm cả map boss, xuất hiện lại ở từng map trong chuỗi; unique boss của mỗi map chỉ xuất hiện ở **ritual cuối cùng của map đó**. Mỗi map sau map đầu mang thêm modifier riêng, và mỗi map trả về một mảnh key Ritual Pinnacle Boss (lợi đi kèm). Đặt Riverside làm map đầu thì Zekoa được kéo theo cả chuỗi — một The Head of the King đổi ra tới ~5 lần gặp lại cùng con boss, mỗi lần là một spawn mới roll modifier riêng, tức ~5 cú fish độc lập cho Extra Crits.
+Chuỗi bắt đầu từ :wiki-link{url="https://www.poe2wiki.net/wiki/The_King_in_the_Mists"}: giết nó drop **The Head of the King**, mang key tới hub **Caer Tarth** để khởi động Rite of the Nameless — chọn một chuỗi 5 map chạy chung một ritual liên tục. Monster của mỗi ritual, gồm cả map boss, xuất hiện lại ở từng map trong chuỗi; unique boss của mỗi map chỉ xuất hiện ở **ritual cuối cùng của map đó**. Mỗi map sau map đầu mang thêm modifier riêng, và mỗi map nhả một mảnh key Ritual Pinnacle Boss (lợi đi kèm). Đặt Riverside làm map đầu thì Zekoa được kéo theo cả chuỗi — một The Head of the King đổi ra tới ~5 lần gặp lại cùng con boss, mỗi lần là một spawn mới roll modifier riêng, tức ~5 cú fish độc lập cho Extra Crits.
 
-Đặt con boss target làm **map đầu tiên** (boss được kéo theo cả 5 map bất kể bốn map sau là gì), bốn map sau chọn theo độ an toàn. Chạy tier thấp nhất còn chịu được — mục tiêu chỉ là giữ boss sống đủ lâu để wisp dán rồi giết khi còn wisp, không cần map juicy để fish mod. Nhồi tablet "of Contest" lên các map trong Rite để mỗi lần boss spawn đều nhiều mod: Rite quyết **số lần** spawn, tablet quyết **số mod** mỗi lần, summoning circle **empower** mỗi lần — ba trục nhân nhau.
+Đặt con boss target làm **map đầu tiên** (boss được kéo theo cả 5 map bất kể bốn map sau là gì), bốn map sau chọn theo độ an toàn. Chạy tier thấp nhất còn chịu được — mục tiêu chỉ là giữ boss sống đủ lâu để wisp dán rồi giết khi còn wisp, không cần map juicy để fish mod. Nhồi tablet "of Contest" lên các map trong Rite để mỗi lần boss spawn đều nhiều mod: Rite quyết **số lần** spawn, tablet quyết **số mod** mỗi lần, summoning circle **empower** mỗi lần — ba lớp nhân nhau.
 
 Cơ chế ritual đầy đủ — 8 point subtree, tribute/reroll, tablet suffix pool, Queen in the Mists — nằm ở guide [Ritual và Rite of the Nameless](/guides/0-5-ritual-rite-of-the-nameless); doc này chỉ dùng Rite như một đường chain boss để tame.
 
 ## Weapon và gear xoay quanh companion
 
-Vì con carry chạy attack pool của monster, weapon choice không phải để mình tự đánh mà để buff companion. :wiki-link{url="https://www.poe2wiki.net/wiki/The_Catha%27s_Balance"} làm main-hand weapon damage trở thành stat companion: "companions deal added Attack Damage equal to 60% of main hand weapon damage". Weapon chậm, damage range cao, crit thấp vẫn rất tốt nếu nhân vật không cần tự đánh — đây là lý do talisman damage cao thành hướng gear đáng nghiên cứu, thay vì chỉ nhìn minion damage trên sceptre. Weapon damage cao cũng buff các spirit package khác cùng lúc: :wiki-link{url="https://www.poe2wiki.net/wiki/Vivid_Stampede_%28passive%29"} tạo Vivid Wisps khi di chuyển và xả thành Spirit Stags khi attack, nên cùng một weapon vừa buff con carry vừa buff stag.
+Vì con carry chạy attack pool của monster, weapon choice không phải để mình tự đánh mà để buff companion. :wiki-link{url="https://www.poe2wiki.net/wiki/The_Catha%27s_Balance"} làm main-hand weapon damage trở thành stat companion: "companions deal added Attack Damage equal to 60% of main hand weapon damage". Weapon chậm, damage range cao, crit thấp vẫn rất tốt nếu nhân vật không cần tự đánh, nên talisman damage cao thành hướng gear đáng nghiên cứu thay vì chỉ nhìn minion damage trên sceptre. Weapon damage cao cũng buff các spirit package khác cùng lúc: :wiki-link{url="https://www.poe2wiki.net/wiki/Vivid_Stampede_%28passive%29"} tạo Vivid Wisps khi di chuyển và xả thành Spirit Stags khi attack, nên cùng một weapon vừa buff con carry vừa buff stag.
 
 Weapon package đi theo vài hướng rõ. :wiki-link{url="https://www.poe2wiki.net/wiki/Jade_Talisman"} + non-unique sceptre qua :wiki-link{url="https://www.poe2wiki.net/wiki/Lord_of_the_Wilds"} là ceiling cao vì vừa có main-hand damage lớn vừa giữ minion stats trên sceptre. :wiki-link{url="https://www.poe2wiki.net/wiki/Spire_of_Ire"} là low-friction spear option vì stat requirement nhẹ và chaos damage ít bị resist. Route :wiki-link{url="https://www.poe2wiki.net/wiki/Giant%27s_Blood"} với :wiki-link{url="https://www.poe2wiki.net/wiki/The_Hammer_of_Faith"} hoặc :wiki-link{url="https://www.poe2wiki.net/wiki/Ironwood_Greathammer"} là peak-damage puzzle nhưng bị attribute pressure rất nặng.
 
@@ -139,7 +164,7 @@ Khi chọn rare sceptre cho hướng dồn một boss, ưu tiên minion attack s
 
 Không nên tính mọi companion như một damage multiplier miễn phí. Companion chiếm spirit, chịu AI, có animation lock, có survival problem và có thể bị giới hạn bởi nội dung không cho tame. Bỏ một aura quan trọng để chạy beast yếu thì build tệ hơn dù sheet nhìn thú vị hơn.
 
-**Jewel không phải trục gem-level.** Jewel không roll "+Level of all Minion Skills"; đóng góp minion của nó nằm ở "minions deal increased Damage" và crit-damage-bonus suffix. Tìm minion-level trên jewel là phí lượt — soi amulet/sceptre/helmet.
+**Jewel không phải nguồn gem-level.** Jewel không roll "+Level of all Minion Skills"; đóng góp minion của nó nằm ở "minions deal increased Damage" và crit-damage-bonus suffix. Tìm minion-level trên jewel là phí lượt — soi amulet/sceptre/helmet.
 
 **Parry không khuếch đại damage spell.** Parried Debuff là "more Attack Damage taken", chỉ con đánh attack mới hưởng. Cả hai con ape đều attack-based nên ăn được, nhưng đừng giả định Parry là multiplier phổ quát cho mọi con carry.
 
@@ -151,7 +176,7 @@ Không nên tính mọi companion như một damage multiplier miễn phí. Comp
 
 ## Chi phí và ràng buộc
 
-Untainted Paradise không drop item, nên nó thuần là máy farm beast — lời nằm cả ở số rare tame được, đừng kỳ vọng currency. Essence reset tốn thời gian reset hơn tài nguyên: mỗi lần tạo zone mới hoặc respawn checkpoint là một vòng lặp tay.
+Untainted Paradise không drop item, nên nó thuần là máy farm beast — lời nằm cả ở số rare tame được, đừng kỳ vọng currency. Essence reset tốn thời gian reset hơn tài nguyên: mỗi lần tạo zone mới hoặc respawn checkpoint là một vòng thao tác tay.
 
 Con carry càng nhiều mod càng đắt spirit — reservation scale theo modifier-count, không có node nào miễn. Một con carry 4-mod cộng companion phụ cộng self-defense rất dễ vượt spirit budget league-start, buộc rút bớt skeleton (mất luôn Pain Offering package). Tính reservation **trước** khi đi săn con nhiều mod.
 
@@ -187,7 +212,7 @@ Spirit Walker, Tame Beast và hệ companion ra mắt cùng Endgame rewrite củ
 
 ## Resources
 
-- [How to Scale Spirit Walker Tame Beast Damage](https://www.youtube.com/watch?v=hxqPJkbTp5Q) — các trục multiplier cho Unique tame carry.
+- [How to Scale Spirit Walker Tame Beast Damage](https://www.youtube.com/watch?v=hxqPJkbTp5Q) — các nguồn multiplier cho Unique tame carry.
 - [Spirit Walker Beast Master Build Guide — CaptainLance9](https://www.youtube.com/watch?v=p6uR2uC1Kk4) — carry vs zoo, Parry magnitude, crit ape.
 - [GhazzyTV — How to FARM Rare Tamed Beasts VERY QUICKLY](https://www.youtube.com/watch?v=Fj7JjMjwLUU) — Untainted Paradise volume farm + essence reset ở Whakapanu, caveat account-bound và on-screen tame lock.
 - [GhazzyTV — How to Tame Unique Beasts with 3+ MODIFIERS!](https://www.youtube.com/watch?v=23wZWPR16o4) — walkthrough tablet stacking + reroll trên Zekoa.
