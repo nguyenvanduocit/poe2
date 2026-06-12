@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { autoPlacement, autoUpdate, offset, shift, size, useFloating } from '@floating-ui/vue'
+import { getExternalLinkAttrs } from '~/composables/useExternalLink'
 import type { WikiDataResponse } from '~/types/poe-item'
 
 const props = defineProps<{
@@ -8,6 +9,7 @@ const props = defineProps<{
   name: string
   wikiItem?: WikiDataResponse | null
   loading?: boolean
+  trade?: string
 }>()
 
 const emit = defineEmits<{ panelEnter: []; panelLeave: [] }>()
@@ -121,6 +123,20 @@ const headerClass = computed(() => itemData.value?.baseType ? '-double' : '-sing
           </div>
         </div>
       </template>
+
+      <a
+        v-if="trade"
+        :href="trade"
+        v-bind="getExternalLinkAttrs(trade)"
+        class="poe-trade-btn"
+      >
+        <svg class="poe-trade-ic" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="9" cy="21" r="1.4" />
+          <circle cx="19" cy="21" r="1.4" />
+          <path d="M1 2h3.2l2.4 12.2a1.7 1.7 0 0 0 1.7 1.4h8.9a1.7 1.7 0 0 0 1.7-1.4L22 6H5.5" />
+        </svg>
+        Mở trade
+      </a>
 
     </div>
   </Teleport>
@@ -254,6 +270,44 @@ const headerClass = computed(() => itemData.value?.baseType ? '-double' : '-sing
 
 @keyframes poe-spin {
   to { transform: rotate(360deg); }
+}
+
+.poe-trade-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--c-border, rgb(80, 80, 80));
+  border-radius: 4px;
+  background: var(--c-bg, rgb(0, 0, 0));
+  color: var(--c-primary);
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+.poe-trade-ic {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.poe-trade-btn:hover,
+.poe-trade-btn:focus-visible {
+  color: var(--c-primary-hi, var(--c-primary));
+  border-color: var(--c-primary);
+  background: color-mix(in srgb, var(--c-primary) 16%, transparent);
 }
 
 </style>

@@ -4,6 +4,7 @@ import { getExternalLinkAttrs } from '~/composables/useExternalLink'
 
 const props = defineProps<{
   url: string
+  trade?: string
 }>()
 
 const itemName = computed(() => {
@@ -55,18 +56,28 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <a
-    v-if="itemName"
-    ref="anchorEl"
-    :href="url"
-    v-bind="getExternalLinkAttrs(url)"
-    class="wl-anchor"
-    @mouseenter="show"
-    @mouseleave="scheduleHide"
-    @focus="show"
-    @blur="scheduleHide"
-  >
-    {{ itemName }}
+  <span v-if="itemName" class="wl">
+    <a
+      ref="anchorEl"
+      :href="url"
+      v-bind="getExternalLinkAttrs(url)"
+      class="wl-anchor"
+      @mouseenter="show"
+      @mouseleave="scheduleHide"
+      @focus="show"
+      @blur="scheduleHide"
+    >{{ itemName }}</a><a
+      v-if="trade"
+      :href="trade"
+      v-bind="getExternalLinkAttrs(trade)"
+      class="wl-trade"
+      :title="`Mở trade: ${itemName}`"
+      :aria-label="`Mở trade ${itemName}`"
+      @mouseenter="show"
+      @mouseleave="scheduleHide"
+      @focus="show"
+      @blur="scheduleHide"
+    ><svg class="wl-trade-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="21" r="1.4" /><circle cx="19" cy="21" r="1.4" /><path d="M1 2h3.2l2.4 12.2a1.7 1.7 0 0 0 1.7 1.4h8.9a1.7 1.7 0 0 0 1.7-1.4L22 6H5.5" /></svg></a>
     <ClientOnly>
       <WikiPopover
         v-if="open"
@@ -74,11 +85,12 @@ onBeforeUnmount(() => {
         :name="itemName"
         :wiki-item="wikiItem"
         :loading="wikiLoading"
+        :trade="trade"
         @panel-enter="show"
         @panel-leave="scheduleHide"
       />
     </ClientOnly>
-  </a>
+  </span>
 </template>
 
 <style scoped>
@@ -116,5 +128,44 @@ a.wl-anchor:focus-visible {
 a.wl-anchor:focus-visible {
   outline: 2px solid #d4ff00;
   outline-offset: 2px;
+}
+
+.wl {
+  white-space: nowrap;
+}
+
+a.wl-trade {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.16em;
+  padding: 0.05em 0.12em;
+  border-radius: 3px;
+  color: var(--c-muted);
+  text-decoration: none;
+  vertical-align: baseline;
+  transition: color 0.12s ease, background 0.12s ease;
+}
+
+.wl-trade-ic {
+  width: 0.98em;
+  height: 0.98em;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+a.wl-trade:hover,
+a.wl-trade:focus-visible {
+  color: var(--c-primary);
+  background: color-mix(in srgb, var(--c-primary) 14%, transparent);
+}
+
+a.wl-trade:focus-visible {
+  outline: 2px solid var(--c-primary);
+  outline-offset: 1px;
 }
 </style>
