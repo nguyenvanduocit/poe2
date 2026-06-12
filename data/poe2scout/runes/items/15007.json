@@ -3,8 +3,8 @@
   "baseCurrencyApiId": "exalted",
   "baseCurrencyText": "Exalted Orb",
   "categoryApiId": "fragments",
-  "currentPrice": 299.37053349759765,
-  "currentQuantity": 1779,
+  "currentPrice": 291.4952731675977,
+  "currentQuantity": 2267,
   "dailyStats": [
     {
       "Average": 259.12460022491973,
@@ -52,16 +52,25 @@
       "Volume": 51591
     },
     {
-      "Average": 305.0548794289954,
-      "Close": 291.9073216904174,
+      "Average": 286.81471870852084,
+      "Close": 317.75246760287934,
       "High": 324.29214739972707,
-      "Low": 291.9073216904174,
+      "Low": 260.31584822818,
       "Open": 324.29214739972707,
       "Time": "2026-06-10",
-      "Volume": 10043
+      "Volume": 55879
+    },
+    {
+      "Average": 291.8608379393268,
+      "Close": 280.40430529410287,
+      "High": 318.2103274263225,
+      "Low": 271.6192033117734,
+      "Open": 312.9832558378132,
+      "Time": "2026-06-11",
+      "Volume": 32896
     }
   ],
-  "fetched_at": "2026-06-10T06:32:57Z",
+  "fetched_at": "2026-06-11T15:16:39Z",
   "iconUrl": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yU2VlZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/550527bcd4/PrecursorSeed.png",
   "itemId": 15007,
   "kind": "Currency",

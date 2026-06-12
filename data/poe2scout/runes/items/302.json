@@ -3,8 +3,8 @@
   "baseCurrencyApiId": "exalted",
   "baseCurrencyText": "Exalted Orb",
   "categoryApiId": "fragments",
-  "currentPrice": 68.55125783643786,
-  "currentQuantity": 820,
+  "currentPrice": 73.29772572998333,
+  "currentQuantity": 857,
   "dailyStats": [
     {
       "Average": 36.026005736789216,
@@ -106,16 +106,25 @@
       "Volume": 24541
     },
     {
-      "Average": 62.06464915727856,
-      "Close": 70.96425331228858,
-      "High": 70.96425331228858,
-      "Low": 54.87215509739601,
+      "Average": 65.08634462204354,
+      "Close": 56.339256818557224,
+      "High": 73.56199182151684,
+      "Low": 54.24221700702784,
       "Open": 54.87215509739601,
       "Time": "2026-06-10",
-      "Volume": 5458
+      "Volume": 26735
+    },
+    {
+      "Average": 55.9984196249218,
+      "Close": 56.78960341743274,
+      "High": 58.83293684899362,
+      "Low": 53.770716831325124,
+      "Open": 54.434263126680925,
+      "Time": "2026-06-11",
+      "Volume": 16395
     }
   ],
-  "fetched_at": "2026-06-10T06:32:28Z",
+  "fetched_at": "2026-06-11T15:14:54Z",
   "iconUrl": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaHN0b25lIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d60587d724/Breachstone.png",
   "itemId": 302,
   "kind": "Currency",

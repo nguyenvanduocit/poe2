@@ -3,8 +3,8 @@
   "baseCurrencyApiId": "exalted",
   "baseCurrencyText": "Exalted Orb",
   "categoryApiId": "ritual",
-  "currentPrice": 176.80193001443712,
-  "currentQuantity": 1723,
+  "currentPrice": 177.16653437346707,
+  "currentQuantity": 1904,
   "dailyStats": [
     {
       "Average": 39.0,
@@ -106,16 +106,25 @@
       "Volume": 51869
     },
     {
-      "Average": 193.0143107255523,
-      "Close": 174.26943882218518,
+      "Average": 172.21170805492932,
+      "Close": 158.99678709008012,
       "High": 210.9744659789928,
-      "Low": 174.26943882218518,
+      "Low": 153.17117742038644,
       "Open": 210.11811692963957,
       "Time": "2026-06-10",
-      "Volume": 10481
+      "Volume": 54917
+    },
+    {
+      "Average": 166.53855500474756,
+      "Close": 175.32770686356088,
+      "High": 175.32770686356088,
+      "Low": 161.52105901218516,
+      "Open": 163.35287688132235,
+      "Time": "2026-06-11",
+      "Volume": 35308
     }
   ],
-  "fetched_at": "2026-06-10T06:32:30Z",
+  "fetched_at": "2026-06-11T15:16:40Z",
   "iconUrl": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9LaW5nb2Z0aGVNaXN0SGVhZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/254e341ba3/KingoftheMistHead.png",
   "itemId": 13947,
   "kind": "Currency",
