@@ -32,7 +32,7 @@ tags:
 
 # Pathfinder Herald of Ice Bow
 
-Build này dọn map nhanh nhất của league: bắn :wiki-link{url="https://www.poe2wiki.net/wiki/Lightning_Arrow"} thành từng loạt, mỗi mũi vừa shock vừa chill, rồi để :wiki-link{url="https://www.poe2wiki.net/wiki/Herald_of_Ice"} biến mỗi cú shatter thành một quả nổ lạnh quét sạch cả màn hình. Ranger lên :wiki-link{url="https://www.poe2wiki.net/wiki/Pathfinder"} để lấy flask uptime thường trực và một lớp evasion đổi thẳng sang giảm sát thương nguyên tố, nên build chạy mượt mà không cần nhiều đầu tư. Pathfinder đang là ascendancy đông thứ hai ladder, 18.7%, và tăng nhanh nhất trong các class kể từ tuần đầu — phần lớn lý do là combo bow này clear cực rảnh tay. Build hợp với người thích playstyle bắn-và-chạy, ưu tiên tốc độ farm hơn boss single-target, và muốn một entry point rẻ để vào endgame của [Runes of Aldur](/mechanics/leagues/return-of-the-ancients).
+Build này dọn map nhanh nhất của league: bắn :wiki-link{url="https://www.poe2wiki.net/wiki/Lightning_Arrow"} thành từng loạt, mỗi mũi vừa shock vừa chill, rồi để :wiki-link{url="https://www.poe2wiki.net/wiki/Herald_of_Ice"} biến mỗi cú shatter thành một quả nổ lạnh quét sạch cả màn hình. Ranger lên :wiki-link{url="https://www.poe2wiki.net/wiki/Pathfinder"} để lấy flask uptime thường trực và một lớp evasion đổi thẳng sang giảm sát thương nguyên tố, nên build chạy mượt mà không cần nhiều đầu tư. Pathfinder đang là ascendancy đông thứ hai ladder, 18.7%, và tăng nhanh nhất trong các class kể từ tuần đầu — phần lớn lý do là combo bow này clear cực rảnh tay. Build hợp với người thích playstyle bắn-và-chạy, ưu tiên tốc độ farm hơn boss single-target, và muốn một entry point rẻ để vào endgame của [Runes of Aldur](/guides/return-of-the-ancients).
 
 ## Build hoạt động ra sao
 
@@ -114,7 +114,7 @@ Build này là một trong những lựa chọn league-start tốt nhất 0.5 ch
 
 ## Relationships
 
-- related_mechanics :: [Tổng quan league Runes of Aldur](/mechanics/leagues/return-of-the-ancients)
+- related_mechanics :: [Tổng quan league Runes of Aldur](/guides/return-of-the-ancients)
 - alternative_to :: [Huntress spear Twister](/builds/huntress/0-5-spirit-walker-twister)
 
 ## Changelog

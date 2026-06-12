@@ -58,6 +58,6 @@ Khi vào endgame và quen với rhythm của POE2, hybrid Life+ES thường là 
 
 ## Relationships
 
-- **related_mechanics** [Energy Shield Recovery](/mechanics/energy-shield-recovery) — cơ chế recharge delay, rate, và Runic Ward trong 0.5 cho người muốn đào sâu hơn
+- **related_mechanics** [Energy Shield Recovery](/guides/energy-shield-recovery) — cơ chế recharge delay, rate, và Runic Ward trong 0.5 cho người muốn đào sâu hơn
 - **related** [Spirit: tài nguyên reservation của POE2](/guides/beginner-spirit) — pool thứ tư hay bị nhầm với Mana, guide riêng giải thích cách kiếm và quản lý
-- **related_mechanics** [Armour Defensive Scaling](/mechanics/armour-defensive-scaling) — layer phòng thủ vật lý bổ sung bên cạnh Life và ES
+- **related_mechanics** [Armour Defensive Scaling](/guides/armour-defensive-scaling) — layer phòng thủ vật lý bổ sung bên cạnh Life và ES

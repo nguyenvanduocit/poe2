@@ -79,6 +79,6 @@ Item introduced.
 
 ## Relationships
 
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — league overview 0.5.0, context về meta caster và reservation trong Runes of Aldur.
-- **related_mechanics** [Stormweaver Infusion Mana Loop](/mechanics/stormweaver-infusion-mana-loop) — build caster spam tốc độ cao, một trong những archetype hưởng lợi nhất từ mana recovery thụ động.
-- **related_mechanics** [0.5 New Unique Items Overview](/mechanics/0-5-new-unique-items) — danh sách unique mới 0.5, bao gồm mana-related.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — league overview 0.5.0, context về meta caster và reservation trong Runes of Aldur.
+- **related_mechanics** [Stormweaver Infusion Mana Loop](/guides/stormweaver-infusion-mana-loop) — build caster spam tốc độ cao, một trong những archetype hưởng lợi nhất từ mana recovery thụ động.
+- **related_mechanics** [0.5 New Unique Items Overview](/guides/0-5-new-unique-items) — danh sách unique mới 0.5, bao gồm mana-related.

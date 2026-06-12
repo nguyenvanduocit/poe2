@@ -40,7 +40,7 @@ tags:
 
 # Vestige of Darkness
 
-Vestige of Darkness là unique helmet duy nhất trên base :wiki-link{url="https://www.poe2wiki.net/wiki/Tenebrous_Crown"}, và dòng mod thứ ba của nó — `Physical damage from Hits Contributes to Chill Magnitude and Freeze Buildup` — cho mọi build đánh physical-hit clear pack bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Chill"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Freeze"} và :wiki-link{url="https://www.poe2wiki.net/wiki/Shatter"} mà không phải trả thuế cold conversion. Đây là helmet enabler cho archetype physical-mace Warrior dẫn đầu, nhưng phải đọc đúng nó là **clear-speed/map item**, không phải boss-killer: unique boss không shatter được, chill bị cắt nửa trên unique. Là lvl 65 pinnacle drop nên không build-around từ đầu league — nó là power spike giữa-cuối endgame. Cùng đợt unique 0.5 đáng đọc trong [Đợt Unique Mới và Meta Shift](/mechanics/0-5-new-unique-items).
+Vestige of Darkness là unique helmet duy nhất trên base :wiki-link{url="https://www.poe2wiki.net/wiki/Tenebrous_Crown"}, và dòng mod thứ ba của nó — `Physical damage from Hits Contributes to Chill Magnitude and Freeze Buildup` — cho mọi build đánh physical-hit clear pack bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Chill"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Freeze"} và :wiki-link{url="https://www.poe2wiki.net/wiki/Shatter"} mà không phải trả thuế cold conversion. Đây là helmet enabler cho archetype physical-mace Warrior dẫn đầu, nhưng phải đọc đúng nó là **clear-speed/map item**, không phải boss-killer: unique boss không shatter được, chill bị cắt nửa trên unique. Là lvl 65 pinnacle drop nên không build-around từ đầu league — nó là power spike giữa-cuối endgame. Cùng đợt unique 0.5 đáng đọc trong [Đợt Unique Mới và Meta Shift](/guides/0-5-new-unique-items).
 
 ## Item Stats
 
@@ -113,4 +113,4 @@ Item introduced. Mod values, base Tenebrous Crown, level requirement 65 đã ver
 
 ## Relationships
 
-- **synergizes_with** [Đợt Unique Mới và Meta Shift](/mechanics/0-5-new-unique-items) — cùng đợt 42 unique 0.5, đây là item cắt ngang trục physical-ailment chưa được survey đó cover sâu
+- **synergizes_with** [Đợt Unique Mới và Meta Shift](/guides/0-5-new-unique-items) — cùng đợt 42 unique 0.5, đây là item cắt ngang trục physical-ailment chưa được survey đó cover sâu

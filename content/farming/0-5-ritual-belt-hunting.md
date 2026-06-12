@@ -44,7 +44,7 @@ Master đổi tự do trước mỗi map không tốn point, nên đây là tầ
 
 **Jado** lấy node **Partial Translations**: 20% chance double effect mọi explicit modifier trên tablet đang cắm. Một phần năm số map ăn cú nhân đôi này áp lên cả tablet ritual (+3 reroll thành +6) lẫn tablet abyss, đẩy favour và loot trung bình lên qua nhiều map. Hướng này tối đa hoá juice tablet.
 
-**Hilda** đi hướng xé boss, hợp multi-mechanic hơn nếu build delete boss nhanh. **Mighty Prey** cho 25% chance nâng map boss thành Powerful Map Boss, **Breeding Season** thêm rare và rare-có-modifier, **Patient Battue** với **Soul Eaters** biến rare thừa thành reward. Ritual vốn là một rừng boss nên Hilda có rất nhiều mục tiêu để khuếch đại. Mạnh nhất cho cách chơi này là tier 3 **Ancient Inscriptions**: 25% increased effect của explicit modifier trên tablet cho **mỗi loại tablet** đang ảnh hưởng map. Chạy Ritual cộng Abyss là hai loại, thêm tablet thứ ba thành ba, nên multiplier cộng dồn theo số cơ chế mình nhồi. Vị trí và full node của ba master xem [Atlas passive tree gồm những gì](/mechanics/atlas/0-5-atlas-passive-tree).
+**Hilda** đi hướng xé boss, hợp multi-mechanic hơn nếu build delete boss nhanh. **Mighty Prey** cho 25% chance nâng map boss thành Powerful Map Boss, **Breeding Season** thêm rare và rare-có-modifier, **Patient Battue** với **Soul Eaters** biến rare thừa thành reward. Ritual vốn là một rừng boss nên Hilda có rất nhiều mục tiêu để khuếch đại. Mạnh nhất cho cách chơi này là tier 3 **Ancient Inscriptions**: 25% increased effect của explicit modifier trên tablet cho **mỗi loại tablet** đang ảnh hưởng map. Chạy Ritual cộng Abyss là hai loại, thêm tablet thứ ba thành ba, nên multiplier cộng dồn theo số cơ chế mình nhồi. Vị trí và full node của ba master xem [Atlas passive tree gồm những gì](/guides/0-5-atlas-passive-tree).
 
 ### Tablets & Map Device
 
@@ -146,9 +146,9 @@ Nhồi thêm loại tablet để cộng dồn Hilda Ancient Inscriptions: mỗi 
 
 Bản budget bỏ Abyss và City: ba tablet (Freedom of Faith + hai ritual) trên map bất kỳ, vẫn dùng Head of the King vì nó thêm juice quá đáng so với chi phí. Lãi mỏng hơn, belt hiếm hơn nhiều, nhưng vốn rất nhẹ.
 
-Muốn belt mà không cược qua ritual thì có đường chance thẳng base belt: spam :wiki-link{url="https://www.poe2wiki.net/wiki/Orb_of_Chance"} lên white Heavy Belt (base Headhunter) hoặc white Fine Belt (base Mageblood). Canh bạc này khác hẳn, không dùng atlas/tablet, và toán break-even hiện tại âm-tới-hoà-vốn; chi tiết tỉ lệ và cách đỡ lỗ ở [Chance Heavy Belt săn Headhunter](/mechanics/crafting/chance-heavy-belt-headhunter). Hợp người muốn cược belt mà không muốn ráp cả setup ritual.
+Muốn belt mà không cược qua ritual thì có đường chance thẳng base belt: spam :wiki-link{url="https://www.poe2wiki.net/wiki/Orb_of_Chance"} lên white Heavy Belt (base Headhunter) hoặc white Fine Belt (base Mageblood). Canh bạc này khác hẳn, không dùng atlas/tablet, và toán break-even hiện tại âm-tới-hoà-vốn; chi tiết tỉ lệ và cách đỡ lỗ ở [Chance Heavy Belt săn Headhunter](/crafting/chance-heavy-belt-headhunter). Hợp người muốn cược belt mà không muốn ráp cả setup ritual.
 
-Ai muốn dòng tiền đều hơn, ít cược, thì lấy nhánh khác của Spreading Darkness (Sapping → Gloves and Rings) vì ring rare giá ổn định. Cuối cùng, [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) cạnh tranh trực tiếp slot tablet và atlas, cùng dùng Map Device tablet stacking nhưng output là carry companion, nên chọn một hướng cho mỗi session.
+Ai muốn dòng tiền đều hơn, ít cược, thì lấy nhánh khác của Spreading Darkness (Sapping → Gloves and Rings) vì ring rare giá ổn định. Cuối cùng, [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) cạnh tranh trực tiếp slot tablet và atlas, cùng dùng Map Device tablet stacking nhưng output là carry companion, nên chọn một hướng cho mỗi session.
 
 ## Data & Testing
 
@@ -184,8 +184,8 @@ Phần throughput (~3-4 div/map bản đắt, nền ~1 div abyss + omen mỗi ma
 ## Relationships
 
 - **related_guides** [Ritual và Rite of the Nameless](/guides/0-5-ritual-rite-of-the-nameless) — cơ chế ritual đầy đủ: 8 point subtree tiêu vào đâu, tribute/reroll/defer, tablet suffix pool, Queen in the Mists. Đọc cái này để hiểu nền dưới strategy farm.
-- **related_mechanics** [Atlas passive tree gồm những gì](/mechanics/atlas/0-5-atlas-passive-tree) — vị trí Ritual/Abyss subtree và full node ba master (Hilda/Jado/Doryani) dùng ở đây.
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — league system 0.5 (Ritual rewrite, Abyss revamp, Masters of the Atlas) là nền của strategy.
-- **alternative_to** [Chance Heavy Belt săn Headhunter](/mechanics/crafting/chance-heavy-belt-headhunter) — đường lấy belt khác: chance thẳng base trắng, không qua ritual; toán break-even âm-tới-hoà-vốn nên chỉ hợp người có tiền nhàn.
+- **related_mechanics** [Atlas passive tree gồm những gì](/guides/0-5-atlas-passive-tree) — vị trí Ritual/Abyss subtree và full node ba master (Hilda/Jado/Doryani) dùng ở đây.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — league system 0.5 (Ritual rewrite, Abyss revamp, Masters of the Atlas) là nền của strategy.
+- **alternative_to** [Chance Heavy Belt săn Headhunter](/crafting/chance-heavy-belt-headhunter) — đường lấy belt khác: chance thẳng base trắng, không qua ritual; toán break-even âm-tới-hoà-vốn nên chỉ hợp người có tiền nhàn.
 - **related_builds** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — ví dụ character endgame đủ clear T15-16 và đứng nổi phòng đông quái mà strategy yêu cầu.
-- **competes_with** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — cùng dùng The Head of the King → Rite of the Nameless và cùng tốn slot tablet + atlas Map Device, nhưng output là carry companion thay vì belt; chọn một hướng cho mỗi session.
+- **competes_with** [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — cùng dùng The Head of the King → Rite of the Nameless và cùng tốn slot tablet + atlas Map Device, nhưng output là carry companion thay vì belt; chọn một hướng cho mỗi session.

@@ -214,6 +214,6 @@ Số 480k là DPS đo từ snapshot poe.ninja 2026-06-10, không phải PoB veri
 
 - **alternative_to** [Twister Spirit Walker](/builds/huntress/0-5-spirit-walker-twister) — cùng engine Twister consume nhưng ascendancy khác: bản kia self-cast Spirit Walker, bản này hai nhánh meta Ritualist/Amazon.
 - **alternative_to** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — nếu muốn build companion thật thay vì self-cast projectile, đây là hướng companion-pack Huntress.
-- **related_mechanics** [Twister — Spear Wind Projectile Skill](/mechanics/skills/twister) — engine consume Whirlwind, throttle 0.66s, element gain từ ground.
-- **related_mechanics** [The Taming — Tripled Wind Skill Ground Effect](/mechanics/items/the-taming) — ring cộng increased damage per ailment ground cho Wind Skill.
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — league 0.5 với Trinity rework và ground effect interaction cho Wind Skill.
+- **related_mechanics** [Twister — Spear Wind Projectile Skill](/guides/twister) — engine consume Whirlwind, throttle 0.66s, element gain từ ground.
+- **related_mechanics** [The Taming — Tripled Wind Skill Ground Effect](/guides/the-taming) — ring cộng increased damage per ailment ground cho Wind Skill.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — league 0.5 với Trinity rework và ground effect interaction cho Wind Skill.

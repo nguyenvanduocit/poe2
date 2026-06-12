@@ -84,4 +84,4 @@ Explosion radius hạ còn 1.6m (trước 1.8m). On-kill effect của Herald ski
 
 ## Relationships
 
-- **synergizes_with** [Twister](/mechanics/skills/twister) — cold Twister build freeze enemy rồi shatter, Herald of Ice gánh phần clear pack cho cùng một cú đánh.
+- **synergizes_with** [Twister](/guides/twister) — cold Twister build freeze enemy rồi shatter, Herald of Ice gánh phần clear pack cho cùng một cú đánh.

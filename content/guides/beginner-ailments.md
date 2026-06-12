@@ -54,5 +54,5 @@ Vì vậy khi vào T10 trở lên, cần chủ động cắt nguồn gốc hơn 
 
 ## Relationships
 
-- **related_mechanics** [Armour và defensive scaling](/mechanics/armour-defensive-scaling) — hiểu ailment threshold song song với armour, evasion, ES để xây lớp phòng thủ đầy đủ
-- **related_mechanics** [Infernal Legion ignite loop](/mechanics/skills/infernal-legion-ignite-loop) — ví dụ build khai thác ignite làm main damage, thực tế ailment offense trong action
+- **related_mechanics** [Armour và defensive scaling](/guides/armour-defensive-scaling) — hiểu ailment threshold song song với armour, evasion, ES để xây lớp phòng thủ đầy đủ
+- **related_mechanics** [Infernal Legion ignite loop](/guides/infernal-legion-ignite-loop) — ví dụ build khai thác ignite làm main damage, thực tế ailment offense trong action

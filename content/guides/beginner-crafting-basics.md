@@ -79,4 +79,4 @@ Nếu đọc guide POE1 cũ mà thấy nhắc các orb này, bỏ qua — chúng
 
 - **related_guides** [Currency cơ bản: mỗi orb làm gì](/guides/beginner-currency) — trade value của từng orb và khi nào nên giữ để mua item thay vì craft.
 - **related_guides** [Trading cơ bản](/guides/beginner-trading) — mua gear tốt bằng Chaos và Exalted thường hiệu quả hơn craft bừa ở giai đoạn đầu.
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Verisium Runeforging và Ancient Rune, hệ thống craft riêng của patch 0.5 hoạt động độc lập với các orb trên.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — Verisium Runeforging và Ancient Rune, hệ thống craft riêng của patch 0.5 hoạt động độc lập với các orb trên.

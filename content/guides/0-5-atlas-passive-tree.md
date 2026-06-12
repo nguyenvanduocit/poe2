@@ -131,7 +131,7 @@ Cây atlas 0.5 không bắt đánh đổi giữa các node — cày đủ Fortre
 
 ## Relationships
 
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — atlas tree là một mảnh của endgame overhaul; note đó mô tả toàn bộ patch ở mức hệ thống.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — atlas tree là một mảnh của endgame overhaul; note đó mô tả toàn bộ patch ở mức hệ thống.
 - **related_guides** [Mở khóa toàn bộ atlas endgame](/guides/0-5-atlas-unlock-walkthrough) — cách kiếm point để bật những node mô tả ở đây (Fortress, Arbiter of Divinity 5-kill path).
 - **related_guides** [Sustain map và setup atlas tree endgame](/guides/0-5-endgame-mapping-sustain) — thứ tự dồn point và bộ Master thực tế đang chạy.
 - **related_guides** [Breach và hệ craft Genesis Tree](/guides/0-5-breach-genesis-tree) — cách chơi subtree Breach và hệ craft nuôi nhánh phải của cây.

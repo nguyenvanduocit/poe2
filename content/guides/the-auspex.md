@@ -82,7 +82,7 @@ Hệ quả: build dùng Auspex gần như buộc phải đi thuần Dex gear —
 
 Evasion-deflect Huntress/Ranger là core user tự nhiên: cap Dex sẵn, gear thuần evasion dễ tìm, Deflect dễ đầu tư từ passive tree, và low-life through reservation aura là pattern sẵn có. Raven cull-frenzy stack tốt với attack build vì Frenzy buff cả attack speed lẫn damage.
 
-Monk Martial Artist với [Facebreaker](/mechanics/items/facebreaker) là combo hợp lý về concept — Raven utility kết hợp gloves unique cùng patch — nhưng Monk là Str/Int class. Doubled Attribute Requirements sẽ taxing nặng nếu build muốn đeo bất kỳ item Str/Int nào, kể cả Facebreaker (Facebreaker có Str requirement). Khả thi nhưng attribute investment cao hơn bình thường đáng kể.
+Monk Martial Artist với [Facebreaker](/guides/facebreaker) là combo hợp lý về concept — Raven utility kết hợp gloves unique cùng patch — nhưng Monk là Str/Int class. Doubled Attribute Requirements sẽ taxing nặng nếu build muốn đeo bất kỳ item Str/Int nào, kể cả Facebreaker (Facebreaker có Str requirement). Khả thi nhưng attribute investment cao hơn bình thường đáng kể.
 
 Build swarm minion không hợp vì The Auspex grant đúng một companion duy nhất — lợi thế nằm ở utility của Raven, không phải số lượng. Build kiter xa cũng mất phần Gruelling Madness hoàn toàn vì không ở gần enemy.
 
@@ -106,4 +106,4 @@ Item được giới thiệu. Thuộc loot pool Delirium, grouped với The Rave
 
 ## Relationships
 
-- **synergizes_with** [Facebreaker](/mechanics/items/facebreaker) — unique gloves cùng patch 0.5.0, được GGG reveal cùng lúc với Auspex; synergy concept với Monk Martial Artist Stonefist build path.
+- **synergizes_with** [Facebreaker](/guides/facebreaker) — unique gloves cùng patch 0.5.0, được GGG reveal cùng lúc với Auspex; synergy concept với Monk Martial Artist Stonefist build path.

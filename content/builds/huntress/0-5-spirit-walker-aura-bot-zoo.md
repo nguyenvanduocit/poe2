@@ -85,7 +85,7 @@ Ritual capture phải làm đúng thứ tự vì đàn companion DPS cao giết 
 
 **Tip:** essence có thể đổi chỗ hoặc biến mất giữa các lần reset: không thấy ở spot cũ thì đảo một vòng trước khi reset tiếp. Với Whakapanu chỉ cần quét nhánh sa mạc, tới rừng mà chưa thấy essence thì reset luôn cho nhanh.
 
-Phần nền chung của pipeline tame — modifier retention, disenchant gem về bản trắng, Untainted Paradise cho volume — nằm đủ ở [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt); doc này chỉ thêm lớp lọc reservation + aura lên trên.
+Phần nền chung của pipeline tame — modifier retention, disenchant gem về bản trắng, Untainted Paradise cho volume — nằm đủ ở [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt); doc này chỉ thêm lớp lọc reservation + aura lên trên.
 
 ## Spirit ledger cho nhánh zoo
 
@@ -132,8 +132,8 @@ Nhánh này làm tốt ba thứ: buff team-wide với giá ~30 spirit mỗi aura
 ## Relationships
 
 - **derived_from** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — build mẹ: toàn bộ gear, tree, ascendancy, ledger gốc và lớp redirect sống ở đó; nhánh này chỉ đổi cấu trúc roster.
-- **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — pipeline tame nền: modifier retention, essence reset hai tầng, disenchant, Untainted Paradise.
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — league 0.5 với Spirit Walker, Tame Beast và essence encounter làm nền cho cả hướng companion.
+- **related_mechanics** [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — pipeline tame nền: modifier retention, essence reset hai tầng, disenchant, Untainted Paradise.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — league 0.5 với Spirit Walker, Tame Beast và essence encounter làm nền cho cả hướng companion.
 
 ## Resources
 

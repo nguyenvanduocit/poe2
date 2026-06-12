@@ -132,5 +132,5 @@ New Unique item: Facebreaker. POE2 remake từ POE1 Facebreaker với cơ chế 
 
 ## Relationships
 
-- **synergizes_with** [The Auspex](/mechanics/items/the-auspex) — body slot unique cùng patch, synergy qua Monk Martial Artist Stonefist build path.
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview patch 0.5.0 gồm các unique mới.
+- **synergizes_with** [The Auspex](/guides/the-auspex) — body slot unique cùng patch, synergy qua Monk Martial Artist Stonefist build path.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — overview patch 0.5.0 gồm các unique mới.

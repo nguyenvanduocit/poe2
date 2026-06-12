@@ -131,4 +131,4 @@ Lộ trình này giả định một character đã leo xong endgame với build
 
 - **related_guides** [Mở Khóa Toàn Bộ Atlas Endgame](/guides/0-5-atlas-unlock-walkthrough) — đường Origins of Divinity → Fortress → Arbiter ×5 cho The Cartographer
 - **related_guides** [Endgame Mapping & Sustain](/guides/0-5-endgame-mapping-sustain) — node atlas nên lấy trước, cách giữ map sustain khi cày challenge
-- **related_mechanics** [Spirit Walker — Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — ascendancy + companion, liên quan The Hunter và The Ascendant
+- **related_mechanics** [Spirit Walker — Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — ascendancy + companion, liên quan The Hunter và The Ascendant

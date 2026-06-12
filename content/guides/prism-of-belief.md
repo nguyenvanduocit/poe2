@@ -86,6 +86,6 @@ Item được giới thiệu.
 
 ## Relationships
 
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — The Arbiter of Ash là endgame boss drop source của item, gắn với hệ thống endgame 0.5.
-- **related_mechanics** [Unique Items Mới](/mechanics/0-5-new-unique-items) — overview các unique đáng chú ý trong 0.5, context rộng hơn của item này.
-- **synergizes_with** [Spirit Walker — Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — Tame Beast nằm trong pool eligible skills; build Companion Zoo scale companion level thông qua gem level.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — The Arbiter of Ash là endgame boss drop source của item, gắn với hệ thống endgame 0.5.
+- **related_mechanics** [Unique Items Mới](/guides/0-5-new-unique-items) — overview các unique đáng chú ý trong 0.5, context rộng hơn của item này.
+- **synergizes_with** [Spirit Walker — Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — Tame Beast nằm trong pool eligible skills; build Companion Zoo scale companion level thông qua gem level.

@@ -62,5 +62,5 @@ Map mod :wiki-link{url="https://www.poe2wiki.net/wiki/Elemental_Weakness"} là t
 
 ## Relationships
 
-- **related** [Armour và cơ chế giảm physical damage](/mechanics/armour-defensive-scaling) — resistance phòng nguyên tố, armour phòng physical — hai lớp phòng thủ bổ sung cho nhau.
-- **related** [Energy Shield và cách recover](/mechanics/energy-shield-recovery) — ES là pool sống phía trên life, cũng nhận damage sau khi qua resistance filter.
+- **related** [Armour và cơ chế giảm physical damage](/guides/armour-defensive-scaling) — resistance phòng nguyên tố, armour phòng physical — hai lớp phòng thủ bổ sung cho nhau.
+- **related** [Energy Shield và cách recover](/guides/energy-shield-recovery) — ES là pool sống phía trên life, cũng nhận damage sau khi qua resistance filter.

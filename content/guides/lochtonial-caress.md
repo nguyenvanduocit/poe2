@@ -101,7 +101,7 @@ Recipe đầy đủ cho Unique Runeforging (ingredient ngoài Lochtonial Caress 
 
 ## Relationships
 
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview league 0.5 và các unique mới trong Runes of Aldur.
-- **related_mechanics** [0.5 New Unique Items](/mechanics/leagues/0-5-new-unique-items) — catalog unique item mới patch 0.5, context cho item endgame từ base Level 16.
-- **synergizes_with** [Spirit Walker — Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — charge share thụ động buff cả bầy companion miễn phí khi player giữ charge từ passive tree.
-- **synergizes_with** [Sylvan's Effigy](/mechanics/items/sylvans-effigy) — Sylvan's Effigy gỡ trần số loại companion; Lochtonial Caress feed charge cho cả bầy đó mà không tiêu charge của player.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — overview league 0.5 và các unique mới trong Runes of Aldur.
+- **related_mechanics** [0.5 New Unique Items](/guides/0-5-new-unique-items) — catalog unique item mới patch 0.5, context cho item endgame từ base Level 16.
+- **synergizes_with** [Spirit Walker — Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — charge share thụ động buff cả bầy companion miễn phí khi player giữ charge từ passive tree.
+- **synergizes_with** [Sylvan's Effigy](/guides/sylvans-effigy) — Sylvan's Effigy gỡ trần số loại companion; Lochtonial Caress feed charge cho cả bầy đó mà không tiêu charge của player.

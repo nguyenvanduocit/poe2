@@ -54,6 +54,6 @@ Trên nền các loại content trên là những cấu trúc lớn của Atlas.
 
 ## Relationships
 
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — mô tả đầy đủ mọi cơ chế 0.5 ở mức hệ thống: Remnant, Runeforging, Delirium/Breach/Ritual storyline, Fate of the Vaal.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — mô tả đầy đủ mọi cơ chế 0.5 ở mức hệ thống: Remnant, Runeforging, Delirium/Breach/Ritual storyline, Fate of the Vaal.
 - **related_guides** [Waystone và Atlas: bước vào endgame mapping](/guides/beginner-waystone-atlas) — nền tảng waystone và atlas tree để bật các content này.
 - **related_guides** [Sustain map và setup atlas tree endgame](/guides/0-5-endgame-mapping-sustain) — thứ tự bật content trên atlas tree để vừa lãi vừa sustain.

@@ -140,4 +140,4 @@ Ba build trong so sánh này mỗi cái có note riêng đầy đủ gear, gem, 
 - **related_builds** [Infernalist Spectre Legion](/builds/witch/0-5-infernalist-spectre-legion) — Hướng league-start an toàn nhất: backline ES tự hồi sinh, né trọn nerf Infernal Legion, rẻ và lì.
 - **related_builds** [Bone Construct Mass Summoner Lich](/builds/witch/0-5-bone-construct-mass-summoner-lich) — Hướng RTS fantasy: 20-30+ construct tràn màn, vui nhất nhưng là sàn boss/endgame và mong manh vì Soulless Form rò damage.
 - **related_builds** [Raging Spectre Shaman](/builds/druid/raging-spectre-shaman) — All-rounder clear-và-boss: spirit ceiling cao nhất, Wasp bay vượt địa hình, nhưng gate sau unique và có lỗ ailment.
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Toàn bộ thay đổi 0.5 (nerf Infernal Legion, buff minion toàn cục bug-fix, ES recharge ramp) là nền tảng định đoạt mọi quyết định trong so sánh này.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — Toàn bộ thay đổi 0.5 (nerf Infernal Legion, buff minion toàn cục bug-fix, ES recharge ramp) là nền tảng định đoạt mọi quyết định trong so sánh này.

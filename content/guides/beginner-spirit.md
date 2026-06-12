@@ -55,5 +55,5 @@ Build muốn chạy nhiều aura và companion cùng lúc buộc phải đầu t
 
 ## Relationships
 
-- **related** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — ascendancy chuyên Spirit và companion reservation, ví dụ điển hình về build phụ thuộc Spirit cao.
-- **related** [Sylvan's Effigy](/mechanics/items/sylvans-effigy) — unique sceptre tăng Spirit ceiling và gỡ trần companion, tool chính của build zoo Spirit Walker.
+- **related** [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — ascendancy chuyên Spirit và companion reservation, ví dụ điển hình về build phụ thuộc Spirit cao.
+- **related** [Sylvan's Effigy](/guides/sylvans-effigy) — unique sceptre tăng Spirit ceiling và gỡ trần companion, tool chính của build zoo Spirit Walker.

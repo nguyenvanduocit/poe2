@@ -89,7 +89,7 @@ Hai chỗ wording dễ nhầm, cả hai đều load-bearing.
 
 "Block all Blockable Hits" của Refutation là block **guaranteed, không roll** — khác hẳn block chance thông thường (một xác suất % phải trúng mỗi hit). Trong cửa sổ buff, mọi Blockable Hit bị chặn 100%, không có lần "trượt block". Đây là lý do Refutation đáng giá phía thủ ngay cả khi Ward thấp: phần block-all không phụ thuộc lượng Ward, chỉ phần stun-threshold mới phụ thuộc.
 
-"50% less Stun Threshold" là multiplicative ×0.5, và điểm phải nói rõ: phía stun-threshold-upside của Refutation đến **chỉ từ Ward đã đốt**, **chỉ trong lúc buff active**. Việc đơn thuần *có* Ward trong pool không feed Stun Threshold — pool Runic Ward thụ động không nằm trong keyword Defences và chưa bao giờ đóng góp stun threshold (xem [Runic Ward Onslaught Loop cho Minion](/mechanics/0-5-runic-ward-onslaught-loop)). Refutation là cơ chế riêng: nó *spend* Ward để đổi lấy một bonus stun-threshold tạm thời, không phải Ward tự nhiên cho stun threshold. Giữ ward thấp suốt trận (như loop Onslaught) không cho stun threshold; đốt ward qua Refutation thì cho — nhưng chỉ trong 4 giây và phải qua sàn Ward (≥200 cho chắc) để net dương.
+"50% less Stun Threshold" là multiplicative ×0.5, và điểm phải nói rõ: phía stun-threshold-upside của Refutation đến **chỉ từ Ward đã đốt**, **chỉ trong lúc buff active**. Việc đơn thuần *có* Ward trong pool không feed Stun Threshold — pool Runic Ward thụ động không nằm trong keyword Defences và chưa bao giờ đóng góp stun threshold (xem [Runic Ward Onslaught Loop cho Minion](/guides/0-5-runic-ward-onslaught-loop)). Refutation là cơ chế riêng: nó *spend* Ward để đổi lấy một bonus stun-threshold tạm thời, không phải Ward tự nhiên cho stun threshold. Giữ ward thấp suốt trận (như loop Onslaught) không cho stun threshold; đốt ward qua Refutation thì cho — nhưng chỉ trong 4 giây và phải qua sàn Ward (≥200 cho chắc) để net dương.
 
 ## Optimization
 
@@ -156,7 +156,7 @@ Cần đo trong client (league đã live): stacking form của stat stun-thresho
 - "Refutation's Cooldown no longer recovers while the Buff is active" — khoá uptime ở 4 + 10 mỗi cycle (~28.6% base, ~40% với full support), nerf so với launch khi cooldown còn hồi trong lúc buff active.
 - Olroth's Resolve flask: 0.5.1 ghi lại dòng đã live âm thầm từ 0.5.0 — "Regenerate 2.5-5% of maximum Runic Ward per second during Effect" cộng "Gain Guard equal to current Runic Ward for 10 seconds when effect ends". Đây là nguồn nạp ward chồng lên 5%/giây nền (tới ~10%/giây) cộng một lớp Guard ăn theo pool, hợp với ward-stacker chạy Refutation.
 - "Logging out and in again now preserves your heavy stun buildup" — chặn đường logout để thoát Heavy Stun, nên không còn cheese được cái "block too much → Heavy Stun → mất buff" bằng relog.
-- :wiki-link{url="https://www.poe2wiki.net/wiki/Repulsion"} Triggered Wave thêm base Critical Strike Chance 6% — không đụng Refutation trực tiếp nhưng liên quan loop ward-drain dùng chung hệ (xem [Runic Ward Onslaught Loop cho Minion](/mechanics/0-5-runic-ward-onslaught-loop)).
+- :wiki-link{url="https://www.poe2wiki.net/wiki/Repulsion"} Triggered Wave thêm base Critical Strike Chance 6% — không đụng Refutation trực tiếp nhưng liên quan loop ward-drain dùng chung hệ (xem [Runic Ward Onslaught Loop cho Minion](/guides/0-5-runic-ward-onslaught-loop)).
 
 ### Patch 0.5.0
 
@@ -167,6 +167,6 @@ Cần đo trong client (league đã live): stacking form của stat stun-thresho
 
 ## Relationships
 
-- **related_mechanics** [Runic Ward Onslaught Loop cho Minion](/mechanics/0-5-runic-ward-onslaught-loop) — chung hệ Runic Ward; loop đó giữ ward thấp thụ động (không feed stun threshold), Refutation thì đốt ward để đổi bonus stun threshold tạm thời — hai cách dùng cùng một pool ngược nhau.
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Kalguuran skill + Verisium Runeforging, hệ thống league sinh ra Refutation và nguồn ward của nó.
-- **related** [0-5 new unique items](/mechanics/0-5-new-unique-items) — Brass Dome, Svalinn, Eventide Petals: các unique liên quan đến stun threshold + ward mà build Refutation dùng.
+- **related_mechanics** [Runic Ward Onslaught Loop cho Minion](/guides/0-5-runic-ward-onslaught-loop) — chung hệ Runic Ward; loop đó giữ ward thấp thụ động (không feed stun threshold), Refutation thì đốt ward để đổi bonus stun threshold tạm thời — hai cách dùng cùng một pool ngược nhau.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — Kalguuran skill + Verisium Runeforging, hệ thống league sinh ra Refutation và nguồn ward của nó.
+- **related** [0-5 new unique items](/guides/0-5-new-unique-items) — Brass Dome, Svalinn, Eventide Petals: các unique liên quan đến stun threshold + ward mà build Refutation dùng.

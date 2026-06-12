@@ -243,9 +243,9 @@ Build làm tốt ba thứ: clear T15-T16 cực mượt nhờ projectile multi-hi
 
 ## Relationships
 
-- **related_mechanics** [Twister — Spear Wind Projectile Skill](/mechanics/skills/twister) — engine consume Whirlwind, throttle 0.66s, Salvo rework, owl feather Primal Bounty empower.
-- **related_mechanics** [The Taming — Tripled Wind Skill Ground Effect](/mechanics/items/the-taming) — ring định nghĩa build: count as boosted by Ignited/Shocked/Chilled cùng lúc, inc damage per ailment type.
-- **related_mechanics** [Lavianga's Spirits — Always-on Mana Flask](/mechanics/items/laviangas-spirits) — Gargantuan Mana Flask Cannot Be Used apply constantly, mở passive cluster "during flask effect".
-- **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — ascendancy node Wild Protector / Primal Bounty / Mhacha's Gift / Vivid Stampede / Sacred Unity verbatim.
+- **related_mechanics** [Twister — Spear Wind Projectile Skill](/guides/twister) — engine consume Whirlwind, throttle 0.66s, Salvo rework, owl feather Primal Bounty empower.
+- **related_mechanics** [The Taming — Tripled Wind Skill Ground Effect](/guides/the-taming) — ring định nghĩa build: count as boosted by Ignited/Shocked/Chilled cùng lúc, inc damage per ailment type.
+- **related_mechanics** [Lavianga's Spirits — Always-on Mana Flask](/guides/laviangas-spirits) — Gargantuan Mana Flask Cannot Be Used apply constantly, mở passive cluster "during flask effect".
+- **related_mechanics** [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — ascendancy node Wild Protector / Primal Bounty / Mhacha's Gift / Vivid Stampede / Sacred Unity verbatim.
 - **alternative_to** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — cùng ascendancy Spirit Walker nhưng damage source ngược: bên kia companion-pack, bên này self-cast projectile.
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Spirit Walker ascendancy mới, Trinity rework, ground effect interaction cho Wind Skills.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — Spirit Walker ascendancy mới, Trinity rework, ground effect interaction cho Wind Skills.

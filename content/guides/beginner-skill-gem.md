@@ -56,4 +56,4 @@ Skill được cấp từ ascendancy có số support slot tự tăng theo level
 
 ## Relationships
 
-- **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — giải thích Spirit resource và chuỗi support gem cho companion (Pain Offering package); cần hiểu Spirit trước khi dùng Uncut Spirit Gem cho persistent buff skill và minion thường trực.
+- **related_mechanics** [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — giải thích Spirit resource và chuỗi support gem cho companion (Pain Offering package); cần hiểu Spirit trước khi dùng Uncut Spirit Gem cho persistent buff skill và minion thường trực.

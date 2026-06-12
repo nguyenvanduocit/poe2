@@ -19,7 +19,7 @@ Mỗi area của Runes of Aldur rải một :wiki-link{url="https://www.poe2wiki
 
 ## Strategy Overview
 
-Loop này làm ra tiền vì nó là nền crafting của cả league: phần lớn build đều cần rune và alloy, mà nguồn duy nhất tạo ra chúng là Remnant encounter. Cơ chế đầy đủ — số slot, wave, Runic Ward, bốn tầng unlock của Farrow — đã nằm trong [Return of the Ancients](/mechanics/leagues/return-of-the-ancients); ở đây chỉ quan tâm chỗ nào ra tiền và đổi nó thành ex thế nào.
+Loop này làm ra tiền vì nó là nền crafting của cả league: phần lớn build đều cần rune và alloy, mà nguồn duy nhất tạo ra chúng là Remnant encounter. Cơ chế đầy đủ — số slot, wave, Runic Ward, bốn tầng unlock của Farrow — đã nằm trong [Return of the Ancients](/guides/return-of-the-ancients); ở đây chỉ quan tâm chỗ nào ra tiền và đổi nó thành ex thế nào.
 
 Ba dòng tiền độc lập, không phụ thuộc một cú RNG duy nhất:
 
@@ -93,7 +93,7 @@ Dồn recipe đắt vào con nhiều slot và bỏ qua con ít slot là tối ư
 
 ## Alternatives & Variations
 
-[Grand Expedition Farming](/farming/0-5-grand-expedition-farming) là biến thể juiced của chính loop này: Remnant trong Grand Expedition cũng là Verisium Remnant nhưng được đẩy slot cao và gated qua rumour Ocean, cho reward-table đọc trước thay vì craft mù. Ai đã đứng vững T15-16 và thuộc bảng rumour nên chạy thẳng Grand Expedition; loop Remnant-mỗi-map ở đây hợp hơn cho giai đoạn build chưa đủ mạnh ăn Ocean, hoặc làm lớp overlay miễn phí khi đang đẩy atlas cho mục tiêu khác. Output Runic Ward của Runeforging còn nuôi thẳng các build defensive như [Runic Ward Onslaught Loop](/mechanics/0-5-runic-ward-onslaught-loop), nên Verisium farm được vừa bán vừa dùng.
+[Grand Expedition Farming](/farming/0-5-grand-expedition-farming) là biến thể juiced của chính loop này: Remnant trong Grand Expedition cũng là Verisium Remnant nhưng được đẩy slot cao và gated qua rumour Ocean, cho reward-table đọc trước thay vì craft mù. Ai đã đứng vững T15-16 và thuộc bảng rumour nên chạy thẳng Grand Expedition; loop Remnant-mỗi-map ở đây hợp hơn cho giai đoạn build chưa đủ mạnh ăn Ocean, hoặc làm lớp overlay miễn phí khi đang đẩy atlas cho mục tiêu khác. Output Runic Ward của Runeforging còn nuôi thẳng các build defensive như [Runic Ward Onslaught Loop](/guides/0-5-runic-ward-onslaught-loop), nên Verisium farm được vừa bán vừa dùng.
 
 ## Data & Testing
 
@@ -117,7 +117,7 @@ Cơ chế loop và bốn tầng unlock lấy verbatim từ patch note 0.5.0 (`da
 
 ## Relationships
 
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients): cơ chế đầy đủ của Remnant, Verisium Runeforging, Runic Ward và bốn tầng unlock của Farrow.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients): cơ chế đầy đủ của Remnant, Verisium Runeforging, Runic Ward và bốn tầng unlock của Farrow.
 - **alternative_to** [Grand Expedition Farming](/farming/0-5-grand-expedition-farming): biến thể juiced cùng Verisium Remnant, gated qua rumour Ocean với reward-table đọc trước.
-- **supports** [Runic Ward Onslaught Loop](/mechanics/0-5-runic-ward-onslaught-loop): Verisium farm từ loop nuôi Runeforging gắn Runic Ward cho build defensive.
+- **supports** [Runic Ward Onslaught Loop](/guides/0-5-runic-ward-onslaught-loop): Verisium farm từ loop nuôi Runeforging gắn Runic Ward cho build defensive.
 - **synergizes_with** [Boss Rush Fragment Farming](/farming/0-5-boss-rush-fragment-farm): chạy chồng làm overlay, Remnant nhặt trên đường rush boss không xung đột atlas point.

@@ -61,6 +61,6 @@ Dây chuyền nâng rarity đi theo thứ tự: Normal → Magic → Rare. Mỗi
 ## Relationships
 
 - **related_guides** [Sustain Map Và Setup Atlas Tree Endgame](/guides/0-5-endgame-mapping-sustain) — hướng dẫn juice waystone bằng Alchemy và setup atlas để currency rơi nhiều hơn.
-- **related_mechanics** [Talisman Crafting](/mechanics/crafting/talisman-crafting) — hệ thống craft riêng trên talisman, dùng orb khác so với gear thông thường.
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — mô tả Runeforging, Ancient Rune, và Remnant encounter ở mức hệ thống.
-- **related_mechanics** [Chance Heavy Belt Headhunter](/mechanics/crafting/chance-heavy-belt-headhunter) — ví dụ craft nâng cao dùng Orb of Chance trên specific base.
+- **related_mechanics** [Talisman Crafting](/crafting/talisman-crafting) — hệ thống craft riêng trên talisman, dùng orb khác so với gear thông thường.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — mô tả Runeforging, Ancient Rune, và Remnant encounter ở mức hệ thống.
+- **related_mechanics** [Chance Heavy Belt Headhunter](/crafting/chance-heavy-belt-headhunter) — ví dụ craft nâng cao dùng Orb of Chance trên specific base.

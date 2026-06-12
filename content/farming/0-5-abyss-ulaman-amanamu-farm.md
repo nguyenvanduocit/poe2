@@ -60,7 +60,7 @@ Cả hai biến thể đều bắt buộc lấy **Shadow of Undeath** trên Abys
 
 Phần còn lại của atlas dồn vào **natural juice**: increased rare monster, increased magic pack size, increased pack size, increased rarity. Abyss subtree không có nhiều damage multiplier riêng, lãi đến từ số lượng rare bị rồng lửa nuốt vào pit. Lấy thêm **Industrial Improvements** nếu chạy bản đắt City biome 4 tablet. Atlas không respec point thường (chỉ respec notable lớn), nhưng cuối cùng mở hết point nên chọn sai cũng tự sửa được — cách mở hết xem [Mở khoá full atlas point](/guides/0-5-atlas-unlock-walkthrough).
 
-Cẩn thận keystone **Balance of Power** nói chung: tính đến 0.5.1, lấy bất kỳ ba option đầu (Amanamu, Kurgal, Ulaman) sẽ chặn hoàn thành questline Abyss qua workaround nào cũng không qua được; chi tiết cảnh báo trong [Atlas passive tree gồm những gì](/mechanics/atlas/0-5-atlas-passive-tree). Nghịch lý: strategy này **bắt buộc chọn một trong ba option**, nên chấp nhận khoá questline Abyss để đổi lấy faction lock. Nếu muốn vừa farm vừa làm questline, chạy questline trước với atlas chưa allocate keystone, làm xong rồi mới allocate.
+Cẩn thận keystone **Balance of Power** nói chung: tính đến 0.5.1, lấy bất kỳ ba option đầu (Amanamu, Kurgal, Ulaman) sẽ chặn hoàn thành questline Abyss qua workaround nào cũng không qua được; chi tiết cảnh báo trong [Atlas passive tree gồm những gì](/guides/0-5-atlas-passive-tree). Nghịch lý: strategy này **bắt buộc chọn một trong ba option**, nên chấp nhận khoá questline Abyss để đổi lấy faction lock. Nếu muốn vừa farm vừa làm questline, chạy questline trước với atlas chưa allocate keystone, làm xong rồi mới allocate.
 
 ### Tablets & Map Device
 
@@ -150,13 +150,13 @@ Bản budget Ulaman chạy được từ T10 chỉ với 1 Abyss Tablet rare và
 
 Ai muốn cộng phương sai upward với chính nguồn lãi này thì chuyển sang **Ritual + Abyss** overlap (xem [Ritual Belt Hunting](/farming/0-5-ritual-belt-hunting)) — atlas tốn point ritual subtree thêm và setup tablet đắt hơn (~3-4 div/map), nhưng cộng tầng belt Mageblood/Headhunter mỗi ~10h vào trên nền abyss. Chỉ chuyển khi build clear nổi cả arena ritual đông cộng abyss đông cùng lúc.
 
-Phía cạnh tranh slot atlas + tablet: [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) dùng cùng Map Device và một số node atlas chung, nhưng output là carry companion thay vì abyss loot — chọn một hướng cho mỗi session, không vận hành song song được.
+Phía cạnh tranh slot atlas + tablet: [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) dùng cùng Map Device và một số node atlas chung, nhưng output là carry companion thay vì abyss loot — chọn một hướng cho mỗi session, không vận hành song song được.
 
 Không có biến thể "Kurgal" hay "Kulemak" trên Balance of Power xứng đáng farm thuần. Kurgal pool Jewellery Chest theo Strange Aversions giá vừa phải nhưng không bằng Ulaman currency, Kulemak Weapon Chest thanh khoản kém. Mọi guide nghiêm túc đầu league đều dồn về Ulaman hoặc Amanamu.
 
 ## Data & Testing
 
-Cơ chế (Balance of Power keystone với 4 option faction, Strange Aversions đổi loot chest theo faction, Lord of the Pit cho 10%/pit lên 100% effectiveness, Shadow of Undeath cho exile influenced by abysses, Sprawling Rupture, Vile Treasures, Unholy Influence, Strange Aversions, Ulaman's Legion aura damage reduction, Amanamu's Void darkness cloud cơ chế kéo rare ra) verify từ poedb live ngày 2026-06-09/06-10 (`data/poedb/0.5.0/Abyss.md` + `data/poedb/0.5.0/Atlas_passive_skill.md`). Heart of the Well chỉ drop từ Lichborn Rogue Exile verify từ doc nội bộ [Heart of the Well](/mechanics/items/heart-of-the-well) (49,5% top-XP character đeo, sample top-XP poe.ninja league 0.5).
+Cơ chế (Balance of Power keystone với 4 option faction, Strange Aversions đổi loot chest theo faction, Lord of the Pit cho 10%/pit lên 100% effectiveness, Shadow of Undeath cho exile influenced by abysses, Sprawling Rupture, Vile Treasures, Unholy Influence, Strange Aversions, Ulaman's Legion aura damage reduction, Amanamu's Void darkness cloud cơ chế kéo rare ra) verify từ poedb live ngày 2026-06-09/06-10 (`data/poedb/0.5.0/Abyss.md` + `data/poedb/0.5.0/Atlas_passive_skill.md`). Heart of the Well chỉ drop từ Lichborn Rogue Exile verify từ doc nội bộ [Heart of the Well](/guides/heart-of-the-well) (49,5% top-XP character đeo, sample top-XP poe.ninja league 0.5).
 
 Patch notes 0.5.0 nerf damage và life của Elite Abyss Monster, kèm Lithomantic Runes delay tăng. **0.5.1 hotfix 6 nerf Amanamu's Void**: uptime 90% → 50% và quái rời void, là cú đánh vào omen abyss pool (volume Omen of Abyssal Echoes 06-07 137 ex → 06-10 87 ex). Abyss crack bug (không complete được abyss để cộng atlas skill point) chưa có fix trong main note 0.5.1, workaround vẫn là đổi faction node hoặc complete map rồi chạy lại.
 
@@ -185,9 +185,9 @@ Throughput (~2-4 div/map budget, ~3-6 div/map đắt, Heart mỗi ~8-15 map exil
 
 ## Relationships
 
-- **related_mechanics** [Heart of the Well](/mechanics/items/heart-of-the-well) — unique Diamond jewel rớt từ Lichborn Rogue Exile trong Abyss encounter, là item jackpot của strategy này (49,5% top-XP character đeo, pool 73 mod desecrated độc quyền).
-- **related_mechanics** [Atlas passive tree gồm những gì](/mechanics/atlas/0-5-atlas-passive-tree) — vị trí Abyss subtree, cảnh báo Balance of Power keystone, master Hilda/Jado/Doryani dùng ở đây.
+- **related_mechanics** [Heart of the Well](/guides/heart-of-the-well) — unique Diamond jewel rớt từ Lichborn Rogue Exile trong Abyss encounter, là item jackpot của strategy này (49,5% top-XP character đeo, pool 73 mod desecrated độc quyền).
+- **related_mechanics** [Atlas passive tree gồm những gì](/guides/0-5-atlas-passive-tree) — vị trí Abyss subtree, cảnh báo Balance of Power keystone, master Hilda/Jado/Doryani dùng ở đây.
 - **related_guides** [Mở khoá full atlas point](/guides/0-5-atlas-unlock-walkthrough) — cách mở hết point để atlas không respec không phải vấn đề; giết Second Arbiter 5 lần hoặc clear hết map vùng.
 - **competes_with** [Ritual Belt Hunting](/farming/0-5-ritual-belt-hunting) — strategy anh em coi Abyss là tầng nền, doc đó dồn vào belt phương sai cao; doc này dồn thuần Abyss + Rogue Exile cho Heart, không cần ritual setup. Chọn một tuỳ build và budget.
-- **competes_with** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — cùng tốn slot tablet + atlas Map Device nhưng output là carry companion thay vì abyss loot.
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — league system 0.5 (Abyss revamp với storyline, Atlas Cracks, atlas subtree mới) là nền của strategy.
+- **competes_with** [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — cùng tốn slot tablet + atlas Map Device nhưng output là carry companion thay vì abyss loot.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — league system 0.5 (Abyss revamp với storyline, Atlas Cracks, atlas subtree mới) là nền của strategy.

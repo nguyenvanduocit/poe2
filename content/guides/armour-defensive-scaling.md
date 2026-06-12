@@ -19,7 +19,7 @@ tags:
 
 # Armour Defensive Scaling
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Armour"} là defence cấp physical damage reduction theo công thức `DR = A / (A + 10 × D_raw)` với cap 90%. Tooltip chỉ hiện một con số armour phẳng, nhưng % giảm thực tế phụ thuộc tỉ lệ giữa armour và độ lớn của cú hit — hai character cùng 200k armour chịu hai cú hit khác cỡ sẽ giảm sát thương khác nhau. Patch 0.5.0 "Runes of Aldur" tăng lượng armour mà item và modifier cấp ở level cao: khoảng 33% more ở level 65, giảm dần xuống 15% more ở level 80+. Cùng lúc đó, gần như toàn bộ recovery layer của :wiki-link{url="https://www.poe2wiki.net/wiki/Energy_Shield"} bị quét (xem [Energy Shield Recovery](/mechanics/energy-shield-recovery)). Chassis tự nhiên dùng armour làm primary defence là Warrior/Titan stacker vì có sẵn strength scaling và notable cộng armour, nhưng vì base scaling được nâng floor, bất kỳ class nào có một synergy armour nhỏ cũng đủ tank physical hit thường ở tier 15-16 mà không cần build chuyên. ES recovery nerf đẩy nhiều build ES-primary cũ phải pivot, và armour là điểm đến rõ ràng nhất cho physical mitigation.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Armour"} là defence cấp physical damage reduction theo công thức `DR = A / (A + 10 × D_raw)` với cap 90%. Tooltip chỉ hiện một con số armour phẳng, nhưng % giảm thực tế phụ thuộc tỉ lệ giữa armour và độ lớn của cú hit — hai character cùng 200k armour chịu hai cú hit khác cỡ sẽ giảm sát thương khác nhau. Patch 0.5.0 "Runes of Aldur" tăng lượng armour mà item và modifier cấp ở level cao: khoảng 33% more ở level 65, giảm dần xuống 15% more ở level 80+. Cùng lúc đó, gần như toàn bộ recovery layer của :wiki-link{url="https://www.poe2wiki.net/wiki/Energy_Shield"} bị quét (xem [Energy Shield Recovery](/guides/energy-shield-recovery)). Chassis tự nhiên dùng armour làm primary defence là Warrior/Titan stacker vì có sẵn strength scaling và notable cộng armour, nhưng vì base scaling được nâng floor, bất kỳ class nào có một synergy armour nhỏ cũng đủ tank physical hit thường ở tier 15-16 mà không cần build chuyên. ES recovery nerf đẩy nhiều build ES-primary cũ phải pivot, và armour là điểm đến rõ ràng nhất cho physical mitigation.
 
 ## How It Works
 
@@ -78,7 +78,7 @@ Map mod có dòng tăng physical damage hoặc thêm cú hit cho monster đập 
 
 Boss encounter là điểm yếu cấu trúc của armour. Pinnacle boss có slam wind-up lớn (raw physical 10,000-20,000+) rơi vào vùng công thức kém hiệu quả: 230k armour chỉ giảm ~60% trước hit 15,000. Đây không phải lỗi gear mà là tính chất công thức — armour không phải layer để gánh one-shot. Trước boss, dựa vào avoidance (Block, dodge roll) hoặc absolute pool + Runic Ward, không kỳ vọng armour cắt burst.
 
-So với [Energy Shield Recovery](/mechanics/energy-shield-recovery): cùng patch 0.5, ES bị quét recovery layer (compound recharge rate giảm ~52%, TTF tăng ~2.5-3x) trong khi armour được nâng floor. Đây là lý do tương quan nghiêng về armour — không chỉ armour mạnh lên tuyệt đối mà ES yếu đi tương đối ở vai trò primary tank. ES vẫn cho pool lớn, nhưng pattern "tank-by-recharge" giữa hit boss không còn; armour cung cấp mitigation liên tục không cần recovery cycle.
+So với [Energy Shield Recovery](/guides/energy-shield-recovery): cùng patch 0.5, ES bị quét recovery layer (compound recharge rate giảm ~52%, TTF tăng ~2.5-3x) trong khi armour được nâng floor. Đây là lý do tương quan nghiêng về armour — không chỉ armour mạnh lên tuyệt đối mà ES yếu đi tương đối ở vai trò primary tank. ES vẫn cho pool lớn, nhưng pattern "tank-by-recharge" giữa hit boss không còn; armour cung cấp mitigation liên tục không cần recovery cycle.
 
 ## What Doesn't Work
 
@@ -129,5 +129,5 @@ Lượng armour item/modifier cấp ở level cao thấp hơn baseline 0.5. Bras
 
 ## Relationships
 
-- **related_mechanics** [Energy Shield Recovery](/mechanics/energy-shield-recovery) — nửa còn lại của cuộc rebalance defence 0.5; ES recovery bị nerf trong khi armour được nâng floor, hai doc đọc cùng nhau cho bức tranh đầy đủ tương quan defence layer.
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — armour scaling buff, Runic Ward, và Verisium Runeforging đều thuộc patch 0.5.0 Return of the Ancients; phần armour của Endgame overhaul được mổ xẻ tại đây.
+- **related_mechanics** [Energy Shield Recovery](/guides/energy-shield-recovery) — nửa còn lại của cuộc rebalance defence 0.5; ES recovery bị nerf trong khi armour được nâng floor, hai doc đọc cùng nhau cho bức tranh đầy đủ tương quan defence layer.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — armour scaling buff, Runic Ward, và Verisium Runeforging đều thuộc patch 0.5.0 Return of the Ancients; phần armour của Endgame overhaul được mổ xẻ tại đây.

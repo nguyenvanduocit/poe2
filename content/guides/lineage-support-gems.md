@@ -84,5 +84,5 @@ Lineage support gem introduced — lớp support unique-tier drop từ endgame, 
 
 ## Relationships
 
-- **related** [Herald of Ice Shatter](/mechanics/skills/herald-of-ice-shatter) — cùng là lớp gem layer định hình meta cold/lightning league Runes of Aldur.
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Lineage support tách khỏi Kalguuran support craft-from-Remnant của league mechanic này.
+- **related** [Herald of Ice Shatter](/guides/herald-of-ice-shatter) — cùng là lớp gem layer định hình meta cold/lightning league Runes of Aldur.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — Lineage support tách khỏi Kalguuran support craft-from-Remnant của league mechanic này.

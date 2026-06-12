@@ -11,7 +11,7 @@ updated: 2026-06-02
 
 Trang này khởi đầu là **second brain riêng cho gameplay PoE 2** của mình — nơi mình ghi chú build, farming strategy, mechanic, character progress, và tất cả những gì mình tự dạy mình mỗi league. Sau vài league thì khối kiến thức đó đủ lớn để mình nghĩ: thay vì giấu trong vault Obsidian local, public ra cho ai cùng chơi PoE 2 đọc cũng được.
 
-Mục đích cốt lõi không phải traffic, không phải tiền, mà là **học cho chính mình bằng cách viết ra**. Lối viết của trang vì thế cố ý theo phong cách *tutorial giải thích why*, không phải reference dump — mỗi mechanic kèm lý do, mỗi build choice kèm lập luận, mỗi farming strategy kèm kinh tế đằng sau. Bạn có thể thấy điều đó rõ nhất ở các page như [Builds](/builds) và [Mechanics](/mechanics).
+Mục đích cốt lõi không phải traffic, không phải tiền, mà là **học cho chính mình bằng cách viết ra**. Lối viết của trang vì thế cố ý theo phong cách *tutorial giải thích why*, không phải reference dump — mỗi mechanic kèm lý do, mỗi build choice kèm lập luận, mỗi farming strategy kèm kinh tế đằng sau. Bạn có thể thấy điều đó rõ nhất ở các page như [Builds](/builds) và [Mechanics](/guides).
 
 Toàn bộ pipeline còn được augment bằng AI skills (PoB calc, trade lookup, build import từ poe.ninja/pobb.in, wiki search) để mình ghi chú nhanh hơn — nhưng mọi quyết định gameplay vẫn là của mình, AI chỉ làm khâu fetch dữ liệu thật và tính toán DPS/EHP. League hiện tại (**Runes of Aldur**, 0.5.0 "Return of the Ancients"), mình đang chơi Huntress Spirit Walker companion zoo — carry bằng bầy companion beast tame qua Tame Beast.
 

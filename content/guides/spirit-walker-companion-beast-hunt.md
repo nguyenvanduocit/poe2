@@ -206,9 +206,9 @@ Spirit Walker, Tame Beast và hệ companion ra mắt cùng Endgame rewrite củ
 
 - **used_by** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — build nguyên đàn companion xây trực tiếp trên cơ chế tame, modifier retention và chuỗi multiplier này; lớp phòng thủ và roster cụ thể sống ở đó.
 - **related_guides** [Ritual và Rite of the Nameless](/guides/0-5-ritual-rite-of-the-nameless) — cơ chế ritual đầy đủ (8 point subtree, tribute, tablet pool, Queen in the Mists) mà đường chain-boss-để-tame chạy trên đó.
-- **related_mechanics** [Twister](/mechanics/skills/twister) — hướng Spirit Walker projectile dùng companion như utility layer thay vì carry chính.
+- **related_mechanics** [Twister](/guides/twister) — hướng Spirit Walker projectile dùng companion như utility layer thay vì carry chính.
 - **competes_with** [Belt Hunting qua Ritual](/farming/0-5-ritual-belt-hunting) — cùng tốn slot tablet + atlas Map Device; chọn một hướng output (carry companion hay belt) cho mỗi session.
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — league 0.5 mở Spirit Walker + The Natural Order + Tame Beast + Endgame rewrite là nền cho toàn bộ hướng companion carry.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — league 0.5 mở Spirit Walker + The Natural Order + Tame Beast + Endgame rewrite là nền cho toàn bộ hướng companion carry.
 
 ## Resources
 

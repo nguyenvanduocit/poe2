@@ -87,6 +87,6 @@ The Taming được giới thiệu trong POE2 với hai mechanic Wind Skills m�
 
 ## Relationships
 
-- **related_mechanics** [Twister](/mechanics/skills/twister) — skill chính hưởng lợi từ triple elemental ground boost của ring; cơ chế "Gain 50% as corresponding Type" là trục damage Twister trên elemental ground.
-- **related** [0.5 New Unique Items Overview](/mechanics/0-5-new-unique-items) — overview toàn bộ unique mới 0.5 bao gồm Berek's trio và context The Taming.
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — league overview 0.5.0 giới thiệu The Market là drop source.
+- **related_mechanics** [Twister](/guides/twister) — skill chính hưởng lợi từ triple elemental ground boost của ring; cơ chế "Gain 50% as corresponding Type" là trục damage Twister trên elemental ground.
+- **related** [0.5 New Unique Items Overview](/guides/0-5-new-unique-items) — overview toàn bộ unique mới 0.5 bao gồm Berek's trio và context The Taming.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — league overview 0.5.0 giới thiệu The Market là drop source.

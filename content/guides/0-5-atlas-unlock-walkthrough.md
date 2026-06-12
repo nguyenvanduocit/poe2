@@ -110,7 +110,7 @@ Node ưu tiên ở những point đầu: mở **essence** và **shrine** trướ
 
 ## Relationships
 
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — guide này là phần thực hành chuỗi unlock của endgame overhaul mà note đó mô tả ở mức hệ thống.
-- **derived_from** [Patch Notes 0.5.0](/mechanics/leagues/0-5-0-patch-notes) — cơ chế questline, point source, 5-kill clear, và điều kiện unlock Master verify từ changelog.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — guide này là phần thực hành chuỗi unlock của endgame overhaul mà note đó mô tả ở mức hệ thống.
+- **derived_from** [Patch Notes 0.5.0](/guides/0-5-0-patch-notes) — cơ chế questline, point source, 5-kill clear, và điều kiện unlock Master verify từ changelog.
 - **related_guides** [Sustain Map Và Setup Atlas Tree Endgame](/guides/0-5-endgame-mapping-sustain) — bù phần node order, sustain waystone, và ưu tiên subtree mà guide này để ngỏ.
 - **related_guides** [Challenge Guide](/guides/challenge-guide) — tiến trình atlas/unlock là đầu vào của hệ challenge Runes of Aldur.

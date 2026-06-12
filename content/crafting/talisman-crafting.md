@@ -118,5 +118,4 @@ Rush vào Fracture method khi chưa đủ buffer. Trung bình 3 lần thử mớ
 
 ## Relationships
 
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview thay đổi 0.5.0 bao gồm disable Recombinator và rune crafting hệ mới.
-- **related_mechanics** [Shapeshifting](/mechanics/shapeshifting) — cơ chế Bear/Werewolf/Wyvern form mà Talisman unlock, context cho việc scale physical attack damage từ weapon.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — overview thay đổi 0.5.0 bao gồm disable Recombinator và rune crafting hệ mới.

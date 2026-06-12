@@ -95,7 +95,7 @@ Mua một trong ba Berek ring chỉ vì res mà không chạy Wind Skills: trụ
 
 ## Relationships
 
-- **related_mechanics** [Spirit Walker — Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — Sylvan's Effigy và Forgotten Warden cắm thẳng vào trục companion
+- **related_mechanics** [Spirit Walker — Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — Sylvan's Effigy và Forgotten Warden cắm thẳng vào trục companion
 - **used_by** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — Sylvan's Effigy là enabler không thay thế được của hướng nguyên đàn
-- **related_mechanics** [Infernal Legion Ignite Loop](/mechanics/skills/infernal-legion-ignite-loop) — The Raven's Flock hỗ trợ minion build gồm cả setup IL; Gruelling Madness từ staff stack với ignite
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview league 0.5 gồm Remnant/Runic Ward context cho The Hollow Mask và Eventide Petals
+- **related_mechanics** [Infernal Legion Ignite Loop](/guides/infernal-legion-ignite-loop) — The Raven's Flock hỗ trợ minion build gồm cả setup IL; Gruelling Madness từ staff stack với ignite
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — overview league 0.5 gồm Remnant/Runic Ward context cho The Hollow Mask và Eventide Petals

@@ -104,5 +104,5 @@ Item introduced. Drop từ Expedition pinnacle boss, exclusive cho Runes of Aldu
 
 ## Relationships
 
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview các unique mới và meta shift 0.5.0, gồm Expedition rework tạo ra Expedition pinnacle boss là nguồn drop của item này.
-- **related_mechanics** [The Auspex](/mechanics/items/the-auspex) — unique cùng patch theo design philosophy một item gánh nhiều defensive layer.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — overview các unique mới và meta shift 0.5.0, gồm Expedition rework tạo ra Expedition pinnacle boss là nguồn drop của item này.
+- **related_mechanics** [The Auspex](/guides/the-auspex) — unique cùng patch theo design philosophy một item gánh nhiều defensive layer.

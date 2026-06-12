@@ -184,7 +184,7 @@ Spectre Lich 0.5 là build niche có thật, không phải paper-craft: spectre 
 
 - **alternative_to** [Infernalist Spectre Legion](/builds/witch/0-5-infernalist-spectre-legion) — cùng engine spectre, khác ascendancy: Infernalist thiên league-start floor + Spirit (Beidat's Will) + ES defense, Lich thiên endgame ceiling qua chaos-conversion + mana-scaling.
 - **alternative_to** [Unearth Bone Construct Mass Summoner](/builds/witch/0-5-bone-construct-mass-summoner-lich) — cùng Lich nhưng minion physical mass-summon, đối trọng spectre swarm.
-- **related_mechanics** [Spirit Walker companion beast hunt](/mechanics/spirit-walker-companion-beast-hunt) — cơ chế minion/companion + spirit reservation nền tảng cho mọi summoner 0.5.
-- **related_mechanics** [Energy Shield recovery](/mechanics/energy-shield-recovery) — giải thích nerf ES recharge 0.5 mà build phải path qua cẩn thận.
-- **references** [New unique items](/mechanics/0-5-new-unique-items) — Vis Mortis, Soul Mantle, Raven's Flock, Bones of Ullr và các unique 0.5 build dùng.
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview league 0.5.0 chứa context endgame + Remnant/Runic Ward + meta build đang nghiên cứu.
+- **related_mechanics** [Spirit Walker companion beast hunt](/guides/spirit-walker-companion-beast-hunt) — cơ chế minion/companion + spirit reservation nền tảng cho mọi summoner 0.5.
+- **related_mechanics** [Energy Shield recovery](/guides/energy-shield-recovery) — giải thích nerf ES recharge 0.5 mà build phải path qua cẩn thận.
+- **references** [New unique items](/guides/0-5-new-unique-items) — Vis Mortis, Soul Mantle, Raven's Flock, Bones of Ullr và các unique 0.5 build dùng.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — overview league 0.5.0 chứa context endgame + Remnant/Runic Ward + meta build đang nghiên cứu.

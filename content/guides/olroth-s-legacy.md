@@ -76,6 +76,6 @@ Cơ chế ra mắt cùng league: hơn 60 rune legacy, mỗi loại tương ứng
 
 ## Relationships
 
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview các thay đổi 0.5.0 trong đó có cả hệ rune legacy và Ocean Exploring.
-- **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — companion build invest block cao hưởng lợi trực tiếp từ rune lucky block của Svalinn.
-- **related_mechanics** [Unique Items Mới & Meta Shift](/mechanics/0-5-new-unique-items) — Ironbound là Ezomyte unique mới của 0.5 và thuộc target list của cơ chế này.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — overview các thay đổi 0.5.0 trong đó có cả hệ rune legacy và Ocean Exploring.
+- **related_mechanics** [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — companion build invest block cao hưởng lợi trực tiếp từ rune lucky block của Svalinn.
+- **related_mechanics** [Unique Items Mới & Meta Shift](/guides/0-5-new-unique-items) — Ironbound là Ezomyte unique mới của 0.5 và thuộc target list của cơ chế này.

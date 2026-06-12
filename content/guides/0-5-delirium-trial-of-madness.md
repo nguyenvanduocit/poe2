@@ -95,7 +95,7 @@ Thứ tự allocate khuyến nghị với point nhỏ giọt đầu league: **Yo
 - **of Shattering** — Delirium Fog in Map spawns 12—26% increased MirrorShards.
 - **of Phobia** — Delirium Encounters in Map are 15—30% more likely to spawn Unique Bosses.
 
-Mặc định tablet chỉ là Magic 2 mod; hai node generic trên atlas tree — **Partial Translation** và **Reverse Transcription** — mỗi node cho "Your Tablets may be upgraded to Rare and have +1 Maximum Modifier", lấy cả hai là tablet 4 mod, đáng gấp đôi cho cùng một slot Map Device ([chi tiết nhóm tablet ở doc atlas tree](/mechanics/atlas/0-5-atlas-passive-tree)). Combo trần là tablet Rare 4 mod chạy trong vùng có Grand Mirror khi đã lấy **Are you sure you want to do that?** — double effect toàn bộ mod vừa roll. Có một tablet unique: **Clear Skies Delirium Tablet** với "Delirium Fog in your Maps never dissipates" — xóa hẳn trục timer, đổi lại không roll được suffix juice; hợp build clear chậm muốn full-clear map trong sương không áp lực.
+Mặc định tablet chỉ là Magic 2 mod; hai node generic trên atlas tree — **Partial Translation** và **Reverse Transcription** — mỗi node cho "Your Tablets may be upgraded to Rare and have +1 Maximum Modifier", lấy cả hai là tablet 4 mod, đáng gấp đôi cho cùng một slot Map Device ([chi tiết nhóm tablet ở doc atlas tree](/guides/0-5-atlas-passive-tree)). Combo trần là tablet Rare 4 mod chạy trong vùng có Grand Mirror khi đã lấy **Are you sure you want to do that?** — double effect toàn bộ mod vừa roll. Có một tablet unique: **Clear Skies Delirium Tablet** với "Delirium Fog in your Maps never dissipates" — xóa hẳn trục timer, đổi lại không roll được suffix juice; hợp build clear chậm muốn full-clear map trong sương không áp lực.
 
 ## Chọn map nào để chạy
 
@@ -157,6 +157,6 @@ Nhịp một map mirror chuẩn trước đã: vào map quanh The Withered Willo
 
 ## Relationships
 
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Delirium là một trong các league lõi hoá thành storyline ở overhaul này.
-- **related_mechanics** [Atlas passive tree gồm những gì](/mechanics/atlas/0-5-atlas-passive-tree) — node generic nâng tablet Rare và cấu trúc subtree mô tả ở đây.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — Delirium là một trong các league lõi hoá thành storyline ở overhaul này.
+- **related_mechanics** [Atlas passive tree gồm những gì](/guides/0-5-atlas-passive-tree) — node generic nâng tablet Rare và cấu trúc subtree mô tả ở đây.
 - **related_guides** [Sustain map và setup atlas tree endgame](/guides/0-5-endgame-mapping-sustain) — thứ tự lấy node Delirium trong vòng farm.

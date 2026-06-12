@@ -18,7 +18,7 @@ tags:
 
 Đây là patch note chính thức của Path of Exile 2 — Patch 0.5.2, do Grinding Gear Games đăng ngày 12/06/2026 trên forum GGG ([forum thread 3960375](https://www.pathofexile.com/forum/view-thread/3960375) — nguồn authoritative cao nhất), kèm hai hotfix cùng ngày (mỗi hotfix là một thread riêng, đã gộp vào cuối bài). Bản này chép nguyên văn từng dòng để tra cứu — thuật ngữ game giữ nguyên tiếng Anh, không diễn giải; file gốc nằm trong repo tại `data/release-notes/Version_0.5.2.md`.
 
-Đây là changelog đầy đủ của 0.5.2 — patch mid-league thứ hai của Runes of Aldur sau 0.5.1. Bản tóm tắt định hướng ngắn gọn hơn, chỉ giữ những thay đổi đủ lớn để đổi cách chơi, nằm ở [Return of the Ancients](/mechanics/leagues/return-of-the-ancients). Changelog nền 0.5.0 của league ở [Patch Notes — Return of the Ancients](/mechanics/leagues/0-5-0-patch-notes).
+Đây là changelog đầy đủ của 0.5.2 — patch mid-league thứ hai của Runes of Aldur sau 0.5.1. Bản tóm tắt định hướng ngắn gọn hơn, chỉ giữ những thay đổi đủ lớn để đổi cách chơi, nằm ở [Return of the Ancients](/guides/return-of-the-ancients). Changelog nền 0.5.0 của league ở [Patch Notes — Return of the Ancients](/guides/0-5-0-patch-notes).
 
 ## Thay Đổi Endgame
 
@@ -173,7 +173,7 @@ Các giá trị này đã trở về như cũ, tuy nhiên client vẫn hiển th
 
 ## Relationships
 
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview định hướng đã digest của league; các thay đổi 0.5.2 đáng đổi cách chơi đã gộp vào đó.
-- **related_mechanics** [Patch Notes — Return of the Ancients](/mechanics/leagues/0-5-0-patch-notes) — full changelog 0.5.0, nền mà patch này build tiếp.
-- **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — Bear Spirit presence 4m→8m và fix Forgotten Warden chạm trực tiếp companion system.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — overview định hướng đã digest của league; các thay đổi 0.5.2 đáng đổi cách chơi đã gộp vào đó.
+- **related_mechanics** [Patch Notes — Return of the Ancients](/guides/0-5-0-patch-notes) — full changelog 0.5.0, nền mà patch này build tiếp.
+- **related_mechanics** [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — Bear Spirit presence 4m→8m và fix Forgotten Warden chạm trực tiếp companion system.
 - **related_builds** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — build hưởng trực tiếp buff Bear presence và fix deflect-redirect của Forgotten Warden.

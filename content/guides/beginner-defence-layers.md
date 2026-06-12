@@ -54,9 +54,9 @@ Armour mạnh với pack nhưng yếu với boss burst. Evasion hoàn toàn khô
 
 Kết hợp hai hoặc ba lớp lại thì gap đó đóng lại: armour giảm damage khi evasion fail, block chặn những đòn boss mà evasion không xử lý được, evasion giúp giảm số lần armour phải gánh. Đây là lý do gear trong POE2 thường có stat hybrid — body có cả armour lẫn evasion, hoặc passive tree cho cả hai là điều bình thường, không phải lãng phí.
 
-Một lớp nữa ra mắt trong 0.5 là **Runic Ward** từ Verisium Runeforging: kích hoạt như safety net khi life tụt về 1, hấp thụ damage thêm một nhịp trước khi chết. Chi tiết về cách hoạt động của nó có trong [Armour Defensive Scaling](/mechanics/armour-defensive-scaling).
+Một lớp nữa ra mắt trong 0.5 là **Runic Ward** từ Verisium Runeforging: kích hoạt như safety net khi life tụt về 1, hấp thụ damage thêm một nhịp trước khi chết. Chi tiết về cách hoạt động của nó có trong [Armour Defensive Scaling](/guides/armour-defensive-scaling).
 
 ## Relationships
 
-- **related_mechanics** [Armour Defensive Scaling](/mechanics/armour-defensive-scaling) — đi sâu vào công thức armour, Runic Ward, và cách 0.5 buff armour/evasion scaling.
-- **related_mechanics** [Energy Shield Recovery](/mechanics/energy-shield-recovery) — layer thứ tư bổ sung cho ba lớp này; Energy Shield nên đọc cùng để hiểu đủ bức tranh defence tổng.
+- **related_mechanics** [Armour Defensive Scaling](/guides/armour-defensive-scaling) — đi sâu vào công thức armour, Runic Ward, và cách 0.5 buff armour/evasion scaling.
+- **related_mechanics** [Energy Shield Recovery](/guides/energy-shield-recovery) — layer thứ tư bổ sung cho ba lớp này; Energy Shield nên đọc cùng để hiểu đủ bức tranh defence tổng.

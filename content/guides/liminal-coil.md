@@ -74,9 +74,9 @@ Item introduced.
 
 - :wiki-link{url="https://www.poe2wiki.net/wiki/Despair"} Despair — curse giảm chaos res; chạy cùng Liminal Coil vừa debuff vừa đóng góp một lớp extra damage.
 - :wiki-link{url="https://www.poe2wiki.net/wiki/Temporal_Chains"} Temporal Chains — curse slow; kết hợp được vì ignore curse limit cho phép cả hai lên cùng target.
-- [The Auspex](/mechanics/items/the-auspex) — unique build-around cùng patch, cùng thiết kế "một mod bỏ giới hạn, một mod khai thác việc bỏ đó".
+- [The Auspex](/guides/the-auspex) — unique build-around cùng patch, cùng thiết kế "một mod bỏ giới hạn, một mod khai thác việc bỏ đó".
 
 ## Relationships
 
-- **part_of** [Đợt Unique Mới và Meta Shift](/mechanics/0-5-new-unique-items) — trục curse-stacking của đợt unique 0.5
-- **synergizes_with** [Twisted Empyrean](/mechanics/items/twisted-empyrean) — cùng nhóm unique build-enabling 0.5
+- **part_of** [Đợt Unique Mới và Meta Shift](/guides/0-5-new-unique-items) — trục curse-stacking của đợt unique 0.5
+- **synergizes_with** [Twisted Empyrean](/guides/twisted-empyrean) — cùng nhóm unique build-enabling 0.5

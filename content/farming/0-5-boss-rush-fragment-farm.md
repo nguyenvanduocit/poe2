@@ -228,4 +228,4 @@ Variation chính là **burn stack pinnacle**: khi đã stack đủ 30-40 Breachl
 - **related_guides** [Ritual và Rite of the Nameless](/guides/0-5-ritual-rite-of-the-nameless): chi tiết cách dùng Head of the King mở Rite tại Caer Tarth, cho quyết định bán-hay-dùng.
 - **related_guides** [Cách chơi Ocean Exploring](/guides/0-5-ocean-exploring): nền sustain biome đại dương song song với rush atlas chính.
 - **related_guides** [Endgame mapping sustain](/guides/0-5-endgame-mapping-sustain): cơ chế Powerful Map Boss rớt waystone +1 tier và vai trò Overseer tablet, nền cho slot tablet thứ ba của setup travel.
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients): bối cảnh 0.5 endgame overhaul, Atlas tree mở rộng, hai Citadel mới và Arbiter of Divinity.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients): bối cảnh 0.5 endgame overhaul, Atlas tree mở rộng, hai Citadel mới và Arbiter of Divinity.

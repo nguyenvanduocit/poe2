@@ -57,7 +57,7 @@ Tree có 8 small node và 8 notable nhưng chỉ có 8 point, nên không bật 
 
 Thứ tự mình ưu tiên: bậc xây sustain lấy Logbook Chance dọc đường tới **Detailed Records** và **Disturbed Rest**; bậc farm tiền chuyển point còn lại sang **Timed Detonations** với **Legendary Battles**. Cặp Unearthed Anomalies + Weight of History để khi build chịu đòn ổn, đọc phần remnant bên dưới trước khi bật.
 
-Bên Masters of the Atlas có ba node ăn thẳng vào expedition, đổi tự do trước mỗi map không tốn point: **Scarred Lands** của Hilda cho 15% runic monster marker kèm 20% rare expedition monster; **Refined Formula** của Doryani là bản keystone của Extreme Archaeology (một quả nổ, 150% radius, 100% range); **Eastern Knowledge** của Jado cho Verisium Remnant 10% chance roll lại lần nữa và giữ kết quả hiếm nhất. Map nào gắn tablet expedition thì quick-select mấy node này vào, map khác đổi ra; chi tiết cách Masters vận hành ở [Atlas passive tree gồm những gì](/mechanics/atlas/0-5-atlas-passive-tree).
+Bên Masters of the Atlas có ba node ăn thẳng vào expedition, đổi tự do trước mỗi map không tốn point: **Scarred Lands** của Hilda cho 15% runic monster marker kèm 20% rare expedition monster; **Refined Formula** của Doryani là bản keystone của Extreme Archaeology (một quả nổ, 150% radius, 100% range); **Eastern Knowledge** của Jado cho Verisium Remnant 10% chance roll lại lần nữa và giữ kết quả hiếm nhất. Map nào gắn tablet expedition thì quick-select mấy node này vào, map khác đổi ra; chi tiết cách Masters vận hành ở [Atlas passive tree gồm những gì](/guides/0-5-atlas-passive-tree).
 
 ## Setup tablet để farm logbook
 
@@ -138,7 +138,7 @@ Chuẩn bị cho nó như một trận pinnacle thật: cả vòng Verisium củ
 
 ## Relationships
 
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Ocean Exploring là một trong các storyline endgame mới; note đó mô tả toàn bộ overhaul.
-- **related_mechanics** [Atlas passive tree gồm những gì](/mechanics/atlas/0-5-atlas-passive-tree) — subtree Expedition và ba node Masters (Scarred Lands, Refined Formula, Eastern Knowledge) nằm trong bức tranh tree mô tả ở đó.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — Ocean Exploring là một trong các storyline endgame mới; note đó mô tả toàn bộ overhaul.
+- **related_mechanics** [Atlas passive tree gồm những gì](/guides/0-5-atlas-passive-tree) — subtree Expedition và ba node Masters (Scarred Lands, Refined Formula, Eastern Knowledge) nằm trong bức tranh tree mô tả ở đó.
 - **related_guides** [Sustain map và setup atlas tree endgame](/guides/0-5-endgame-mapping-sustain) — vòng map nền, slot tablet theo số mod waystone, và node nâng tablet Rare nuôi setup expedition ở đây.
 - **farming_relevance** [Grand Expedition Farming](/farming/0-5-grand-expedition-farming) — tầng farm tối ưu đặt trên nền mechanic này: đọc rumour, Moor of the Fallen Skies, vòng saga và math hoàn vốn.

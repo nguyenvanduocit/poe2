@@ -89,4 +89,4 @@ Khi đẩy tier map lên cao, ailment threshold của monster tăng mạnh, CoC 
 
 ## Relationships
 
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview patch 0.5.0, gồm buff Blood Mage trong 0.5.0.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — overview patch 0.5.0, gồm buff Blood Mage trong 0.5.0.

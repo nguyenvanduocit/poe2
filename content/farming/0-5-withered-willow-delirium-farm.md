@@ -106,4 +106,4 @@ Risk lớn nhất là chính cái đang làm strategy này thơm: giá emotion v
 
 - **related_guides** [Delirium và Trial of Madness](/guides/0-5-delirium-trial-of-madness) — cơ chế nền, nhịp mirror, và đủ 16 node subtree mà doc này chỉ trích phần kiếm tiền.
 - **synergizes_with** [Boss Rush Fragment Farming](/farming/0-5-boss-rush-fragment-farm) — Grand Mirror gieo từ subtree Delirium nhân đôi effect tablet cho vòng rush boss, hai strategy nuôi lẫn nhau.
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Delirium storyline là một trong ba league lõi hóa của overhaul 0.5.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — Delirium storyline là một trong ba league lõi hóa của overhaul 0.5.

@@ -89,6 +89,6 @@ Item ra mắt lần đầu. Drop anywhere, có thể chance.
 
 ## Relationships
 
-- **related_mechanics** [Talisman crafting](/mechanics/crafting/talisman-crafting) — context về weapon class Talisman cho Druid, base tier hierarchy, và Runeforging workflow trên các Talisman base.
+- **related_mechanics** [Talisman crafting](/crafting/talisman-crafting) — context về weapon class Talisman cho Druid, base tier hierarchy, và Runeforging workflow trên các Talisman base.
 - **related_mechanics** [Raging Spectre Shaman](/builds/druid/raging-spectre-shaman) — build Shaman dùng Rage + warcry làm trục scaling, user chính của Amor Mandragora ở meta 0.5.
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview league 0.5, Runeforging mechanic, và Medved's Crest của forge master.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — overview league 0.5, Runeforging mechanic, và Medved's Crest của forge master.

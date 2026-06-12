@@ -32,7 +32,7 @@ Hai thứ đau đầu nhất khi mới vào endgame 0.5 là sustain waystone và
 
 Vấn đề thứ hai là thứ tự lấy node. Tree 300+ node, GGG bỏ respec luôn — cày hết Fortress là đủ point bật cả tree, multi-choice node đổi qua lại lúc nào cũng được, nhưng không refund point. Nên thứ duy nhất quan trọng là lấy node nào trước. Lấy sai thứ tự không hỏng gì, chỉ làm chậm vòng sustain đúng lúc mình nghèo point nhất. Cả guide này xoay quanh tối ưu cái thứ tự đó.
 
-Toàn cảnh thay đổi endgame 0.5 xem ở [Return of the Ancients](/mechanics/leagues/return-of-the-ancients); ở đây mình đi thẳng vào phần thực hành.
+Toàn cảnh thay đổi endgame 0.5 xem ở [Return of the Ancients](/guides/return-of-the-ancients); ở đây mình đi thẳng vào phần thực hành.
 
 ## Cách sustain waystone
 
@@ -118,6 +118,6 @@ Tính đến 0.5.1 (06/06/2026), còn ba con bug cứng nên né:
 
 ## Relationships
 
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — guide này là phần thực hành live của endgame overhaul mà note đó mô tả ở mức hệ thống.
-- **derived_from** [Patch Notes 0.5.0](/mechanics/leagues/0-5-0-patch-notes) — cơ chế sustain, point source, và specialization gating verify từ changelog đầy đủ.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — guide này là phần thực hành live của endgame overhaul mà note đó mô tả ở mức hệ thống.
+- **derived_from** [Patch Notes 0.5.0](/guides/0-5-0-patch-notes) — cơ chế sustain, point source, và specialization gating verify từ changelog đầy đủ.
 - **related_guides** [Challenge Guide](/guides/challenge-guide) — tiến trình atlas và farming ở đây feed thẳng vào hệ challenge Runes of Aldur.

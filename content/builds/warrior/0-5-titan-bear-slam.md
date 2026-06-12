@@ -131,5 +131,5 @@ PoB2 chưa model đầy đủ shapeshift và Bear-form slam (giống tình trạ
 
 ## Relationships
 
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview 0.5.0, gồm armour system và balance của league hiện tại.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — overview 0.5.0, gồm armour system và balance của league hiện tại.
 - **related_builds** [Shield Wall Warbringer](/builds/warrior/shield-wall-warbringer) — Warrior build còn lại của site; nếu thích đập slam nhưng muốn block-armour thay vì shapeshift thì xem cái này.

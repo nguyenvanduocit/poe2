@@ -102,4 +102,4 @@ Mất tier III và bị halve, IL không còn là engine endgame tự đứng đ
 
 - **related_builds** [Raging Spectre Shaman](/builds/druid/raging-spectre-shaman) — dùng IL I/II làm damage campaign rồi chuyển sang Tecrod's Revenge ở endgame.
 - **related_guides** [Minion Army Build Comparison](/guides/0-5-minion-army-build-comparison) — so sánh hướng companion-ignite với spectre vĩnh viễn và construct.
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview các thay đổi 0.5.0, gồm nerf Infernal Legion và buff Tame Beast.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — overview các thay đổi 0.5.0, gồm nerf Infernal Legion và buff Tame Beast.

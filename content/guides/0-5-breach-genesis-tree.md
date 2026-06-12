@@ -161,6 +161,6 @@ Tạo đủ breachstone tại Genesis Tree mở ra **Breach Domain** trên atlas
 
 ## Relationships
 
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Breach là một trong các league lõi hoá thành storyline ở overhaul này.
-- **related_mechanics** [Atlas passive tree gồm những gì](/mechanics/atlas/0-5-atlas-passive-tree) — subtree league mechanic và node generic nâng tablet nằm trong bức tranh tree tổng.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — Breach là một trong các league lõi hoá thành storyline ở overhaul này.
+- **related_mechanics** [Atlas passive tree gồm những gì](/guides/0-5-atlas-passive-tree) — subtree league mechanic và node generic nâng tablet nằm trong bức tranh tree tổng.
 - **related_guides** [Sustain map và setup atlas tree endgame](/guides/0-5-endgame-mapping-sustain) — thứ tự lấy node tablet generic (Reverse Transcription, Partial Translation) và nhịp sustain khi juice breach.

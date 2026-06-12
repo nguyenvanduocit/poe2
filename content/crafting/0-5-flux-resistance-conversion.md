@@ -58,7 +58,7 @@ Exclusion check: mod "all Elemental Resistances", implicit, và unique item (flu
 
 ## Craft từ Remnant và giá thị trường
 
-Nguồn duy nhất là Runic Recipe trên Remnant — nền Remnant với hệ rune mình đã viết đủ ở [Return of the Ancients](/mechanics/leagues/return-of-the-ancients), dòng patch note gốc nằm trong [Patch Notes 0.5.0](/mechanics/leagues/0-5-0-patch-notes). Mỗi Flux cần khắc đúng combo 6 rune trên Remnant ở area level 70+, thắng encounter là nhận một viên:
+Nguồn duy nhất là Runic Recipe trên Remnant — nền Remnant với hệ rune mình đã viết đủ ở [Return of the Ancients](/guides/return-of-the-ancients), dòng patch note gốc nằm trong [Patch Notes 0.5.0](/guides/0-5-0-patch-notes). Mỗi Flux cần khắc đúng combo 6 rune trên Remnant ở area level 70+, thắng encounter là nhận một viên:
 
 - **Blazing Flux** — Fire + Earth + Prismatic + Soul + Rage + Rebirth Rune
 - **Chilling Flux** — Cold + Cyclonic + Prismatic + Death + Tidal + Moon Rune
@@ -85,6 +85,6 @@ Họ Flux ra mắt cùng Runes of Aldur (21/05/2026). Patch note đếm "3 Fluxe
 
 ## Relationships
 
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Flux craft từ Remnant, một nhánh của hệ crafting Verisium trong league.
-- **references** [Patch Notes 0.5.0](/mechanics/leagues/0-5-0-patch-notes) — dòng patch note gốc giới thiệu họ Flux.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — Flux craft từ Remnant, một nhánh của hệ crafting Verisium trong league.
+- **references** [Patch Notes 0.5.0](/guides/0-5-0-patch-notes) — dòng patch note gốc giới thiệu họ Flux.
 - **used_by** [Tame Beast Companion Pack](/builds/huntress/0-5-spirit-walker-companion-pack) — Void Flux là đường mới để vá lỗ chaos res ~25 của char.

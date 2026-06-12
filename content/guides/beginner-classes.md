@@ -52,7 +52,7 @@ Mỗi class có hai đến ba ascendancy, mỗi cái định nghĩa một archet
 
 **Titan** (Warrior) đẩy armour và stun lên rất cao, tank đòn dễ, playstyle đơn giản. **Infernalist** (Witch) cho dog companion và demon form, minion gánh damage nên người chơi chỉ cần đứng an toàn — một trong những hướng dễ chơi nhất cho người mới. **Stormweaver** (Sorceress) maintain shock để mọi đòn nguyên tố cộng thêm 20% damage, caster mạnh và rõ ràng. **Deadeye** (Ranger) đẩy projectile và tốc độ clear pack rất nhanh. **Gemling Legionnaire** (Mercenary) linh hoạt về attribute và gem, dễ lắp nhiều build khác nhau.
 
-Hai ascendancy mới của 0.5 đáng thử nếu thích hướng riêng: Spirit Walker (Huntress) gọi companion beast đánh thay — chi tiết ở [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt). Martial Artist (Monk) đánh tay không, triệu illusory bell và dùng rune khắc lên cơ thể.
+Hai ascendancy mới của 0.5 đáng thử nếu thích hướng riêng: Spirit Walker (Huntress) gọi companion beast đánh thay — chi tiết ở [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt). Martial Artist (Monk) đánh tay không, triệu illusory bell và dùng rune khắc lên cơ thể.
 
 ## Chọn class nào để bắt đầu
 
@@ -64,4 +64,4 @@ Monk và Huntress chơi quen tay thì rất mạnh nhờ timing và combo, nhưn
 
 - **related** [Ascendancy: chọn subclass và mở khoá như thế nào](/guides/beginner-ascendancy) — cách mở ascendancy qua trial và quy trình chọn, đọc cùng để biết khi nào ascend được.
 - **related** [Passive skill tree: cách đọc và phân bổ điểm](/guides/beginner-passive-tree) — vị trí xuất phát của từng class trên tree quyết định node nào gần nhất.
-- **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — chi tiết ascendancy companion mới của Huntress trong 0.5.
+- **related_mechanics** [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — chi tiết ascendancy companion mới của Huntress trong 0.5.

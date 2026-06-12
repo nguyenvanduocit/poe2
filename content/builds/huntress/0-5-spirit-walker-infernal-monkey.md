@@ -117,8 +117,8 @@ Nhánh này làm tốt ba thứ: mapping zero-button đúng nghĩa với một c
 
 - **derived_from** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — build mẹ: gear, tree, Catha, Forgotten Warden và pipeline tame sống ở đó; nhánh này đổi carry và cấu trúc roster.
 - **related_builds** [Aura Bot Zoo Spirit Walker](/builds/huntress/0-5-spirit-walker-aura-bot-zoo) — bản gốc của creator chạy 5 aura bot reservation thấp làm nền cho con khỉ; spirit dư của nhánh này đổ vào đúng các bot đó.
-- **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — cơ chế tame, modifier retention, Extra Crits và đường săn rare beast mà con khỉ đi qua.
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Abyss lineage gem, Tame Beast và Spirit Walker của league 0.5 là nền của cả engine.
+- **related_mechanics** [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — cơ chế tame, modifier retention, Extra Crits và đường săn rare beast mà con khỉ đi qua.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — Abyss lineage gem, Tame Beast và Spirit Walker của league 0.5 là nền của cả engine.
 
 ## Resources
 

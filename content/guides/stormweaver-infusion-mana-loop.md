@@ -141,8 +141,8 @@ Storm's Recollection (đổi tên từ Scouring Winds) nhận "Remnants reappear
 
 ## Relationships
 
-- **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — cùng league 0.5 caster/companion archetype, tham chiếu khi so sánh league-start option.
-- **alternative_to** [Infernal Legion Ignite Loop](/mechanics/skills/infernal-legion-ignite-loop) — một engine self-sustain khác của Witch, đối chiếu mô hình loop.
+- **related_mechanics** [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — cùng league 0.5 caster/companion archetype, tham chiếu khi so sánh league-start option.
+- **alternative_to** [Infernal Legion Ignite Loop](/guides/infernal-legion-ignite-loop) — một engine self-sustain khác của Witch, đối chiếu mô hình loop.
 
 ## References
 

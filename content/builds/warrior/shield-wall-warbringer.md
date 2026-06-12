@@ -116,5 +116,5 @@ Khi endgame setup ổn định và muốn đẩy tiếp, Titan và Smith of Kita
 
 ## Relationships
 
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview 0.5.0, gồm armour system overhaul và warcry balance.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — overview 0.5.0, gồm armour system overhaul và warcry balance.
 - **related_guides** [Challenge Guide](/guides/challenge-guide) — campaign completion unlock endgame cho 0.5.

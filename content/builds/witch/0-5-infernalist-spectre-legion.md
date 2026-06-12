@@ -207,7 +207,7 @@ Các điểm cần log/test khi character materialize trong league — chưa ver
 - **alternative_to** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — hướng companion tamed beast của Huntress với một con carry gánh single-target, đối trọng với legion chia đầu tư; so sánh boss DPS vs clear.
 - **alternative_to** [Bone Construct Mass Summoner Lich](/builds/witch/0-5-bone-construct-mass-summoner-lich) — hướng summoner Lich, endgame-king miễn nhiễm nerf 0.5; đối trọng ascendancy với Infernalist.
 - **related_builds** [Raging Spectre Shaman](/builds/druid/raging-spectre-shaman) — cùng dùng spectre nhưng trên Druid Shaman (spirit-king thật của 0.5); so sánh trục spirit headroom.
-- **related_mechanics** [Spirit Walker companion beast hunt](/mechanics/spirit-walker-companion-beast-hunt) — cơ chế minion/companion + spirit reservation nền tảng cho mọi summoner 0.5.
-- **related_mechanics** [Energy Shield recovery](/mechanics/energy-shield-recovery) — giải thích nerf ES recharge 0.5 mà build phải path qua cẩn thận.
-- **references** [New unique items](/mechanics/0-5-new-unique-items) — Chober Chaber, Soul Mantle, Raven's Flock, Bones of Ullr và các unique 0.5 build dùng.
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview league 0.5.0 chứa context endgame + meta build đang nghiên cứu.
+- **related_mechanics** [Spirit Walker companion beast hunt](/guides/spirit-walker-companion-beast-hunt) — cơ chế minion/companion + spirit reservation nền tảng cho mọi summoner 0.5.
+- **related_mechanics** [Energy Shield recovery](/guides/energy-shield-recovery) — giải thích nerf ES recharge 0.5 mà build phải path qua cẩn thận.
+- **references** [New unique items](/guides/0-5-new-unique-items) — Chober Chaber, Soul Mantle, Raven's Flock, Bones of Ullr và các unique 0.5 build dùng.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — overview league 0.5.0 chứa context endgame + meta build đang nghiên cứu.

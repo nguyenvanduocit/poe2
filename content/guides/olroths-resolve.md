@@ -94,6 +94,6 @@ Item ra mắt với Instant Recovery, (100–150)% increased Charges per use, v�
 
 ## Relationships
 
-- **related_mechanics** [Runic Ward Onslaught Loop cho Minion](/mechanics/0-5-runic-ward-onslaught-loop) — cơ chế Runic Ward và cách stack pool; Ward ceiling ảnh hưởng trực tiếp Guard value của flask này.
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — league 0.5 giới thiệu Runeforging và Runic Ward, tiền đề cho thiết kế lại của flask này.
-- **related** [0.5 New Unique Items Overview](/mechanics/0-5-new-unique-items) — tổng quan các unique mới cùng patch.
+- **related_mechanics** [Runic Ward Onslaught Loop cho Minion](/guides/0-5-runic-ward-onslaught-loop) — cơ chế Runic Ward và cách stack pool; Ward ceiling ảnh hưởng trực tiếp Guard value của flask này.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — league 0.5 giới thiệu Runeforging và Runic Ward, tiền đề cho thiết kế lại của flask này.
+- **related** [0.5 New Unique Items Overview](/guides/0-5-new-unique-items) — tổng quan các unique mới cùng patch.

@@ -72,7 +72,7 @@ Bất kể nhánh nào, Onslaught có một khoảng grace khi ngừng đánh: w
 
 Vì uptime tốt khi đang đánh, vấn đề thật không phải Onslaught tắt — mà là **giữ nó on đồng nghĩa giữ ward ≤35% suốt trận**. Runic Ward là lớp phòng thủ chót: kích hoạt khi life chạm 1, hồi 5%/giây độc lập, là thanh đệm cứu-mạng-cuối theo EHP order. Cố tình rút nó xuống dải thấp để thoả Low Runic Ward nghĩa là chạy lớp đệm đó gần rỗng đúng vào lúc cày DPS boss kéo dài — chính lúc một cú one-shot cần thanh ward đầy nhất. Đó là cái giá thật, và trên một build vốn không HC-safe nó là survivability cost có thật, không phải buff miễn phí.
 
-Một bẫy item của 0.5.1 phải tránh đi kèm cái giá đó: Olroth's Resolve flask giờ "Regenerate 2.5-5% of maximum Runic Ward per second during Effect" (bản rework đã live từ 0.5.0, patch note 0.5.1 mới ghi). Hay cho build ward-stacker, nhưng đi ngược hẳn loop này — đang cố giữ ward ≤35% mà flask bơm ward lên 2.5-5%/giây thì dễ đẩy vượt ngưỡng và rớt Onslaught. Đừng đội Olroth's Resolve với loop ward-drain; nó là mặt đối nghịch đúng nghĩa với cách [Refutation](/mechanics/skills/refutation) cần ward đầy để đốt — cùng một pool, hai hướng ngược nhau.
+Một bẫy item của 0.5.1 phải tránh đi kèm cái giá đó: Olroth's Resolve flask giờ "Regenerate 2.5-5% of maximum Runic Ward per second during Effect" (bản rework đã live từ 0.5.0, patch note 0.5.1 mới ghi). Hay cho build ward-stacker, nhưng đi ngược hẳn loop này — đang cố giữ ward ≤35% mà flask bơm ward lên 2.5-5%/giây thì dễ đẩy vượt ngưỡng và rớt Onslaught. Đừng đội Olroth's Resolve với loop ward-drain; nó là mặt đối nghịch đúng nghĩa với cách [Refutation](/guides/refutation) cần ward đầy để đốt — cùng một pool, hai hướng ngược nhau.
 
 Một điểm dễ hiểu nhầm phải nói rõ: giữ ward thấp **không** mất stun threshold. 0.5 gỡ Runic Ward khỏi keyword "Defences" (giờ chỉ còn Armour/Evasion/ES), và mọi nguồn stun threshold đều key theo Life/ES — ward chưa bao giờ feed stun threshold. Dòng Bonded của Warding Rune of Bodyguards ("Damage of Enemies Hitting you is Unlucky if your Runic Ward has been damaged Recently") chỉ bù một phần và chỉ kích *sau khi* ward đã ăn damage — quá trễ cho một phát one-shot.
 
@@ -123,4 +123,4 @@ Những thứ datamine không giải được, đo trong client trước khi com
 ## Relationships
 
 - **related_builds** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — build đã xét loop này và không dùng: Carved Majesty gloves cấp Onslaught qua Marked target rẻ hơn, không phải drain lớp đệm 1-life. Loop chỉ còn nghĩa cho roster nguyên đàn chưa có marks gloves.
-- **part_of** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — Runic Ward / Runeforging / Kalguuran skill mà loop khai thác.
+- **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — Runic Ward / Runeforging / Kalguuran skill mà loop khai thác.

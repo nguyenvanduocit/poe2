@@ -83,5 +83,5 @@ Item introduced cùng cơ chế Abyss và Desecrated modifier. Drop từ Lichbor
 
 ## Relationships
 
-- **related** [Unique Items Mới](/mechanics/0-5-new-unique-items) — survey meta unique 0.5; Heart of the Well thống trị jewel slot dù là item core từ Abyss (0.3), không nằm trong 42 unique mới của 0.5.
-- **synergizes_with** [Spirit Walker — Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — prefix "increased Damage while your Companion is in your Presence" trong pool ngắm thẳng cho companion build.
+- **related** [Unique Items Mới](/guides/0-5-new-unique-items) — survey meta unique 0.5; Heart of the Well thống trị jewel slot dù là item core từ Abyss (0.3), không nằm trong 42 unique mới của 0.5.
+- **synergizes_with** [Spirit Walker — Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — prefix "increased Damage while your Companion is in your Presence" trong pool ngắm thẳng cho companion build.

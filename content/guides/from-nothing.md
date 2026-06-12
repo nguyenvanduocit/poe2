@@ -91,6 +91,6 @@ Item introduced.
 
 ## Relationships
 
-- **related** [Unique Items Mới](/mechanics/0-5-new-unique-items) — From Nothing là corrupted jewel chỉnh passive tree, cùng họ "sửa tree" với Voices (thêm jewel socket) được tổng hợp ở đó; bản thân From Nothing có từ 0.1.0, không phải item mới của 0.5.
-- **synergizes_with** [Spirit Walker — Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — Trusted Kinship nằm trong pool roll của From Nothing, nên companion build có thể island-grab keystone trục đó qua một jewel socket gần thay vì pathing tới góc tree.
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview league 0.5 chứa nội dung Ritual, nơi The King in the Mists drop ra item này.
+- **related** [Unique Items Mới](/guides/0-5-new-unique-items) — From Nothing là corrupted jewel chỉnh passive tree, cùng họ "sửa tree" với Voices (thêm jewel socket) được tổng hợp ở đó; bản thân From Nothing có từ 0.1.0, không phải item mới của 0.5.
+- **synergizes_with** [Spirit Walker — Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — Trusted Kinship nằm trong pool roll của From Nothing, nên companion build có thể island-grab keystone trục đó qua một jewel socket gần thay vì pathing tới góc tree.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — overview league 0.5 chứa nội dung Ritual, nơi The King in the Mists drop ra item này.

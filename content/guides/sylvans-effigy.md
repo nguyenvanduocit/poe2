@@ -31,7 +31,7 @@ tags:
 
 # Sylvan's Effigy
 
-Sylvan's Effigy là sceptre unique trên base :wiki-link{url="https://www.poe2wiki.net/wiki/Stoic_Sceptre"}, yêu cầu Level 62, drop từ The Market. Dòng định nghĩa item là "You can have any number of Companions of different types" — nó gỡ trần số loại companion, biến đây thành zoo enabler cốt lõi của [Spirit Walker](/mechanics/spirit-walker-companion-beast-hunt). Kèm theo là (50–75)% increased Spirit để nuôi ngân sách reservation, Companions deal (50–100)% increased damage lên Marked target, và hai skill cắm sẵn trong weapon là Azmerian Wolf và Discipline ở Level 18.
+Sylvan's Effigy là sceptre unique trên base :wiki-link{url="https://www.poe2wiki.net/wiki/Stoic_Sceptre"}, yêu cầu Level 62, drop từ The Market. Dòng định nghĩa item là "You can have any number of Companions of different types" — nó gỡ trần số loại companion, biến đây thành zoo enabler cốt lõi của [Spirit Walker](/guides/spirit-walker-companion-beast-hunt). Kèm theo là (50–75)% increased Spirit để nuôi ngân sách reservation, Companions deal (50–100)% increased damage lên Marked target, và hai skill cắm sẵn trong weapon là Azmerian Wolf và Discipline ở Level 18.
 
 ## Item Stats
 
@@ -84,5 +84,5 @@ Item ra mắt cùng đợt ascendancy :wiki-link{url="https://www.poe2wiki.net/w
 
 ## Relationships
 
-- **synergizes_with** [Spirit Walker — Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — item gỡ trần số loại companion, trục chính của ascendancy Spirit Walker.
-- **competes_with** [The Auspex](/mechanics/items/the-auspex) — Auspex ép single-minion, Sylvan's Effigy thưởng cả bầy companion — hai triết lý ngược nhau.
+- **synergizes_with** [Spirit Walker — Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — item gỡ trần số loại companion, trục chính của ascendancy Spirit Walker.
+- **competes_with** [The Auspex](/guides/the-auspex) — Auspex ép single-minion, Sylvan's Effigy thưởng cả bầy companion — hai triết lý ngược nhau.

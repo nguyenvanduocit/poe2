@@ -18,7 +18,7 @@ tags:
 
 Đây là patch note chính thức của Path of Exile 2 — Content Update 0.5.0 "Return of the Ancients", do Grinding Gear Games đăng ngày 21/05/2026 tại [pathofexile2.com/ancients](https://www.pathofexile2.com/ancients), kèm ba bản cập nhật bổ sung ngày 22, 25 và 26/05/2026. Bản này chép nguyên văn từ thread patch note chính thức trên forum GGG ([forum thread 3932540](https://www.pathofexile.com/forum/view-thread/3932540) — nguồn authoritative cao nhất), fetch ngày 27/05/2026; file gốc nằm trong repo tại `data/release-notes/Version_0.5.0.md`.
 
-Đây là changelog đầy đủ của 0.5.0, chép nguyên văn từng dòng để tra cứu — thuật ngữ game giữ nguyên tiếng Anh, không diễn giải. Bản tóm tắt định hướng ngắn gọn hơn, chỉ giữ những thay đổi đủ lớn để đổi cách chơi, nằm ở [Return of the Ancients](/mechanics/leagues/return-of-the-ancients).
+Đây là changelog đầy đủ của 0.5.0, chép nguyên văn từng dòng để tra cứu — thuật ngữ game giữ nguyên tiếng Anh, không diễn giải. Bản tóm tắt định hướng ngắn gọn hơn, chỉ giữ những thay đổi đủ lớn để đổi cách chơi, nằm ở [Return of the Ancients](/guides/return-of-the-ancients).
 
 Expansion **Return of the Ancients** mang đến một league mới, một cuộc đại tu toàn bộ Endgame của Path of Exile 2, với sáu storyline Endgame mới và 2 Ascendancy class mới, cùng một lượng nội dung khổng lồ khác.
 
@@ -852,9 +852,9 @@ GGG đăng đợt cập nhật cuối trước launch ngày 26/05/2026.
 
 ## Relationships
 
-- **related_mechanics** [Return of the Ancients](/mechanics/leagues/return-of-the-ancients) — overview định hướng đã digest của patch 0.5.0.
-- **related_mechanics** [Energy Shield Recovery](/mechanics/energy-shield-recovery) — đợt nerf ES recharge của patch này.
-- **related_mechanics** [Spirit Walker Companion Beast Hunt](/mechanics/spirit-walker-companion-beast-hunt) — ascendancy companion mới và buff Tame Beast.
-- **related_mechanics** [Infernal Legion Ignite Loop](/mechanics/skills/infernal-legion-ignite-loop) — cơ chế ignite của Infernal Legion sau nerf 0.5.0.
-- **related_mechanics** [Talisman Crafting](/mechanics/crafting/talisman-crafting) — đường craft talisman sau khi Recombinator bị disable.
+- **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — overview định hướng đã digest của patch 0.5.0.
+- **related_mechanics** [Energy Shield Recovery](/guides/energy-shield-recovery) — đợt nerf ES recharge của patch này.
+- **related_mechanics** [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — ascendancy companion mới và buff Tame Beast.
+- **related_mechanics** [Infernal Legion Ignite Loop](/guides/infernal-legion-ignite-loop) — cơ chế ignite của Infernal Legion sau nerf 0.5.0.
+- **related_mechanics** [Talisman Crafting](/crafting/talisman-crafting) — đường craft talisman sau khi Recombinator bị disable.
 - **related_builds** [Hollow Mask Acolyte Minion](/builds/monk/hollow-mask-acolyte-minion-hypothesis) — The Hollow Mask có stat xác nhận trong patch này.
