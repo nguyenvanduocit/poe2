@@ -125,7 +125,7 @@ Hai source bổ sung nhau — wiki cho "tại sao", db cho "bao nhiêu".
 
 ## Importing Database Content vào content/
 
-Database data hữu ích nhất khi đưa vào content/mechanics/ làm "math chain PoC" hoặc "evaluation rule". Pattern owner-voice:
+Database data hữu ích nhất khi đưa vào content/guides/ làm "math chain PoC" hoặc "evaluation rule". Pattern owner-voice:
 
 > "Item base T1 maximum life roll 110-119 trên helmet ilvl 86+" — viết as fact, không "theo poe2db.tw".
 

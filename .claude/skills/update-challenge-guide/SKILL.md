@@ -111,7 +111,7 @@ Use character context từ `CLAUDE.md` (current POE2 character — TBD cho 0.5; 
 6. **K skip-able challenges** — paragraph mỗi skip-able, giải thích cost vs reward và *khi nào* đảo quyết định (vd "skip nếu Arbiter of Divinity infinite-version key giá >X div").
 7. **Pitfalls / không làm** — specific traps (wrong fragment cho pinnacle quest version, waystone chưa identify nên không activate được, tablet đặc thù league không rớt từ Simulacrum/Abyssal Depths/Twisted Domain nữa).
 8. **Checklist sau mỗi session** — counter cần track + abort condition.
-9. **Related Resources** — link đến character progress, farming strategy POE2, related mechanic doc (`content/mechanics/return-of-the-ancients.md`, `content/mechanics/spirit-walker-companion-beast-hunt.md`).
+9. **Related Resources** — link đến character progress, farming strategy POE2, related mechanic doc (`content/guides/return-of-the-ancients.md`, `content/guides/spirit-walker-companion-beast-hunt.md`).
 
 ## Inline Progress Ticks — `:memorable-check{}` MDC
 
@@ -173,7 +173,7 @@ relationships:
   - path: content/characters/<character>.md
     title: <character title>
   references:
-  - path: content/mechanics/return-of-the-ancients.md
+  - path: content/guides/return-of-the-ancients.md
     title: Return of the Ancients — POE2 0.5 Overview
 ---
 ```

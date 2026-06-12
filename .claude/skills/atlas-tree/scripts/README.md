@@ -126,4 +126,4 @@ Expected: 300+ node trong main tree, 3 master × 12 node, breach sub-tree có sp
 - POE1 skill (port pattern from): `../poe1/.claude/skills/atlas-tree/`
 - PoB2 fork: https://github.com/PathOfBuildingCommunity/PathOfBuilding-PoE2
 - POE2 0.5 patch notes (Atlas/Endgame section): `data/release-notes/Version_0.5.0.md` heading "Đại Tu Endgame — Origins of Divinity" + "Masters of the Atlas" + per-league sections
-- POE2 mechanic overview: `content/mechanics/return-of-the-ancients.md`
+- POE2 mechanic overview: `content/guides/return-of-the-ancients.md`

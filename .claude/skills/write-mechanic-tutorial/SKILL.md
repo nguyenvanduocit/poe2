@@ -1,6 +1,6 @@
 ---
 name: write-mechanic-tutorial
-description: Viết hoặc polish mechanic guide trong content/mechanics/ (skills, items, leagues, classes, atlas, crafting) theo phong cách maxroll-flavored + project owner voice (tiếng Việt, prose-first, ví dụ từ character thật). Trigger — "viết mechanic doc", "giải thích cơ chế", "tutorial mechanic", "write mechanic guide", "doc về <league/skill/item>", "polish mechanic doc".
+description: Viết hoặc polish mechanic guide trong content/guides/ (flat) hoặc content/crafting/ theo phong cách maxroll-flavored + project owner voice (tiếng Việt, prose-first, ví dụ từ character thật). Trigger — "viết mechanic doc", "giải thích cơ chế", "tutorial mechanic", "write mechanic guide", "doc về <league/skill/item>", "polish mechanic doc".
 allowed-tools:
   - Read
   - Write
@@ -11,8 +11,8 @@ allowed-tools:
   - Bash(ls:*)
   - Bash(jq:*)
   - Bash(bun:*)
-when_to_use: Use when user asks to write, draft, or polish a mechanic guide in content/mechanics/ (subfolder skills/items/leagues/classes/atlas/crafting). Triggers — "viết mechanic doc", "giải thích cơ chế X", "tutorial mechanic", "write mechanic guide", "doc về Mirage/Breach/Harvest/Spectre/Doryani's...", "polish mechanic doc", "explain mechanic".
-argument-hint: "<topic | content/mechanics/.../file.md>"
+when_to_use: Use when user asks to write, draft, or polish a mechanic guide in content/guides/ (flat) or content/crafting/. Triggers — "viết mechanic doc", "giải thích cơ chế X", "tutorial mechanic", "write mechanic guide", "doc về Mirage/Breach/Harvest/Spectre/Doryani's...", "polish mechanic doc", "explain mechanic".
+argument-hint: "<topic | content/guides/file.md>"
 arguments:
   - topic_or_path
 context: inline
@@ -20,17 +20,17 @@ context: inline
 
 # write-mechanic-tutorial — Viết mechanic guide kiểu maxroll, giọng owner Việt
 
-Skill này viết tutorial mechanic guide trong `content/mechanics/` (subfolder `skills/`, `items/`, `leagues/`, `classes/`, `atlas/`, `crafting/`) theo **cấu trúc explanation-first** mượn từ maxroll, NHƯNG **section right-sized theo độ phức tạp mechanic** (required core + optional menu, không ép bộ section cố định — xem "Section structure") và giọng giữ project rule: **tiếng Việt, owner voice, prose-first, ground bằng số thật**.
+Skill này viết tutorial mechanic guide trong `content/guides/` (flat — mechanic doc sống chung guides, phân loại bằng frontmatter `sub_class`) hoặc `content/crafting/` (top-level, ngang hàng `farming/`) theo **cấu trúc explanation-first** mượn từ maxroll, NHƯNG **section right-sized theo độ phức tạp mechanic** (required core + optional menu, không ép bộ section cố định — xem "Section structure") và giọng giữ project rule: **tiếng Việt, owner voice, prose-first, ground bằng số thật**.
 
 ## Inputs
 
 - `$topic_or_path` — Một trong:
-  - **Path** đến file đã có (vd `content/mechanics/leagues/mirage.md`) → polish
+  - **Path** đến file đã có (vd `content/guides/return-of-the-ancients.md`) → polish
   - **Topic** ngắn (vd `mirage`, `spectre`, `doryanis prototype`) → skill glob lookup. File chưa có → REFUSE, gợi ý `/vault.new` trước.
 
 ## Goal
 
-File `.md` trong `content/mechanics/<sub>/` với:
+File `.md` trong `content/guides/` (hoặc `content/crafting/` cho craft walkthrough) với:
 
 - Frontmatter pass `bun run validate --path <file>` zero CRITICAL.
 - **Section right-sized theo độ phức tạp mechanic** — required core + optional menu, không ép số section cố định (xem "Section structure").
@@ -98,7 +98,7 @@ File `.md` trong `content/mechanics/<sub>/` với:
 
 ## Section structure — required core + optional menu, right-sized
 
-**Nguyên tắc số một: số section khớp độ phức tạp mechanic, KHÔNG ép một bộ cố định.** Mechanic atomic (một crafting trick, một interaction, một gambling play) có thể chỉ 3-4 section; một league system hay skill phức tạp mới cần 8-12. **Thêm một section mỏng/rỗng cho "đủ template" là vi phạm** — ít section dày đặc thắng nhiều section độn. Doc mẫu đúng tầm: `content/mechanics/crafting/talisman-crafting.md` (heading tiếng Việt theo nội dung, dừng đúng chỗ). Anti-mẫu: doc bị nhồi 11 section khi mechanic chỉ cần 4.
+**Nguyên tắc số một: số section khớp độ phức tạp mechanic, KHÔNG ép một bộ cố định.** Mechanic atomic (một crafting trick, một interaction, một gambling play) có thể chỉ 3-4 section; một league system hay skill phức tạp mới cần 8-12. **Thêm một section mỏng/rỗng cho "đủ template" là vi phạm** — ít section dày đặc thắng nhiều section độn. Doc mẫu đúng tầm: `content/crafting/talisman-crafting.md` (heading tiếng Việt theo nội dung, dừng đúng chỗ). Anti-mẫu: doc bị nhồi 11 section khi mechanic chỉ cần 4.
 
 **Heading**: viết **sentence-case tiếng Việt nói thẳng section làm gì** (theo natural-voice rule — vd `## Vì sao Heavy Belt là base đáng chance`, `## Toán break-even`). Tên archetype tiếng Anh (How It Works, Optimization…) bên dưới chỉ là nhãn để tác giả biết *loại* section — heading thật trong doc dùng tiếng Việt tự nhiên. CẤM dash-subtitle `## X — Y`. (English heading vẫn validate nếu thật sự hợp, nhưng default là tiếng Việt — validator chỉ cần H2 hợp lệ, không ép tên cụ thể.)
 
@@ -141,14 +141,14 @@ File `.md` trong `content/mechanics/<sub>/` với:
 ## Pre-write checklist
 
 1. **Target file path** xác định.
-2. **Subfolder routing đúng** — skill gem → `mechanics/skills/`, unique item → `mechanics/items/`, league → `mechanics/leagues/`, class → `mechanics/classes/`, atlas → `mechanics/atlas/`, crafting → `mechanics/crafting/`. Sai folder → REFUSE.
+2. **Folder routing đúng** — crafting walkthrough → `content/crafting/`; mọi mechanic guide khác (skill, item, league, class, atlas) → `content/guides/` flat, phân loại bằng frontmatter `sub_class` (skills/items/leagues/classes/atlas). Sai folder → REFUSE.
 3. **Số chính xác** — Wiki search cho percent, drop rate, scaling. CLAUDE.md note: KHÔNG curl direct GGG API. Dùng `/poewiki` skill.
 4. **Ví dụ từ character thật** — đọc `content/characters/the-leader-a.json` qua `jq` lấy số liên quan. Nếu mechanic không apply tới character hiện tại → flag user, hỏi character ví dụ khác hoặc skip example.
 
 ## Steps
 
 ### 1. Resolve target file
-Path → verify. Topic → glob `content/mechanics/**/*<slug>*.md`. Không tìm thấy → REFUSE + `/vault.new`.
+Path → verify. Topic → glob `content/{guides,crafting}/*<slug>*.md`. Không tìm thấy → REFUSE + `/vault.new`.
 
 **Success criteria**: File path absolute, đúng subfolder cho mechanic type.
 

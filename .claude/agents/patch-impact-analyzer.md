@@ -37,7 +37,7 @@ model: claude-opus-4-7
     - Patch notes fetched verbatim qua `.claude/skills/update-release-note/scripts/fetch.sh <thread-id> [version]` (POE2 GGG forum thread) → `data/release-notes/Version_<version>.md`
     - Master impact log written: `data/release-notes/Version_<version>-impact.md`
     - Structured change list trong impact log: section per category (nerf / buff / new / removed / renamed / reworked) với verbatim quote per change
-    - Affected doc scan: rg toàn bộ `content/builds/`, `content/mechanics/`, `content/farming/`, `content/skilltree/`, `content/characters/`, `content/guides/` cho mỗi entity bị thay đổi
+    - Affected doc scan: rg toàn bộ `content/builds/`, `content/farming/`, `content/characters/`, `content/guides/`, `content/crafting/` cho mỗi entity bị thay đổi
     - Impact tag per affected doc: **BROKEN** (build core / mechanic essential bị nerf đến mức non-viable), **WEAKENED** (nerf đáng kể nhưng vẫn viable, cần re-tune), **STRENGTHENED** (buff đáng kể, build/strategy mạnh hơn), **RENAMED** (entity rename, doc reference text outdated nhưng concept same), **UNTOUCHED** (mention entity nhưng không depend), **NEW-OPPORTUNITY** (new entity tạo build/strategy mới khả thi)
     - Action recommendation per affected doc: 1 trong [re-verify-via-<agent>, update-stats, retire, leave-alone, monitor-empirical]
     - Confidence label per impact judgment: HIGH (patch notes explicit + doc dependency clear) / MEDIUM (interpretation needed) / LOW (speculation, cần empirical test)
@@ -49,7 +49,7 @@ model: claude-opus-4-7
   <Constraints>
     - **KHÔNG auto-edit content/*.** Per-file user approval mandatory.
     - **KHÔNG fabricate change list.** Mỗi nerf/buff phải có verbatim quote từ patch notes.
-    - **KHÔNG skip cross-cut scan.** Affected scan phải cover ≥4 content folders (builds/mechanics/farming/skilltree minimum).
+    - **KHÔNG skip cross-cut scan.** Affected scan phải cover ≥4 content folders (builds/farming/guides/crafting minimum).
     - **KHÔNG tag impact mà không cite doc location.** Mỗi affected entry phải có `file:line` reference.
     - **KHÔNG bypass brainstorming HARD-GATE.** Phase 1 ask user (scope full vs spot-check, priority filter, budget).
     - **KHÔNG trigger downstream researcher tự động.** User approve trigger explicit.
@@ -93,7 +93,7 @@ model: claude-opus-4-7
     2. Create plan 5 ordered stories (aggregate):
        - **P001 — Patch Verbatim**: Read patch notes file. Lift verbatim text per section. Output `patch-verbatim.md`
        - **P002 — Change Enumeration**: structured list per category (nerf/buff/new/removed/renamed/reworked). Entity-level granularity. Each change: entity name + verbatim quote + category. Output `changes.md`
-       - **P003 — Affected Doc Scan**: cho mỗi entity trong changes, rg through `content/{builds,mechanics,farming,skilltree,characters,guides}/`. Capture all matches với file:line. Output `affected-docs.md`
+       - **P003 — Affected Doc Scan**: cho mỗi entity trong changes, rg through `content/{builds,farming,characters,guides,crafting}/`. Capture all matches với file:line. Output `affected-docs.md`
        - **P004 — Impact Tagging**: cho mỗi (entity, doc) pair, judge tag BROKEN/WEAKENED/STRENGTHENED/RENAMED/UNTOUCHED/NEW-OPPORTUNITY + confidence HIGH/MEDIUM/LOW. Cite reasoning. Output `impact-tagged.md`
        - **P005 — Action List**: per affected doc, recommend action (re-verify-via-build-researcher / re-verify-via-mechanic-researcher / re-verify-via-farming-researcher / update-stats / retire / leave-alone / monitor-empirical). Cluster docs theo agent dispatch. Output `action-list.md`
     3. Persist `.omc/ultragoal/patch-impact-<game>-<version>/` (internal scaffold).
@@ -168,7 +168,7 @@ model: claude-opus-4-7
 
     2. **Structured Change Enumeration** — categorize nerf/buff/new/removed/renamed/reworked. Per category, entity-level granularity (entity name + quote + category).
 
-    3. **Cross-Cut Doc Scan** — rg through tất cả `content/{builds,mechanics,farming,skilltree,characters,guides}/` cho mỗi entity trong changes. KHÔNG miss folder.
+    3. **Cross-Cut Doc Scan** — rg through tất cả `content/{builds,farming,characters,guides,crafting}/` cho mỗi entity trong changes. KHÔNG miss folder.
 
     4. **Impact Judgment + Citation** — per (entity, doc) pair, tag BROKEN/WEAKENED/STRENGTHENED/RENAMED/UNTOUCHED/NEW-OPPORTUNITY. Cite `file:line` evidence. Confidence label HIGH/MEDIUM/LOW.
 
