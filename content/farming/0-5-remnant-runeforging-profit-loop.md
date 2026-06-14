@@ -120,4 +120,4 @@ Cơ chế loop và bốn tầng unlock lấy verbatim từ patch note 0.5.0 (`da
 - **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients): cơ chế đầy đủ của Remnant, Verisium Runeforging, Runic Ward và bốn tầng unlock của Farrow.
 - **alternative_to** [Grand Expedition Farming](/farming/0-5-grand-expedition-farming): biến thể juiced cùng Verisium Remnant, gated qua rumour Ocean với reward-table đọc trước.
 - **supports** [Runic Ward Onslaught Loop](/guides/0-5-runic-ward-onslaught-loop): Verisium farm từ loop nuôi Runeforging gắn Runic Ward cho build defensive.
-- **synergizes_with** [Boss Rush Fragment Farming](/farming/0-5-boss-rush-fragment-farm): chạy chồng làm overlay, Remnant nhặt trên đường rush boss không xung đột atlas point.
+- **synergizes_with** [Tablet Supply Farming](/farming/0-5-tablet-supply-farm): chạy chồng làm overlay, Remnant nhặt trên đường clear map travel không xung đột atlas point.

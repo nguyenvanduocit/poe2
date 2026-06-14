@@ -5,7 +5,7 @@ title: Mở khóa toàn bộ atlas endgame
 status: published
 author: duocnv
 created: '2026-06-05'
-updated: '2026-06-09'
+updated: '2026-06-14'
 league: '0.5'
 patch: 0.5.1
 guide_type: endgame-progression
@@ -40,19 +40,19 @@ Fortress chứa rất nhiều map và trông có vẻ ngợp, nhưng không cầ
 
 ## Gateway và Citadel là hai đường khác nhau
 
-Đây là chỗ dễ nhầm nhất trong endgame 0.5, nhầm thì lạc hướng cả buổi.
+Chỗ này dễ nhầm nhất trong endgame 0.5, nhầm thì lạc hướng cả buổi.
 
 **Gateway map** dẫn đến Arbiter of Ash. Chuỗi quest đi qua **Western Gateway** và **Eastern Gateway** — mỗi gateway thông vào một **Enigma Chamber** chứa quest version của Crisis Fragment. Đánh xong cả hai chamber thì quay về **Burning Monolith** trong Fortress để gặp **Arbiter of Ash**. Đây là pinnacle boss cũ từ các bản trước, dời hẳn vào Fortress trong 0.5.
 
-**Citadel map** dẫn đến Arbiter of Divinity. Có hai loại Citadel map mới với hai boss mới, mỗi lần clear Citadel rơi **Origin Fragment** — chìa khóa mở lại Arbiter of Divinity. Origin Fragment cũng tradeable trên Currency Exchange. Đây là boss cần cho đường tắt bật full tree.
+**Citadel map** dẫn đến Arbiter of Divinity. Hai loại Citadel map mới của 0.5 mỗi cái một sentinel boss: **Phyx, Sentinel of the Spark** giữ **Origin Spark**, **Phya, Sentinel of the Cradle** giữ **Origin Cradle**. Gộp một Spark với một Cradle tại The Origin Tower thành **Origin Core** — đó là key mở Arbiter of Divinity ở đỉnh tháp. Cả Spark lẫn Cradle đều tradeable trên Currency Exchange. Arbiter of Divinity chính là boss cần hạ cho đường tắt bật full tree.
 
-Tóm gọn: Gateway → Enigma → Arbiter of **Ash** (boss cũ relocated); Citadel → Origin Fragment → Arbiter of **Divinity** (pinnacle mới của 0.5). Cả hai cùng nằm trong Fortress nhưng không liên quan nhau.
+Tóm gọn: Gateway → Enigma → Crisis Fragment → Arbiter of **Ash** (boss cũ relocated); Citadel (Phyx + Phya) → Origin Spark + Origin Cradle → Origin Core → Arbiter of **Divinity** (pinnacle mới của 0.5). Hai đường khác hẳn nhau, đừng lẫn Crisis Fragment với Origin Core.
 
 ## Đường tắt là giết Arbiter of Divinity năm lần
 
 Mỗi lần hạ Arbiter of Divinity, game hiện ra **năm tượng đá**, mỗi tượng ứng một section của Fortress. Chọn một tượng thì toàn bộ map trong section đó tự hoàn thành và nhả hết point cùng lúc. Muốn bật sạch cả tree thì cần giết Arbiter of Divinity **năm lần**, mỗi lần dứt một section.
 
-Lần đầu là trận quest ngay trong Fortress, tính vào năm. Bốn lần còn lại cần Origin Fragments: chạy Citadel map trên atlas, đánh cả hai boss trong đó để rơi Origin Fragment, rồi dùng fragment mở lại một lần đánh tại **The Origin Tower**. Muốn rút ngắn thì Origin Fragment cũng mua được trên Currency Exchange.
+Lần đầu là trận quest ngay trong Fortress, tính vào năm — bộ Spark + Cradle đầu tiên nằm ở phía sau Fortress. Bốn lần còn lại cần một bộ mới mỗi lần: lùng hai Citadel map mới trên atlas (cột sáng cam, Phyx và Phya thường mọc gần nhau), hạ sentinel mỗi map lấy **Origin Spark** với **Origin Cradle**, gộp thành **Origin Core** rồi mở lại một lần đánh tại **The Origin Tower**. Cách lùng nhanh nhất là ghép với questline Doryani: chọn một hướng từ tường Fortress đi thẳng ra, dọn corrupted nexus gặp trên đường — vừa lấy point Doryani vừa mở thêm atlas — rồi chạy precursor tower để lộ vùng mới cho tới khi thấy cặp Citadel. Để dành waystone và tablet có waystone drop chance cao cho mấy map này, vì drop chance cao kéo theo cơ hội rớt thêm Spark hoặc Cradle. Muốn rút ngắn thì cả hai cũng mua được trên Currency Exchange.
 
 Đi đường này đáng hơn cày từng Fortress map vì vừa bật tree vừa khám phá luôn atlas — gặp citadel, unique map, corruption nexus, anomaly map, và mở song song các questline Master tiện tay. Build mạnh và quen pattern thì năm lần kill chỉ tốn vài tiếng. Arbiter of Divinity cho vô số lần thử — chết bao nhiêu cũng vào lại được, rào cản thật là damage chứ không phải entry.
 
@@ -79,14 +79,14 @@ Slot tablet để trống thêm league content ngẫu nhiên không-tablet vào 
 1. Chạy thẳng chuỗi Origins of Divinity tới khi hạ Arbiter of Divinity **một lần**. Đây là khung xương, mở ra đường tắt 5-kill lẫn quyền clear section.
 2. Ghé Hilda's Campsite và làm một anomaly map sớm để mở **Hilda** và **Jado** — hai Master rẻ, mở được là có buff dùng ngay. Doryani đợi gặp corruption nexus đầu tiên.
 3. Chọn một league mechanic muốn farm, bật tablet cho nó để juice luôn, có currency vào sớm.
-4. Vừa kiếm currency, vừa lùng Citadel map trên atlas để gom Origin Fragment cho đủ bốn lần kill Arbiter of Divinity còn lại. Dọc đường gặp citadel mới, nexus, unique map thì mở luôn.
+4. Vừa kiếm currency, vừa lùng hai Citadel map (Phyx + Phya) trên atlas để gom đủ Origin Spark + Origin Cradle cho bốn lần kill Arbiter of Divinity còn lại. Dọc đường gặp citadel mới, corrupted nexus, unique map thì mở luôn.
 
 Node ưu tiên ở những point đầu: mở **essence** và **shrine** trước, rồi gom đám natural juice — increased rare monster, tablet effect, magic pack size. Gõ "rare" trong ô search của tree lấy sạch node rare, gõ "tablet" lấy sạch node tablet. **Partial Translation** cần lấy sớm khi mở được — node này khóa sau khi giết Arbiter of Divinity và kéo tablet lên 4 mod.
 
 ## Lỗi hay gặp
 
 - **Cày từng map Fortress lúc đang chạy quest.** Đi beeline tới Arbiter of Divinity trước; đường 5-kill nhanh hơn cày tay từng map rất nhiều.
-- **Nhầm Arbiter of Ash với Arbiter of Divinity.** Ash đi qua Gateway → Enigma → Burning Monolith; Divinity đi qua Citadel → Origin Fragment → The Origin Tower. Hai trận khác nhau hoàn toàn, không thay thế nhau.
+- **Nhầm Arbiter of Ash với Arbiter of Divinity.** Ash đi qua Gateway → Enigma → Crisis Fragment → Burning Monolith; Divinity đi qua Citadel → Origin Spark + Cradle → Origin Core → The Origin Tower. Hai trận khác nhau hoàn toàn, không thay thế nhau.
 - **Bỏ qua cửa sổ chọn tượng đá sau khi kill Arbiter.** Phải chọn section ngay sau kill — cửa sổ chỉ hiện lúc đó, bỏ qua là không lấy lại được.
 - **Bỏ Master nào vì chưa dùng ngay.** Ba Master swap tự do, không có lý do skip — Hilda và Jado mở rất rẻ.
 
@@ -96,13 +96,13 @@ Node ưu tiên ở những point đầu: mở **essence** và **shrine** trướ
 
 - Bổ sung 24 Passive Skills mới vào vùng trên cùng của Atlas Passive Tree, đặc biệt ảnh hưởng đến các biome riêng lẻ — tổng tree lên hơn 324 node.
 - Fortress Towers, Gateways, Enigma Chambers và Halls tăng số point Atlas trao; áp retroactive, login vào nhận thêm ngay.
-- Origin Fragments (key mở Arbiter of Divinity) được thêm vào Currency Exchange để trade.
+- Origin Spark và Origin Cradle (gộp thành Origin Core để mở Arbiter of Divinity) được thêm vào Currency Exchange để trade.
 
 ### Patch 0.5.0 (2026-05-29)
 
 - Atlas reset hoàn toàn, point cũ mất hết — cần chạy chuỗi Origins of Divinity để lấy point trở lại.
 - Atlas Passive Tree mở rộng lên hơn 300 node; cày đủ Fortress là đủ point allocate sạch.
-- Thêm hai loại Citadel map mới với hai boss mới, rơi Origin Fragment cho Arbiter of Divinity.
+- Thêm hai loại Citadel map mới với hai sentinel boss (Phyx giữ Origin Spark, Phya giữ Origin Cradle), gộp thành Origin Core để mở Arbiter of Divinity.
 - Thêm ba Gateway map với hai boss mới, dẫn vào Enigma Chambers và Arbiter of Ash.
 - Arbiter of Ash relocated vào Burning Monolith trong Fortress.
 - Thêm Arbiter of Divinity làm pinnacle boss mới; cơ chế 5-kill clear năm section Fortress thay vì cày tay.

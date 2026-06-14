@@ -5,7 +5,7 @@ title: Sustain map và setup atlas tree endgame
 status: published
 author: duocnv
 created: '2026-06-03'
-updated: '2026-06-09'
+updated: '2026-06-14'
 league: '0.5'
 patch: 0.5.1
 guide_type: endgame-mapping
@@ -42,11 +42,17 @@ Waystone rớt nhiều hay ít không phải hên xui — nó là một chuỗi 
 
 **Tablet vừa cho waystone vừa là cần câu juice chính.** :wiki-link{url="https://www.poe2wiki.net/wiki/Precursor_Tablet"} roll được mod "increased quantity of Waystones", range tầm 30–40% mỗi cái. Waystone từ 3 mod trở lên cho gắn 2 tablet, đủ 6 mod thì gắn cả 3. Hai tablet quantity là +60–80% waystone chồng thẳng lên drop chance từ số mod — gộp lại, đẩy một map từ tầm 40% (3 mod trơn) qua mốc 120% (4–5 mod + 2 tablet) không khó, tức là gấp đôi đến gấp ba waystone nhặt về. Đây mới là khác biệt giữa sustain và không sustain. Tablet cùng loại stack được, slot tablet trống cũng vẫn cho content random, nên cứ gắn đầy.
 
-**Map boss nhả thêm waystone ngoài drop thông thường.** Cộng thêm atlas node **Valuable Paths** (+10% waystone từ map boss), giết boss mỗi map là một phần của vòng sustain, không phải tùy chọn. Boss nhiều mod sẽ rớt waystone đáng kể hơn hẳn so với boss map trơn.
+**Map boss nhả thêm waystone ngoài drop thông thường.** Cộng thêm atlas node **Valuable Paths** (+10% waystone từ map boss), giết boss mỗi map là một phần của vòng sustain, không phải tùy chọn. Boss nhiều mod sẽ rớt waystone nhiều hơn hẳn so với boss map trơn.
 
-**Leo tier bằng powerful map boss.** Map nào có icon **powerful map boss** — giết con đó được đảm bảo rớt một map cao hơn đúng 1 tier (chạy T13, giết powerful boss, ra T14). Đây là đường leo tier sạch nhất; :wiki-link{url="https://www.poe2wiki.net/wiki/Overseer_Precursor_Tablet"} cũng tạo powerful map boss, và các atlas passive ăn theo "powerful map boss" nhận luôn nguồn này.
+**Leo tier bằng powerful map boss.** Map nào có icon **powerful map boss** — con boss cuối đó có cơ hội rớt một waystone cao hơn tier map đúng 1 bậc (chạy T13, giết powerful boss, có cửa ra T14). Cơ hội này giảm dần khi tier map càng cao, nhưng thêm mod vào waystone kéo nó lên lại, nên map nhiều mod vừa juice vừa dễ leo tier. Đây là đường leo tier sạch nhất; :wiki-link{url="https://www.poe2wiki.net/wiki/Overseer_Precursor_Tablet"} cũng tạo powerful map boss, và các atlas passive ăn theo "powerful map boss" nhận luôn nguồn này. Đi contract đầu của Hilda sớm còn mở một passive cho normal map boss cơ hội hóa powerful map boss — thêm một nguồn leo tier mà chỉ tốn một mission ngắn.
 
 **Cháy map giữa chừng thì ghé Doryani.** Alt-click :wiki-link{url="https://www.poe2wiki.net/wiki/Doryani"} mua waystone thấp hơn tier cao nhất 1 bậc, đem ra reforging bench 3-đổi-1 để leo lên. Mua 9 cái, 3-đổi-1 hai lượt là lên 1 tier. Stock của Doryani reset theo tier cao nhất mỗi lần leo. Không phải giải pháp lâu dài nhưng cứu được lúc xui hết map.
+
+## Dừng ở tier 11 để gear trước khi rush tier 15
+
+Lỗi tốn thời gian nhất khi mới vào map là cứ mở được tier nào là nhảy thẳng lên, tưởng tier cao thì loot xịn hơn. Mốc gear thật sự nằm ở tier 11. Waystone T11 là area level 75, nên mọi item rớt trong đó tối thiểu item level 75 — đủ ra gần hết các band mod mình cần thật: T1 flat phys trên ring và glove, life với res tier cao, +3 trên amulet, gem level 18. Muốn vượt band đó phải lên item level 82, mà map thường kịch trần là T16 ở area level 80, T15 mới area level 79 — còn chưa chạm 82. Tức là nhảy lên T15 lúc build chưa đủ mạnh gần như không nâng được chất gear, chỉ đổi lấy chết nhiều hơn và clear chậm hơn.
+
+Ở lại T11 cho tới khi gear và level theo kịp thì hơn: farm an toàn, xong quest nhanh, mà vẫn rớt đúng đồ dùng được. T11 cũng cho key trial 4-ascendancy ở mức thấp nhất, level 75 — barrier 4-trial không xuống dưới mức đó, nên farm T11 là cách lấy key dễ và nhanh nhất để chốt nốt ascendancy. Chỉ leo lên T14–15 khi quest ép tier tối thiểu, hoặc khi đã đủ sức đứng map mà không chết.
 
 ## Cách mở atlas tree
 
@@ -75,6 +81,10 @@ Point của league mechanic (Breach, Delirium, Ritual, Abyss...) đi đường r
 ## Tree của từng league mechanic
 
 Mỗi mechanic có subtree riêng đã viết lại; đây là thứ tự đáng dồn point trước.
+
+Một quy tắc khi đang chạy quest để mở subtree của mechanic nào: đừng gắn tablet của chính mechanic đó, và đừng vội lấy node phình to encounter (kiểu From Below hay Sprawling Rapture của Abyss). Lúc này mục tiêu là giết boss mechanic cho nhanh để lấy point — nhồi thêm mechanic vào map chỉ kéo dài mỗi map. Để dành phần juice cho sau khi đã mở xong subtree.
+
+Expedition là ngoại lệ đáng tranh thủ: nó chưa có subtree atlas nào nên farm full hiệu suất ngay từ đầu, không phải đợi mở point. Nó nhả raw currency, uncut skill/spirit gem và chest đầy waystone — hợp để gom đồ và nuôi lại pool waystone lúc còn nghèo.
 
 **Abyss đang lãi nhất, kể cả không đầu tư gì.** :wiki-link{url="https://www.poe2wiki.net/wiki/Abyss"} giờ có vết nứt lớn trên atlas, hoàn thành luôn cho một Abyssal Depths kèm boss. Lấy From Below và Dark Depths trước rồi vòng qua trái; **Lord of the Pit** (abyss pit rải khắp vùng có abyss) với node tăng hiệu lực mỗi pit đóng là cặp đáng nhắm. Đọc cảnh báo bug bên dưới về keystone **Balance of Power** trước khi allocate.
 

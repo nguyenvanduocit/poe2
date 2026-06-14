@@ -33,7 +33,7 @@ Giai đoạn đầu không cần point nào: map quanh hub có mirror sẵn và 
 
 **Is this about me... or you?** lấy sớm nhất vì nó mở vòng splinter tự nuôi — splinter chỉ rớt từ Delirium monster ở khu level 75+, node này là điều kiện để income splinter chạy đều khi rời hub. **You can't scare me anymore!** mở Potent Emotion rớt từ unique monster trong fog — Potent Liquid Contempt đang 921 ex (~7,3 div, 2026-06-10) nên một giọt là bằng cả buổi splinter. **I know your childhood fears...** mở Ancient Emotion — nguyên liệu craft :wiki-link{url="https://www.poe2wiki.net/wiki/Timelost_Jewel"}, tầng output đắt nhất của chuỗi; Ancient Potent Liquid Contempt đang 1.265 ex (~10 div). Cụm spread Recurring Nightmares chỉ đáng point khi đã chạy nổi Trial of Madness — chưa tới ngưỡng đó thì point nằm ở node drop hiệu quả hơn node lan fog.
 
-Subtree này còn cộng hưởng với lối chơi rush boss: các node "5% increased chance for a Grand Mirror to appear on a nearby map" gieo Grand Mirror khắp atlas, và Grand Mirror nhân đôi effect tablet ở map đó — ai đang chạy [Boss Rush Fragment Farming](/farming/0-5-boss-rush-fragment-farm) song song thì hai strategy nuôi lẫn nhau, lượt sau đi qua khu có Mirror là tablet nhảy effect gấp đôi không tốn gì thêm.
+Subtree này còn cộng hưởng với lối chơi clear-and-rush: các node "5% increased chance for a Grand Mirror to appear on a nearby map" gieo Grand Mirror khắp atlas, và Grand Mirror nhân đôi effect tablet ở map đó — ai đang chạy [Tablet Supply Farming](/farming/0-5-tablet-supply-farm) song song thì hai strategy nuôi lẫn nhau, lượt sau đi qua khu có Mirror là irradiated tablet nhảy effect gấp đôi, mechanic ngẫu nhiên dày gấp đôi, không tốn gì thêm.
 
 ### Tablets & Map Device
 
@@ -105,5 +105,5 @@ Risk lớn nhất là chính cái đang làm strategy này thơm: giá emotion v
 ## Relationships
 
 - **related_guides** [Delirium và Trial of Madness](/guides/0-5-delirium-trial-of-madness) — cơ chế nền, nhịp mirror, và đủ 16 node subtree mà doc này chỉ trích phần kiếm tiền.
-- **synergizes_with** [Boss Rush Fragment Farming](/farming/0-5-boss-rush-fragment-farm) — Grand Mirror gieo từ subtree Delirium nhân đôi effect tablet cho vòng rush boss, hai strategy nuôi lẫn nhau.
+- **synergizes_with** [Tablet Supply Farming](/farming/0-5-tablet-supply-farm) — Grand Mirror gieo từ subtree Delirium nhân đôi effect tablet cho vòng farm tablet, hai strategy nuôi lẫn nhau.
 - **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — Delirium storyline là một trong ba league lõi hóa của overhaul 0.5.

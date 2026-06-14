@@ -15,7 +15,7 @@ confidence_level: Medium
 
 # Fragment Supply Farming
 
-Đứng phía cung của thị trường fragment 0.5: farm content gốc nhả fragment ra rồi bán cho đám boss-rusher đang đập :wiki-link{url="https://www.poe2wiki.net/wiki/Breachstone"}, gom :wiki-link{url="https://www.poe2wiki.net/wiki/Origin_Cradle"}/:wiki-link{url="https://www.poe2wiki.net/wiki/Origin_Spark"} mở Arbiter of Divinity, hay nhồi :wiki-link{url="https://www.poe2wiki.net/wiki/Simulacrum_Splinter"} vào Realmgate. Boss-rush ăn margin nhanh nhưng phụ thuộc giá fragment đầu vào. Cung side ăn chậm hơn nhưng đứng vững khi rusher ngừng đập. Tier A, investment Low, ~6.5-8.5 div/giờ trong cửa sổ sóng Faded Crisis hiện tại và ~4-6 div/giờ baseline với build companion pack Spirit Walker (poe2scout 2026-06-11, 1 Divine = 124 Exalted Orb). Bài này là mặt ngược của [Boss Rush Fragment Farming](/farming/0-5-boss-rush-fragment-farm): bài kia mua fragment đập, bài này farm fragment bán.
+Đứng phía cung của thị trường fragment 0.5: farm content gốc nhả fragment ra rồi bán cho đám boss-rusher đang đập :wiki-link{url="https://www.poe2wiki.net/wiki/Breachstone"}, gom :wiki-link{url="https://www.poe2wiki.net/wiki/Origin_Cradle"}/:wiki-link{url="https://www.poe2wiki.net/wiki/Origin_Spark"} mở Arbiter of Divinity, hay nhồi :wiki-link{url="https://www.poe2wiki.net/wiki/Simulacrum_Splinter"} vào Realmgate. Boss-rush ăn margin nhanh nhưng phụ thuộc giá fragment đầu vào. Cung side ăn chậm hơn nhưng đứng vững khi rusher ngừng đập. Tier A, investment Low, ~6.5-8.5 div/giờ trong cửa sổ sóng Faded Crisis hiện tại và ~4-6 div/giờ baseline với build companion pack Spirit Walker (poe2scout 2026-06-11, 1 Divine = 124 Exalted Orb). Bài này đứng cùng phe cung với [Tablet Supply Farming](/farming/0-5-tablet-supply-farm) (kia bán tablet, đây bán fragment), ngược phe với đám boss-rusher mua fragment đập.
 
 ## Strategy Overview
 
@@ -174,7 +174,7 @@ Thứ ba là **theo dõi Δ7d swap nguồn**: mỗi sáng trước session check
 
 ## Alternatives & Variations
 
-So với [Boss Rush Fragment Farming](/farming/0-5-boss-rush-fragment-farm) (mặt tiêu thụ): hai chiến lược ngược chiều thị trường, không xung đột — boss-rush ăn margin nhanh khi giá output cao, cung side ăn supply khi giá input cao. Khi Breachstone đắt (như tuần này +154%), cung side win; khi Breachlord Sac đắt (gấp 10x Breachstone, ratio cao), boss-rush win. Theo dõi ratio (giá Sac) / (giá Breachstone): hiện 526 / 56 = 9.4x và đang nén vì input leo nhanh hơn output (Breachstone +154% trong 9 ngày, Sac chỉ +66% 7d). Ratio càng nén thì cung side càng ưu; ratio nở lại là tín hiệu quay về boss-rush.
+So với phe boss-rush (mặt tiêu thụ, mua fragment đập pinnacle): hai bên ngược chiều thị trường, không xung đột — boss-rush ăn margin nhanh khi giá output cao, cung side ăn supply khi giá input cao. Khi Breachstone đắt (như tuần này +154%), cung side win; khi Breachlord Sac đắt (gấp 10x Breachstone, ratio cao), boss-rush win. Theo dõi ratio (giá Sac) / (giá Breachstone): hiện 526 / 56 = 9.4x và đang nén vì input leo nhanh hơn output (Breachstone +154% trong 9 ngày, Sac chỉ +66% 7d). Ratio càng nén thì cung side càng ưu; ratio nở lại là tín hiệu quay về boss-rush.
 
 So với [Breach Rare Juice Farm](/farming/0-5-breach-rare-juice-farm): nó là layer cao cấp của cung Breach. Breach Rare Juice là tầng đỉnh ăn 200% Delirium fog + Partial Translations, return 10-12 div/map nhưng cần ~8-9 div/map juice cost. Strategy này là tầng thường — investment Low, return thấp hơn nhưng break-even từ map đầu. Build dưới sàn Breach Rare Juice (chưa Lv96, chưa 6 div/tablet) thì cung side Breach thường là đúng option.
 
@@ -226,7 +226,7 @@ Re-fetch giá mỗi 3-5 ngày trước khi quote với người mới — fragme
 
 ## Relationships
 
-- **competes_with** [Boss Rush Fragment Farming](/farming/0-5-boss-rush-fragment-farm): mặt tiêu thụ ngược chiều, boss-rush ăn margin output cao, cung side ăn input cao. Theo dõi ratio Sac/Breachstone để pick nguồn.
+- **synergizes_with** [Tablet Supply Farming](/farming/0-5-tablet-supply-farm): cùng phe cung farm-bán cho juicer, khác hàng (fragment vs tablet); đường travel của bên này tự gom hàng của bên kia.
 - **synergizes_with** [Breach Rare Juice Farm](/farming/0-5-breach-rare-juice-farm): cùng nền Breach mechanic, Breach Rare Juice là tầng cao cấp (200% Delirium fog), cung side này là tầng thường investment Low.
 - **synergizes_with** [Withered Willow Delirium Farming](/farming/0-5-withered-willow-delirium-farm): chia sẻ cụm map Delirium hub, splinter bulk farm chồng được với emotion + Raven-Touched Shard jackpot.
 - **synergizes_with** [Abyss Ulaman và Amanamu Farm](/farming/0-5-abyss-ulaman-amanamu-farm): Kulemak's Invitation đi kèm Abyssal boss kill nhưng giá quá thấp để farm chủ động — chạy Abyss strategy thì nhặt thêm Invitation, không đặt làm mục tiêu chính.
