@@ -3,8 +3,8 @@
   "baseCurrencyApiId": "exalted",
   "baseCurrencyText": "Exalted Orb",
   "categoryApiId": "currency",
-  "currentPrice": 102.94172538670009,
-  "currentQuantity": 9611,
+  "currentPrice": 81.43695735496907,
+  "currentQuantity": 9459,
   "dailyStats": [
     {
       "Average": 41.31805466920879,
@@ -106,16 +106,52 @@
       "Volume": 274948
     },
     {
-      "Average": 107.97245489467132,
-      "Close": 102.94172538670009,
+      "Average": 100.39732063551465,
+      "Close": 92.81226126681882,
       "High": 116.63494031494591,
-      "Low": 102.94172538670009,
+      "Low": 92.81226126681882,
       "Open": 116.63494031494591,
       "Time": "2026-06-10",
-      "Volume": 50818
+      "Volume": 289780
+    },
+    {
+      "Average": 82.14844505307458,
+      "Close": 78.08358879857946,
+      "High": 93.77487033822985,
+      "Low": 73.48368552271896,
+      "Open": 91.49497990469649,
+      "Time": "2026-06-11",
+      "Volume": 298577
+    },
+    {
+      "Average": 80.67433844466306,
+      "Close": 79.00368825316279,
+      "High": 85.25697326552083,
+      "Low": 77.79677559148581,
+      "Open": 80.663312141274,
+      "Time": "2026-06-12",
+      "Volume": 324183
+    },
+    {
+      "Average": 77.87237681640211,
+      "Close": 79.11803354388647,
+      "High": 82.07437368208993,
+      "Low": 74.62893702618253,
+      "Open": 77.46764648117303,
+      "Time": "2026-06-13",
+      "Volume": 372791
+    },
+    {
+      "Average": 78.17927176132496,
+      "Close": 80.16119431888464,
+      "High": 80.16119431888464,
+      "Low": 75.14733173060311,
+      "Open": 77.49751883425701,
+      "Time": "2026-06-14",
+      "Volume": 107472
     }
   ],
-  "fetched_at": "2026-06-10T06:00:32Z",
+  "fetched_at": "2026-06-14T08:52:29Z",
   "iconUrl": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxTb2NrZXROdW1iZXJzMDMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ac6398e6a0/CurrencyRerollSocketNumbers03.png",
   "itemId": 4015,
   "kind": "Currency",

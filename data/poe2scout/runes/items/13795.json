@@ -3,8 +3,8 @@
   "baseCurrencyApiId": "exalted",
   "baseCurrencyText": "Exalted Orb",
   "categoryApiId": "expedition",
-  "currentPrice": 188.04726981440467,
-  "currentQuantity": 2121,
+  "currentPrice": 278.28545390579524,
+  "currentQuantity": 3565,
   "dailyStats": [
     {
       "Average": 6.4765014205247935,
@@ -106,16 +106,52 @@
       "Volume": 68080
     },
     {
-      "Average": 190.81372317115773,
-      "Close": 188.04726981440467,
-      "High": 198.10761561743325,
-      "Low": 186.90612633203182,
+      "Average": 181.54105057411212,
+      "Close": 198.94185940161339,
+      "High": 198.94185940161339,
+      "Low": 161.52337961098064,
       "Open": 198.10761561743325,
       "Time": "2026-06-10",
-      "Volume": 11238
+      "Volume": 77396
+    },
+    {
+      "Average": 198.6999725397925,
+      "Close": 489.09975469451666,
+      "High": 489.09975469451666,
+      "Low": 160.76889748409792,
+      "Open": 193.73839940570028,
+      "Time": "2026-06-11",
+      "Volume": 94702
+    },
+    {
+      "Average": 221.83648162798173,
+      "Close": 151.2829077539393,
+      "High": 307.6902417583634,
+      "Low": 151.2829077539393,
+      "Open": 307.6902417583634,
+      "Time": "2026-06-12",
+      "Volume": 110346
+    },
+    {
+      "Average": 114.02071512472268,
+      "Close": 112.80339584297865,
+      "High": 152.77248564307433,
+      "Low": 98.25541733475087,
+      "Open": 152.77248564307433,
+      "Time": "2026-06-13",
+      "Volume": 115323
+    },
+    {
+      "Average": 95.6074833286998,
+      "Close": 89.57724271320939,
+      "High": 108.61216332430978,
+      "Low": 85.49648692446794,
+      "Open": 108.61216332430978,
+      "Time": "2026-06-14",
+      "Volume": 29846
     }
   ],
-  "fetched_at": "2026-06-10T06:00:27Z",
+  "fetched_at": "2026-06-14T08:52:08Z",
   "iconUrl": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvRXhwZWRpdGlvbkxvZ2Jvb2s1Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/841a5e9622/ExpeditionLogbook5.png",
   "itemId": 13795,
   "kind": "Currency",

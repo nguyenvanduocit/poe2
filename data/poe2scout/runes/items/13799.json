@@ -3,8 +3,8 @@
   "baseCurrencyApiId": "exalted",
   "baseCurrencyText": "Exalted Orb",
   "categoryApiId": "expedition",
-  "currentPrice": 8.254516571492523,
-  "currentQuantity": 836,
+  "currentPrice": 8.562586994207289,
+  "currentQuantity": 1231,
   "dailyStats": [
     {
       "Average": 2.423611111111111,
@@ -106,16 +106,52 @@
       "Volume": 31707
     },
     {
-      "Average": 8.392126024562325,
-      "Close": 8.254516571492523,
-      "High": 8.690460412712108,
+      "Average": 14.464510921603548,
+      "Close": 15.51661298893589,
+      "High": 22.980890571240966,
       "Low": 8.094794225276882,
       "Open": 8.690460412712108,
       "Time": "2026-06-10",
-      "Volume": 4382
+      "Volume": 36169
+    },
+    {
+      "Average": 16.392063914045725,
+      "Close": 19.269224795119133,
+      "High": 23.642859181385486,
+      "Low": 10.658649819028494,
+      "Open": 15.459758646987083,
+      "Time": "2026-06-11",
+      "Volume": 39688
+    },
+    {
+      "Average": 8.98313422550177,
+      "Close": 6.394250899927231,
+      "High": 15.215370849382277,
+      "Low": 6.394250899927231,
+      "Open": 15.215370849382277,
+      "Time": "2026-06-12",
+      "Volume": 39179
+    },
+    {
+      "Average": 7.1133572220686245,
+      "Close": 8.215377236559267,
+      "High": 8.215377236559267,
+      "Low": 5.637585653134293,
+      "Open": 6.325043691036088,
+      "Time": "2026-06-13",
+      "Volume": 39203
+    },
+    {
+      "Average": 7.209303368789103,
+      "Close": 7.347623949209696,
+      "High": 7.738181000225681,
+      "Low": 6.7175839753928805,
+      "Open": 7.364700050305837,
+      "Time": "2026-06-14",
+      "Volume": 10598
     }
   ],
-  "fetched_at": "2026-06-10T06:00:30Z",
+  "fetched_at": "2026-06-14T08:52:06Z",
   "iconUrl": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvU3BlY2lhbEV4cGVkaXRpb25QYWdlMyIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/9eb5b576fc/SpecialExpeditionPage3.png",
   "itemId": 13799,
   "kind": "Currency",

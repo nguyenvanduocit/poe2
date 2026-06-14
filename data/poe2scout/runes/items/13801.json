@@ -3,8 +3,8 @@
   "baseCurrencyApiId": "exalted",
   "baseCurrencyText": "Exalted Orb",
   "categoryApiId": "expedition",
-  "currentPrice": 8.542993458819407,
-  "currentQuantity": 415,
+  "currentPrice": 6.16534303341185,
+  "currentQuantity": 571,
   "dailyStats": [
     {
       "Average": 3.416071428571428,
@@ -106,16 +106,52 @@
       "Volume": 15175
     },
     {
-      "Average": 8.641426479566059,
-      "Close": 8.542993458819407,
-      "High": 9.401888297882703,
-      "Low": 7.886837296001274,
+      "Average": 8.790677390029753,
+      "Close": 8.470698484636019,
+      "High": 10.215201300570955,
+      "Low": 7.302714416563544,
       "Open": 9.072526587074437,
       "Time": "2026-06-10",
-      "Volume": 2057
+      "Volume": 13879
+    },
+    {
+      "Average": 8.369646002326473,
+      "Close": 9.136977876282693,
+      "High": 9.990795418430553,
+      "Low": 7.432315796876692,
+      "Open": 8.817503839001862,
+      "Time": "2026-06-11",
+      "Volume": 15135
+    },
+    {
+      "Average": 5.227690055462101,
+      "Close": 3.226519337016575,
+      "High": 8.54242803519591,
+      "Low": 3.226519337016575,
+      "Open": 8.54242803519591,
+      "Time": "2026-06-12",
+      "Volume": 15277
+    },
+    {
+      "Average": 4.1231274655820584,
+      "Close": 4.975809362543379,
+      "High": 5.376347597582843,
+      "Low": 3.265144670457204,
+      "Open": 3.707916244582225,
+      "Time": "2026-06-13",
+      "Volume": 15282
+    },
+    {
+      "Average": 5.931869794309311,
+      "Close": 8.739248378907128,
+      "High": 8.739248378907128,
+      "Low": 4.360822945128651,
+      "Open": 4.753316163219806,
+      "Time": "2026-06-14",
+      "Volume": 5499
     }
   ],
-  "fetched_at": "2026-06-10T06:00:31Z",
+  "fetched_at": "2026-06-14T08:52:07Z",
   "iconUrl": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvU3BlY2lhbEV4cGVkaXRpb25QYWdlMiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/057899d625/SpecialExpeditionPage2.png",
   "itemId": 13801,
   "kind": "Currency",

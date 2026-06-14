@@ -3,8 +3,8 @@
   "baseCurrencyApiId": "exalted",
   "baseCurrencyText": "Exalted Orb",
   "categoryApiId": "expedition",
-  "currentPrice": 3712.116396304163,
-  "currentQuantity": 227,
+  "currentPrice": 3738.055888349759,
+  "currentQuantity": 421,
   "dailyStats": [
     {
       "Average": 121.5197601911512,
@@ -97,16 +97,52 @@
       "Volume": 7995
     },
     {
-      "Average": 3727.4599698413176,
-      "Close": 3712.116396304163,
+      "Average": 3655.531142607449,
+      "Close": 3588.9427786627066,
       "High": 3766.795863017247,
-      "Low": 3674.693279832355,
+      "Low": 3447.753545208498,
       "Open": 3766.795863017247,
       "Time": "2026-06-10",
-      "Volume": 1030
+      "Volume": 8067
+    },
+    {
+      "Average": 3938.6268879125205,
+      "Close": 5809.169573908179,
+      "High": 6321.04964901733,
+      "Low": 3458.593823345668,
+      "Open": 3679.223739149717,
+      "Time": "2026-06-11",
+      "Volume": 10606
+    },
+    {
+      "Average": 3393.3051601717125,
+      "Close": 3268.19388646715,
+      "High": 4423.160290045451,
+      "Low": 2932.775847670843,
+      "Open": 4423.160290045451,
+      "Time": "2026-06-12",
+      "Volume": 14763
+    },
+    {
+      "Average": 3152.9745687984937,
+      "Close": 3267.342322908808,
+      "High": 3376.652932684802,
+      "Low": 2908.799600512546,
+      "Open": 3284.9755724459314,
+      "Time": "2026-06-13",
+      "Volume": 14219
+    },
+    {
+      "Average": 3103.840775367062,
+      "Close": 3065.407423642358,
+      "High": 3169.137605293985,
+      "Low": 2991.132476870371,
+      "Open": 3169.137605293985,
+      "Time": "2026-06-14",
+      "Volume": 3294
     }
   ],
-  "fetched_at": "2026-06-10T06:00:29Z",
+  "fetched_at": "2026-06-14T08:52:04Z",
   "iconUrl": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvU3BlY2lhbEV4cGVkaXRpb25QYWdlNSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/e4e66b1f57/SpecialExpeditionPage5.png",
   "itemId": 13797,
   "kind": "Currency",

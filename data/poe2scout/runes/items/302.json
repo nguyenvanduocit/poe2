@@ -3,8 +3,8 @@
   "baseCurrencyApiId": "exalted",
   "baseCurrencyText": "Exalted Orb",
   "categoryApiId": "fragments",
-  "currentPrice": 73.29772572998333,
-  "currentQuantity": 857,
+  "currentPrice": 57.45269902371848,
+  "currentQuantity": 1082,
   "dailyStats": [
     {
       "Average": 36.026005736789216,
@@ -115,16 +115,43 @@
       "Volume": 26735
     },
     {
-      "Average": 55.9984196249218,
-      "Close": 56.78960341743274,
+      "Average": 55.85655648994132,
+      "Close": 57.16625419429678,
       "High": 58.83293684899362,
-      "Low": 53.770716831325124,
+      "Low": 52.91653561544503,
       "Open": 54.434263126680925,
       "Time": "2026-06-11",
-      "Volume": 16395
+      "Volume": 28116
+    },
+    {
+      "Average": 57.859697756128746,
+      "Close": 54.20342646542982,
+      "High": 61.32645239187238,
+      "Low": 54.20342646542982,
+      "Open": 57.435048192352525,
+      "Time": "2026-06-12",
+      "Volume": 30466
+    },
+    {
+      "Average": 55.604501175034954,
+      "Close": 51.48625219929784,
+      "High": 58.11458438247693,
+      "Low": 51.48625219929784,
+      "Open": 54.256645287275276,
+      "Time": "2026-06-13",
+      "Volume": 32932
+    },
+    {
+      "Average": 52.19936334823663,
+      "Close": 51.835957222762865,
+      "High": 53.424192044300646,
+      "Low": 50.708961365605425,
+      "Open": 51.934816838557154,
+      "Time": "2026-06-14",
+      "Volume": 11195
     }
   ],
-  "fetched_at": "2026-06-11T15:14:54Z",
+  "fetched_at": "2026-06-14T09:07:32Z",
   "iconUrl": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaHN0b25lIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d60587d724/Breachstone.png",
   "itemId": 302,
   "kind": "Currency",

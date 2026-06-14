@@ -3,8 +3,8 @@
   "baseCurrencyApiId": "exalted",
   "baseCurrencyText": "Exalted Orb",
   "categoryApiId": "fragments",
-  "currentPrice": 423.8736090900275,
-  "currentQuantity": 1703,
+  "currentPrice": 352.095509891655,
+  "currentQuantity": 1833,
   "dailyStats": [
     {
       "Average": 324.798073987315,
@@ -61,16 +61,43 @@
       "Volume": 52161
     },
     {
-      "Average": 362.26971960445223,
-      "Close": 349.3238376926624,
+      "Average": 365.9962909369395,
+      "Close": 379.22295076658804,
       "High": 397.78187052065704,
       "Low": 326.45004348753815,
       "Open": 397.78187052065704,
       "Time": "2026-06-11",
-      "Volume": 31163
+      "Volume": 52860
+    },
+    {
+      "Average": 355.39631751630765,
+      "Close": 375.8494404834191,
+      "High": 378.8972979574501,
+      "Low": 323.60762035974636,
+      "Open": 373.52736147251886,
+      "Time": "2026-06-12",
+      "Volume": 56101
+    },
+    {
+      "Average": 383.59746549770125,
+      "Close": 500.73798321862165,
+      "High": 500.73798321862165,
+      "Low": 353.7756699304151,
+      "Open": 373.92022026131264,
+      "Time": "2026-06-13",
+      "Volume": 60688
+    },
+    {
+      "Average": 470.16941045704505,
+      "Close": 433.6017760435786,
+      "High": 504.6562889846258,
+      "Low": 428.5587372388882,
+      "Open": 494.396584040411,
+      "Time": "2026-06-14",
+      "Volume": 20056
     }
   ],
-  "fetched_at": "2026-06-11T15:16:38Z",
+  "fetched_at": "2026-06-14T09:07:29Z",
   "iconUrl": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yRWdnIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c386e361d1/PrecursorEgg.png",
   "itemId": 15009,
   "kind": "Currency",

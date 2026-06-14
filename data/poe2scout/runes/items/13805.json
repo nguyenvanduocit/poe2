@@ -3,8 +3,8 @@
   "baseCurrencyApiId": "exalted",
   "baseCurrencyText": "Exalted Orb",
   "categoryApiId": "expedition",
-  "currentPrice": 64.56101995568568,
-  "currentQuantity": 894,
+  "currentPrice": 62.881251354444736,
+  "currentQuantity": 1332,
   "dailyStats": [
     {
       "Average": 3.4338385025062657,
@@ -106,16 +106,52 @@
       "Volume": 30046
     },
     {
-      "Average": 60.02866301768008,
-      "Close": 64.56101995568568,
-      "High": 64.56101995568568,
+      "Average": 84.24746376986252,
+      "Close": 87.23386158470485,
+      "High": 111.23368433468552,
       "Low": 57.22254855199095,
       "Open": 57.941799910817984,
       "Time": "2026-06-10",
-      "Volume": 4656
+      "Volume": 32730
+    },
+    {
+      "Average": 98.15224056672474,
+      "Close": 100.82772700686684,
+      "High": 127.12345430868098,
+      "Low": 79.6812092189791,
+      "Open": 84.35835253290746,
+      "Time": "2026-06-11",
+      "Volume": 34197
+    },
+    {
+      "Average": 49.76751745185401,
+      "Close": 22.206002816021126,
+      "High": 80.38133899571301,
+      "Low": 22.052026004020135,
+      "Open": 80.38133899571301,
+      "Time": "2026-06-12",
+      "Volume": 41019
+    },
+    {
+      "Average": 27.183499174643533,
+      "Close": 31.392132622627813,
+      "High": 35.91075582093117,
+      "Low": 21.943271042397125,
+      "Open": 23.301299119901238,
+      "Time": "2026-06-13",
+      "Volume": 40085
+    },
+    {
+      "Average": 31.397233227444225,
+      "Close": 30.114266753455738,
+      "High": 33.55957191413364,
+      "Low": 29.049377722751757,
+      "Open": 32.901632027174365,
+      "Time": "2026-06-14",
+      "Volume": 11773
     }
   ],
-  "fetched_at": "2026-06-10T06:00:29Z",
+  "fetched_at": "2026-06-14T08:52:05Z",
   "iconUrl": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvU3BlY2lhbEV4cGVkaXRpb25QYWdlMSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/e4b423d772/SpecialExpeditionPage1.png",
   "itemId": 13805,
   "kind": "Currency",

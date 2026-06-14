@@ -3,8 +3,8 @@
   "baseCurrencyApiId": "exalted",
   "baseCurrencyText": "Exalted Orb",
   "categoryApiId": "fragments",
-  "currentPrice": 582.1527873160995,
-  "currentQuantity": 703,
+  "currentPrice": 546.0800258112915,
+  "currentQuantity": 751,
   "dailyStats": [
     {
       "Average": 192.16104333557638,
@@ -106,16 +106,43 @@
       "Volume": 22821
     },
     {
-      "Average": 525.5993539275735,
-      "Close": 529.4650613584174,
+      "Average": 530.268045345008,
+      "Close": 600.3486728919122,
       "High": 625.712335739446,
       "Low": 473.4634761026803,
       "Open": 625.712335739446,
       "Time": "2026-06-11",
-      "Volume": 13799
+      "Volume": 24225
+    },
+    {
+      "Average": 543.3677082590318,
+      "Close": 550.6775385219449,
+      "High": 585.4400690269042,
+      "Low": 520.8998902437276,
+      "Open": 585.4400690269042,
+      "Time": "2026-06-12",
+      "Volume": 26523
+    },
+    {
+      "Average": 525.3718908791168,
+      "Close": 588.2980867864168,
+      "High": 602.3495565912395,
+      "Low": 489.3893629505722,
+      "Open": 533.0966389593542,
+      "Time": "2026-06-13",
+      "Volume": 28430
+    },
+    {
+      "Average": 622.0905874690077,
+      "Close": 649.3859028662682,
+      "High": 649.3859028662682,
+      "Low": 597.7634523815002,
+      "Open": 597.7634523815002,
+      "Time": "2026-06-14",
+      "Volume": 9711
     }
   ],
-  "fetched_at": "2026-06-11T15:16:38Z",
+  "fetched_at": "2026-06-14T09:07:28Z",
   "iconUrl": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9CcmVhY2hsb3JkU2FjIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/07670f51fe/BreachlordSac.png",
   "itemId": 13453,
   "kind": "Currency",
