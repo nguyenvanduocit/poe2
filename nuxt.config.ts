@@ -219,6 +219,10 @@ export default defineNuxtConfig({
         currentLeague: 'Runes of Aldur',
         currentPatch: '0.5.0',
         ign: 'ThaoCamVienSaiGon',
+        // Reader comments (andy-note-nuxt layer). Backend: CF Pages Function
+        // (functions/api/comments.ts) + Workers KV binding `COMMENTS` +
+        // `COMMENTS_RESOLVE_SECRET` env var, configured on this Pages project.
+        comments: { enabled: true },
       },
       menu: [
         { name: 'Builds', url: '/builds', weight: 1 },
