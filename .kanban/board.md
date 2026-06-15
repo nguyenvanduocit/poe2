@@ -13,11 +13,12 @@
 
 ## Doing
 
-- [T-049](tasks/T-049-public-release-prep.md) Public-release prep — clean docs, history, credentials, license — high/M
 - [T-017](tasks/T-017-playwriter-replaces-poe-bridge-transport.md) Thay poe-bridge bằng playwriter làm transport GGG (cả poe1+poe2) — high/L
 - [T-020](tasks/T-020-seo-full-support-gsc-bing.md) Full SEO support (@nuxtjs/seo) + GSC DNS-TXT + Bing registration — high/L
 
 ## Done
+
+- [T-049](tasks/T-049-public-release-prep.md) Public-release prep — DONE: history rewrite purged data/wiki+data/poedb+stream/PressKit (.git 589M→19M, 11928→576 tracked files), MIT+CC-BY-NC license, .env.example, Firebase config→env vars + apiKey redacted from history, gitleaks clean (147 commits), 0 broken links, build green (908 routes), force-pushed main. Remaining manual: set FIREBASE_* env vars in CF Pages + flip repo to public.
 
 - [T-048](tasks/T-048-wikilink-trade-affordance.md) WikiLink trade affordance — icon + popover button thay plain `[trade]` link — medium/S (DONE 2026-06-12: trade link trong content render thành chữ "trade" coral chen prose — user "nhìn gớm". Đưa trade vào `WikiLink.vue` qua prop optional `trade` (URL): chip item giữ nguyên + icon shopping-cart compact ngay sau tên (default `--c-muted`, hover `--c-primary`, `color-mix` bg, token-only no hex mới), truyền xuống `WikiPopover.vue` render nút "MỞ TRADE" cart-icon ở đáy card giá. Root từ `<a>` → `<span class="wl" white-space:nowrap>` bọc 2 anchor + ClientOnly popover. Rewrite 27 link doc spirit-and-spirit-reservation từ `:wiki-link{url} [trade](url)` → `:wiki-link{url trade=url}` (0 leftover markdown link). URL trade = durable `trade2/search/poe2/<league>?q=<json>` name/type per item, status online, ASCII apostrophe — verified live qua trade API (name=unique, type=Solar Amulet/Soul Core/Mystic Alloy/Dialla's/Atziri's) + e2e navigation Matsya(12)/Sylvan's(12 apostrophe). Parser remark-mdc xác nhận trade attr attach đúng component, 0 stray link node, apostrophe-URL nguyên. Verify: generate 882 routes/0 err/0 warn/0 fail; static HTML 27 `<a.wl-trade>` icon + 27 trade2 href; screenshot live :3000 inline cart + popover button on-theme. Skip non-tradeable: quest skulls (bound)/keystones/skill gems/Uhtred's Boon. Amanamu's Gaze valid nhưng 0 online listing lúc check. Trade link league-bound Runes of Aldur (mọi trade URL đều vậy). PRD card T-048.)
 
