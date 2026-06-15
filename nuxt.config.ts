@@ -122,21 +122,23 @@ export default defineNuxtConfig({
 
   // Firebase project `poe-comments` (Google auth + Firestore), consumed by the
   // theme's reader-comments feature. These are public web-app config values
-  // (safe in the client bundle by design); access is enforced by the deployed
-  // Firestore security rules + the Google "Authorized domains" list, not by
-  // keeping this secret. No `auth` block: this is a static SSG site, so the
-  // theme drives Google sign-in through the client `firebase/auth` SDK rather
-  // than nuxt-vuefire's auth module (which would pull `firebase-admin` into the
-  // SSR build for server-side sessions a static host can't run). VueFire still
-  // provides the Firebase app + Firestore (`useFirestore` / `useCollection`).
+  // (safe in the client bundle by design), but sourced from build-time env vars
+  // so they stay out of the repo. Set them locally in `.env` and in the
+  // Cloudflare Pages build environment (see `.env.example`). Access is enforced
+  // by the deployed Firestore security rules + the Google "Authorized domains"
+  // list, not by keeping these secret. No `auth` block: this is a static SSG
+  // site, so the theme drives Google sign-in through the client `firebase/auth`
+  // SDK rather than nuxt-vuefire's auth module (which would pull `firebase-admin`
+  // into the SSR build for server-side sessions a static host can't run).
+  // VueFire still provides the Firebase app + Firestore.
   vuefire: {
     config: {
-      apiKey: '***REMOVED-FIREBASE-API-KEY***',
-      authDomain: 'poe-comments.firebaseapp.com',
-      projectId: 'poe-comments',
-      storageBucket: 'poe-comments.firebasestorage.app',
-      messagingSenderId: '70154526185',
-      appId: '1:70154526185:web:ee3e276669a06b1bd87f78',
+      apiKey: process.env.FIREBASE_API_KEY,
+      authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+      projectId: process.env.FIREBASE_PROJECT_ID,
+      storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+      messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+      appId: process.env.FIREBASE_APP_ID,
     },
   },
 
