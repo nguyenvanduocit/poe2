@@ -91,9 +91,9 @@ Dùng tool Read với path tuyệt đối, vd `data/wiki/The_Hollow_Mask.md`.
 1. **Locate**: `rg`/`find` trong `data/wiki/`.
 2. **Read** file `.md`.
 3. **Decide folder** (mechanics / guides / farming / builds / characters — xem `CLAUDE.md`).
-4. **Scaffold** via `/vault.new`.
+4. **Tạo file mới** theo template tương ứng trong `templates/` nếu chưa có.
 5. **Compose** theo author voice — paraphrase, KHÔNG paste raw, KHÔNG "theo poe2wiki...".
-6. **Validate** `bun run validate --path <file>`.
+6. **Validate** frontmatter khớp schema `content.config.ts` (build `bun run generate` fail nếu sai).
 
 ## Game Concept Linking (POE2)
 

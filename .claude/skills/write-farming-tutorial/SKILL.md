@@ -26,13 +26,13 @@ Skill này viết tutorial farming strategy trong `content/farming/` theo **cấ
 
 - `$topic_or_path` — Một trong:
   - **Path** đến file đã có (vd `content/farming/harvest-rush.md`) → polish / rewrite
-  - **Topic** ngắn (vd `harvest`, `breach currency`) → skill glob lookup. File chưa tồn tại → REFUSE, gợi ý `/vault.new` trước.
+  - **Topic** ngắn (vd `harvest`, `breach currency`) → skill glob lookup. File chưa tồn tại → REFUSE, gợi ý tạo file mới theo `templates/farming-template.md` trước.
 
 ## Goal
 
 File `.md` trong `content/farming/` với:
 
-- Frontmatter pass `bun run validate --path <file>` zero CRITICAL error.
+- Frontmatter khớp schema `content.config.ts` (build `bun run generate` fail nếu sai).
 - **Section right-sized** — required core (Intro + Strategy Overview + Loot Breakdown + Failure Modes + Quick Reference Card) + optional menu, không ép số section cố định (xem "Section structure").
 - Frontmatter `strategy_tier` / `investment_tier` / `confidence_level` + profit/hour (state inline có timestamp, KHÔNG phải frontmatter field) re-state ở intro paragraph (không lặp 2 chỗ same wording).
 - Mọi số (profit, tablet cost, drop value) **có timestamp** ("tính đến 2026-06-05, Omen of Sinistral Erasure ~3 div/cái") — số không có timestamp = fabricate.
@@ -101,7 +101,7 @@ File `.md` trong `content/farming/` với:
 ## Steps
 
 ### 1. Resolve target file
-Path → `test -f`. Topic → `ls content/farming/*<slug>*.md`. Không tìm thấy → REFUSE + `/vault.new`.
+Path → `test -f`. Topic → `ls content/farming/*<slug>*.md`. Không tìm thấy → REFUSE + gợi ý tạo file mới theo `templates/farming-template.md`.
 
 **Success criteria**: File path absolute, frontmatter readable.
 
@@ -134,7 +134,7 @@ Follow Voice rules + Section structure. Atlas tree section: prose + image link n
 **Success criteria**: required core + đúng các optional section cần — mỗi section ≥2 câu nội dung thật, không section độn; mọi số có timestamp; mọi game term dùng `:wiki-link`.
 
 ### 6. Validate
-`bun run validate --path <file>`.
+Frontmatter khớp schema `content.config.ts` — chạy `bun run generate` để verify.
 
 **Success criteria**: Exit 0.
 

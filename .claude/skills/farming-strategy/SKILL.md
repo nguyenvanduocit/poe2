@@ -3,7 +3,6 @@ name: farming-strategy
 description: POE2 Farming Strategy Analyzer (0.5 Runes of Aldur+). Analyze POE2 economy, determine optimal farming strategies (Remnant + Runic Recipe, Ocean Exploring, Atlas Master juicing, Pinnacle boss farming, Genesis Tree crafting), and generate strategy documents in content/farming/. Use when user asks about POE2 farming, currency generation, what to farm in Runes of Aldur, or wants to compare POE2 farming strategies.
 allowed-tools:
   - Bash(bun .claude/skills/farming-strategy/scripts/*:*)
-  - Bash(bun run validate:*)
 context: inline
 ---
 
@@ -242,14 +241,14 @@ bun .claude/skills/farming-strategy/scripts/analyze.ts --strategy <best> --maps-
 # - poe.ninja/poe2 build data (/poe-ninja skill — đã support POE2)
 
 # Step 5: Generate strategy doc
-# Tạo trong content/farming/ với template templates/farming-template.md (qua /vault.new)
+# Tạo trong content/farming/ với template templates/farming-template.md
 # Naming: 0-5-<strategy-name>.md (vd 0-5-remnant-runic-recipe.md)
 ```
 
 ## Output Location
 
 **Generated docs go in:** `content/farming/`
-**Template:** `templates/farming-template.md` (use `/vault.new` skill scaffold)
+**Template:** `templates/farming-template.md` (tạo file mới theo template tương ứng trong `templates/`)
 **Naming:** `0-5-<strategy-name>.md` cho POE2 0.5 (vd `0-5-remnant-runic-recipe.md`, `0-5-ocean-exploring.md`)
 **Frontmatter `game: poe2`** + `league: 'Runes of Aldur'` + `patch: 0.5.0`
 

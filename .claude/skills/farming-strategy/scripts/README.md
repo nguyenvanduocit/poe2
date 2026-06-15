@@ -96,7 +96,7 @@ bun .claude/skills/farming-strategy/scripts/analyze.ts --strategy remnant-runic 
 5. [ ] Author STRATEGIES record từ 10 archetype trong SKILL.md, mỗi cái với realistic input quantity + maps_per_hour estimate (verify với in-game testing tuần đầu league).
 6. [ ] Test với current character POE2 0.5 (TBD) — fetch real character envelope qua `/pob`, cross-check build_requirements field thực tế tank được strategy.
 7. [ ] Update `SKILL.md` line "Status: SCAFFOLD" → "Status: ACTIVE" + bump version 0.1.0 → 1.0.0 + remove "(TODO)" markers.
-8. [ ] Test snapshot pipeline end-to-end: `market-snapshot.ts --output snapshots/poe2/<date>.json` → `analyze.ts --compare ...` → generate strategy doc trong `content/farming/0-5-<strategy>.md` qua `/vault.new`.
+8. [ ] Test snapshot pipeline end-to-end: `market-snapshot.ts --output snapshots/poe2/<date>.json` → `analyze.ts --compare ...` → generate strategy doc trong `content/farming/0-5-<strategy>.md` theo template `templates/farming-template.md`.
 
 ## Confidence labels
 

@@ -22,7 +22,7 @@ Hậu quả: mọi lệnh trong skill (status check, manual trigger, recreate, v
 ## Requirements
 
 - Đổi mọi tham chiếu: project `poe`→`poe2`, repo `poe-n`→`poe2`, subdomain `poe-70i`→`poe2-7sl`, domain `poe.aiocean.io`→`poe2.aiocean.io`.
-- Giữ nguyên giá trị đã verify khớp giữa 2 project: CF account `a44473eab2f968599bc24d5d1a4853f1`, build_command, dest_dir `dist`, compat `2025-11-04`, build_image v3, env NODE_VERSION=20 / BUN_VERSION=1.2.5.
+- Giữ nguyên giá trị đã verify khớp giữa 2 project: CF account (`$CF_ACCOUNT_ID`), build_command, dest_dir `dist`, compat `2025-11-04`, build_image v3, env NODE_VERSION=20 / BUN_VERSION=1.2.5.
 - Clean-slate: không để lại "trước đây là poe-n", không ghi chú lịch sử tách repo trong body skill (history thuộc git, không thuộc skill).
 - Non-goal: KHÔNG đụng vào project CF `poe`/`poe-n` cũ (để nguyên cho poe1 hoặc xử lý riêng); KHÔNG sửa skill bên `../poe1/`.
 

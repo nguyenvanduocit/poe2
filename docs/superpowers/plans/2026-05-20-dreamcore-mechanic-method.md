@@ -31,7 +31,7 @@
 - [ ] **Step 1: Read current 5-Lens section to confirm exact content**
 
 ```bash
-sed -n '143,173p' /Users/firegroup/projects/poeai/.claude/agents/mechanic-researcher.md
+sed -n '143,173p' ../poeai/.claude/agents/mechanic-researcher.md
 ```
 
 Expected: shows `<Investigation_Criteria_Five_Lenses>` block with 5 numbered items.
@@ -104,7 +104,7 @@ Edit the file, replacing the entire `<Investigation_Criteria_Five_Lenses>` tag a
 - [ ] **Step 3: Re-read file to verify replacement**
 
 ```bash
-sed -n '143,210p' /Users/firegroup/projects/poeai/.claude/agents/mechanic-researcher.md
+sed -n '143,210p' ../poeai/.claude/agents/mechanic-researcher.md
 ```
 
 Expected: shows `<Investigation_Criteria_Six_Lenses>` block with 6 numbered items.
@@ -171,7 +171,7 @@ Replace with:
 - [ ] **Step 3: Re-read file to verify both replacements**
 
 ```bash
-sed -n '101,125p' /Users/firegroup/projects/poeai/.claude/agents/mechanic-researcher.md
+sed -n '101,125p' ../poeai/.claude/agents/mechanic-researcher.md
 ```
 
 Expected: M001-M006 in Phase 2 plan + updated evaluator pass criteria in Phase 3.
@@ -240,7 +240,7 @@ Replace with:
 - [ ] **Step 2: Re-read file to verify both blocks present**
 
 ```bash
-grep -A 12 "Dreamcore_Signature_Checklist" /Users/firegroup/projects/poeai/.claude/agents/mechanic-researcher.md
+grep -A 12 "Dreamcore_Signature_Checklist" ../poeai/.claude/agents/mechanic-researcher.md
 ```
 
 Expected: shows the new checklist block with 8 trait dòng.
@@ -299,8 +299,8 @@ Replace with:
 - [ ] **Step 3: Re-read full agent file for sanity check**
 
 ```bash
-wc -l /Users/firegroup/projects/poeai/.claude/agents/mechanic-researcher.md
-grep -c "Lens" /Users/firegroup/projects/poeai/.claude/agents/mechanic-researcher.md
+wc -l ../poeai/.claude/agents/mechanic-researcher.md
+grep -c "Lens" ../poeai/.claude/agents/mechanic-researcher.md
 ```
 
 Expected: line count > 300 (file grew), grep "Lens" returns multiple matches including new 6 lenses + checklist references.
@@ -308,7 +308,7 @@ Expected: line count > 300 (file grew), grep "Lens" returns multiple matches inc
 - [ ] **Step 4: Commit agent changes**
 
 ```bash
-cd /Users/firegroup/projects/poeai
+cd ../poeai
 git add .claude/agents/mechanic-researcher.md
 git commit -m "agent(mechanic): encode 8 Dreamcore trait — 6 lens + M001-M006 + signature checklist
 
@@ -408,8 +408,8 @@ Replace with:
 - [ ] **Step 2: Re-read skill file to verify replacement**
 
 ```bash
-grep -c "^## " /Users/firegroup/projects/poeai/.claude/skills/write-mechanic-tutorial/SKILL.md
-grep "^[0-9]*\." /Users/firegroup/projects/poeai/.claude/skills/write-mechanic-tutorial/SKILL.md | head -15
+grep -c "^## " ../poeai/.claude/skills/write-mechanic-tutorial/SKILL.md
+grep "^[0-9]*\." ../poeai/.claude/skills/write-mechanic-tutorial/SKILL.md | head -15
 ```
 
 Expected: section list shows 1-11 items, includes "Math Chain", "Cost & Restrictions", "Verdict & Open Questions", "Patch Evolution".
@@ -478,8 +478,8 @@ Replace with:
 - [ ] **Step 2: Re-read skill file to verify replacement**
 
 ```bash
-grep -c "^[0-9]\+\." /Users/firegroup/projects/poeai/.claude/skills/write-mechanic-tutorial/SKILL.md
-grep "Numeric discipline\|Entity naming\|Calm measured\|No filler\|Verdict-with-open" /Users/firegroup/projects/poeai/.claude/skills/write-mechanic-tutorial/SKILL.md
+grep -c "^[0-9]\+\." ../poeai/.claude/skills/write-mechanic-tutorial/SKILL.md
+grep "Numeric discipline\|Entity naming\|Calm measured\|No filler\|Verdict-with-open" ../poeai/.claude/skills/write-mechanic-tutorial/SKILL.md
 ```
 
 Expected: 5 new rule headings present.
@@ -535,7 +535,7 @@ Replace ENTIRE old "### 6. Validate" block (4 dòng) với block mới (gồm 6a
 - [ ] **Step 2: Verify Step 6 replacement**
 
 ```bash
-grep -B 1 -A 3 "Dreamcore Signature Self-Check" /Users/firegroup/projects/poeai/.claude/skills/write-mechanic-tutorial/SKILL.md
+grep -B 1 -A 3 "Dreamcore Signature Self-Check" ../poeai/.claude/skills/write-mechanic-tutorial/SKILL.md
 ```
 
 Expected: shows new Step 6a block.
@@ -543,7 +543,7 @@ Expected: shows new Step 6a block.
 - [ ] **Step 3: Verify Step 7 still exists**
 
 ```bash
-grep "^### 7" /Users/firegroup/projects/poeai/.claude/skills/write-mechanic-tutorial/SKILL.md
+grep "^### 7" ../poeai/.claude/skills/write-mechanic-tutorial/SKILL.md
 ```
 
 Expected: `### 7. Summary cho user` still present (unchanged).
@@ -551,7 +551,7 @@ Expected: `### 7. Summary cho user` still present (unchanged).
 - [ ] **Step 4: Commit skill changes**
 
 ```bash
-cd /Users/firegroup/projects/poeai
+cd ../poeai
 git add .claude/skills/write-mechanic-tutorial/SKILL.md
 git commit -m "skill(mechanic-tutorial): encode Dreamcore method — 11 H2 + 5 voice rules + signature checklist
 
@@ -571,10 +571,10 @@ Expected: 1 file changed.
 
 ```bash
 echo "=== Agent Lens names ==="
-grep "^  [0-9]\. \*\*" /Users/firegroup/projects/poeai/.claude/agents/mechanic-researcher.md | head -10
+grep "^  [0-9]\. \*\*" ../poeai/.claude/agents/mechanic-researcher.md | head -10
 echo ""
 echo "=== Skill Section names ==="
-grep "^## " /Users/firegroup/projects/poeai/.claude/skills/write-mechanic-tutorial/SKILL.md | head -15
+grep "^## " ../poeai/.claude/skills/write-mechanic-tutorial/SKILL.md | head -15
 ```
 
 Expected mapping:
@@ -589,10 +589,10 @@ Expected mapping:
 
 ```bash
 echo "=== Agent checklist ==="
-grep -A 9 "Dreamcore_Signature_Checklist" /Users/firegroup/projects/poeai/.claude/agents/mechanic-researcher.md
+grep -A 9 "Dreamcore_Signature_Checklist" ../poeai/.claude/agents/mechanic-researcher.md
 echo ""
 echo "=== Skill checklist ==="
-grep -A 9 "Dreamcore Signature Self-Check" /Users/firegroup/projects/poeai/.claude/skills/write-mechanic-tutorial/SKILL.md
+grep -A 9 "Dreamcore Signature Self-Check" ../poeai/.claude/skills/write-mechanic-tutorial/SKILL.md
 ```
 
 Expected: 8 trait lines match 1-1 between agent and skill, terminology consistent ("Atomic scope", "Verbatim tooltip + visual anchor", "Hypothesis Trail", "Math Chain", "Wording Distinction", "Patch Evolution", "Named adoption proof", "Cost number + restriction").
@@ -600,7 +600,7 @@ Expected: 8 trait lines match 1-1 between agent and skill, terminology consisten
 - [ ] **Step 3: Spot-check no broken refs (M001-M005 leftovers)**
 
 ```bash
-grep "M00[1-5]" /Users/firegroup/projects/poeai/.claude/agents/mechanic-researcher.md | grep -v "M00[1-6]"
+grep "M00[1-5]" ../poeai/.claude/agents/mechanic-researcher.md | grep -v "M00[1-6]"
 ```
 
 Expected: zero matches (no orphan "M005" references that should be M006). Also check Examples section for outdated M references.
@@ -625,7 +625,7 @@ Check each spec section's items against this plan:
 If Step 3 found broken refs → fix + commit:
 
 ```bash
-cd /Users/firegroup/projects/poeai
+cd ../poeai
 git add .claude/agents/mechanic-researcher.md .claude/skills/write-mechanic-tutorial/SKILL.md
 git commit -m "fix(mechanic): align Lens names + checklist terminology cross-file
 

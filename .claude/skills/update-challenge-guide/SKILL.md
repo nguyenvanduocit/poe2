@@ -3,7 +3,6 @@ name: update-challenge-guide
 description: Fetch live Path of Exile 2 challenge progress (via Playwriter or pasted HTML), then hand-write the canonical POE2 challenge guide with semantic reasoning — pick which of the 8 Runes of Aldur challenges to push next based on user's target tier (2/4/6/8), bundle-ability with current build, and cost/effort tradeoffs. POE2 0.5 is the FIRST league with a challenge system. Use when the user runs /update-challenge-guide, asks to refresh the POE2 challenge guide, or provides POE2 challenge page HTML.
 allowed-tools:
   - Bash(playwriter:*)
-  - Bash(bun run validate:*)
   - Bash(git diff:*)
   - Bash(git status:*)
 argument-hint: "[--url <challenge-page-url> | --account <poe-account> | --html-file <file>]"
@@ -42,7 +41,7 @@ https://www.pathofexile.com/account/view-profile/hopthuxacnhan-3062/challenges?g
 
 > **TODO khi POE2 0.5 live (~29/05/2026):** verify URL chính xác. Khả năng cao GGG dùng cùng domain `pathofexile.com` với query param `?game=poe2` hoặc subpath `/poe2/challenges`. Nếu URL khác, update vào `scripts/fetch-html.example.sh` + section này. Verify selector `.achievement-list` / `.achievement-container` vẫn dùng được cho POE2 — nếu GGG redesign UI cho POE2, adjust selector. **Confidence: MEDIUM** — assumption dựa trên pattern POE1 và việc account profile page hiện đã share giữa 2 game (character list đã có toggle PoE1/PoE2).
 
-Use Playwriter session đang chạy trong project poeai. Lấy session có sẵn ở `/Users/firegroup/projects/poeai` nếu có; otherwise tạo mới.
+Use the running Playwriter session if one exists; otherwise create a new one.
 
 ```bash
 playwriter -s <id> --timeout 60000 -e "$(cat <<'EOF'
@@ -146,7 +145,7 @@ Guide phải interactive. Mỗi must-do milestone phải **tick được inline*
 
 **Đừng** đặt ticks bên trong bullet list, blockquote, hoặc code block — MDC component phải ở block level. **Đừng** wrap nhiều ticks bằng prose dài dòng giữa chúng — chúng đọc như checklist khi stack thẳng. **Đừng** invent component name mới; `:memorable-check{}` là tick syntax duy nhất sanctioned trong guide này.
 
-**Frontmatter required** (vault-keeper enforced):
+**Frontmatter required**:
 
 ```yaml
 ---
@@ -183,10 +182,10 @@ Use Write tool trên canonical guide path. Overwrite toàn file — đừng merg
 ## Step 4 — Validate
 
 ```bash
-bun run validate --path content/guides/challenge-guide.md
+bun run generate
 ```
 
-Phải show 1/1 valid, 0 error, 0 warning.
+Build phải green.
 
 ## Step 5 — Report
 
@@ -204,7 +203,7 @@ Phải show 1/1 valid, 0 error, 0 warning.
 - HTML không có `.achievement` block → ask user URL đúng hoặc HTML đã save. **POE2 có thể đổi selector** — surface explicit nếu detect markup khác POE1.
 - Playwriter không access được logged-in page → ask user login pathofexile.com trong Chrome và retry.
 - User's stated target conflict với current done (target ≤ done) → tell user đã đạt target.
-- Vault-keeper reject guide → fix frontmatter, không commit broken guide.
+- Frontmatter sai schema → fix frontmatter khớp `content.config.ts`, không commit broken guide.
 - Không tạo alternate guide file cho cùng league; one canonical file only.
 - **POE2 challenge page chưa live** (trước ~29/05/2026 hoặc trước khi user complete campaign 0.5) → tell user explicit và defer skill cho đến khi league mở + character đã unlock challenge panel.
 

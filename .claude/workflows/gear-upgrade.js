@@ -12,7 +12,7 @@ export const meta = {
 
 // ── args (from the main loop, which handles interactive OAuth + pins the baseline) ──
 const A = args || {};
-const ROOT = '/Users/firegroup/projects/poe/poe2';
+const ROOT = process.cwd();
 const ENGINE = `${ROOT}/.claude/skills/gear-upgrade/scripts/gear-optimize.py`;
 const MODFILE = A.modfile || `data/gear-mods/${A.patch || '0.5.0'}-gear-mods.json`;
 const baseline = A.baseline || 'tmp/tcvsg-current.xml';

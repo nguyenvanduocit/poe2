@@ -12,7 +12,7 @@ command -v jq >/dev/null 2>&1 || exit 0
 fp="$(printf '%s' "$input" | jq -r '.tool_input.file_path // empty' 2>/dev/null)"
 [ -n "$fp" ] || exit 0
 
-# chỉ markdown trong content/, bỏ qua index.md (vault-keeper exclude)
+# chỉ markdown trong content/, bỏ qua index.md
 case "$fp" in
   *content/*.md) ;;
   *) exit 0 ;;

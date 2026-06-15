@@ -18,7 +18,7 @@
  *     --stat "explicit.stat_328541901:15" --price 25 --limit 10 [--type "Gold Ring"] [--batch 3]
  * Output (stdout): { url, total, items: [{ name, price, currency, pob }] }
  */
-import { poeFetch } from "/Users/firegroup/projects/poe/poe2/.claude/skills/poe-trade/ggg/transport.ts";
+import { poeFetch } from "../../poe-trade/ggg/transport.ts";
 
 function arg(name: string, def?: string): string | undefined {
   const i = process.argv.indexOf(`--${name}`);

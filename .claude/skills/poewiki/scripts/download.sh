@@ -67,7 +67,7 @@ goscrape \
   --skip-403 \
   --no-progress \
   --error-log "${ERROR_LOG}" \
-  --useragent "poeai-wiki-mirror/1.0 (personal study; duocnv@firegroup.io)" \
+  --useragent "poe2-wiki-mirror/1.0 (personal study)" \
   "${TARGET_URL}"
 
 # Post-scrape flatten: lift `${OUTPUT_DIR}/wiki/*` up to `${OUTPUT_DIR}/`.

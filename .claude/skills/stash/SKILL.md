@@ -21,8 +21,8 @@ Navigate to the stash page in the browser and read the DOM directly. Uses the
 existing browser session; no auth token needed.
 
 ```python
-import sys, json, time
-sys.path.insert(0, "/Users/firegroup/.claude/plugins/marketplaces/aiocean-plugins/plugins/aio-cdp-relay/skills/aio-cdp-relay/scripts")
+import sys, os, json, time
+sys.path.insert(0, os.path.expanduser("~/.claude/plugins/marketplaces/aiocean-plugins/plugins/aio-cdp-relay/skills/aio-cdp-relay/scripts"))
 from cdp_client import CDPClient
 
 with CDPClient() as cdp:

@@ -29,7 +29,7 @@ Globals exposed by HeadlessWrapper (verified): `newBuild()`, `loadBuildFromXML(x
 are no-op stubs (return nil) — `PasteSocketGroup(testInput)` therefore uses its arg.
 
 All scripts live in `.claude/skills/build-creator/scripts/`. Paths below are relative
-to the repo root `/Users/firegroup/projects/poe/poe2`.
+to the repo root `.`.
 
 ---
 
@@ -74,7 +74,7 @@ to the repo root `/Users/firegroup/projects/poe/poe2`.
 - [ ] **Step 1: Delete the TypeScript pipeline**
 
 ```bash
-cd /Users/firegroup/projects/poe/poe2/.claude/skills/build-creator/scripts
+cd ./.claude/skills/build-creator/scripts
 git rm spec.ts spec-to-xml.ts encode.ts verify.ts verify.sh verify.lua pipeline.ts publish.ts
 git rm -r __tests__
 ```
@@ -320,15 +320,15 @@ exec luajit "$SCRIPT_DIR/cli.lua" "$@"
 
 Run:
 ```bash
-chmod +x /Users/firegroup/projects/poe/poe2/.claude/skills/build-creator/scripts/run.sh
-/Users/firegroup/projects/poe/poe2/.claude/skills/build-creator/scripts/run.sh test
+chmod +x ./.claude/skills/build-creator/scripts/run.sh
+./.claude/skills/build-creator/scripts/run.sh test
 ```
 Expected: `smoke_test` block prints `PASS headless wrapper loads...`, final line `1 passed, 0 failed`, exit 0.
 
 - [ ] **Step 9: Commit**
 
 ```bash
-cd /Users/firegroup/projects/poe/poe2
+cd .
 git add .claude/skills/build-creator/scripts
 git commit -m "refactor(build-creator): scaffold Lua toolkit, remove TS pipeline"
 ```
@@ -1206,9 +1206,9 @@ end-to-end with a fixture that has a real `optimize` block.
 Discover two adjacent node ids first:
 Run:
 ```bash
-/Users/firegroup/projects/poe/poe2/.claude/skills/build-creator/scripts/run.sh analyze \
-  "$(/Users/firegroup/projects/poe/poe2/.claude/skills/build-creator/scripts/run.sh build \
-     /Users/firegroup/projects/poe/poe2/.claude/skills/build-creator/scripts/fixtures/witch-spark.json \
+./.claude/skills/build-creator/scripts/run.sh analyze \
+  "$(./.claude/skills/build-creator/scripts/run.sh build \
+     ./.claude/skills/build-creator/scripts/fixtures/witch-spark.json \
      | sed -E 's/.*"code":"([^"]+)".*/\1/')"
 ```
 Expected: prints analyze JSON (sanity that build→analyze chain works).
@@ -1341,11 +1341,11 @@ Expected: `publish_test` PASS (offline — no network).
 
 Run:
 ```bash
-CODE=$(/Users/firegroup/projects/poe/poe2/.claude/skills/build-creator/scripts/run.sh build \
-  /Users/firegroup/projects/poe/poe2/.claude/skills/build-creator/scripts/fixtures/witch-spark.json \
+CODE=$(./.claude/skills/build-creator/scripts/run.sh build \
+  ./.claude/skills/build-creator/scripts/fixtures/witch-spark.json \
   | sed -E 's/.*"code":"([^"]+)".*/\1/')
-/Users/firegroup/projects/poe/poe2/.claude/skills/build-creator/scripts/run.sh build \
-  /Users/firegroup/projects/poe/poe2/.claude/skills/build-creator/scripts/fixtures/witch-spark.json --publish
+./.claude/skills/build-creator/scripts/run.sh build \
+  ./.claude/skills/build-creator/scripts/fixtures/witch-spark.json --publish
 ```
 Expected: JSON includes `"published":{"target":"pobb.in","id":"...","url":"https://pobb.in/..."}`. Open the `/raw` URL to confirm the code stored. (If offline, skip — the offline test already gates correctness.)
 

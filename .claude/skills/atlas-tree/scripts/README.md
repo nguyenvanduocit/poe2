@@ -69,8 +69,8 @@ Schema discovery là step quan trọng nhất — note ra commit:
 
 Port base từ POE1 sibling (`../poe1/`):
 ```bash
-cp /Users/firegroup/projects/poe/poe1/.claude/skills/atlas-tree/scripts/analyze.ts \
-   /Users/firegroup/projects/poe/poe2/.claude/skills/atlas-tree/scripts/analyze.ts
+cp ../poe1/.claude/skills/atlas-tree/scripts/analyze.ts \
+   .claude/skills/atlas-tree/scripts/analyze.ts
 ```
 
 Adapt:

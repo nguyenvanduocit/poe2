@@ -10,8 +10,8 @@ description: Trigger hoặc check Cloudflare Pages deploy cho poe2.aiocean.io (N
 ## Project state — verify trước khi action
 
 ```text
-GitHub repo:       nguyenvanduocit/poe2 (private), branch main
-CF Account:        a44473eab2f968599bc24d5d1a4853f1 (Nguyenvanduocit@gmail.com)
+GitHub repo:       nguyenvanduocit/poe2, branch main
+CF Account:        set via $CF_ACCOUNT_ID env var
 CF Project:        poe2
 Subdomain:         poe2-7sl.pages.dev
 Custom domain:     poe2.aiocean.io (zone aiocean.io trên cùng account)
@@ -63,7 +63,7 @@ Dùng khi: webhook miss, force rebuild với cùng commit, debug.
 
 ```bash
 CF_TOKEN=$(awk -F'"' '/^oauth_token/{print $2}' ~/Library/Preferences/.wrangler/config/default.toml)
-ACC=a44473eab2f968599bc24d5d1a4853f1
+ACC=$CF_ACCOUNT_ID
 
 curl -s -X POST \
   -H "Authorization: Bearer $CF_TOKEN" \
@@ -79,7 +79,7 @@ Trả về JSON với `result.id` (full UUID) + `result.short_id` (8 chars).
 
 ```bash
 CF_TOKEN=$(awk -F'"' '/^oauth_token/{print $2}' ~/Library/Preferences/.wrangler/config/default.toml)
-ACC=a44473eab2f968599bc24d5d1a4853f1
+ACC=$CF_ACCOUNT_ID
 
 curl -s -H "Authorization: Bearer $CF_TOKEN" -H "User-Agent: Mozilla/5.0 wrangler" \
   "https://api.cloudflare.com/client/v4/accounts/$ACC/pages/projects/poe2/deployments" \
@@ -100,7 +100,7 @@ So commit của deploy `success` gần nhất với git HEAD/origin:
 
 ```bash
 CF_TOKEN=$(awk -F'"' '/^oauth_token/{print $2}' ~/Library/Preferences/.wrangler/config/default.toml)
-ACC=a44473eab2f968599bc24d5d1a4853f1
+ACC=$CF_ACCOUNT_ID
 
 git fetch origin main --quiet
 LOCAL=$(git rev-parse HEAD)
@@ -174,11 +174,7 @@ curl -s -X PATCH \
 
 ### `build` fail: prerender 404
 
-`nuxt.config.ts` đã set `nitro.prerender.failOnError: false` — broken markdown links chỉ warn, không fail build. Nếu vẫn fail vì lỗi khác (template parse, content schema), check `vault-keeper`:
-
-```bash
-bun run validate
-```
+`nuxt.config.ts` đã set `nitro.prerender.failOnError: false` — broken markdown links chỉ warn, không fail build. Nếu vẫn fail vì lỗi khác (template parse, content schema), check content schema bằng `bun run generate`.
 
 ## Hard gotchas — đừng quên
 

@@ -26,13 +26,13 @@ Skill này viết tutorial mechanic guide trong `content/guides/` (flat — mech
 
 - `$topic_or_path` — Một trong:
   - **Path** đến file đã có (vd `content/guides/return-of-the-ancients.md`) → polish
-  - **Topic** ngắn (vd `mirage`, `spectre`, `doryanis prototype`) → skill glob lookup. File chưa có → REFUSE, gợi ý `/vault.new` trước.
+  - **Topic** ngắn (vd `mirage`, `spectre`, `doryanis prototype`) → skill glob lookup. File chưa có → REFUSE, gợi ý tạo file mới theo template tương ứng trong `templates/` trước.
 
 ## Goal
 
 File `.md` trong `content/guides/` (hoặc `content/crafting/` cho craft walkthrough) với:
 
-- Frontmatter pass `bun run validate --path <file>` zero CRITICAL.
+- Frontmatter khớp schema `content.config.ts` (build `bun run generate` fail nếu sai).
 - **Section right-sized theo độ phức tạp mechanic** — required core + optional menu, không ép số section cố định (xem "Section structure").
 - Mọi số (damage scaling %, drop rate %, charge gain) **chính xác từ in-game / poewiki**, không guess.
 - Mọi game term (skill, support, item, scarab, monster) → `:wiki-link{url="https://www.poewiki.net/wiki/..."}`.
@@ -149,7 +149,7 @@ File `.md` trong `content/guides/` (hoặc `content/crafting/` cho craft walkthr
 ## Steps
 
 ### 1. Resolve target file
-Path → verify. Topic → glob `content/{guides,crafting}/*<slug>*.md`. Không tìm thấy → REFUSE + `/vault.new`.
+Path → verify. Topic → glob `content/{guides,crafting}/*<slug>*.md`. Không tìm thấy → REFUSE + gợi ý tạo file mới theo template tương ứng trong `templates/`.
 
 **Success criteria**: File path absolute, đúng subfolder cho mechanic type.
 
@@ -205,7 +205,7 @@ Gate FAIL → loop back step 5 refine. KHÔNG bypass.
 **Success criteria**: Gate 1 + Gate 3 pass; Gate 2 các lens apply đã thoả.
 
 ### 6b. Validate
-`bun run validate --path <file>`.
+Frontmatter khớp schema `content.config.ts` — chạy `bun run generate` để verify.
 
 **Success criteria**: Exit 0.
 

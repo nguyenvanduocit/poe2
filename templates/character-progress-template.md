@@ -96,7 +96,7 @@ Optional H2 section: ## Challenge Tracking
 Thêm section này nếu character chase 40/40 hoặc challenge bundle cụ thể.
 Status N/40, phase plan reference, completed checklist.
 Link tới `content/characters/<char>-challenges.md` nếu có file riêng.
-KHÔNG required — vault-keeper không enforce.
+KHÔNG required — không bắt buộc.
 -->
 
 ## Progress Log

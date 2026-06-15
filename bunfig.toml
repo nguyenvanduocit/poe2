@@ -1,7 +1,5 @@
 # bunfig.toml
 # Default configuration (used for normal installs and CI)
-# The claude-code-vault-keeper dependency resolves from package.json
-# (currently a git dependency for CI compatibility)
 
 [install]
-# No local overrides here — CI and normal deploys use the declared version
+# No local overrides

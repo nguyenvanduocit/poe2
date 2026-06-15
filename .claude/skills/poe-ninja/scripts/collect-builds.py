@@ -115,7 +115,7 @@ CACHE_DIR = PROJECT_DIR / "tmp" / "poeninja-cache"
 
 
 def http_get(url: str) -> bytes:
-    req = urllib.request.Request(url, headers={"User-Agent": "poeai-crawler/1.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "poe2-crawler/1.0"})
     with urllib.request.urlopen(req, timeout=60) as resp:
         return resp.read()
 

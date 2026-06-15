@@ -109,7 +109,7 @@ COMMON=(
   --concurrency 4
   --skip-403
   --error-log "${ERROR_LOG}"
-  --useragent "poeai-wiki-mirror/1.0 (personal study; duocnv@firegroup.io)"
+  --useragent "poe2-wiki-mirror/1.0 (personal study)"
 )
 
 if [[ "$FULL_CRAWL" -eq 1 ]]; then
