@@ -57,8 +57,9 @@ Waystone/tablet/atlas keystone/unique/currency/fragment → `:wiki-link{url="htt
 Cross-link → section ## Relationships ở cuối, mỗi dòng: - **predicate** [Title](/route) — reason.
 
 RIGHT-SIZING: CẮT section không áp dụng, ĐỪNG pad, ĐỪNG lặp. Section mỏng/độn hoặc trùng section khác = vi phạm. Heading giữ tên chuẩn HOẶC sentence-case tiếng Việt — KHÔNG dash-subtitle. Section REQUIRED `## Failure Modes` PHẢI giữ ĐÚNG literal đó (validator key theo heading text); tự do heading tiếng Việt CHỈ cho section optional.
-REQUIRED (luôn có): Intro + Strategy Overview + Loot Breakdown (profit math) + Failure Modes (validator-enforced) + Quick Reference Card.
-OPTIONAL (include khi cần, omit khi không): Setup · Gameplay · Profit Optimization · Alternatives · Data & Testing · Changelog. Risk/saturation gói thẳng vào Failure Modes — KHÔNG mở section Market Context riêng trùng nó.
+REQUIRED (luôn có): Intro + Strategy Overview + Loot Breakdown (profit math) + Failure Modes (validator-enforced).
+OPTIONAL (include khi cần, omit khi không): Setup · Gameplay · Profit Optimization · Alternatives · Data & Testing · Quick Reference Card · Changelog. Risk/saturation gói thẳng vào Failure Modes — KHÔNG mở section Market Context riêng trùng nó.
+KINH TẾ THÔNG TIN (xem CLAUDE.md `## Content Writing Voice`): mỗi số/cơ chế giải thích đúng MỘT lần ở section sở hữu nó — Strategy Overview sở hữu mô tả cơ chế, Loot Breakdown sở hữu profit math; section sau chỉ nhắc tên + dẫn ngược, không giảng lại. Data & Testing chỉ ghi evidence/sample/source CHƯA nói ở chỗ khác — KHÔNG liệt kê lại verbatim mod đã cite inline. Quick Reference Card chỉ thêm khi nó là chỗ DUY NHẤT chứa loạt số scannable đó; thân bài đã có thì BỎ card.
 -->
 
 (Intro 2-3 câu. Câu 1: strategy là gì + tier. Câu 2: core mechanism — content nào farm, drop nào make money. Câu 3: ai nên chạy — early league / endgame / specific build. Restate frontmatter metric inline: "Tier B, investment Medium, ~5-10 div/h tính đến YYYY-MM-DD".)
@@ -128,9 +129,11 @@ Prose 1-2 đoạn cover risk thực tế nhất. Xem **Failure Mode / Devil's Ad
 
 ## Data & Testing
 
-(Evidence cho profit claim. Personal sample size + condition. Source link — poe.ninja, poe2scout, /trade output. Market data recency.)
+(OPTIONAL. Evidence cho profit claim CHƯA nói inline: personal sample size + condition, source link — poe.ninja, poe2scout, /trade output, market data recency. KHÔNG liệt kê lại verbatim mod / atlas node đã cite ở Setup — cite một lần tại chỗ dùng.)
 
 ## Quick Reference Card
+
+<!-- OPTIONAL. Chỉ thêm khi card là chỗ DUY NHẤT chứa loạt số scannable này. Nếu thân bài (Strategy Overview / Loot Breakdown / Setup) đã nêu các số này thì BỎ card — đừng lặp toàn doc. -->
 
 **Setup cost / map:** ~X ex  
 **Profit / map:** ~Y div  

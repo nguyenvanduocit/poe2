@@ -39,7 +39,7 @@ File `.md` trong `content/guides/` (hoặc `content/crafting/` cho craft walkthr
 - **Grounding bằng số thật** — ví dụ từ character/PoB hiện tại khi mechanic apply; nếu là economy/crafting/league mechanic không gắn character thì ground bằng số live (market snapshot, empirical run, wiki/poedb).
 - 100% voice rule tuân thủ.
 
-## Voice rules (project luôn win — Dreamcore method 11 rules)
+## Voice rules (project luôn win — Dreamcore method 13 rules)
 
 **Rule 1-5 — owner voice nền tảng (project rule):**
 
@@ -87,6 +87,7 @@ File `.md` trong `content/guides/` (hoặc `content/crafting/` cho craft walkthr
 11. **Rewrite fresh, đừng vá doc cũ — vault luôn ở thì hiện tại** — Khi input là doc đã tồn tại: viết LẠI nguyên bài theo patch/meta **hiện tại**, KHÔNG bò vào vá lẻ từng dòng rồi chừa đoạn outdate "để giữ lịch sử", KHÔNG nhúng note nhật ký ("phải viết lại", "chờ datamine", "đổi gì cho build của mình"). Số stale thay thẳng (không chú thích "(cần update)"); mechanic/interaction/item đã chết theo patch thì gỡ hẳn, không archive trong body. Lịch sử chỉ sống ở `## Patch Evolution` (record gọn một dòng/patch) hoặc `git log` — doc hiện tại chỉ chứa trạng thái đúng-bây-giờ. Bài xong phải đứng được như sinh ra hôm nay ở patch hiện tại. Ref: CLAUDE.md `## Content Writing Voice` → "Rewrite fresh, đừng vá doc cũ".
 
 12. **Banned-lexicon — tra `templates/voice-lexicon-vi.md` TRƯỚC khi viết** — cấm calque «trục/đòn bẩy/cốt lõi/đáng kể/một cách + adj/trả về/vòng lặp», động từ «dựng/cấp/chèn» cho buff-stat, pivot AI «— đây là lý do/cách», «Hệ quả thực tế:», «Điều này có nghĩa là», mở đoạn «Đây là X» lặp; xưng hô «mình» hoặc câu vô chủ ngữ, không trộn register trong một bài. Hook `content-voice-lint` bắt phần grep được — sửa sạch warning trước khi báo xong.
+13. **Kinh tế thông tin — một worked example/số/cơ chế một chỗ, không lặp qua các section** — Một phép tính giải thích đầy đủ đúng MỘT lần ở section sở hữu nó; chỗ sau chỉ nhắc + dẫn ngược. ĐỪNG lặp cùng worked example (vd `200k armour vs hit 5000 → 80%`) ở How It Works rồi lại Math Chain rồi lại Common Mistakes — đó chính là cách doc phình. Dẫn mỗi section bằng cái quyết định nhất, gộp phần phụ. Takeaway thêm phán xét mới, KHÔNG recap thân bài. Caveat (verify in-client / wiki lag) nói một lần. Self-test: worked example/số nào *giải thích* ở >1 chỗ → gộp còn một. Ref: CLAUDE.md `## Content Writing Voice` → "Kinh tế thông tin".
 
 ## Maxroll patterns we adopt
 
@@ -113,7 +114,7 @@ File `.md` trong `content/guides/` (hoặc `content/crafting/` cho craft walkthr
    Kết luận: <khẳng định; chưa chắc thì nêu test-plan "log Z khi vào league" — KHÔNG nhãn HIGH/MEDIUM/LOW>
    ```
 
-3. **Một section takeaway đóng bài** (archetype *Verdict / Tổng kết*) — recap gọn; verdict label + open question khi doc có phán quyết (xem Voice rule 10). Mechanic thuần giải thích thì recap không cần verdict label giả.
+3. **Một section takeaway đóng bài** (archetype *Verdict / Tổng kết*) — thêm phán xét mới (verdict label + open question khi doc có phán quyết, xem Voice rule 10), KHÔNG recap lại thân bài. Mechanic thuần giải thích thì đóng bằng "khi nào dùng / đáng không", không cần verdict label giả.
 
 ### Optional menu (chỉ thêm khi mechanic THẬT SỰ cần — mỗi cái có trigger dùng-khi/bỏ-khi)
 

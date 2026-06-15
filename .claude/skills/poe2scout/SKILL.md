@@ -188,9 +188,12 @@ Quote giá trong content note → kèm `fetched_at` (catalog) + `dailyStats[-1].
 → Full league OHLC + multi-window Δ + freshness signal. Lần đầu 0.6s, lần sau 0.1s.
 
 ### Build / gear cost estimate
+
+> **CẢNH BÁO floor trap — `currentPrice` = listing RẺ NHẤT = roll THẤP NHẤT.** Chỉ đúng cho unique **mod cố định**. Sai 8-25× (có khi ×1000) cho unique roll-biến-thiên (The Adorned `#% effect`, Chober `+# minion level`), rare nhiều mod, và magic corrupted. Đọc mod thật của item từ `export-<char>.json` rồi quyết: floor được hay phải search combo. Quy trình định giá theo roll thật + lọc rarity/corrupted nằm ở `/trade` skill `## Định giá item đang đeo`.
+
 1. `api.sh snapshot` (~10s, mỗi ngày 1 lần) — refresh catalog.
 2. `api.sh item <gear>` cho mỗi gear piece — instant lookup.
-3. Sum `currentPrice`. Convert qua `reference` cho cross-currency.
+3. Sum `currentPrice` **CHỈ cho phần unique mod-cố-định**. Mọi unique roll-cao / rare / magic corrupted → định giá qua `/trade` (search đúng combo mod ở roll thật), KHÔNG lấy floor. Convert qua `reference` cho cross-currency.
 
 Mỗi item lần đầu lookup = 1 API call → cache. 10-item build = 10 calls = ~6s, lần sau instant.
 

@@ -49,6 +49,46 @@ Hệ quả: chạy `trade-search.ts` / `PoeTradeClient` / `poeFetch` back-to-bac
 - **Connection drop recovery:** `playwriter session reset <id>` rồi space ≥3s trước khi thử lại. Nếu vẫn rớt → diagnose bằng fetch nhẹ same-origin: `fetch("https://www.pathofexile.com/favicon.ico")` hoặc GET `/api/trade2/data/leagues`. Favicon/data trả nhanh nhưng `/search` treo = **search-bucket penalty** → đợi vài phút cho nguội (đọc `x-rate-limit-account-state`: `"1:5:0"` = khỏe, không penalty; số thứ 3 > 0 = đang phạt). Cả favicon cũng treo = bridge/tab thật sự hỏng → bảo user reload tab `/trade2/`.
 - **`/api/trade2/data/stats` ~738KB LÀM VỠ transport** (cả `poeFetch` lẫn ad-hoc): output quá lớn cho một dòng CLI → `JSON.parse` lỗi "Expected '}'" (truncation). ĐỪNG fetch nguyên stats về Node. Lookup stat-id bằng cách **filter NGAY trong page-context** (chạy `j.result` filter bên trong `p.evaluate`, chỉ return entries khớp regex → payload nhỏ, không vỡ). Hoặc dùng reference IDs cached ở "## Stat Filter Lookup" (đỡ call hẳn).
 
+## Định giá item đang đeo (floor trap — BẮT BUỘC đọc trước khi quote giá)
+
+Lỗi lặp đi lặp lại nhiều lần: quote **giá floor** cho item **roll-biến-thiên hoặc nhiều mod** → undercount 8-25× (có khi ×1000). Hai nguồn floor lừa người:
+
+- **poe2scout `currentPrice`** = listing rẻ nhất = **roll thấp nhất**. CHỈ đúng cho unique **mod cố định**. Sai cho mọi unique roll-biến-thiên + mọi rare + mọi magic.
+- **trade search một mod lẻ + `status any` + sort price asc** = cục junk chỉ mang đúng mod đó, KHÔNG phải item thật của user.
+
+Phân loại item TRƯỚC khi quote (đọc mod thật từ `export-<char>.json` trước — explicitMods + fracturedMods + giá trị roll):
+
+1. **Unique mod cố định** (From Nothing; Sylvan's Effigy có roll companion-dmg-vs-Marked nhưng giá ~1 ex bất kể roll) → poe2scout floor OK.
+2. **Unique roll-biến-thiên** (The Adorned `#% increased Effect`, Chober Chaber `+# Level of Minion`) → `--name "X" --stat "<mod biến thiên>:<roll thật>"`. Floor vô nghĩa.
+3. **Rare nhiều mod** → search **TẤT CẢ 2-4 mod dẫn-giá cùng lúc** (`--stat` lặp lại, min ≈ roll thật), KHÔNG BAO GIỜ một mod lẻ.
+4. **Magic corrupted (jewel chạy The Adorned)** → ad-hoc query `rarity:magic` + `corrupted:true` + **CẢ HAI mod** ở min cao (CLI không có flag rarity/corrupted → bắt buộc ad-hoc).
+
+Bằng chứng cùng-một-item (floor sai → combo đúng), giữ làm mốc cảnh tỉnh:
+
+- The Adorned: poe2scout floor **6.75 div** → roll 108% effect thật **~170-200 div** (≈25×).
+- Amulet +4 minion: một mod **~5 div** → combo +4 minion **+** spirit≥40 **~40 div** (≈8×).
+- Jewel "of Gripping": một mod **~1 regal** → corrupted magic 2-mod (Minion dmg + Minion crit dmg bonus) **~18-40 div MỖI viên** (≈×1000).
+
+Quy trình đúng để định giá một item đang đeo:
+
+1. Đọc mod thật của item từ export JSON.
+2. Chọn 2-4 mod **dẫn giá** — mod hiếm / build-defining (minion levels, minion crit, %effect, spirit-combo), KHÔNG phải life/res chung chung.
+3. Search đúng combo đó ở min ≈ roll thật, đọc **floor của combo** — đó mới là giá thị trường cho item tương đương.
+4. Item corrupted = không nâng cấp tại chỗ; giá báo là replacement-cost của bản tương đương.
+
+Lookup stat-id: grep `data/trade-static/stats.json` bằng python (`e['type']=='explicit' and '<text>' in e['text']`) — file 738KB, **KHÔNG fetch về Node (vỡ transport)**, grep local OK.
+
+Lọc rarity:magic + corrupted (CLI không hỗ trợ) qua ad-hoc `poeFetch` query:
+```
+filters.type_filters.filters = { category:{option:"jewel"}, rarity:{option:"magic"} }
+filters.misc_filters.filters  = { corrupted:{option:"true"} }
+stats = [{ type:"and", filters:[ {id:"explicit.stat_...", value:{min:N}}, ... ] }]
+```
+
+**Đừng overcorrect** — có món rẻ thật: life + resistance rare ở league này ~1-5 ex kể cả nhiều mod (supply thừa); helm +2 minion + life, belt life + cold res đều ~1 ex; carry unique mod-cố-định (Chober Chaber ~1 regal). Phân biệt đắt/rẻ bằng **độ hiếm của mod**, KHÔNG bằng số mod: defensive multi-mod = rẻ, build-defining combo = đắt.
+
+**Trình bày = giá tăng dần, ĐỪNG re-sort theo roll (lỗi lặp khác floor-trap).** Khi user hỏi "bao nhiêu tiền / có gì securable", fetch về sort price-asc rồi **giữ nguyên thứ tự đó** mà show — đừng re-rank theo roll cục bộ rồi lead bằng mấy cây high-roll đắt. Re-rank theo roll giấu mất cái floor rẻ user thấy ngay khi mở URL → quote bị thổi lên div-tier trong khi thực tế bậc 1-ex làm gần hết việc (vd Unset dream ring 6%aspd/29%crit/65life/26%cold = **1 ex**, không phải 8-40 div như bản re-rank). Re-rank theo roll CHỈ cho câu "tìm cây TỐT NHẤT để mua" (Result Workflow rule 4); câu "giá bao nhiêu / rẻ nhất" thì price-asc floor mới đúng. Luôn show cả bậc rẻ + bậc cao để user thấy đường cong roll→giá, đừng chỉ một đầu.
+
 ## Result Workflow — securable + narrow-by-`total` + rank top-10 (BẮT BUỘC khi tìm upgrade cho user)
 
 User chơi để **mua nhanh + đúng đồ tốt**. Mỗi lần đưa list offline sort-giá = lặp đúng lỗi user đã dặn bỏ. Bốn rule cứng (cũng ở project memory):

@@ -2,155 +2,155 @@
   "game": "poe2",
   "league_url": "runesofaldur",
   "league_name": "Runes of Aldur",
-  "snapshot_version": "0653-20260614-44325",
+  "snapshot_version": "0918-20260614-43193",
   "snapshot_name": "runes-of-aldur",
   "snapshot_type": null,
-  "fetched_at": "2026-06-14T07:30:53Z",
-  "total_characters": 124238,
+  "fetched_at": "2026-06-14T10:11:13Z",
+  "total_characters": 124237,
   "distributions": {
     "class": [
       {
         "name": "Titan",
-        "count": 30600,
-        "pct": 24.63
+        "count": 30624,
+        "pct": 24.65
       },
       {
         "name": "Pathfinder",
-        "count": 23107,
-        "pct": 18.6
+        "count": 23095,
+        "pct": 18.59
       },
       {
         "name": "Ritualist",
-        "count": 14901,
-        "pct": 11.99
+        "count": 14856,
+        "pct": 11.96
       },
       {
         "name": "Invoker",
-        "count": 6514,
-        "pct": 5.24
+        "count": 6500,
+        "pct": 5.23
       },
       {
         "name": "Shaman",
-        "count": 5519,
-        "pct": 4.44
+        "count": 5580,
+        "pct": 4.49
       },
       {
         "name": "Gemling Legionnaire",
-        "count": 5047,
-        "pct": 4.06
+        "count": 5065,
+        "pct": 4.08
       },
       {
         "name": "Tactician",
-        "count": 4530,
+        "count": 4534,
         "pct": 3.65
       },
       {
         "name": "Witchhunter",
-        "count": 3951,
-        "pct": 3.18
+        "count": 3939,
+        "pct": 3.17
       },
       {
         "name": "Stormweaver",
-        "count": 3792,
-        "pct": 3.05
+        "count": 3824,
+        "pct": 3.08
       },
       {
         "name": "Blood Mage",
-        "count": 3543,
-        "pct": 2.85
+        "count": 3528,
+        "pct": 2.84
       },
       {
         "name": "Smith of Kitava",
-        "count": 3478,
-        "pct": 2.8
+        "count": 3490,
+        "pct": 2.81
       },
       {
         "name": "Lich",
-        "count": 3012,
-        "pct": 2.42
+        "count": 2999,
+        "pct": 2.41
       },
       {
         "name": "Chronomancer",
-        "count": 2623,
-        "pct": 2.11
+        "count": 2631,
+        "pct": 2.12
       },
       {
         "name": "Warbringer",
-        "count": 2148,
-        "pct": 1.73
+        "count": 2132,
+        "pct": 1.72
       },
       {
         "name": "Disciple of Varashta",
-        "count": 2114,
-        "pct": 1.7
+        "count": 2098,
+        "pct": 1.69
       },
       {
         "name": "Deadeye",
-        "count": 1699,
+        "count": 1704,
         "pct": 1.37
       },
       {
         "name": "Oracle",
-        "count": 1636,
+        "count": 1643,
         "pct": 1.32
       },
       {
-        "name": "Mercenary",
-        "count": 1423,
-        "pct": 1.15
+        "name": "Witch",
+        "count": 1411,
+        "pct": 1.14
       },
       {
         "name": "Amazon",
-        "count": 1404,
+        "count": 1405,
         "pct": 1.13
       },
       {
-        "name": "Ranger",
-        "count": 1250,
-        "pct": 1.01
+        "name": "Sorceress",
+        "count": 1248,
+        "pct": 1.0
       },
       {
         "name": "Spirit Walker",
-        "count": 856,
-        "pct": 0.69
+        "count": 844,
+        "pct": 0.68
       },
       {
         "name": "Acolyte of Chayula",
-        "count": 768,
-        "pct": 0.62
+        "count": 764,
+        "pct": 0.61
       },
       {
         "name": "Abyssal Lich",
-        "count": 304,
-        "pct": 0.24
+        "count": 305,
+        "pct": 0.25
       },
       {
-        "name": "Huntress",
+        "name": "Monk",
         "count": 5,
         "pct": 0.0
       },
       {
-        "name": "Druid",
+        "name": "Ranger",
         "count": 4,
         "pct": 0.0
       },
       {
-        "name": "Witch",
+        "name": "Mercenary",
         "count": 3,
         "pct": 0.0
       },
       {
-        "name": "#28",
-        "count": 3,
-        "pct": 0.0
-      },
-      {
-        "name": "Monk",
+        "name": "Huntress",
         "count": 2,
         "pct": 0.0
       },
       {
-        "name": "Sorceress",
+        "name": "#28",
+        "count": 2,
+        "pct": 0.0
+      },
+      {
+        "name": "Druid",
         "count": 1,
         "pct": 0.0
       },
@@ -163,123 +163,123 @@
     "weaponmode": [
       {
         "name": "Quarterstaff",
-        "count": 21589,
-        "pct": 17.38
+        "count": 21577,
+        "pct": 17.37
       },
       {
         "name": "Bow / Quiver",
-        "count": 15936,
-        "pct": 12.83
+        "count": 15895,
+        "pct": 12.79
       },
       {
         "name": "Spear",
-        "count": 15301,
+        "count": 15308,
         "pct": 12.32
       },
       {
         "name": "Unknown / Sceptre",
-        "count": 9748,
-        "pct": 7.85
+        "count": 9729,
+        "pct": 7.83
       },
       {
         "name": "Staff",
-        "count": 8963,
-        "pct": 7.21
+        "count": 8984,
+        "pct": 7.23
       },
       {
         "name": "Crossbow",
-        "count": 8704,
-        "pct": 7.01
+        "count": 8661,
+        "pct": 6.97
       },
       {
         "name": "Unknown",
-        "count": 6640,
-        "pct": 5.34
+        "count": 6678,
+        "pct": 5.38
       },
       {
         "name": "Wand / Sceptre",
-        "count": 5635,
-        "pct": 4.54
+        "count": 5630,
+        "pct": 4.53
       },
       {
         "name": "Sceptre / Focus",
-        "count": 5604,
-        "pct": 4.51
+        "count": 5624,
+        "pct": 4.53
       },
       {
         "name": "Wand / Focus",
-        "count": 4377,
-        "pct": 3.52
+        "count": 4389,
+        "pct": 3.53
       },
       {
         "name": "Spear / Sceptre",
-        "count": 3475,
-        "pct": 2.8
+        "count": 3466,
+        "pct": 2.79
       },
       {
         "name": "Talisman",
-        "count": 3279,
-        "pct": 2.64
+        "count": 3292,
+        "pct": 2.65
       },
       {
         "name": "Two Handed Mace / Sceptre",
-        "count": 2798,
-        "pct": 2.25
+        "count": 2810,
+        "pct": 2.26
       },
       {
         "name": "Mace / Shield",
-        "count": 1338,
-        "pct": 1.08
+        "count": 1321,
+        "pct": 1.06
       },
       {
         "name": "Sceptre / Shield",
-        "count": 1152,
-        "pct": 0.93
+        "count": 1137,
+        "pct": 0.92
       },
       {
         "name": "Staff / Focus",
-        "count": 1105,
+        "count": 1111,
         "pct": 0.89
       },
       {
         "name": "Talisman / Sceptre",
-        "count": 1057,
+        "count": 1055,
         "pct": 0.85
       },
       {
         "name": "Dual Mace",
-        "count": 1004,
+        "count": 1006,
         "pct": 0.81
       },
       {
         "name": "Wand / Unknown",
-        "count": 794,
-        "pct": 0.64
+        "count": 788,
+        "pct": 0.63
       },
       {
         "name": "Unarmed",
-        "count": 696,
-        "pct": 0.56
-      },
-      {
-        "name": "Two Handed Mace / Shield",
-        "count": 498,
-        "pct": 0.4
+        "count": 705,
+        "pct": 0.57
       },
       {
         "name": "Mace",
-        "count": 495,
+        "count": 506,
+        "pct": 0.41
+      },
+      {
+        "name": "Two Handed Mace / Shield",
+        "count": 496,
         "pct": 0.4
       },
       {
         "name": "Dual Unknown",
-        "count": 475,
+        "count": 468,
         "pct": 0.38
       },
       {
         "name": "Wand / Buckler",
-        "count": 444,
-        "pct": 0.36
+        "count": 440,
+        "pct": 0.35
       },
       {
         "name": "Sceptre / Buckler",
@@ -288,62 +288,62 @@
       },
       {
         "name": "Unknown / Focus",
-        "count": 303,
-        "pct": 0.24
+        "count": 308,
+        "pct": 0.25
       },
       {
         "name": "Unknown / Buckler",
-        "count": 273,
-        "pct": 0.22
+        "count": 285,
+        "pct": 0.23
       },
       {
         "name": "Mace / Unknown",
-        "count": 271,
+        "count": 277,
         "pct": 0.22
       },
       {
         "name": "Spear / Shield",
-        "count": 247,
-        "pct": 0.2
+        "count": 242,
+        "pct": 0.19
       },
       {
         "name": "Two Handed Mace / Unknown",
-        "count": 201,
-        "pct": 0.16
+        "count": 205,
+        "pct": 0.17
       },
       {
         "name": "Two Handed Mace",
-        "count": 199,
-        "pct": 0.16
+        "count": 191,
+        "pct": 0.15
       },
       {
         "name": "Sceptre / Unknown",
-        "count": 176,
+        "count": 178,
         "pct": 0.14
       },
       {
         "name": "Spear / Buckler",
-        "count": 163,
+        "count": 166,
         "pct": 0.13
       },
       {
         "name": "Unknown / Shield",
-        "count": 157,
+        "count": 159,
         "pct": 0.13
       },
       {
         "name": "Sceptre",
-        "count": 141,
-        "pct": 0.11
-      },
-      {
-        "name": "Spear / Unknown",
-        "count": 103,
-        "pct": 0.08
+        "count": 152,
+        "pct": 0.12
       },
       {
         "name": "Bow",
-        "count": 100,
+        "count": 106,
+        "pct": 0.09
+      },
+      {
+        "name": "Spear / Unknown",
+        "count": 102,
         "pct": 0.08
       },
       {
@@ -353,12 +353,12 @@
       },
       {
         "name": "Wand",
-        "count": 85,
+        "count": 82,
         "pct": 0.07
       },
       {
         "name": "Spear / Focus",
-        "count": 62,
+        "count": 63,
         "pct": 0.05
       },
       {
@@ -368,16 +368,16 @@
       },
       {
         "name": "Dual Two Handed Mace",
-        "count": 43,
+        "count": 41,
         "pct": 0.03
       },
       {
-        "name": "Bow / Unknown",
-        "count": 28,
+        "name": "Unarmed / Quiver",
+        "count": 31,
         "pct": 0.02
       },
       {
-        "name": "Unarmed / Quiver",
+        "name": "Bow / Unknown",
         "count": 27,
         "pct": 0.02
       },
@@ -388,16 +388,16 @@
       },
       {
         "name": "Unarmed / Shield",
-        "count": 17,
-        "pct": 0.01
-      },
-      {
-        "name": "Unarmed / Unknown",
-        "count": 9,
+        "count": 11,
         "pct": 0.01
       },
       {
         "name": "Mace / Buckler",
+        "count": 8,
+        "pct": 0.01
+      },
+      {
+        "name": "Unarmed / Unknown",
         "count": 7,
         "pct": 0.01
       },
@@ -415,504 +415,504 @@
     "items": [
       {
         "name": "Rare Ring",
-        "count": 119383,
-        "pct": 96.09
+        "count": 119372,
+        "pct": 96.08
       },
       {
         "name": "Rare Jewel",
-        "count": 117428,
-        "pct": 94.52
+        "count": 117417,
+        "pct": 94.51
       },
       {
         "name": "Rare Boots",
-        "count": 114826,
-        "pct": 92.42
+        "count": 114794,
+        "pct": 92.4
       },
       {
         "name": "Magic Flask",
-        "count": 114442,
-        "pct": 92.12
+        "count": 114381,
+        "pct": 92.07
       },
       {
         "name": "Rare Amulet",
-        "count": 108874,
-        "pct": 87.63
+        "count": 108887,
+        "pct": 87.64
       },
       {
         "name": "Rare Helmet",
-        "count": 95190,
-        "pct": 76.62
+        "count": 95197,
+        "pct": 76.63
       },
       {
         "name": "Rare Gloves",
-        "count": 88707,
-        "pct": 71.4
+        "count": 88712,
+        "pct": 71.41
       },
       {
         "name": "Rare Body Armour",
-        "count": 81298,
-        "pct": 65.44
+        "count": 81202,
+        "pct": 65.36
       },
       {
         "name": "Magic Charm",
-        "count": 79876,
-        "pct": 64.29
+        "count": 79644,
+        "pct": 64.11
       },
       {
         "name": "Heart of the Well",
-        "count": 77906,
-        "pct": 62.71
+        "count": 78213,
+        "pct": 62.95
       },
       {
         "name": "Nascent Hope",
-        "count": 67440,
-        "pct": 54.28
+        "count": 67699,
+        "pct": 54.49
       },
       {
         "name": "Rare Belt",
-        "count": 67151,
-        "pct": 54.05
+        "count": 66882,
+        "pct": 53.83
       },
       {
         "name": "Lavianga's Spirits",
-        "count": 64539,
-        "pct": 51.95
+        "count": 64740,
+        "pct": 52.11
       },
       {
         "name": "The Fall of the Axe",
-        "count": 44310,
-        "pct": 35.67
+        "count": 44511,
+        "pct": 35.83
       },
       {
         "name": "Beira's Anguish",
-        "count": 28779,
-        "pct": 23.16
+        "count": 28781,
+        "pct": 23.17
       },
       {
         "name": "Rite of Passage",
-        "count": 27496,
-        "pct": 22.13
+        "count": 27840,
+        "pct": 22.41
       },
       {
         "name": "From Nothing",
-        "count": 24669,
-        "pct": 19.86
+        "count": 24797,
+        "pct": 19.96
       },
       {
         "name": "Rare Quarterstaff",
-        "count": 22981,
-        "pct": 18.5
+        "count": 22976,
+        "pct": 18.49
       },
       {
         "name": "Rare Sceptre",
-        "count": 18404,
+        "count": 18402,
         "pct": 14.81
       },
       {
         "name": "The Taming",
-        "count": 16064,
-        "pct": 12.93
+        "count": 16084,
+        "pct": 12.95
       },
       {
         "name": "Prism of Belief",
-        "count": 15789,
-        "pct": 12.71
+        "count": 15859,
+        "pct": 12.77
       },
       {
         "name": "Rare Bow",
-        "count": 15731,
-        "pct": 12.66
+        "count": 15702,
+        "pct": 12.64
       },
       {
         "name": "Lochtonial Caress",
-        "count": 15440,
-        "pct": 12.43
+        "count": 15418,
+        "pct": 12.41
       },
       {
         "name": "Amor Mandragora",
-        "count": 14943,
-        "pct": 12.03
+        "count": 14962,
+        "pct": 12.04
       },
       {
         "name": "Rare Staff",
-        "count": 14753,
+        "count": 14752,
         "pct": 11.87
       },
       {
-        "name": "Magic Bow",
-        "count": 13808,
-        "pct": 11.11
+        "name": "Mageblood",
+        "count": 13916,
+        "pct": 11.2
       },
       {
-        "name": "Mageblood",
-        "count": 13777,
-        "pct": 11.09
+        "name": "Briskwrap",
+        "count": 13816,
+        "pct": 11.12
       },
       {
         "name": "Headhunter",
-        "count": 13695,
-        "pct": 11.02
+        "count": 13815,
+        "pct": 11.12
       },
       {
         "name": "Cadiro's Gambit",
-        "count": 13116,
-        "pct": 10.56
+        "count": 13127,
+        "pct": 10.57
       },
       {
-        "name": "Normal Focus",
-        "count": 13082,
-        "pct": 10.53
+        "name": "Slivertongue",
+        "count": 13072,
+        "pct": 10.52
       },
       {
         "name": "Skysliver",
-        "count": 12839,
-        "pct": 10.33
+        "count": 12866,
+        "pct": 10.36
       },
       {
         "name": "Sacred Flame",
-        "count": 12249,
-        "pct": 9.86
+        "count": 12331,
+        "pct": 9.93
       },
       {
         "name": "Rare Focus",
-        "count": 11633,
-        "pct": 9.36
-      },
-      {
-        "name": "Rare Wand",
-        "count": 11630,
-        "pct": 9.36
+        "count": 11682,
+        "pct": 9.4
       },
       {
         "name": "The Ordained",
-        "count": 11625,
-        "pct": 9.36
+        "count": 11677,
+        "pct": 9.4
+      },
+      {
+        "name": "Rare Wand",
+        "count": 11621,
+        "pct": 9.35
       },
       {
         "name": "Arakaali's Gift",
-        "count": 11483,
-        "pct": 9.24
+        "count": 11466,
+        "pct": 9.23
       },
       {
         "name": "Sanguis Heroum",
-        "count": 11147,
-        "pct": 8.97
+        "count": 11128,
+        "pct": 8.96
       },
       {
         "name": "Kalandra's Touch",
-        "count": 10986,
-        "pct": 8.84
+        "count": 11103,
+        "pct": 8.94
       },
       {
         "name": "Against the Darkness",
-        "count": 10886,
-        "pct": 8.76
+        "count": 10972,
+        "pct": 8.83
       },
       {
         "name": "Blood of the Warrior",
-        "count": 9959,
-        "pct": 8.02
+        "count": 9987,
+        "pct": 8.04
       },
       {
         "name": "Rare Talisman",
-        "count": 8963,
-        "pct": 7.21
+        "count": 8991,
+        "pct": 7.24
       },
       {
         "name": "Rare Spear",
-        "count": 8921,
-        "pct": 7.18
+        "count": 8888,
+        "pct": 7.15
       },
       {
         "name": "For Utopia",
-        "count": 8757,
-        "pct": 7.05
+        "count": 8785,
+        "pct": 7.07
       },
       {
         "name": "Morior Invictus",
-        "count": 8566,
-        "pct": 6.89
+        "count": 8658,
+        "pct": 6.97
       },
       {
         "name": "Forgotten Warden",
-        "count": 8031,
-        "pct": 6.46
+        "count": 8002,
+        "pct": 6.44
       },
       {
         "name": "Rare Crossbow",
-        "count": 8008,
-        "pct": 6.45
+        "count": 7969,
+        "pct": 6.41
       },
       {
         "name": "Megalomaniac",
-        "count": 7687,
-        "pct": 6.19
+        "count": 7835,
+        "pct": 6.31
       },
       {
         "name": "Alpha's Howl",
-        "count": 7566,
-        "pct": 6.09
+        "count": 7586,
+        "pct": 6.11
       },
       {
         "name": "Controlled Metamorphosis",
-        "count": 7321,
-        "pct": 5.89
+        "count": 7382,
+        "pct": 5.94
       },
       {
         "name": "Shavronne's Satchel",
-        "count": 6835,
-        "pct": 5.5
+        "count": 6842,
+        "pct": 5.51
       }
     ],
     "skills": [
       {
         "name": "Herald of Ice",
-        "count": 38196,
-        "pct": 30.74
+        "count": 38237,
+        "pct": 30.78
       },
       {
         "name": "Cackling Companions",
-        "count": 34938,
-        "pct": 28.12
+        "count": 35100,
+        "pct": 28.25
       },
       {
         "name": "Barrage",
-        "count": 29076,
-        "pct": 23.4
+        "count": 29088,
+        "pct": 23.41
       },
       {
         "name": "Hollow Focus",
-        "count": 25897,
-        "pct": 20.84
+        "count": 25898,
+        "pct": 20.85
       },
       {
         "name": "Elemental Weakness",
-        "count": 25056,
-        "pct": 20.17
+        "count": 25127,
+        "pct": 20.23
       },
       {
         "name": "Shock",
-        "count": 22850,
-        "pct": 18.39
-      },
-      {
-        "name": "Khatal's Rejuvenation",
-        "count": 20800,
-        "pct": 16.74
+        "count": 22855,
+        "pct": 18.4
       },
       {
         "name": "Wind Dancer",
-        "count": 20770,
+        "count": 20778,
         "pct": 16.72
       },
       {
+        "name": "Khatal's Rejuvenation",
+        "count": 20753,
+        "pct": 16.7
+      },
+      {
         "name": "Herald of Blood",
-        "count": 18551,
-        "pct": 14.93
+        "count": 18590,
+        "pct": 14.96
       },
       {
         "name": "Ailith's Chimes",
-        "count": 17844,
-        "pct": 14.36
+        "count": 17809,
+        "pct": 14.33
       },
       {
         "name": "Lightning Attunement",
-        "count": 17787,
-        "pct": 14.32
+        "count": 17719,
+        "pct": 14.26
       },
       {
         "name": "Whirling Slash",
-        "count": 17453,
-        "pct": 14.05
-      },
-      {
-        "name": "Frozen Spite",
-        "count": 17375,
-        "pct": 13.99
+        "count": 17445,
+        "pct": 14.04
       },
       {
         "name": "Pounce",
-        "count": 17339,
-        "pct": 13.96
+        "count": 17432,
+        "pct": 14.03
+      },
+      {
+        "name": "Bow Shot",
+        "count": 17386,
+        "pct": 13.99
       },
       {
         "name": "Twister",
-        "count": 16670,
+        "count": 16673,
         "pct": 13.42
       },
       {
         "name": "Cold Penetration",
-        "count": 15563,
-        "pct": 12.53
+        "count": 15552,
+        "pct": 12.52
       },
       {
         "name": "Whirling Assault",
-        "count": 15452,
-        "pct": 12.44
+        "count": 15443,
+        "pct": 12.43
       },
       {
         "name": "Elemental Conflux",
-        "count": 14927,
-        "pct": 12.01
+        "count": 14914,
+        "pct": 12.0
       },
       {
         "name": "Cluster Grenade",
-        "count": 13511,
-        "pct": 10.88
+        "count": 13499,
+        "pct": 10.87
       },
       {
         "name": "Minion Splash II",
-        "count": 13323,
-        "pct": 10.72
+        "count": 13354,
+        "pct": 10.75
       },
       {
         "name": "Kelari's Deception",
-        "count": 12819,
-        "pct": 10.32
+        "count": 12815,
+        "pct": 10.31
       },
       {
         "name": "Entangle",
-        "count": 12774,
-        "pct": 10.28
+        "count": 12720,
+        "pct": 10.24
       },
       {
-        "name": "Healing Runes",
-        "count": 12615,
-        "pct": 10.15
+        "name": "Retaliate I",
+        "count": 12627,
+        "pct": 10.16
       },
       {
         "name": "Archmage",
-        "count": 12475,
+        "count": 12471,
         "pct": 10.04
       },
       {
         "name": "Lightning Exposure",
-        "count": 12370,
-        "pct": 9.96
+        "count": 12428,
+        "pct": 10.0
       },
       {
-        "name": "Ice Bite II",
-        "count": 11528,
-        "pct": 9.28
+        "name": "Frozen Spite",
+        "count": 11487,
+        "pct": 9.25
       },
       {
         "name": "Culmination II",
-        "count": 11223,
-        "pct": 9.03
+        "count": 11227,
+        "pct": 9.04
       },
       {
         "name": "Companion: Plague Harvester",
-        "count": 11132,
-        "pct": 8.96
+        "count": 11170,
+        "pct": 8.99
       },
       {
         "name": "Purity of Fire",
-        "count": 10819,
-        "pct": 8.71
+        "count": 10849,
+        "pct": 8.73
       },
       {
         "name": "Ice Shot",
-        "count": 10109,
-        "pct": 8.14
+        "count": 10194,
+        "pct": 8.21
       },
       {
         "name": "Thunderstorm",
-        "count": 10072,
+        "count": 10079,
         "pct": 8.11
       },
       {
         "name": "Sniper's Mark",
-        "count": 10029,
-        "pct": 8.07
+        "count": 9999,
+        "pct": 8.05
       },
       {
-        "name": "Bounty II",
-        "count": 9767,
-        "pct": 7.86
+        "name": "Crazed Minions",
+        "count": 9738,
+        "pct": 7.84
       },
       {
         "name": "Esh's Prowess",
-        "count": 9437,
-        "pct": 7.6
+        "count": 9475,
+        "pct": 7.63
       },
       {
         "name": "Resonating Shield",
-        "count": 8977,
-        "pct": 7.23
+        "count": 8953,
+        "pct": 7.21
       },
       {
         "name": "Mana Drain",
-        "count": 8666,
-        "pct": 6.98
-      },
-      {
-        "name": "Tame Beast",
-        "count": 8439,
-        "pct": 6.79
+        "count": 8655,
+        "pct": 6.97
       },
       {
         "name": "Poisonburst Arrow",
-        "count": 8404,
-        "pct": 6.76
+        "count": 8435,
+        "pct": 6.79
       },
       {
-        "name": "Deep Freeze",
-        "count": 8142,
-        "pct": 6.55
+        "name": "Tame Beast",
+        "count": 8430,
+        "pct": 6.79
+      },
+      {
+        "name": "Raise Zombie",
+        "count": 8204,
+        "pct": 6.6
       },
       {
         "name": "Crystalline Shards",
-        "count": 8099,
-        "pct": 6.52
+        "count": 8112,
+        "pct": 6.53
       },
       {
         "name": "Commiserate",
-        "count": 7879,
-        "pct": 6.34
+        "count": 7898,
+        "pct": 6.36
       },
       {
         "name": "Companion: Zekoa, the Headcrusher",
-        "count": 7862,
-        "pct": 6.33
+        "count": 7851,
+        "pct": 6.32
       },
       {
         "name": "Skeletal Arsonist",
-        "count": 7792,
+        "count": 7786,
         "pct": 6.27
       },
       {
         "name": "Spectre: Powered Zealot",
-        "count": 7414,
-        "pct": 5.97
+        "count": 7402,
+        "pct": 5.96
       },
       {
-        "name": "Spectre: Bloodthief Wasp",
-        "count": 6075,
-        "pct": 4.89
+        "name": "Vanguard I",
+        "count": 6102,
+        "pct": 4.91
       },
       {
         "name": "Alchemist's Boon",
-        "count": 5881,
-        "pct": 4.73
+        "count": 5899,
+        "pct": 4.75
       },
       {
         "name": "Align Fate",
-        "count": 5828,
-        "pct": 4.69
+        "count": 5875,
+        "pct": 4.73
       },
       {
         "name": "Mark for Death",
-        "count": 5736,
-        "pct": 4.62
+        "count": 5753,
+        "pct": 4.63
       },
       {
         "name": "Considered Casting",
-        "count": 5730,
-        "pct": 4.61
+        "count": 5701,
+        "pct": 4.59
       },
       {
         "name": "Feeding Frenzy II",
-        "count": 5613,
+        "count": 5615,
         "pct": 4.52
       }
     ],
@@ -924,511 +924,511 @@
       },
       {
         "name": "Triggered",
-        "count": 19393,
-        "pct": 15.61
+        "count": 19494,
+        "pct": 15.69
       }
     ],
     "keypassives": [
       {
         "name": "Way of the Stonefist",
-        "count": 30438,
-        "pct": 24.5
+        "count": 30453,
+        "pct": 24.51
       },
       {
         "name": "Hollow Palm Technique",
-        "count": 26645,
-        "pct": 21.45
+        "count": 26724,
+        "pct": 21.51
       },
       {
         "name": "Runic Meridians",
-        "count": 25925,
-        "pct": 20.87
+        "count": 26006,
+        "pct": 20.93
       },
       {
         "name": "Hollow Focus Technique",
-        "count": 25243,
-        "pct": 20.32
+        "count": 25225,
+        "pct": 20.3
       },
       {
         "name": "Wild Protector",
-        "count": 22883,
+        "count": 22886,
         "pct": 18.42
       },
       {
         "name": "Jade Heritage",
-        "count": 17217,
-        "pct": 13.86
+        "count": 17179,
+        "pct": 13.83
       },
       {
         "name": "Dance with Death",
-        "count": 17104,
-        "pct": 13.77
+        "count": 17123,
+        "pct": 13.78
       },
       {
         "name": "Gathering Winds",
-        "count": 14494,
-        "pct": 11.67
+        "count": 14465,
+        "pct": 11.64
       },
       {
         "name": "Projectile Proximity Specialisation",
-        "count": 13663,
-        "pct": 11.0
+        "count": 13617,
+        "pct": 10.96
       },
       {
         "name": "Endless Munitions",
-        "count": 13543,
-        "pct": 10.9
+        "count": 13496,
+        "pct": 10.86
       },
       {
         "name": "Mirage Deadeye",
-        "count": 13076,
-        "pct": 10.52
-      },
-      {
-        "name": "Mystic Attunement",
-        "count": 12925,
-        "pct": 10.4
+        "count": 13060,
+        "pct": 10.51
       },
       {
         "name": "Vivid Stampede",
-        "count": 12903,
-        "pct": 10.39
+        "count": 12929,
+        "pct": 10.41
       },
       {
         "name": "Primal Bounty",
-        "count": 12847,
-        "pct": 10.34
+        "count": 12874,
+        "pct": 10.36
+      },
+      {
+        "name": "Mystic Attunement",
+        "count": 12867,
+        "pct": 10.36
       },
       {
         "name": "The Mhacha's Gift",
-        "count": 12431,
-        "pct": 10.01
+        "count": 12455,
+        "pct": 10.03
       },
       {
         "name": "Sacred Unity",
-        "count": 12037,
-        "pct": 9.69
+        "count": 12045,
+        "pct": 9.7
       },
       {
         "name": "Idolatry",
-        "count": 10372,
-        "pct": 8.35
-      },
-      {
-        "name": "Bolstering Implants",
-        "count": 10355,
+        "count": 10343,
         "pct": 8.33
       },
       {
-        "name": "Motoric Implants",
-        "count": 10117,
-        "pct": 8.14
+        "name": "Incessant Cacophony",
+        "count": 10321,
+        "pct": 8.31
       },
       {
-        "name": "Quicksand Hourglass",
-        "count": 8940,
+        "name": "Motoric Implants",
+        "count": 10085,
+        "pct": 8.12
+      },
+      {
+        "name": "Bolstering Implants",
+        "count": 8941,
         "pct": 7.2
       },
       {
         "name": "Scarred Faith",
-        "count": 8058,
-        "pct": 6.49
+        "count": 8098,
+        "pct": 6.52
       },
       {
         "name": "Trusted Kinship",
-        "count": 6801,
-        "pct": 5.47
+        "count": 6805,
+        "pct": 5.48
       },
       {
         "name": "Conduit",
-        "count": 6742,
-        "pct": 5.43
+        "count": 6759,
+        "pct": 5.44
       },
       {
         "name": "The Lesser Harm",
-        "count": 6500,
-        "pct": 5.23
+        "count": 6487,
+        "pct": 5.22
       },
       {
         "name": "Entwined Realities",
-        "count": 6463,
-        "pct": 5.2
+        "count": 6448,
+        "pct": 5.19
       },
       {
         "name": "Mind Over Matter",
-        "count": 6119,
-        "pct": 4.93
+        "count": 6105,
+        "pct": 4.91
       },
       {
         "name": "I am the Blizzard...",
-        "count": 5979,
-        "pct": 4.81
+        "count": 6027,
+        "pct": 4.85
       },
       {
-        "name": "Far Shot",
-        "count": 5514,
-        "pct": 4.44
+        "name": "Sustainable Practices",
+        "count": 5576,
+        "pct": 4.49
       },
       {
-        "name": "Baryanic Leylines",
-        "count": 5469,
-        "pct": 4.4
+        "name": "Enduring Elixirs",
+        "count": 5532,
+        "pct": 4.45
       },
       {
-        "name": "Bringer of Flame",
-        "count": 5444,
-        "pct": 4.38
+        "name": "Navira's Well",
+        "count": 5483,
+        "pct": 4.41
       },
       {
         "name": "Eldritch Battery",
-        "count": 5310,
-        "pct": 4.27
+        "count": 5279,
+        "pct": 4.25
       },
       {
         "name": "Blackflame Covenant",
-        "count": 5271,
-        "pct": 4.24
+        "count": 5249,
+        "pct": 4.22
       },
       {
         "name": "Whispers of Doom",
-        "count": 5231,
+        "count": 5229,
         "pct": 4.21
       },
       {
         "name": "Rupture the Soul",
-        "count": 5185,
-        "pct": 4.17
+        "count": 5164,
+        "pct": 4.16
       },
       {
         "name": "Way of the Mountain",
-        "count": 5038,
-        "pct": 4.06
+        "count": 5026,
+        "pct": 4.05
       },
       {
-        "name": "Gore Spike",
-        "count": 4761,
-        "pct": 3.83
+        "name": "Baryanic Leylines",
+        "count": 4824,
+        "pct": 3.88
       },
       {
-        "name": "Chayula's Gift",
-        "count": 4754,
-        "pct": 3.83
+        "name": "Beidat's Gaze",
+        "count": 4803,
+        "pct": 3.87
       },
       {
         "name": "Gem Studded",
-        "count": 4465,
-        "pct": 3.59
+        "count": 4517,
+        "pct": 3.64
       },
       {
         "name": "Crystalline Phylactery",
-        "count": 4422,
-        "pct": 3.56
+        "count": 4434,
+        "pct": 3.57
       },
       {
         "name": "Barya of Ruzhan",
-        "count": 4297,
-        "pct": 3.46
+        "count": 4314,
+        "pct": 3.47
       },
       {
         "name": "Hollow Form Technique",
-        "count": 4214,
-        "pct": 3.39
+        "count": 4223,
+        "pct": 3.4
       },
       {
         "name": "A Solid Plan",
-        "count": 4164,
-        "pct": 3.35
+        "count": 4187,
+        "pct": 3.37
       },
       {
         "name": "Forced Outcome",
-        "count": 4114,
-        "pct": 3.31
+        "count": 4101,
+        "pct": 3.3
       },
       {
         "name": "The Fourth Teaching",
-        "count": 4015,
-        "pct": 3.23
+        "count": 4026,
+        "pct": 3.24
       },
       {
         "name": "Soulless Form",
-        "count": 3932,
-        "pct": 3.16
+        "count": 3917,
+        "pct": 3.15
       },
       {
         "name": "Right Where We Want Them",
-        "count": 3913,
+        "count": 3908,
         "pct": 3.15
       },
       {
         "name": "Giant's Blood",
-        "count": 3857,
-        "pct": 3.1
+        "count": 3868,
+        "pct": 3.11
       },
       {
         "name": "Vitality Siphon",
-        "count": 3790,
-        "pct": 3.05
+        "count": 3822,
+        "pct": 3.08
       },
       {
         "name": "Eternal Life",
-        "count": 3766,
-        "pct": 3.03
+        "count": 3756,
+        "pct": 3.02
       },
       {
         "name": "Ritual Cadence",
-        "count": 3736,
-        "pct": 3.01
+        "count": 3750,
+        "pct": 3.02
       }
     ],
     "anointed": [
       {
         "name": "Focused Thrust",
-        "count": 12782,
+        "count": 12783,
         "pct": 10.29
       },
       {
         "name": "Roll and Strike",
-        "count": 8103,
-        "pct": 6.52
+        "count": 8078,
+        "pct": 6.5
       },
       {
         "name": "The Frenzied Bear",
-        "count": 6054,
-        "pct": 4.87
+        "count": 6087,
+        "pct": 4.9
       },
       {
         "name": "Barbaric Strength",
-        "count": 4819,
-        "pct": 3.88
-      },
-      {
-        "name": "Lasting Trauma",
-        "count": 4295,
-        "pct": 3.46
+        "count": 4847,
+        "pct": 3.9
       },
       {
         "name": "Zarokh's Gift",
-        "count": 4271,
-        "pct": 3.44
+        "count": 4328,
+        "pct": 3.48
+      },
+      {
+        "name": "Lasting Trauma",
+        "count": 4317,
+        "pct": 3.47
       },
       {
         "name": "Gem Enthusiast",
-        "count": 3541,
-        "pct": 2.85
+        "count": 3555,
+        "pct": 2.86
       },
       {
-        "name": "Patient Barrier",
-        "count": 3232,
-        "pct": 2.6
+        "name": "Enveloping Presence",
+        "count": 3256,
+        "pct": 2.62
       },
       {
         "name": "Preservation",
-        "count": 3075,
-        "pct": 2.48
+        "count": 3151,
+        "pct": 2.54
       },
       {
-        "name": "Growing Swarm",
-        "count": 2529,
-        "pct": 2.04
+        "name": "Blood of Rage",
+        "count": 2568,
+        "pct": 2.07
       },
       {
         "name": "Dominion",
-        "count": 2226,
+        "count": 2230,
         "pct": 1.79
       },
       {
         "name": "Cooked",
-        "count": 2022,
-        "pct": 1.63
+        "count": 2033,
+        "pct": 1.64
       },
       {
         "name": "Imbibed Power",
-        "count": 1820,
-        "pct": 1.46
+        "count": 1806,
+        "pct": 1.45
       },
       {
         "name": "Bonded Precision",
-        "count": 1686,
+        "count": 1691,
         "pct": 1.36
       },
       {
         "name": "Thaumaturgic Generator",
-        "count": 1464,
-        "pct": 1.18
+        "count": 1477,
+        "pct": 1.19
       },
       {
         "name": "The Spring Hare",
-        "count": 1317,
-        "pct": 1.06
+        "count": 1333,
+        "pct": 1.07
       },
       {
         "name": "Grace of the Ancestors",
-        "count": 1315,
-        "pct": 1.06
+        "count": 1327,
+        "pct": 1.07
       },
       {
         "name": "Harness the Elements",
-        "count": 1281,
-        "pct": 1.03
+        "count": 1288,
+        "pct": 1.04
       },
       {
-        "name": "Lust for Power",
-        "count": 1273,
+        "name": "Hunting Companion",
+        "count": 1271,
         "pct": 1.02
       },
       {
         "name": "Climate Change",
-        "count": 1170,
-        "pct": 0.94
+        "count": 1210,
+        "pct": 0.97
       },
       {
         "name": "Blessing of the Moon",
-        "count": 987,
+        "count": 979,
         "pct": 0.79
       },
       {
         "name": "Spaghettification",
-        "count": 945,
+        "count": 940,
         "pct": 0.76
       },
       {
-        "name": "Hunting Companion",
-        "count": 918,
-        "pct": 0.74
+        "name": "Alternating Current",
+        "count": 903,
+        "pct": 0.73
       },
       {
         "name": "The Soul Meridian",
-        "count": 891,
+        "count": 900,
         "pct": 0.72
       },
       {
-        "name": "Savouring",
-        "count": 888,
-        "pct": 0.71
+        "name": "Left Hand of Darkness",
+        "count": 890,
+        "pct": 0.72
       },
       {
         "name": "Thirst for Power",
-        "count": 815,
+        "count": 814,
         "pct": 0.66
       },
       {
         "name": "Glaciation",
-        "count": 799,
-        "pct": 0.64
+        "count": 806,
+        "pct": 0.65
       },
       {
         "name": "Acceleration",
-        "count": 712,
-        "pct": 0.57
+        "count": 725,
+        "pct": 0.58
       },
       {
-        "name": "Endured Suffering",
-        "count": 688,
+        "name": "Impending Doom",
+        "count": 685,
         "pct": 0.55
       },
       {
         "name": "Careful Assassin",
-        "count": 677,
+        "count": 675,
         "pct": 0.54
       },
       {
         "name": "Efficient Casting",
-        "count": 632,
-        "pct": 0.51
+        "count": 642,
+        "pct": 0.52
       },
       {
         "name": "Heavy Ammunition",
-        "count": 627,
+        "count": 616,
         "pct": 0.5
       },
       {
-        "name": "Deterioration",
-        "count": 606,
+        "name": "Brain Storm",
+        "count": 608,
         "pct": 0.49
       },
       {
-        "name": "The Raging Ox",
-        "count": 599,
+        "name": "Empowering Remains",
+        "count": 600,
         "pct": 0.48
       },
       {
-        "name": "Trained Deflection",
-        "count": 550,
-        "pct": 0.44
+        "name": "Subterfuge Mask",
+        "count": 560,
+        "pct": 0.45
       },
       {
-        "name": "Escape Velocity",
-        "count": 540,
-        "pct": 0.43
+        "name": "Flashy Parrying",
+        "count": 556,
+        "pct": 0.45
       },
       {
-        "name": "Locked On",
-        "count": 524,
+        "name": "Concussive Attack",
+        "count": 527,
         "pct": 0.42
       },
       {
-        "name": "Ancestral Mending",
-        "count": 517,
+        "name": "High Alert",
+        "count": 525,
         "pct": 0.42
       },
       {
-        "name": "Impending Doom",
-        "count": 517,
+        "name": "Remnant Attraction",
+        "count": 523,
         "pct": 0.42
-      },
-      {
-        "name": "Melding",
-        "count": 474,
-        "pct": 0.38
       },
       {
         "name": "Lord of Horrors",
-        "count": 469,
+        "count": 476,
         "pct": 0.38
       },
       {
-        "name": "Invigorating Grandeur",
-        "count": 465,
-        "pct": 0.37
+        "name": "Beastial Skin",
+        "count": 472,
+        "pct": 0.38
       },
       {
-        "name": "Secrets of the Orb",
-        "count": 440,
-        "pct": 0.35
+        "name": "Chakra of Stability",
+        "count": 468,
+        "pct": 0.38
       },
       {
-        "name": "Precise Point",
+        "name": "Stand and Deliver",
         "count": 438,
         "pct": 0.35
       },
       {
-        "name": "Pure Chaos",
-        "count": 425,
+        "name": "All Natural",
+        "count": 436,
+        "pct": 0.35
+      },
+      {
+        "name": "Biting Frost",
+        "count": 431,
+        "pct": 0.35
+      },
+      {
+        "name": "Stupefy",
+        "count": 419,
         "pct": 0.34
       },
       {
         "name": "Vulgar Methods",
-        "count": 415,
+        "count": 412,
         "pct": 0.33
       },
       {
-        "name": "Personal Touch",
-        "count": 413,
-        "pct": 0.33
-      },
-      {
-        "name": "Concussive Attack",
-        "count": 411,
+        "name": "Invigorating Grandeur",
+        "count": 408,
         "pct": 0.33
       },
       {
         "name": "Heavy Drinker",
-        "count": 390,
+        "count": 383,
         "pct": 0.31
       },
       {
-        "name": "Arcane Intensity",
-        "count": 370,
+        "name": "In Your Face",
+        "count": 374,
         "pct": 0.3
       }
     ]
@@ -1555,12 +1555,12 @@
       "account": "Belirs-4934"
     },
     {
-      "name": "커피담배",
-      "account": "jacob77-8367"
-    },
-    {
       "name": "morlox_v",
       "account": "morloxIC-1573"
+    },
+    {
+      "name": "커피담배",
+      "account": "jacob77-8367"
     },
     {
       "name": "VKlichster",
@@ -1575,40 +1575,36 @@
       "account": "Ezerielblade-1569"
     },
     {
-      "name": "FailedGED_IS",
-      "account": "emocarrotz-2025"
-    },
-    {
       "name": "三角是只小阿比巫妖",
       "account": "chuckzjj-2689"
+    },
+    {
+      "name": "FailedGED_IS",
+      "account": "emocarrotz-2025"
     },
     {
       "name": "sameman",
       "account": "Sayheyoheyo-7357"
     },
     {
-      "name": "Libutio",
-      "account": "Libuta-3836"
-    },
-    {
       "name": "HarambeIceshot",
       "account": "DukeBarr-4283"
     },
     {
-      "name": "сильнейшийнегр",
-      "account": "HoodwinkTheSlayer-7436"
+      "name": "Libutio",
+      "account": "Libuta-3836"
     },
     {
       "name": "KingFud_RoA",
       "account": "KingFud-1121"
     },
     {
-      "name": "천주천주",
-      "account": "ccjzzang-7575"
+      "name": "сильнейшийнегр",
+      "account": "HoodwinkTheSlayer-7436"
     },
     {
-      "name": "Ainreich",
-      "account": null
+      "name": "천주천주",
+      "account": "ccjzzang-7575"
     },
     {
       "name": "furufuru_RoA",
@@ -1617,6 +1613,10 @@
     {
       "name": "Rea",
       "account": "Realyn-1392"
+    },
+    {
+      "name": "Ainreich",
+      "account": null
     },
     {
       "name": "ParashnikNikita",
@@ -1647,24 +1647,16 @@
       "account": "Lorkant-2790"
     },
     {
-      "name": "vikgamersecret",
-      "account": "AssenVIK-6874"
-    },
-    {
-      "name": "CHoiGameAnBaTyNut",
-      "account": "MadDogLife-3434"
-    },
-    {
       "name": "veromikasrtarks",
       "account": "ee4gle-5944"
     },
     {
-      "name": "DivineOrbBeggar",
-      "account": "LikeABeeR-6642"
-    },
-    {
       "name": "YPE",
       "account": "Phamhannii-0530"
+    },
+    {
+      "name": "vikgamersecret",
+      "account": "AssenVIK-6874"
     },
     {
       "name": "MinionSpinAgain",
@@ -1675,16 +1667,28 @@
       "account": "tanya-8762"
     },
     {
+      "name": "CHoiGameAnBaTyNut",
+      "account": "MadDogLife-3434"
+    },
+    {
+      "name": "DivineOrbBeggar",
+      "account": "LikeABeeR-6642"
+    },
+    {
       "name": "Exoxit_PooTwo",
       "account": "Exoxit-0276"
     },
     {
-      "name": "Xtonyg",
-      "account": "Donnytwo-9510"
+      "name": "あまつかは夜を識らない",
+      "account": "あまつか-3603"
     },
     {
       "name": "SSA_Ancients",
       "account": "Chaos_W-2442"
+    },
+    {
+      "name": "Xtonyg",
+      "account": "Donnytwo-9510"
     },
     {
       "name": "크로노_맨서",
@@ -1699,12 +1703,12 @@
       "account": "Aiolos-9727"
     },
     {
-      "name": "Dojshy",
-      "account": "Bellyshock66-2221"
-    },
-    {
       "name": "Techno_IceShot",
       "account": "BrandNew-9781"
+    },
+    {
+      "name": "Dojshy",
+      "account": "Bellyshock66-2221"
     },
     {
       "name": "Gyshay",
@@ -1719,52 +1723,56 @@
       "account": "Rageproblems-4460"
     },
     {
-      "name": "reroll_fun_is_forbidden",
-      "account": "ggz7yy-7184"
-    },
-    {
-      "name": "oooZALUPA",
-      "account": "karlikan-3284"
-    },
-    {
-      "name": "Duckrell",
-      "account": "Duck13oy-6912"
-    },
-    {
       "name": "Littlefella_Roa",
       "account": "Fourty3-6301"
-    },
-    {
-      "name": "TafeLynx_Runes",
-      "account": "Tafe_Lynx-4620"
     },
     {
       "name": "교메이",
       "account": "oceanside-9355"
     },
     {
+      "name": "reroll_fun_is_forbidden",
+      "account": "ggz7yy-7184"
+    },
+    {
+      "name": "Duckrell",
+      "account": "Duck13oy-6912"
+    },
+    {
+      "name": "oooZALUPA",
+      "account": "karlikan-3284"
+    },
+    {
       "name": "Takenote",
       "account": "noobplsnoflame-5082"
-    },
-    {
-      "name": "spydmolr",
-      "account": "xdmoller-3264"
-    },
-    {
-      "name": "高貴でマグマなスノー",
-      "account": "snow-7405"
-    },
-    {
-      "name": "YLIVOIMAINEN",
-      "account": "RANGERZX-7638"
     },
     {
       "name": "dxd_abuse",
       "account": "ducky33-2446"
     },
     {
+      "name": "TafeLynx_Runes",
+      "account": "Tafe_Lynx-4620"
+    },
+    {
       "name": "ShaftLee",
       "account": "MrShafty-5880"
+    },
+    {
+      "name": "高貴でマグマなスノー",
+      "account": "snow-7405"
+    },
+    {
+      "name": "spydmolr",
+      "account": "xdmoller-3264"
+    },
+    {
+      "name": "YLIVOIMAINEN",
+      "account": "RANGERZX-7638"
+    },
+    {
+      "name": "我们猎魔的女猎人也是猎魔人",
+      "account": "TLLSN-0342"
     },
     {
       "name": "rota_bubinha",
@@ -1775,49 +1783,41 @@
       "account": "Lifeskiller-7332"
     },
     {
-      "name": "我们猎魔的女猎人也是猎魔人",
-      "account": "TLLSN-0342"
-    },
-    {
-      "name": "olley",
-      "account": "olleyDE-4339"
+      "name": "KidHalfAYearLegue",
+      "account": "K1dWannaWin-4918"
     },
     {
       "name": "Zee_BellShatter",
       "account": "LilZeeZee-8028"
     },
     {
-      "name": "Nordhop",
-      "account": "Dalltfatfrot-6472"
+      "name": "olley",
+      "account": "olleyDE-4339"
     },
     {
-      "name": "Gemeindebau",
-      "account": "Bandwurm1337-5745"
-    },
-    {
-      "name": "KidHalfAYearLegue",
-      "account": "K1dWannaWin-4918"
-    },
-    {
-      "name": "CronusF",
-      "account": "Cronus-7473"
-    },
-    {
-      "name": "ManaArbuzer",
-      "account": "Babaram-6489"
+      "name": "yaegovseebalsuka",
+      "account": "seven_teen2-6382"
     },
     {
       "name": "BadforJakub",
       "account": "TimethiefxD-4568"
     },
     {
-      "name": "ГолосаСказалиСделатьЭто",
-      "account": "nebelgg-6371"
+      "name": "Gemeindebau",
+      "account": "Bandwurm1337-5745"
+    },
+    {
+      "name": "Nordhop",
+      "account": "Dalltfatfrot-6472"
+    },
+    {
+      "name": "CronusF",
+      "account": "Cronus-7473"
     }
   ],
   "top_lists": {
     "sample_size": 95,
-    "with_dps_count": 88,
+    "with_dps_count": 87,
     "with_ehp_count": 95,
     "top_overall_dps": [
       {
@@ -2029,19 +2029,6 @@
         "main_skill": "Sacrificial Lamb II"
       },
       {
-        "name": "Exoxit_PooTwo",
-        "account": "Exoxit-0276",
-        "class": "Witchhunter",
-        "level": 99,
-        "life": 3509,
-        "es": 335,
-        "ehp": 24000,
-        "ehp_display": "24k",
-        "dps": 385000,
-        "dps_display": "385k",
-        "main_skill": "Galvanic Shards"
-      },
-      {
         "name": "mikki_v",
         "account": "mikkiv-7730",
         "class": "Pathfinder",
@@ -2053,6 +2040,19 @@
         "dps": 383000,
         "dps_display": "383k",
         "main_skill": "Twister"
+      },
+      {
+        "name": "Exoxit_PooTwo",
+        "account": "Exoxit-0276",
+        "class": "Witchhunter",
+        "level": 99,
+        "life": 3509,
+        "es": 335,
+        "ehp": 24000,
+        "ehp_display": "24k",
+        "dps": 372000,
+        "dps_display": "372k",
+        "main_skill": "Galvanic Shards"
       },
       {
         "name": "GothMommyAltGirl",
@@ -2117,7 +2117,7 @@
         "ehp_display": "31k",
         "dps": 357000,
         "dps_display": "357k",
-        "main_skill": "Behead II"
+        "main_skill": "Wardbound Minions"
       },
       {
         "name": "이십육년오월삼십일",
@@ -2169,6 +2169,19 @@
         "es": 8291,
         "ehp": 83000,
         "ehp_display": "83k",
+        "dps": null,
+        "dps_display": null,
+        "main_skill": null
+      },
+      {
+        "name": "yaegovseebalsuka",
+        "account": "seven_teen2-6382",
+        "class": "Witchhunter",
+        "level": 99,
+        "life": 1,
+        "es": 7619,
+        "ehp": 81000,
+        "ehp_display": "81k",
         "dps": null,
         "dps_display": null,
         "main_skill": null
@@ -2226,17 +2239,17 @@
         "main_skill": "Twister"
       },
       {
-        "name": "YLIVOIMAINEN",
-        "account": "RANGERZX-7638",
+        "name": "Duckrell",
+        "account": "Duck13oy-6912",
         "class": null,
         "level": 99,
         "life": 1,
-        "es": 7591,
+        "es": 7213,
         "ehp": 67000,
         "ehp_display": "67k",
-        "dps": 6000,
-        "dps_display": "6.0k",
-        "main_skill": "Herald of Blood"
+        "dps": 76000,
+        "dps_display": "76k",
+        "main_skill": "Raise Zombie"
       },
       {
         "name": "ShaftLee",
@@ -2250,6 +2263,19 @@
         "dps": 2700,
         "dps_display": "2.7k",
         "main_skill": "Ailith's Chimes"
+      },
+      {
+        "name": "YLIVOIMAINEN",
+        "account": "RANGERZX-7638",
+        "class": null,
+        "level": 99,
+        "life": 1,
+        "es": 7591,
+        "ehp": 67000,
+        "ehp_display": "67k",
+        "dps": 6000,
+        "dps_display": "6.0k",
+        "main_skill": "Herald of Blood"
       },
       {
         "name": "PlayGunzTheDuel",
@@ -2315,19 +2341,6 @@
         "dps": 75000,
         "dps_display": "75k",
         "main_skill": "Styrn's Mountain"
-      },
-      {
-        "name": "Duckrell",
-        "account": "Duck13oy-6912",
-        "class": null,
-        "level": 99,
-        "life": 1,
-        "es": 7692,
-        "ehp": 60000,
-        "ehp_display": "60k",
-        "dps": 77000,
-        "dps_display": "77k",
-        "main_skill": "Deep Freeze"
       },
       {
         "name": "HarambeIceshot",
@@ -2458,24 +2471,11 @@
         "dps": 129000,
         "dps_display": "129k",
         "main_skill": "Refutation"
-      },
-      {
-        "name": "mdaweckaa",
-        "account": "shynixxd-4416",
-        "class": null,
-        "level": 100,
-        "life": 1490,
-        "es": 3396,
-        "ehp": 43000,
-        "ehp_display": "43k",
-        "dps": 460000,
-        "dps_display": "460k",
-        "main_skill": "Twister"
       }
     ],
     "by_skill": {
       "Twister": {
-        "char_count": 22,
+        "char_count": 23,
         "top_dps": [
           {
             "name": "Aiolosmuuuu",
@@ -2612,7 +2612,7 @@
         ]
       },
       "Cold Penetration": {
-        "char_count": 17,
+        "char_count": 16,
         "top_dps": [
           {
             "name": "Techno_IceShot",
@@ -2721,19 +2721,6 @@
             "main_skill": "Cold Penetration"
           },
           {
-            "name": "ГолосаСказалиСделатьЭто",
-            "account": "nebelgg-6371",
-            "class": "Ritualist",
-            "level": 99,
-            "life": 1458,
-            "es": 3459,
-            "ehp": 38000,
-            "ehp_display": "38k",
-            "dps": 312000,
-            "dps_display": "312k",
-            "main_skill": "Cold Penetration"
-          },
-          {
             "name": "Botiaraaaa_Kolokol",
             "account": "deen22222-2652",
             "class": null,
@@ -2744,6 +2731,19 @@
             "ehp_display": "36k",
             "dps": 338000,
             "dps_display": "338k",
+            "main_skill": "Cold Penetration"
+          },
+          {
+            "name": "TafeLynx_Runes",
+            "account": "Tafe_Lynx-4620",
+            "class": "Deadeye",
+            "level": 99,
+            "life": 1867,
+            "es": 3157,
+            "ehp": 34000,
+            "ehp_display": "34k",
+            "dps": 337000,
+            "dps_display": "337k",
             "main_skill": "Cold Penetration"
           }
         ]
@@ -2760,8 +2760,8 @@
             "es": 335,
             "ehp": 24000,
             "ehp_display": "24k",
-            "dps": 385000,
-            "dps_display": "385k",
+            "dps": 372000,
+            "dps_display": "372k",
             "main_skill": "Galvanic Shards"
           },
           {
@@ -2814,8 +2814,8 @@
             "es": 335,
             "ehp": 24000,
             "ehp_display": "24k",
-            "dps": 385000,
-            "dps_display": "385k",
+            "dps": 372000,
+            "dps_display": "372k",
             "main_skill": "Galvanic Shards"
           },
           {
@@ -2893,7 +2893,7 @@
             "account": "SensaçãoDeDesespero-4682",
             "class": "Spirit Walker",
             "level": 100,
-            "life": 3132,
+            "life": 3121,
             "es": 245,
             "ehp": 41000,
             "ehp_display": "41k",
@@ -2934,7 +2934,7 @@
             "account": "SensaçãoDeDesespero-4682",
             "class": "Spirit Walker",
             "level": 100,
-            "life": 3132,
+            "life": 3121,
             "es": 245,
             "ehp": 41000,
             "ehp_display": "41k",
@@ -2982,8 +2982,8 @@
             "es": 933,
             "ehp": 14000,
             "ehp_display": "14k",
-            "dps": 46000,
-            "dps_display": "46k",
+            "dps": 45000,
+            "dps_display": "45k",
             "main_skill": "Esh's Prowess"
           }
         ],
@@ -3010,8 +3010,8 @@
             "es": 933,
             "ehp": 14000,
             "ehp_display": "14k",
-            "dps": 46000,
-            "dps_display": "46k",
+            "dps": 45000,
+            "dps_display": "45k",
             "main_skill": "Esh's Prowess"
           },
           {
@@ -3026,91 +3026,6 @@
             "dps": 619000,
             "dps_display": "619k",
             "main_skill": "Esh's Prowess"
-          }
-        ]
-      },
-      "Essence Drain": {
-        "char_count": 3,
-        "top_dps": [
-          {
-            "name": "oooZALUPA",
-            "account": "karlikan-3284",
-            "class": "Oracle",
-            "level": 99,
-            "life": 1,
-            "es": 5899,
-            "ehp": 11000,
-            "ehp_display": "11k",
-            "dps": 400,
-            "dps_display": "0.4k",
-            "main_skill": "Essence Drain"
-          },
-          {
-            "name": "rota_bubinha",
-            "account": "haiphai-1560",
-            "class": "Deadeye",
-            "level": 99,
-            "life": 1,
-            "es": 10228,
-            "ehp": 29000,
-            "ehp_display": "29k",
-            "dps": 400,
-            "dps_display": "0.4k",
-            "main_skill": "Essence Drain"
-          },
-          {
-            "name": "ManaArbuzer",
-            "account": "Babaram-6489",
-            "class": "Disciple of Varashta",
-            "level": 99,
-            "life": 1,
-            "es": 8459,
-            "ehp": 24000,
-            "ehp_display": "24k",
-            "dps": 400,
-            "dps_display": "0.4k",
-            "main_skill": "Essence Drain"
-          }
-        ],
-        "top_ehp": [
-          {
-            "name": "rota_bubinha",
-            "account": "haiphai-1560",
-            "class": "Deadeye",
-            "level": 99,
-            "life": 1,
-            "es": 10228,
-            "ehp": 29000,
-            "ehp_display": "29k",
-            "dps": 400,
-            "dps_display": "0.4k",
-            "main_skill": "Essence Drain"
-          },
-          {
-            "name": "ManaArbuzer",
-            "account": "Babaram-6489",
-            "class": "Disciple of Varashta",
-            "level": 99,
-            "life": 1,
-            "es": 8459,
-            "ehp": 24000,
-            "ehp_display": "24k",
-            "dps": 400,
-            "dps_display": "0.4k",
-            "main_skill": "Essence Drain"
-          },
-          {
-            "name": "oooZALUPA",
-            "account": "karlikan-3284",
-            "class": "Oracle",
-            "level": 99,
-            "life": 1,
-            "es": 5899,
-            "ehp": 11000,
-            "ehp_display": "11k",
-            "dps": 400,
-            "dps_display": "0.4k",
-            "main_skill": "Essence Drain"
           }
         ]
       },
@@ -3347,6 +3262,65 @@
             "dps": 500,
             "dps_display": "0.5k",
             "main_skill": "Herald of Blood"
+          }
+        ]
+      },
+      "Essence Drain": {
+        "char_count": 2,
+        "top_dps": [
+          {
+            "name": "oooZALUPA",
+            "account": "karlikan-3284",
+            "class": "Oracle",
+            "level": 99,
+            "life": 1,
+            "es": 5899,
+            "ehp": 11000,
+            "ehp_display": "11k",
+            "dps": 400,
+            "dps_display": "0.4k",
+            "main_skill": "Essence Drain"
+          },
+          {
+            "name": "rota_bubinha",
+            "account": "haiphai-1560",
+            "class": "Deadeye",
+            "level": 99,
+            "life": 1,
+            "es": 10228,
+            "ehp": 29000,
+            "ehp_display": "29k",
+            "dps": 400,
+            "dps_display": "0.4k",
+            "main_skill": "Essence Drain"
+          }
+        ],
+        "top_ehp": [
+          {
+            "name": "rota_bubinha",
+            "account": "haiphai-1560",
+            "class": "Deadeye",
+            "level": 99,
+            "life": 1,
+            "es": 10228,
+            "ehp": 29000,
+            "ehp_display": "29k",
+            "dps": 400,
+            "dps_display": "0.4k",
+            "main_skill": "Essence Drain"
+          },
+          {
+            "name": "oooZALUPA",
+            "account": "karlikan-3284",
+            "class": "Oracle",
+            "level": 99,
+            "life": 1,
+            "es": 5899,
+            "ehp": 11000,
+            "ehp_display": "11k",
+            "dps": 400,
+            "dps_display": "0.4k",
+            "main_skill": "Essence Drain"
           }
         ]
       },

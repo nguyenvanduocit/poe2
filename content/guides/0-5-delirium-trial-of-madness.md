@@ -47,14 +47,14 @@ Point vào bằng ba đường. Một, hoàn thành map gần The Withered Willo
 
 ## Tiêu point vào node nào và vì sao
 
-Subtree Delirium có 15 notable và một small node lặp. Nhóm theo trục chức năng:
+Subtree Delirium có 15 notable và một small node lặp. Nhóm theo chức năng:
 
-**Trục fog và timer** — giữ sương sống lâu để đẩy sâu hơn, vì mọi reward đều nằm sau mốc độ sâu:
+**Nhóm fog và timer** — giữ sương sống lâu để đẩy sâu hơn, vì mọi reward đều nằm sau mốc độ sâu:
 
 - **You can't just wake up from this one.** — Delirium Fog dissipates 30% slower — node đầu tiên nên lấy, độ sâu là tiền tệ gốc của cả mechanic.
 - **Come on! Face me!** — slaying Unique Monsters pauses the Delirium Mirror Timer for 10 seconds, kèm 25% increased chance to manifest additional Unique Boss Shards — vừa khóa timer khi đánh boss vừa thêm encounter boss.
 
-**Trục density trong fog** — nhiều quái, nhiều mirror, nhiều shard hơn mỗi vòng:
+**Nhóm density trong fog** — nhiều quái, nhiều mirror, nhiều shard hơn mỗi vòng:
 
 - **The mirrors... the mirrors!** — 50% increased Fracturing Mirrors manifested within Delirium Fog.
 - **Is that the best you've got?!** — 50% increased chance to manifest additional Escalation Shards within Delirium Fog.
@@ -62,7 +62,7 @@ Subtree Delirium có 15 notable và một small node lặp. Nhóm theo trục ch
 - **These demons are all your own...** — Rare Monsters always Manifest Delirium Demons when within Fog.
 - **Get out of my head!** — Magic Monsters within Delirium Fog have 25% chance to have an additional Delirium Modifier.
 
-**Trục Grand Mirror và Trial of Madness** — engine mở vùng sương:
+**Nhóm Grand Mirror và Trial of Madness** — engine mở vùng sương:
 
 - **Grand Mirror Chance** — small node, có 16 bản, mỗi bản 5% increased chance for a Grand Mirror to appear on a nearby Map when Map Bosses are slain within Fog — stack từng cục trên đường đi tới notable, đây là vòi spawn Trial of Madness.
 - **I see your true nature now!** — Delirium Fog may now manifest Shards which add an additional Boss to the Map Boss arena or a guaranteed Grand Mirror — node mở khóa Capricious Shard, biến Grand Mirror từ may rủi thành ép được.
@@ -71,11 +71,11 @@ Subtree Delirium có 15 notable và một small node lặp. Nhóm theo trục ch
 - **You thought you were free?** — 25% chance for an additional Simulacrum when Delirium Fog is spread from Grand Mirrors.
 - **Are you sure you want to do that?** — Tablets have double Effect in areas with a Grand Mirror — nhân đôi giá trị tablet đã roll, lấy sau khi tablet setup đã đứng.
 
-**Trục splinter và Simulacrum sustain**:
+**Nhóm splinter và Simulacrum sustain**:
 
 - **Is this about me... or you?** — Simulacrum Splinters can drop from Delirium Monsters in level 75+ Map Areas, kèm Megalomaniac Jewels found have a 10% chance to allocate 3 notable passive skills — node tự cấp splinter, vừa nuôi Simulacrum vừa nuôi đường point Realm Gate.
 
-**Trục emotion và jewel craft** — nguồn currency craft của mechanic:
+**Nhóm emotion và jewel craft** — nguồn currency craft của mechanic:
 
 - **You can't scare me anymore!** — unique monster trong fog có chance rớt Potent Emotion: 5% chance for Humanoids to drop Potent Liquid Melancholy, 5% chance for Beasts to drop Potent Liquid Ferocity, 5% chance for Constructs to drop Potent Liquid Contempt.
 - **I know your childhood fears...** — 25% increased Liquid Emotions dropped by Monsters, và Liquid Emotions found have a 20% chance to be Ancient Liquid Emotions — **đây chính là node mở khóa Ancient Emotion**: không có nó thì Ancient không rớt, tức không có nguyên liệu Timelost Jewel.
@@ -84,22 +84,30 @@ Thứ tự allocate khuyến nghị với point nhỏ giọt đầu league: **Yo
 
 ## Tablet Delirium roll gì và dùng thế nào
 
-**Delirium Tablet** là :wiki-link{url="https://www.poe2wiki.net/wiki/Precursor_tablet"} với base "Adds a Mirror of Delirium to a Map" và 10 uses — bỏ vào **Map Device cùng waystone** khi mở map, hiệu ứng áp lên đúng map đó. Số slot tablet ăn theo số mod trên waystone: 1-2 mod cho 1 slot, 3-5 mod cho 2 slot, từ 6 mod là đủ 3 slot — roll waystone lên 6 affix là điều kiện để stack tablet. Tablet cùng loại stack được, nên hai tablet Delirium trong cùng map là nhân đôi. Pool suffix roll được trên tablet:
+**Delirium Tablet** là :wiki-link{url="https://www.poe2wiki.net/wiki/Precursor_tablet"} với base "Adds a Mirror of Delirium to a Map" và 10 uses — bỏ vào **Map Device cùng waystone** khi mở map, hiệu ứng áp lên đúng map đó. Số slot tablet ăn theo số mod trên waystone: 1-2 mod cho 1 slot, 3-5 mod cho 2 slot, từ 6 mod là đủ 3 slot — roll waystone lên 6 affix là điều kiện để stack tablet. Tablet cùng loại stack được, nên ba tablet Delirium trong cùng map là cộng dồn cả ba.
 
+Ba node atlas quyết định trần của tablet, thiếu cái nào là cụt. **Partial Translation** và **Reverse Transcription** bên tree generic, mỗi node cho "Your Tablets may be upgraded to Rare and have +1 Maximum Modifier" — lấy cả hai là tablet Rare 4 mod thay vì Magic 2 mod, đáng gấp đôi cho cùng một slot Map Device ([chi tiết nhóm tablet ở doc atlas tree](/guides/0-5-atlas-passive-tree)). Node thứ ba **Are you sure you want to do that?** cho "Tablets have double Effect in areas with a Grand Mirror". Node này mới là cái nhân đôi tablet, không phải tự nhiên có. Có node thì map Grand Mirror là chỗ đáng dump bộ tablet xịn nhất; chưa có thì Grand Mirror map chỉ để mở Trial of Madness chứ tablet không x2.
+
+Suffix roll được chia hai tầng. Tầng timer giữ sương sống lâu, vì mọi reward nằm sau mốc độ sâu nên fog tắt sớm là cắt thẳng vào loot:
+
+- **of the Unending** — Delirium Fog in Map dissipates 20—30% slower — mod đáng nhất, cộng dồn với node 30% trên tree (You can't just wake up from this one.).
+- **of Freeze Time** — Slaying Rare Monsters in Map pauses the Delirium Mirror Timer for 3—5 seconds — map dày rare là sương gần như không chạy.
 - **of Eternity** — Delirium Fog in Map lasts 6—12 additional seconds before dissipating.
-- **of the Unending** — Delirium Fog in Map dissipates 20—30% slower — mod đáng giá nhất, cộng dồn với node 30% trên tree.
-- **of Freeze Time** — Slaying Rare Monsters in Map pauses the Delirium Mirror Timer for 3—5 seconds — cùng họ với Come on! Face me!, map dày rare là sương gần như không chạy.
-- **of Madness** — Delirium in Map increases 15—30% faster with distance from the mirror — risk/reward: quái nặng nhanh hơn nhưng reward bar cũng đầy nhanh hơn, chỉ roll khi build đã thừa tank.
-- **of Persecution** — Delirium Monsters in Map have 15—30% increased Pack Size.
-- **of Mirrors** — Delirium Fog in Map spawns 15—30% increased Fracturing Mirrors.
-- **of Shattering** — Delirium Fog in Map spawns 12—26% increased MirrorShards.
-- **of Phobia** — Delirium Encounters in Map are 15—30% more likely to spawn Unique Bosses.
 
-Mặc định tablet chỉ là Magic 2 mod; hai node generic trên atlas tree — **Partial Translation** và **Reverse Transcription** — mỗi node cho "Your Tablets may be upgraded to Rare and have +1 Maximum Modifier", lấy cả hai là tablet 4 mod, đáng gấp đôi cho cùng một slot Map Device ([chi tiết nhóm tablet ở doc atlas tree](/guides/0-5-atlas-passive-tree)). Combo trần là tablet Rare 4 mod chạy trong vùng có Grand Mirror khi đã lấy **Are you sure you want to do that?** — double effect toàn bộ mod vừa roll. Có một tablet unique: **Clear Skies Delirium Tablet** với "Delirium Fog in your Maps never dissipates" — xóa hẳn trục timer, đổi lại không roll được suffix juice; hợp build clear chậm muốn full-clear map trong sương không áp lực.
+Tầng density nhồi quái, gương, shard cho mỗi mốc độ sâu:
+
+- **of Mirrors** — Delirium Fog in Map spawns 15—30% increased Fracturing Mirrors.
+- **of Shattering** — Delirium Fog in Map spawns 12—26% increased Mirror Shards.
+- **of Persecution** — Delirium Monsters in Map have 15—30% increased Pack Size.
+- **of Phobia** — Delirium Encounters in Map are 15—30% more likely to spawn Unique Bosses — unique trong fog là nguồn Potent Emotion qua node You can't scare me anymore!
+
+Một mod đứng ngoài hai tầng: **of Madness** — Delirium in Map increases 15—30% faster with distance from the mirror — quái nặng nhanh hơn nhưng reward bar cũng đầy nhanh hơn, chỉ giữ khi build đã clear thoải mái ở 200% Trial of Madness, không thì roll lại.
+
+Bộ tablet tối ưu chọn theo tốc độ build. Build clear chậm hoặc đàn companion thì timer là kẻ thù lớn nhất, gọn nhất là xóa luôn nó: slot 1 cắm **Clear Skies Delirium Tablet** (unique, "Delirium Fog in your Maps never dissipates", ~1 ex với hơn 5.000 listing 2026-06-10) để sương không bao giờ tắt, hai slot còn lại để tablet Rare roll thuần density vì đã không cần timer mod nữa. Clear Skies là unique nên không roll suffix lên nó được, nên hai slot Rare gánh phần juice, và một cái Clear Skies đủ phủ never-dissipate cả map. Build clear nhanh thì bỏ Clear Skies, chạy ba tablet Rare 4 mod mỗi cái nhắm hai dòng timer of the Unending cộng of Freeze Time thêm một density, để timer mod stack với node tree.
 
 ## Chọn map nào để chạy
 
-Vùng mặc định là cụm map quanh **The Withered Willow** — mirror có sẵn không tốn tablet, và mỗi map hoàn thành cho point subtree, nên giai đoạn farm point không có lý do đi đâu khác. Khi đã đủ point và chuyển sang farm bằng tablet trong Map Device, ưu tiên hai tiêu chí. Một, **layout tuyến tính hoặc dày quái**: sương lan theo thời gian còn mình chạy theo thanh độ sâu về phía boss, layout vòng vèo nhiều ngõ cụt làm mất thời gian sương vào đường chết — map thẳng một trục từ mirror tới boss giữ fog hiệu quả nhất. Hai, **map level 75 trở lên** khi đã lấy Is this about me... or you?, vì splinter chỉ rớt từ Delirium monster ở khu 75+. Với Trial of Madness, chọn điểm bắt đầu ở cụm map nối nhau dày — sương lan theo map liền kề, cụm thưa là vùng sương cụt sớm; node Recurring Nightmares với nhánh +4 map là cách bù cho atlas thưa.
+Vùng mặc định là cụm map quanh **The Withered Willow** — mirror có sẵn không tốn tablet, và mỗi map hoàn thành cho point subtree, nên giai đoạn farm point không có lý do đi đâu khác. Khi đã đủ point và chuyển sang farm bằng tablet trong Map Device, ưu tiên hai tiêu chí. Một, **layout thẳng một đường hoặc dày quái**: sương lan theo thời gian còn mình chạy theo thanh độ sâu về phía boss, layout vòng vèo nhiều ngõ cụt làm mất thời gian sương vào đường chết — map đi thẳng từ mirror tới boss giữ fog hiệu quả nhất. Hai, **map level 75 trở lên** khi đã lấy Is this about me... or you?, vì splinter chỉ rớt từ Delirium monster ở khu 75+. Với Trial of Madness, chọn điểm bắt đầu ở cụm map nối nhau dày — sương lan theo map liền kề, cụm thưa là vùng sương cụt sớm; node Recurring Nightmares với nhánh +4 map là cách bù cho atlas thưa.
 
 ## Emotion dùng vào việc gì
 

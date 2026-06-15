@@ -3,8 +3,8 @@
   "baseCurrencyApiId": "exalted",
   "baseCurrencyText": "Exalted Orb",
   "categoryApiId": "abyss",
-  "currentPrice": 104.36383806783637,
-  "currentQuantity": 5205,
+  "currentPrice": 74.97221655739038,
+  "currentQuantity": 7441,
   "dailyStats": [
     {
       "Average": 15.934773966744471,
@@ -106,16 +106,61 @@
       "Volume": 159320
     },
     {
-      "Average": 100.51775382361298,
-      "Close": 99.30844736393674,
+      "Average": 97.84049461241212,
+      "Close": 100.1416723144763,
       "High": 104.36383806783637,
       "Low": 91.91684206699345,
       "Open": 103.58744451373285,
       "Time": "2026-06-10",
-      "Volume": 60683
+      "Volume": 164578
+    },
+    {
+      "Average": 90.20259900543412,
+      "Close": 94.70001389108522,
+      "High": 99.888133930557,
+      "Low": 83.02702854181437,
+      "Open": 99.888133930557,
+      "Time": "2026-06-11",
+      "Volume": 172802
+    },
+    {
+      "Average": 101.10160251650682,
+      "Close": 113.17859722261387,
+      "High": 113.17859722261387,
+      "Low": 91.02274008348995,
+      "Open": 91.31250699765444,
+      "Time": "2026-06-12",
+      "Volume": 181047
+    },
+    {
+      "Average": 89.6344747082624,
+      "Close": 73.80235938295057,
+      "High": 114.70847761905246,
+      "Low": 73.80235938295057,
+      "Open": 114.70847761905246,
+      "Time": "2026-06-13",
+      "Volume": 222790
+    },
+    {
+      "Average": 65.56440490615844,
+      "Close": 79.38609391082281,
+      "High": 80.77636738999628,
+      "Low": 56.00572127610486,
+      "Open": 70.64416232852568,
+      "Time": "2026-06-14",
+      "Volume": 236475
+    },
+    {
+      "Average": 76.17710179440569,
+      "Close": 74.97221655739038,
+      "High": 77.82649857578795,
+      "Low": 74.97221655739038,
+      "Open": 77.82649857578795,
+      "Time": "2026-06-15",
+      "Volume": 22258
     }
   ],
-  "fetched_at": "2026-06-10T11:05:56Z",
+  "fetched_at": "2026-06-15T03:47:50Z",
   "iconUrl": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3MvUHJlc2VydmVkQ2FsdmljbGUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/6f63f7462d/PreservedCalvicle.png",
   "itemId": 4383,
   "kind": "Currency",

@@ -47,6 +47,8 @@ RIGHT-SIZING (quan trọng nhất): số section khớp ĐỘ PHỨC TẠP mecha
 HEADING: sentence-case tiếng Việt nói thẳng section làm gì (vd "## Toán break-even").
   KHÔNG dash-subtitle "## X — Y". Tên archetype EN bên dưới chỉ là nhãn để biết LOẠI section.
 
+KINH TẾ THÔNG TIN (xem CLAUDE.md `## Content Writing Voice`): một worked example / con số / cơ chế giải thích đúng MỘT lần ở section sở hữu nó; chỗ sau chỉ nhắc + dẫn ngược. ĐỪNG lặp cùng phép tính ở How It Works rồi lại Math Chain rồi lại Common Mistakes. Takeaway/Verdict thêm phán xét mới, không recap thân bài. Caveat (verify in-client / wiki lag) nói một lần.
+
 REQUIRED CORE (luôn có, tối thiểu 3): Intro + 1 section cơ chế + 1 section takeaway.
 OPTIONAL MENU (chỉ thêm khi mechanic cần — trigger dùng-khi/bỏ-khi ở mỗi placeholder dưới).
 Xem chi tiết: .claude/skills/write-mechanic-tutorial/SKILL.md "## Section structure".

@@ -38,7 +38,7 @@ Nhánh aura zoo của [Tame Beast Companion Pack](/builds/huntress/0-5-spirit-wa
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Tame_Beast"} giữ tối đa bốn regular :wiki-link{url="https://www.poe2wiki.net/wiki/Monster_modifier"} trên con beast bắt về, và trong pool modifier đó có hẳn một nhóm aura dạng "You and nearby Allies gain..." — khi con beast thành companion, "allies" của nó là mình cộng cả đàn. Wiki mô tả thẳng Tame Beast là skill support-oriented so với :wiki-link{url="https://www.poe2wiki.net/wiki/Bind_Spectre"} chính vì nhóm aura này. Một con beast mang Haste Aura là một aura bot cho 25% attack/cast speed và 25% movement speed cho cả team. Buff cỡ đó không tồn tại dưới dạng gem nào mình tự bật được cho companion ở 0.5.
 
-Cái giá của mỗi aura là spirit reservation của con beast mang nó, và reservation scale theo sức mạnh monster base cộng số mod nó giữ. Bài toán của nhánh zoo vì vậy ngược hẳn với hunt carry: thay vì tìm con 4-mod mạnh nhất, tìm con base **yếu nhất còn roll được aura**: base yếu là reservation thấp, và mấy con đó nằm ở campaign zone level thấp, không phải map. Swarming Wasp 21% pool, Quick Leaper 23%, Quill Crab 24.9%. Mỗi con dưới hệ số efficiency của build chỉ ăn ~30-35 spirit, rẻ hơn nửa con Diretusk Boar.
+Cái giá của mỗi aura là spirit reservation của con beast mang nó, và reservation scale theo sức mạnh monster base cộng số mod nó giữ. Bài toán của nhánh zoo vì vậy ngược hẳn với hunt carry: thay vì tìm con 4-mod mạnh nhất, tìm con base **yếu nhất còn roll được aura**: base yếu là reservation thấp, và mấy con đó nằm ở campaign zone level thấp, không phải map. Swarming Wasp 21% pool, Crag Leaper 23%, Quill Crab 24.9%. Mỗi con dưới hệ số efficiency của build chỉ ăn ~30-35 spirit, rẻ hơn nửa con Diretusk Boar.
 
 Catha flat phys, Vulnerability, Voltaic Mark, lớp redirect và Idolatry ledger đều đứng nguyên như doc gốc. Nhánh này chỉ trả lời một câu: bỏ con damage nào ra, nhét aura bot nào vào, và đi bắt tụi nó ở đâu.
 
@@ -63,14 +63,14 @@ Reservation của beast tame về đọc được ngay trên monster trước kh
 Mấy con đã có số đo thật, kèm spirit hiệu dụng dưới hệ số efficiency 2.353 của build (Trusted Kinship + Lord of Horrors, pool 332):
 
 - :wiki-link{url="https://www.poe2wiki.net/wiki/Swarming_Wasp"} — 21% pool → **~29.6 spirit**. Rẻ nhất đã tìm thấy, farm ở :wiki-link{url="https://www.poe2wiki.net/wiki/Ashen_Forest"} (Interlude 3, area level 54, vào từ town :wiki-link{url="https://www.poe2wiki.net/wiki/The_Glade"}).
-- **Quick Leaper** — 23% → ~32.5 spirit, essence ở Act 2.
+- :wiki-link{url="https://www.poe2wiki.net/wiki/Crag_Leaper"} — 23.1% → ~32.5 spirit, essence ở :wiki-link{url="https://www.poe2wiki.net/wiki/Vastiri_Outskirts"} (Act 2); tag very_fast_movement nên không roll Haste Aura.
 - :wiki-link{url="https://www.poe2wiki.net/wiki/Porcupine_Crab"} — 24.9% → ~35.1 spirit, farm ở :wiki-link{url="https://www.poe2wiki.net/wiki/Whakapanu_Island"}. Nameplate trong zone ghi **Quill Crab**, wiki ghi Porcupine Crab: cùng một con, đừng bỏ qua vì lệch tên.
 - :wiki-link{url="https://www.poe2wiki.net/wiki/Winged_Fiend"} — 26.7% → ~37.7 spirit, base ở The Spires of Deshar (Act 2), chưa pin được spot essence ổn định.
 - Caustic Crab cùng đảo Whakapanu là 32%: cùng một zone vẫn phải lọc base, đừng tame con đầu tiên thấy aura.
 
 Ứng viên chưa đo: :wiki-link{url="https://www.poe2wiki.net/wiki/Sabre_Spider"} (Mastodon Badlands, Act 2) và :wiki-link{url="https://www.poe2wiki.net/wiki/Chaw_Mongrel"} (The Azak Bog / The Matlan Waterways, Act 3). Sheet spectre báo cost thấp, gặp essence thì đọc reservation rồi bổ sung vào danh sách.
 
-Companion bị giới hạn **một con mỗi loại** cùng lúc, nên zoo bắt buộc đa dạng base: ba con Quick Leaper roll ba aura khác nhau vẫn chỉ field được một. Danh sách base rẻ vì vậy phải dài, mỗi aura muốn chạy thường trực cần một base riêng mang nó.
+Companion bị giới hạn **một con mỗi loại** cùng lúc, nên zoo bắt buộc đa dạng base: ba con Crag Leaper roll ba aura khác nhau vẫn chỉ field được một. Danh sách base rẻ vì vậy phải dài, mỗi aura muốn chạy thường trực cần một base riêng mang nó.
 
 ## Săn essence reset thế nào
 
@@ -85,7 +85,7 @@ Ritual capture phải làm đúng thứ tự vì đàn companion DPS cao giết 
 
 **Tip:** essence có thể đổi chỗ hoặc biến mất giữa các lần reset: không thấy ở spot cũ thì đảo một vòng trước khi reset tiếp. Với Whakapanu chỉ cần quét nhánh sa mạc, tới rừng mà chưa thấy essence thì reset luôn cho nhanh.
 
-Phần nền chung của pipeline tame — modifier retention, disenchant gem về bản trắng, Untainted Paradise cho volume — nằm đủ ở [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt); doc này chỉ thêm lớp lọc reservation + aura lên trên.
+Phần nền chung của pipeline tame, gồm modifier retention, disenchant gem về bản trắng và Untainted Paradise cho volume, nằm đủ ở [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt). Bảng reservation đầy đủ với vị trí farm 0.5 theo Interlude và route ba chặng gom aura sống ở [Farm aura beast cho companion zoo](/guides/0-5-aura-beast-farming); doc này chỉ thêm lớp lọc reservation cho riêng build mẹ lên trên.
 
 ## Spirit ledger cho nhánh zoo
 
@@ -133,6 +133,7 @@ Nhánh này làm tốt ba thứ: buff team-wide với giá ~30 spirit mỗi aura
 
 - **derived_from** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — build mẹ: toàn bộ gear, tree, ascendancy, ledger gốc và lớp redirect sống ở đó; nhánh này chỉ đổi cấu trúc roster.
 - **related_mechanics** [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — pipeline tame nền: modifier retention, essence reset hai tầng, disenchant, Untainted Paradise.
+- **related_guides** [Farm aura beast cho companion zoo](/guides/0-5-aura-beast-farming) — bảng reservation đầy đủ, vị trí farm 0.5 theo Interlude, và route ba chặng gom aura mà nhánh này dùng.
 - **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — league 0.5 với Spirit Walker, Tame Beast và essence encounter làm nền cho cả hướng companion.
 
 ## Resources

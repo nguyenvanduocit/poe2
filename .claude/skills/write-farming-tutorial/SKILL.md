@@ -39,7 +39,7 @@ File `.md` trong `content/farming/` với:
 - Mọi tablet / waystone / atlas keystone / unique / fragment / currency / Master → `:wiki-link{url="https://www.poe2wiki.net/wiki/..."}`.
 - 100% voice rule tuân thủ.
 
-## Voice rules (project luôn win — restate top 6)
+## Voice rules (project luôn win — restate top 8)
 
 1. **Owner voice** — viết như người tự chạy strategy này, đo profit, rút kinh nghiệm. CẤM "theo Fubgun/Empyrean…", "guide này tổng hợp từ…", "tóm lại". State as own: *"City biome grass ổn nhất vì pack size cao, ritual nuốt được nhiều monster hơn"* không *"City map được community recommend vì..."*.
 2. **Prose-first** — Atlas tree node, tablet loadout, Masters assignment: prose hoặc heading + bullet group, KHÔNG bảng nhiều cột (site stack-column UI vỡ layout). Tham khảo CLAUDE.md "Hạn chế dùng table".
@@ -55,6 +55,7 @@ File `.md` trong `content/farming/` với:
 
 6. **Rewrite fresh, đừng vá doc cũ — vault luôn ở thì hiện tại** — Khi update strategy đã tồn tại: viết LẠI nguyên bài theo meta/giá **hiện tại**, KHÔNG vá lẻ rồi chừa số/tablet/atlas đã outdate "để giữ lịch sử". Profit/giá stale thay thẳng (kèm timestamp mới); strategy đã chết theo patch (tablet removed, mod nerfed, content disabled) thì gỡ hẳn hoặc xoá doc, không archive trong body. Lịch sử chỉ ở `git log` — doc hiện tại chỉ chứa trạng thái đúng-bây-giờ. Bài xong phải đứng được như sinh ra hôm nay. Ref: CLAUDE.md `## Content Writing Voice` → "Rewrite fresh, đừng vá doc cũ".
 7. **Banned-lexicon — tra `templates/voice-lexicon-vi.md` TRƯỚC khi viết** — cấm calque «trục/đòn bẩy/cốt lõi/đáng kể/một cách + adj/trả về/vòng lặp», động từ «dựng/cấp/chèn» cho buff-stat, pivot AI «— đây là lý do/cách», «Hệ quả thực tế:», «Điều này có nghĩa là», mở đoạn «Đây là X» lặp; xưng hô «mình» hoặc câu vô chủ ngữ. Hook `content-voice-lint` bắt phần grep được — sửa sạch warning trước khi báo xong.
+8. **Kinh tế thông tin — mỗi số/cơ chế một chỗ, dẫn bằng cái quan trọng, không recap** — Profit math sống ở Loot Breakdown, mô tả cơ chế ở Strategy Overview; chỗ sau chỉ nhắc tên + dẫn ngược, KHÔNG giảng lại multiplier hay con số đã nêu. Mỗi section dẫn bằng 1-2 thứ quyết định reward (money node, key tablet, gate cơ chế), phần phụ gộp một câu — đừng cho mọi tablet/atlas node đoạn dài ngang nhau. Số không tựa vào một quyết định thì cắt. Quick Reference Card và Data & Testing chỉ giữ khi chứa thông tin CHƯA có ở thân bài; trùng thì BỎ. Self-test: số/cơ chế nào *giải thích* ở >1 chỗ → gộp còn một. Ref: CLAUDE.md `## Content Writing Voice` → "Kinh tế thông tin".
 
 ## Maxroll patterns we adopt
 
@@ -66,7 +67,7 @@ File `.md` trong `content/farming/` với:
 
 ## Section structure — required core + optional menu, right-sized
 
-**Right-sizing: CẮT section không áp dụng, ĐỪNG pad, ĐỪNG lặp.** Section mỏng/độn hoặc trùng section khác = vi phạm. Heading sentence-case tiếng Việt HOẶC tên chuẩn — KHÔNG dash-subtitle. **Section REQUIRED `## Failure Modes` PHẢI giữ ĐÚNG literal đó** (validator key theo heading text); tự do heading tiếng Việt CHỈ cho section optional. **KHÔNG mở section Market Context riêng** (risk gói vào Failure Modes), **KHÔNG mở Summary bullet-recap** (đã có Quick Reference Card).
+**Right-sizing: CẮT section không áp dụng, ĐỪNG pad, ĐỪNG lặp.** Section mỏng/độn hoặc trùng section khác = vi phạm. Heading sentence-case tiếng Việt HOẶC tên chuẩn — KHÔNG dash-subtitle. **Section REQUIRED `## Failure Modes` PHẢI giữ ĐÚNG literal đó** (validator key theo heading text); tự do heading tiếng Việt CHỈ cho section optional. **KHÔNG mở section Market Context riêng** (risk gói vào Failure Modes), **KHÔNG mở section recap** chỉ sắp xếp lại thân bài.
 
 ### Required core (luôn có)
 
@@ -74,7 +75,6 @@ File `.md` trong `content/farming/` với:
 2. **## Strategy Overview** — tại sao strategy làm ra tiền trong meta hiện tại; key tablets/fragments/atlas nodes unlock profit + lý do.
 3. **## Loot Breakdown & Economic Analysis** — profit math: input cost X ex/map → output Y div/map → profit Z. **Số phải có timestamp** (snapshot file hoặc trade query date). Xem **Market Data Freshness** trong CLAUDE.md.
 4. **## Failure Modes** — **validator-enforced `required: true`**. Mở 1-2 câu market risk (price trend, saturation, patch nerf, league phase — honest về sustainability), rồi ≥3 scenario gãy: market saturation · sustain failure · build floor · patch nerf · time investment. Xem **Failure Mode / Devil's Advocate** trong CLAUDE.md.
-5. **## Quick Reference Card** — Setup cost / Profit / Time / Waystone / Atlas nodes / Masters / Tablets / Fragments. Definition list được khuyến khích. Bản scan nhanh — KHÔNG kèm Summary trùng nội dung.
 
 ### Optional (include khi cần, omit khi không)
 
@@ -82,7 +82,8 @@ File `.md` trong `content/farming/` với:
 - **## Gameplay** — step-by-step trong map: activate gì trước, clear order, pick up gì, when to leave. Prose, không bullet 20 step.
 - **## Profit Optimization** — atlas node upgrade B→A, tablet roll min-max, bulk vs individual sale, fleet use.
 - **## Alternatives & Variations** — strategy cạnh tranh + when to switch.
-- **## Data & Testing** — evidence cho profit claim: sample size, source link (poe2scout, /trade), market data recency.
+- **## Data & Testing** — evidence CHƯA nói inline: sample size, source link (poe2scout, /trade), market data recency. KHÔNG liệt kê lại verbatim mod/atlas node đã cite ở Setup.
+- **## Quick Reference Card** — Setup cost / Profit / Time / Waystone / Atlas nodes / Masters / Tablets / Fragments, definition list. CHỈ thêm khi card là chỗ DUY NHẤT chứa loạt số scannable này; thân bài đã nêu thì BỎ (đừng lặp toàn doc).
 - **## Changelog** — `### YYYY-MM-DD` reverse-chrono.
 - **## Relationships** — cross-link nội bộ, mỗi dòng `- **predicate** [Title](/route) — reason`.
 
