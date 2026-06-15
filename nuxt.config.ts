@@ -92,6 +92,10 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/i18n',
     '@nuxtjs/seo',
+    // Firebase (Google auth + Firestore) backing the theme's reader-comments
+    // feature. The layer ships the comment UI + composable + reference rules;
+    // this module + the `vuefire` block below are the deployment wiring it needs.
+    'nuxt-vuefire',
     // This project shadows the theme's prose components by name (ProseA: the
     // local one adds footnote popovers ON TOP of the theme's external-link
     // `_blank` defaulting). @nuxt/content registers `components/content` for
@@ -115,6 +119,26 @@ export default defineNuxtConfig({
       })
     },
   ],
+
+  // Firebase project `poe-comments` (Google auth + Firestore), consumed by the
+  // theme's reader-comments feature. These are public web-app config values
+  // (safe in the client bundle by design); access is enforced by the deployed
+  // Firestore security rules + the Google "Authorized domains" list, not by
+  // keeping this secret. No `auth` block: this is a static SSG site, so the
+  // theme drives Google sign-in through the client `firebase/auth` SDK rather
+  // than nuxt-vuefire's auth module (which would pull `firebase-admin` into the
+  // SSR build for server-side sessions a static host can't run). VueFire still
+  // provides the Firebase app + Firestore (`useFirestore` / `useCollection`).
+  vuefire: {
+    config: {
+      apiKey: '***REMOVED-FIREBASE-API-KEY***',
+      authDomain: 'poe-comments.firebaseapp.com',
+      projectId: 'poe-comments',
+      storageBucket: 'poe-comments.firebasestorage.app',
+      messagingSenderId: '70154526185',
+      appId: '1:70154526185:web:ee3e276669a06b1bd87f78',
+    },
+  },
 
   // Single source of truth for the production origin, consumed by sitemap,
   // robots, og-image, schema-org, and seo-utils. MUST match the real custom
@@ -219,10 +243,14 @@ export default defineNuxtConfig({
         currentLeague: 'Runes of Aldur',
         currentPatch: '0.5.0',
         ign: 'ThaoCamVienSaiGon',
-        // Reader comments (andy-note-nuxt layer). Backend: CF Pages Function
-        // (functions/api/comments.ts) + Workers KV binding `COMMENTS` +
-        // `COMMENTS_RESOLVE_SECRET` env var, configured on this Pages project.
-        comments: { enabled: true },
+        // Reader comments (andy-note-nuxt layer). Backed by the `poe-comments`
+        // Firebase project wired via `nuxt-vuefire` above. `owners` is the email
+        // allowlist the client uses to show Resolve; the deployed Firestore
+        // rules enforce it (keep the two in sync).
+        comments: {
+          enabled: true,
+          owners: ['nguyenvanduocit@gmail.com'],
+        },
       },
       menu: [
         { name: 'Builds', url: '/builds', weight: 1 },
