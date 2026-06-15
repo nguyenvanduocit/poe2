@@ -80,6 +80,8 @@ data/wiki/
 data/poedb/
 # PathOfBuildingCommunity POE2 clone (has own .git/, ~572M)
 data/pob-source/
+# GGG press-kit art (copyrighted, ~523M) — local reference for the OBS overlay, not shipped
+stream/PressKit/
 # GGG trade catalog (refreshable from API)
 data/trade-static/
 # per-character export JSON (instance data)

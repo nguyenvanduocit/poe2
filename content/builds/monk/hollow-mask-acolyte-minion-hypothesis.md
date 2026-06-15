@@ -136,7 +136,7 @@ Clear speed cao nhờ army đông + extra Chaos apply đồng đều lên mọi 
 - **Item data:** [The Hollow Mask — poe2db](https://poe2db.tw/us/The_Hollow_Mask)
 - **Ascendancy overview:** [Acolyte of Chayula — Maxroll](https://maxroll.gg/poe2/resources/acolyte-of-chayula-ascendancy)
 - **Video inspiration:** [GhazzyTV Monk Minion Build](https://www.youtube.com/watch?v=VLrFUck4fSE)
-- **PoB:** Chưa có PoB công khai ổn định (data 0.5 còn evolve nhanh). Placeholder: https://pobb.in/PENDING_HOLLOW_MASK_ACOLYTE — sẽ cập nhật khi có version chính thức từ cộng đồng.
+- **PoB:** Chưa có PoB công khai ổn định cho biến thể này — data 0.5 còn thay đổi nhanh. Bổ sung link khi cộng đồng chốt một version chạy được.
 
 ## Gear Progression
 

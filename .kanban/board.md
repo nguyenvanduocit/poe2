@@ -13,6 +13,7 @@
 
 ## Doing
 
+- [T-049](tasks/T-049-public-release-prep.md) Public-release prep — clean docs, history, credentials, license — high/M
 - [T-017](tasks/T-017-playwriter-replaces-poe-bridge-transport.md) Thay poe-bridge bằng playwriter làm transport GGG (cả poe1+poe2) — high/L
 - [T-020](tasks/T-020-seo-full-support-gsc-bing.md) Full SEO support (@nuxtjs/seo) + GSC DNS-TXT + Bing registration — high/L
 

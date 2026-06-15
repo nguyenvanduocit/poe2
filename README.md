@@ -21,6 +21,13 @@ bun run preview    # preview the generated site
 ## Layout
 
 - `app/`, `server/` — Nuxt app + Nitro routes.
-- `content/` — markdown notes (`builds/`, `characters/`, `mechanics/`, `guides/`).
-- `data/` — persistent download blobs: `wiki/`, `poedb/`, `release-notes/`, `poe-ninja/`, `passive-tree/`, `map-mods/`, `trade-static/`, `pob-source/` (see `../CLAUDE.md` for the canonical layout).
-- `.claude/skills/` — ~27 gameplay skills (`/pob`, `/trade`, `/poewiki`, `/farming-strategy`, `/build-creator`, …); each owns its scripts under `scripts/`.
+- `content/` — markdown notes (`builds/`, `characters/`, `guides/`, `farming/`, `crafting/`).
+- `data/` — own-generated reference/economy data (`release-notes/`, `poe-ninja/`, `poe2scout/`, `passive-tree/`, `map-mods/`, `price-history/`). Large third-party mirrors (`wiki/`, `poedb/`, `pob-source/`, `trade-static/`) are gitignored — refresh them locally via the skills.
+- `.claude/skills/` — gameplay skills (`/pob`, `/trade`, `/poewiki`, `/farming-strategy`, `/build-creator`, …); each owns its scripts under `scripts/`.
+
+## License
+
+- **Code** (the Nuxt app, `.claude/` skills and scripts, filter/stream tooling, config) — MIT. See [`LICENSE`](LICENSE).
+- **Content** (the gameplay notes under `content/`) — CC BY-NC 4.0. See [`LICENSE-CONTENT`](LICENSE-CONTENT).
+
+Path of Exile 2 is a trademark of Grinding Gear Games. This is an unofficial fan project, not affiliated with or endorsed by GGG.
