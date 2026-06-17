@@ -13,7 +13,7 @@
         "@nuxtjs/i18n": "^10.4.0",
         "@nuxtjs/seo": "^5.1.3",
         "@nuxtjs/tailwindcss": "^6.14.0",
-        "andy-note-nuxt": "^0.14.2",
+        "andy-note-nuxt": "^0.14.3",
         "firebase": "^12.14.0",
         "nuxt": "^4.3.1",
         "nuxt-vuefire": "^1.1.2",
@@ -1036,7 +1036,7 @@
 
     "alien-signals": ["alien-signals@3.1.2", "", {}, "sha512-d9dYqZTS90WLiU0I5c6DHj/HcKkF8ZyGN3G5x8wSbslulz70KOxaqCT0hQCo9KOyhVqzqGojvNdJXoTumZOtcw=="],
 
-    "andy-note-nuxt": ["andy-note-nuxt@0.14.2", "", { "dependencies": { "@floating-ui/vue": "^1.1.11", "@fontsource/literata": "^5.2.8", "@fontsource/space-grotesk": "^5.2.10", "@nuxt/content": "^3.12.0", "@nuxt/image": "^2.0.0", "@nuxtjs/seo": "^5.1.3", "@nuxtjs/tailwindcss": "^6.14.0", "firebase": "^12.14.0", "nuxt": "^4.4.6", "rehype-raw": "^7.0.0", "vue": "^3.5.29", "vue-router": "^4.6.4", "vue-sonner": "^2.0.9", "vuefire": "^3.2.3" } }, "sha512-rwJe9C/40ifOOJ+uOYLaZC1kAUgjSEYomeuGchwCIbmSCTvpOTfWyQISbFgZl66yplHmgYH64IU99qfVEm2neg=="],
+    "andy-note-nuxt": ["andy-note-nuxt@0.14.3", "", { "dependencies": { "@floating-ui/vue": "^1.1.11", "@fontsource/literata": "^5.2.8", "@fontsource/space-grotesk": "^5.2.10", "@nuxt/content": "^3.12.0", "@nuxt/image": "^2.0.0", "@nuxtjs/seo": "^5.1.3", "@nuxtjs/tailwindcss": "^6.14.0", "firebase": "^12.14.0", "nuxt": "^4.4.6", "rehype-raw": "^7.0.0", "vue": "^3.5.29", "vue-router": "^4.6.4", "vue-sonner": "^2.0.9", "vuefire": "^3.2.3" } }, "sha512-FBFCIezIoK4c5jtQebVXVe4ks51XvoXZZz47j0saZHkgN7ZirsqvzILvscHnm+vpoa2uuU8N5mruzf+mnO9UTg=="],
 
     "ansi-regex": ["ansi-regex@6.2.2", "", {}, "sha512-Bq3SmSpyFHaWjPk8If9yc6svM8c56dB5BAtW4Qbw5jHTwwXXcTLoRMkpDJp6VL0XzlWaCHTXrkFURMYmD0sLqg=="],
 
