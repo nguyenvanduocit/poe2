@@ -2,7 +2,7 @@
 name: lootfilter
 description: Create and modify Path of Exile 2 loot filters (.filter) — POE2 0.5+ "Return of the Ancients" league-aware. Uses poe2filter.com data APIs, knows Waystone/Tablet/Charm/Relic class semantics, and validates filter syntax via the bundled POE2 filter parser. Use when user wants to create, edit, audit, or understand POE2 loot filters.
 tags: [poe, poe2, lootfilter, filter, neversink, waystone, runes-of-aldur, poe2filter]
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Scope
@@ -65,6 +65,49 @@ ssh nguye@100.94.175.84 'type "C:\Users\Nguye\Documents\My Games\Path of Exile 2
 | `C:\Users\Nguye\Documents\My Games\Path of Exile 2\Screenshots\` | In-game screenshots |
 
 **Note:** POE1 and POE2 keep **independent** filter folders. Do not symlink them — POE2 filter syntax uses classes (`Waystones`, `Tablet`, `Charm`, `Relic`) that POE1's filter parser rejects, and vice versa for POE1-only classes (`Maps`, `Map Fragments`, `Atlas Region Upgrade Item`, `Heist*`, `Sentinel`, etc.).
+
+---
+
+# Push Filter to Your POE2 Account (no game client needed)
+
+Upload a `.filter` straight to your GGG account so it syncs to the in-game dropdown on any machine — the same thing FilterBlade's "sync to account" does. Use this instead of (or alongside) the SSH/SCP path above when you want account sync rather than a local file copy.
+
+```bash
+bun .claude/skills/lootfilter/scripts/push-to-account.ts \
+    --file filter/neversink-0.10.2a-3-STRICT.filter \
+    --name "NeverSink 3-STRICT" \
+    --version "0.10.2a" \
+    --session 5 \
+    [--public] [--dry-run]
+```
+
+- Parser-validates the file **first** — a filter with syntax errors aborts before the browser ever opens.
+- Re-running with the same `--name` **updates** that filter in place (matches by exact name, no duplicate). A new name creates a new filter.
+- `--dry-run` fills the form but does not submit — a safe end-to-end check.
+- `--session` is a Playwriter session id (`playwriter session list`). Realm is implicitly `poe2` (the script drives the POE2 site).
+
+**Why DOM automation and not OAuth or a raw API call:**
+
+- GGG's OAuth `account:item_filter` scope exists and supports `realm: poe2`, but the public `pob` client (the one `/pob --oauth` borrows) is **not** registered for it — requesting it returns `unsupported scope was requested`. Reusing `pob` for filters is impossible; a different client would need its own GGG-approved registration.
+- `www.pathofexile.com`'s filter manager is **POE1-only** (no `realm=poe2`).
+- The only POE2 path is the `pathofexile2.com/my-account/item-filters` SPA. Its internal-api (`GET/POST /internal-api/item-filters/filters?game=poe2`) uses **DPoP session auth**, so a replayed page-context `fetch` returns `401` (same constraint as the T-013 equipment fetch). The fix is to drive the SPA's own create/edit form: it injects the body into an ACE editor (`.ace_editor` → `env.editor.setValue`) and lets the page sign its own request.
+
+**Prerequisites & safety:** Chrome open + logged into `pathofexile2.com` + Playwriter enabled on that session. The script sleeps between DOM actions (the account was flagged once — keep it slow, never parallelise uploads).
+
+---
+
+# Host the Filter Download Page (public link via cloudflared)
+
+Serve the `filter/` download page (`index.html` + the `.filter` files) on a public URL so you can share the link — e.g. drop it in stream chat for viewers to grab the filter — without deploying the site. The local server is just the origin; the public host **is** a Cloudflare quick tunnel (`trycloudflare.com`).
+
+```bash
+bun .claude/skills/lootfilter/scripts/host-filter.ts [--port 8088] [--dir <path>]
+```
+
+- Spins up a static server over `filter/`, then opens `cloudflared tunnel --url http://localhost:<port>` and prints the `https://*.trycloudflare.com` URL (page at `/`, filter at `/<name>.filter`).
+- `.filter` files are served as a download (`Content-Disposition: attachment`); `--dir` overrides the served directory (defaults to the repo's `filter/`).
+- **Ctrl-C stops both the server and the tunnel** — the SIGINT/SIGTERM trap kills cloudflared so no tunnel is left orphaned.
+- **Prereq:** `cloudflared` installed (`brew install cloudflared`). The quick-tunnel URL is random and changes every run — it lasts only while the script is running.
 
 ---
 
@@ -200,7 +243,7 @@ These POE2 item types have their own Class and MUST be handled before generic `H
 | `Support Gems` | Lineage / corrupted gems are high value |
 | `Skill Gems` | Specific gems for chase setups |
 | `Tablet` | Precursor Tablets augment the Atlas |
-| `Expedition Logbooks` | Always valuable |
+| `Expedition Logbook` | Always valuable |
 | `Pinnacle Keys` | Pinnacle boss access |
 | `Vault Keys` | Trial of the Sekhemas vault access |
 
@@ -210,7 +253,7 @@ These POE2 item types have their own Class and MUST be handled before generic `H
 1. GOD-TIER CURRENCY (Mirror, Divine)
 2. S-TIER CURRENCY
 3. T0 UNIQUES (specific BaseTypes)
-4. S-TIER KEYS (Pinnacle Keys, Vault Keys, Expedition Logbooks)
+4. S-TIER KEYS (Pinnacle Keys, Vault Keys, Expedition Logbook)
 5. SOUL CORES / RUNES (Class == "Augment")
 6. LINEAGE GEMS (Class == "Support Gems")
 7. QUEST ITEMS
@@ -307,6 +350,11 @@ Mirrored True|False
 Identified True|False
 AnyEnchantment True|False
 TwiceCorrupted True|False                # Yes — POE2 has 2x corrupted items too
+AlwaysShow True|False                    # NeverSink flag: force-show regardless of strictness
+
+# Socket / gem conditions (POE2 0.5 — rune sockets + gem levels)
+Sockets >= 2                             # Rune socket count
+GemLevel >= 18                           # Skill/support gem level
 
 # Size conditions
 Width >= 2
@@ -316,7 +364,9 @@ Height >= 3
 HasExplicitMod >=1 "Hellion's" "of the Wizard"
 ```
 
-> POE2 currently **does NOT support** the POE1-only conditions `Sockets`, `LinkedSockets`, `SocketGroup`, `MapTier`, `HasInfluence`, `GemLevel`, `HasEaterOfWorldsImplicit`, `HasSearingExarchImplicit`, etc. Filtering by sockets/links is a POE1 concept — POE2 uses runes embedded directly in gear.
+> POE2 0.5 **does support** `Sockets` (rune socket count) and `GemLevel` — NeverSink 0.10.2a uses both. The conditions that stay POE1-only are `LinkedSockets`, `SocketGroup` (POE2 has no link concept — runes embed directly), `MapTier` (use `WaystoneTier`), `HasInfluence`, `HasEaterOfWorldsImplicit`, `HasSearingExarchImplicit`.
+>
+> **Operator syntax the parser tolerates** (real FilterBlade output, not just the spaced form above): the operator may be glued to the number (`HasExplicitMod >=1 "..."`, `WaystoneTier >=14`), and numeric conditions may omit the operator entirely (`Height 1` = exact match, defaults to `=`).
 
 ### Actions (Display Style)
 
@@ -335,7 +385,7 @@ CustomAlertSound "file.mp3" Volume
 DisableDropSound True
 ```
 
-**MinimapIcon Shapes:** Circle, Diamond, Hexagon, Square, Star, Triangle, Cross, Moon, Raindrop, Pentagon, UpsideDownHouse
+**MinimapIcon Shapes:** Circle, Diamond, Hexagon, Square, Star, Triangle, Cross, Moon, Raindrop, Kite, Pentagon, UpsideDownHouse
 
 ## POE2 Item Classes (canonical, validated against parser)
 
@@ -358,7 +408,7 @@ Source: `parser/src/types.ts` → `POE2_CLASSES` (43 classes total).
 # Other
 "Jewels" "Relics" "Skill Gems" "Support Gems"
 "Waystones" "Tablet" "Map Fragments"
-"Expedition Logbooks" "Pinnacle Keys" "Vault Keys"
+"Expedition Logbook" "Pinnacle Keys" "Vault Keys"
 "Quest Items" "Instance Local Items" "Fishing Rods"
 ```
 
@@ -380,7 +430,7 @@ POE2 0.5 (patch 2026-05-21) adds a large block of craftable items that drop from
 | **21 Kalguuran Skill Gems** (Animus Exchange, Frostflame Nova, Verisium Manifestations, etc.) | Remnant encounters | `Skill Gems` (with `Corrupted False` likely) | Show all by BaseType — chase craftable skill access |
 | **8 Kalguuran Support Gems** (Healing Runes, Runic Infusion, Scouring Flame, etc.) | Remnant encounters | `Support Gems` | Show all by BaseType |
 
-**Critical filter audit at 0.5 launch:** Run `parser/src/cli.ts` against your existing filter — any `BaseType` matching a 0.5 Kalguuran skill/support that's currently hidden under a generic `Hide Class == "Skill Gems"` will be invisible. Add explicit `Show` rules **before** the catch-all hide.
+**Critical filter audit at 0.5 launch:** Run the parser CLI snippet below against your existing filter — any `BaseType` matching a 0.5 Kalguuran skill/support that's currently hidden under a generic `Hide Class == "Skill Gems"` will be invisible. Add explicit `Show` rules **before** the catch-all hide.
 
 ## Filter Architecture Layers
 
@@ -637,14 +687,42 @@ if (result.errors.length > 0) {
 writeFileSync('filter/MyFilter.filter', newFilterContent)
 ```
 
-## TODOs at 0.5 Launch (2026-05-29)
+## 0.5 Status (verified 2026-06-15)
 
-- [ ] Verify Verisium / Alloy / Ancient Rune / Mythical Rune / Flux exact `Class` (currently inferred from patch notes — likely `Stackable Currency` or `Augment`)
-- [ ] Fetch updated `currency-data.json` from poe2filter.com and refresh parser baseTypes set
-- [ ] Add Kalguuran Skill Gem + Support Gem BaseType list to a `Show` block before any generic `Hide Class == "Skill Gems"` / `Hide Class == "Support Gems"` rule
-- [ ] Check if 0.5 changed `WaystoneTier` upper bound (likely still 1-16 — re-verify)
-- [ ] Update `POE2_CLASSES` in `parser/src/types.ts` if 0.5 introduces new item classes (e.g. `Remnant` might be a new class)
-- [ ] Re-run parser test suite (`bun test`) against the 0.5 sample filter from poe2filter.com
+**Verified against NeverSink 0.10.2a (fetched 2026-06-15, live 0.5 league):**
+
+- Parser accepts a real full FilterBlade export (all 3 strictness tiers parse clean, 0 errors). Fixture: `parser/test/fixtures/neversink-0.10.2a-3-STRICT.filter`, test `parser/test/neversink-0.5.test.ts`.
+- `WaystoneTier` upper bound is still 1-16. `GemLevel` ranges up to 20, `Sockets` 0-3.
+- No new item `Class` in 0.5 (no `Remnant` class — Remnant is an encounter, its drops carry existing classes). The one correction: the Expedition class is `Expedition Logbook` (singular), not the plural this skill previously listed.
+- Grammar gaps that the real filter exposed and are now fixed: glued operators (`>=1`), operator-less numerics (`Height 1`), the `AlwaysShow` boolean condition, and the `Kite` minimap shape.
+
+**Still open (gameplay verification, not parser):**
+
+- Confirm `Class` of Verisium / Alloy / Ancient Rune / Mythical Rune / Flux in-client (inferred `Stackable Currency` / `Augment`). Cross-check `data/poedb/<patch>/` before writing tiering rules.
+- Add a `Show` block listing the 21 Kalguuran Skill Gem + 8 Support Gem BaseTypes **before** any generic `Hide Class == "Skill Gems"` / `"Support Gems"` so they aren't hidden.
+- `BaseType` validation warns on real 0.5 bases (Dusk/Gloam/Penumbra/Tenebrous jewellery, Runic Fork, Refined Breach Ring …) because poe2filter.com's live catalogue lags the patch. These are advisory warnings, not errors — the validator fetches that catalogue live, so they clear when poe2filter.com updates.
+
+## Reference Filters (in-repo samples)
+
+Real FilterBlade/NeverSink exports kept in the workspace for testing + as starting points:
+
+- `filter/template-filter-donot-edit.filter` — NeverSink **0.10.2a** 6-UBER-PLUS-STRICT (the strictest baseline)
+- `filter/neversink-0.10.2a-3-STRICT.filter` — NeverSink **0.10.2a** 3-STRICT (a sane everyday default)
+- `parser/test/fixtures/neversink-0.10.2a-3-STRICT.filter` — same file, used as the parser regression fixture
+
+Refresh from the NeverSink/FilterBlade source (no auth, plain GitHub raw):
+
+```bash
+BASE="https://raw.githubusercontent.com/NeverSinkDev/NeverSink-Filter-for-PoE2/master"
+# variants: 0-SOFT 1-REGULAR 2-SEMI-STRICT 3-STRICT 4-VERY-STRICT 5-UBER-STRICT 6-UBER-PLUS-STRICT
+v="3-STRICT"
+curl -fsSL "$BASE/$(python3 -c "import urllib.parse;print(urllib.parse.quote(\"NeverSink's filter 2 - $v.filter\"))")" \
+  -o "filter/neversink-$v.filter"
+# latest version tag:
+curl -s https://api.github.com/repos/NeverSinkDev/NeverSink-Filter-for-PoE2/releases/latest | grep tag_name
+```
+
+Edit/customise any of these on [FilterBlade.xyz](https://www.filterblade.xyz/) (separate PoE2 mode).
 
 ## References
 

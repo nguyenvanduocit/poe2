@@ -111,6 +111,7 @@ condition =
   / conditionMirrored
   / conditionIdentified
   / conditionAnyEnchantment
+  / conditionAlwaysShow
   / conditionHasExplicitMod
   / conditionHasImplicitMod
   / conditionIsVaalUnique
@@ -131,7 +132,7 @@ conditionBaseType =
   }
 
 conditionHasExplicitMod =
-  'HasExplicitMod' __ count:(numOperator __ integer __)? vals:stringList {
+  'HasExplicitMod' __ count:(numOperator _* integer __)? vals:stringList {
     return {
       type: 'condition',
       name: 'HasExplicitMod',
@@ -144,73 +145,73 @@ conditionHasExplicitMod =
 
 // Numeric conditions
 conditionItemLevel =
-  'ItemLevel' __ op:numOperator __ val:integer {
-    return { type: 'condition', name: 'ItemLevel', value: { operator: op, value: val } }
+  'ItemLevel' __ op:(numOperator _*)? val:integer {
+    return { type: 'condition', name: 'ItemLevel', value: { operator: op ? op[0] : '=', value: val } }
   }
 
 conditionAreaLevel =
-  'AreaLevel' __ op:numOperator __ val:integer {
-    return { type: 'condition', name: 'AreaLevel', value: { operator: op, value: val } }
+  'AreaLevel' __ op:(numOperator _*)? val:integer {
+    return { type: 'condition', name: 'AreaLevel', value: { operator: op ? op[0] : '=', value: val } }
   }
 
 conditionDropLevel =
-  'DropLevel' __ op:numOperator __ val:integer {
-    return { type: 'condition', name: 'DropLevel', value: { operator: op, value: val } }
+  'DropLevel' __ op:(numOperator _*)? val:integer {
+    return { type: 'condition', name: 'DropLevel', value: { operator: op ? op[0] : '=', value: val } }
   }
 
 conditionQuality =
-  'Quality' __ op:numOperator __ val:integer {
-    return { type: 'condition', name: 'Quality', value: { operator: op, value: val } }
+  'Quality' __ op:(numOperator _*)? val:integer {
+    return { type: 'condition', name: 'Quality', value: { operator: op ? op[0] : '=', value: val } }
   }
 
 conditionSockets =
-  'Sockets' __ op:numOperator __ val:integer {
-    return { type: 'condition', name: 'Sockets', value: { operator: op, value: val } }
+  'Sockets' __ op:(numOperator _*)? val:integer {
+    return { type: 'condition', name: 'Sockets', value: { operator: op ? op[0] : '=', value: val } }
   }
 
 conditionStackSize =
-  'StackSize' __ op:numOperator __ val:integer {
-    return { type: 'condition', name: 'StackSize', value: { operator: op, value: val } }
+  'StackSize' __ op:(numOperator _*)? val:integer {
+    return { type: 'condition', name: 'StackSize', value: { operator: op ? op[0] : '=', value: val } }
   }
 
 conditionGemLevel =
-  'GemLevel' __ op:numOperator __ val:integer {
-    return { type: 'condition', name: 'GemLevel', value: { operator: op, value: val } }
+  'GemLevel' __ op:(numOperator _*)? val:integer {
+    return { type: 'condition', name: 'GemLevel', value: { operator: op ? op[0] : '=', value: val } }
   }
 
 conditionWaystoneTier =
-  'WaystoneTier' __ op:numOperator __ val:integer {
-    return { type: 'condition', name: 'WaystoneTier', value: { operator: op, value: val } }
+  'WaystoneTier' __ op:(numOperator _*)? val:integer {
+    return { type: 'condition', name: 'WaystoneTier', value: { operator: op ? op[0] : '=', value: val } }
   }
 
 conditionUnidentifiedItemTier =
-  'UnidentifiedItemTier' __ op:numOperator __ val:integer {
-    return { type: 'condition', name: 'UnidentifiedItemTier', value: { operator: op, value: val } }
+  'UnidentifiedItemTier' __ op:(numOperator _*)? val:integer {
+    return { type: 'condition', name: 'UnidentifiedItemTier', value: { operator: op ? op[0] : '=', value: val } }
   }
 
 conditionHeight =
-  'Height' __ op:numOperator __ val:integer {
-    return { type: 'condition', name: 'Height', value: { operator: op, value: val } }
+  'Height' __ op:(numOperator _*)? val:integer {
+    return { type: 'condition', name: 'Height', value: { operator: op ? op[0] : '=', value: val } }
   }
 
 conditionWidth =
-  'Width' __ op:numOperator __ val:integer {
-    return { type: 'condition', name: 'Width', value: { operator: op, value: val } }
+  'Width' __ op:(numOperator _*)? val:integer {
+    return { type: 'condition', name: 'Width', value: { operator: op ? op[0] : '=', value: val } }
   }
 
 conditionBaseArmour =
-  'BaseArmour' __ op:numOperator __ val:integer {
-    return { type: 'condition', name: 'BaseArmour', value: { operator: op, value: val } }
+  'BaseArmour' __ op:(numOperator _*)? val:integer {
+    return { type: 'condition', name: 'BaseArmour', value: { operator: op ? op[0] : '=', value: val } }
   }
 
 conditionBaseEvasion =
-  'BaseEvasion' __ op:numOperator __ val:integer {
-    return { type: 'condition', name: 'BaseEvasion', value: { operator: op, value: val } }
+  'BaseEvasion' __ op:(numOperator _*)? val:integer {
+    return { type: 'condition', name: 'BaseEvasion', value: { operator: op ? op[0] : '=', value: val } }
   }
 
 conditionBaseEnergyShield =
-  'BaseEnergyShield' __ op:numOperator __ val:integer {
-    return { type: 'condition', name: 'BaseEnergyShield', value: { operator: op, value: val } }
+  'BaseEnergyShield' __ op:(numOperator _*)? val:integer {
+    return { type: 'condition', name: 'BaseEnergyShield', value: { operator: op ? op[0] : '=', value: val } }
   }
 
 // Boolean conditions
@@ -239,6 +240,11 @@ conditionAnyEnchantment =
     return { type: 'condition', name: 'AnyEnchantment', value: val }
   }
 
+conditionAlwaysShow =
+  'AlwaysShow' __ val:boolean {
+    return { type: 'condition', name: 'AlwaysShow', value: val }
+  }
+
 conditionHasImplicitMod =
   'HasImplicitMod' __ val:boolean {
     return { type: 'condition', name: 'HasImplicitMod', value: val }
@@ -256,7 +262,7 @@ conditionHasVaalUniqueMod =
 
 // Rarity condition (special - list of values without quotes)
 conditionRarity =
-  'Rarity' __ op:(numOperator __)? vals:rarityList {
+  'Rarity' __ op:(numOperator _*)? vals:rarityList {
     return { type: 'condition', name: 'Rarity', value: { operator: op ? op[0] : '=', values: vals } }
   }
 
@@ -355,7 +361,7 @@ iconColor =
   'Red' / 'Orange' / 'Yellow' / 'Green' / 'Blue' / 'Purple' / 'White' / 'Cyan' / 'Grey' / 'Brown' / 'Pink'
 
 iconShape =
-  'Circle' / 'Diamond' / 'Hexagon' / 'Square' / 'Star' / 'Triangle' / 'Cross' / 'Moon' / 'Raindrop' / 'Pentagon' / 'UpsideDownHouse'
+  'Circle' / 'Diamond' / 'Hexagon' / 'Square' / 'Star' / 'Triangle' / 'Cross' / 'Moon' / 'Raindrop' / 'Kite' / 'Pentagon' / 'UpsideDownHouse'
 
 soundId =
   id:$([1-9] [0-9]? / [1-9]) { return parseInt(id, 10) }

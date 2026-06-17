@@ -286,7 +286,7 @@ export const POE2_CLASSES = [
   'Waystones',
   'Tablet',
   'Map Fragments',
-  'Expedition Logbooks',
+  'Expedition Logbook',
   'Pinnacle Keys',
   'Vault Keys',
   'Quest Items',
