@@ -60,14 +60,16 @@ Neo giá ngày 2026-06-10 (poe2scout league `runes`, 1 Divine = 129,27 ex):
 
 Math chain của một cú craft đắt:
 
-```
-expected_value_per_high_slot_remnant =
-  P(ra rune jackpot) × giá_rune_jackpot
-  + P(ra alloy/perfect rune) × giá_tầng_đó
-  + verisium_drop × giá_verisium
-  − cost_recipe (rune đã unlock, ~0)
-  − rủi_ro_chết (wave cuối của con full-slot)
-```
+$$
+\text{EV/high-slot remnant} = P(\text{jackpot}) \times \text{jackpot price} + P(\text{alloy/perfect}) \times \text{tier price} + \text{verisium drop} \times \text{verisium price} - \text{cost recipe} - \text{death risk}
+$$
+
+Trong đó:
+- **P(jackpot) × jackpot price** — xác suất ra rune jackpot × giá rune jackpot
+- **P(alloy/perfect) × tier price** — xác suất ra alloy/perfect rune × giá tầng đó
+- **verisium drop × verisium price** — verisium rớt × giá verisium
+- **cost recipe** — rune đã unlock, ~0
+- **death risk** — rủi ro chết ở wave cuối của con full-slot
 
 Với cost recipe gần bằng không và Remnant có sẵn trên đường clear, biên dưới của loop là dương ngay cả khi chỉ ra Masterwork/Perfect Rune — một con 5 slot ra ~77 ex đã trả công thời gian. Biên trên là cú 8-10 slot chạm Astrid's Creativity (~28,8 div) hoặc hiếm hơn là Aldur's Legacy (~224 div); phần này variance cao, không tính vào thu nhập đều mà coi như vé số có kỳ vọng dương.
 

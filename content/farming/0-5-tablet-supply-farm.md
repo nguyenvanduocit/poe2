@@ -113,15 +113,17 @@ Giá tablet live trade 2026-06-14, fragment poe2scout cùng ngày, 1 Divine = 13
 
 Math chain profit/giờ:
 
-```
-expected_profit_per_hour =
-  fragment_value_per_hour          (~8 div/h)   ← dòng 2, to nhất
-  + raw_clear_value_per_hour        (~7 div/h)   ← dòng 3
-  + tablet_resale_per_hour          (~4-5 div/h) ← dòng 1, đã crash
-  + lineage_jackpot_EV              (variance)    ← dòng 4, upside thưa
-  − irradiated_cost (~6 ex/map × maps/h ~ <1 div/h)
-  − waystone_roll_cost
-```
+$$
+\text{profit/hr} = \text{fragment value} + \text{raw clear value} + \text{tablet resale} + \text{lineage jackpot EV} - \text{irradiated cost} - \text{waystone roll cost}
+$$
+
+Trong đó:
+- **fragment value** — ~8 div/h (dòng 2, to nhất)
+- **raw clear value** — ~7 div/h (dòng 3)
+- **tablet resale** — ~4-5 div/h (dòng 1, đã crash)
+- **lineage jackpot EV** — variance (dòng 4, upside thưa)
+- **irradiated cost** — ~6 ex/map × maps/h ~ <1 div/h
+- **waystone roll cost**
 
 **Tổng kỳ vọng (số thực sau khi tablet crash):**
 - Build zoom (Lightning Spear / Twister / Demon Form): ~8 + 7 + 4-5 ≈ **~18-24 div/giờ steady-state**, cộng upside Lineage thưa thớt. Con số 45 div/giờ của video đến từ hai Rakiata may mắn (+37 div/giờ) cộng giá tablet trước khi rớt — không phải baseline lặp được.

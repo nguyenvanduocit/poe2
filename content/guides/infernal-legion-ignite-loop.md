@@ -49,9 +49,9 @@ Vì magnitude khóa theo máu minion, công thức gọn lại quanh đúng mộ
 
 Base fire damage "as though dealing" = 0.10 × H. Ignite trong POE2 tick 20% của base fire damage đó mỗi giây, nên DPS nền trước mọi modifier là:
 
-```
-DPS_target = 0.02 × H × M_magnitude × D_taken
-```
+$$
+\text{DPS}_\text{target} = 0.02 \times H \times M_\text{magnitude} \times D_\text{taken}
+$$
 
 `M_magnitude` gom mọi "more/increased Magnitude of Ignite"; `D_taken` là hệ số damage enemy phải nhận (curse, exposure, shock). Lấy một ví dụ minh hoạ với H = 80.000 máu: nền 0.02 × 80.000 = 1.600/giây/target. Thêm :wiki-link{url="https://www.poe2wiki.net/wiki/Searing_Flame"} II (×2.0) lên ~3.200, thêm curse + shock (~1.5×) ra ~4.800/giây/target; năm enemy trong radius ≈ 24.000 DPS từ riêng ignite. Hệ số 0.02 này chính là chỗ nerf hằn rõ nhất — thời IL III nó là 0.05, tức skill giờ làm chưa tới nửa damage cũ ở cùng máu minion.
 

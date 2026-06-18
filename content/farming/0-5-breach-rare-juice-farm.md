@@ -78,18 +78,19 @@ Bốn-năm phút mỗi map nếu clear nhanh, dài hơn nếu Partial Translatio
 
 Mỗi map cho ra raw currency từ rare drop (Exalted, Chaos, Divine theo tỉ lệ vanilla scale với rare count + rarity bonus), Lineage Support từ Vruun (nếu đi nhánh), Wombgift cho Genesis Tree craft (lãi phụ qua Breeding Program), và Breach Splinter để gom Breachstone:
 
-```
-expected_profit_per_hour =
-  (rare_count_per_breach × breaches_per_map × raw_currency_per_rare
-   × delirium_density_multiplier × jado_proc_multiplier
-   + lineage_support_value_per_vruun × vruun_rate_per_hour
-   + wombgift_value_per_map × maps_per_hour
-   + breach_splinter_per_map × splinter_price)
-  × maps_per_hour
-  − tablet_cost_per_map (3 rare breach + 1 unique tablet)
-  − waystone_cost_per_map (6-mod T15 City)
-  − opportunity_cost (atlas point cày 60+ vào Breach+Delirium+City, Grand Mirror hunt time)
-```
+$$
+\begin{aligned}
+\text{profit/hr} = \big(\,& \text{rare/breach} \times \text{breaches/map} \times \text{raw currency/rare} \\
+&\times \text{delirium mult} \times \text{jado mult} + \text{lineage value/vruun} \times \text{vruun rate} \\
+&+ \text{wombgift/map} \times \text{maps/hr} + \text{splinter/map} \times \text{splinter price} \,\big) \times \text{maps/hr} \\
+&- \text{tablet cost/map} - \text{waystone cost/map} - \text{opportunity cost}
+\end{aligned}
+$$
+
+Trong đó:
+- **tablet cost/map** — 3 rare breach + 1 unique tablet
+- **waystone cost/map** — 6-mod T15 City
+- **opportunity cost** — atlas point cày 60+ vào Breach+Delirium+City, Grand Mirror hunt time
 
 Trong đó multiplier breakdown:
 - `rare_count_per_breach` = 20 base + 2 (Moment of Risk) + 3 (3 tower suffix `of the Invasion`) + 5 (unique tablet bản divined) = ~30 rare/breach trước proc.

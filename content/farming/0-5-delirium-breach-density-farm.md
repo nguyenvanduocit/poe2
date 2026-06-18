@@ -75,16 +75,20 @@ Pha hai là farm: vào từng City map trong vùng sương, mỗi map cắm 3 Br
 
 ## Loot Breakdown & Economic Analysis
 
-```
-expected_profit_per_hour =
-  ( raw_currency_per_breach × breaches_per_map        ← raw ex/div/catalyst từ density delirious
-    × delirium_density_multiplier                     ← chỉ >1 khi build giết kịp trong fog
-    + wombgift_hiveblood_value_per_map                ← input Genesis Tree, sàn đều
-    + lineage_support_per_vruun × vruun_rate )
-  × maps_per_hour
-  − tablet_cost_per_map (3 Breach + 3 Delirium loại thường, rẻ)
-  − opportunity_cost (atlas point Breach+Delirium+City, thời gian fish Grand Mirror)
-```
+$$
+\begin{aligned}
+\text{profit/hr} = \big(\,& \text{raw currency/breach} \times \text{breaches/map} \times \text{delirium density mult} \\
+&+ \text{wombgift+hiveblood/map} + \text{lineage/vruun} \times \text{vruun rate} \,\big) \times \text{maps/hr} \\
+&- \text{tablet cost/map} - \text{opportunity cost}
+\end{aligned}
+$$
+
+Trong đó:
+- **raw currency/breach × breaches/map** — raw ex/div/catalyst từ density delirious
+- **delirium density mult** — chỉ >1 khi build giết kịp trong fog
+- **wombgift+hiveblood/map** — input Genesis Tree, sàn đều
+- **tablet cost/map** — 3 Breach + 3 Delirium loại thường, rẻ
+- **opportunity cost** — atlas point Breach+Delirium+City, thời gian fish Grand Mirror
 
 Số có timestamp, và phải tách trước-sau nerf cho thật:
 

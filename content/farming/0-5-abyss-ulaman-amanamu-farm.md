@@ -101,14 +101,16 @@ Lưu ý cú nerf 0.5.1 hotfix 6: **Amanamu's Void uptime giảm 90% xuống 50%,
 
 Mô hình lãi ba tầng tách nhau:
 
-```
-expected_profit_per_hour =
-  raw_currency_floor   (Currency Chest Ulaman + Ancient Bone + omen rớt thẳng)
-  + crafted_item_value (rare nhặt + craft bằng Ancient Bone bán lại)
-  + heart_of_the_well_value (Lichborn Rogue Exile drop, biến số lớn)
-  − cost_per_map       (tablet + waystone)
-  − opportunity_cost   (atlas point để vào Abyss subtree)
-```
+$$
+\text{profit/hr} = \text{raw currency floor} + \text{crafted item value} + \text{heart of the well value} - \text{cost/map} - \text{opportunity cost}
+$$
+
+Trong đó:
+- **raw currency floor** — Currency Chest Ulaman + Ancient Bone + omen rớt thẳng
+- **crafted item value** — rare nhặt + craft bằng Ancient Bone bán lại
+- **heart of the well value** — Lichborn Rogue Exile drop, biến số lớn
+- **cost/map** — tablet + waystone
+- **opportunity cost** — atlas point để vào Abyss subtree
 
 Giá pull từ poe2scout ngày 2026-06-10, quy đổi **1 :wiki-link{url="https://www.poe2wiki.net/wiki/Divine_Orb"} ≈ 130 :wiki-link{url="https://www.poe2wiki.net/wiki/Exalted_Orb"}**.
 

@@ -91,12 +91,13 @@ Vài mẹo execution hạ thời gian mỗi con:
 
 Vì output là carry account-bound không bán được, mô hình không phải profit/giờ mà là **cost mỗi con carry đạt target**:
 
-```
-cost_per_target_monkey =
-  cost_per_map / (monkeys_per_map × hit_rate_for_target_mods)
-  + key_farm_cost (thời gian farm The Head of the King, không mua được)
-  − offsetting_income (ritual reward + pinnacle key fragment rớt trên đường)
-```
+$$
+\text{cost/target monkey} = \frac{\text{cost/map}}{\text{monkeys/map} \times \text{hit rate for target mods}} + \text{key farm cost} - \text{offsetting income}
+$$
+
+Trong đó:
+- **key farm cost** — thời gian farm The Head of the King, không mua được
+- **offsetting income** — ritual reward + pinnacle key fragment rớt trên đường
 
 Throughput field-observed (Mattjestic + nhóm cày, 2026-06-14, cần log lại khi tự chạy):
 
