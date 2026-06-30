@@ -5,9 +5,9 @@ title: "Energy Shield Recovery"
 status: draft
 author: duocnv
 created: '2026-05-24'
-updated: '2026-05-27'
+updated: '2026-06-19'
 league: '0.5'
-patch: 0.5.0
+patch: 0.5.3
 tags:
   - poe2
   - energy-shield
@@ -54,6 +54,8 @@ Runic Ward là interaction quan trọng nhất. Khi ES sạch và life chạm 1,
 Ghost Dance tạo lớp ES regen độc lập với recovery rate thông thường. Mỗi khi mất Ghost Shroud, nhân vật nhận 2% Evasion Rating dưới dạng ES regen mỗi giây — ở 10k Evasion ra khoảng 200 ES/s ổn định, không bị ảnh hưởng bởi các nerf recovery trên tree.
 
 Deflection là lớp mới nổi bật trong 0.5. Nhiều notable Deflection đồng thời cấp faster start (Mending Deflection cho 20% khi không Full Life, Energising Deflection cho 12%). Đây là cách lấy recovery value rẻ và hiệu quả nhất hiện nay trên nhánh Evasion.
+
+Staunch Deflection thuộc họ khác — patch 0.5.3 thêm dòng cấp Deflection Rating = 8% Evasion Rating. Đây là notable **deflection-from-evasion**, không phải ES recovery / faster start. Nó nằm cùng họ với Wild Cat (12% Evasion → Deflection Rating), không cùng họ với Mending Deflection / Energising Deflection. Evasion stacker đi qua khu Dexterity giờ có hai option deflection-from-evasion song song: Wild Cat 12% baseline cao hơn, Staunch Deflection 8% kèm các sub-effect khác của notable. Pick theo path thuận tay hoặc lấy cả hai khi tree cho phép.
 
 ### Phân biệt "faster start of Energy Shield Recharge" và "increased Energy Shield Recharge Rate"
 
@@ -108,6 +110,10 @@ Verdict: NEUTRAL. ES recovery vẫn tồn tại và có giá trị, nhưng khôn
 Open question: Recovery rate có cap nào không trong 0.5? Cần test thực tế với build full rate gear ở T16+ để xác nhận TTF thực. Sẽ update sau khi có dữ liệu live từ tuần đầu league.
 
 ## Patch Evolution
+
+### Patch 0.5.3 (2026-06-19)
+
+Staunch Deflection notable thêm dòng "Gain Deflection Rating equal to 8% of Evasion Rating", join họ deflection-from-evasion bên cạnh Wild Cat (12%). Buff không chạm trực tiếp ES recharge layer, nhưng tăng giá trị tổng của tree-path Evasion stacker đi qua khu Dexterity, vì nhiều build ES-hybrid đã đi qua đó để lấy Mending Deflection / Energising Deflection.
 
 ### Patch 0.5.0: Return of the Ancients
 

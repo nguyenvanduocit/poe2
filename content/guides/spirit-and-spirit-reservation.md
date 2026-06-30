@@ -7,7 +7,7 @@ author: duocnv
 created: '2026-06-12'
 updated: '2026-06-12'
 league: '0.5'
-patch: 0.5.0
+patch: 0.5.3
 tags:
   - spirit
   - reservation
@@ -68,7 +68,7 @@ Reservation efficiency trên gear đến từ desecration và corruption:
 - **Of Ulaman**: body armour (12-18)% companion skills; amulet (10-20)% herald skills.
 - **Of Coherence**: (7-10)% minion skills trên amulet/ring, chỉ spawn qua Breach desecration.
 - **Corruption helmet**: flat +(20-30) Corrupted, +(40-60) Intrinsic double-corrupt.
-- **Amanamu's prefix**: +(35-50) flat trên staff.
+- **Amanamu's prefix (flat Spirit)**: +(35-50) flat trên staff. Từ 0.5.3 có thêm một prefix thứ hai cùng tên "Amanamu's" trên staff cho Gain 40–50% of Damage as Extra Chaos Damage; hai prefix tồn tại song song, phân biệt qua dòng stat chứ không phải tên.
 - **Soul-influenced Medved's**: (1-20)% increased Spirit, kèm 6 variant hybrid defence + flat +(1-24) trên body.
 
 Abyss jewel là slot dày Spirit nhất tính trên một socket: suffix watcher (12-16)% res eff toàn skill, và prefix đặc biệt hệ Kulemak gộp +(40-60) flat cộng (6-10)% res eff trong MỘT mod.
@@ -83,7 +83,7 @@ Phía reservation, bốn cái đáng nhớ. :wiki-link{url="https://www.poe2wiki
 
 Hai chiều ngược lại cũng có unique. Payoff scale từ Spirit ra stat khác: :wiki-link{url="https://www.poe2wiki.net/wiki/Threaded_Light" trade="https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22online%22%7D%2C%22name%22%3A%22Threaded%20Light%22%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D"} (8-12)% Spell Damage per 10 Spirit, :wiki-link{url="https://www.poe2wiki.net/wiki/Amanamu's_Gaze" trade="https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22online%22%7D%2C%22name%22%3A%22Amanamu's%20Gaze%22%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D"} convert +2 Armour per 1 Spirit (body) hoặc 1% MS per 15 Spirit cap 40% (boots). Xóa sổ thì có :wiki-link{url="https://www.poe2wiki.net/wiki/Kaom's_Heart" trade="https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22online%22%7D%2C%22name%22%3A%22Kaom's%20Heart%22%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D"} "You have no Spirit" đổi +1500 Life.
 
-Mấy unique roll-pool cũng chứa Spirit: Ventor's Gamble +(0-20), :wiki-link{url="https://www.poe2wiki.net/wiki/Morior_Invictus" trade="https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22online%22%7D%2C%22name%22%3A%22Morior%20Invictus%22%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D"} +(10-14) per socket filled (max +56), còn :wiki-link{url="https://www.poe2wiki.net/wiki/Grip_of_Kulemak" trade="https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22online%22%7D%2C%22name%22%3A%22Grip%20of%20Kulemak%22%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D"}, Loreweave và The Unborn Lich roll desecrated pool có cả flat conditional theo attribute lẫn (6-10)% res eff.
+Mấy unique roll-pool cũng chứa Spirit: Ventor's Gamble +(0-20), :wiki-link{url="https://www.poe2wiki.net/wiki/Morior_Invictus" trade="https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22online%22%7D%2C%22name%22%3A%22Morior%20Invictus%22%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D"} +(10-14) per socket filled (max +56), còn :wiki-link{url="https://www.poe2wiki.net/wiki/Grip_of_Kulemak" trade="https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22online%22%7D%2C%22name%22%3A%22Grip%20of%20Kulemak%22%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D"}, Loreweave và The Unborn Lich roll desecrated pool có cả flat conditional theo attribute lẫn (6-10)% res eff. Lưu ý: từ 0.5.3, skill granted His Grave Command của :wiki-link{url="https://www.poe2wiki.net/wiki/The_Unborn_Lich"} không còn có Spirit cost (trước đó reservation theo % như Tame Beast); mod pool desecrated trên staff không đổi.
 
 ## Passive tree và ascendancy
 
@@ -196,6 +196,10 @@ Pool Spirit của một build = 110 quest + sceptre/body/amulet + unique, còn c
 Ba điểm còn phải tự kiểm trong client: dòng minion res eff của The Soul Meridian (tree export với poedb đang vênh nhau), Atziri's Communion có thực sự drop trong league chưa (wiki scrape còn flag "Not in game"), và giá thị trường của đường nâng Masterwork Rune so với mua Perfect thẳng.
 
 ## Version History
+
+### Patch 0.5.3
+
+Amanamu's Staff Prefix có thêm một bản thứ hai cho Gain 40–50% of Damage as Extra Chaos Damage; prefix flat Spirit +(35-50) vẫn tồn tại song song. His Grave Command của :wiki-link{url="https://www.poe2wiki.net/wiki/The_Unborn_Lich"} bỏ Spirit cost; quality gem đổi từ Reservation Efficiency sang +Minion Life.
 
 ### Patch 0.5.2
 

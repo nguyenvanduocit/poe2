@@ -5,44 +5,45 @@ title: ThaoCamVienSaiGon — Progress Tracker
 status: endgame
 author: duocnv
 created: '2026-06-14'
-updated: '2026-06-16'
+updated: '2026-06-19'
 character_name: ThaoCamVienSaiGon
 character_class: Huntress
 ascendancy: Spirit Walker
 league: '0.5'
-patch: 0.5.2
+patch: 0.5.3
 current_progress: t16-farming
 ---
 
 # ThaoCamVienSaiGon — Progress Tracker
 
-Huntress / Spirit Walker Lv96 chạy nguyên đàn companion :wiki-link{url="https://www.poe2wiki.net/wiki/Tame_Beast"} quanh đúng một con carry crit là Zekoa the Headcrusher. Build mới quay xe sang two-hand-in-one-hand: cầm :wiki-link{url="https://www.poe2wiki.net/wiki/Chober_Chaber"} một tay nhờ keystone :wiki-link{url="https://www.poe2wiki.net/wiki/Giant's_Blood"}, chừa tay kia cho :wiki-link{url="https://www.poe2wiki.net/wiki/Sylvan's_Effigy"} mở khóa số companion không giới hạn. Đang farm map T15 ổn định, việc còn lại là cap lại cold và fire res vừa thủng sau đợt đổi sang hai nhẫn Unset.
+Huntress / Spirit Walker Lv96 chạy nguyên đàn companion :wiki-link{url="https://www.poe2wiki.net/wiki/Tame_Beast"} quanh đúng một con carry crit là Zekoa the Headcrusher. Build mới quay xe sang two-hand-in-one-hand: cầm :wiki-link{url="https://www.poe2wiki.net/wiki/Chober_Chaber"} một tay nhờ keystone :wiki-link{url="https://www.poe2wiki.net/wiki/Giant's_Blood"}, chừa tay kia cho :wiki-link{url="https://www.poe2wiki.net/wiki/Sylvan's_Effigy"} mở khóa số companion không giới hạn. Đang farm map T15 ổn định, việc còn lại là cap nốt cold res và lo năm điểm cuối Lv96-100 cho cụm Staunch Deflection mới được buff ở 0.5.3.
 
 ## Snapshot
 
-*Live fetch: 2026-06-16 — poe.ninja model snapshot (`data/character-exports/export-ThaoCamVienSaiGon.json`, updatedUtc 2026-06-16T12:49Z, model 135327768, refresh thủ ngay trước khi đọc nên khớp client). PoB2 0.4 chưa model Tame Beast nên DPS tamed-beast đọc trong client; defense lấy từ model.*
+*Live fetch: 2026-06-14 — poe.ninja model snapshot, khớp từng số với client. PoB2 0.4 chưa model Tame Beast nên DPS tamed-beast đọc trong client; defense lấy từ model.*
 
-- **Life / ES / Mana:** 1,932 / 1,667 / 1,395 — thêm Runic Ward 121
+- **Life / ES / Mana:** 1,885 / 1,929 / 1,384 — thêm Runic Ward 121
 - **Spirit:** 439
-- **Armour / Evasion / Deflection:** 1,670 (15% phys DR) / 7,465 (45% evade, max 95%) / 6,158 (39% deflect)
+- **Armour / Evasion / Deflection:** 1,941 (17% phys DR) / 8,625 (48% evade, max 95%) / 7,115 (43% deflect)
 - **Block:** 0% — Dunkelhalt buckler nằm ở weapon set 2 dormant (no-weapon-swap)
-- **EHP:** 16,401
-- **Max hit chịu được:** Phys 5,276 / Fire 11,120 / Cold 5,115 / Lightning 18,268 / Chaos 9,531 — cold và phys là hai lớp mỏng nhất, cold mỏng vì res đang 0
-- **Resistances:** Fire 57 / Cold 0 / Lightning 75 (overcap 21) / Chaos 55 — cold rơi thẳng về 0 sau khi đổi sang hai nhẫn Unset (mất hết res nhẫn), fire cũng tụt dưới cap
-- **Attributes:** Str 155 / Dex 147 / Int 356
+- **EHP:** 19,432
+- **Max hit chịu được:** Phys 4,120 / Fire >10k / Cold >10k / Lightning >10k / Chaos >10k — phys là kênh mỏng nhất, mọi kênh element đều trên 10k
+- **Resistances:** Fire 72 / Cold 66 / Lightning 75 (overcap 31) / Chaos 72 — cold 66 là lỗ duy nhất dưới cap, lưu ý ba dòng Bonded trên Morior/sceptre là ShamanOnly nên chết trên Huntress (client xác nhận cold đứng yên 66 dù Morior ghi cold)
+- **Attributes:** Str 155 / Dex 147 / Int 339
 - **Charges:** Endurance 3 / Frenzy 3 / Power 3
 - **Movement Speed:** 128%
-- **Carry + companion (PoB2 chưa model → DPS đọc client):** Zekoa the Headcrusher (carry), hai con granted Bear Wild Protector + Azmerian Wolf, Wolf Pack, cộng đàn damage/utility (Fungal Wolf, Hyena Demon, Bramble Rhoa, Swarming Wasp) và hai con body-block (Quill Crab, Coconut Crab)
+- **Carry + companion (PoB2 chưa model → DPS đọc client):** Zekoa the Headcrusher (carry), hai con granted Bear Wild Protector + Azmerian Wolf (~126.6k / 126.9k), Wolf Pack (17.6k), cộng đàn damage/utility (Fungal Wolf, Hyena Demon, Bramble Rhoa, Swarming Wasp) và hai con body-block (Quill Crab, Coconut Crab)
 
 ## Current Goals
 
-Hai con granted vẫn tự đẩy DPS mà không tốn spirit, nên north star không phải kéo thêm DPS công khai mà là vá lại phòng thủ vừa thủng sau đợt đổi hai nhẫn Unset. Đổi nhẫn lấy được 2 skill slot, minion damage và minion crit damage bonus trên cả hai cây, nhưng nhẫn Unset không có res implicit nên cold rơi thẳng về 0 và fire tụt còn 57 — đây là lỗ one-shot mới, gấp hơn cả phys. Cold max hit chỉ còn 5,115 vì res 0, ngang phys 5,276, trong khi lightning và fire đều trên 11k. Cấp nhất bây giờ là kéo cold và fire về cap bằng găng, belt và flask, vì toàn bộ gánh nặng res giờ dồn về ba chỗ đó khi nhẫn đã bỏ trống res. Mảng damage để dành cho Zekoa: cả engine crit của build dồn vào một con, mọi optimization crit-damage tiếp theo đều phải chảy về nó. Cách quản spirit cho nguyên đàn mình đã viết ở [spirit và reservation](/guides/spirit-and-spirit-reservation); roster cụ thể và lý do từng support nằm trong [build doc đầy đủ](/builds/huntress/0-5-spirit-walker-companion-pack).
+Hai con granted vẫn tự đẩy DPS mà không tốn spirit, nên north star không phải kéo thêm DPS công khai mà là vá nốt phòng thủ. Phys max hit 4,120 là trần one-shot thấp nhất — mọi kênh element đều trên 10k nên không phải vấn đề. Cold 66 là lỗ res duy nhất dưới cap, vá rẻ bằng cold trên ring hoặc craft cold belt. Sau 0.5.3, Staunch Deflection thêm dòng Deflection Rating bằng 8% Evasion Rating (~+690 deflection trên eva 8,625) — cụm này cách path hiện tại 4 node, vừa khít với năm điểm cuối Lv96-100 và đúng cú vá thủ rẻ nhất hiện có. Mảng damage để dành cho Zekoa: cả engine crit của build dồn vào một con, mọi optimization crit-damage tiếp theo đều phải chảy về nó. Cách quản spirit cho nguyên đàn mình đã viết ở [spirit và reservation](/guides/spirit-and-spirit-reservation); roster cụ thể và lý do từng support nằm trong [build doc đầy đủ](/builds/huntress/0-5-spirit-walker-companion-pack).
 
 ## Priority Actions
 
-1. Cap cold 0→75: hai nhẫn Unset không cõng res, belt Dusk Lock mới có +53 cold, nên cold đứng gần đáy. Roll cold trên găng (đang trống cold) cộng một charm/flask cold, hoặc craft thêm cold lên belt. Đây là lỗ one-shot khẩn nhất.
-2. Cap fire 57→75: găng đang +27 fire, belt +46 fire desecrated — thiếu ~18%, dồn lên găng hoặc amulet.
-3. Đọc crit% và DPS thật của Zekoa trong client (PoB2 trả 0 cho Tame Beast) để biết The Adorned cộng đám jewel magic cộng minion crit damage bonus trên hai nhẫn (25%+22%) đã đủ chưa, hay còn cần thêm.
+1. Cap cold 66→75: một dòng cold trên ring rare hoặc craft thêm cold lên belt là xong, đây là lỗ res rẻ nhất.
+2. Năm điểm cuối Lv96-100 đi cụm Staunch Deflection: 4 node detour (Deflection → Evasion Rating → Deflection → Staunch Deflection) cho +690 deflection rating, +2-3pp chance deflect tùy accuracy. Verify trong client là cluster đó thật sự cách path 4 node trước khi commit.
+3. Dày phys EHP: phys max hit 4,120 mỏng hơn hẳn element. Thêm armour, life-ES flat, hoặc dòng % phys taken as element san về kênh element vốn >10k.
+4. Đọc crit% và DPS thật của Zekoa trong client (PoB2 trả 0 cho Tame Beast) để biết The Adorned cộng đám jewel magic cộng minion crit damage bonus trên hai nhẫn (25%+22%) đã đủ chưa, hay còn cần thêm.
 
 ## Skill Gems & Links
 
@@ -74,21 +75,21 @@ Hai nhẫn giờ đều là Unset (Corruption Finger + Morbid Circle), gánh min
 
 Cả hai slot nhẫn giờ là :wiki-link{url="https://www.poe2wiki.net/wiki/Unset_Ring"}: **Corruption Finger** (+51 life, +26 Dex, Minions deal 27% inc Damage, Minions +8% atk/cast speed, **Minions +25% Critical Damage Bonus**, +13 mana) và **Morbid Circle** (+96 life, +30 Str, 9-15 cold to attacks, Minions deal 25% inc Damage, Minions +10% atk/cast speed, **Minions +22% Critical Damage Bonus**). Đổi này được 2 skill slot, ~52% minion increased damage, ~47% minion crit damage bonus và +18% minion attack/cast speed dồn vào đàn, cộng Dex với Str gỡ kẹt attribute.
 
-Điểm phải nhớ cho lần craft sau: **ring CÓ roll được "Minions have increased Critical Damage Bonus"** — cả hai viên đang đeo đều có nó là dòng explicit, nên không cần ép dòng đó về jewel nữa; The Adorned với đám "of Gripping" vẫn gánh phần lớn crit damage bonus, ring chỉ là nguồn cộng thêm. Bù lại Unset không có res implicit và hai viên này không roll res, nên đổi xong **cold rơi thẳng về 0, fire còn 57** — toàn bộ gánh nặng res dồn về găng, belt, amulet và flask.
+Điểm phải nhớ cho lần craft sau: **ring CÓ roll được "Minions have increased Critical Damage Bonus"** — cả hai viên đang đeo đều có nó là dòng explicit, nên không cần ép dòng đó về jewel nữa; The Adorned với đám "of Gripping" vẫn gánh phần lớn crit damage bonus, ring chỉ là nguồn cộng thêm. Bù lại Unset không có res implicit và hai viên này không roll res, nên toàn bộ gánh nặng res phải nằm hết ở găng, belt, amulet và flask. Đợt craft găng + belt sau khi đổi nhẫn đã kéo res về Fire 72 / Cold 66 / Lightning 75 / Chaos 72 — cold 66 còn dưới cap 9 điểm là lỗ rẻ nhất phải vá tiếp.
 
-Hai chỗ res cõng được giờ là găng và belt, đó là nơi phải vá cap:
+Hai chỗ res cõng được vẫn là găng và belt, đó là nơi phải dồn nốt cap cold:
 
-**Găng rare**, giữ base evasion để khỏi tụt eva (Blood Talons đang +27 fire/+39 light, thiếu cold). Cần cõng fire với cold:
+**Găng rare** thay Blood Talons, giữ base evasion để khỏi tụt eva. Đã có Fire 72 từ găng + belt + amulet hiện tại nên ưu tiên kế tiếp là dồn cold:
 - Prefix: +120–149 maximum Life
 - Prefix: % increased Evasion Rating
-- Suffix: +41–45% Fire Resistance
-- Suffix: +41–45% Cold Resistance
+- Suffix: +41–45% Cold Resistance (kênh duy nhất còn dưới cap)
+- Suffix: +41–45% Fire/Chaos Resistance làm overcap dự phòng ele-weakness
 
 **Belt** (Dusk Lock đang +53 cold/+54 light/+46 fire desecrated, 2 charm slot) — nếu craft tiếp thì ưu tiên thêm cold và flat Armour:
 - Suffix: +41–45% Cold Resistance (kéo cold lên cùng găng)
 - Prefix: flat Armour, đệ thêm phys EHP
 
-Sau khi găng với belt cõng đủ res: cold về 75, fire về 75, lightning vẫn cap (đang overcap 21), chaos giữ 55. Hai skill slot mới đã có, ~47% minion crit damage bonus nằm trên nhẫn thay vì jewel, deflection nguyên vẹn nhờ giữ Atziri's Step.
+Sau khi đợt craft này xong: cold về 75 (lỗ duy nhất), fire 72 → ≥75 dự phòng ele-weakness, lightning vẫn cap overcap 31, chaos 72. Hai skill slot Unset giữ nguyên, ~47% minion crit damage bonus vẫn nằm trên nhẫn, deflection nguyên vẹn nhờ giữ Atziri's Step — và sau 0.5.3 còn được cộng thêm ~+690 nếu allocate cụm Staunch Deflection ở năm điểm cuối Lv96-100.
 
 ## Link trade
 
@@ -155,6 +156,10 @@ Soi nốt các group còn lại. Bear (Catha's + Romira's + Rapid Attacks + Magn
 **Discipline nên mang Healing Runes.** Aura granted này đang trống support — nhét Healing Runes: +10 spirit, rút 10% max Runic Ward mỗi 5s heal đàn 200% lượng ward mất, đúng máy sustain cho lưới redirect. Verify granted aura có nhận support không.
 
 ## Progress Log
+
+### 2026-06-19
+
+Patch 0.5.3: Staunch Deflection notable giờ thêm dòng Deflection Rating bằng 8% Evasion Rating. Verify cluster trên tree planner: node sống ở khu Ranger-adjacent SE (cluster Deflection), từ path đang allocate phải đi qua hai Deflection cộng một Evasion Rating cộng Staunch Deflection. Đúng 4 node chưa lấy, ăn trọn năm điểm cuối Lv96-100 và để lại một điểm cho cụm minion-life. Với eva live 8,625 thì +690 Deflection Rating, đẩy 7,115 lên 7,805 và chance deflect khoảng +2-3pp tuỳ accuracy attacker. Đây là cú vá thủ rẻ nhất hiện có vì không tốn currency, đúng triết lý "DPS đã dư, ưu tiên peel back defense". Sync luôn live snapshot 2026-06-14 vào doc: Eva 8,625 / Defl 7,115 / Cold 66 (lỗ duy nhất dưới cap) / EHP 19,432 / phys max hit 4,120.
 
 ### 2026-06-16
 

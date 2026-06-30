@@ -7,7 +7,7 @@ author: duocnv
 created: '2026-06-12'
 updated: '2026-06-15'
 league: '0.5'
-patch: 0.5.2
+patch: 0.5.3
 sub_class: crafting
 tags:
   - crafting
@@ -167,6 +167,7 @@ Chi phí tham chiếu (poe2scout 2026-06-12, đơn vị exalted): Fracturing Orb
 
 ## Version History
 
+- **0.5.3:** ba mod Abyss mới của patch đều nằm trên **staff** (of Amanamu block 12–16%→20–25%, of Kurgal Puppetmaster stacks, Amanamu's prefix 40–50% extra chaos). Pool suffix amulet Amanamu/Kurgal/Ulaman không thay đổi, craft guide giữ nguyên.
 - **0.5.2** — thêm Necrotic Catalyst + Refined Necrotic Catalyst (minion quality cho ring/amulet và jewel) qua Genesis Tree, mở đường +4 minion trên amulet (trước đó chỉ caster/attack làm được vì có catalyst tương ứng). Trước 0.5.2, +4 minion phải đi qua sanctify, đắt và rủi ro hơn.
 - **0.5.0** — desecration (Collarbone + faction omen Liege/Sovereign/Blackblooded), Catalysing Exaltation, Greater/Perfect Exalted Orb là bộ công cụ finish chuẩn của league này.
 - **0.3.0** — Sanctified (Omen of Sanctification + Divine Orb) introduced; là cơ chế nền cho đường +5.

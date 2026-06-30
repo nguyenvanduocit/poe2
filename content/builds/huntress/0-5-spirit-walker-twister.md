@@ -9,7 +9,7 @@ updated: '2026-06-10'
 class: Huntress
 ascendancy: Spirit Walker
 league: '0.5'
-patch: 0.5.0
+patch: 0.5.3
 budget_tier: medium-budget
 confidence_level: MEDIUM
 pob_coverage: PARTIAL
@@ -102,7 +102,7 @@ Tree là crit-heavy + projectile + freeze + weapon-set conditional. Cluster chí
 
 Cluster freeze/cold: Hail (freeze buildup — đặc biệt sau khi đeo The Taming vì Call of the Brotherhood không còn dùng, Hail là source freeze chính), Crushing Wave (inc damage on crit hit), Deep Freeze (qua From Nothing — freeze buildup + frozen enemies have -8 to cold res). Harness the Elements là big multiplier (inc damage per element type on enemy — 3 element là 60% inc).
 
-Cluster defense: Subdivision Mask (eva per ES on helmet → vital cho hybrid armour), Mindful Awareness (eva + ES), Trained Deflection (qua From Nothing — push deflection lên 46% cap), Wildcat (deflection rating khi không có deflection suffix gloves vì đeo unique freeze-glove).
+Cluster defense: Subdivision Mask (eva per ES on helmet, vital cho hybrid armour), Mindful Awareness (eva + ES), Trained Deflection (qua From Nothing, push deflection lên 46% cap), Wildcat (deflection rating khi không có deflection suffix gloves vì đeo unique freeze-glove), và sau 0.5.3 thêm Staunch Deflection cấp Deflection Rating bằng 8% Evasion Rating. Trên eva target 12-15k thì Staunch Deflection cộng thẳng +960 đến +1,200 deflection rating, đẩy chance deflect lên thấy được mà không phải đổi gear. Staunch Deflection ngồi cùng cluster Ranger-adjacent với Trained Deflection và Wild Cat nên path bao trọn ba cái cùng lúc, không phải detour riêng.
 
 Weapon-set conditional points là tinh thần của build: **set 1 = attack speed** (Stimulants, Acceleration, Agile Succession, 10fold Attacks — nuôi Whirling Slash APS), **set 2 = crit/damage** (Concussive Attacks, Killer Instinct, Critical Exploit, Embodiment of Power — nuôi Twister damage). Hai pool điểm tách biệt, không hoán chuyển — đây là lý do swap thật trong combat đáng tiền, không phải fake swap.
 
@@ -124,7 +124,7 @@ Mục tiêu số sau khi chuyển CI endgame (con số target từ creator playt
 
 - **ES:** 6,500-8,000 (qua Forgotten Warden body + helm full ES + boots/gloves ES roll + Subdivision Mask)
 - **Evasion:** 12,000-15,000 (hybrid eva/ES base + Wind Dancer + Ghost Dance)
-- **Deflection:** 46% (qua Trained Deflection + Wildcat khi gloves không có deflection suffix)
+- **Deflection:** 46% trở lên (qua Trained Deflection + Wildcat + Staunch Deflection sau 0.5.3 khi gloves không có deflection suffix); +960 đến +1,200 Deflection Rating từ Staunch Deflection tuỳ eva floor 12-15k
 - **Resistances:** 75/75/75 cap (overcap +20% với Controlled Metamorphosis penalty); chaos 0 (CI miễn nhiễm)
 - **Cast Resistance target:** ~40% (qua belt)
 - **Attack Speed (set 1, Whirling Slash):** ≥2.36 APS (target 2.5+ với corrupt second socket + Celestial Alloy attack speed prefix)
@@ -236,6 +236,10 @@ Build làm tốt ba thứ: clear T15-T16 cực mượt nhờ projectile multi-hi
 Đây là build cho người thích projectile + crit + freeze-lock với APM trung bình cao (cast Whirling Slash, swap, cast Twister, cast Mark, dodge roll trigger Primal Bounty) — không phải build minion auto. Leveling từ Act 1 cực mượt nhờ engine consume Whirlwind tự nhân damage, lên endgame thì thành crit-freeze carry quanh trục The Taming + Trinity + Heavy Frost. Floor chạy league-start không gear cố định; ngưỡng đầu tư để build đứng như paper là 20-50 div cho Forgotten Warden + From Nothing + gloves unique + Darkness Enthroned. Dưới floor build vẫn clear T13-T14 tốt nhưng boss thiếu freeze-lock; trên floor build farm pinnacle thoải mái trừ Bodok anti-twister. Quote "12M+ DPS" là playtest number stack buff, không phải PoB verified — log số thật trong client khi đeo full kit.
 
 ## Changelog
+
+### 2026-06-19
+
+- Patch 0.5.3: Staunch Deflection thêm Deflection Rating bằng 8% Evasion Rating. Eva target 12-15k thì +960 đến +1,200 deflection rating đi thẳng vào cluster Trained Deflection + Wild Cat đã có sẵn trên tree, nên là pickup miễn phí ở năm điểm cuối. Cập nhật target deflection floor 46% lên cao hơn tuỳ eva cuối, không quote số cứng vì PoB2 0.5 vẫn chưa model Spirit Walker đầy đủ.
 
 ### 2026-06-10
 

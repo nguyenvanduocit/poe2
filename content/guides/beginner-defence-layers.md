@@ -5,9 +5,9 @@ title: "Ba lớp phòng thủ vật lý: Armour, Evasion và Block"
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-06-19'
 league: '0.5'
-patch: 0.5.1
+patch: 0.5.3
 guide_type: fundamentals
 tags:
   - poe2
@@ -36,7 +36,7 @@ Warrior và Titan là class tự nhiên nhất cho armour build vì có sẵn st
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Evasion"} cho xác suất né hoàn toàn một hit. Khi né thành công, bạn không nhận damage gì cả. Khi né thất bại, bạn ăn nguyên 100% damage — không có giảm giữa chừng. Đây là điểm quan trọng nhất về evasion: nó không có giá trị khi fail, và không có giá trị gì trước damage over time (poison, bleed không phải hit).
 
-Điểm mạnh của evasion là nó **không chỉ** chặn physical. Bất kỳ hit nào — physical, elemental, chaos — đều có thể được né. Thêm vào đó, evasion build trong 0.5 thường lấy thêm **Deflection** qua passive nodes gần khu vực Dexterity: một layer phụ cho cơ hội giảm 40% damage từ hit, kể cả các đòn boss có glow đỏ mà evasion không chặn được. Hai layer này cộng lại thành lý do Ranger và Huntress class có thể sống sót ổn ngay cả khi có lúc roll hụt.
+Điểm mạnh của evasion là nó **không chỉ** chặn physical. Bất kỳ hit nào — physical, elemental, chaos — đều có thể được né. Thêm vào đó, evasion build trong 0.5 thường lấy thêm **Deflection** qua passive nodes gần khu vực Dexterity: một layer phụ cho cơ hội giảm 40% damage từ hit, kể cả các đòn boss có glow đỏ mà evasion không chặn được. Hai notable tiêu biểu chuyển Evasion Rating sang Deflection Rating là Wild Cat (12%) và Staunch Deflection (8% — patch 0.5.3 thêm dòng này) — một character 8,000 Evasion lấy cả hai nhận thêm 1,600 Deflection Rating từ tree mà không phải chiếm slot suffix trên gear. Hai layer này cộng lại thành lý do Ranger và Huntress class có thể sống sót ổn ngay cả khi có lúc roll hụt.
 
 Playstyle phù hợp: di chuyển liên tục, dùng dodge roll để tránh đòn lớn, không đứng trong đám quái hứng hit liên tiếp.
 

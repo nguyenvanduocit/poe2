@@ -7,7 +7,7 @@ author: duocnv
 created: '2026-05-25'
 updated: '2026-06-09'
 league: '0.5'
-patch: 0.5.1
+patch: 0.5.3
 tags:
   - poe2
   - unique-items
@@ -25,7 +25,7 @@ tags:
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Forgotten_Warden"} (Primal Markings, Lv78) là body armour companion-tank trên base Evasion/ES hybrid. Item không có player life, không có res — toàn bộ survival phải đến từ slot khác. Đổi lại, 200–300% increased Evasion and Energy Shield, và cơ chế phòng thủ co giãn: +70–100 to Deflection Rating per 50 missing Energy Shield, tức deflection rating tăng dần khi ES bị ăn mòn. Khi ES chạm 0, deflection rating đạt cực đại. Dòng quan trọng nhất là "10–15% of Damage from Deflected Hits is taken from Damageable Companion's Life before you" — companion không chỉ deal damage, chúng hấp thụ một phần damage deflect cho player. Companion có 30–50% increased maximum Life để gánh vai trò đó. Item cũng grants Level 18 Spirit Vessel cho Spirit management. Ở roll sample: +90 Deflection per 50 missing ES, 285% increased Evasion and ES, 48% companion max life, 11% redirect.
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/The_Raven's_Flock"} (Perching Staff, Lv78, 137 Int) là minion staff đa dụng: minion deal (80–120)% increased Damage, (30–50)% increased Spirit Reservation Efficiency of Skills, (10–20)% chance inflict :wiki-link{url="https://www.poe2wiki.net/wiki/Gruelling_Madness"} on Hit, và grants Level 19 Spiraling Conspiracy. Reservation efficiency giúp duy trì đàn lớn mà không bị thiếu Spirit — lý do chính để cầm staff này thay vì weapon khác cho minion build. Bất kỳ build nào dùng lực lượng minion thường trú (spectre, construct, companion kết hợp minion gem) đều hưởng lợi. Spiraling Conspiracy là skill swarm tấn công từ staff, thêm một nguồn damage và stacking Gruelling Madness.
+:wiki-link{url="https://www.poe2wiki.net/wiki/The_Raven's_Flock"} (Perching Staff, Lv78, 137 Int) là minion staff đa dụng: minion deal (80–120)% increased Damage, (30–50)% increased Spirit Reservation Efficiency of Skills, (10–20)% chance inflict :wiki-link{url="https://www.poe2wiki.net/wiki/Gruelling_Madness"} on Hit, và grants Level 19 Spiraling Conspiracy. Reservation efficiency giúp duy trì đàn lớn mà không bị thiếu Spirit — lý do chính để cầm staff này thay vì weapon khác cho minion build. Bất kỳ build nào dùng lực lượng minion thường trú (spectre, construct, companion kết hợp minion gem) đều hưởng lợi. Spiraling Conspiracy là skill swarm tấn công từ staff, thêm một nguồn damage và stacking Gruelling Madness. Từ 0.5.3, bug khiến Spiraling Conspiracy không cập nhật damage khi stat thay đổi đã được sửa retroactively.
 
 ## Remnant và Runic Ward
 
@@ -84,6 +84,10 @@ Mua Mageblood vì nhớ flask mechanic POE1: belt này không bật flask, nhưn
 Mua một trong ba Berek ring chỉ vì res mà không chạy Wind Skills: trục Wind Skills interaction mới là main draw của cả ba ring, res chỉ là secondary.
 
 ## Version History
+
+### Patch 0.5.3 (2026-06-19)
+
+Sửa bug Spiraling Conspiracy của :wiki-link{url="https://www.poe2wiki.net/wiki/The_Raven's_Flock"} không cập nhật damage khi stat thay đổi. His Grave Command của :wiki-link{url="https://www.poe2wiki.net/wiki/The_Unborn_Lich"} bỏ Spirit cost; quality gem đổi sang cộng Minion Life thay vì Reservation Efficiency.
 
 ### Patch 0.5.1 (2026-06-05)
 

@@ -5,9 +5,9 @@ title: Breach và hệ craft Genesis Tree
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-06-19'
 league: '0.5'
-patch: 0.5.1
+patch: 0.5.3
 guide_type: endgame-content
 tags:
   - poe2
@@ -31,6 +31,8 @@ tags:
 Mở một breach hiện thanh tiến trình cho biết còn bao lâu breach đóng lại, và giết quái kéo dài thêm bao nhiêu thời gian sống. Càng giết nhanh càng giữ breach mở lâu — breach vẫn thưởng cho clear speed như trước nhưng giờ trực quan bằng thanh đếm. Quái breach rớt ba loại nguyên liệu: **Hiveblood**, **Wombgift** và Breach Splinter. Splinter stack tới 300; xếp đầy stack thì hoá thành một loại wombgift đặc biệt, đem tới Genesis Tree đổi ra :wiki-link{url="https://www.poe2wiki.net/wiki/Breachstone"} — splinter giờ là đầu vào của cây chứ không gộp thẳng thành breachstone.
 
 Đẩy thanh lên 100% kích hoạt **Stabilised Breach**: breach ổn định lại và spawn thêm thử thách ngay tại điểm xuất phát, với boss mới **Vruun, Marshal of Xesht**. Từ 0.5.1, đám rare spawn khi stabilise luôn luôn xuất hiện bất kể Vruun có spawn hay không — Vruun chỉ ra sau khi dọn hết rare. Build clear nhanh nên nhắm cán mốc 100% mỗi breach; build chậm thì coi stabilise là bonus chứ không phải mặc định.
+
+Patch 0.5.3 mở rộng hai mảng dùng được mỗi session. **Breach Stronghold to hơn**: số map spawn trong Stronghold tăng, kích cỡ Stronghold trên infinite Atlas giờ tương đương Stronghold gần Ziggurat (mốc tham chiếu của các Stronghold sớm). Tức một lần reveal là một cụm map dài hơn nhiều, kéo theo nhiều Realm Gate run hơn cho cùng số breachstone tiêu. **Wombgift Ctrl+Click batch**: trước đây phải bấm Birth Wombgift từng cái một, đầy inventory thì kẹt vài phút. Giờ Ctrl+Click vào nút Birth Wombgift bật cursor mode rapid-consume: click liên tục từng Wombgift trong inventory để birth và drop item ngay, dọn cả stack trong vài giây. QoL lớn nhất từ launch league, đặc biệt cho người farm Breeding Program một loại Wombgift cố định.
 
 ## Genesis Tree craft ra gì
 
@@ -89,9 +91,9 @@ Nhóm này chỉ phát huy trong Breach Domain — lấy sau cùng, khi đã có
 - **Reactive Hiveseeding** — hoàn thành breach có 10% chance thêm một Hive vào map gần đó. Node duy nhất tạo thêm Hive từ việc chạy breach thường, là cầu nối đưa content domain ra ngoài map.
 - **Swelling Hives** — Breach Hive có thêm một wave Hiveborn Monster. Thêm wave là thêm loot, đổi bằng encounter dài hơn.
 - **Sole Purpose** — chuyên hoá skill của Ailith trong Breach Hive, chọn một: 100% increased damage hoặc 50% increased số lượng skill. Ailith gánh được nhiều hơn thì mình rảnh tay clear.
-- **Provoke the Swarm** — Ailith có thêm skill triệu hồi thêm quái breach, kèm 25% increased số skill của cô trong Hive. Node juice encounter Hive — thêm quái là thêm drop, nhưng cũng thêm áp lực lên chính Ailith.
+- **Provoke the Swarm** — Ailith có thêm skill triệu hồi thêm quái breach, kèm 25% increased số skill của cô trong Hive. Node juice encounter Hive, thêm quái là thêm drop, nhưng cũng thêm áp lực lên chính Ailith. Từ 0.5.3, skill cũ "spawn a small amount of Magic Monsters" đổi thành **spawn 2 packs of Magic Monsters** mỗi đầu wave, tức cú juice đầu wave có giá trị thực rõ rệt thay vì chỉ vài con magic lẻ.
 - **Essence Transference** — :wiki-link{url="https://www.poe2wiki.net/wiki/Essence"} gần breach hoặc trong khu có Hive có 20% chance nhận một Essence of the Breach. Node cross-mechanic cho ai chạy cả Essence lẫn Breach trên cùng map.
-- **Tear Open the Rift** — reveal Breach Stronghold sẽ thêm modifier vào map được reveal, tiêu thêm một breachstone mỗi lần làm vậy. Từ 0.5.1 node này thành multichoice bật tắt được và đã allocate bình thường — bật khi dư breachstone muốn juice map domain, tắt khi đang cạn.
+- **Tear Open the Rift** — reveal Breach Stronghold sẽ thêm modifier vào map được reveal, tiêu thêm một breachstone mỗi lần làm vậy. Patch 0.5.1 node thành multichoice bật tắt được. Patch 0.5.3 reshuffled pool mod: **bỏ** mod "Ailith Skill Damage" và "chance to find specific Wombgift types" (hai mod chính bị xem là OP); **thêm 4 mod mới**: "all monsters in Breach Hives are at least Magic", **Dreamer's Sight** (Ailith tạo zone upgrade rarity of monsters đi vào), **Otherworldly Nemesis** (Ailith tạo skill thêm rare-pack đầu mỗi wave), **Xesht's Fervour** (Ailith tăng Effectiveness toàn bộ monsters trong Hive). Bật khi dư breachstone muốn juice map domain, tắt khi đang cạn.
 
 ## Tablet setup đem breach ra ngoài vùng hub
 
@@ -143,6 +145,13 @@ Tạo đủ breachstone tại Genesis Tree mở ra **Breach Domain** trên atlas
 **Splinter chia hai đường tiêu.** Realm Gate ăn 50, 100, 150 splinter cho point, còn breachstone cần full stack 300. Đốt splinter đổi breachstone quá sớm là tự trì hoãn point subtree — clear ba tier Realm Gate trước rồi mới tích stack cho domain.
 
 ## Version History
+
+### Patch 0.5.3 (19/06/2026)
+
+- Breach Stronghold size tăng: số map trong Stronghold nhiều hơn, kích cỡ Stronghold trên infinite Atlas tương đương Stronghold gần Ziggurat.
+- Wombgift Ctrl+Click: bật cursor mode rapid-consume Wombgift trong inventory, dọn cả stack trong vài giây thay vì bấm Birth từng cái.
+- Tear Open the Rift reshuffled: bỏ mod "Ailith Skill Damage" + mod "chance to find specific Wombgift types"; thêm 4 mod mới — Hive monsters tối thiểu Magic, Dreamer's Sight (zone upgrade rarity quái đi vào), Otherworldly Nemesis (+rare pack đầu wave), Xesht's Fervour (+effectiveness toàn Hive).
+- Skill cũ của Ailith spawn "a small amount of Magic Monsters" đổi thành **spawn 2 packs of Magic Monsters** mỗi đầu wave.
 
 ### Patch 0.5.1 (05/06/2026)
 

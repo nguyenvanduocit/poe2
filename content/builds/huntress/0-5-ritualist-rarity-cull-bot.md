@@ -9,7 +9,7 @@ updated: '2026-06-14'
 class: Huntress
 ascendancy: Ritualist
 league: '0.5'
-patch: 0.5.0
+patch: 0.5.3
 budget_tier: high-budget
 confidence_level: MEDIUM
 pob_coverage: PARTIAL
@@ -34,7 +34,7 @@ tags:
 
 # Rarity Cull Bot Ritualist
 
-Build chạy vai magic-find bot trong duo: nhường damage hoàn toàn cho carry, đổi lại lấy kill bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Culling_Strike"} để drop loot ở mức rarity cao nhất có thể. :wiki-link{url="https://www.poe2wiki.net/wiki/Ritualist"} là ascendancy đúng đắn cho hướng này: Unfurled Finger mở slot ring thứ ba, cho phép đeo ba :wiki-link{url="https://www.poe2wiki.net/wiki/Ventor%27s_Gamble"} cùng lúc với :wiki-link{url="https://www.poe2wiki.net/wiki/Ingenuity"} nhân 30% more lên hai ring slot chuẩn. Toàn bộ passive đầu tư vào Culling Strike Threshold và Item Rarity, không vào damage hay defense. Ai đã có duo partner ổn định và muốn đổi vai thành loot printer sẽ thích; đừng chọn nếu chủ yếu solo hoặc PUG.
+Build chạy vai magic-find bot trong duo: nhường damage hoàn toàn cho carry, đổi lại lấy kill bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Culling_Strike"} để drop loot ở mức rarity cao nhất có thể. :wiki-link{url="https://www.poe2wiki.net/wiki/Ritualist"} là ascendancy đúng đắn cho hướng này: Unfurled Finger mở slot ring thứ ba, cho phép đeo ba :wiki-link{url="https://www.poe2wiki.net/wiki/Ventor%27s_Gamble"} cùng lúc với :wiki-link{url="https://www.poe2wiki.net/wiki/Ingenuity"} nhân 30% more lên hai ring slot chuẩn. Toàn bộ passive đầu tư vào Culling Strike Threshold và Item Rarity, không vào damage hay defense. Ai đã có duo partner ổn định và muốn đổi vai thành loot printer sẽ thích; đừng chọn nếu chủ yếu solo hoặc PUG. Muốn vừa rarity cao vừa tự đánh được — solo tự map hoặc ghép duo — thì xem [Magic Find Spell Ritualist](/builds/huntress/0-5-ritualist-rarity-solo-duo), bản có damage spell riêng thay vì nhường hết cho carry.
 
 ## Build Overview
 
@@ -201,6 +201,10 @@ Verify trong client ngay khi vào league:
 
 ## Version History
 
+### 2026-06-19
+
+- Patch 0.5.3: Staunch Deflection thêm Deflection Rating bằng 8% Evasion Rating. Build cull-bot này Witch-class, tree dồn IIR/CST stacking và evasion node hoàn toàn không nằm trên path; class-jumper qua Ranger để chạm Staunch Deflection tốn quá nhiều điểm. Pickup không khả thi cho archetype này, ghi nhận patch để khỏi đào lại.
+
 ### 2026-06-14
 
 Initial draft. Corrections folded từ primary source reconcile (patch note line-cited, wiki mirror, poedb live):
@@ -226,5 +230,6 @@ Initial draft. Corrections folded từ primary source reconcile (patch note line
 - **related_guides** [Độ hiếm item: Normal, Magic, Rare, Unique và prefix/suffix](/guides/beginner-item-rarity) — IIR bucket system (player vs area), tại sao area IIR từ waystone nhân độc lập với player IIR và không có diminishing returns.
 - **farming_relevance** [Withered Willow Delirium Farm](/farming/0-5-withered-willow-delirium-farm) — Delirium pinnacle content; duo culler tăng loot quality khi chạy cùng carry ở đây.
 - **farming_relevance** [Remnant + Runeforging Profit Loop](/farming/0-5-remnant-runeforging-profit-loop) — Runeforged rare trong content này mang Runic Ward, culler không thể cull; tránh hoặc verify trước khi juice.
+- **alternative_to** [Magic Find Spell Ritualist](/builds/huntress/0-5-ritualist-rarity-solo-duo) — cùng Ritualist rarity nhưng tự đánh bằng spell (Runeseeker + Blood Magic), chạy solo tự map hoặc duo; chọn bản đó nếu không muốn phụ thuộc carry.
 - **alternative_to** [Spear Twister Ritualist và Amazon](/builds/huntress/0-5-twister-ritualist-amazon) — Ritualist theo hướng self-DPS; Unfurled Finger + Ingenuity ring economics được dùng theo cách khác hoàn toàn.
 - **part_of** [Return of the Ancients](/guides/return-of-the-ancients) — 0.5 thay đổi party cull threshold (non-unique restored), Runic Ward mechanic mới, Mageblood và Horror's Flight đều là item mới của 0.5.

@@ -4,103 +4,81 @@ document_type: farming-strategy
 title: Withered Willow Delirium Farming
 status: draft
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-06-23'
 strategy_tier: A
 investment_tier: Low
 league: '0.5'
-patch: 0.5.1
+patch: 0.5.3
 league_phase: Mid
 confidence_level: Medium
 ---
 
 # Withered Willow Delirium Farming
 
-Farm :wiki-link{url="https://www.poe2wiki.net/wiki/Delirium"} quanh hub **The Withered Willow** — cụm map quanh hub có mirror sẵn không tốn tablet, vừa ăn point Delirium Atlas Tree vừa gom splinter và emotion, rồi leo dần lên Simulacrum và pinnacle. Tiền nằm ở ba tầng: :wiki-link{url="https://www.poe2wiki.net/wiki/Simulacrum_Splinter"} thanh khoản cực dày, emotion cao cấp 2-10 div mỗi giọt, và jackpot :wiki-link{url="https://www.poe2wiki.net/wiki/Raven-Touched_Shard"} đang ~10.430 ex tức ~82 div (poe2scout 2026-06-10, 1 div = 126 ex). Tier A, investment Low: vốn vào chỉ là tablet 1 ex với waystone tự sustain, sàn income từ splinter ~3-4 div/giờ còn trần kéo bằng emotion và shard; hợp với build clear ổn ở 100% delirious trở lên, giai đoạn Mid league khi giá emotion còn đang leo.
+Farm :wiki-link{url="https://www.poe2wiki.net/wiki/Delirium"} quanh hub **The Withered Willow**: map quanh hub có mirror sẵn không tốn tablet, vừa ăn point Delirium subtree vừa gom splinter và emotion, rồi leo dần lên Simulacrum và pinnacle. Tier A, investment Low — vốn vào chỉ là tablet 1 ex, waystone tự sustain, sàn income splinter ~2 div/giờ, trần kéo bằng emotion và jackpot :wiki-link{url="https://www.poe2wiki.net/wiki/Raven-Touched_Shard"} ~16.940 ex tức ~88 div (poe2scout 2026-06-19, 1 div = 191 ex).
 
 ## Strategy Overview
 
-Delirium 0.5 trả tiền theo độ sâu: mọi reward nằm sau các mốc trên thanh tiến trình, và càng delirious thì pool drop càng dịch lên tầng đắt. Cơ chế nền, nhịp một map mirror, và đủ 16 node của subtree mình đã viết kín ở [Delirium và Trial of Madness](/guides/0-5-delirium-trial-of-madness) — doc này chỉ lấy phần làm-ra-tiền: chạy gì, cắm gì, nhặt gì, bán gì.
-
-Lý do strategy này đứng tier A tại thời điểm 2026-06-10 là cầu instill đang bùng. Liquid Emotion giờ craft được mod jewel kiểu greater essence, Potent Emotion mở 16 instilled notable không có trên tree, và Raven-Touched Shard cho phép gắn property Raven-Touched lên **helmet bất kỳ** — item đó instill được một Passive Tree Notable, kiểu anoint vốn chỉ amulet mới có. Shard leo từ ~827 ex ngày 01/06 lên ~10.430 ex ngày 10/06, +319% trong 7 ngày, chỉ 42 listing toàn chợ trong khi volume khớp 500-1.200 giao dịch/ngày — cung nghẹt sau pinnacle chain, cầu là mọi build endgame muốn thêm một notable free trên mũ. Toàn bộ chuỗi cung đó bắt nguồn từ đúng cụm map quanh Withered Willow.
-
-Điểm ăn tiền thứ hai là chuỗi splinter khép kín: 300 splinter đóng thành :wiki-link{url="https://www.poe2wiki.net/wiki/Simulacrum"} bán 816 ex, trong khi bán lẻ 300 cái chỉ được ~745 ex (2,48 ex/cái, 2026-06-10) — riêng đóng gói đã +9,5%. Tự chạy Simulacrum thay vì bán còn giữ lại loot 7 wave cộng key :wiki-link{url="https://www.poe2wiki.net/wiki/Raven's_Reflection"} mở pinnacle **Kosis, The Revelation** ngay tại Withered Willow, mỗi kill khi là area owner cộng 6 point subtree — point đó quay lại mở các node khóa tầng drop Ancient.
+Cơ chế nền và nhịp mirror mình đã viết kín ở [Delirium và Trial of Madness](/guides/0-5-delirium-trial-of-madness) — doc này chỉ lấy phần làm ra tiền. Ba tầng income: :wiki-link{url="https://www.poe2wiki.net/wiki/Simulacrum_Splinter"} thanh khoản cực dày (149k tick volume), emotion cao cấp 1-3 div mỗi giọt từ unique boss trong fog, và jackpot shard cho phép gắn Passive Tree Notable lên helmet bất kỳ — nguồn instill-helmet duy nhất trên chợ, cầu chưa nguội. Shard leo từ ~827 ex (01/06) lên ~16.940 ex (0.5.3 day-1), chỉ 144 listing toàn chợ; chuỗi cung bắt nguồn từ đúng cụm map quanh Withered Willow rồi chạy qua pinnacle Kosis.
 
 ## Setup
 
 ### Atlas Passive Tree
 
-Giai đoạn đầu không cần point nào: map quanh hub có mirror sẵn và mỗi map hoàn thành tự cho point subtree. Point kiếm được dồn theo thứ tự ưu tiên kiếm-tiền:
+Giai đoạn đầu không cần point nào — mirror có sẵn và mỗi map hoàn thành tự cho point. Point kiếm được dồn theo thứ tự:
 
-**Is this about me... or you?** lấy sớm nhất vì nó mở vòng splinter tự nuôi — splinter chỉ rớt từ Delirium monster ở khu level 75+, node này là điều kiện để income splinter chạy đều khi rời hub. **You can't scare me anymore!** mở Potent Emotion rớt từ unique monster trong fog — Potent Liquid Contempt đang 921 ex (~7,3 div, 2026-06-10) nên một giọt là bằng cả buổi splinter. **I know your childhood fears...** mở Ancient Emotion — nguyên liệu craft :wiki-link{url="https://www.poe2wiki.net/wiki/Timelost_Jewel"}, tầng output đắt nhất của chuỗi; Ancient Potent Liquid Contempt đang 1.265 ex (~10 div). Cụm spread Recurring Nightmares chỉ đáng point khi đã chạy nổi Trial of Madness — chưa tới ngưỡng đó thì point nằm ở node drop hiệu quả hơn node lan fog.
+**Is this about me... or you?** lấy sớm nhất vì splinter chỉ rớt từ Delirium monster level 75+, node này là điều kiện để income splinter chạy đều khi rời hub. **You can't scare me anymore!** mở Potent Emotion rớt từ unique monster trong fog — Potent Liquid Contempt 476 ex, Potent Liquid Ferocity 512 ex (2026-06-19). **I know your childhood fears...** mở Ancient Emotion, nguyên liệu craft :wiki-link{url="https://www.poe2wiki.net/wiki/Timelost_Jewel"} — Ancient Potent Liquid Contempt 679 ex (~3,6 div). Cụm spread Recurring Nightmares chỉ đáng khi đã chạy nổi Trial of Madness.
 
-Subtree này còn cộng hưởng với lối chơi clear-and-rush: các node "5% increased chance for a Grand Mirror to appear on a nearby map" gieo Grand Mirror khắp atlas, và Grand Mirror nhân đôi effect tablet ở map đó — ai đang chạy [Tablet Supply Farming](/farming/0-5-tablet-supply-farm) song song thì hai strategy nuôi lẫn nhau, lượt sau đi qua khu có Mirror là irradiated tablet nhảy effect gấp đôi, mechanic ngẫu nhiên dày gấp đôi, không tốn gì thêm.
+Hai notable rework ở 0.5.3: **You can't just wake up from this one.** thêm multichoice — pick **Escalating Threats** cho farm-revenue đường dài (extra Modifier áp lên cả vùng fog Grand Mirror, không chỉ Simulacrum), Apex Predators nếu build đủ mạnh tự đóng Simulacrum và muốn thêm boss, Pure Emotions nếu cày Simulacrum thuần. **Are you sure you want to do that?** bỏ tablets-double-effect, đổi sang "Areas with Grand Mirrors also have a Delirium Mirror" cộng 20% multi-select Shards trong Simulacrum — vẫn rất đáng allocate, cú extra mirror làm fog dày hơn ngay tại map.
+
+Node `5% chance Grand Mirror appear on nearby map` gieo Grand Mirror khắp atlas, biến vùng đó thành điểm juice cộng dồn miễn phí cho mọi tablet đang cắm. Ai chạy [Tablet Supply Farming](/farming/0-5-tablet-supply-farm) song song thì hai strategy nuôi lẫn nhau.
 
 ### Tablets & Map Device
 
-Giai đoạn hub chưa cần tablet — mirror có sẵn trong map quanh Withered Willow. Khi rời hub farm map 75+, cắm :wiki-link{url="https://www.poe2wiki.net/wiki/Precursor_Tablet"} loại Delirium: **Clear Skies Delirium Precursor Tablet** đang đúng 1 ex với hơn 5.000 listing (2026-06-10), rẻ tới mức roll hỏng vứt không tiếc. Roll lên Rare 4 mod nhắm cặp suffix **of the Unending** cộng **of Freeze Time** để fog sống lâu hơn, vì mọi reward đều nằm sau mốc độ sâu — fog tắt sớm là cắt thẳng vào income. Waystone 6 affix mở đủ 3 slot tablet; map gần một Grand Mirror đã gieo thì tablet được nhân đôi effect, ưu tiên chạy khu đó trước.
+Quanh hub chưa cần tablet. Khi rời hub farm map 75+, cắm :wiki-link{url="https://www.poe2wiki.net/wiki/Precursor_Tablet"} Delirium: **Clear Skies Delirium Precursor Tablet** đúng 1 ex (>5.000 listing, 2026-06-10) — [trade](https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22online%22%7D%2C%22type%22%3A%22Delirium%20Tablet%22%2C%22stats%22%3A%5B%7B%22type%22%3A%22and%22%2C%22filters%22%3A%5B%7B%22id%22%3A%22explicit.stat_1084853859%22%2C%22value%22%3A%7B%22min%22%3A1%7D%7D%5D%7D%5D%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D). Roll Rare 4 mod nhắm suffix **of the Unending** + **of Freeze Time** để fog sống lâu — mọi reward nằm sau mốc độ sâu, fog tắt sớm cắt thẳng vào income. Waystone 6 affix mở đủ 3 slot tablet.
 
-Muốn juice splinter thì đổ :wiki-link{url="https://www.poe2wiki.net/wiki/Liquid_Despair"} lên waystone trước khi mở map — 22,5 ex/giọt (2026-06-10) là input lớn nhất của cả loop, chỉ đáng tiền khi build clear đủ nhanh để ăn trọn fog (xem break-even ở phần profit math).
+:wiki-link{url="https://www.poe2wiki.net/wiki/Liquid_Despair"} lên waystone thêm splinter — 7,66 ex/map (giảm từ 22,5 ex, 2026-06-10), break-even ~4,1 splinter/map. Đo 10 map đầu trước khi scale.
 
 ### Waystone & Map Choice
 
-Farm point thì chạy đúng cụm quanh hub, không có lý do đi đâu khác. Farm splinter và emotion thì map **level 75+** là bắt buộc (điều kiện rớt splinter), layout chọn loại thẳng một đường từ mirror tới boss — fog lan theo thời gian, mỗi ngõ cụt là thời gian fog chết; map vòng vèo đốt đúng phần reward sâu nhất. Boss của map delirious luôn ở 100% delirious và là túi loot chính của vòng: Potent Emotion rớt từ chính map boss đó, đừng bao giờ để fog tắt trước khi chạm boss.
+Farm point: đúng cụm quanh hub. Farm splinter và emotion: map **level 75+**, layout thẳng một đường từ mirror tới boss — fog lan theo thời gian, mỗi ngõ cụt đốt reward sâu nhất. Boss của map delirious luôn ở 100% delirious, là túi Potent Emotion chính — đừng để fog tắt trước khi chạm boss.
 
 ### Build Requirements
 
-Sàn build là clear thoải mái ở 100% delirious: quái Delirium có thêm Delirious modifier và map boss luôn full delirious, build mỏng sẽ chết ở đúng chỗ loot dày nhất. Simulacrum 7 wave và Kosis cần thêm single-target tử tế; Trial of Madness 150-200% là cần gạt cuối, đẩy tới đâu tùy độ lì của build. Companion build của mình chạy ổn ở 100% nhưng wave 6-7 Simulacrum còn chậm — log wave-fail rate trước khi quyết đầu tư Despair mỗi map.
+Sàn cho phần map thường: clear thoải mái ở 100% delirious (quái Delirium nhận Delirious modifier, map boss luôn full delirious). Kosis cần single-target tử tế.
+
+0.5.3 đẩy Simulacrum start 100% Delirious leo lên 200% (cũ 0%→100% nhưng bug không scale). Wave 1 giờ ngang map boss 100% delirious thông thường, wave 7 ở 200% bằng farm 200% Delirium Breach — floor tự đóng Simulacrum nhảy gấp đôi. Build chỉ clear ổn ở 100% đành xả splinter rời; build muốn tự chạy phải đủ range + EHP + DPS như farm 200% Delirium Breach. Đo 1-2 Simulacrum kiểm wave fail rate trước khi cam kết đóng gói.
 
 ## Gameplay
 
-Nhịp chuẩn mỗi map: phá mirror ngay khi thấy, đánh theo chiều fog lan — hướng fog luôn chỉ về map boss — và dừng phá từng mảnh gương màu ở mỗi mốc độ sâu thay vì lướt qua, vì shard encounter là nơi rare Delirium nhận thêm modifier và boss phụ xuất hiện, tức là nơi emotion với splinter cô đặc. Kết vòng ở map boss 100% delirious, nhặt emotion theo bảng giá chứ không nhặt tất: tầng Diluted dưới 1 ex bỏ qua cho đỡ tốn tab, từ Liquid Despair trở lên mới đáng slot.
+Phá mirror ngay khi thấy, đánh theo chiều fog lan về map boss. Dừng phá từng mảnh gương màu ở mỗi mốc độ sâu — shard encounter là nơi rare Delirium nhận thêm modifier và boss phụ xuất hiện, đó là chỗ emotion và splinter cô đặc. Kết vòng ở map boss 100% delirious; nhặt emotion theo giá: từ Liquid Despair trở lên mới đáng slot, Diluted dưới 1 ex bỏ qua.
 
-Splinter gom đủ 300 thì đóng thành Simulacrum và **tự chạy** — chênh lệch đóng gói +9,5% cộng loot 7 wave cộng key Raven's Reflection nằm trọn về mình. Key mang tới Mirror ở Withered Willow đánh Kosis; 6 point mỗi kill nạp ngược vào node Ancient để mở tầng drop cuối. Khi đã quen, kích Trial of Madness và đẩy vùng fog lên 150-200% để farm Ancient Emotion cùng Potent — đây là chỗ log thêm: nguồn rớt chính xác của Raven-Touched Shard chưa pin được từ patch note, poe2db xếp nó trong nhóm item Delirium endgame cạnh Raven's Reflection và Kosis (icon "DeliriumEndgameSocketable", drop level 65) — khi farm sâu, ghi lại shard rớt từ đâu (Kosis, wave cao Simulacrum, hay fog 150%+) để doc này cập nhật con số thật.
+Splinter gom đủ 300: bán rời ~636 ex (2,12 ex/cái, 2026-06-19) nhanh hơn vì đóng gói thành :wiki-link{url="https://www.poe2wiki.net/wiki/Simulacrum"} 656 ex chỉ chênh ~3%. Tự chạy Simulacrum CHỈ khi build đủ floor: giữ lại loot 7 wave + key :wiki-link{url="https://www.poe2wiki.net/wiki/Raven's_Reflection"} mở Kosis tại Withered Willow, mỗi kill cộng 6 point subtree quay lại mở node Ancient. Nguồn rớt chính xác của Raven-Touched Shard (Kosis, wave cao Simulacrum, hay fog 150%+) chưa pin được từ patch note — log lại khi farm sâu.
 
 ## Loot Breakdown & Economic Analysis
 
-Giá poe2scout 2026-06-10, 1 div = 126 ex. Drop pool xếp theo tầng giá:
+Giá poe2scout 2026-06-19 (patch 0.5.3 day-1), 1 div = 191 ex:
 
-- **Raven-Touched Shard** — 10.430 ex (~82 div), 42 listing, +319% trong 7 ngày. Jackpot của chuỗi; một cú rớt bằng cả tuần farm.
-- **Ancient Potent Liquid Contempt** — 1.265 ex (~10 div); craft mod ngoài pool lên Timelost Jewel.
-- **Potent Liquid Contempt** — 921 ex (~7,3 div), rớt từ map boss delirious; Potent Liquid Ferocity 215 ex, Potent Liquid Melancholy chỉ 3,6 ex. Cùng tier nhưng giá lệch 250 lần, nhặt xong tra giá từng loại trước khi bán sỉ.
-- **Simulacrum** — 816 ex (~6,5 div); Concentrated Liquid Isolation 757 ex (~6 div); Concentrated Liquid Suffering 221 ex; Concentrated Liquid Fear 70 ex.
-- **Tầng phổ thông** — Liquid Despair 22,5 ex, Liquid Disgust 7,6 ex, :wiki-link{url="https://www.poe2wiki.net/wiki/Megalomaniac"} 130 ex, splinter 2,48 ex (30.500 listing, bán lúc nào cũng khớp). :wiki-link{url="https://www.poe2wiki.net/wiki/Strugglescream"} 2 ex và :wiki-link{url="https://www.poe2wiki.net/wiki/The_Raven's_Flock"} 40 ex — unique Delirium thường đã về đáy, chỉ bản kèm modifier Raven-Touched (instill được) mới còn premium, tra giá riêng qua trade trước khi vendor. Raven's Reflection và Timelost Jewel không nằm trên poe2scout — giá check trực tiếp qua `/trade`.
+- **Raven-Touched Shard**: 16.940 ex (~88 div), 144 listing, +120% trong 7 ngày. Jackpot; một cú rớt bằng cả tuần farm splinter.
+- **Ancient Potent Liquid Contempt**: 679 ex (~3,6 div); craft mod Timelost Jewel.
+- **Potent Liquid Ferocity**: 512 ex (~2,7 div) · Potent Liquid Contempt: 476 ex (~2,5 div) · Potent Liquid Melancholy: 1,7 ex. Cùng tier nhưng giá lệch hơn 250 lần — tra giá từng loại trước khi bán sỉ.
+- **Simulacrum**: 656 ex (~3,4 div) · Concentrated Liquid Isolation: 254 ex · Concentrated Liquid Suffering: 59 ex · Concentrated Liquid Fear: 27 ex.
+- **Phổ thông**: Liquid Despair 7,66 ex · Liquid Disgust 1,94 ex · :wiki-link{url="https://www.poe2wiki.net/wiki/Megalomaniac"} Diamond 21 ex · splinter 2,12 ex. :wiki-link{url="https://www.poe2wiki.net/wiki/Strugglescream"} không còn trên poe2scout; :wiki-link{url="https://www.poe2wiki.net/wiki/The_Raven's_Flock"} Perching Staff 4 ex. Unique Delirium đã về đáy — bản kèm modifier Raven-Touched mới còn premium, tra riêng qua `/trade`. Raven's Reflection và Timelost Jewel không trên poe2scout, check `/trade`.
 
-Math chain cho phần đo được:
-
-```
-income_splinter/map = splinter_per_map × 2,48 ex
-cost/map            = tablet 1 ex (+ Despair 22,5 ex nếu juice)
-break-even tablet   = 0,4 splinter/map
-break-even Despair  = ~9,5 splinter/map (chỉ riêng splinter gánh)
-```
-
-Tablet 1 ex hoà vốn từ splinter đầu tiên — phần tablet coi như free. Despair là quyết định thật: nếu mỗi map juiced nhả ~15 splinter (test target chưa đo — log số thật trong 10 map đầu), splinter income ~37 ex/map, trừ Despair còn ~14 ex/map cộng toàn bộ emotion rớt thêm. Với 12-15 map/giờ, riêng splinter chạy ~3-4 div/giờ khi juice; emotion là phần nổi trên sàn đó — một giọt Concentrated Isolation hay Potent Contempt đổi được cả giờ splinter. Shard và Ancient không đưa vào per-map math vì rate chưa đo — chúng là expected-value đuôi dài, đúng kiểu lottery có giá vé bằng content mình đằng nào cũng chạy.
+Math chain (phần đo được): `tablet 1 ex = break-even sau splinter đầu tiên; Despair 7,66 ex = break-even ~4,1 splinter/map`. Nếu mỗi map juiced nhả ~15 splinter (test target, log 10 map đầu), splinter income ~32 ex/map, trừ Despair còn ~24 ex + toàn bộ emotion. Với 12-15 map/giờ, riêng splinter ~2 div/giờ khi juice; emotion là phần nổi trên sàn đó. Shard và Ancient là expected-value đuôi dài — rate chưa đo, đưa vào per-map math khi có số thật.
 
 ## Failure Modes
 
-Risk lớn nhất là chính cái đang làm strategy này thơm: giá emotion với shard đang ở pha cung nghẹt đầu league. The Raven's Flock là gương tày liếp — 5.890 ex ngày 01/06, 40 ex ngày 10/06, âm 99,7% trong 10 ngày khi supply bắt kịp. Shard khó sập nhanh như vậy vì nguồn rớt nằm sau pinnacle chain, nhưng tuần 3-4 khi nhiều người mở xong chuỗi Kosis thì 82 div hôm nay không phải giá của tháng sau.
+- **Market compression**: shard +120%/7d là đường lên của thị trường thiếu cung. Khi nhiều người mở xong chuỗi Kosis (tuần 4-5), 88 div hôm nay không phải giá của tháng sau. Vào sớm, chốt emotion theo ngày, đừng găm chờ đỉnh.
+- **Gating point**: Potent và Ancient khóa sau node subtree — chưa đủ point thì income chỉ còn splinter và emotion phổ thông, tier thực tế rớt xuống B. Dồn point sớm vào hai node mở drop thay vì cụm spread.
+- **Simulacrum floor 0.5.3 nâng gấp đôi**: build chỉ clear ổn ở 100% delirious không vào nổi Simulacrum sâu nữa — mất loot 7 wave + key Raven's Reflection + point Kosis. Tier vẫn A nhờ giá shard giữ + splinter sàn, nhưng entry tự đóng đã cao hơn hẳn.
+- **Despair vẫn cần đo**: 7,66 ex/map thấp hơn 22,5 ex cũ nhưng build clear chậm không ăn trọn fog vẫn lỗ nếu dưới ~4,1 splinter/map. Đo trước khi scale.
+- **Patch sensitivity**: giá trị shard dồn hết vào việc nó là nguồn instill-helmet duy nhất. GGG buff drop rate hoặc thêm nguồn shard mới (kiểu hotfix economy 0.5.x) là giá sập theo kịch bản The Raven's Flock — từ 5.890 ex xuống 4 ex trong vài tuần. Theo dõi patch note từng hotfix.
 
-- **Market compression** — shard +319%/7d là đường lên của thị trường thiếu cung; khi cung về, người vào trễ mua tablet juice ở giá đỉnh và bán drop ở giá đáy. Vào strategy này sớm, chốt emotion theo ngày, đừng găm chờ đỉnh.
-- **Gating point** — tầng drop đắt (Potent, Ancient) khóa sau node subtree; chưa đủ point thì income chỉ còn splinter và emotion phổ thông, tier thực tế rớt xuống B. Đường ngắn nhất là dồn point sớm vào hai node mở drop thay vì cụm spread.
-- **Build floor** — toàn bộ phần lời nằm ở 100% delirious trở lên: map boss full delirious, Simulacrum wave 6-7, Kosis. Build không đứng nổi ở đó thì chỉ ăn được tầng splinter — vẫn dương nhờ tablet 1 ex, nhưng không còn là tier A.
-- **Despair lỗ ngầm** — 22,5 ex/map là input gấp 22 lần tablet; build clear chậm không ăn trọn fog thì splinter thực tế dưới break-even ~9,5 splinter/map và mỗi map juice là mỗi map lỗ. Đo 10 map trước khi scale.
-- **Patch sensitivity** — giá trị shard dồn hết vào việc nó là nguồn instill-helmet duy nhất; GGG buff drop rate hoặc thêm nguồn shard mới (hotfix economy kiểu 0.5.x) là giá sập theo kịch bản Flock. Theo dõi patch note từng hotfix.
+## Version History
 
-## Quick Reference Card
-
-**Setup cost / map:** ~1 ex tablet (0 ex quanh hub) · +22,5 ex nếu juice Despair
-**Profit / map:** sàn splinter ~14-37 ex + emotion; jackpot shard ~82 div (2026-06-10)
-**Time / map:** ~4-5 phút (ăn trọn fog tới boss)
-**Waystone / map:** level 75+, layout thẳng, 6 affix mở 3 slot tablet
-**Atlas key nodes:** Is this about me... or you? → You can't scare me anymore! → I know your childhood fears...
-**Tablets:** Clear Skies Delirium Precursor Tablet roll Rare (of the Unending + of Freeze Time)
-**Fragments:** 300 splinter → Simulacrum (tự chạy, giữ key) → Raven's Reflection → Kosis
-
-## Changelog
-
-### 2026-06-10
-
-- Initial draft — giá poe2scout snapshot 2026-06-10, shard/emotion rates là test target chờ log thực địa.
+- **0.5.3 (2026-06-19)** — Simulacrum giờ start 100% Delirious leo lên 200% (cũ 0%→100% bug, thực tế gần 0). Notable rework: "You can't just wake up from this one." thêm multichoice (Escalating Threats / Apex Predators / Pure Emotions); "Are you sure you want to do that?" bỏ tablets-double-effect đổi sang extra Delirium Mirror ở map Grand Mirror + 20% multi-select Shards trong Simulacrum. Giá refresh: shard 16.940 ex (+62% từ 06-10), splinter 2,12 ex (cũ 2,48), Simulacrum 656 ex (cũ 816), Potent Liquid Contempt 476 ex (cũ 921), Liquid Despair 7,66 ex (cũ 22,5), 1 div = 191 ex.
+- **2026-06-10** — Initial draft. Giá poe2scout snapshot 2026-06-10; shard/emotion rates là test target chờ log thực địa.
 
 ## Relationships
 

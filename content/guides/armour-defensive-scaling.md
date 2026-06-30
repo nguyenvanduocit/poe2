@@ -5,9 +5,9 @@ title: Armour Defensive Scaling
 status: draft
 author: duocnv
 created: '2026-05-25'
-updated: '2026-05-25'
+updated: '2026-06-19'
 league: '0.5'
-patch: 0.5.0
+patch: 0.5.3
 tags:
   - poe2
   - armour
@@ -53,6 +53,8 @@ Nhưng top-end multiplier bị siết ngược chiều. :wiki-link{url="https://
 Armour buff không đứng một mình — nó là một nửa của cuộc rebalance defence 0.5, và phải đọc cùng ba thứ: Evasion buff song song, ES recovery nerf, và Runic Ward mới.
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Evasion"} nhận buff cùng mức armour: +33% ở level 65, giảm xuống +15% ở level 80+ (line 495). Quan trọng hơn, công thức Deflect được sửa để scale tuyến tính với Deflection Rating: `chance to Deflect = 150 × (1 − A/(A + 0.12×D))` với A là accuracy của attacker, D là deflection rating của defender, cap 95% (line 248-249). Đường tuyến tính này thưởng nhiều hơn ở mức đầu tư cao, nghĩa là Evasion stacker giờ chạm gần 95% deflect khả thi hơn pre-0.5. Phân biệt rõ để verdict không hời hợt: armour thắng ở consistency — flat physical mitigation mọi cú hit, không phụ thuộc may rủi; evasion thắng ở formula sạch và avoidance ceiling cao, nhưng vẫn là binary roll (avoid hoặc ăn full). "Best defensive layer" đúng theo nghĩa armour là layer dễ scale nhất cho physical-heavy content, không phải armour vượt mọi layer ở mọi chiều.
+
+Nguồn Deflection Rating cho Evasion stacker giờ có hai notable cùng họ deflection-from-evasion gần khu Dexterity: Wild Cat đã sẵn 12% Evasion → Deflection Rating, và patch 0.5.3 thêm dòng "Gain Deflection Rating equal to 8% of Evasion Rating" cho Staunch Deflection. Hai notable này độc lập với deflection-suffix trên gear, nên Evasion stacker không phải hy sinh slot suffix để chạm Deflection Rating cao — ví dụ một character 8,000 Evasion lấy cả hai nhận +960 (Wild Cat 12%) + 640 (Staunch Deflection 8%) = 1,600 Deflection Rating miễn phí từ tree. Pick theo path thuận tay; cả hai khi tree cho phép vì hai dòng cộng dồn vào cùng pool D trong công thức Deflect.
 
 Một loạt unique armour được buff thẳng, nâng giá trị cho build không chạy Brass Dome. :wiki-link{url="https://www.poe2wiki.net/wiki/Keeper_of_the_Arc"} helmet giờ 240-340% increased Armour and Energy Shield (trước 150-250%, line 469) — item hiện có cập nhật được bằng Divine. :wiki-link{url="https://www.poe2wiki.net/wiki/Sine_Aequo"} gloves giờ 150-200% increased Armour, Evasion and Energy Shield (trước 100-150%, line 478). :wiki-link{url="https://www.poe2wiki.net/wiki/Ab_Aeterno"} boots giờ 200-250% AEE (trước 100-150%, line 453). :wiki-link{url="https://www.poe2wiki.net/wiki/Atziri's_Acuity"} gloves được rework, giờ cấp 150-200% increased Armour + 100-150 max Life + leech. Những item này bù phần Brass Dome mất, và mở armour-stacking ra ngoài body slot.
 
@@ -118,6 +120,10 @@ Modifier "increased Defences" cũ (giờ là "Armour, Evasion and Energy Shield"
 - **Open question — Runic Ward + armour stacker live behavior.** Cặp armour + Runic Ward chưa test in-game; cần log Runic Ward uptime và pop behavior trước boss burst khi vào league.
 
 ## Patch Evolution
+
+### Patch 0.5.3 (2026-06-19)
+
+Staunch Deflection notable bổ sung dòng "Gain Deflection Rating equal to 8% of Evasion Rating". Nó join họ deflection-from-evasion bên cạnh Wild Cat (12% Evasion → Deflection Rating). Buff áp retroactive cho mọi Evasion stacker có path đi qua khu Dexterity — không cần re-spec, không cần đổi gear; cùng pool Evasion vốn có giờ feed thêm Deflection Rating qua một notable nữa.
 
 ### Patch 0.5.0 — Runes of Aldur (21/05/2026 patch note, 29/05/2026 launch)
 
