@@ -3,8 +3,8 @@
 // dropped into content/guides/0-5-ocean-exploring.md as `::expedition-cheatsheet`.
 // It wraps itself in <PipPanel>, so the same node shows inline in the article AND
 // pops into a Picture-in-Picture window floating over the game. Data is inline
-// below — verified against the 0.5.0 patch notes + poedb via this guide +
-// 0-5-grand-expedition-farming.md.
+// below — verified against the 0.5.3 patch notes + poedb (Island_Rumours,
+// Jados_Spycraft, Expedition_Logbook) via the Ocean Exploring farm page.
 //
 // `killer: true` = a mod that hits the character being played (Spirit Walker
 // companion pack: companions deal PHYSICAL, defence is pure EVASION, Chaos res
@@ -31,6 +31,17 @@ const TABS: Tab[] = [
           { text: '3 slot → skip', note: 'Không cần hover.' },
           { text: '4 slot → chỉ chạy khi có rune TÍM', note: 'Rune tím = special modifier, 4 slot tím vẫn ra divine.' },
           { text: '5+ slot → LUÔN chạy', note: 'Kể cả reward xấu: quái khai quật toàn rare, dồn loot cuối map.' },
+          { text: '8 slot → Runefather / Runebinder Alloy', note: 'Pool reward 8 slot.' },
+          { text: '10 slot → Aldur’s Legacy HOẶC 1 Boon', note: 'Chọn MỘT: recipe Legacy (~200 div) hoặc một Boon vĩnh viễn. Không phải cả hai.' },
+        ],
+      },
+      {
+        heading: 'Đọc rune lúc scout',
+        intent: 'pick',
+        blurb: 'Quét một vòng trước khi đặt explosive.',
+        rows: [
+          { text: 'Ánh TÍM xuyên qua → reward cao', note: 'Ưu tiên ghé.' },
+          { text: 'Thứ tự nổ → carry-forward', note: 'Mọi remnant nổ ra hất modifier sang quả nổ đó + mọi quả sau. Nổ remnant Power sớm (nâng mọi Runic Mod khác lên bậc mạnh) → cả chain sau thừa hưởng: quái đông + mạnh + nhiều ground loot. Hover option ở màn reward để đọc trước.' },
         ],
       },
       {
@@ -115,9 +126,11 @@ const TABS: Tab[] = [
         intent: 'pick',
         rows: [
           { text: 'Eastern Knowledge (Jado)', note: 'Verisium Remnant 10% reroll, giữ kết quả hiếm nhất.' },
-          { text: 'Partial Translations (Jado)', note: '20% double effect mod tablet.' },
-          { text: 'Keen Appraisal (Jado)', note: '50% Exceptional Items — farm Grand Expedition.' },
-          { text: 'Scarred Lands (Hilda)', note: '15% runic marker + 20% rare expedition monster.' },
+          { text: 'Partial Translations (Jado)', note: '0–40% increased effect explicit mod trên tablet; trung bình ~20%.' },
+          { text: 'Unexpected Missions (Jado)', note: 'Corrupted waystone mở thêm 1 random modifier — chạy 8-mod corrupt càng đáng.' },
+          { text: 'Keen Appraisal (Jado)', note: '50% increased Exceptional Items found; hợp chest/body-armour exceptional.' },
+          { text: 'Doryani safe swap', note: 'Stitch the Flesh + Disengaged Safeties + Careful Procurement khi build chưa chịu nổi chết một lần mất map.' },
+          { text: 'Boss swap', note: 'In The Wrong Hands + Untold Histories để săn Lineage Support; gỡ Untold trước pinnacle nếu không muốn boss nhận ít hơn 35% damage.' },
         ],
       },
     ],
@@ -129,12 +142,13 @@ const TABS: Tab[] = [
       {
         heading: 'Rumour → biome chứa gì',
         intent: 'map',
-        blurb: 'Đọc rumour ở Uncharted Waters TRƯỚC khi tiêu logbook.',
+        blurb: 'Đọc rumour ở Uncharted Waters TRƯỚC khi tiêu logbook; re-equip logbook để tìm clue thứ tư ẩn.',
         rows: [
-          { text: 'Fallen Starlight → Moor of the Fallen Skies', note: 'Gom hết monolith rồi nối về rune giữa; pick Aldur’s Saga ~28.5 div ở 7 socket.' },
-          { text: 'Star Drinker → Uhtred boss', note: 'Faction Leader, có Lineage Support.' },
-          { text: 'Unknown Ruins → Exhumed Ruins', note: 'Nổ 3 Precursor Leyline → Beacon mở biome kế FREE logbook.' },
-          { text: 'Sulfide → Scorch Cauldron', note: 'Cụm sulphite nổ ra increased rarity.' },
+          { text: 'Fallen stars → Moor of Fallen Skies', note: 'Gom hết monolith rồi nối về rune giữa; remnant lên 8 socket, Aldur’s Saga ở mốc 7.' },
+          { text: 'Stardrinker → Uhtred (Secluded Temple)', note: 'Faction Leader, có Lineage Support.' },
+          { text: 'Unknown ruins → Exhumed Ruins', note: 'Nổ 3 Precursor Leyline → Beacon mở biome kế FREE logbook; ít remnant nên không tính cho Aldur’s Saga.' },
+          { text: 'Almost paradise → Untainted Paradise', note: 'Unique map. Visions of Paradise (gắn một mình) để chạy lại 2 lần — nhưng đừng pair với Aldur’s Saga: lần chạy đầu ngốn sạch mod saga.' },
+          { text: 'Sulphite → Scorched Cay', note: 'Cụm sulphite nổ ra increased rarity — fallback.' },
         ],
       },
       {
@@ -142,7 +156,8 @@ const TABS: Tab[] = [
         intent: 'map',
         rows: [
           { text: 'Boss saga ×4', note: 'Guarantee gặp boss đó; kích cả 4 cùng lúc được.' },
-          { text: 'Aldur’s Saga', note: 'Juice remnant slot cả biome — CHẠY RIÊNG, đừng kèm boss saga (boss chiếm slot đảo).' },
+          { text: 'Aldur’s Saga', note: 'Juice remnant slot cả biome — CHẠY RIÊNG, đừng kèm boss saga. Fish section ≥4 Grand Exped/clue tốt, ưu tiên open water; chạy T16 + tablet monster effectiveness.' },
+          { text: 'Mod saga: sàn slot remnant', note: 'Phổ biến cả section ≥5/6/7 slot; jackpot single remnant ≥8/≥9. Remnants are Lucky = roll slot 2 lần giữ cao hơn.' },
         ],
       },
     ],
