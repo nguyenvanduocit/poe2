@@ -3,8 +3,8 @@
   "baseCurrencyApiId": "exalted",
   "baseCurrencyText": "Exalted Orb",
   "categoryApiId": "ritual",
-  "currentPrice": 166.84564749520135,
-  "currentQuantity": 2206,
+  "currentPrice": 166.68533658274538,
+  "currentQuantity": 3335,
   "dailyStats": [
     {
       "Average": 39.0,
@@ -142,16 +142,52 @@
       "Volume": 67701
     },
     {
-      "Average": 172.29096861460977,
-      "Close": 178.60752779937403,
-      "High": 178.60752779937403,
+      "Average": 183.50497727713773,
+      "Close": 205.71875322772945,
+      "High": 206.56840079601858,
       "Low": 167.18306787789115,
       "Open": 167.18306787789115,
       "Time": "2026-06-14",
-      "Volume": 21924
+      "Volume": 69175
+    },
+    {
+      "Average": 215.5472219075862,
+      "Close": 243.5592867744232,
+      "High": 250.8617465874855,
+      "Low": 185.30268197836622,
+      "Open": 213.7690105704146,
+      "Time": "2026-06-15",
+      "Volume": 65657
+    },
+    {
+      "Average": 227.5126672973798,
+      "Close": 212.9473267983836,
+      "High": 252.36332839004496,
+      "Low": 203.46948516544703,
+      "Open": 246.29075302422,
+      "Time": "2026-06-16",
+      "Volume": 73158
+    },
+    {
+      "Average": 198.77650366952238,
+      "Close": 159.09203079508174,
+      "High": 221.92030664206032,
+      "Low": 159.09203079508174,
+      "Open": 207.3428755789377,
+      "Time": "2026-06-17",
+      "Volume": 78336
+    },
+    {
+      "Average": 168.4622668374853,
+      "Close": 166.68533658274538,
+      "High": 170.49268266862939,
+      "Low": 166.15447452092815,
+      "Open": 169.91356688392696,
+      "Time": "2026-06-18",
+      "Volume": 13256
     }
   ],
-  "fetched_at": "2026-06-14T09:07:31Z",
+  "fetched_at": "2026-06-18T05:22:30Z",
   "iconUrl": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9LaW5nb2Z0aGVNaXN0SGVhZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/254e341ba3/KingoftheMistHead.png",
   "itemId": 13947,
   "kind": "Currency",

@@ -3,8 +3,8 @@
   "baseCurrencyApiId": "exalted",
   "baseCurrencyText": "Exalted Orb",
   "categoryApiId": "ritual",
-  "currentPrice": 0.5384615384615384,
-  "currentQuantity": 403,
+  "currentPrice": 2.542415827943223,
+  "currentQuantity": 305,
   "dailyStats": [
     {
       "Average": 2.79526862878776,
@@ -151,16 +151,52 @@
       "Volume": 13079
     },
     {
-      "Average": 0.9326887275599517,
-      "Close": 0.5384615384615384,
-      "High": 1.210276354135392,
-      "Low": 0.5384615384615384,
+      "Average": 1.2190312146644515,
+      "Close": 2.212146588849438,
+      "High": 2.212146588849438,
+      "Low": 0.4965034965034965,
       "Open": 1.210276354135392,
       "Time": "2026-06-15",
-      "Volume": 1223
+      "Volume": 10688
+    },
+    {
+      "Average": 1.3117555049538785,
+      "Close": 1.5951631933302355,
+      "High": 1.9647934901055448,
+      "Low": 0.8651685393258427,
+      "Open": 1.5085190852543267,
+      "Time": "2026-06-16",
+      "Volume": 10928
+    },
+    {
+      "Average": 1.709280427045725,
+      "Close": 1.3356663726664535,
+      "High": 5.6334680913145965,
+      "Low": 0.8038052483274766,
+      "Open": 0.9200243742307112,
+      "Time": "2026-06-17",
+      "Volume": 9433
+    },
+    {
+      "Average": 1.7457798392203852,
+      "Close": 2.082997771309382,
+      "High": 3.1975882607574224,
+      "Low": 0.7982013983013259,
+      "Open": 3.1752911390384178,
+      "Time": "2026-06-18",
+      "Volume": 8700
+    },
+    {
+      "Average": 2.7574263653080635,
+      "Close": 5.483945042281756,
+      "High": 5.483945042281756,
+      "Low": 1.2321428571428572,
+      "Open": 1.2321428571428572,
+      "Time": "2026-06-19",
+      "Volume": 1416
     }
   ],
-  "fetched_at": "2026-06-15T03:47:51Z",
+  "fetched_at": "2026-06-19T06:53:28Z",
   "iconUrl": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvT21lbk9uQWJ5c3NHdWFyZW50ZWVkTGljaFR5cGVNb2QxIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/a4962e6d7b/OmenOnAbyssGuarenteedLichTypeMod1.png",
   "itemId": 4343,
   "kind": "Currency",
