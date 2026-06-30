@@ -83,7 +83,7 @@ File `.md` trong `content/builds/<class>/` với:
 - **## Ascendancy** — thứ tự ascend + lý do node. Omit nếu đã gói trong Build Overview.
 - **## Passive Tree & Mastery** — cluster chính + PoB link, prose giải thích intent.
 - **## Stat Priorities & Defenses** (+ `### Performance Ratings` table) — số thật từ PoB; DPS ≥100k / EHP cần PoB link; multi-source → math chain. EHP layer 0.5+: armor → evasion → block → max res → ES/Life → Runic Ward → recovery.
-- **## Gear Progression** — `### Gear theo slot` (bullet-per-slot, priority order cap-res-trước, KHÔNG table) + leveling/mapping/endgame/mirror tier. Unique → `:wiki-link`.
+- **## Gear Progression** — `### Chỉ số chính cần tìm trên từng slot` **BẮT BUỘC khi có gear section** (bullet-per-slot; MỖI dòng mở đầu bằng chỉ số cần tìm xếp hạng good→focus, item đang chạy chỉ là context cuối dòng; slot khóa unique ghi "unique bắt buộc: X vì Y"; KHÔNG table) + leveling/mapping/endgame/mirror tier. Unique → `:wiki-link`. Đây là phần reader cần nhất để tự đi mua — thiếu nó reader không biết hunt mod gì trên slot nào.
 - **## Flasks** — omit nếu build chỉ dùng flask thường.
 - **## Leveling Notes** — omit nếu trùng Gear Progression > Leveling.
 - **## Budget & Investment** — investment curve min → divine breakpoint → mirror tier.

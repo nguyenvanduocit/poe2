@@ -274,6 +274,24 @@ data/pob-source/export-pob.sh <charData.json>     # also accepts @file
 - OAuth `/character/poe2/<name>` → `{ character: { equipment, skills, passives, jewels } }` — full build code (tree + skills + gear + defense).
 - `fetch-live.sh` (pathofexile2.com internal-api) → `{ data: { equipment } }` — equipment-only → gear-only code (defense from item rolls; no tree/skills). Missing `skills`/`jewels` arrays normalise to empty so item import still runs.
 
+## Attribute & Level Requirements (`requirements.ts`)
+
+`bun .claude/skills/pob/scripts/requirements.ts <export.json> [--candidate "str:114,martial"] [--global-reduced N] [--json]`
+
+Reads a character export JSON (the poe.ninja model saved by `fetch-poeninja.sh`) and reports every item + gem requirement, the binding (max) requirement per attribute, the character's attributes, and headroom. The value-add is the EFFECTIVE requirement the export does not precompute.
+
+**Where requirements live in the export:** item base req in `items[].itemData.requirements` (`{name:"[Strength|Str]", values:[["36",0]]}`); socketed gems in `socketedItems[].itemData.requirements` (+ `weaponRequirements` / `supportGemRequirements`); character attributes in `defensiveStats.{strength,dexterity,intelligence}`; level in `level`; keystones in `keystones[].name`; Bonded-active flag in `enableBondedMods`.
+
+**Effective-requirement rules (verified):**
+- **Giant's Blood** keystone triples the attribute requirement of Martial Weapons — and it triples ALL THREE attributes (Str/Dex/Int) of the wielded weapon, not just Str. A high-Int weapon req balloons your Int floor too. Caster weapons (Wand/Sceptre/Focus) are not martial, so they are not tripled.
+- **`#% reduced Attribute Requirements` is ALWAYS LOCAL** (wiki `Explicit_modifier`): it lowers only the requirements of the item it sits on — never another item's, never a socketed gem's. The canonical mod name carries the word `Local` (e.g. `ReducedLocalAttributeRequirements3` = 25%). A reduced-req helm does NOT help you wield a high-req weapon.
+- The only character-wide reduction is worded **`Equipment and Skill Gems have #% reduced Attribute Requirements`** (passive notables ~4%/node, a few uniques). The export does not carry tree-node stat text, so pass `--global-reduced N` to supply a tree total.
+- The binding requirement is the MAX effective requirement across all items + gems.
+
+**Worked example (why the tool exists):** checking The Hammer of Faith (Giant Maul, Str 114) on ThaoCamVienSaiGon via `--candidate "str:114,martial"` returns effective 342 (114×3), char Str 150 → SHORT 192. A local 35% tiara mod does nothing for it; even 35% GLOBAL (`--global-reduced 35`) only reaches 223 → SHORT 73. The same run shows the binding Int is 339 (Chober Chaber's Int 113 tripled by Giant's Blood), so Int 361 has only 22 headroom — the build is not sitting on spare Int to convert.
+
+Gotcha: the export's `requirements` field is RAW (pre-Giant's-Blood, pre-reduction). Never read it as the effective floor — run this tool.
+
 ## poe.ninja API Reference
 
 ### Get Snapshot Versions
