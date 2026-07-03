@@ -274,6 +274,8 @@ data/pob-source/export-pob.sh <charData.json>     # also accepts @file
 - OAuth `/character/poe2/<name>` → `{ character: { equipment, skills, passives, jewels } }` — full build code (tree + skills + gear + defense).
 - `fetch-live.sh` (pathofexile2.com internal-api) → `{ data: { equipment } }` — equipment-only → gear-only code (defense from item rolls; no tree/skills). Missing `skills`/`jewels` arrays normalise to empty so item import still runs.
 
+> **Gotcha — export silently drops runemastered-unique body armour + mis-slots the weapon.** A `--oauth`/`export-pob` round-trip can omit a runemastered unique body (seen with Enfolding Dawn) and mis-slot the weapon, so the resulting baseline reads phantom deficits (e.g. fire −22, spirit −29). Before trusting any baseline or gear-combo diff, re-inject the missing body from the raw charData JSON and confirm slots against it. When matching items, treat `slot_item_ids` as attribute-order-agnostic. PoB fork is v0.17.1 (models 0.5 runes; companion Tame Beast DPS still 0).
+
 ## Attribute & Level Requirements (`requirements.ts`)
 
 `bun .claude/skills/pob/scripts/requirements.ts <export.json> [--candidate "str:114,martial"] [--global-reduced N] [--json]`
