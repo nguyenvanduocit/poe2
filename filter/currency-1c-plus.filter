@@ -1,0 +1,87 @@
+#===============================================================================================================
+# POE2 Filter — Currency 1c+, Max-Socket Bases & Unique Rings
+# Shows Stackable Currency orbs worth >= 1 Chaos, any item with max (3) rune sockets, and all unique rings. Hides everything else.
+# Prices: poe2scout, Runes of Aldur, 2026-07-03 (1 Chaos = 101.67 ex, 1 Divine = 7.23c).
+# Snapshot-gated: re-run /lootfilter to refresh as prices move.
+#===============================================================================================================
+
+#===============================================================================================================
+# [[0100]] S-tier orbs (>1000c) — Mirror, Hinekora's Lock
+#===============================================================================================================
+
+Show # %D6 $type->currency $tier->stier !cur_stier
+    Class == "Stackable Currency"
+    BaseType == "Mirror of Kalandra" "Hinekora's Lock"
+    SetFontSize 45
+    SetTextColor 255 255 255 255
+    SetBorderColor 220 50 50 255
+    SetBackgroundColor 70 0 0 255
+    PlayEffect Red
+    MinimapIcon 0 Red Star
+    PlayAlertSound 6 300
+
+#===============================================================================================================
+# [[0200]] A-tier orbs (10-100c) — Perfect Chaos, Fracturing, Perfect Exalted
+#===============================================================================================================
+
+Show # %D5 $type->currency $tier->atier !cur_atier
+    Class == "Stackable Currency"
+    BaseType == "Perfect Chaos Orb" "Fracturing Orb" "Perfect Exalted Orb"
+    SetFontSize 42
+    SetTextColor 255 255 255 255
+    SetBorderColor 200 100 30 255
+    SetBackgroundColor 55 25 0 255
+    PlayEffect Orange
+    MinimapIcon 1 Orange Diamond
+    PlayAlertSound 2 280
+
+#===============================================================================================================
+# [[0300]] B-tier orbs (1-10c) — Divine, Annulment, Greater Chaos, Perfect Jeweller's, Chaos
+#===============================================================================================================
+
+Show # %D4 $type->currency $tier->btier !cur_btier
+    Class == "Stackable Currency"
+    BaseType == "Divine Orb" "Orb of Annulment" "Greater Chaos Orb" "Perfect Jeweller's Orb" "Chaos Orb"
+    SetFontSize 40
+    SetTextColor 255 255 255 255
+    SetBorderColor 210 200 60 255
+    SetBackgroundColor 45 40 0 255
+    PlayEffect Yellow
+    MinimapIcon 1 Yellow Circle
+    PlayAlertSound 1 250
+
+#===============================================================================================================
+# [[0500]] Exceptional bases — any item with max (3) rune sockets
+#===============================================================================================================
+
+Show # %D4 $type->gear $tier->maxsocket !gear_maxsocket
+    Sockets >= 3
+    SetFontSize 40
+    SetTextColor 255 255 255 255
+    SetBorderColor 30 150 190 255
+    SetBackgroundColor 0 30 45 255
+    PlayEffect Cyan
+    MinimapIcon 1 Cyan Square
+    PlayAlertSound 3 260
+
+#===============================================================================================================
+# [[0600]] Unique rings — every unique ring, any base
+#===============================================================================================================
+
+Show # %D4 $type->unique $tier->unique_ring !unique_ring
+    Class == "Rings"
+    Rarity == Unique
+    SetFontSize 40
+    SetTextColor 255 255 255 255
+    SetBorderColor 175 96 37 255
+    SetBackgroundColor 45 25 0 255
+    PlayEffect Brown
+    MinimapIcon 1 Brown Moon
+    PlayAlertSound 3 260
+
+#===============================================================================================================
+# [[0900]] Hide everything else
+#===============================================================================================================
+
+Hide # %H5 $type->hidelayer $tier->everything !hide_all
+    DisableDropSound True
