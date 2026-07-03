@@ -20,7 +20,7 @@
  *   --dry-run fills the form but does NOT submit (safe end-to-end check).
  */
 
-import { parseAsync, validate, formatErrors } from '../parser/src'
+import { parseAsync, validate, formatErrors, findHiddenValuables } from '../parser/src'
 import { readFileSync, writeFileSync } from 'fs'
 import { spawnSync } from 'child_process'
 
@@ -40,8 +40,20 @@ const isPublic = flag('public')
 const dryRun = flag('dry-run')
 
 if (!file || !name) {
-  console.error('Usage: bun push-to-account.ts --file <path> --name "<name>" [--session N] [--version v] [--public] [--dry-run]')
+  console.error('Usage: bun push-to-account.ts --file <path> --name "<name>" [--session N] [--version v] [--public] [--dry-run] [--force]')
   process.exit(2)
+}
+
+// ── 0. Pre-validate the name (GGG rejects it server-side otherwise) ───────────
+// GGG's rule is "Letters, numbers, punctuation and spaces only". '+' (and '=',
+// '<', '>', '^', '~', '|', '$', '`') are Unicode Symbols (\p{S}), NOT punctuation
+// (\p{P}), so the create/edit POST returns 400 { field: filter_name }. Catch it
+// here instead of driving the whole browser flow into a doomed submit.
+const badNameChars = [...new Set([...name].filter((c) => /[^\p{L}\p{N}\p{P}\p{Zs}]/u.test(c)))]
+if (badNameChars.length) {
+  console.error(`✗ Filter name "${name}" has character(s) GGG rejects: ${badNameChars.map((c) => `"${c}"`).join(' ')}`)
+  console.error('  Allowed: letters, numbers, punctuation and spaces only — no symbols like + = < > ^ ~ | $ `. Rename and retry.')
+  process.exit(1)
 }
 
 // ── 1. Validate with the parser BEFORE touching the account ──────────────────
@@ -54,6 +66,18 @@ const result = validate(blocks as any, { validateClasses: true, validateBaseType
 if (result.errors.length > 0) {
   console.error(`✗ Filter has ${result.errors.length} validation error(s) — aborting, not uploading:`)
   console.error(formatErrors(result.errors.slice(0, 10)))
+  process.exit(1)
+}
+
+// ── Loot-safety gate: refuse to push a filter that HIDES top-tier currency ────
+// A filter can be valid syntax and still hide a Divine Orb (a Hide rule ordered
+// before its Show). No sane filter hides Mirror/Divine/Perfect orbs, so this is
+// almost always a bug that would cost you loot. Abort unless --force overrides.
+const hiddenValuables = findHiddenValuables(blocks as any)
+if (hiddenValuables.length > 0 && !flag('force')) {
+  console.error('✗ SAFETY STOP — this filter HIDES high-value currency (you would not see it drop):')
+  for (const v of hiddenValuables) console.error(`    · ${v.baseType}`)
+  console.error('  Likely a Hide rule ordered before its Show. Fix the filter, or pass --force to upload anyway.')
   process.exit(1)
 }
 console.error(`✓ Parsed ${(blocks as any).length} blocks, 0 errors. Pushing "${name}" to POE2 account${dryRun ? ' (DRY RUN)' : ''}...`)
@@ -77,7 +101,12 @@ try {
   await p.waitForTimeout(1500);
   const existingHref = await p.evaluate((nm)=>{ const a=[...document.querySelectorAll('a')].find(a=>a.innerText.trim()===nm && /item-filters\\//.test(a.getAttribute('href')||'')); return a? a.getAttribute('href'):null; }, meta.name);
   out.mode = existingHref ? 'update' : 'create';
-  const target = existingHref ? ('https://pathofexile2.com'+existingHref) : 'https://pathofexile2.com/my-account/item-filters/create';
+  // Update must hit the EDIT surface (/item-filters/edit/<id>). The bare
+  // /item-filters/<id> href is the read-only VIEW page (ACE editor only, zero
+  // text inputs), so waitForSelector on the name input would time out there.
+  const existingId = existingHref ? existingHref.split('/').filter(Boolean).pop() : null;
+  const target = existingId ? ('https://pathofexile2.com/my-account/item-filters/edit/'+existingId) : 'https://pathofexile2.com/my-account/item-filters/create';
+  out.target = target;
   await p.waitForTimeout(1500);
   await p.goto(target,{waitUntil:'load'}).catch(()=>{});
   await settle();
@@ -104,7 +133,7 @@ try {
   if(meta.dryRun){ out.dryRun=true; out.url=p.url(); console.log('RESULT:::'+JSON.stringify(out)); return; }
 
   let post=null;
-  p.on('response', r=>{ try{ const u=r.url(); if(/internal-api\\/item-filters/i.test(u) && r.request().method()==='POST') post={status:r.status(),url:u}; }catch(e){} });
+  p.on('response', async r=>{ try{ const u=r.url(); if(/internal-api\\/item-filters/i.test(u) && r.request().method()==='POST'){ let b=''; try{ b=await r.text(); }catch(e){} post={status:r.status(),url:u,body:(b||'').slice(0,600)}; } }catch(e){} });
 
   const clicked = await p.evaluate(()=>{ const b=[...document.querySelectorAll('button')].find(b=>/^(submit|create item filter|save)$/i.test(b.innerText.trim())); if(b){ b.click(); return b.innerText.trim(); } return null; });
   out.clicked = clicked;
@@ -140,10 +169,12 @@ if (res.dryRun) {
 }
 const status = res.postResp?.status
 const listed = res.listed
-console.error(`Submit button: "${res.clicked}" | POST status: ${status ?? '?'} | listed on account: ${listed}`)
+console.error(`Submit button: "${res.clicked}" | mode: ${res.mode} | POST status: ${status ?? '?'} | listed on account: ${listed}`)
 if (listed && (!status || status < 400)) {
   console.error(`✓ "${name}" is now on your POE2 account.`)
   process.exit(0)
 }
-console.error('✗ Could not confirm the filter was saved. Full result:', JSON.stringify(res))
+console.error('✗ Could not confirm the filter was saved.')
+if (res.postResp?.body) console.error(`  Server said (HTTP ${status}): ${res.postResp.body}`)
+console.error('  Full result:', JSON.stringify(res))
 process.exit(1)

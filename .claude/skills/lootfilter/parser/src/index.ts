@@ -33,6 +33,17 @@ export * from './types'
 // Re-export validator
 export { validate, loadGameData, type ValidatorOptions } from './validator'
 
+// Re-export evaluator (item → Show/Hide, "never hide valuables" guard)
+export {
+  evaluateItem,
+  blockMatches,
+  isHidden,
+  findHiddenValuables,
+  UNIVERSAL_VALUABLES,
+  type FilterItem,
+  type EvalResult,
+} from './evaluate'
+
 // Parser will be generated from PEG.js
 // For now, create a wrapper that handles the generated parser
 

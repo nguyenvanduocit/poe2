@@ -78,13 +78,16 @@ bun .claude/skills/lootfilter/scripts/push-to-account.ts \
     --name "NeverSink 3-STRICT" \
     --version "0.10.2a" \
     --session 5 \
-    [--public] [--dry-run]
+    [--public] [--dry-run] [--force]
 ```
 
 - Parser-validates the file **first** — a filter with syntax errors aborts before the browser ever opens.
-- Re-running with the same `--name` **updates** that filter in place (matches by exact name, no duplicate). A new name creates a new filter.
+- **Loot-safety gate:** the push also refuses to upload a filter that would **hide** top-tier currency (Mirror / Divine / Perfect Exalted / Perfect Chaos). A filter can be valid syntax yet hide a Divine because a `Hide` rule is ordered before its `Show` — that costs you loot in-game. The gate aborts pre-browser; pass `--force` to override.
+- **Name rule:** GGG accepts "letters, numbers, punctuation and spaces only". `+` (and `=`, `<`, `>`, `^`, `~`, `|`, `$`, `` ` ``) are Unicode *symbols*, not punctuation, so the server rejects the name with `400 { field: filter_name }`. The script pre-validates the name and aborts with a clear message before any POST.
+- Re-running with the same `--name` **updates** that filter in place — it navigates to the edit surface `/my-account/item-filters/edit/<id>` (the bare `/item-filters/<id>` href is the read-only view with no form). Matches by exact name, no duplicate. A new name creates a new filter.
 - `--dry-run` fills the form but does not submit — a safe end-to-end check.
 - `--session` is a Playwriter session id (`playwriter session list`). Realm is implicitly `poe2` (the script drives the POE2 site).
+- On failure the script prints the server's response body (`Server said (HTTP <n>): ...`) so a rejection reason is visible instead of a bare timeout.
 
 **Why DOM automation and not OAuth or a raw API call:**
 
@@ -662,6 +665,12 @@ console.log('Warnings:', result.warnings.length)
 - **Numeric range validation:** ItemLevel (1-100), Quality (0-30), WaystoneTier (1-16)
 - **Hidden valuables warning:** Warns when hiding Support Gems / Uniques / Currency without a specific BaseType (catches the "hidden Kalguuran gem" bug pattern for 0.5)
 - **Statistics:** Reports condition/action usage counts
+
+### Evaluator + loot-safety smoke test
+
+Syntax validation cannot tell you whether a *specific item* is shown or hidden — a filter can parse cleanly and still hide a Divine Orb because a `Hide` rule is ordered before its `Show`. `parser/src/evaluate.ts` closes that gap: `evaluateItem(blocks, item)` walks the blocks top-to-bottom exactly like the game client and returns the deciding block, `isHidden(blocks, item)` is the boolean, and `findHiddenValuables(blocks)` reports which of the never-hide currencies (`UNIVERSAL_VALUABLES` — Mirror / Divine / Perfect Exalted / Perfect Chaos) a filter would hide.
+
+`test/loot-safety-smoke.test.ts` (run via `bun test`) asserts the shipped `filter/currency-1c-plus.filter` shows every `>=1c` orb and max-socket base, hides sub-threshold junk, and — via synthetic filters — proves the evaluator catches a `Hide`-before-`Show` shadow. The same `findHiddenValuables` gate runs inside `push-to-account.ts`, so a loot-hiding filter is blocked before it ever reaches your account (override with `--force`).
 
 ### When to Validate
 
