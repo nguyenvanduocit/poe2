@@ -25,9 +25,9 @@ Dùng `/farming-strategy` (no `2`) cho POE1. POE2 economy khác POE1 cốt lõi 
 
 Khi adapt strategy thinking từ POE1, hold giùm những khác biệt sau:
 
-**Không có scarab.** POE1 scarab loop (consume specific scarab → drop other scarab) không tồn tại POE2. POE2 dùng **Tablet** + **Waystone modifier** + **Atlas Passive Tree node** + **Atlas Master selection** để juice content.
+**Không có scarab — surface tối ưu là danh sách ĐÓNG 4 lever.** POE1 scarab loop (consume specific scarab → drop other scarab) không tồn tại POE2. Toàn bộ tối ưu farming POE2 nằm trong đúng bốn lever: **Atlas Master selection** + **roll Tablet** + **roll Waystone** + **Atlas Passive Tree node**. Không có lever thứ năm — mọi strategy analysis phải quy về bộ bốn này.
 
-**Không có map roll bằng currency.** Waystone (POE2 equivalent của map) phải được **identify trước khi activate** trong Map Device (0.5 change). Modifier của Waystone roll cố định lúc generate. Không có Chisel/Alteration/Scour loop để re-roll map quant như POE1.
+**Roll waystone = roll-up bằng currency, không có quality loop kiểu POE1.** Waystone là craftable item tới 6 mod (3 prefix/3 suffix; Aug/Alch/Regal/Exalt/Vaal, Chaos điều hướng qua omen — vd Omen of Chaotic Effectiveness từ 0.5). Từ 0.5 phải **identify trước khi activate** trong Map Device. Không có Chisel/Alteration/Scour như POE1. 6-mod waystone mở đủ 3 slot tablet và 0 revive; waystone modifier multiplicative với atlas tree.
 
 **Tablet stack được.** Cùng loại Tablet stack chung tăng lượng league content spawn (đôi khi tăng size encounter đơn, đôi khi tăng số encounter). Mỗi slot tablet trống góp vào lượng random league content. **Mọi slot tablet đầy = chỉ thấy content từ tablet đang dùng** — tức nếu chỉ chuyên farm 1 mechanic, đầy slot bằng tablet đó. Mục đích là không cần allocate Atlas Tree cho league bạn không chạy.
 
@@ -273,7 +273,7 @@ bun .claude/skills/farming-strategy/scripts/analyze.ts --strategy <best> --maps-
 
 ## Anti-Patterns
 
-1. **Đừng** port POE1 strategy 1:1. POE2 không có scarab/map roll/voidstone — entire input layer khác.
+1. **Đừng** port POE1 strategy 1:1. POE2 không có scarab/sextant/voidstone — input layer chỉ có 4 lever: Master, roll tablet, roll waystone, atlas passive.
 2. **Đừng** chỉ nhìn trending item mà không hiểu WHY (Atlas Master meta shift? Build guide spike? Remnant slot supply crunch?).
 3. **Đừng** ignore investment cost (Remnant 10-slot rất hiếm — input scarcity ≠ profit nếu output không liquid).
 4. **Đừng** assume strategy scale tuyến tính (Atlas Master node giới hạn 4 active — switch overhead).

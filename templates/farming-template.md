@@ -53,6 +53,8 @@ Title KHÔNG kèm league/patch.
 
 POE2 endgame KHÔNG có scarab. Vocabulary đúng: Waystone (map item), Precursor Tablet (đặt vào Map Device — số slot theo số modifier của waystone: 1-2 mod=1 slot, 3-5 mod=2, 6+ mod=3; City biome map mở thêm slot thứ 4 qua atlas notable Industrial Improvements), unique tablet (vd Freedom of Faith), Precursor Tower (map area chạy được — hoàn thành thì rớt 1 tablet + mở tầm nhìn atlas, KHÔNG phải nơi socket tablet), Atlas Passive Tree + mechanic subtree (Ritual/Breach tree), Masters of the Atlas (Jado, Hilda...), Map Device + fragment (Ocean Exploring / pinnacle boss), biome (city/grass/forest/desert/swamp). Currency nền giao dịch = Exalted Orb (ex), high-end = Divine Orb (div).
 
+SURFACE TỐI ƯU = DANH SÁCH ĐÓNG 4 LEVER (user 2026-07-03): Masters of the Atlas · roll tablet · roll waystone · Atlas Passive Tree. Mọi nguồn tiền trong doc phải map về đúng một trong bốn lever này — draft mọc ra "lever thứ năm" là red flag fabrication (scarab/sextant/chisel/voidstone không tồn tại). Consumable đổ lên waystone (Liquid Emotion, omen) thuộc lever roll waystone; fragment/key/splinter là vé vào content, không phải lever tối ưu.
+
 Waystone/tablet/atlas keystone/unique/currency/fragment → `:wiki-link{url="https://www.poe2wiki.net/wiki/<page>"}` MDC component (auto link ra poe2wiki.net + price tooltip).
 Cross-link → section ## Relationships ở cuối, mỗi dòng: - **predicate** [Title](/route) — reason.
 
@@ -60,9 +62,21 @@ RIGHT-SIZING: CẮT section không áp dụng, ĐỪNG pad, ĐỪNG lặp. Secti
 REQUIRED (luôn có): Intro + Strategy Overview + Loot Breakdown (profit math) + Failure Modes (validator-enforced).
 OPTIONAL (include khi cần, omit khi không): Setup · Gameplay · Profit Optimization · Alternatives · Data & Testing · Quick Reference Card · Changelog. Risk/saturation gói thẳng vào Failure Modes — KHÔNG mở section Market Context riêng trùng nó.
 KINH TẾ THÔNG TIN (xem CLAUDE.md `## Content Writing Voice`): mỗi số/cơ chế giải thích đúng MỘT lần ở section sở hữu nó — Strategy Overview sở hữu mô tả cơ chế, Loot Breakdown sở hữu profit math; section sau chỉ nhắc tên + dẫn ngược, không giảng lại. Data & Testing chỉ ghi evidence/sample/source CHƯA nói ở chỗ khác — KHÔNG liệt kê lại verbatim mod đã cite inline. Quick Reference Card chỉ thêm khi nó là chỗ DUY NHẤT chứa loạt số scannable đó; thân bài đã có thì BỎ card.
+
+LEAN DEFAULT + CHEATSHEET-DEFER (preference mới nhất — đọc gọn một màn hình, cắt ~60% so style cũ "dài dòng"):
+- Nếu nhúng cheatsheet PiP component (`::expedition-cheatsheet` / `::omen-farm-cheatsheet` / `::ritual-cheatsheet` — `app/components/*Cheatsheet.vue`): component đó là nguồn DUY NHẤT cho mọi bảng tra (roll tablet, mod/prefix né, triage theo slot, list node atlas, Master loadout, clue→map). Prose KHÔNG lặp list nào — chỉ giữ why/loop/quyết-định-trong-map/economy. Có component → BỎ Quick Reference Card và mọi list lookup trong prose. Không có component → giữ exact mod dạng bullet scannable trong Setup (delirium style). Không bao giờ cả hai cùng giữ.
+- SCALING LENS lên đầu (ngay sau intro): section `## Loot scale theo cái gì` map mỗi nguồn tiền → lever roll/chọn (Waystone Tier, rarity/monster-effectiveness, tablet suffix, atlas node, gate consumable). Mỗi bullet = tên lever + một mệnh đề why + dẫn ngược cheatsheet. Reader biết roll/chọn gì trước khi đọc chi tiết.
+- Dẫn mỗi section bằng 1-2 thứ quyết định reward, gộp phần phụ một câu; số không neo quyết định nào thì cắt. Exemplar lean: content/guides/0-5-ocean-exploring.md.
+- MOD REFERENCE = dòng mod THẬT, verified (cả prose lẫn cheatsheet data): viết dòng mod đầy đủ searchable (vd "increased number of Rare Expedition Monsters in Map"), KHÔNG dùng affix nickname đơn lẻ ("of Knowledge") — nickname không ra gì khi search. Verify mod còn tồn tại trong patch hiện tại từ data/poedb/<patch>/ (source #2) hoặc poe2db.tw, đừng tin một mình wiki mirror (stale). Trong cheatsheet: dòng mod làm `text`, affix name xuống `note`.
 -->
 
 (Intro 2-3 câu. Câu 1: strategy là gì + tier. Câu 2: core mechanism — content nào farm, drop nào make money. Câu 3: ai nên chạy — early league / endgame / specific build. Restate frontmatter metric inline: "Tier B, investment Medium, ~5-10 div/h tính đến YYYY-MM-DD".)
+
+## Loot scale theo cái gì
+
+<!-- OPTIONAL nhưng strongly recommended, nhất là khi có cheatsheet component. Map mỗi nguồn tiền → đúng lever trong BỘ 4 ĐÓNG (Master / roll tablet / roll waystone / atlas passive) để đẩy nó. Mỗi bullet = tên lever + 1 mệnh đề why + dẫn ngược cheatsheet cho số cụ thể. Reader biết roll/chọn gì trước khi đọc chi tiết. BỎ section này nếu strategy không có lever nào để roll/chọn. -->
+
+(Bullet list ngắn theo bộ 4 lever: roll waystone (tier + rarity/monster-effectiveness + emotion/omen đổ lên) → cái gì · tablet suffix nào → mục tiêu gì · atlas node nào → đẩy gì · Master nào → bonus gì. Roll/node cụ thể ở cheatsheet cuối bài.)
 
 ## Strategy Overview
 
@@ -89,6 +103,12 @@ KINH TẾ THÔNG TIN (xem CLAUDE.md `## Content Writing Voice`): mỗi số/cơ 
 ## Gameplay
 
 (Step-by-step trong map: activate gì trước, clear order, what to pick up vs ignore, when to leave. Prose 1-2 đoạn, không bullet 20 step.)
+
+<!-- CHEATSHEET EMBED (optional, đặt cuối phần execution). Khi có → component là nguồn DUY NHẤT cho mọi list lookup; prose KHÔNG lặp lại; BỎ Quick Reference Card.
+::expedition-cheatsheet
+::
+-->
+
 
 ## Loot Breakdown & Economic Analysis
 
@@ -133,7 +153,7 @@ Prose 1-2 đoạn cover risk thực tế nhất. Xem **Failure Mode / Devil's Ad
 
 ## Quick Reference Card
 
-<!-- OPTIONAL. Chỉ thêm khi card là chỗ DUY NHẤT chứa loạt số scannable này. Nếu thân bài (Strategy Overview / Loot Breakdown / Setup) đã nêu các số này thì BỎ card — đừng lặp toàn doc. -->
+<!-- OPTIONAL. Chỉ thêm khi card là chỗ DUY NHẤT chứa loạt số scannable này. Nếu thân bài (Strategy Overview / Loot Breakdown / Setup) đã nêu các số này thì BỎ card — đừng lặp toàn doc. Có cheatsheet component → BỎ hẳn card, component đã là phần scannable. -->
 
 **Setup cost / map:** ~X ex  
 **Profit / map:** ~Y div  
