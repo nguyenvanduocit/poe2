@@ -23,6 +23,7 @@ export interface FilterItem {
   quality?: number
   gemLevel?: number
   waystoneTier?: number
+  unidentifiedItemTier?: number
   height?: number
   width?: number
   baseArmour?: number
@@ -98,6 +99,7 @@ export function blockMatches(block: FilterBlock, item: FilterItem): boolean {
     matchNumeric(c.Quality, item.quality) &&
     matchNumeric(c.GemLevel, item.gemLevel) &&
     matchNumeric(c.WaystoneTier, item.waystoneTier) &&
+    matchNumeric(c.UnidentifiedItemTier, item.unidentifiedItemTier) &&
     matchNumeric(c.Height, item.height) &&
     matchNumeric(c.Width, item.width) &&
     matchNumeric(c.BaseArmour, item.baseArmour) &&
