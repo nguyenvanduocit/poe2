@@ -3,8 +3,8 @@
   "baseCurrencyApiId": "exalted",
   "baseCurrencyText": "Exalted Orb",
   "categoryApiId": "verisium",
-  "currentPrice": 57.159452785582545,
-  "currentQuantity": 536,
+  "currentPrice": 90.165910431083,
+  "currentQuantity": 374,
   "dailyStats": [
     {
       "Average": 17.630312471507672,
@@ -286,16 +286,34 @@
       "Volume": 13570
     },
     {
-      "Average": 60.293652581312216,
-      "Close": 59.21895431207676,
-      "High": 64.76583265398101,
+      "Average": 65.56690928755978,
+      "Close": 114.42568123566417,
+      "High": 114.42568123566417,
       "Low": 53.42160661121948,
       "Open": 53.42160661121948,
       "Time": "2026-06-30",
-      "Volume": 3040
+      "Volume": 10445
+    },
+    {
+      "Average": 98.27356484192767,
+      "Close": 112.65499602281233,
+      "High": 166.6696598062001,
+      "Low": 70.19197589707726,
+      "Open": 123.63929710246443,
+      "Time": "2026-07-01",
+      "Volume": 9786
+    },
+    {
+      "Average": 101.77551307184491,
+      "Close": 90.165910431083,
+      "High": 121.70460777487595,
+      "Low": 86.90018831740672,
+      "Open": 86.90018831740672,
+      "Time": "2026-07-02",
+      "Volume": 2267
     }
   ],
-  "fetched_at": "2026-06-30T08:19:32Z",
+  "fetched_at": "2026-07-02T07:49:30Z",
   "iconUrl": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvQWxsb3k1Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4ffca7b84e/Alloy5.png",
   "itemId": 13495,
   "kind": "Currency",
