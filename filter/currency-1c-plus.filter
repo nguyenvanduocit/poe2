@@ -1,6 +1,6 @@
 #===============================================================================================================
 # POE2 Filter — Currency 1c+, Max-Socket Bases & Unique Rings
-# Shows Stackable Currency orbs worth >= 1 Chaos, any item with max (3) rune sockets, and all unique rings. Hides everything else.
+# Shows Stackable Currency orbs worth >= 1 Chaos, all Gold, all boss/encounter access consumables (fragments, keys, logbooks), any item with max (3) rune sockets, all unique rings, and rings/amulets at unidentified tier 5+. Hides everything else.
 # Prices: poe2scout, Runes of Aldur, 2026-07-03 (1 Chaos = 101.67 ex, 1 Divine = 7.23c).
 # Snapshot-gated: re-run /lootfilter to refresh as prices move.
 #===============================================================================================================
@@ -77,6 +77,47 @@ Show # %D4 $type->unique $tier->unique_ring !unique_ring
     SetBackgroundColor 45 25 0 255
     PlayEffect Brown
     MinimapIcon 1 Brown Moon
+    PlayAlertSound 3 260
+
+#===============================================================================================================
+# [[0700]] Gold — show every stack, any size (needed to farm gold)
+#===============================================================================================================
+
+Show # %D3 $type->gold $tier->all !gold_all
+    Class == "Stackable Currency"
+    BaseType == "Gold"
+    SetFontSize 36
+    SetTextColor 255 200 60 255
+    SetBorderColor 120 90 20 255
+    SetBackgroundColor 30 22 0 255
+
+#===============================================================================================================
+# [[0400]] Boss / encounter access consumables — fragments, pinnacle & vault keys, logbooks
+#===============================================================================================================
+
+Show # %D5 $type->fragments $tier->boss !boss_access
+    Class == "Map Fragments" "Pinnacle Keys" "Vault Keys" "Expedition Logbook"
+    SetFontSize 42
+    SetTextColor 255 255 255 255
+    SetBorderColor 60 180 120 255
+    SetBackgroundColor 0 40 25 255
+    PlayEffect Green
+    MinimapIcon 1 Green Pentagon
+    PlayAlertSound 4 280
+
+#===============================================================================================================
+# [[0800]] Rings & Amulets — unidentified tier 5+ (top-tier rare jewellery)
+#===============================================================================================================
+
+Show # %D4 $type->jewellery $tier->unid_t5 !jewel_unid_t5
+    Class == "Rings" "Amulets"
+    UnidentifiedItemTier >= 5
+    SetFontSize 40
+    SetTextColor 255 255 255 255
+    SetBorderColor 200 60 200 255
+    SetBackgroundColor 35 0 40 255
+    PlayEffect Purple
+    MinimapIcon 1 Purple Kite
     PlayAlertSound 3 260
 
 #===============================================================================================================
