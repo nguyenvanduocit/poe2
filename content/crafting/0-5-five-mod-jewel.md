@@ -88,6 +88,20 @@ Cả `Contempt` lẫn `Ferocity` drop từ Delirium endgame (boss nhân bản qu
 
 Hai cửa 50/50 (Contempt ở bước 3, Ferocity ở bước 8) là toàn bộ RNG; brick chỉ xảy ra ở bước 3. Chi phí thật giờ bị kéo lên bởi **loop desecration**: mỗi lần reveal xấu phải làm lại tốn 1 Preserved Cranium (~7.8 div) + 1 Omen of Light (~12.6 div) + Annul, khoảng ~21 div/lần, và loop hay ăn 2-4 lần. Cộng base + liquid + chaos spam, một viên hoàn chỉnh giờ tầm **80-150 div** ở giá hiện tại — cao hơn hẳn mức 50-80 div hồi method mới ra (tháng 6), vì nguyên liệu đã moon. Thành phẩm vẫn bán 40-210 div nên craft để dùng thì lời, craft để bán thì mỏng — tự farm cranium/omen từ Abyss + Delirium để cắt phần đắt nhất.
 
+## Craft hụt mất gì và cứu thế nào
+
+Điểm mấu chốt: POE2 không phá huỷ item, "brick" ở đây nghĩa là phí currency đã đổ vào chứ jewel vẫn còn. Và chỉ đúng **một chỗ mới mất tiến độ thật**.
+
+**Contempt bước 3 là chỗ brick duy nhất.** Ra sai vế ("+1 Prefix" khi mình muốn suffix) tức nó vừa gỡ mất một suffix crit mình cần. Mất chỉ ~0.9 div (một Contempt) + base ~1 ex, làm lại gần như free. Ba đường cứu: pivot sang bản prefix nếu build xài được jewel ES/attack (giờ đang có "+1 prefix allowed" sẵn); hoặc gỡ mod craft sai bằng Omen of Dextral Annulment + Annul rồi chaos lại suffix + Contempt lại; hoặc đơn giản bốc base kế. Mua sẵn 3-5 base lúc đầu (~1 ex/cái) để hụt là làm tiếp con khác, khỏi re-shop.
+
+**Từ sau bước 6 (khoá 3 suffix) KHÔNG thể brick nữa.** Ferocity bước 8 gỡ trúng prefix ngon thì chaos spam lại rồi thử tiếp, chỉ tốn thêm chaos + một Ferocity ~3 div, item nguyên vẹn. Sinistral Annul bước 6 trật 50/50 thì annul thêm lần nữa (~15 div/lần), suffix vẫn an toàn vì Sinistral chỉ đụng prefix. Đây đều là tốn lặp lại, không phải mất cây.
+
+**Hố tiền thật là loop desecration bước 5, không phải brick.** Mỗi reveal xấu làm lại tốn ~21 div (Cranium + Omen of Light + Annul) như tính ở trên; xui vài lần là chỗ âm thầm đốt sạch currency. Cứu bằng cách chốt sớm: lấy suffix thứ 3 "đủ dùng" (mana regen, attribute) thay vì chase perfect, đặt trần 2-3 redo trước khi bắt đầu.
+
+**Cây hụt nửa chừng vẫn bán được.** Đã khoá 3 suffix mà cạn currency thì cây 3-suffix đó đã mạnh hơn jewel 2-suffix thường, bán hoặc xài tạm, sau này chỉ cần một Ferocity là xong. Fail tới mốc khoá không phải mất trắng.
+
+Tổng theo RNG: thắng cả hai 50/50 + desecrate trúng sớm khoảng ~30-35 div; trung bình ~90-120 div; xui (Contempt brick nhiều lần, loop reveal dài) vượt 150 div. Giảm rủi ro Contempt bằng self-fracture crit damage ở bước 1 (kéo brick từ 50% xuống ~33% vì mod fractured không bị Contempt gỡ).
+
 ## Cạm bẫy
 
 - **Contempt ra "+1 Prefix" (bản suffix)** = brick, mất base. Chỉ chỗ này mất base — mọi bước sau an toàn.
