@@ -22,17 +22,17 @@ Predict POE2 item + currency price movements using Amazon Chronos-2 time-series 
 
 ### 1. Collect History (`collect.py`)
 
-Fetches POE2 price history từ poe2scout.com — currency + uniques, cả 24 category, full-league daily OHLC (DailyStatsHistory). Resolve poe2scout slug tự động từ league name. Run first to build training data.
+Fetches current quotes + dated PriceLogs từ mọi category poe2scout trả về. Default league đọc từ `nuxt.config.ts`; resolve slug bằng live Leagues API. `--history` kéo thêm DailyStatsHistory từng item để backfill, luôn merge lịch sử cũ.
 
 ```bash
-# Collect all POE2 leagues
+# Collect the configured POE2 league
 python .claude/skills/price-forecast/scripts/collect.py
 
 # Specific league only
 python .claude/skills/price-forecast/scripts/collect.py --leagues "Runes of Aldur"
 
-# Specific items only
-python .claude/skills/price-forecast/scripts/collect.py --items "Divine Orb,Mageblood"
+# Full per-item history backfill (slower)
+python .claude/skills/price-forecast/scripts/collect.py --history
 ```
 
 Output: `data/price-history/master.json` + `daily/<date>.json` snapshots.
@@ -81,7 +81,7 @@ python .claude/skills/price-forecast/scripts/forecast.py --json
 
 ## Item Coverage (POE2)
 
-Collect mọi item ≥ 5 ex (flippable threshold) trên **cả 24 category** poe2scout expose — `type` field = category Label:
+Collect mọi giá dương, kể cả dưới 5 ex, trong các category API expose. Forecast tự lọc giá tối thiểu; `type` field = category Label. Danh mục từng có trong Runes of Aldur:
 
 - **Currency categories (17):** `Currency`, `Fragments`, `Runes`, `Essences`, `Soul Cores`, `Expedition Coinage & Artifacts`, `Ritual Omens`, `Reliquary Keys`, `Breach`, `Abyssal Bones`, `Uncut Gems`, `Lineage Support Gems`, `Delirium`, `Incursion`, `Idols`, `Verisium`, `Vaal`
 - **Unique categories (7):** `Weapons`, `Armour`, `Accessories`, `Jewels`, `Flasks`, `Maps`, `Sanctum Research`
@@ -92,11 +92,15 @@ Use `--type`, `--items`, `--min-price`, `--top` to filter (vd `--type Currency`,
 
 ## Collect Features
 
-- **Full-league history** — mỗi item ≥5ex pull DailyStatsHistory (tới 365d), không phải 7d sparkline; date từ league start tới hôm nay
-- **Auto-select leagues** — only active POE2 leagues + ended without data; poe2scout slug resolve tự động từ league name (Value→ShortName)
-- **Merge & dedup** — gộp data cũ + mới, xóa trùng theo (league, item, variant, type, date); NEW thắng collision
-- **Polite pacing** — 0.12s giữa mỗi history call (poe2scout rate-limit bulk pull)
-- `--force` to keep ONLY this crawl (drop old history for re-fetched items)
+- **Scheduled snapshot** — current quotes + recent dated PriceLogs từ category pages, không gọi history riêng từng item mỗi 3 giờ.
+- **Backfill** — `--history` kéo DailyStatsHistory (tới 365d), kiểm tra unit Exalted và từ chối response còn HasMore.
+- **League** — mặc định theo `nuxt.config.ts`; `--leagues "Runes of Aldur"` chọn một league cụ thể. Unknown league báo lỗi, không fallback.
+- **Merge & dedup** — key `(league, item, variant, type, date)`; giá mới thắng cùng key, giữ ngày cũ và league cũ.
+- **Validation** — API lỗi, pagination thiếu, mất currency tham chiếu hoặc unit khác Exalted thì exit nonzero trước khi ghi.
+- **Pacing** — 250ms giữa requests, retry có giới hạn cho 429/5xx; TLS luôn verify.
+- **CI** — UTC daily snapshot → generated index → scoped typecheck → commit main. Xem `README.md` phần Price tracking CI.
+- **Data** — legacy `price_chaos` mang giá Exalted; record mới có `price_unit=exalted`. `listings` của current quote là CurrentQuantity; record lịch sử lấy quantity/volume từ chính ngày đó.
+- **No destructive refresh** — không còn `--force`; mọi lần chạy đều fetch mới và merge.
 
 ## Model Details (giống POE1)
 
@@ -128,6 +132,7 @@ pip install torch chronos-forecasting
 
 | League | Start | End | Slug |
 |--------|-------|-----|------|
+| Forbidden Rites (0.5.5) | 2026-09-04 | TBD (chạy song song Runes of Aldur) | `Forbidden Rites` |
 | Runes of Aldur (0.5) | 2026-05-29 *(launch)* | TBD | `Runes of Aldur` |
 | Vaal (0.4) | 2026-01-?? | 2026-05-29 *(transition)* | `Vaal` |
 | Dawn of the Hunt (0.3) | 2025-09-?? | 2026-01-?? | `Dawn of the Hunt` |
@@ -149,4 +154,4 @@ curl -sL "https://api.poe2scout.com/poe2/Leagues" | python3 -c "import sys,json;
 
 ## Boundary vs poe2scout
 
-Cùng nguồn data (poe2scout.com), khác lớp. `price-forecast` = pipeline tự động: collect.py kéo full-league history về `data/price-history/master.json` rồi Chronos-2 dự báo 7d (feed site badge index + BUY/SELL/HOLD). `/poe2scout` = lookup tay một item lẻ (catalog + OHLC + pairs) khi cần spot-check ngay. Forecast nói "giá sẽ đi đâu", poe2scout nói "giá đang là bao nhiêu". poe2scout là nguồn GIÁ duy nhất của workspace — poe.ninja chỉ còn cho build/meta.
+Cùng nguồn data (poe2scout.com), khác lớp. `price-forecast` = pipeline tự động: collect.py tích lũy snapshot và backfill tùy chọn vào `data/price-history/master.json` rồi Chronos-2 dự báo 7d (feed site badge index + BUY/SELL/HOLD). `/poe2scout` = lookup tay một item lẻ (catalog + OHLC + pairs) khi cần spot-check ngay. Forecast nói "giá sẽ đi đâu", poe2scout nói "giá đang là bao nhiêu". poe2scout là nguồn GIÁ duy nhất của workspace — poe.ninja chỉ còn cho build/meta.

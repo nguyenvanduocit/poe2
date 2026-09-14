@@ -242,7 +242,7 @@ export default defineNuxtConfig({
         author: 'POE2 Vault',
         themeColor: '#d4ff00',
         logo: '/logo.png',
-        currentLeague: 'Runes of Aldur',
+        currentLeague: 'Forbidden Rites',
         currentPatch: '0.5.0',
         ign: 'ThaoCamVienSaiGon',
         // Reader comments (andy-note-nuxt layer). Backed by the `poe-comments`

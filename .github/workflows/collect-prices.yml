@@ -1,37 +1,29 @@
-name: Collect PoE Prices
+name: Collect PoE2 Prices
 
-# Daily snapshot from poe.ninja → price-history.json (time series for the
-# Chronos-2 forecast skill) → prices.generated.ts (lookup index served to the
-# `:item-badge` MDC component on the site). CF Pages auto-deploys when the
-# index file lands on `main`, so a successful run = fresh prices on the site
-# within minutes.
+# poe2scout → merged history + today's UTC snapshot → site price index.
+# Cloudflare Pages' existing Git integration deploys the data commit on main.
 on:
   schedule:
-    # Every 3 hours UTC — 8 runs/day (00, 03, 06, 09, 12, 15, 18, 21).
-    # Intraday merge: collect.py dedupes by (item, date) with NEW wins, so
-    # repeated crawls within the same day refresh the day's record without
-    # duplicating it. master.json grows by ~1 record/item/day on average.
     - cron: '0 */3 * * *'
   workflow_dispatch:
-    inputs:
-      force:
-        description: 're-fetch all items even if already collected today (--force)'
-        type: boolean
-        default: false
+  pull_request:
+    paths:
+      - '.github/workflows/collect-prices.yml'
+      - '.claude/skills/price-forecast/scripts/**'
+      - '.claude/skills/nuxt/scripts/build-prices/**'
+      - 'app/types/poe-item.ts'
+      - 'app/utils/itemSlug.ts'
+      - 'tsconfig.prices.json'
+      - 'package.json'
+      - 'bun.lock'
 
-# Two simultaneous runs would race the commit step and one would lose its
-# changes. Queue them instead — the queued run picks up the latest data.
 concurrency:
-  group: collect-prices
+  group: collect-prices-${{ github.ref }}
   cancel-in-progress: false
 
 permissions:
-  contents: write
+  contents: read
 
-# Opt into Node.js 24 runtime for JS-based actions (checkout, setup-python,
-# setup-bun). Node 20 is deprecated and will be removed from runners in
-# September 2026. Setting this now silences the deprecation warning and
-# matches the post-default-flip behavior so CI stays stable across cutover.
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
@@ -39,90 +31,58 @@ jobs:
   collect:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Install Python deps
-        # `certifi` lets collect.py use a verified SSL context. Without it the
-        # script logs a warning and falls back to unverified — works but noisy.
+      - name: Install Python certificate bundle
         run: pip install --quiet --no-cache-dir certifi
-
       - uses: oven-sh/setup-bun@v2
         with:
-          # Pin to a stable major so build:prices output stays deterministic.
-          # Bump intentionally when we want a new Bun feature.
-          bun-version: '1.2'
-
-      - name: Install JS deps for typecheck step
-        # `--frozen-lockfile` rejects lockfile drift between commits and CI.
-        # Triggers `postinstall: nuxt prepare` which generates the .nuxt/
-        # tsconfig references that vue-tsc needs.
-        run: bun install --frozen-lockfile
-
-      - name: Collect prices from poe.ninja
-        # Progressive merge mode by default — collected items today are skipped.
-        # `force` rewrites everything (use sparingly; existing history is kept
-        # for items still in the response, but variants that drop out vanish).
-        run: |
-          set -euo pipefail
-          if [ "${{ inputs.force }}" = "true" ]; then
-            python .claude/skills/price-forecast/scripts/collect.py --force
-          else
-            python .claude/skills/price-forecast/scripts/collect.py
-          fi
-
+          bun-version: '1.3.14'
+      - name: Install locked dependencies
+        # The standalone price compiler does not need nuxt prepare.
+        run: bun install --frozen-lockfile --ignore-scripts
+      - name: Test price pipeline guards
+        run: bun run test:prices
+      - name: Collect prices from poe2scout
+        if: github.event_name != 'pull_request'
+        # Reads currentLeague from nuxt.config.ts; refreshes every run, keeps history.
+        run: python .claude/skills/price-forecast/scripts/collect.py
       - name: Build site price index
+        if: github.event_name != 'pull_request'
         run: bun run build:prices
-
-      - name: Sanity-check generated index
-        # Catches silent collector regressions: poe.ninja deprecating an
-        # endpoint, the unique categories reverting to 404, etc. Hard fail
-        # rather than commit a degraded index that would replace good data on
-        # CF Pages within minutes.
+      - name: Typecheck price index
+        run: bun run typecheck:prices
+      - name: Summarize snapshot
+        if: github.event_name != 'pull_request'
         run: |
-          set -euo pipefail
-          INDEX=app/composables/data/prices.generated.ts
-          for key in '"mageblood":' '"divine-orb":' '"doryani-s-prototype":'; do
-            if ! grep -F "$key" "$INDEX" > /dev/null; then
-              echo "::error::Sanity check failed — '$key' missing from $INDEX"
-              exit 1
-            fi
-          done
-          count=$(grep -cE '^    "' "$INDEX")
-          echo "Generated index has $count items"
-          if [ "$count" -lt 1000 ]; then
-            echo "::error::Index has only $count items (expected ≥1000) — collector likely partially failed"
-            exit 1
-          fi
-
-      - name: Typecheck generated index
-        # The build script emits TypeScript with embedded JSON. A bad escape
-        # or schema drift would only surface here, not at commit time.
-        run: bunx vue-tsc --noEmit --skipLibCheck
-
-      - name: Commit & push
-        # Stages master.json (badge source), daily/ snapshots (audit), and
-        # the rebuilt prices.generated.ts. Pull --rebase before push to
-        # survive races against the parallel build-data workflow.
+          # shellcheck disable=SC2016
+          bun -e '
+            import { PRICES } from "./app/composables/data/prices.generated.ts";
+            console.log(`${PRICES.league}: ${Object.keys(PRICES.items).length} items; 1 Divine = ${PRICES.divine_chaos} ex`);
+          ' >> "$GITHUB_STEP_SUMMARY"
+      - name: Commit and push snapshot
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add \
-            data/price-history/master.json \
-            data/price-history/daily/ \
-            app/composables/data/prices.generated.ts
+          # Fail on any concurrent update. Rebasing generated prices onto a new
+          # league/config can publish mismatched data; the next scheduled run retries.
+          git fetch origin main
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]; then
+            echo "::error::main changed during collection; rerun against the new commit"
+            exit 1
+          fi
+          git add data/price-history/master.json data/price-history/daily/ app/composables/data/prices.generated.ts
           if git diff --cached --quiet; then
-            echo "No new data — skipping commit"
+            echo "No new data"
             exit 0
           fi
-          ITEMS=$(grep -cE '^    "' app/composables/data/prices.generated.ts)
-          DIVINE=$(grep -oE 'divine_chaos: [0-9.]+' app/composables/data/prices.generated.ts | head -1 | grep -oE '[0-9.]+')
-          git commit -m "data: price snapshot $(date -u +%Y-%m-%dT%H:%M) (${ITEMS} items, divine ${DIVINE}c)"
-          git pull --rebase --autostash origin main || true
-          git push
+          git commit -m "data: POE2 price snapshot $(date -u +%Y-%m-%dT%H:%M)"
+          git push origin HEAD:main

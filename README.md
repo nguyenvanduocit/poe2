@@ -18,6 +18,43 @@ bun run generate   # static build — also the type/SSR gate before commit
 bun run preview    # preview the generated site
 ```
 
+## Price tracking CI
+
+`.github/workflows/collect-prices.yml` runs every three hours and supports manual
+runs in GitHub Actions. It reads `currentLeague` from `nuxt.config.ts` and fetches
+all available currency and unique categories from poe2scout.
+
+The configured price league is **Forbidden Rites**. Runes of Aldur records remain
+in the historical master file.
+
+```bash
+python3 .claude/skills/price-forecast/scripts/collect.py
+bun run build:prices
+bun run test:prices
+bun run typecheck:prices
+```
+
+The collector merges dated prices into `data/price-history/master.json` and
+replaces `daily/YYYY-MM-DD.json` with the latest crawl for that UTC day. Repeated
+runs refresh that day's prices; older days and leagues remain in history. The
+site index uses only today's snapshot for the configured league. The legacy
+`price_chaos` and `divine_chaos` fields hold **Exalted Orb** values in POE2.
+
+Collection fails before saving on API errors, incomplete pagination, missing
+reference currencies, or an unsupported price unit. Tests and a scoped TypeScript
+check run before the workflow commits the data to `main`. The existing Cloudflare
+Pages Git integration handles deployment. If `main` changes during collection,
+the job fails and must run again against the new commit.
+
+For a full per-item history backfill, pass `--history`; the scheduled job uses
+current quotes and recent `PriceLogs` from category pages to limit API calls.
+Backfills also merge history. There is no destructive `--force` option. Use
+`--data-dir /tmp/poe2-price-smoke` to collect into an isolated directory.
+
+When switching leagues, set `currentLeague` and add its verified start date to
+`.claude/skills/price-forecast/scripts/leagues.py`. Multiple POE2 leagues may be
+active at once, so the collector does not pick the first API result.
+
 ## Layout
 
 - `app/`, `server/` — Nuxt app + Nitro routes.
