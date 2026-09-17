@@ -5,7 +5,7 @@ title: "Recovery: Life regen, ES recharge và Leech hoạt động thế nào"
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -21,21 +21,29 @@ tags:
 
 # Recovery: Life regen, ES recharge và Leech hoạt động thế nào
 
+## TL;DR
+
+- Life regen hồi liên tục không điều kiện — không bị reset bởi damage, không cần đánh.
+- ES recharge cần **4 giây liên tục không nhận damage** (vào ES hoặc Life) mới bắt đầu — bất kỳ hit nào reset đồng hồ.
+- Leech chuyển damage gây ra thành recovery trong 1 giây — không tức thì; chỉ một instance/resource hoạt động tại một lúc.
+- 0.5 đặt trần **40,000 damage/hit** cho tính toán Leech — damage vượt 40k không cho thêm Leech; tăng leech% thay vì tăng damage.
+- Vaal Pact: +50% lượng Leech nhưng −67% tốc độ và khóa hoàn toàn mọi recovery khác ngoài Leech — không phù hợp với người mới.
+
 Life regen, ES recharge và Leech đều là recovery — nhưng ba thứ này hoạt động theo ba logic hoàn toàn khác nhau. Nhầm cách hoạt động của một trong ba là nguyên nhân phổ biến dẫn đến chết oan: nghĩ rằng Leech sẽ bù damage liên tục như regen, hoặc mong ES hồi trong khi đang đứng trong pack, hay cắm hết passive vào Leech mà không hiểu 0.5 đã thay đổi gì.
 
 ## Life regen tích lũy liên tục, không có điều kiện
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Life_regeneration"} là recovery đơn giản nhất: một lượng Life cố định hồi mỗi giây, không cần đánh gì, không có delay, không bị reset bởi damage. Dù đang đứng yên hay đang hứng đòn liên tục, regen vẫn chạy.
 
-Regen đến từ passive tree (nhiều node nhỏ cộng flat +X Life/s và % of max Life per second), gear, và một số flask suffix. Build Life thuần ở campaign thường có đủ regen để tự phục hồi giữa các combat — nhưng khi vào endgame và lượng damage per hit tăng cao, regen thường quá thấp để bù kịp nếu không đầu tư. Đây là lý do flask vẫn là nguồn recovery chính trong fight nặng dù regen luôn bật.
+Regen đến từ passive tree (nhiều node nhỏ cộng flat +X Life/s và % of max Life per second), gear, và một số flask suffix. Build Life thuần ở campaign thường có đủ regen để tự phục hồi giữa các combat — nhưng khi vào endgame và lượng damage per hit tăng cao, regen thường quá thấp để bù kịp nếu không đầu tư. Flask vẫn là nguồn recovery chính trong fight nặng dù regen luôn bật.
 
 ## ES recharge bắt đầu sau 4 giây không nhận damage
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Energy_Shield_Recharge"} có cơ chế hai bước: delay rồi mới hồi. Sau 4 giây không nhận damage vào ES hoặc Life, ES bắt đầu recharge ở tốc độ 12.5% max ES mỗi giây. Bất kỳ hit nào làm giảm ES hoặc Life đều reset đồng hồ 4 giây từ đầu — phải đủ 4 giây liên tục không bị chạm mới bắt đầu được.
 
-Hệ quả thực tế: trong boss fight có pattern liên tục thì ES gần như không hồi được giữa combat. ES phát huy giá trị trong kiểu đánh burst — nhảy vào, nhận đòn, thoát ra, chờ đủ 4 giây, ES về đầy rồi vào lại. Passive và gear có thể rút ngắn delay xuống (stat "X% faster start of Energy Shield Recharge"), nhưng base là 4 giây.
+Trong boss fight có pattern liên tục thì ES gần như không hồi được giữa combat. ES phát huy giá trị trong kiểu đánh burst — nhảy vào, nhận đòn, thoát ra, chờ đủ 4 giây, ES về đầy rồi vào lại. Passive và gear có thể rút ngắn delay xuống (stat "X% faster start of Energy Shield Recharge"), nhưng base là 4 giây.
 
-Cần phân biệt rõ: delay reset bởi **mọi hit làm giảm ES hoặc Life** — không phải chỉ hit vào ES. Nếu ES đã cạn mà Life đang bị hit thì đồng hồ ES vẫn reset. Đây là điều nhiều người mới bỏ qua khi họ nghĩ "ES về đầy rồi sao vẫn không recharge được."
+Delay reset bởi **mọi hit làm giảm ES hoặc Life** — không phải chỉ hit vào ES. Nếu ES đã cạn mà Life đang bị hit thì đồng hồ ES vẫn reset. Đây là điều nhiều người mới bỏ qua khi họ nghĩ "ES về đầy rồi sao vẫn không recharge được."
 
 ## Leech hồi từ damage gây ra, không phải tức thì
 
@@ -43,15 +51,15 @@ Cần phân biệt rõ: delay reset bởi **mọi hit làm giảm ES hoặc Life
 
 Chỉ một Leech instance cho mỗi resource hoạt động tại một thời điểm. Khi nhiều instance cùng tồn tại — từ nhiều hit liên tiếp — chỉ instance có recovery rate cao nhất được áp dụng, các instance còn lại xếp hàng chờ. Khi instance đang chạy hết thời gian, instance tiếp theo tự động kích hoạt. Tất cả leech bị xóa ngay khi resource về đầy.
 
-Monsters cũng có **Leech Resistance** tăng theo level — ở endgame late, monster Lv80+ có Leech Resistance đáng kể, làm giảm lượng thực tế recover được từ mỗi hit. Build phụ thuộc hoàn toàn vào Leech để sustain cần tính đến điều này.
+Monsters cũng có **Leech Resistance** tăng theo level — ở endgame late, monster Lv80+ có Leech Resistance rõ rệt, làm giảm lượng thực tế recover được từ mỗi hit. Build phụ thuộc hoàn toàn vào Leech để sustain cần tính đến điều này.
 
 ## 0.5.0 đặt trần 40,000 damage per hit cho tính toán Leech
 
 Đây là thay đổi quan trọng nhất trong 0.5 ảnh hưởng đến Leech build. Từ 0.5.0, nếu một hit gây ra hơn 40,000 total damage thì phần damage vượt 40,000 không được tính vào Leech. Hit 200,000 damage chỉ cho Leech tương đương hit 40,000 damage — các damage type trong hit được scale down đều để đạt giới hạn này.
 
-Trước thay đổi này, damage cao hơn = leech nhiều hơn theo tuyến tính. Bây giờ thì không — một hit khổng lồ không cho nhiều leech hơn một hit 40,000 damage. Tuy nhiên tăng leech% vẫn cộng tuyến tính: 10% leech trên hit 40,000 cap cho 4,000 Life, 20% leech cho 8,000 Life. Muốn tăng leech thì tăng leech%, không phải tăng damage cao vô hạn.
+Trước thay đổi này, không có trần — hit càng mạnh, leech càng lớn. Bây giờ thì không — một hit khổng lồ không cho nhiều leech hơn một hit 40,000 damage. Tuy nhiên tăng leech% vẫn cộng thẳng: 10% leech trên hit 40,000 cap cho 4,000 Life, 20% leech cho 8,000 Life. Muốn tăng leech thì tăng leech%, không phải tăng damage cao vô hạn.
 
-Điều này có nghĩa là build one-shot cần thiết kế lại nếu phụ thuộc vào leech để bù damage nhận vào: leech cố định ở mức tối đa từ 40k damage trở lên, trong khi boss damage có thể vào cực lớn. Không thể lấy leech bù hit to — cần các layer phòng thủ khác.
+Tức là build one-shot cần thiết kế lại nếu phụ thuộc vào leech để bù damage nhận vào: leech cố định ở mức tối đa từ 40k damage trở lên, trong khi boss damage có thể vào cực lớn. Không thể lấy leech bù hit to — cần các layer phòng thủ khác.
 
 ## Vaal Pact là đánh đổi lớn, không phải buff thuần
 
@@ -77,7 +85,7 @@ Cụ thể: tất cả damage đều vào Life trước. Nếu một hit sẽ l�
 
 Ward tự hồi ở tốc độ cố định 5% max Ward mỗi giây, hoàn toàn độc lập với mọi recovery mechanic khác. Không bị ảnh hưởng bởi life flask, leech, regen, hay bất cứ thứ gì dùng để hồi Life hay ES. Muốn tăng Ward regeneration thì phải lấy stat "increased Runic Ward Regeneration Rate" từ Charging Rune hay passive.
 
-Ward không phải lớp phòng thủ mặc định — chỉ character dùng Kalguuran gear (weapon hoặc armour có Augment slot phù hợp) mới có Ward đáng kể. Với character thông thường không đầu tư vào Ward, nó gần như không ảnh hưởng đến combat trừ những pha sát tử hiếm gặp.
+Ward không phải lớp phòng thủ mặc định — chỉ character dùng Kalguuran gear (weapon hoặc armour có Augment slot phù hợp) mới có Ward đủ lớn để tính. Với character thông thường không đầu tư vào Ward, nó gần như không ảnh hưởng đến combat trừ những pha sát tử hiếm gặp.
 
 ## Relationships
 

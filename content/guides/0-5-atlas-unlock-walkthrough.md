@@ -5,7 +5,7 @@ title: Mở khóa toàn bộ atlas endgame
 status: published
 author: duocnv
 created: '2026-06-05'
-updated: '2026-06-14'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: endgame-progression
@@ -23,6 +23,15 @@ tags:
 ---
 
 # Mở khóa toàn bộ atlas endgame
+
+## TL;DR
+
+- "Full atlas" gồm ba tầng mở song song: main atlas tree lấy point từ Fortress, ba Master kiểu ascendancy, và subtree của từng league mechanic.
+- Đường tắt bật cả tree là giết Arbiter of Divinity năm lần; mỗi kill mở một cửa sổ chọn tượng đá, chọn một tượng là tự clear sạch một section Fortress.
+- Lần kill đầu là trận quest trong Fortress; bốn lần sau mỗi lần cần một Origin Spark cộng một Origin Cradle gộp thành Origin Core, lùng từ hai Citadel map Phyx và Phya.
+- Đừng nhầm Arbiter of Ash (đi Gateway, Enigma, Crisis Fragment) với Arbiter of Divinity (đi Citadel, Origin Core): hai trận khác hẳn nhau, không thay thế nhau.
+- Mở Hilda và Jado sớm vì mission rẻ, Doryani đợi corrupted nexus đầu tiên; cả ba Master swap tự do nên không skip con nào.
+- Bật full tree mới mở được Exceptional Item, Fracturing Orb, Basic và Overseer Precursor Tablet đang bị gate sau node atlas.
 
 Atlas 0.5 reset sạch, và muốn có point trở lại thì phải chạy chuỗi Origins of Divinity — không còn cách nào khác. "Full" trong đây gồm ba thứ riêng biệt: main atlas tree, ba Master kiểu ascendancy cho endgame, và subtree của từng league mechanic. Đường đi khác nhau, mở song song được.
 
@@ -50,7 +59,7 @@ Tóm gọn: Gateway → Enigma → Crisis Fragment → Arbiter of **Ash** (boss 
 
 ## Đường tắt là giết Arbiter of Divinity năm lần
 
-Mỗi lần hạ Arbiter of Divinity, game hiện ra **năm tượng đá**, mỗi tượng ứng một section của Fortress. Chọn một tượng thì toàn bộ map trong section đó tự hoàn thành và nhả hết point cùng lúc. Muốn bật sạch cả tree thì cần giết Arbiter of Divinity **năm lần**, mỗi lần dứt một section.
+Mỗi lần hạ Arbiter of Divinity, game hiện ra **năm tượng đá**, mỗi tượng ứng một section của Fortress. Chọn một tượng thì toàn bộ map trong section đó tự hoàn thành và nhả hết point cùng lúc. Cửa sổ chọn tượng chỉ hiện ngay sau kill, phải chốt section liền tay, bỏ lỡ là không lấy lại được. Muốn bật sạch cả tree thì cần giết Arbiter of Divinity **năm lần**, mỗi lần dứt một section.
 
 Lần đầu là trận quest ngay trong Fortress, tính vào năm — bộ Spark + Cradle đầu tiên nằm ở phía sau Fortress. Bốn lần còn lại cần một bộ mới mỗi lần: lùng hai Citadel map mới trên atlas (cột sáng cam, Phyx và Phya thường mọc gần nhau), hạ sentinel mỗi map lấy **Origin Spark** với **Origin Cradle**, gộp thành **Origin Core** rồi mở lại một lần đánh tại **The Origin Tower**. Cách lùng nhanh nhất là ghép với questline Doryani: chọn một hướng từ tường Fortress đi thẳng ra, dọn corrupted nexus gặp trên đường — vừa lấy point Doryani vừa mở thêm atlas — rồi chạy precursor tower để lộ vùng mới cho tới khi thấy cặp Citadel. Để dành waystone và tablet có waystone drop chance cao cho mấy map này, vì drop chance cao kéo theo cơ hội rớt thêm Spark hoặc Cradle. Muốn rút ngắn thì cả hai cũng mua được trên Currency Exchange.
 
@@ -82,13 +91,6 @@ Slot tablet để trống thêm league content ngẫu nhiên không-tablet vào 
 4. Vừa kiếm currency, vừa lùng hai Citadel map (Phyx + Phya) trên atlas để gom đủ Origin Spark + Origin Cradle cho bốn lần kill Arbiter of Divinity còn lại. Dọc đường gặp citadel mới, corrupted nexus, unique map thì mở luôn.
 
 Node ưu tiên ở những point đầu: mở **essence** và **shrine** trước, rồi gom đám natural juice — increased rare monster, tablet effect, magic pack size. Gõ "rare" trong ô search của tree lấy sạch node rare, gõ "tablet" lấy sạch node tablet. **Partial Translation** cần lấy sớm khi mở được — node này khóa sau khi giết Arbiter of Divinity và kéo tablet lên 4 mod.
-
-## Lỗi hay gặp
-
-- **Cày từng map Fortress lúc đang chạy quest.** Đi beeline tới Arbiter of Divinity trước; đường 5-kill nhanh hơn cày tay từng map rất nhiều.
-- **Nhầm Arbiter of Ash với Arbiter of Divinity.** Ash đi qua Gateway → Enigma → Crisis Fragment → Burning Monolith; Divinity đi qua Citadel → Origin Spark + Cradle → Origin Core → The Origin Tower. Hai trận khác nhau hoàn toàn, không thay thế nhau.
-- **Bỏ qua cửa sổ chọn tượng đá sau khi kill Arbiter.** Phải chọn section ngay sau kill — cửa sổ chỉ hiện lúc đó, bỏ qua là không lấy lại được.
-- **Bỏ Master nào vì chưa dùng ngay.** Ba Master swap tự do, không có lý do skip — Hilda và Jado mở rất rẻ.
 
 ## Version History
 

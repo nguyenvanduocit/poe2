@@ -5,7 +5,7 @@ title: Trading và đổi currency cơ bản
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -19,6 +19,14 @@ tags:
 ---
 
 # Trading và đổi currency cơ bản
+
+## TL;DR
+
+- Trade trong POE2 là player-to-player — không có auction house hay NPC bán item rare.
+- Vào pathofexile.com/trade2, chọn đúng **league** ở góc trên trái trước khi search — mặc định thường là Standard, sai league thì giá sai hết.
+- Xem 5–10 listing đầu để ước range giá; listing rẻ bất thường thường là seller offline hoặc price-fixing.
+- Khi trade window mở, hover đọc stat kỹ — nếu bên nào thay đổi sau khi Accept, cả hai phải Accept lại từ đầu, nên phải đọc lại item mỗi lần reset.
+- Currency Exchange (nói chuyện với Ange từ Act 4) tự khớp lệnh không cần chờ — dùng khi đổi 20+ orb cùng lúc.
 
 Trade trong POE2 dựa hoàn toàn vào player-to-player — không có auction house hay NPC bán item rare. Biết dùng trade site và Currency Exchange đúng cách giúp kiếm được gear tốt hơn sớm hơn nhiều, thay vì chờ item rơi vào đúng slot.
 
@@ -38,9 +46,9 @@ Seller không trả lời là bình thường — họ đang fight boss, đang l
 
 ## Verify item trong trade window trước khi accept
 
-Đây là bước quan trọng nhất, và cũng là chỗ người mới hay bị scam nhất. Khi trade window mở ra, **hover qua item của seller và đọc stat kỹ** — đừng tin vào những gì nói trong chat. Trade window mới là nơi duy nhất để verify item thật.
+Khi trade window mở ra, **hover qua item của seller và đọc stat kỹ** — đừng tin vào những gì nói trong chat. Trade window là nơi duy nhất để verify item thật.
 
-Scam phổ biến nhất là đổi item sang cái nhìn giống nhưng rẻ hơn, hoặc thêm orb vào sau khi bạn đã nhấn Accept. Game có cơ chế tự bảo vệ: nếu bên nào thay đổi nội dung sau khi Accept, cả hai bên phải Accept lại từ đầu. Nhưng bạn vẫn cần **đọc lại item sau mỗi lần reset** trước khi click Accept lần hai — đừng click mù.
+Scam phổ biến nhất là đổi item sang cái nhìn giống nhưng rẻ hơn, hoặc thêm orb vào sau khi Accept. Game có cơ chế tự bảo vệ: nếu bên nào thay đổi nội dung sau khi Accept, cả hai bên phải Accept lại từ đầu. Vẫn cần **đọc lại item sau mỗi lần reset** trước khi click Accept lần hai — đừng click mù.
 
 ## Currency Exchange khi đổi orb số lượng lớn
 

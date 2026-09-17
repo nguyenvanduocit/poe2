@@ -5,7 +5,7 @@ title: Breach và hệ craft Genesis Tree
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-19'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.3
 guide_type: endgame-content
@@ -24,7 +24,17 @@ tags:
 
 # Breach và hệ craft Genesis Tree
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Breach"} 0.5 lên thành storyline đầy đủ với hub area **The Monastery of the Keepers** phía nam điểm khởi đầu trên atlas — map quanh đó đều chứa breach và cho point vào Breach Atlas Tree. Hai thứ mới định hình cách chơi: một thanh đếm thời gian biến breach thành cuộc đua kéo dài sự sống của nó, và **The Genesis Tree** — hệ craft tiêu Wombgift cùng Hiveblood để tạo ring, amulet, belt base mới. Thay đổi kinh tế lớn nhất kéo theo: :wiki-link{url="https://www.poe2wiki.net/wiki/Catalyst"} không còn rớt từ quái, chỉ lấy được từ Genesis Tree — ai craft jewellery đều phải đụng tới cây này. Bài này đi từ mechanic flow tới từng node subtree, tablet setup, và lộ trình farm từ zero lên pinnacle.
+## TL;DR
+
+- Breach 0.5 lên storyline với hub The Monastery of the Keepers; giết nhanh giữ breach mở lâu, cán 100% kích hoạt Stabilised Breach với boss Vruun.
+- Catalyst không còn rớt từ quái, chỉ ra từ Genesis Tree, nên build caster và minion craft jewellery đều buộc phải chạy Breach.
+- Genesis Tree tiêu Wombgift cùng Hiveblood tạo ring, amulet, belt base mới (6 + 4 + 4) và bộ caster/minion mod riêng.
+- Point subtree từ ba nguồn: chạy map quanh hub, Realm Gate nạp 50/100/150 splinter, và Breach Pinnacle Boss cho 6 point mỗi lần.
+- Thứ tự allocate: uptime với density (Reality Wound, Shape the Chains) trước, rồi Vruun (Frantic Invasion với Study the Chains farm Lineage Support), rồi Wombgift và Genesis Tree theo hướng craft.
+- Tablet Breach ưu tiên of the Horde rồi of the Invasion; roll waystone 6 affix cho đủ 3 slot, lấy Partial Translation với Reverse Transcription nâng tablet lên Rare 4 mod.
+- Splinter chia hai đường tiêu: Realm Gate ăn 50/100/150 cho point, breachstone cần full stack 300 cho Breach Domain, nên clear ba tier Realm Gate trước rồi mới tích stack.
+
+:wiki-link{url="https://www.poe2wiki.net/wiki/Breach"} 0.5 lên thành storyline đầy đủ với hub area **The Monastery of the Keepers** phía nam điểm khởi đầu trên atlas — map quanh đó đều chứa breach và cho point vào Breach Atlas Tree. Hai thứ mới định hình cách chơi: một thanh đếm thời gian biến breach thành cuộc đua kéo dài sự sống của nó, và **The Genesis Tree**, hệ craft tiêu Wombgift cùng Hiveblood để tạo ring, amulet, belt base mới. Thay đổi kinh tế lớn nhất kéo theo: :wiki-link{url="https://www.poe2wiki.net/wiki/Catalyst"} không còn rớt từ quái, chỉ lấy được từ Genesis Tree, nên ai craft jewellery đều phải đụng tới cây này.
 
 ## Breach chạy thế nào trong 0.5
 
@@ -36,7 +46,7 @@ Patch 0.5.3 mở rộng hai mảng dùng được mỗi session. **Breach Strong
 
 ## Genesis Tree craft ra gì
 
-**The Genesis Tree** tiêu Wombgift và Hiveblood để tạo Ring, Amulet, Belt và currency. Cây có node allocate được quyết định loại item sẽ craft, và node mới mở bằng cách dùng Wombgift — càng chạy Breach càng mở rộng được cây. Wombgift có bốn loại: **Lavish**, **Ornate**, **Banded** và **Signet** — mỗi loại nuôi một hướng output khác nhau, nên biết mình cần loại nào quyết định luôn cách build subtree atlas ở dưới. Item ra từ cây không phải base thường: 6 ring base, 4 amulet base và 4 belt base chỉ craft được từ Genesis Tree, kèm một bộ caster mod và minion mod riêng craft lên ring và belt qua cây. Đây là lý do Breach giờ là content bắt buộc với nhiều build caster và minion — bộ mod đó không có đường nào khác.
+**The Genesis Tree** tiêu Wombgift và Hiveblood để tạo Ring, Amulet, Belt và currency. Cây có node allocate được quyết định loại item sẽ craft, và node mới mở bằng cách dùng Wombgift, càng chạy Breach càng mở rộng được cây. Wombgift có bốn loại: **Lavish**, **Ornate**, **Banded** và **Signet**, mỗi loại nuôi một hướng output khác nhau, nên biết mình cần loại nào quyết định luôn cách build subtree atlas ở dưới. Item ra từ cây không phải base thường: 6 ring base, 4 amulet base và 4 belt base chỉ craft được từ Genesis Tree, kèm một bộ caster mod và minion mod riêng craft lên ring và belt qua cây. Breach vì thế thành content bắt buộc với nhiều build caster và minion, bộ mod đó không có đường nào khác.
 
 **Catalyst chuyển hoàn toàn sang Genesis Tree.** Bộ catalyst jewellery quen thuộc — Flesh cho Life mod, Neural cho Mana, Sibilant cho Caster, Reaver cho Attack, Adaptive cho Attribute, cùng các catalyst nguyên tố mang tên Breachlord như Xoph's, Tul's, Esh's, Chayula's, Uul-Netol's — giờ chỉ ra từ cây này, kèm bộ 12 Catalyst mới thêm quality modifier cho Jewel. Hệ quả kinh tế: giá catalyst phụ thuộc lượng người chạy Breach và mở Genesis Tree, không còn là drop nền từ map thường. Từ 0.5.1, item có alternate quality từ catalyst salvage được để thu hồi một phần catalyst đã dùng — đỡ xót khi catalyst nhầm item.
 
@@ -44,67 +54,67 @@ Patch 0.5.3 mở rộng hai mảng dùng được mỗi session. **Breach Strong
 
 Point Breach đi đường riêng, không dính gì tới point atlas tree generic từ Precursor Fortress. Ba nguồn:
 
-- **Chạy map quanh The Monastery of the Keepers** — hoàn thành map trong vùng hub cho point, và phải là map owner mới được tính. Chuỗi quest breadcrumb đầu endgame tự đẩy mình xuống hướng này.
-- **Realm Gate ăn splinter** — lần hoàn thành đầu tiên cho 2 point; nhét 50, 100 rồi 150 Breach Splinter vào Realm Gate và thắng trận cho lần lượt 4, 6, 8 point. Đây là lý do đừng bán sạch splinter sớm — giữ đủ 150 cho tier point cuối trước đã.
-- **Breach Pinnacle Boss** — mỗi lần giết cho thêm 6 point, với điều kiện là area owner. Đây là nguồn lặp lại được, nuôi phần tree còn thiếu khi đã vào late game.
+- **Chạy map quanh The Monastery of the Keepers**: hoàn thành map trong vùng hub cho point, và phải là map owner mới được tính. Chuỗi quest breadcrumb đầu endgame tự đẩy mình xuống hướng này.
+- **Realm Gate ăn splinter**: lần hoàn thành đầu tiên cho 2 point; nhét 50, 100 rồi 150 Breach Splinter vào Realm Gate và thắng trận cho lần lượt 4, 6, 8 point. Vì vậy đừng bán sạch splinter sớm, giữ đủ 150 cho tier point cuối trước đã.
+- **Breach Pinnacle Boss**: mỗi lần giết cho thêm 6 point, với điều kiện là area owner. Nguồn này lặp lại được, nuôi phần tree còn thiếu khi đã vào late game.
 
 ## Breach subtree allocate node nào trước
 
-Subtree Breach trong 0.5 có 18 node, chia làm năm trục rõ rệt. Thứ tự dưới đây là thứ tự mình khuyến nghị allocate — đi từ uptime cơ bản tới chuyên hoá.
+Subtree Breach trong 0.5 có 18 node, chia làm năm nhóm rõ rệt. Thứ tự dưới đây là thứ tự mình khuyến nghị allocate, đi từ uptime cơ bản tới chuyên hoá.
 
-### Trục uptime và density lấy đầu tiên
+### Uptime và density lấy đầu tiên
 
 Breach sống lâu hơn và đông quái hơn là nền của mọi thứ khác — chưa có hai cái này thì mọi node thưởng phía sau đều thiếu nguyên liệu để kích hoạt.
 
-- **Reality Wound** — Unstable Breach có thêm 10 giây trước khi sập sau khi thanh đầy. Mười giây nghe ít nhưng đó là thời gian dọn đống rare stabilise và Vruun — node trần cho build chưa đủ DPS dứt điểm nhanh.
-- **Shape the Chains** — node multichoice chọn một trong ba: 15% increased Pack Size cho breach, hoặc 30% increased Effectiveness của rare breach monster, hoặc 20% reduced Pack Size kèm 20% increased Effectiveness toàn bộ quái breach. Build clear nhanh chọn pack size — thêm quái là thêm mọi loại drop. Build chậm chọn option giảm pack đổi effectiveness để mỗi con đáng giá hơn mà không bị tràn.
+- **Reality Wound**: Unstable Breach có thêm 10 giây trước khi sập sau khi thanh đầy. Mười giây nghe ít nhưng đó là thời gian dọn đống rare stabilise và Vruun — node trần cho build chưa đủ DPS dứt điểm nhanh.
+- **Shape the Chains**: node multichoice chọn một trong ba: 15% increased Pack Size cho breach, hoặc 30% increased Effectiveness của rare breach monster, hoặc 20% reduced Pack Size kèm 20% increased Effectiveness toàn bộ quái breach. Build clear nhanh chọn pack size — thêm quái là thêm mọi loại drop. Build chậm chọn option giảm pack đổi effectiveness để mỗi con đáng giá hơn mà không bị tràn.
 
-### Trục Stabilised và Vruun khi đã cán 100% đều
+### Stabilised và Vruun khi đã cán 100% đều
 
 Khi mỗi breach đều stabilise được thì Vruun trở thành nguồn loot riêng đáng farm.
 
-- **Moment of Risk** — Wombgift có 5% chance rớt cao hơn một level cho mỗi explicit modifier trên map, kèm Unstable Breach spawn thêm 2 rare khi stabilise. Node hai mặt: vế đầu thưởng việc roll map nhiều mod, vế sau vừa thêm loot vừa thêm rủi ro — đúng tên gọi.
-- **Frantic Invasion** — Unstable Breach có 100% increased chance chứa Vruun, Marshal of Xesht. Lấy khi đã muốn gặp Vruun thường xuyên, vì gặp nhiều mà giết không nổi là tự chặn nhịp farm.
-- **Study the Chains** — Vruun có 50% increased chance rớt :wiki-link{url="https://www.poe2wiki.net/wiki/Lineage_Support"}. Cặp với Frantic Invasion thành combo farm Lineage Support — một trong những nguồn giá trị nhất của trục này.
-- **Flesh Flower** — giết Vruun cho phép đem đầu của nó về Genesis Tree để mở **Grasping Orchid**. Node cầu nối giữa trục Vruun và trục Genesis Tree — lấy khi đã farm Vruun ổn định và muốn mở rộng cây craft.
+- **Moment of Risk**: Wombgift có 5% chance rớt cao hơn một level cho mỗi explicit modifier trên map, kèm Unstable Breach spawn thêm 2 rare khi stabilise. Node hai mặt: vế đầu thưởng việc roll map nhiều mod, vế sau vừa thêm loot vừa thêm rủi ro — đúng tên gọi.
+- **Frantic Invasion**: Unstable Breach có 100% increased chance chứa Vruun, Marshal of Xesht. Lấy khi đã muốn gặp Vruun thường xuyên, vì gặp nhiều mà giết không nổi là tự chặn nhịp farm.
+- **Study the Chains**: Vruun có 50% increased chance rớt :wiki-link{url="https://www.poe2wiki.net/wiki/Lineage_Support"}. Cặp với Frantic Invasion thành combo farm Lineage Support, một trong những nguồn giá trị nhất của nhánh này.
+- **Flesh Flower**: giết Vruun cho phép đem đầu của nó về Genesis Tree để mở **Grasping Orchid**. Node cầu nối giữa nhánh Vruun và nhánh Genesis Tree, lấy khi đã farm Vruun ổn định và muốn mở rộng cây craft.
 
-### Trục Wombgift khi đã chốt hướng craft
+### Wombgift khi đã chốt hướng craft
 
 Nguyên liệu Genesis Tree scale bằng các node nhỏ stack được và một notable chọn hướng.
 
-- **Wombgift Quantity** — mỗi rank cho 5% increased Quantity of Wombgifts found, tối đa 8 rank. Bốn mươi phần trăm quantity khi full là nguồn nguyên liệu nền lớn nhất subtree.
-- **Hiveblood Quantity** — mỗi rank cho 5% increased Quantity of Hiveblood found, cũng 8 rank. Hiveblood là vế còn lại của công thức craft, thiếu nó wombgift nằm kho.
-- **Breeding Program** — 100% increased chance tìm thấy loại Wombgift mình chọn, một trong bốn: Lavish, Ornate, Banded, Signet. Đây là node định hướng: nuôi womb nào thì dồn loại wombgift đó, đừng để drop dàn đều bốn loại trong khi cây craft chỉ ăn một.
+- **Wombgift Quantity**: mỗi rank cho 5% increased Quantity of Wombgifts found, tối đa 8 rank. Bốn mươi phần trăm quantity khi full là nguồn nguyên liệu nền lớn nhất subtree.
+- **Hiveblood Quantity**: mỗi rank cho 5% increased Quantity of Hiveblood found, cũng 8 rank. Hiveblood là vế còn lại của công thức craft, thiếu nó wombgift nằm kho.
+- **Breeding Program**: 100% increased chance tìm thấy loại Wombgift mình chọn, một trong bốn: Lavish, Ornate, Banded, Signet. Node định hướng: nuôi womb nào thì dồn loại wombgift đó, đừng để drop dàn đều bốn loại trong khi cây craft chỉ ăn một.
 
-### Trục Genesis Tree khi cây craft cần thêm point
+### Genesis Tree khi cây craft cần thêm point
 
 Ba notable bơm passive point thẳng vào Genesis Tree — lấy theo đúng hướng output mình muốn.
 
-- **Diverse Control** — Genesis Tree có thêm 2 passive point cho mỗi Womb. Lựa chọn an toàn khi còn chơi rộng nhiều hướng.
-- **Growing Wealth** — thêm 5 passive point cho Currency Womb. Lấy khi farm Breach để bán nguyên liệu và currency là nguồn thu chính.
-- **Exquisite Design** — thêm 5 passive point cho Amulet Womb. Lấy khi mục tiêu là amulet base mới hoặc craft amulet bán.
+- **Diverse Control**: Genesis Tree có thêm 2 passive point cho mỗi Womb. Lựa chọn an toàn khi còn chơi rộng nhiều hướng.
+- **Growing Wealth**: thêm 5 passive point cho Currency Womb. Lấy khi farm Breach để bán nguyên liệu và currency là nguồn thu chính.
+- **Exquisite Design**: thêm 5 passive point cho Amulet Womb. Lấy khi mục tiêu là amulet base mới hoặc craft amulet bán.
 
-### Trục Hive và Ailith khi đã vào Breach Domain
+### Hive và Ailith khi đã vào Breach Domain
 
 Nhóm này chỉ phát huy trong Breach Domain — lấy sau cùng, khi đã có breachstone đều tay.
 
-- **Reactive Hiveseeding** — hoàn thành breach có 10% chance thêm một Hive vào map gần đó. Node duy nhất tạo thêm Hive từ việc chạy breach thường, là cầu nối đưa content domain ra ngoài map.
-- **Swelling Hives** — Breach Hive có thêm một wave Hiveborn Monster. Thêm wave là thêm loot, đổi bằng encounter dài hơn.
-- **Sole Purpose** — chuyên hoá skill của Ailith trong Breach Hive, chọn một: 100% increased damage hoặc 50% increased số lượng skill. Ailith gánh được nhiều hơn thì mình rảnh tay clear.
-- **Provoke the Swarm** — Ailith có thêm skill triệu hồi thêm quái breach, kèm 25% increased số skill của cô trong Hive. Node juice encounter Hive, thêm quái là thêm drop, nhưng cũng thêm áp lực lên chính Ailith. Từ 0.5.3, skill cũ "spawn a small amount of Magic Monsters" đổi thành **spawn 2 packs of Magic Monsters** mỗi đầu wave, tức cú juice đầu wave có giá trị thực rõ rệt thay vì chỉ vài con magic lẻ.
-- **Essence Transference** — :wiki-link{url="https://www.poe2wiki.net/wiki/Essence"} gần breach hoặc trong khu có Hive có 20% chance nhận một Essence of the Breach. Node cross-mechanic cho ai chạy cả Essence lẫn Breach trên cùng map.
-- **Tear Open the Rift** — reveal Breach Stronghold sẽ thêm modifier vào map được reveal, tiêu thêm một breachstone mỗi lần làm vậy. Patch 0.5.1 node thành multichoice bật tắt được. Patch 0.5.3 reshuffled pool mod: **bỏ** mod "Ailith Skill Damage" và "chance to find specific Wombgift types" (hai mod chính bị xem là OP); **thêm 4 mod mới**: "all monsters in Breach Hives are at least Magic", **Dreamer's Sight** (Ailith tạo zone upgrade rarity of monsters đi vào), **Otherworldly Nemesis** (Ailith tạo skill thêm rare-pack đầu mỗi wave), **Xesht's Fervour** (Ailith tăng Effectiveness toàn bộ monsters trong Hive). Bật khi dư breachstone muốn juice map domain, tắt khi đang cạn.
+- **Reactive Hiveseeding**: hoàn thành breach có 10% chance thêm một Hive vào map gần đó. Node duy nhất tạo thêm Hive từ việc chạy breach thường, là cầu nối đưa content domain ra ngoài map.
+- **Swelling Hives**: Breach Hive có thêm một wave Hiveborn Monster. Thêm wave là thêm loot, đổi bằng encounter dài hơn.
+- **Sole Purpose**: chuyên hoá skill của Ailith trong Breach Hive, chọn một: 100% increased damage hoặc 50% increased số lượng skill. Ailith gánh được nhiều hơn thì mình rảnh tay clear.
+- **Provoke the Swarm**: Ailith có thêm skill triệu hồi thêm quái breach, kèm 25% increased số skill của cô trong Hive. Node juice encounter Hive, thêm quái là thêm drop, nhưng cũng thêm áp lực lên chính Ailith. Từ 0.5.3, skill cũ "spawn a small amount of Magic Monsters" đổi thành **spawn 2 packs of Magic Monsters** mỗi đầu wave, tức cú juice đầu wave có giá trị thực rõ rệt thay vì chỉ vài con magic lẻ.
+- **Essence Transference**: :wiki-link{url="https://www.poe2wiki.net/wiki/Essence"} gần breach hoặc trong khu có Hive có 20% chance nhận một Essence of the Breach. Node cross-mechanic cho ai chạy cả Essence lẫn Breach trên cùng map.
+- **Tear Open the Rift**: reveal Breach Stronghold sẽ thêm modifier vào map được reveal, tiêu thêm một breachstone mỗi lần làm vậy. Patch 0.5.1 node thành multichoice bật tắt được. Patch 0.5.3 reshuffled pool mod: **bỏ** mod "Ailith Skill Damage" và "chance to find specific Wombgift types" (hai mod chính bị xem là OP); **thêm 4 mod mới**: "all monsters in Breach Hives are at least Magic", **Dreamer's Sight** (Ailith tạo zone upgrade rarity of monsters đi vào), **Otherworldly Nemesis** (Ailith tạo skill thêm rare-pack đầu mỗi wave), **Xesht's Fervour** (Ailith tăng Effectiveness toàn bộ monsters trong Hive). Bật khi dư breachstone muốn juice map domain, tắt khi đang cạn.
 
 ## Tablet setup đem breach ra ngoài vùng hub
 
-Map quanh Monastery tự có breach, nhưng muốn breach ở map khác thì cần **Breach Tablet** — :wiki-link{url="https://www.poe2wiki.net/wiki/Precursor_tablet"} loại Breach, base "Adds an Otherworldy Breach to a Map" với 10 lần dùng. Tablet bỏ vào **Map Device cùng waystone** khi mở map, hiệu ứng áp lên đúng map đó. Số slot tablet phụ thuộc số mod trên waystone: waystone 1-2 mod cho 1 slot, 3-5 mod cho 2 slot, 6 mod trở lên cho 3 slot — nên roll waystone lên 6 affix vừa juice map vừa mở đủ slot. Tablet cùng loại stack được: nhét hai ba Breach Tablet vào cùng map là map đó ăn nhiều breach hơn. Ngược lại, slot bỏ trống vẫn rải content random vào map, nên chỉ fill đủ slot khi thật sự muốn khoá map vào một loại content.
+Map quanh Monastery tự có breach, nhưng muốn breach ở map khác thì cần **Breach Tablet**, một :wiki-link{url="https://www.poe2wiki.net/wiki/Precursor_tablet"} loại Breach, base "Adds an Otherworldy Breach to a Map" với 10 lần dùng. Tablet bỏ vào **Map Device cùng waystone** khi mở map, hiệu ứng áp lên đúng map đó. Số slot tablet phụ thuộc số mod trên waystone: waystone 1-2 mod cho 1 slot, 3-5 mod cho 2 slot, 6 mod trở lên cho 3 slot — nên roll waystone lên 6 affix vừa juice map vừa mở đủ slot. Tablet cùng loại stack được: nhét hai ba Breach Tablet vào cùng map là map đó ăn nhiều breach hơn. Ngược lại, slot bỏ trống vẫn rải content random vào map, nên chỉ fill đủ slot khi thật sự muốn khoá map vào một loại content.
 
 Bốn suffix roll được trên Breach Tablet, theo thứ tự mình ưu tiên:
 
-- **of the Horde** — breach trong map có 5 tới 15% increased Pack Size. Mod nền tốt nhất: thêm quái là thêm mọi thứ.
-- **of the Invasion** — Unstable Breach spawn thêm một rare khi stabilise. Cộng dồn với Moment of Risk thành đống rare mỗi lần stabilise.
-- **of the Hand** — 5 tới 20% increased Effectiveness của rare breach monster trong map. Rare đáng giá hơn, hợp khi đã stack nguồn rare từ tree và tablet.
-- **of the Commander** — Unstable Breach có 20 tới 50% increased chance chứa Vruun. Mod chuyên farm Vruun, đi cùng Frantic Invasion với Study the Chains.
+- **of the Horde**: breach trong map có 5 tới 15% increased Pack Size. Mod nền tốt nhất: thêm quái là thêm mọi thứ.
+- **of the Invasion**: Unstable Breach spawn thêm một rare khi stabilise. Cộng dồn với Moment of Risk thành đống rare mỗi lần stabilise.
+- **of the Hand**: 5 tới 20% increased Effectiveness của rare breach monster trong map. Rare đáng giá hơn, hợp khi đã stack nguồn rare từ tree và tablet.
+- **of the Commander**: Unstable Breach có 20 tới 50% increased chance chứa Vruun. Mod chuyên farm Vruun, đi cùng Frantic Invasion với Study the Chains.
 
 Tablet mặc định chỉ rớt Normal, Magic hoặc Unique — không Regal lên Rare được. Hai node generic tree mở trần này: **Partial Translation** và **Reverse Transcription** cho phép nâng tablet lên Rare, mỗi node thêm +1 maximum modifier, lấy cả hai là tablet 4 mod. Tablet 4 mod đáng gấp đôi tablet 2 mod cho cùng một slot Map Device, chi tiết thứ tự lấy ở [Sustain map và setup atlas tree endgame](/guides/0-5-endgame-mapping-sustain). Lưu ý khi mua tablet: mấy mod thế hệ cũ kiểu "Breaches in Map contain additional Clasped Hands" đã bị disable vì không còn hoạt động — đừng trả tiền cho dòng mod chết.
 
@@ -120,7 +130,7 @@ Lộ trình từ chưa có gì tới farm ổn định, mỗi bậc có điều 
 
 **Bậc 0, mở hub.** Theo breadcrumb quest xuống phía nam atlas tới The Monastery of the Keepers. Chạy map quanh hub với tư cách map owner để nhận point đầu tiên. Splinter nhặt được cất lại, đừng bán.
 
-**Bậc 1, nền uptime.** Point đầu dồn vào Reality Wound và Shape the Chains. Mục tiêu của bậc này: stabilise được đa số breach gặp. Chưa stabilise đều thì chưa lên bậc — mọi trục sau đều đứng trên việc cán 100% ổn định.
+**Bậc 1, nền uptime.** Point đầu dồn vào Reality Wound và Shape the Chains. Mục tiêu của bậc này: stabilise được đa số breach gặp. Chưa stabilise đều thì chưa lên bậc, mọi nhánh sau đều đứng trên việc cán 100% ổn định.
 
 **Bậc 2, point từ Realm Gate.** Gom 50 splinter nhét vào Realm Gate, thắng lấy 4 point; lặp với 100 rồi 150 splinter lên 6 và 8 point. Point mới đổ vào Moment of Risk và bắt đầu các rank Wombgift Quantity, Hiveblood Quantity.
 
@@ -132,7 +142,7 @@ Lộ trình từ chưa có gì tới farm ổn định, mỗi bậc có điều 
 
 ## Breach Domain và đường tới Pinnacle
 
-Tạo đủ breachstone tại Genesis Tree mở ra **Breach Domain** trên atlas — dùng breachstone hé lộ các map bên trong domain để vào. Map trong domain chứa ba loại encounter. **Breach Hive** có một loạt tường cháy được bằng cách đi xuyên qua; mỗi tường phá tăng số quái của encounter kích hoạt ở trung tâm — đốt nhiều tường trước khi bắt đầu là đánh đổi loot lấy độ khó, tự chọn liều lượng theo build. **Sky Hive** là khu Breachlord dựng pháo đài, một encounter nhiều wave phải thủ **Ailith** trong lúc cô đóng domain; Ailith chết là Hive còn nguyên. Ailith mở dần các năng lực kích hoạt được trong trận — từ gọi mưa đạn xuống Hiveborn, dựng tường lửa, đóng băng quái, tới hồi máu và khiên cho chính cô — chọn kích cái nào lúc nào là phần skill expression của encounter này. **Fortress** là khu có cặp boss **It That Was Tul** và **It That Was Esh** — hạ cả hai cho chìa khoá vào pinnacle boss **Xesht, We That Are One**.
+Tạo đủ breachstone tại Genesis Tree mở ra **Breach Domain** trên atlas, dùng breachstone hé lộ các map bên trong domain để vào. Map trong domain chứa ba loại encounter. **Breach Hive** có một loạt tường cháy được bằng cách đi xuyên qua; mỗi tường phá tăng số quái của encounter kích hoạt ở trung tâm, nên đốt nhiều tường trước khi bắt đầu là đánh đổi loot lấy độ khó, tự chọn liều lượng theo build. **Sky Hive** là khu Breachlord lập pháo đài, một encounter nhiều wave phải thủ **Ailith** trong lúc cô đóng domain; Ailith chết là Hive còn nguyên. Ailith mở dần các năng lực kích hoạt được trong trận, từ gọi mưa đạn xuống Hiveborn, tạo tường lửa, đóng băng quái, tới hồi máu và khiên cho chính cô; chọn kích cái nào lúc nào là phần skill expression của encounter này. **Fortress** là khu có cặp boss **It That Was Tul** và **It That Was Esh**, hạ cả hai cho chìa khoá vào pinnacle boss **Xesht, We That Are One**.
 
 ## Rủi ro khi chạy
 

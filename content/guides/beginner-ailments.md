@@ -5,7 +5,7 @@ title: Ailment và status effect trong POE2
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -20,6 +20,14 @@ tags:
 
 # Ailment và status effect trong POE2
 
+## TL;DR
+
+- Ignite, Bleed, Poison gây DoT trực tiếp; Shock cộng 20% damage nhận vào từ mọi nguồn — kể cả DoT và hit tiếp theo.
+- Poison stack nhiều lần mỗi hit — build hit nhanh nhỏ scale poison mạnh hơn build hit chậm mạnh.
+- Bleed tăng gấp đôi khi đích di chuyển — boss di động chịu bleed nặng hơn hẳn.
+- Electrocute và Freeze nguy hiểm nhất khi bị gây: khoá toàn bộ action 4–5 giây, flask không dùng được.
+- Flask cleanse ailment sau khi bị; gear "cannot be Frozen/Shocked" ngăn từ đầu — ưu tiên khi vào T10+.
+
 Ailment là debuff gắn lên target khi bạn hit bằng đúng damage type — fire hit gây ignite, cold hit gây chill hoặc freeze, lightning hit gây shock hoặc electrocute, physical hit có thể gây **Bleed**, physical và chaos hit có thể gây poison. Người mới hay bỏ qua chúng vì không thấy rõ trong combat, nhưng hiểu ailment cả hai chiều — dùng để sát thương và phòng khi bị gây — là bước đầu tiên phân biệt build mạnh với build trông có vẻ mạnh.
 
 ## Ailment bạn gây ra cho kẻ địch
@@ -30,7 +38,7 @@ Ignite đốt kẻ địch liên tục bằng fire DoT, mạnh bằng 20% fire d
 
 Trong ba ailment này, ignite và bleed dựa vào damage của hit gây ra chúng để tính magnitude — hit mạnh hơn thì DoT mạnh hơn. Poison cũng vậy nhưng ưu thế nằm ở khả năng stack.
 
-Một ailment quan trọng không gây damage trực tiếp là :wiki-link{url="https://www.poe2wiki.net/wiki/Shock"}. Shock khiến kẻ địch nhận thêm 20% damage từ mọi nguồn — kể cả ignite, bleed, poison, và hit tiếp theo. Đây là lý do nhiều build đầu tư lightning damage dù main damage là loại khác: chỉ cần maintain shock trên target là toàn bộ damage output của bạn lên 20%.
+Một ailment quan trọng không gây damage trực tiếp là :wiki-link{url="https://www.poe2wiki.net/wiki/Shock"}. Shock khiến kẻ địch nhận thêm 20% damage từ mọi nguồn — kể cả ignite, bleed, poison, và hit tiếp theo. Nhiều build vì vậy đầu tư lightning damage dù main damage là loại khác — chỉ cần maintain shock trên target là toàn bộ damage output lên 20%.
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Chill"} giảm action speed kẻ địch lên đến 50%, và :wiki-link{url="https://www.poe2wiki.net/wiki/Freeze"} dừng hoàn toàn trong 4 giây. Chill tự apply mỗi khi cold hit đủ mạnh, còn freeze cần tích lũy buildup — boss và rare monster ở map tier cao khó freeze hơn nhiều so với trash mob vì ailment threshold của chúng tăng theo monster level.
 

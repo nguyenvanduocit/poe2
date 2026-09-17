@@ -5,7 +5,7 @@ title: "Phần thưởng quest vĩnh viễn: Spirit, Life và passive points t�
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -20,6 +20,13 @@ tags:
 ---
 
 # Phần thưởng quest vĩnh viễn: Spirit, Life và passive points từ boss
+
+## TL;DR
+
+- Campaign cho **100 Spirit** cộng thẳng từ ba boss kill: King in the Mists +30 (Act 1, bắt buộc), Ignagduk +30 (Azak Bog Act 3, optional — hay bị bỏ lỡ), Lythara +40 (Interlude).
+- **+20 max Life** từ Candlemass ở Ogham Manor (Act 1 optional — dễ bỏ nhất vì không nằm trên đường story chính); **+5% max Life** từ Molten Shrine trong Interlude.
+- Campaign cho **24 điểm Weapon Set Passive Skill Points** từ 12 nguồn — nguồn duy nhất của loại điểm này, không lấy được từ leveling hay endgame.
+- Reward chưa lấy vẫn có thể teleport về qua waypoint bất kỳ lúc nào — boss vẫn spawn và cho reward bình thường.
 
 Campaign POE2 có ba nhóm reward vĩnh viễn gắn với boss kill cụ thể — Spirit, max Life, và Weapon Set Passive Skill Points. Reward này không hiện lên rõ ràng trên map, không có thông báo đặc biệt, và dễ bị bỏ qua khi rush clear story. Kết quả là nhiều người vào endgame với 100 Spirit thiếu, passive tree thiếu hai chục điểm, mà không biết mình đã bỏ lỡ boss nào.
 

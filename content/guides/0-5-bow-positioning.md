@@ -5,7 +5,7 @@ title: Kỹ thuật positioning cho bow build
 status: published
 author: duocnv
 created: '2026-06-11'
-updated: '2026-06-11'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -21,6 +21,15 @@ tags:
 ---
 
 # Kỹ thuật positioning cho bow build
+
+## TL;DR
+
+- Không có penalty accuracy trong 2 mét đầu, penalty tăng đều tới 90% less accuracy khi ngoài 9 mét; band đứng thoải mái nhất là 4–6 mét.
+- Point Blank dồn damage đỉnh vào 3.5 mét đầu (hợp evasion dày), Far Shot đỉnh sau 7 mét nhưng ở đó accuracy đã thủng quanh 64% nên phải stack accuracy bù.
+- Dodge roll là nút phản ứng, không phải nút di chuyển: spam roll không nhanh hơn chạy và hay kẹt animation; sprint để đi, roll để né đòn có telegraph.
+- I-frame của roll không chặn AoE dưới chân, phải lăn ra khỏi vùng phủ; roll cancel được channel như Snipe nên bỏ stage để né rồi bắn lại.
+- Kite chéo hoặc vòng cung thay vì lùi thẳng để xếp pack thành hàng cho pierce với chain; ghim quái bằng Pin, chill hoặc Escape Shot giữ band mà không tốn nhịp bước.
+- Projectile Speed trong POE2 chỉ làm đạn tới đích nhanh hơn, không kéo dài tầm bay.
 
 Bow build trong POE2 không đứng cuối màn hình xả tên như POE1: accuracy rơi dần theo khoảng cách, damage có band tối ưu riêng, và pack map 0.5 dí rất rát. Chỗ đứng vì thế là một kỹ năng phải luyện như mọi stat trên gear. Các kỹ thuật bên dưới áp dụng cho mọi bow build; build tham chiếu là [Pathfinder Herald of Ice Bow](/builds/ranger/0-5-pathfinder-herald-of-ice-bow) mình đã viết.
 
@@ -73,15 +82,6 @@ Trong map thường, lưng luôn hướng về vùng đã dọn sạch. Tiến v
 Breach mở vòng và quái trồi lên quanh mép vòng đang lan — đứng giữa tâm là tự nguyện bị bọc. Men theo rìa phía đã dọn, giữ cho vùng spawn mới luôn nằm về một phía màn hình.
 
 Ritual ụp cả đàn revived vào cùng lúc khi chạm altar, và layout hẹp trong circle không có đường lùi. Trước khi activate, đảo một vòng nhìn địa hình quanh altar, chọn cung ít chướng ngại nhất làm chỗ kite. Chi tiết cơ chế và cách chọn map layout cho Ritual ở [Ritual và Rite of the Nameless](/guides/0-5-ritual-rite-of-the-nameless).
-
-## Tips & Pitfalls
-
-- Đứng cuối màn hình bắn là thói quen POE1 — accuracy penalty 90% ngoài 9 mét trừng phạt nó trực tiếp.
-- Spam roll để di chuyển không nhanh hơn chạy, lại kẹt animation đúng lúc cần né thật. Sprint để đi, roll để né.
-- I-frame của roll không chặn AoE — vòng đỏ dưới chân thì lăn ra khỏi vùng, không phải lăn tại chỗ.
-- Tiếc một phát Snipe full channel khi boss đang ra đòn là lỗi đắt nhất — roll cancel channel luôn, bắn lại sau.
-- Lùi thẳng khi kite là tự kéo pack về phía mình — kite chéo hoặc vòng cung.
-- Roll không qua được gap và chênh lệch độ cao — đừng lấy mép vực làm đường thoát.
 
 ## Relationships
 

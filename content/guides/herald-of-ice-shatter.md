@@ -5,7 +5,7 @@ title: Herald of Ice Shatter
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.0
 sub_class: skills
@@ -22,9 +22,18 @@ tags:
 
 # Herald of Ice Shatter
 
+## TL;DR
+
+- Herald of Ice nổ AoE cold mỗi khi Shatter enemy — 30.9% ladder đang chạy vì rẻ và gom clear toàn màn hình gần như miễn phí.
+- Vụ nổ deal 70% (gem level 1) đến 286% (level 20) damage của cú đánh, convert 100% sang cold.
+- Không tự chain — pack tan vì một cú đánh shatter nhiều enemy frozen cùng lúc, không phải vụ nổ kích vụ nổ tiếp theo.
+- Cần nguồn freeze ngoài; Polcirkeln hạ rào xuống còn chill là đủ proc.
+- Scale mạnh nhất qua: Deadly Herald (+30% more damage) và The Coming Calamity (bỏ cold res enemy trong tầm).
+- Reserve 30 Spirit, cần bất kỳ martial weapon để bật.
+
 :wiki-link{url="https://www.poe2wiki.net/wiki/Herald_of_Ice"} là persistent buff skill tag Buff, Attack, Persistent, AoE, Cold, Herald, Payoff — Tier 4, reserve 30 Spirit, chỉ cần một :wiki-link{url="https://www.poe2wiki.net/wiki/Martial_Weapon"} bất kỳ là bật được. Đây là clear-engine phổ biến nhất league Runes of Aldur: 30.9% ladder cắm nó, gần 1/3 toàn bộ character. Lý do nó đông không phải vì single-target — mà vì mỗi enemy mình :wiki-link{url="https://www.poe2wiki.net/wiki/Shatter"} sẽ nổ một quả cold AoE lớn dọn sạch pack xung quanh, gần như miễn phí.
 
-Điểm hay bị hiểu sai nhất nằm ở nguồn damage của vụ nổ. Vụ nổ không deal một phần máu của con vừa chết, cũng không phải base damage cố định — nó deal **một phần trăm damage của chính cú đánh của mình**, rồi convert 100% sang cold. Hiểu sai chỗ này dẫn tới scale sai hướng, nên bài này gỡ rõ cơ chế trước khi nói tới build.
+Nguồn damage của vụ nổ là chỗ hay bị hiểu sai nhất. Vụ nổ không deal một phần máu của con vừa chết, cũng không phải base damage cố định — nó deal **một phần trăm damage của chính cú đánh của mình**, rồi convert 100% sang cold. Hiểu sai chỗ này dẫn tới scale sai hướng.
 
 ## Vụ nổ deal bao nhiêu và scale theo cái gì
 
@@ -64,13 +73,7 @@ Vụ nổ là một payoff hit nên nó nhận modifier như mọi hit cold atta
 - Gem level: nguồn base damage chính (70% → 286% → cao hơn với +level). Một nguồn +level (Skull Corona +2 minion không tính, nhưng +level all skills/cold skills có) đẩy base lên rõ.
 - Cold/area/pen passive: increased Cold damage và area of effect cộng vào pool increased chung; cold penetration / exposure nhân ở tầng riêng.
 
-Một ví dụ ráp chuỗi ở gem level 20, cú đánh nền 1.000 attack damage: vụ nổ 286% = 2.860 → Deadly Herald ×1.30 = 3.718 cold → trên enemy trong Presence của The Coming Calamity (no ele res) thì 3.718 này ăn trọn không bị cold res cắt. Cộng increased Herald damage (+50–100%) và cold passive vào pool increased, vụ nổ thực tế thừa sức wipe một pack trash mỗi lần shatter. Đó là toàn bộ lý do 30.9% ladder cắm nó: rẻ, mọi martial weapon dùng được, và mọi build có cold/freeze đều shatter sẵn.
-
-## Tổng kết
-
-Herald of Ice là clear-engine của archetype cold/shatter league này, không phải single-target tool. Vụ nổ deal 70–286% damage cú đánh của mình (theo gem level), convert hết sang cold, nên nó scale theo weapon hit + cold + area + Herald-damage modifier, và double-dip đầu tư weapon. Nó không self-chain — pack tan vì một cú đánh shatter nhiều con frozen cùng lúc. Cần một nguồn freeze riêng để proc, và Polcirkeln (chill cũng shatter được) là cách hạ rào dễ nhất.
-
-Open question cho lúc vào sâu league: đo empirical xem hit rate vụ nổ trên boss đơn (một target, không có pack để shatter) đóng góp bao nhiêu DPS thật so với clear — Herald of Ice gần như chỉ là clear payoff, single-target boss vẫn phải dựa vào skill chính.
+Một ví dụ ráp chuỗi ở gem level 20, cú đánh nền 1.000 attack damage: vụ nổ 286% = 2.860 → Deadly Herald ×1.30 = 3.718 cold → trên enemy trong Presence của The Coming Calamity (no ele res) thì 3.718 này ăn trọn không bị cold res cắt. Cộng increased Herald damage (+50–100%) và cold passive vào pool increased, vụ nổ thực tế thừa sức wipe một pack trash mỗi lần shatter. Rẻ, mọi martial weapon dùng được, và mọi build có cold/freeze đều shatter sẵn — vì vậy 30.9% ladder cắm nó. Với boss đơn không có pack, vụ nổ gần như không đóng góp DPS; khi vào league nên đo empirical để xác nhận mức đóng góp thật — single-target vẫn phải dựa vào skill chính.
 
 ## Version History
 

@@ -5,7 +5,7 @@ title: Olroth's Resolve
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 sub_class: items
@@ -20,6 +20,14 @@ tags:
 ---
 
 # Olroth's Resolve
+
+## TL;DR
+
+- Drop từ Olroth Pinnacle boss Expedition; cần Runic Ward để dùng hiệu quả — build không có Ward nhận Guard = 0.
+- Cơ chế: 3 giây hiệu lực regen 2.5–5%/giây Ward (cộng thêm vào base 5%/giây), khi hết → Guard bằng đúng Ward lúc đó trong 10 giây.
+- Guard tối đa khi nhấn flask TRƯỚC đợt damage, Ward còn đầy — nhấn sau khi bị hit ra Guard ít hơn nhiều.
+- "% increased Life Recovery from Flasks" tăng 920 life nhưng KHÔNG tăng Guard — Guard đến từ Ward pool, không từ life recovery.
+- Map mod "No Regeneration" có thể block bonus regen từ flask — log in-game để xác nhận khi gặp mod này.
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Olroth%27s_Resolve"} là unique Ultimate Life Flask, yêu cầu Level 60, drop từ :wiki-link{url="https://www.poe2wiki.net/wiki/Olroth%2C_Origin_of_the_Fall"} Olroth, Origin of the Fall — pinnacle boss Expedition. Trong top-XP của poe.ninja, một phần nhỏ build chọn flask này. Patch 0.5 redesign lại hoàn toàn so với 0.4: bỏ Instant Recovery và cơ chế "Excess Life Recovery as Guard", thay bằng hai mod tương tác trực tiếp với :wiki-link{url="https://www.poe2wiki.net/wiki/Runic_Ward"} Runic Ward — regenerate Ward trong suốt thời gian hiệu lực, rồi chuyển lượng Ward đang có thành :wiki-link{url="https://www.poe2wiki.net/wiki/Guard"} Guard khi hiệu lực kết thúc.
 
@@ -56,9 +64,9 @@ Guard value bằng đúng lượng Ward còn lại lúc flask kết thúc, khôn
 
 ## Guard đạt giá trị tối đa khi Ward còn đầy
 
-Scenario tốt nhất là nhấn flask khi Ward vẫn full. Với max Ward 500: flask bonus regen 7.5–10%/giây giữ Ward ổn định trong 3 giây; khi flask kết thúc, 500 Guard trong 10 giây — một lớp absorb đáng kể cho hầu hết endgame content.
+Scenario tốt nhất là nhấn flask khi Ward vẫn full. Với max Ward 500: flask bonus regen 7.5–10%/giây giữ Ward ổn định trong 3 giây; khi flask kết thúc, 500 Guard trong 10 giây — lớp absorb đủ mạnh cho hầu hết endgame content.
 
-Trong combat thực tế, hit lớn thường đồng thời drops life và depletes Ward, buộc nhấn flask lúc khẩn cấp. Lúc đó Ward đã mất một phần. Flask regen 7.5–10%/giây trong 3 giây từ mức Ward thấp: với max Ward 500 và Ward ban đầu ở 0, flask regen lại 22.5–30% × 500 = 112–150 Ward, tức Guard chỉ 112–150 khi flask hết. Vẫn có Guard, nhưng kém hơn đáng kể so với kịch bản Ward còn đầy.
+Trong combat thực tế, hit lớn thường đồng thời drops life và depletes Ward, buộc nhấn flask lúc khẩn cấp. Lúc đó Ward đã mất một phần. Flask regen 7.5–10%/giây trong 3 giây từ mức Ward thấp: với max Ward 500 và Ward ban đầu ở 0, flask regen lại 22.5–30% × 500 = 112–150 Ward, tức Guard chỉ 112–150 khi flask hết. Vẫn có Guard, nhưng kém hơn rõ so với kịch bản Ward còn đầy.
 
 Chiến thuật tối ưu: nhấn flask trước đoạn nguy hiểm thay vì sau khi đã bị hit. Nhấn khi Ward vẫn còn cao — life recovery 920 chạy song song, Guard đầy đủ sẵn sàng khi 3 giây qua. Build đầu tư max Ward cao hơn (qua :wiki-link{url="https://www.poe2wiki.net/wiki/Ward_Rune"} Ward Rune, :wiki-link{url="https://www.poe2wiki.net/wiki/Charging_Rune"} Charging Rune, passive tree node grant Ward) thì Guard ceiling của flask cũng cao hơn tương ứng.
 

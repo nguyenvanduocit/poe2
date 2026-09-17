@@ -5,7 +5,7 @@ title: Blood Mage Sanguine Tides Flask Sustain
 status: published
 author: duocnv
 created: '2026-05-27'
-updated: '2026-06-09'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.0
 sub_class: skills
@@ -21,7 +21,15 @@ tags:
 
 # Blood Mage Sanguine Tides Flask Sustain
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Sanguine_Tides"} là notable ascendancy passive của Blood Mage chuyển hoá life đã tiêu thành flask charge — và khi flask đầy, tự động consume một phần charge để grant buff physical damage. Điểm cốt lõi là nó không phải cơ chế healing: trong 0.5.0, flasks không recover life gì cả với node này. Toàn bộ vòng lặp hoạt động trên trục charge gen → auto-consume → damage buff, còn life recovery đến từ leech qua :wiki-link{url="https://www.poe2wiki.net/wiki/Vitality_Siphon"}.
+## TL;DR
+
+- Sanguine Tides gen 1 flask charge mỗi 2% max life tiêu vào skill — khi flask đầy, tự consume 40% charge và grant +X% of damage as physical 5 giây.
+- Flask không recover life — recovery thật đến từ Vitality Siphon (20% spell damage leeched as life).
+- Với 4.000 life, Comet (173 mana cost) cho ~2 charge mỗi cast; Gargantuan Flask 75 charge × 40% = +30% phys damage buff.
+- Cast dày là điều kiện cần để loop tự duy trì — CoC Comet là engine lý tưởng vì mỗi trigger tốn nhiều life một lần.
+- Map mod No Leech là fatal: không có recovery nào ngoài Life Remnants khi flask cũng không recover.
+
+:wiki-link{url="https://www.poe2wiki.net/wiki/Sanguine_Tides"} là notable ascendancy passive của Blood Mage chuyển hoá life đã tiêu thành flask charge — và khi flask đầy, tự động consume một phần charge để grant buff physical damage. Nó không phải cơ chế healing: trong 0.5.0, flasks không recover life gì cả với node này. Toàn bộ loop hoạt động theo chuỗi charge gen → auto-consume → damage buff, còn life recovery đến từ leech qua :wiki-link{url="https://www.poe2wiki.net/wiki/Vitality_Siphon"}.
 
 ## Text node sau 0.5.0
 
@@ -40,7 +48,7 @@ Với Sanguimancy active, mỗi spell tốn mana thì đồng thời tốn một
 
 Cụ thể: nhân vật có 4.000 max life thì 2% = 80 life. :wiki-link{url="https://www.poe2wiki.net/wiki/Comet"} ở level 20 tốn 173 mana (và 173 life). Mỗi lần Comet được cast: 173 / 80 ≈ 2 charge — con số xấp xỉ, tuỳ cách game round. Gargantuan Life Flask có 75 charge tổng; 40% auto-consume là 30 charge mỗi lần trigger. Với 2 charge mỗi Comet cast, cần khoảng 15 lần cast để bù lại phần đã mất.
 
-Lý do :wiki-link{url="https://www.poe2wiki.net/wiki/Cast_on_Critical"} Comet là engine lý tưởng cho loop này không phải vì nó cast nhanh theo clock — Cast on Critical trigger theo energy từ critical hit, không theo cooldown cố định. Cái quan trọng hơn là mỗi lần CoC trigger Comet, nó tốn một lượng life lớn (Comet có base mana cost cao nhất trong các spell phổ biến: 173 ở level 20), sinh nhiều charge một lần. Chỉ cần tổng số Comet được fire đủ dày trong 5 giây (thời lượng buff) là vòng lặp tự duy trì.
+Lý do :wiki-link{url="https://www.poe2wiki.net/wiki/Cast_on_Critical"} Comet là engine lý tưởng cho loop này không phải vì nó cast nhanh theo clock — Cast on Critical trigger theo energy từ critical hit, không theo cooldown cố định. Cái quan trọng hơn là mỗi lần CoC trigger Comet, nó tốn một lượng life lớn (Comet có base mana cost cao nhất trong các spell phổ biến: 173 ở level 20), sinh nhiều charge một lần. Chỉ cần tổng số Comet được fire đủ dày trong 5 giây (thời lượng buff) là loop tự duy trì.
 
 Nếu life pool thấp hơn — ví dụ 2.500 life — 2% = 50 life, mỗi Comet cho 173/50 ≈ 3 charge, sinh charge nhanh hơn nhưng tổng pool cũng mỏng hơn. Trade-off này có nghĩa là build không cần bơm life cực cao để loop chạy, nhưng phải cẩn thận về độ an toàn khi đứng nhận damage trong lúc flash không recover life.
 
@@ -50,15 +58,15 @@ Auto-consume 40% charge khi hit at full → 30 charge trong ví dụ Gargantuan 
 
 +30% of damage as physical không phải increased physical, mà là "gain X% of damage as extra physical". Nó cộng phẳng vào mỗi hit tỷ lệ với damage base của hit đó — gần giống cơ chế :wiki-link{url="https://www.poe2wiki.net/wiki/Elemental_Proliferation"} nhưng là physical. Với Comet doing cold damage, 30% của hit đó được thêm vào như physical. Không scale qua physical pen hay physical damage modifier trừ khi mình cũng đầu tư các modifier đó.
 
-Buff này chủ yếu là bonus passive — bạn không chủ động quản lý nó vì trigger là automatic. Điều cần làm là đảm bảo uptime: flask phải được giữ gần đầy liên tục, và bạn phải hit enemy thường xuyên đủ để trigger auto-consume trước khi buff hết.
+Buff này chủ yếu là bonus passive — không cần chủ động quản lý vì trigger là automatic. Điều cần làm là đảm bảo uptime: flask phải được giữ gần đầy liên tục và hit enemy thường xuyên để trigger auto-consume trước khi buff hết.
 
 ## Life recovery không qua flask
 
 "Flasks do not recover Life" là penalty thật: nếu chết vì thiếu recovery, cơ chế này không giúp được gì. Recovery thực sự đến từ :wiki-link{url="https://www.poe2wiki.net/wiki/Vitality_Siphon"} — 20% of Spell Damage Leeched as Life (buffed từ 10% ở 0.5.0). Với Comet damage cao và trigger dày, leech rate này đủ để sustain trong combat bình thường.
 
-Trường hợp nguy hiểm là khi không có enemy để hit (corridor, transition giữa room, hoặc đứng trong aura mà không cast). Lúc đó cả leech lẫn Life Remnant drops đều không có. :wiki-link{url="https://www.poe2wiki.net/wiki/Grasping_Wounds"} — node chuyển 25% hit damage thành delayed loss over 4 giây — giúp buffer damage spike, nhưng không phải full solution. Đây là lý do build cần pool life đủ lớn để chịu burst trước khi leech kịp bù.
+Trường hợp nguy hiểm là khi không có enemy để hit (corridor, transition giữa room, hoặc đứng trong aura mà không cast). Lúc đó cả leech lẫn Life Remnant drops đều không có. :wiki-link{url="https://www.poe2wiki.net/wiki/Grasping_Wounds"} — node chuyển 25% hit damage thành delayed loss over 4 giây — giúp buffer damage spike, nhưng không phải full solution. Build vì vậy cần pool life đủ lớn để chịu burst trước khi leech kịp bù.
 
-Một điểm hay bị nhầm: "Flasks do not recover Life" chỉ tắt recovery từ flask. :wiki-link{url="https://www.poe2wiki.net/wiki/Life_Remnants"} (skill từ Sanguimancy) vẫn cho monster drop remnant khi bị hit và remnant đó vẫn recover life khi collect — đây là source recovery thứ hai ngoài leech.
+"Flasks do not recover Life" chỉ tắt recovery từ flask. :wiki-link{url="https://www.poe2wiki.net/wiki/Life_Remnants"} (skill từ Sanguimancy) vẫn cho monster drop remnant khi bị hit và remnant đó vẫn recover life khi collect — đây là source recovery thứ hai ngoài leech.
 
 ## Optimization
 
@@ -76,7 +84,7 @@ Khi đẩy tier map lên cao, ailment threshold của monster tăng mạnh, CoC 
 
 **CoC trigger sụt ở high-tier:** Như đã nói, ailment threshold scale exponentially theo monster level. 100k damage đủ reliable ở T1, nhưng ở T16 (monster level 80, threshold ~26k) cần damage cao hơn nhiều để energy fill nhanh. Build CoC Comet cần đầu tư damage đủ lớn trước khi đẩy tier.
 
-**Flask management thiếu slot:** Sanguine Tides chỉ track một "Life Flask". Nếu không có life flask trong belt (hoặc life flask hết charge), vòng lặp dừng hẳn — không có charge để consume, không có buff. Đây là failure mode niche nhưng thực tế khi leveling với gear không đủ.
+**Flask management thiếu slot:** Sanguine Tides chỉ track một "Life Flask". Nếu không có life flask trong belt (hoặc life flask hết charge), loop dừng hẳn — không có charge để consume, không có buff. Đây là failure mode niche nhưng thực tế khi leveling với gear không đủ.
 
 ## Version History
 

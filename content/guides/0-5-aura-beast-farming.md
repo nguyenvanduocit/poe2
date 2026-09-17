@@ -5,7 +5,7 @@ title: Farm aura beast cho companion zoo
 status: published
 author: duocnv
 created: '2026-06-15'
-updated: '2026-06-15'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.2
 tags:
@@ -21,6 +21,15 @@ tags:
 ---
 
 # Farm aura beast cho companion zoo
+
+## TL;DR
+
+- Chỉ mod kết thúc bằng chữ "Aura" mới phủ ra cả đàn; All Damage Shocks và các mod self khác chỉ buff đúng con mang nó.
+- Xếp giá trị aura: Extra Physical hoặc Haste trước, rồi Energy Shield hoặc Invulnerability, Temporal Bubble, cuối cùng Elemental Resistance.
+- Haste không bao giờ roll trên con very_fast_movement (Crag Leaper, Hyena Demon, Swarming Wasp, Quadrilla), nên phải lấy từ base chậm như crab.
+- Reservation cố định theo base nên farm zone dễ nhất: Whakapanu cho crab Haste (Act 4), Ashen Forest cho Swarming Wasp 21% (Interlude 3), Vastiri cho Crag Leaper 23.1% (Act 2).
+- Săn bằng essence reset vì rare bị giam khoe mod trước khi thả; tắt minion và mang Prolonged Duration II để kịp giết con beast lúc wisps còn dán.
+- Một con mỗi loại buộc đa dạng base; aura phủ theo bán kính "nearby" nên uptime thực dưới 100%; cắt gem từ L19 cho bot, để dành L20 cho carry.
 
 Aura beast là những con rare beast rẻ nhất game mang một :wiki-link{url="https://www.poe2wiki.net/wiki/Monster_modifier"} dạng "… Aura". Tame con đó bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Tame_Beast"} thì nó thành companion phát aura cho cả đàn lẫn mình mà không gem nào tự bật được. Sức mạnh này nằm ngoài market hoàn toàn vì beast đã tame là account-bound, không bán không mua; cái phải trả là thời gian reset essence ở campaign zone. Character thật đang chạy đúng bốn aura bot: Diretusk Boar gánh Haste, Coconut Crab gánh Extra Physical, Adorned Scarab gánh Energy Shield, Swarming Wasp gánh Periodic Invulnerability. Doc này lo phần logistics săn tụi nó: aura nào đáng giữ, con nào reservation rẻ, farm ở zone nào trong 0.5, và route gom nhanh nhất. Cơ chế tame nền — modifier retention, disenchant, on-screen lock — sống ở [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt).
 
@@ -75,7 +84,7 @@ Hạng giữa (26–33%):
 
 Hạng đắt, chỉ lấy khi con đó gói hai giá trị (39%+):
 
-- :wiki-link{url="https://www.poe2wiki.net/wiki/Diretusk_Boar"} 39%: :wiki-link{url="https://www.poe2wiki.net/wiki/Infested_Barrens"} (Act 3), spawn guaranteed. Roll được Haste, và bản build đang chạy giữ nó vì một body gánh cả Haste Aura lẫn All Damage Shocks; 39% cho hai mod đáng giá vẫn rẻ hơn tách thành một crab Haste cộng một con shock riêng.
+- :wiki-link{url="https://www.poe2wiki.net/wiki/Diretusk_Boar"} 39%: :wiki-link{url="https://www.poe2wiki.net/wiki/Infested_Barrens"} (Act 3), spawn guaranteed. Roll được Haste, và bản companion pack giữ nó vì một body gánh cả Haste Aura lẫn All Damage Shocks; 39% cho hai mod đáng giá vẫn rẻ hơn tách thành một crab Haste cộng một con shock riêng.
 - **Antlion** 42.3%: Infested Barrens (Act 3), spawn guaranteed.
 - :wiki-link{url="https://www.poe2wiki.net/wiki/Quadrilla"} 42.3%: Jungle Ruins (Act 3), rare hiếm. KHÔNG roll Haste, nhưng roll mọi T1 mod khác nên hợp làm máy farm aura ngoài Haste.
 
@@ -110,12 +119,6 @@ Aura phủ theo bán kính "nearby" quanh con bot, mà AI companion tản theo c
 Con tame hỏng aura không vứt được nếu nó đang chiếm con gem đã đầu tư — disenchant gem Tame Beast ở vendor để clear con đã lưu, lấy lại gem trắng giữ nguyên level, quality, socket rồi đi bắt bản khác. Thủ thêm một gem Tame Beast rẻ làm standby để soi mod, chỉ dồn link xịn sang khi đã trúng aura đáng giữ.
 
 Aura bot không ăn gì từ tier damage của gem level cao, nên cắt gem từ Uncut Skill Gem L19 chứ đừng tốn L20 — chênh lệch giá L19 với L20 là vài div cho đúng 0 giá trị trên một con chỉ phát aura. Để dành L20 cho con carry. Còn quality trên companion gem thì đáng làm: mỗi 20% quality cho 10% Reservation Efficiency, :wiki-link{url="https://www.poe2wiki.net/wiki/Gemcutter%27s_Prism"} áp thẳng sau khi capture, đẩy được thêm một bot vào cùng pool spirit.
-
-## Tổng kết
-
-Aura beast farming là lớp sức mạnh team-wide không mua được bằng currency: tame con rare rẻ mang mod "… Aura", mỗi con thành một aura bot phủ buff cho cả đàn lẫn mình. Chỉ mod kết thúc bằng "Aura" mới phủ ra pack — All Damage Shocks dán ailment, các mod self khác chỉ buff con mang nó. Aura đáng nhất là Extra Physical hoặc Haste, rồi Energy Shield hoặc Invulnerability; Haste phải lấy từ base chậm vì con `very_fast_movement` như Crag Leaper, Hyena, Swarming Wasp, Quadrilla không bao giờ roll được nó.
-
-Reservation cố định theo base nên cứ farm zone dễ nhất còn ra đúng con: Whakapanu cho crab Haste (Act 4), Ashen Forest cho Swarming Wasp 21% (Interlude 3), Vastiri cho Crag Leaper 23.1% (Act 2), ba anchor pool mỏng nên con mục tiêu hiện liên tục. Săn bằng essence reset vì rare bị giam khoe mod trước khi thả; tắt minion để khỏi giết con beast sớm, mang Prolonged Duration II nới cửa sổ wisp. Một con mỗi loại buộc đa dạng base; aura "nearby" nên uptime thực dưới 100%; gem L19 đủ cho bot, để dành L20 cho carry.
 
 ## Version History
 

@@ -4,7 +4,7 @@ document_type: farming-strategy
 title: Ritual Tablet Supply Crafting
 status: draft
 created: '2026-06-24'
-updated: '2026-06-24'
+updated: '2026-07-14'
 strategy_tier: B
 investment_tier: Low
 league: '0.5'
@@ -15,51 +15,64 @@ confidence_level: Medium
 
 # Ritual Tablet Supply Crafting
 
-Bán :wiki-link{url="https://www.poe2wiki.net/wiki/Precursor_Tablet"} Ritual cho đám juicer chạy belt/omen, nhưng tiền nằm ở **craft mod reroll**, không ở drop thô. Một ritual tablet rare thô floor ~59 ex (securable, 2026-06-24); cùng tablet đó nếu trúng suffix **"allow rerolling Favours 3 additional times"** bán 6-8 div, kèm thêm "+omen chance" thì 8-11 div. Tier B, investment Low — nhưng đây là strat **cửa sổ đang đóng**: giá mod reroll đã rơi nửa trong một tuần (video 06-06→06-21 quote 13-25 div, live 06-24 còn 6-11 div) và pool securable +3 reroll đang dày 1625 listing. Vào sớm hay đừng vào.
+## TL;DR
 
-## Strategy Overview
+- Bán ritual tablet cho đám juicer chạy belt/omen; tiền nằm ở craft mod reroll, không ở drop thô.
+- Mod định giá: suffix "allow rerolling Favours an additional time" (*of Prayers*, roll 1-3). +3 reroll bán 6-8 div, kèm +omen chance 8-11 div; tablet thô floor ~59 ex.
+- Cách A: mua tablet thô rồi slam exalt (không farm). Cách B: cày tablet supply rồi craft đám ritual nhặt được.
+- Không target riêng ritual tablet được — empty-slot rule rải mọi loại, ritual chỉ ~13-15% lô.
+- Cửa sổ đang đóng: +3 reroll rơi từ ~20 div (video 06-06→06-21) còn 6-11 div (06-24), pool securable đã dày 1625 listing. Vào sớm hay đừng vào.
 
-Trên ritual tablet chỉ **mod ritual** có giá; rarity/gold/waystone/pack size là filler người mua vứt đi. Thứ tự giá trị: **"Ritual Altars allow rerolling Favours an additional time"** (suffix *of Prayers*, roll 1-3 — đây là mod định giá) → **"Ritual Favours have increased chance to be Omens"** → cụm tribute (reduced Tribute to reroll, Monsters Sacrificed grant Tribute, Favours Rerolled chance cost no Tribute, Favours Deferred reappear sooner). Cầu đến từ người chạy [Ritual Belt Hunting](/farming/0-5-ritual-belt-hunting): họ cần reroll thật nhiều lần để quay ra Mageblood/Headhunter nên trả div cho tablet +3 reroll.
+Bán :wiki-link{url="https://www.poe2wiki.net/wiki/Precursor_Tablet"} Ritual cho đám juicer chạy belt/omen, nhưng tiền nằm ở **craft mod reroll**, không ở drop thô. Tier B, investment Low. Một ritual tablet rare thô floor ~59 ex (securable, 2026-06-24); cùng tablet đó nếu trúng suffix "allow rerolling Favours 3 additional times" bán 6-8 div, kèm "+omen chance" thì 8-11 div.
 
-Vì :wiki-link{url="https://www.poe2wiki.net/wiki/Ritual"} là mechanic jackpot số một league (reward chỉ ra Unique hoặc Omen, belt rơi thẳng) và 0.5.2 vừa cắt damage Chaos Volatile của altar lẫn thêm 10 omen vào Mysterious Rites, ai cũng nhảy vào juice ritual — kéo cầu tablet reroll lên. Nhưng cung đuổi kịp rất nhanh: 1625 listing securable cho +3 reroll nghĩa là hàng trăm người đang bán cùng thứ, giá chỉ có một chiều.
+## Mod nào có giá
 
-Có hai cách ra hàng để bán, chọn theo việc mình có muốn cày hay không.
+- Trên ritual tablet chỉ **mod ritual** có giá; rarity/gold/waystone/pack size là filler người mua vứt đi.
+- Thứ tự giá trị: **"Ritual Altars allow rerolling Favours an additional time"** (suffix *of Prayers*, roll 1-3 — mod định giá) → **"Ritual Favours have increased chance to be Omens"** → cụm tribute (reduced Tribute to reroll, Monsters Sacrificed grant Tribute, Favours Rerolled chance cost no Tribute, Favours Deferred reappear sooner).
+- Cầu đến từ người chạy [Ritual Belt Hunting](/farming/0-5-ritual-belt-hunting): họ cần reroll thật nhiều lần để quay ra Mageblood/Headhunter nên trả div cho tablet +3 reroll.
+- :wiki-link{url="https://www.poe2wiki.net/wiki/Ritual"} là mechanic jackpot số một league (reward chỉ ra Unique hoặc Omen, belt rơi thẳng); 0.5.2 cắt damage Chaos Volatile của altar lẫn thêm 10 omen vào Mysterious Rites nên ai cũng nhảy vào juice ritual — kéo cầu tablet reroll lên. Nhưng cung đuổi kịp nhanh: 1625 listing securable cho +3 reroll nghĩa là hàng trăm người bán cùng thứ, giá chỉ có một chiều.
 
 ## Setup
 
-### Cách A: mua tablet thô rồi slam exalt
+Có hai cách ra hàng để bán, chọn theo việc mình có muốn cày hay không.
 
-Hợp nếu chỉ muốn bán ritual tablet mà không farm. Mua rare ritual tablet thô (floor ~59 ex securable — [trade](https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22securable%22%7D%2C%22type%22%3A%22Ritual%20Tablet%22%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D); rẻ hơn nữa nếu mua magic base craft từ đầu), slam :wiki-link{url="https://www.poe2wiki.net/wiki/Exalted_Orb"} đập trúng mod *of Prayers*. Trúng +3 thì list ngay; trúng +1/+2 thì list rẻ hơn hoặc giữ. Cost mỗi lần thử thấp vì tablet trượt vẫn bán lại được sát giá mua. Đây là dòng tiền thuần thị trường — không tốn map, không tốn atlas.
+- **Cách A — mua tablet thô rồi slam exalt.** Hợp nếu chỉ muốn bán mà không farm. Mua rare ritual tablet thô (floor ~59 ex securable — [trade](https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22securable%22%7D%2C%22type%22%3A%22Ritual%20Tablet%22%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D); rẻ hơn nếu mua magic base craft từ đầu), slam :wiki-link{url="https://www.poe2wiki.net/wiki/Exalted_Orb"} đập trúng mod *of Prayers*. Trúng +3 list ngay; +1/+2 list rẻ hoặc giữ. Cost mỗi lần thử thấp vì tablet trượt vẫn bán lại được sát giá mua — dòng tiền thuần thị trường, không tốn map, không tốn atlas.
+- **Cách B — cày tablet supply rồi craft đám ritual.** Cày theo [Tablet Supply Farming](/farming/0-5-tablet-supply-farm) — cắm 3 Irradiated, gom mọi loại tablet trên đường clear — rồi cuối session craft đám Ritual nhặt được. Không cắm ritual tablet để farm ritual tablet: empty-slot rule 0.5.0 cho slot trống gieo league content random, cắm ritual tablet là tự giết nguồn ritual tablet. Không có cách target riêng — đo thực tế ~15 ritual trên ~110 tablet mỗi ~30 map, phần còn lại Breach/Abyss/Temple/Deli. Tiền nền vẫn là fragment + loot thô của tablet supply.
 
-### Cách B: cày tablet supply rồi craft đám ritual
+## Atlas cho phần supply (cách B)
 
-Cày tablet supply theo [Tablet Supply Farming](/farming/0-5-tablet-supply-farm) — cắm 3 Irradiated, gom mọi loại tablet trên đường clear — rồi cuối session craft đám Ritual nhặt được. Không cắm ritual tablet để farm ritual tablet: cơ chế empty-slot 0.5.0 cho slot trống gieo league content random, cắm ritual tablet là tự giết nguồn ritual tablet. **Không có cách target riêng ritual tablet** — đo thực tế ~15 ritual trên ~110 tablet mỗi ~30 map, phần còn lại là Breach/Abyss/Temple/Deli. Ritual chỉ là một phần thu hoạch; tiền nền vẫn là fragment + loot thô của tablet supply.
+- **Mountain Mastery** "50% increased quantity Precursor Tablet" + **Archaeological Interest** (15% quantity tablet).
+- Hai node nâng tablet lên **Rare +1 maximum modifier** (bắt buộc để tự craft 4-mod).
+- Master **Jado**: **Partial Translations** (0.5.2 đổi thành 0-40% increased effect explicit mod trên tablet — đẩy số roll mod reroll lên) + **Long Days** (20% more Random Extra Content). Vị trí node đầy đủ ở [Atlas passive tree gồm những gì](/guides/0-5-atlas-passive-tree).
 
-Atlas cho phần supply: **Mountain Mastery** "50% increased quantity Precursor Tablet" + **Archaeological Interest** (15% quantity tablet) + hai node nâng tablet lên **Rare +1 maximum modifier** (bắt buộc để tự craft 4-mod). Master **Jado**: **Partial Translations** (0.5.2 đổi thành 0-40% increased effect explicit mod trên tablet — đẩy số roll mod reroll lên) + **Long Days** (20% more Random Extra Content). Vị trí node đầy đủ ở [Atlas passive tree gồm những gì](/guides/0-5-atlas-passive-tree).
+## Craft method
 
-### Craft method
+- Magic base: transmute → augment ra 2 mod, trúng *of Prayers* thì Regal + Exalt; trượt thì Alchemy reroll lại.
+- Rare thô đã 4 mod mà sai: 3-to-1 reforge hoặc slam thẳng nếu còn slot trống.
+- Mục tiêu combo bán cao nhất: **+3 reroll + omen chance** (8-11 div — [trade](https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22securable%22%7D%2C%22type%22%3A%22Ritual%20Tablet%22%2C%22stats%22%3A%5B%7B%22type%22%3A%22and%22%2C%22filters%22%3A%5B%7B%22id%22%3A%22explicit.stat_120737942%22%2C%22value%22%3A%7B%22min%22%3A3%7D%7D%2C%7B%22id%22%3A%22explicit.stat_4219853180%22%2C%22value%22%3A%7B%22min%22%3A1%7D%7D%5D%7D%5D%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D)); chỉ +3 reroll với filler rác thì 6-8 div.
+- Đừng tốn currency craft rarity/effectiveness lên ritual tablet — người mua không trả tiền cho dòng đó.
 
-Magic base thì transmute → augment ra 2 mod, trúng *of Prayers* thì Regal + Exalt; trượt thì Alchemy reroll lại. Rare thô đã 4 mod mà sai thì 3-to-1 reforge hoặc slam thẳng nếu còn slot trống. Mục tiêu là combo bán cao nhất: **+3 reroll + omen chance** (8-11 div — [trade](https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22securable%22%7D%2C%22type%22%3A%22Ritual%20Tablet%22%2C%22stats%22%3A%5B%7B%22type%22%3A%22and%22%2C%22filters%22%3A%5B%7B%22id%22%3A%22explicit.stat_120737942%22%2C%22value%22%3A%7B%22min%22%3A3%7D%7D%2C%7B%22id%22%3A%22explicit.stat_4219853180%22%2C%22value%22%3A%7B%22min%22%3A1%7D%7D%5D%7D%5D%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D)); chỉ +3 reroll với filler rác thì 6-8 div. Đừng tốn currency craft rarity/effectiveness lên ritual tablet — người mua không trả tiền cho dòng đó.
+## Build cần gì
 
-### Build Requirements
+- Cách A không cần build — thuần trade.
+- Cách B mượn nguyên ngưỡng của tablet supply: clear-speed-bound, boots ≥30% MS, EHP ≥8-10k để sống trong map đông mechanic juiced. Build companion pack chậm hơn build zoom nên dòng farm thấp hơn ~40% — nếu chỉ định craft thì cách A đỡ phụ thuộc build hơn.
 
-Cách A không cần build — thuần trade. Cách B mượn nguyên ngưỡng của tablet supply: clear-speed-bound, boots ≥30% MS, EHP ≥8-10k để sống trong map đông mechanic juiced. Build companion pack chậm hơn build zoom nên dòng farm thấp hơn ~40% — nếu chỉ định craft thì cách A đỡ phụ thuộc build hơn.
+## Loop craft
 
-## Gameplay
+- Gom (mua hoặc farm) một lô rare/magic ritual tablet, craft từng cuốn nhắm *of Prayers*.
+- Phân loại đầu ra: **+3 reroll + omen** list cao nhất, **+3 reroll** filler list trung bình, **+1/+2 reroll** list rẻ bán nhanh, không-reroll vứt vào lô bán bulk vài ex.
+- List bằng `status: securable` để mua-ngay, narrow stat tới khi search ra ~10-15 listing để định giá đúng đáy thị trường trước khi đặt — pool 1625 listing nghĩa là đặt cao hơn floor một chút là không ai mua.
+- Re-check giá mỗi session: mặt hàng này rơi theo ngày.
 
-Loop ở đây là craft chứ không phải map. Gom (mua hoặc farm) một lô rare/magic ritual tablet, craft từng cuốn nhắm *of Prayers*, phân loại đầu ra: **+3 reroll + omen** list cao nhất, **+3 reroll** filler list trung bình, **+1/+2 reroll** list rẻ bán nhanh, không-reroll vứt vào lô bán bulk vài ex. List bằng `status: securable` để mua-ngay, và narrow stat tới khi search ra ~10-15 listing để định giá đúng đáy thị trường trước khi đặt — pool 1625 listing nghĩa là đặt cao hơn floor một chút là không ai mua. Re-check giá mỗi session: mặt hàng này rơi theo ngày.
-
-## Loot Breakdown & Economic Analysis
+## Kinh tế
 
 Giá live securable 2026-06-24, 1 div ≈ 194 ex (mốc 06-18, div đang biến động — re-check trước khi quy đổi):
 
 - **Input:** rare ritual tablet thô floor ~59-65 ex; magic base rẻ hơn.
 - **+3 reroll, filler secondaries:** floor **6-8 div**, pool **1625 listing** securable.
 - **+3 reroll + omen chance:** floor **8-11 div**, pool 206 listing.
-
-Margin gộp mỗi cuốn trúng là lớn (~59 ex input → ~6 div ≈ 1160 ex output, ~20×), nhưng đó là **per-hit, chưa trừ variance**: *of Prayers* là một suffix S1 trong cả pool ritual suffix, đập trúng đúng giá trị 3 là hiếm — phần lớn lần slam ra +1/+2 hoặc mod khác. Lợi nhuận thực = (giá bán × tỉ lệ trúng) − cost slam − cost rebuy bản trượt. Với cung 1625 listing và giá rơi nửa trong một tuần, kỳ vọng đang co lại nhanh; con số div/giờ của video (giai đoạn giá ~20 div) không còn đúng.
-
-So với việc tự chạy ritual: nếu đã có atlas + DPS để clear ritual, **tự xài tablet quay omen/belt lãi hơn bán tablet thô** — bán xẻng chỉ hơn khi mình thiếu build/atlas để đào vàng, hoặc muốn dòng tiền không phụ thuộc may rủi belt.
+- Margin gộp mỗi cuốn trúng là lớn (~59 ex input → ~6 div ≈ 1160 ex output, ~20×), nhưng đó là **per-hit, chưa trừ variance**: *of Prayers* là một suffix S1 trong cả pool ritual suffix, đập trúng đúng giá trị 3 là hiếm — phần lớn lần slam ra +1/+2 hoặc mod khác. Lợi nhuận thực = (giá bán × tỉ lệ trúng) − cost slam − cost rebuy bản trượt. Với cung 1625 listing và giá rơi nửa trong một tuần, kỳ vọng đang co lại nhanh; con số div/giờ của video (giai đoạn giá ~20 div) không còn đúng.
+- So với việc tự chạy ritual: nếu đã có atlas + DPS để clear ritual, **tự xài tablet quay omen/belt lãi hơn bán tablet thô** — bán xẻng chỉ hơn khi thiếu build/atlas để đào vàng, hoặc muốn dòng tiền không phụ thuộc may rủi belt.
 
 ## Failure Modes
 
@@ -79,3 +92,4 @@ So với việc tự chạy ritual: nếu đã có atlas + DPS để clear ritua
 - **feeds_demand** [Ritual Belt Hunting](/farming/0-5-ritual-belt-hunting) — người chạy belt/omen là người mua tablet +reroll; demand side định giá mặt hàng này.
 - **related_mechanics** [Atlas passive tree gồm những gì](/guides/0-5-atlas-passive-tree) — vị trí Mountain Mastery, Archaeological Interest, node nâng tablet Rare, và Jado Partial Translations.
 - **related_guides** [Ritual và Rite of the Nameless](/guides/0-5-ritual-rite-of-the-nameless) — cơ chế ritual đầy đủ: tribute/reroll/defer và tablet suffix pool mà mod reroll thuộc về.
+</content>

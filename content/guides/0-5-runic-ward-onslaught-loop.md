@@ -5,7 +5,7 @@ title: Runic Ward Onslaught Loop cho Minion
 status: published
 author: duocnv
 created: '2026-06-02'
-updated: '2026-06-09'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 confidence_level: MEDIUM
@@ -28,9 +28,19 @@ tags:
 
 # Runic Ward Onslaught Loop cho Minion
 
-0.5 mở một cách cấp :wiki-link{url="https://www.poe2wiki.net/wiki/Onslaught"} cho cả đội companion bằng chính pool :wiki-link{url="https://www.poe2wiki.net/wiki/Runic_Ward"} của mình: cố tình giữ bản thân ở trạng thái **Low Runic Ward**, và một sceptre rune biến trạng thái đó thành Onslaught vĩnh viễn cho mọi minion trong presence. Loop cắt ngang bốn hệ tách biệt — :wiki-link{url="https://www.poe2wiki.net/wiki/Verisium_Manifestations"} (Kalguuran skill rút ward), :wiki-link{url="https://www.poe2wiki.net/wiki/Warding_Rune_of_Bodyguards"} (rune đổi Low Ward thành Onslaught), pool Runic Ward (nhiên liệu), và tuỳ chọn :wiki-link{url="https://www.poe2wiki.net/wiki/Repulsion"} qua :wiki-link{url="https://www.poe2wiki.net/wiki/Blasphemy"} cho phiên bản rảnh tay.
+## TL;DR
 
-Mọi mắt xích cơ chế của loop đã verify và nó chạy thật. Kết luận thực dụng phụ thuộc roster đã có nguồn Onslaught nào khác chưa. [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — bản nguyên đàn no-weapon-swap đang chơi — cấp Onslaught cho cả đàn qua gloves rune **Carved Majesty** (Onslaught 4s khi hit Marked target, Voltaic Mark giữ uptime gần 100% trên boss), rẻ hơn và không hi sinh lớp đệm 1-life, nên ward-drain loop với build đó là alt-path đã xét và không dùng. Quy tắc chung: Warding Rune of Bodyguards đáng lấy khi không còn nguồn Onslaught nào khác **và** đang ở Low Runic Ward vì một lý do sẵn có — roster chưa sắm marks gloves lẫn parry buckler mới thoả cả hai; lúc đó skill self-clear (Hollow Shell hoặc Spear Stab + Runic Confusion) vốn đã rút ward nên bật Onslaught không tốn thêm gì ngoài một slot rune.
+- Loop giữ bản thân ở Low Runic Ward (ward ≤35% max) để rune Warding Rune of Bodyguards biến trạng thái đó thành Onslaught vĩnh viễn cho mọi minion trong presence.
+- Verisium Manifestations rút ward mỗi khi player hit bằng attack, nên Twister hay Spear Throw của pilot thoả gate trực tiếp, không cần Repulsion lẫn Blasphemy.
+- Onslaught chỉ cho 20% Skill Speed và cộng additive cùng bucket với attack/cast speed đội đã có, nên uplift biên thực chỉ ~11-15%, phần lớn redundant.
+- 0.5 có ít nhất năm nguồn Onslaught cho companion; marks gloves on Marked và parry buckler cho gần đúng buff mà không đụng ward, nên loop này là cách tệ nhất.
+- Chi phí thật là giữ ward ≤35% suốt trận, tức chạy lớp đệm 1-life gần rỗng đúng lúc boss cày DPS dài.
+- Full combo Blasphemy 60 cộng VM 30 tốn ~112.5 effective Spirit sau phạt Trusted Kinship; lõi VM một mình chỉ 37.5.
+- Hai mắt còn phải đo trong client: trigger-chain Repulsion Wave có kích VM không, và VM ở cap 10/10 block hay thay con cũ.
+
+0.5 mở một đường cấp :wiki-link{url="https://www.poe2wiki.net/wiki/Onslaught"} cho cả đội companion bằng chính pool :wiki-link{url="https://www.poe2wiki.net/wiki/Runic_Ward"} của mình: cố tình giữ bản thân ở trạng thái **Low Runic Ward**, và một sceptre rune biến trạng thái đó thành Onslaught vĩnh viễn cho mọi minion trong presence. Loop cắt ngang bốn hệ tách biệt — :wiki-link{url="https://www.poe2wiki.net/wiki/Verisium_Manifestations"} (Kalguuran skill rút ward), :wiki-link{url="https://www.poe2wiki.net/wiki/Warding_Rune_of_Bodyguards"} (rune đổi Low Ward thành Onslaught), pool Runic Ward (nhiên liệu), và tuỳ chọn :wiki-link{url="https://www.poe2wiki.net/wiki/Repulsion"} qua :wiki-link{url="https://www.poe2wiki.net/wiki/Blasphemy"} cho phiên bản rảnh tay.
+
+Mọi mắt xích cơ chế của loop đã verify và nó chạy thật. Kết luận thực dụng phụ thuộc roster đã có nguồn Onslaught nào khác chưa. [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — bản nguyên đàn no-weapon-swap — cho Onslaught tới cả đàn qua gloves rune **Carved Majesty** (Onslaught 4s khi hit Marked target, Voltaic Mark giữ uptime gần 100% trên boss), rẻ hơn và không hi sinh lớp đệm 1-life, nên ward-drain loop với build đó là alt-path đã xét và không dùng. Quy tắc chung: Warding Rune of Bodyguards đáng lấy khi không còn nguồn Onslaught nào khác **và** đang ở Low Runic Ward vì một lý do sẵn có — roster chưa sắm marks gloves lẫn parry buckler mới thoả cả hai; lúc đó skill self-clear (Hollow Shell hoặc Spear Stab + Runic Confusion) vốn đã rút ward nên bật Onslaught không tốn thêm gì ngoài một slot rune.
 
 ## Đường thật là đòn attack của chính mình, không phải minion
 
@@ -46,7 +56,7 @@ Mắt xích thật sự chưa chắc nằm ở chỗ khác: VM kích bằng "Tri
 
 ## Onslaught cộng additive và gần trùng buff đội đã có
 
-Phần thưởng thật là Onslaught cho cả zoo, không phải auto-clear. Onslaught 0.5 = "20% increased Skill Speed and 10% increased movement speed". Skill Speed là trục hợp nhất của POE2, phủ cả attack lẫn cast, nghe rất rộng cho một đội 4–5 companion — nhưng nó **cộng dồn additive** cùng bucket với increased Attack/Cast Speed của minion, không phải một more-multiplier riêng. Và nó gần trùng loại với buff mà zoo điển hình đã chạy: một con Boar rare roll được aura Haste-tương-đương ("Allies in Presence 20% increased Attack and Cast Speed + 10% movement speed") gần như identical về số, cộng Commanding Rage (2% inc Minion Attack Speed mỗi 5 Rage) và Snake Idol (10% inc Attack Speed) cũng đổ vào cùng bucket. Nhồi thêm +20% increased vào một bucket đã chứa ~50%+ thì uplift biên thực chỉ còn ~11–15%, không phải +20%, và phần lớn redundant với cái đội đã có. Việc cộng additive là chắc theo skill-speed mechanic; con số ~11–15% là ước lượng theo bucket giả định, đo lại khi build thật chạy.
+Phần thưởng thật là Onslaught cho cả zoo, không phải auto-clear. Onslaught 0.5 = "20% increased Skill Speed and 10% increased movement speed". Skill Speed là stat gộp của POE2, phủ cả attack lẫn cast, nghe rất rộng cho một đội 4–5 companion, nhưng nó **cộng dồn additive** cùng bucket với increased Attack/Cast Speed của minion, không phải một more-multiplier riêng. Và nó gần trùng loại với buff mà zoo điển hình đã chạy: một con Boar rare roll được aura Haste-tương-đương ("Allies in Presence 20% increased Attack and Cast Speed + 10% movement speed") gần identical về số, cộng Commanding Rage (2% inc Minion Attack Speed mỗi 5 Rage) và Snake Idol (10% inc Attack Speed) cũng đổ vào cùng bucket. Nhồi thêm +20% increased vào một bucket đã chứa ~50%+ thì uplift biên thực chỉ còn ~11–15%, không phải +20%, và phần lớn redundant với cái đội đã có. Cộng additive là chắc theo skill-speed mechanic; con số ~11–15% là ước lượng theo bucket giả định, đo lại khi build thật chạy.
 
 ## Có ít nhất năm cách cấp Onslaught cho companion, và loop này là cách tệ nhất
 
@@ -54,8 +64,8 @@ Phần thưởng thật là Onslaught cho cả zoo, không phải auto-clear. On
 
 - **Gloves: "Companions gain Onslaught for 4 seconds on Hitting your Marked targets"** — build vốn chạy Sniper's Mark / Charged Mark / Mark for Death, nên gần-miễn-phí và không đụng ward; vì proc trên Marked target nên uptime mượt nhất ở single-target/boss, còn lúc clear pack rời rạc thì spottier.
 - **Bucklers: "companions gain Onslaught when you parry"** — build chạy Reputation auto-parry (buckler), parry gần như liên tục → companion ăn Onslaught đều cả clear lẫn boss, cũng không đụng ward. Đây là cái anchor "build đã có sẵn" chắc nhất.
-- **"Companions have 50% chance to gain Onslaught on Kill"** — gần như permanent trong lúc clear.
-- **Sceptres: "Minions in your Presence have Onslaught while you are on Low Runic Ward"** — chính là Warding Rune of Bodyguards, cái loop này dựng cả guồng máy để bật.
+- **"Companions have 50% chance to gain Onslaught on Kill"** — gần permanent trong lúc clear.
+- **Sceptres: "Minions in your Presence have Onslaught while you are on Low Runic Ward"** — chính là Warding Rune of Bodyguards, cái loop này ráp cả guồng máy để bật.
 - **"Companions in your Presence have Onslaught while you are Shapeshifted"** — đường của Druid, không liên quan build này.
 
 Đặt cạnh nhau thì Bodyguards là cái duy nhất bắt **đánh đổi lớp đệm 1-life** và (ở phiên bản rảnh tay) đốt thêm 30–90 Spirit để giữ Onslaught up. Marks gloves (Carved Majesty) hoặc parry buckler cho gần đúng cùng buff mà không hi sinh gì, nên loop chỉ hợp lý khi roster thiếu cả hai nguồn đó — lúc ấy Bodyguards-via-ward mới là nguồn Onslaught **chính** chứ không phải lựa chọn dư, và vì skill self-clear vốn đã rút ward, cái giá còn lại chỉ là một slot rune cộng việc chạy ward cạn.
@@ -112,7 +122,7 @@ Những thứ datamine không giải được, đo trong client trước khi com
 
 - Verify verbatim toàn bộ mảnh từ poe2db.tw live + patch note 0.5.0: VM gate + cost (7–30) Ward + 30 Spirit + 0.5s cd + limit 10 + 8s; Warding Rune of Bodyguards (Lvl 45, Limited 1); Runic Ward hồi 5%/giây; Onslaught 20% Skill Speed / 10% move (additive với attack/cast speed); Trusted Kinship -20% non-Companion reservation (patch note ground truth, wiki mirror stale).
 - Resolve hai chỗ bản đầu để ngỏ: **Low Runic Ward = 35% maximum trở xuống** (trước ghi "chưa nguồn định nghĩa"); **Runic Ward 5%/giây** xác nhận (trước chỉ patch note "independent", không có rate).
-- Bỏ giả định sai về level cap: "Curse does not apply to enemies above level" là cơ chế chung của mọi curse 0.5 (Despair / Enfeeble cùng đường scale 20→78), không phải lỗi riêng Repulsion — không dựng "wall" lên nó.
+- Bỏ giả định sai về level cap: "Curse does not apply to enemies above level" là cơ chế chung của mọi curse 0.5 (Despair / Enfeeble cùng đường scale 20→78), không phải lỗi riêng Repulsion — không ráp "wall" lên nó.
 - Reframe theo cơ chế thật: loop chạy bằng đòn attack của chính pilot (Twister thoả gate trực tiếp), đường minion→Repulsion là thừa + còn mắt trigger-chain chưa test. Sửa luận "uptime nghịch với boss": uptime bám độ liên tục của đòn attack (grace ~4–7s khi ngừng đánh), cost thật là chạy buffer 1-life ở ≤35% suốt fight.
 - Đóng verdict bằng landscape Onslaught: ít nhất năm nguồn cấp companion Onslaught ở 0.5, build đã có parry-buckler + marks-gloves → loop là cách tệ nhất, chỉ đáng khi thiếu mọi nguồn khác.
 

@@ -49,10 +49,17 @@ HEADING: sentence-case tiếng Việt nói thẳng section làm gì (vd "## Toá
 
 KINH TẾ THÔNG TIN (xem CLAUDE.md `## Content Writing Voice`): một worked example / con số / cơ chế giải thích đúng MỘT lần ở section sở hữu nó; chỗ sau chỉ nhắc + dẫn ngược. ĐỪNG lặp cùng phép tính ở How It Works rồi lại Math Chain rồi lại Common Mistakes. Takeaway/Verdict thêm phán xét mới, không recap thân bài. Caveat (verify in-client / wiki lag) nói một lần.
 
-REQUIRED CORE (luôn có, tối thiểu 3): Intro + 1 section cơ chế + 1 section takeaway.
+TL;DR (luôn có, ngay sau H1): 3-7 bullet plain-text gói các quyết định + số then chốt để scan 10 giây.
+  KHÔNG mục lục ("phần 1 nói X") — mỗi bullet là kết luận/con số. KHÔNG wiki-link trong bullet (body giữ link).
+  Thân bài KHÔNG lặp nguyên văn bullet — TL;DR tóm, body giải thích why.
+REQUIRED CORE (luôn có, tối thiểu 3): TL;DR + Intro + 1 section cơ chế + 1 section takeaway.
 OPTIONAL MENU (chỉ thêm khi mechanic cần — trigger dùng-khi/bỏ-khi ở mỗi placeholder dưới).
 Xem chi tiết: .claude/skills/write-mechanic-tutorial/SKILL.md "## Section structure".
 -->
+
+## TL;DR
+
+- (3-7 bullet: quyết định + số then chốt, plain-text, owner-voice, KHÔNG wiki-link, KHÔNG mục lục section)
 
 (Intro 2-4 câu, không heading. Cơ chế là gì + visual/tooltip anchor · xuất hiện/đổi ở patch nào · ai/build đang dùng (named hoặc % poe.ninja) · optional: vì sao quan tâm bây giờ. Câu nào không có nội dung thật thì bỏ.)
 

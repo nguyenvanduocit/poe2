@@ -5,7 +5,7 @@ title: Sustain map và setup atlas tree endgame
 status: published
 author: duocnv
 created: '2026-06-03'
-updated: '2026-06-14'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: endgame-mapping
@@ -23,6 +23,15 @@ tags:
 ---
 
 # Sustain map và setup atlas tree endgame
+
+## TL;DR
+
+- Sustain waystone là nút thắt tuần đầu; đẩy bốn nguồn chồng lên nhau là map nhiều mod, tablet quantity, map boss, và leo tier bằng powerful map boss.
+- Bước nhảy từ 4 lên 5 mod trên map đáng đồng exalt nhất; waystone 3 mod gắn được 2 tablet, đủ 6 mod gắn được 3 tablet.
+- Dừng ở tier 11 (area level 75) để gear trước khi rush T15: item level 75 đã ra gần hết band mod cần, và T11 cho key 4-trial ascendancy ở mức rẻ nhất.
+- Point atlas chỉ ra từ Fortress và không có respec, nên chỉ cần lấy đúng thứ tự: dồn nhóm waystone với rare monster trước vì chúng tự trả lại point.
+- Ba Master swap 4-node tự do trước mỗi map; mở Hilda trước vì mission dễ nhất, rồi Doryani theo corrupted nexus, Jado theo anomaly map.
+- Ba bug đầu league phải né: Abyss keystone Balance of Power (chỉ lấy option thứ tư), Hilda great beast trên map hai boss, và fail encounter Jado có thể brick tiến trình.
 
 Hai thứ đau đầu nhất khi mới vào endgame 0.5 là sustain waystone và lấy point atlas đúng thứ tự. Point atlas giờ chỉ ra từ Fortress — không có respec — nên thứ tự lấy node quyết định tốc độ xây vòng sustain. Guide này đi thẳng vào thực hành: chuỗi drop chance để map tự nuôi map, và đường đi node atlas để đẩy waystone, rare monster, fracturing orb lên sớm nhất.
 

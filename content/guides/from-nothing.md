@@ -5,7 +5,7 @@ title: From Nothing
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 sub_class: items
@@ -21,7 +21,15 @@ tags:
 
 # From Nothing
 
-From Nothing là unique jewel trên base :wiki-link{url="https://www.poe2wiki.net/wiki/Diamond"} Diamond, Corrupted, Limited to 1. Nó không cộng stat trực tiếp — thay vào đó mở khoá các passive nằm quanh một :wiki-link{url="https://www.poe2wiki.net/wiki/Keystone"} Keystone để allocate mà không cần nối vào phần tree đang đi. Keystone đó không cố định: mỗi copy roll ra một keystone riêng từ một pool lớn, và vì item Corrupted nên roll đó khoá luôn, không sửa được. Đây chính là phiên bản POE2 của :wiki-link{url="https://www.poewiki.net/wiki/Impossible_Escape"} Impossible Escape bên POE1. Jewel drop-restricted và Corrupted nhưng socket rộng rãi ở endgame, và lý do nằm hết ở chuyện tiết kiệm điểm passive.
+## TL;DR
+
+- From Nothing là unique Diamond jewel — socket vào passive tree để mở khoá cụm passive quanh một keystone cụ thể mà không cần path tới keystone đó.
+- Mỗi copy Corrupted với một keystone fixed từ pool 33 keystone — xác suất trúng keystone cần thấp, thường mua đúng roll trên trade.
+- Không gỡ downside của keystone: CI khoá life ở 1, Avatar of Fire chặn non-fire, Resolute Technique tắt crit — lấy qua From Nothing giống hệt lấy thường.
+- Drop-restricted từ The King in the Mists (Ritual boss) — không Orb of Chance được.
+- Đáng đeo khi keystone mục tiêu nằm xa trên tree và số điểm tiết kiệm được đủ bù chi phí một slot jewel.
+
+From Nothing là unique jewel trên base :wiki-link{url="https://www.poe2wiki.net/wiki/Diamond"} Diamond, Corrupted, Limited to 1. Nó không cộng stat trực tiếp — thay vào đó mở khoá các passive nằm quanh một :wiki-link{url="https://www.poe2wiki.net/wiki/Keystone"} Keystone để allocate mà không cần nối vào phần tree đang đi. Keystone đó không cố định: mỗi copy roll ra một keystone riêng từ một pool lớn, và vì item Corrupted nên roll đó khoá luôn, không sửa được. Item là phiên bản POE2 của :wiki-link{url="https://www.poewiki.net/wiki/Impossible_Escape"} Impossible Escape bên POE1. Jewel drop-restricted và Corrupted nhưng socket rộng rãi ở endgame, và lý do nằm hết ở chuyện tiết kiệm điểm passive.
 
 ## Chỉ số và base type
 
@@ -43,11 +51,11 @@ breathing deep with joy the exquisite light of meaning."
 
 ## Cách From Nothing kéo một keystone xa về gần
 
-Cơ chế chạy theo một chuỗi mà mỗi bước phụ thuộc bước trước. Đầu tiên, socket From Nothing vào một jewel socket đã allocate trên passive tree. Khi đó mọi passive nằm trong radius Small (1000) quanh chính keystone mà jewel roll ra trở thành allocate-được mà không cần nối vào phần tree bạn đang đi — chúng nổi tự do, bạn vẫn trả điểm cho từng node nhưng không phải path tới chúng.
+Cơ chế chạy theo một chuỗi mà mỗi bước phụ thuộc bước trước. Đầu tiên, socket From Nothing vào một jewel socket đã allocate trên passive tree. Khi đó mọi passive nằm trong radius Small (1000) quanh chính keystone mà jewel roll ra trở thành allocate-được mà không cần nối vào phần tree đang đi — chúng nổi tự do, vẫn trả điểm cho từng node nhưng không phải path tới chúng.
 
-Bản thân keystone không allocate được theo kiểu nổi tự do đó. Nhưng đây mới là chỗ then chốt: allocate một passive sát ngay keystone (passive này jewel đã cho phép lấy không cần nối), thì keystone giờ kề một node đã allocate. Lúc này keystone allocate được theo cách thường — nối vào node vừa lấy. Kết quả cuối: bạn cầm được keystone với đầy đủ hiệu ứng, kể cả mặt downside của nó, mà chỉ tốn điểm cho cụm passive nhỏ quanh nó cộng node keystone, thay vì trả cả con đường dài xuyên tree để pathing tới đó.
+Bản thân keystone không allocate được theo kiểu nổi tự do đó. Nhưng đây mới là chỗ then chốt: allocate một passive sát ngay keystone (passive này jewel đã cho phép lấy không cần nối), thì keystone giờ kề một node đã allocate. Lúc này keystone allocate được theo cách thường — nối vào node vừa lấy. Kết quả cuối: mình cầm được keystone với đầy đủ hiệu ứng, kể cả mặt downside của nó, mà chỉ tốn điểm cho cụm passive nhỏ quanh nó cộng node keystone, thay vì trả cả con đường dài xuyên tree để pathing tới đó.
 
-Lấy ví dụ companion build của mình. :wiki-link{url="https://www.poe2wiki.net/wiki/Trusted_Kinship"} Trusted Kinship nằm trong pool roll của From Nothing — đây đúng là keystone trục của Spirit Walker companion, cho phép field nhiều companion hơn. Một character ở góc tree xa Trusted Kinship, nếu kiếm được copy From Nothing roll ra đúng keystone này, có thể island-grab nó qua một jewel socket gần hơn thay vì pathing cả chục node tới góc keystone — số điểm tiết kiệm được đổ thẳng sang life, ES, hoặc damage node.
+Lấy ví dụ companion build của mình. :wiki-link{url="https://www.poe2wiki.net/wiki/Trusted_Kinship"} Trusted Kinship nằm trong pool roll của From Nothing — đây đúng là keystone chính của Spirit Walker companion, cho phép field nhiều companion hơn. Một character ở góc tree xa Trusted Kinship, nếu kiếm được copy From Nothing roll ra đúng keystone này, có thể island-grab nó qua một jewel socket gần hơn thay vì pathing cả chục node tới góc keystone — số điểm tiết kiệm được đổ thẳng sang life, ES, hoặc damage node.
 
 Cụm passive được mở khoá là cụm quanh chính keystone jewel roll ra, không phải quanh ô jewel. Khi vào client, ướm socket ở vài vị trí allocate khác nhau để xác nhận đường nối ngắn nhất từ tree hiện tại tới cụm keystone — radius Small nghĩa là chỉ vài node sát keystone được free, nên cần đảm bảo một trong số đó thật sự kề keystone.
 
@@ -59,7 +67,7 @@ From Nothing biến chi phí đó thành: một điểm cho jewel socket (mà nh
 
 ## Canh bạc roll keystone
 
-Vì From Nothing Corrupted và rơi với một keystone đã baked sẵn, bạn không chọn được keystone nếu tự farm. Pool roll lớn — 33 keystone, và 0.5 xác nhận trong pool có cả :wiki-link{url="https://www.poe2wiki.net/wiki/Trusted_Kinship"} Trusted Kinship, :wiki-link{url="https://www.poe2wiki.net/wiki/Resolute_Technique"} Resolute Technique, :wiki-link{url="https://www.poe2wiki.net/wiki/Eldritch_Battery"} Eldritch Battery cùng nhiều keystone phòng thủ/tiện ích khác. Tự drop nghĩa là xác suất trúng đúng keystone build cần thấp; cách thực tế là mua thẳng trên trade một copy đã roll ra keystone mình muốn, lọc theo đúng tên keystone trong search.
+Vì From Nothing Corrupted và rơi với một keystone đã baked sẵn, mình không chọn được keystone nếu tự farm. Pool roll lớn — 33 keystone, và 0.5 xác nhận trong pool có cả :wiki-link{url="https://www.poe2wiki.net/wiki/Trusted_Kinship"} Trusted Kinship, :wiki-link{url="https://www.poe2wiki.net/wiki/Resolute_Technique"} Resolute Technique, :wiki-link{url="https://www.poe2wiki.net/wiki/Eldritch_Battery"} Eldritch Battery cùng nhiều keystone phòng thủ/tiện ích khác. Tự drop nghĩa là xác suất trúng đúng keystone build cần thấp; cách thực tế là mua thẳng trên trade một copy đã roll ra keystone mình muốn, lọc theo đúng tên keystone trong search.
 
 Một cái bẫy quan trọng: From Nothing chỉ tiết kiệm đường tới keystone, nó không gỡ bất kỳ downside nào của keystone đó. Nếu jewel roll Chaos Inoculation và bạn allocate, character khoá life ở 1 và mất toàn bộ pool life như bình thường. Nếu là Avatar of Fire, toàn bộ non-fire damage convert hoặc bị chặn. Nếu là Resolute Technique, crit tắt hẳn. Lấy keystone qua From Nothing giống hệt lấy nó bằng path thường về mặt hiệu ứng — chỉ khác ở số điểm bỏ ra.
 
@@ -72,10 +80,6 @@ From Nothing drop-restricted, không :wiki-link{url="https://www.poe2wiki.net/wi
 ## Khi nào không đáng đeo
 
 Keystone mục tiêu vốn đã nằm sát điểm xuất phát của build thì From Nothing gần như không tiết kiệm điểm nào — path thẳng vài node còn rẻ hơn việc bỏ một slot jewel cho nó. Radius Small (1000) cũng giới hạn: chỉ vài node sát keystone được mở khoá, nên nếu không có node free nào thật sự kề keystone thì chuỗi adjacency để lấy keystone không đóng lại được. Và vì Corrupted, một copy roll sai keystone là vĩnh viễn sai — không có đường sửa, chỉ có cách kiếm copy khác hoặc mua đúng roll.
-
-## Tổng kết
-
-Verdict: NEUTRAL — một công cụ point-economy thuần, không phải power spike. From Nothing đáng một slot jewel khi keystone build cần nằm xa trên tree và số điểm path tiết kiệm được (vài điểm tới hơn chục) đủ để bù chi phí một jewel socket. Nó không grant keystone miễn phí và không gỡ downside — chỉ rút ngắn đường tới đó. Phổ biến vì point-efficiency, không phải vì stat trực tiếp. Open question: pool keystone roll-able đổi theo từng patch, nên trước khi mua một roll cụ thể, kiểm lại keystone đó còn trong pool 0.5.1 không.
 
 ## Version History
 
@@ -92,5 +96,5 @@ Item introduced.
 ## Relationships
 
 - **related** [Unique Items Mới](/guides/0-5-new-unique-items) — From Nothing là corrupted jewel chỉnh passive tree, cùng họ "sửa tree" với Voices (thêm jewel socket) được tổng hợp ở đó; bản thân From Nothing có từ 0.1.0, không phải item mới của 0.5.
-- **synergizes_with** [Spirit Walker — Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — Trusted Kinship nằm trong pool roll của From Nothing, nên companion build có thể island-grab keystone trục đó qua một jewel socket gần thay vì pathing tới góc tree.
+- **synergizes_with** [Spirit Walker — Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — Trusted Kinship nằm trong pool roll của From Nothing, nên companion build có thể island-grab keystone chính đó qua một jewel socket gần thay vì pathing tới góc tree.
 - **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — overview league 0.5 chứa nội dung Ritual, nơi The King in the Mists drop ra item này.

@@ -5,7 +5,7 @@ title: "Chết trong POE2: XP penalty, portal rules và Hardcore"
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -19,6 +19,14 @@ tags:
 ---
 
 # Chết trong POE2: XP penalty, portal rules và Hardcore
+
+## TL;DR
+
+- Campaign: chết không mất gì, respawn tại checkpoint, area reset.
+- Endgame (map T1+, area level 65+): mỗi lần chết mất 10% thanh XP — không thể tụt level nhưng level 90+ mất nhiều.
+- Portal mặc định là 6; thêm mod giảm dần — waystone 6 mod chỉ còn 2 portal, tức chỉ được chết 1 lần.
+- Thoát map tự nguyện không tiêu portal — chỉ chết trong map mới mất portal.
+- Chết trong Pinnacle boss không mất XP. Hardcore: chết là character chuyển sang Softcore equivalent, không biến mất.
 
 Chết trong campaign thì không sao. Chết trong endgame thì mất XP. Chết trong Hardcore thì character đi luôn sang Softcore. Ba trường hợp này có cơ chế hoàn toàn khác nhau, và người mới thường không phân biệt được cho đến khi lỡ mất một mớ XP hoặc ngơ ngác không hiểu tại sao map 6-mod chỉ cho phép chết một lần.
 
@@ -60,7 +68,7 @@ Portal mặc định là **6** khi waystone không có modifier. Thêm modifier 
 
 Số portal và số lần chết lệch nhau 1 vì một portal được dùng để vào map lần đầu. Với waystone 6 mod, bạn có 2 portal nhưng chỉ được chết đúng 1 lần — chết lần hai thì không có portal để vào lại.
 
-Đây là lý do map 6-mod nguy hiểm không cân xứng với số modifier: không chỉ quái mạnh và rủi ro hơn, mà còn không có safety net. Một lần chết là mất cả map với tất cả modifier và encounter đã đặt.
+Map 6-mod vì vậy nguy hiểm không cân xứng với số modifier: vừa quái mạnh và rủi ro hơn, vừa không có safety net. Một lần chết là mất cả map với tất cả modifier và encounter đã đặt.
 
 ## Pinnacle boss không mất XP
 

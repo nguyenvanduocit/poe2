@@ -5,7 +5,7 @@ title: Twister
 status: published
 author: duocnv
 created: '2026-05-19'
-updated: '2026-06-09'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.0
 sub_class: skills
@@ -23,9 +23,17 @@ tags:
 
 # Twister
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Twister"} là spear attack skill tag Attack, AoE, Projectile, Duration, Barrageable, Wind — Tier 1, dùng được từ Act 1. Skill không tự đứng được: damage thật đến từ việc consume :wiki-link{url="https://www.poe2wiki.net/wiki/Whirlwind"} mà :wiki-link{url="https://www.poe2wiki.net/wiki/Whirling_Slash"} dựng lên. Không có Whirlwind, Twister chỉ là một projectile tầm thường với 80-232% base attack damage; đủ 3-stage Whirlwind, cùng một cast nhân lên gần 12× damage qua cơ chế consume compound.
+## TL;DR
 
-Hai điểm quyết định output nhưng hay bị hiểu sai nhất: chữ **Gain** trong dòng elemental ground (không phải Convert — đây là added damage trên base, không mất physical), và throttle 0.66 giây same-target (khoá cứng tốc độ hit lên boss bất kể có bao nhiêu projectile trong batch).
+- Twister tự nó yếu (80-232% base). Damage thật đến từ consume Whirlwind mà Whirling Slash tạo ra — đủ 3-stage nhân ~11.87× mỗi cast.
+- Rotation: spin Whirling Slash 3 lần cho Whirlwind đủ 3-stage trên ground rồi mới cast Twister. Cast khi chưa có Whirlwind chỉ ra 1 base twister.
+- Giữ Whirling Slash level 1 cả game — nó chỉ tạo Whirlwind, không đóng damage; level cao chỉ tốn thêm mana và cast time.
+- "Gain 50% cold" là added damage, không phải convert: cả physical node lẫn cold node đều scale Twister trên chilled ground.
+- Throttle 0.66s same-target khoá hit rate lên boss ~1.2 lần/giây bất kể projectile count — boss DPS scale theo damage mỗi twister, không theo count. Stack projectile chỉ tăng clear.
+- Chilled ground lấy từ Fangs of Frost (consume Parried Debuff). Wake of Destruction ra Shocked Ground, vô nghĩa cho cold.
+- Spirit Walker là ascendancy tự nhiên nhất: owl feather empower Twister mỗi lần dodge roll, cycle ~8 giây với Mhacha.
+
+:wiki-link{url="https://www.poe2wiki.net/wiki/Twister"} là spear attack skill tag Attack, AoE, Projectile, Duration, Barrageable, Wind — Tier 1, dùng được từ Act 1. Skill không tự đứng được: damage thật đến từ việc consume :wiki-link{url="https://www.poe2wiki.net/wiki/Whirlwind"} mà :wiki-link{url="https://www.poe2wiki.net/wiki/Whirling_Slash"} tạo ra. Không có Whirlwind, Twister chỉ là một projectile tầm thường với 80-232% base attack damage; đủ 3-stage Whirlwind, cùng một cast nhân lên gần 12× damage qua cơ chế consume compound.
 
 ## Engine hai tầng: Whirling Slash rồi mới Twister
 
@@ -39,11 +47,11 @@ Với 3-stage Whirlwind:
 - Twister từ stage 3: 1.80³ = 5.83× base damage
 - **Tổng một cast đủ 3-stage: ~11.87× base damage**
 
-Đây là số nhân per cast trước crit, accuracy, và enemy resistance. Số nhân này là lý do Twister endgame mạnh không tỷ lệ tuyến tính với gem level: gem level 20 mới cho 232% base attack damage, nhưng chính hệ số consume 11.87× mới gánh phần lớn damage thực. Nếu một Twister đơn của spear endgame đánh ~300 raw, thì một cast đủ 3-stage consume ra ~3.560 raw (300 × 11.87) trước mọi modifier khác — cơ chế consume, không phải gem level, mới là trục damage chính.
+Đây là số nhân per cast trước crit, accuracy, và enemy resistance. Số nhân này là lý do Twister endgame không tăng đều theo gem level: gem level 20 mới cho 232% base attack damage, nhưng chính hệ số consume 11.87× mới gánh phần lớn damage thực. Nếu một Twister đơn của spear endgame đánh ~300 raw, thì một cast đủ 3-stage consume ra ~3.560 raw (300 × 11.87) trước mọi modifier khác — cơ chế consume, không phải gem level, mới là nguồn damage chính.
 
-Rotation bắt buộc: spin Whirling Slash 3 lần trước, Whirlwind đứng đủ 3-stage trên ground, rồi mới cast Twister. Twister consume Whirlwind đang tồn tại trên ground — nếu cast Twister khi chưa có Whirlwind, không có consume nào xảy ra và chỉ ra 1 base twister. Đây là lý do Act 1 feel chậm: chưa có support gem giúp Whirling Slash spin nhanh, mỗi lần chuẩn bị mất 1.5-2 giây.
+Rotation bắt buộc: spin Whirling Slash 3 lần trước, Whirlwind đứng đủ 3-stage trên ground, rồi mới cast Twister. Twister consume Whirlwind đang tồn tại trên ground — nếu cast Twister khi chưa có Whirlwind, không có consume nào xảy ra và chỉ ra 1 base twister. Act 1 feel chậm vì chưa có support gem giúp Whirling Slash spin nhanh, mỗi lần chuẩn bị mất 1.5-2 giây.
 
-Whirling Slash giữ ở level 1 suốt endgame. Nó chỉ làm nhiệm vụ dựng Whirlwind 3-stage, không đóng góp damage trực tiếp. Level cao chỉ tăng mana cost và cast time mà không có giá trị gì thêm cho engine.
+Whirling Slash giữ ở level 1 suốt endgame. Nó chỉ làm nhiệm vụ tạo Whirlwind 3-stage, không đóng góp damage trực tiếp. Level cao chỉ tăng mana cost và cast time mà không có giá trị gì thêm cho engine.
 
 ## Elemental ground: Gain là added damage, không phải Convert
 
@@ -59,7 +67,7 @@ Nguồn Chilled Ground ổn định nhất cho Twister là :wiki-link{url="https
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Wake_of_Destruction"} unique boots hay xuất hiện trong build guide Twister cũ nhưng spawn Shocked Ground (lightning ailment), không phải Chilled Ground. Twister trên Shocked Ground gain 50% lightning — vô nghĩa nếu đang scale cold. Không cắm Wake of Destruction vào gear plan cold Twister.
 
-## Throttle 0.66 giây và tại sao projectile count không scale boss DPS tuyến tính
+## Throttle 0.66 giây khoá hit rate lên boss
 
 Gem text Twister:
 
@@ -79,7 +87,7 @@ Patch 0.5.0 rework toàn bộ hệ Seal cho Salvo, Unleash, Expand, và Freezing
 
 **Từ 0.5.0:** 1 seal mỗi 1 giây, tối đa 6 seals, +1 projectile mỗi seal. Có thể earn seal trong khi đang cast.
 
-Max projectile cộng thêm từ Salvo vẫn là +6 (6 seals × 1 proj). Điểm thay đổi quan trọng là bỏ restriction "không earn seal khi casting" — seal tích liên tục ngay cả khi bạn đang spin Whirling Slash hay cast Twister. Trong combat liên tục, điều này có nghĩa seal không bị "freeze" giữa chừng mỗi khi dùng skill, khiến Salvo nhất quán hơn trong rotation.
+Max projectile cộng thêm từ Salvo vẫn là +6 (6 seals × 1 proj). Điểm thay đổi quan trọng là bỏ restriction "không earn seal khi casting" — seal tích liên tục ngay cả khi bạn đang spin Whirling Slash hay cast Twister. Trong combat liên tục, seal không còn bị "freeze" giữa chừng mỗi khi dùng skill, khiến Salvo nhất quán hơn trong rotation.
 
 Projectile từ Salvo bay random direction — không nhắm được boss. Contribution của Salvo lên boss là nhỏ hơn nhiều so với clear, phù hợp với phân tích throttle ở trên.
 
@@ -100,18 +108,6 @@ Attack speed tăng cast rate nhưng không tăng damage per cast. Weapon set ph�
 Twister trên elemental ground không tạo ailment riêng từ phần 50% Gain. Gain là added damage trên hit, không phải separate ailment source. Freeze build-up cần nguồn riêng: Fangs of Frost, :wiki-link{url="https://www.poe2wiki.net/wiki/Frost_Nexus"} support gem, hoặc Freezing Mark curse.
 
 Modifier "Gain X% of Damage as extra Y" không double-dip với Gain layer của Twister. Class modifier này apply on base hit và không phủ thêm lên phần Gain trong gem text. Tránh cắm :wiki-link{url="https://www.poe2wiki.net/wiki/Xoph%27s_Pyre"} vào socket Twister với mục đích nhân cold gain.
-
-## Lỗi hay gặp
-
-Cast Twister trước khi Whirling Slash dựng đủ Whirlwind trên ground là lỗi phổ biến nhất ở Act 1-2. Không có Whirlwind = không có consume = 1 base twister. Cần spin Whirling Slash ít nhất 3 lần trước mỗi cast Twister để đạt tối đa.
-
-Giữ Whirling Slash level cao endgame chỉ đốt mana và tăng cast time mà không thay đổi gì — Whirling Slash là tool spawn Whirlwind, không phải damage dealer. Level 1 là chuẩn.
-
-Dùng Wake of Destruction để có Chilled Ground không hoạt động — boots đó spawn Shocked Ground. Nếu cần cold Gain, dùng Fangs of Frost consume Parried Debuff hoặc Frost Nexus chain freeze.
-
-Stack projectile count để tăng boss DPS không hiệu quả vì throttle 0.66 giây. Đầu tư damage per twister (flat damage weapon, crit, curse, exposure) hiệu quả hơn nhiều cho boss.
-
-Không dodge đều trong boss fight khiến feather tích đến cap 3 rồi dừng. Feather không earn khi đã full stack — duy trì cadence dodge ~8 giây để cycle liên tục.
 
 ## Version History
 

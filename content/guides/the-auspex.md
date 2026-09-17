@@ -5,7 +5,7 @@ title: The Auspex
 status: published
 author: duocnv
 created: '2026-05-19'
-updated: '2026-06-09'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.0
 sub_class: items
@@ -24,6 +24,16 @@ tags:
 ---
 
 # The Auspex
+
+## TL;DR
+
+- Unique Exquisite Vest (body evasion), Level 65, drop từ loot pool Delirium quanh boss The Raven Trickster.
+- Đóng gói bốn cơ chế độc lập: Mist Raven cull → Frenzy Charge, Presence cộng 1 Gruelling Madness mỗi giây, Lucky Deflect khi Low Life, và 100% increased Attribute Requirements.
+- (210–240)% increased Evasion Rating + (70–120) maximum Life — slot body evasion nặng nhưng vẫn phải gánh thêm life từ slot khác.
+- Low Life là ≤35% HP; Lucky deflect đẩy base 40%→64%, 50%→75%, 60%→84% khi pin permanent qua reservation aura.
+- Doubled Attribute Requirements ép gear thuần Dex — hợp nhất Huntress/Ranger; Monk/Warrior/Witch (Str/Int) bị tax attribute nặng.
+- Gruelling Madness chỉ tích tốt vs boss đứng yên; boss teleport/rush reset stack.
+- Không hợp build swarm minion (chỉ grant một companion) hay kiter xa (mất Presence).
 
 The Auspex là unique Exquisite Vest từ loot pool Delirium, grouped với :wiki-link{url="https://www.poe2wiki.net/wiki/Sadist%27s_Mercy"} Sadist's Mercy, :wiki-link{url="https://www.poe2wiki.net/wiki/Horror%27s_Flight"} Horror's Flight và :wiki-link{url="https://www.poe2wiki.net/wiki/Veilpiercer"} Veilpiercer — tất cả đều liên quan đến The Raven Trickster, boss mới của Delirium trong 0.5.0. Chest đóng gói bốn cơ chế độc lập: con Mist Raven duy nhất với vòng cull-frenzy, vùng :wiki-link{url="https://www.poe2wiki.net/wiki/Presence"} Presence áp Gruelling Madness mỗi giây, :wiki-link{url="https://www.poe2wiki.net/wiki/Deflect"} Deflect trở thành Lucky khi ở :wiki-link{url="https://www.poe2wiki.net/wiki/Low_Life"} Low Life, và attribute requirements nhân đôi toàn bộ gear. Bốn layer này phục vụ archetype evasion-deflect running ở low life — không phải mọi build evasion đều muốn cái đổi trận này.
 
@@ -46,11 +56,11 @@ before him!" That night, a new raven appeared, and
 shadowed the Auspex for the rest of his days.
 ```
 
-(210–240)% increased Evasion Rating trên base Exquisite Vest cho một slot body thuần evasion đóng góp rất lớn vào tổng evasion. Khác với phần lớn unique build-around chỉ một trục, chest còn kèm +(70–120) maximum Life nên không bỏ trống hẳn mặt life — dù vẫn cần gánh thêm life từ slot khác để đủ pool ở endgame.
+(210–240)% increased Evasion Rating trên base Exquisite Vest cho một slot body thuần evasion đóng góp rất lớn vào tổng evasion. Khác với phần lớn unique build-around chỉ một hướng, chest còn kèm +(70–120) maximum Life nên không bỏ trống hẳn mặt life — dù vẫn cần gánh thêm life từ slot khác để đủ pool ở endgame.
 
 ## Mist Raven và vòng cull-frenzy
 
-Mist Raven là companion đơn được chest grant trực tiếp — không phải swarm, không liên quan đến skeleton hay spectre slot. Con chim có một command skill dive: player chủ động ra lệnh để nó lao vào target, tạo burst damage tập trung. Điểm cốt lõi của skill này: **enemy bị Mist Raven cull sẽ grant player :wiki-link{url="https://www.poe2wiki.net/wiki/Frenzy_Charge"} Frenzy Charge**.
+Mist Raven là companion đơn được chest grant trực tiếp — không phải swarm, không liên quan đến skeleton hay spectre slot. Con chim có một command skill dive: player chủ động ra lệnh để nó lao vào target, tạo burst damage tập trung. Điểm chính của skill này: **enemy bị Mist Raven cull sẽ grant player :wiki-link{url="https://www.poe2wiki.net/wiki/Frenzy_Charge"} Frenzy Charge**.
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Frenzy_Charge"} Frenzy Charge trong POE2 cho 4% more damage và 4% attack/cast speed per charge. Class nào không có nguồn Frenzy tự nhiên từ skill hay ascendancy — Huntress, Ranger, một số Warrior build — đều dùng được Raven làm passive charge generator. :wiki-link{url="https://www.poe2wiki.net/wiki/Cull"} Cull kích hoạt ở 35% HP còn lại với enemy thông thường. Loop kín: Raven dive → enemy low HP → Raven cull → player nhận Frenzy → Frenzy buff cả Raven damage → cull nhanh hơn ở tiếp theo.
 
@@ -76,13 +86,13 @@ Với evasion cao từ chest cộng gear evasion từ các slot khác, một bui
 
 100% increased Attribute Requirements làm tăng gấp đôi attribute requirements trên tất cả gear đang trang bị. Một vũ khí cần 120 Dex giờ cần 240. Một helmet cần 80 Str giờ cần 160. Bất kỳ item nào có mixed Str/Int requirements đột nhiên đòi hỏi rất nhiều attribute.
 
-Hệ quả: build dùng Auspex gần như buộc phải đi thuần Dex gear — evasion armour từ đầu đến chân, weapons Dex-based (bow, dagger, claw, spear cho Huntress), ring và amulet ưu tiên Dex hoặc resist/life. Str/Int investment bị doubled requirements nuốt trọn. Đây là lý do Class phù hợp nhất là Huntress (Ranger), vốn cap Dex tự nhiên từ ascendancy và passive tree. Class Str/Int như Warrior hay Witch cần đầu tư attribute rất nặng — không phải không dùng được, nhưng chi phí gear tăng rõ rệt.
+Hệ quả: build dùng Auspex gần như buộc phải đi thuần Dex gear — evasion armour từ đầu đến chân, weapons Dex-based (bow, dagger, claw, spear cho Huntress), ring và amulet ưu tiên Dex hoặc resist/life. Str/Int investment bị doubled requirements nuốt trọn. Vì vậy Class phù hợp nhất là Huntress (Ranger), vốn cap Dex tự nhiên từ ascendancy và passive tree. Class Str/Int như Warrior hay Witch cần đầu tư attribute rất nặng — không phải không dùng được, nhưng chi phí gear tăng rõ rệt.
 
 ## Build archetypes phù hợp
 
 Evasion-deflect Huntress/Ranger là core user tự nhiên: cap Dex sẵn, gear thuần evasion dễ tìm, Deflect dễ đầu tư từ passive tree, và low-life through reservation aura là pattern sẵn có. Raven cull-frenzy stack tốt với attack build vì Frenzy buff cả attack speed lẫn damage.
 
-Monk Martial Artist với [Facebreaker](/guides/facebreaker) là combo hợp lý về concept — Raven utility kết hợp gloves unique cùng patch — nhưng Monk là Str/Int class. Doubled Attribute Requirements sẽ taxing nặng nếu build muốn đeo bất kỳ item Str/Int nào, kể cả Facebreaker (Facebreaker có Str requirement). Khả thi nhưng attribute investment cao hơn bình thường đáng kể.
+Monk Martial Artist với [Facebreaker](/guides/facebreaker) là combo hợp lý về concept — Raven utility kết hợp gloves unique cùng patch — nhưng Monk là Str/Int class. Doubled Attribute Requirements sẽ taxing nặng nếu build muốn đeo bất kỳ item Str/Int nào, kể cả Facebreaker (Facebreaker có Str requirement). Khả thi nhưng attribute investment cao hơn bình thường rõ.
 
 Build swarm minion không hợp vì The Auspex grant đúng một companion duy nhất — lợi thế nằm ở utility của Raven, không phải số lượng. Build kiter xa cũng mất phần Gruelling Madness hoàn toàn vì không ở gần enemy.
 
@@ -96,7 +106,7 @@ Build swarm minion không hợp vì The Auspex grant đúng một companion duy 
 
 **Mist Raven cạnh tranh Spirit**: Nếu build đang run nhiều aura reservation và Trusted Kinship, thêm một companion (Raven) sẽ cắt vào Spirit budget. Cần tính trước reservation khi planning Spirit allocation.
 
-**No Regen map mod**: nếu build dựa vào life flask để maintain low life ổn định, No Regen làm vòng lặp bất ổn.
+**No Regen map mod**: nếu build dựa vào life flask để maintain low life ổn định, No Regen làm loop bất ổn.
 
 ## Version History
 

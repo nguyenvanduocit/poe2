@@ -5,7 +5,7 @@ title: Các loại content trong endgame
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -19,6 +19,14 @@ tags:
 ---
 
 # Các loại content trong endgame
+
+## TL;DR
+
+- Ritual an toàn nhất: quái bị nhốt trong vòng tròn, vào ra lúc nào cũng được.
+- Breach cho loot số lượng lớn nếu clear đủ nhanh — splinter gom đủ thành Breachstone để vào domain.
+- Delirium để dành tới khi build chắc; đẩy sâu khi yếu là chết không cứu được.
+- League mechanic hiện tại là Remnant — mỗi area có 2–10 slot khắc Runic Recipe, quái khó hơn đổi item xịn hơn.
+- Expedition và Recombinator đã tắt trong 0.5 — đừng tìm hai cái này.
 
 Khi vào endgame, mỗi map có thể chứa một hoặc nhiều loại content xếp lên trên. Mỗi loại là một mini-encounter với cách chơi và phần thưởng riêng — biết loại nào cho gì giúp chọn map đáng chạy và không bỏ lỡ reward. Phần lớn content được bật qua Atlas passive tree hoặc tablet gắn vào tháp, nên càng đi sâu vào endgame thì content trong mỗi map càng dày.
 

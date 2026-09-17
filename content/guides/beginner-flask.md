@@ -5,7 +5,7 @@ title: "Flask: cách dùng bình hồi và hệ thống charge"
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -22,13 +22,20 @@ tags:
 
 # Flask: cách dùng bình hồi và hệ thống charge
 
-Flask không phải potion một lần xài rồi bỏ — đây là bình hồi tái sử dụng, hoạt động trên hệ thống charge. Quản lý tốt charge là kỹ năng sống sót đầu tiên cần học, vì flask cạn charge lúc không đúng lúc thì xem như bạn không có flask trong tay.
+## TL;DR
+
+- Charge nạp từ kill, không tự regen theo thời gian — vào boss room mà flask cạn là tay không.
+- Nâng flask tier mỗi vài act khi đủ level — vendor bán đủ tier với giá rẻ, không cần chờ drop.
+- Dùng Orb of Transmutation để roll modifier; Instant Recovery là mod mạnh nhất cho boss.
+- Charm tự bật khi điều kiện triggered (freeze, stun, fire hit) — không thể kích hoạt bằng tay, slot đến từ belt.
+
+Flask không phải potion một lần xài rồi bỏ — đây là bình hồi tái sử dụng, hoạt động trên hệ thống charge. Quản lý tốt charge là kỹ năng sống sót đầu tiên cần học, vì flask cạn charge lúc không đúng lúc thì xem như không có flask trong tay.
 
 ## Charge đến từ kill, không tự nạp lại
 
-Điểm mấu chốt nhất: charge **không tự regen theo thời gian**. Giết quái mới có charge. Quái thường cho ít nhất, quái magic cho nhiều hơn đáng kể, rare và unique cho nhiều nhất — một rare đơn lẻ có thể tương đương hàng chục quái thường về lượng charge nạp được. Ngoài ra **Well** trong town và **Checkpoint** trong dungeon nạp lại flask hoàn toàn khi kích hoạt.
+Điểm mấu chốt nhất: charge **không tự regen theo thời gian**. Giết quái mới có charge. Quái thường cho ít nhất, quái magic cho nhiều hơn hẳn, rare và unique cho nhiều nhất — một rare đơn lẻ có thể tương đương hàng chục quái thường về lượng charge nạp được. Ngoài ra **Well** trong town và **Checkpoint** trong dungeon nạp lại flask hoàn toàn khi kích hoạt.
 
-Hệ quả thực tế: vào boss room mà charge đã cạn từ trước thì coi như tay không. Thói quen đúng là đi qua pack quái trước boss để nạp charge, và nếu wipe thì về checkpoint rồi nạp lại trước khi vào lại.
+Vào boss room mà charge đã cạn từ trước thì coi như tay không. Thói quen đúng là đi qua pack quái trước boss để nạp charge, và nếu wipe thì về checkpoint rồi nạp lại trước khi vào lại.
 
 ## Đổi flask base mỗi vài act
 
@@ -48,7 +55,7 @@ Nếu roll ra modifier không ưng, cách rẻ nhất là mua một flask base n
 
 ## Charm là hệ thống riêng, không phải flask
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Charm"} trông giống flask nhưng hoạt động hoàn toàn khác. Charm **không thể kích hoạt bằng tay** — tự bật khi điều kiện được đáp ứng. Ruby Charm tự kích hoạt khi bạn ăn fire damage, Thawing Charm tự bật khi bị freeze, Stone Charm tự bật khi bị stun. Bạn không nhấn nút — hệ thống tự lo.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Charm"} trông giống flask nhưng hoạt động hoàn toàn khác. Charm **không thể kích hoạt bằng tay** — tự bật khi điều kiện được đáp ứng. Ruby Charm tự kích hoạt khi ăn fire damage, Thawing Charm tự bật khi bị freeze, Stone Charm tự bật khi bị stun. Không nhấn nút — hệ thống tự lo.
 
 Charm slot đến từ **belt**, nhưng chiếm slot riêng biệt với flask. Belt ilvl dưới 30 cho 1 charm slot, ilvl 30-59 cho 1-2 slot, ilvl 60+ cho tối đa 3 slot. Quest Ancient Vows thưởng thêm 1 slot nữa. Charge của charm cũng nạp từ kill và từ Well/Checkpoint giống flask.
 

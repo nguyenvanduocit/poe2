@@ -4,7 +4,7 @@ document_type: farming-strategy
 title: Rite of the Nameless Omen Farm
 status: active
 created: '2026-06-24'
-updated: '2026-06-24'
+updated: '2026-07-14'
 strategy_tier: A
 investment_tier: High
 league: '0.5'
@@ -15,40 +15,65 @@ confidence_level: Medium
 
 # Rite of the Nameless Omen Farm
 
-Cùng cơ chế :wiki-link{url="https://www.poe2wiki.net/wiki/Ritual"} với [Ritual Belt Hunting](/farming/0-5-ritual-belt-hunting) nhưng đảo mục tiêu: thay vì nghiêng unique về belt, strat này juice **pack size tối đa** để gom thật nhiều tribute, quay window thật nhiều lần, biến omen thành dòng thu đều — belt chỉ là jackpot thỉnh thoảng. Đo qua ~20 map (~2.8 giờ) ra ~52 div/giờ, lấy conservative ~45. Tier A, investment cao: ~2.5-3 div/map. Endgame cần atlas sâu, không phải league-start.
+## TL;DR
+
+- Cùng cơ chế Ritual với belt hunting nhưng đảo mục tiêu: juice pack size tối đa để omen thành dòng thu đều, belt chỉ là jackpot thỉnh thoảng.
+- Đo qua ~20 map (~2.8 giờ) ra ~52 div/giờ, conservative ~45. Tier A, investment cao ~2.5-3 div/map, cần atlas sâu — không phải league-start.
+- Atlas dồn pack size > effectiveness > rarity; ritual node Tainted + Between Two Worlds; content wheel rogue exiles + summoning circles.
+- Tablet cốt: Freedom of Faith + Ritual Tablet rare "+3 additional free rolls" ~20-23 div, nhân đôi thành +6 rồi cộng node Rite đẩy map cuối ~22+ reroll.
+- Mỗi window quay reroll → defer → reroll → defer; defer món đắt xuống ~3-3.5k tribute rồi gom cuối map.
+- Waystone ép pure pack size ~48%; làm ritual boss room trước để nhồi boss vào mọi window sau.
+
+Endgame Ritual của [Return of the Ancients](/guides/return-of-the-ancients), Tier A theo [farming tier list](/guides/0-5-farming-strategy-tier-list). Nền thu là omen quay ra mỗi map; :wiki-link{url="https://www.poe2wiki.net/wiki/Freedom_of_Faith"} nhân đôi số reroll, biến pack size thành omen volume.
+
+## Waystone roll gì
+
+- Exalt lên 6 mod, rồi gỡ một item-rarity omen + một chaotic effectiveness để ép guaranteed pack size.
+- Gỡ thêm monster-rarity omen (~2c) → thành pure pack size, mục tiêu ~48%.
+
+## Tablet roll gì
+
+- **Nhân reroll:** :wiki-link{url="https://www.poe2wiki.net/wiki/Freedom_of_Faith"} roll increased-tribute-cost thấp nhất (~11%), nhân đôi số reroll.
+- **Reroll đắt nhất:** Ritual Tablet rare *+3 additional free rolls* ~20-23 div — bị Freedom of Faith nhân đôi thành +6.
+- **Hai tablet phụ ~3-4 div:** *reduced tribute for rerolling favours* + *increased chance to have omens*, lý tưởng có dòng "3/6 chance một favour không tốn tribute" để buyout omen đắt thụ động.
+- Prefix ưu tiên pack size + increased magic monsters — hai dòng cho tribute nhiều nhất.
+
+## Atlas passive spec gì
+
+Atlas dồn hết vào **pack size > effectiveness > rarity**:
+
+- **Forest master** lấy rare monsters, **Swamp master** lấy pack size — nhớ select cả Forest lẫn Swamp.
+- Ritual node **Tainted (Traveller's Woe)** cho jackpot belt.
+- **Between Two Worlds** cho wildwood wisp +30% tribute.
+- Content wheel chọn **rogue exiles + summoning circles** — spawn được trong ritual, thành mob miễn phí. Vị trí node ở [Atlas passive tree gồm những gì](/guides/0-5-atlas-passive-tree).
+
+## Master chọn ai
+
+- **Jado → Partial Translations** — trung bình +20% effect lên mọi tablet, khuếch đại cả tăng-chance-omen lẫn giảm-tribute-reroll.
+
+## Chạy map omen
+
+- Setup: waystone pure pack size ~48%, Freedom of Faith + Ritual Tablet +3 rare + hai tablet phụ, atlas pack size đầy, Jado.
+- Bật `apply item filter to ritual = true` trong `production_config` để filter highlight thẳng omen/unique đáng lấy.
+- Vào map lao thẳng tới **ritual phòng boss và làm nó trước** — mob ritual đầu copy sang mọi ritual sau, nhồi boss vào tất cả window còn lại, mỗi window thêm ~3k tribute.
+- Mở ritual đông mob nhất trước, rồi đi theo đàn locust tím tới các ritual còn lại.
+- Kích Head of the King → chọn **city map** ở rìa ngoài push vào (dễ kiếm hơn nhiều farm 200% deli); trong map mở ra chọn "+20% number of Favours" **đầu tiên** để proliferate toàn chuỗi, buff stack qua từng map.
+- Vài link đầu rush boss nhồi tribute; link sau bỏ qua được vì chỉ thêm ~30 giây.
+- Ở mỗi window quay **reroll → defer → reroll → defer**: defer mọi món đắt để khoá lại với tribute thấp (Mageblood 25k không hiện được nhưng defer hạ xuống ~3-3.5k), hết tay thì select-all bằng tribute dư.
+- Đừng bỏ omen rẻ 1.5-3c: gom hết, một run ra ~278c cộng 33.5 div chỉ từ nhóm này — nguồn lời nhì sau omen đắt.
+
+Cơ chế Head of the King, Rite of the Nameless và defer nói đủ ở [Ritual và Rite of the Nameless](/guides/0-5-ritual-rite-of-the-nameless). Bảng tra tablet/omen + triage nổi trên game (PiP):
 
 ::omen-farm-cheatsheet
 ::
 
-## Strategy hoạt động thế nào
+## Kinh tế
 
-Chuỗi giá trị đi từ số quái: pack size cao cho nhiều tribute, tribute nhiều cho nhiều lần reroll, mỗi lần reroll là một lần xúc xắc ra omen hoặc unique cao cấp. :wiki-link{url="https://www.poe2wiki.net/wiki/Freedom_of_Faith"} nhân đôi số reroll, một tablet ritual "+3 additional free rolls" bị nhân đôi theo thành +6, cộng node Rite of the Nameless đẩy số reroll lên dần mỗi map — map cuối chuỗi quay tới ~22+ lần. Càng nhiều window càng nhiều cửa trúng.
+Giá poe2scout 2026-06-18. Div đang trượt giá nhanh vì 0.5 thiếu divine sink — re-check trước mỗi session.
 
-Khác belt hunting ở hai điểm. Belt hunting nghiêng unique về belt qua **Spreading Darkness** rồi lấy Abyss làm nền thu; strat này bỏ Abyss, dồn toàn bộ atlas vào pack size và lấy **omen volume** làm nền. Master **Jado → Partial Translations** cộng trung bình 20% effect lên mọi tablet, khuếch đại cả tăng-chance-omen lẫn giảm-tribute-reroll. Belt vẫn là jackpot lớn nhất qua ritual loại Tainted, nhưng phần tiền đều đến từ omen quay ra mỗi map.
-
-Mắt xích thứ ba là **defer omen qua item filter**. Bật `apply item filter to ritual = true` trong `production_config`, filter sẽ highlight thẳng omen/unique đáng lấy. Món quá đắt như :wiki-link{url="https://www.poe2wiki.net/wiki/Mageblood"} 25k tribute không hiện được, nhưng bấm Defer hạ nó xuống ~3-3.5k tribute là vừa túi — quay tiếp rồi gom hết ở cuối map. Cơ chế Head of the King, Rite of the Nameless và defer nói đủ ở [Ritual và Rite of the Nameless](/guides/0-5-ritual-rite-of-the-nameless); ở đây chỉ phần khác của góc omen.
-
-## Setup
-
-Atlas dồn hết vào **pack size > effectiveness > rarity**: Forest master lấy rare monsters, Swamp master lấy pack size, nhớ select cả Forest lẫn Swamp. Ritual node lấy **Tainted (Traveller's Woe)** cho jackpot belt và **Between Two Worlds** cho wildwood wisp +30% tribute. Content wheel chọn rogue exiles + summoning circles — chúng spawn được trong ritual, thành mob miễn phí. Vị trí node ba master ở [Atlas passive tree gồm những gì](/guides/0-5-atlas-passive-tree).
-
-Tablet là khoản nặng nhất. **Freedom of Faith** roll increased-tribute-cost thấp nhất (~11%). Một **Ritual Tablet rare "+3 additional free rolls"** ~20-23 div là tablet đắt nhất nhưng cốt của strat. Thêm hai tablet phụ ~3-4 div mang *reduced tribute for rerolling favours* + *increased chance to have omens*, lý tưởng có dòng "3/6 chance một favour không tốn tribute" để buyout omen đắt thụ động. Prefix ưu tiên pack size + increased magic monsters vì hai dòng đó cho tribute nhiều nhất.
-
-Map thì exalt waystone lên 6 mod rồi gỡ một item-rarity omen + một chaotic effectiveness để ép guaranteed pack size; gỡ thêm monster-rarity omen (~2c) thì thành pure pack size, mục tiêu ~48%.
-
-## Gameplay
-
-Vào map lao thẳng tới **ritual phòng boss và làm nó trước**. Rite of the Nameless luôn để một ritual trong boss room, mà mob của ritual đầu copy sang mọi ritual sau — làm boss trước là nhồi boss vào tất cả window còn lại, mỗi window thêm ~3k tribute. Sau đó mở ritual đông mob nhất trước, rồi đi theo đàn locust tím tới các ritual còn lại.
-
-Khi chạy Rite, kích Head of the King rồi chọn **city map** ở rìa ngoài push vào — city map dễ kiếm hơn nhiều so với farm 200% deli. Trong các map mở ra, chọn map "+20% number of Favours" **đầu tiên** để buff proliferate sang toàn chuỗi; buff stack qua từng map. Vài link đầu rush boss để nhồi tribute, link sau bỏ qua được vì chỉ thêm ~30 giây.
-
-Ở mỗi window, vòng quay là **reroll → defer → reroll → defer**, defer mọi món đắt để khoá lại với tribute thấp, hết tay thì select-all bằng tribute dư. Đừng bỏ omen rẻ 1.5-3c: gom hết, một run ra ~278c cộng 33.5 div chỉ từ nhóm này, là nguồn lời nhì sau omen đắt.
-
-## Loot và lời
-
-Nền thu là omen quay ra mỗi map. Giá poe2scout 2026-06-18: :wiki-link{url="https://www.poe2wiki.net/wiki/Omen_of_Whittling"} ~4.5 div (volume dày), Omen of Sinistral Annulment/Erasure ~6.3 div mỗi cái, cặp Dextral ~3.7-4.1 div, Omen of Chance ~8.2 div. Trung bình ~1 omen đắt mỗi map, omen rẻ nhất ~6 div nên riêng omen đã ~3 div/map lời. Cộng tablet phụ rớt lại ~1 div/map, net về ~4-5 div/map sau cost.
-
-Jackpot đến từ belt window loại Tainted: Mageblood ~611 div, :wiki-link{url="https://www.poe2wiki.net/wiki/Headhunter"} ~275 div. Strat này là một trong những đường tốt nhất để chạm hai món đó, và throughput ~45-52 div/giờ chưa tính giá trị kỳ vọng của chúng. Div đang trượt giá nhanh vì 0.5 thiếu divine sink — re-check trước mỗi session.
+- Nền omen mỗi map: :wiki-link{url="https://www.poe2wiki.net/wiki/Omen_of_Whittling"} ~4.5 div (volume dày), Omen of Sinistral Annulment/Erasure ~6.3 div mỗi cái, cặp Dextral ~3.7-4.1 div, Omen of Chance ~8.2 div.
+- Trung bình ~1 omen đắt mỗi map, omen rẻ nhất ~6 div → riêng omen ~3 div/map lời; cộng tablet phụ rớt ~1 div/map, net ~4-5 div/map sau cost.
+- Jackpot belt window Tainted: :wiki-link{url="https://www.poe2wiki.net/wiki/Mageblood"} ~611 div, :wiki-link{url="https://www.poe2wiki.net/wiki/Headhunter"} ~275 div — throughput ~45-52 div/giờ chưa tính EV của chúng.
 
 ## Failure Modes
 

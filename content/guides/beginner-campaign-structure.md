@@ -5,7 +5,7 @@ title: "Cấu trúc campaign: Acts, Interludes, Checkpoint và Waypoint"
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -20,6 +20,14 @@ tags:
 ---
 
 # Cấu trúc campaign: Acts, Interludes, Checkpoint và Waypoint
+
+## TL;DR
+
+- Campaign: Act 1–4 → ba Interlude → Epilogue (Endgame); Act 5/6 chưa ra trong 0.5.
+- Mỗi act mới cắt -10% all elemental res, tổng -60% khi vào Epilogue — kiểm tra res sau mỗi act, bù trước khi đi tiếp.
+- Checkpoint refill full Life, Mana, Flask, Charm khi kích hoạt; teleport được giữa các Checkpoint trong cùng area.
+- Waypoint (phím U) cho di chuyển cross-area; cũng refill flask khi đến gần.
+- Chết softcore không mất gì và boss giữ nguyên máu — respawn ở Checkpoint gần boss thay vì town.
 
 Campaign POE2 không phải một chuỗi act đồng đều mà chia ra làm hai loại nội dung riêng: Act chính kể story, và Interlude lấp khoảng trống dẫn vào Endgame. Nắm rõ cấu trúc này giúp bạn không bị bất ngờ khi resistance đột ngột rớt, hay không biết tại sao character cứ respawn nhầm chỗ sau khi chết.
 

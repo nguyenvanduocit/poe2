@@ -5,7 +5,7 @@ title: "Skill gem và Support gem: hệ thống Uncut Gem của POE2"
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -20,6 +20,14 @@ tags:
 ---
 
 # Skill gem và Support gem: hệ thống Uncut Gem của POE2
+
+## TL;DR
+
+- POE2 bỏ socket màu trên item — skill gem gắn thẳng vào character qua Skills Panel, support gắn vào gem đó.
+- Ba loại Uncut Gem: Skill Gem (skill thường), Spirit Gem (aura/minion persistent, cần Spirit), Support Gem — lựa chọn khi engrave không đổi lại được.
+- Mỗi skill bắt đầu với **2 support slot** — mở thêm tối đa 3 bằng Jeweller's Orb; support slot phân theo attribute (Str/Dex/Int).
+- Gem chỉ nhận XP khi đang gắn trong Skills Panel — cất trong inventory là không level.
+- Dùng Uncut Gem level cao hơn để đẩy gem hiện tại lên level mới; cap là level 20, hoặc 21 nếu corrupt.
 
 POE2 bỏ hoàn toàn hệ thống socket màu trên item. Thay vào đó, mọi skill gắn thẳng vào character qua Skill Gem, và support gắn trực tiếp vào gem đó — item bạn đang cầm không ảnh hưởng gì đến số support slot. Người chơi từ POE1 chuyển qua thường bối rối vì cơ chế trông giống nhưng logic đã khác hoàn toàn: bạn không phải lo màu socket hay số lỗ trên item nữa.
 
@@ -43,16 +51,9 @@ Không thể dùng hai support cùng category trên một skill — ví dụ kh�
 
 Gem level khi character nhận XP — gem phải đang gắn trong Skills Panel mới hấp thu XP. Gem cất trong inventory không level dù character đang grind.
 
-Muốn đẩy gem lên level cao hơn mức hiện tại, dùng thêm một Uncut Skill Gem: right-click vào Uncut Skill Gem rồi chọn nâng level gem hiện có thay vì tạo mới. Uncut Gem phải có level cao hơn gem đang dùng thì mới đẩy lên được. Level tối đa là 20, hoặc 21 nếu gem bị corrupt.
+Muốn đẩy gem lên level cao hơn mức hiện tại, dùng thêm một Uncut Skill Gem: right-click vào Uncut Skill Gem rồi chọn nâng level gem hiện có thay vì tạo mới. Uncut Gem phải có level cao hơn gem đang dùng thì mới đẩy lên được. Level tối đa là 20, hoặc 21 nếu gem bị corrupt. Uncut Gem level thấp vẫn tạo được gem mới — gem tạo ra start ở level thấp rồi level dần theo XP bình thường, không cần chờ drop Uncut Gem level cao.
 
 Skill được cấp từ ascendancy có số support slot tự tăng theo level character — không cần Jeweller's Orb cho những slot đó.
-
-## Tips & Pitfalls
-
-- Đừng engrave khi chưa chắc chắn muốn chơi skill đó. Quyết định không đổi lại được, cần Uncut Gem mới để thử skill khác.
-- Gem phải đang gắn trong Skills Panel thì mới nhận XP. Cất vào inventory là không level dù đang grind.
-- Uncut Gem level thấp vẫn tạo được gem mới — gem tạo ra start ở level thấp rồi level dần theo XP bình thường.
-- Uncut Spirit Gem chỉ dùng cho skill persistent buff. Skill thông thường dùng Uncut Skill Gem, không thể dùng lẫn.
 
 ## Relationships
 

@@ -5,7 +5,7 @@ title: "Gold: kiếm, tiêu và quản lý tài nguyên respec"
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -21,11 +21,19 @@ tags:
 
 # Gold: kiếm, tiêu và quản lý tài nguyên respec
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Gold"} là tài nguyên nền tảng của POE2 — dùng để respec passive tree, mua item từ vendor NPC, đặt lệnh trên Currency Exchange, và thử vận ở Gambler. Không giống phần lớn currency khác, gold không chiếm inventory, không trade được với player, và dùng chung giữa mọi character trong cùng league. Hiểu cách gold hoạt động từ sớm tránh được tình trạng kẹt respec giữa endgame mà không biết tại sao tốn nhiều thế.
+## TL;DR
+
+- Gold thu tự động khi di chuyển — không cần click, không chiếm inventory slot.
+- Dùng chung giữa mọi character trong cùng league — không trade được với player khác.
+- Respec passive tree tốn gold tăng theo level: lv1 ~15g/node, lv50 ~1.089g/node, lv100 >10.000g/node.
+- Vendor bán base item ổn định, Gambler roll ngẫu nhiên — cả hai nhận gold, không nhận orb.
+- Currency Exchange tính phí nhỏ bằng gold mỗi lệnh đặt.
+
+:wiki-link{url="https://www.poe2wiki.net/wiki/Gold"} là tài nguyên cơ bản của POE2 — dùng để respec passive tree, mua item từ vendor NPC, đặt lệnh trên Currency Exchange, và thử vận ở Gambler. Không giống phần lớn currency khác, gold không chiếm inventory, không trade được với player, và dùng chung giữa mọi character trong cùng league. Hiểu cách gold hoạt động từ sớm tránh được tình trạng kẹt respec giữa endgame mà không biết tại sao tốn nhiều thế.
 
 ## Gold tự vào túi khi đi, không cần click
 
-Gold rơi trên sàn nhưng thu tự động khi character di chuyển hoặc dùng movement skill trong tầm với — không cần dừng lại click từng đồng. Trong thực tế điều này có nghĩa là chỉ cần clear bình thường thì gold theo về, không bị bỏ lại trên sàn như item thường.
+Gold rơi trên sàn nhưng thu tự động khi character di chuyển hoặc dùng movement skill trong tầm với — không cần dừng lại click từng đồng. Tức là chỉ cần clear bình thường thì gold theo về, không bị bỏ lại trên sàn như item thường.
 
 Gold cũng không chiếm ô nào trong inventory. Số dư hiển thị ở màn Inventory phía dưới các ô item. Không cần lo "đủ chỗ để nhặt gold" — nó tích lũy không giới hạn mà không ảnh hưởng gì đến inventory space.
 
@@ -39,15 +47,15 @@ Chiều ngược lại cũng đúng: gold không thể trade hay chuyển cho pl
 
 Mỗi node trong :wiki-link{url="https://www.poe2wiki.net/wiki/Passive_Skill_Tree"} có thể thu hồi qua :wiki-link{url="https://www.poe2wiki.net/wiki/Respec"}, nhưng không free. Gold cost mỗi lần thu hồi tăng dần theo level của character — không phải theo loại node hay vị trí trên tree. Level 1 tốn 15g mỗi node, level 50 tốn khoảng 1.089g, level 100 tốn hơn 10.000g. Tất cả node ở cùng level character đều có giá bằng nhau, dù là attribute node hay keystone.
 
-**Attribute travel node** — loại node chỉ cộng stat +30 Strength, Dexterity, hoặc Intelligence để đủ attribute requirement đi tiếp vào tree — có cơ chế riêng. Thay vì thu hồi và lấy lại điểm, bạn có thể đổi attribute của nó (ví dụ từ Strength sang Dexterity) với giá bằng nửa so với respec hoàn toàn. Dùng cơ chế này khi build cần attribute khác mà không muốn respec cả đường đi lên cluster phía trên.
+**Attribute travel node** — loại node chỉ cộng stat +30 Strength, Dexterity, hoặc Intelligence để đủ attribute requirement đi tiếp vào tree — có cơ chế riêng. Thay vì thu hồi và lấy lại điểm, có thể đổi attribute của nó (ví dụ từ Strength sang Dexterity) với giá bằng nửa so với respec hoàn toàn. Dùng cơ chế này khi build cần attribute khác mà không muốn respec cả đường đi lên cluster phía trên.
 
-Hệ quả thực tế là respec sai build lúc mới chơi gần như miễn phí. Respec 20-30 node ở endgame sau khi đã đi sâu vào keystone và cluster — con số gold có thể đáng kể. Plan tree kỹ trước khi commit, xem guide [Passive skill tree: cách đọc và phân bổ điểm](/guides/beginner-passive-tree) để hiểu cách phân bổ điểm hiệu quả từ sớm.
+Respec sai build lúc mới chơi gần như miễn phí. Respec 20-30 node ở endgame sau khi đã đi sâu vào keystone và cluster — con số gold có thể lên tới hàng trăm nghìn. Plan tree kỹ trước khi commit, xem guide [Passive skill tree: cách đọc và phân bổ điểm](/guides/beginner-passive-tree) để hiểu cách phân bổ điểm hiệu quả từ sớm.
 
 ## Vendor NPC và Gambler đều nhận gold
 
 Mỗi town trong campaign có ít nhất một :wiki-link{url="https://www.poe2wiki.net/wiki/Vendor"} và một :wiki-link{url="https://www.poe2wiki.net/wiki/Gambler"}. Cả hai đều bán item đổi lấy gold, không phải currency khác.
 
-Vendor bán base item với stat cố định và stock refresh một phần mỗi khi character lên level. Đây là cách đáng tin cậy để tìm base item tốt khi gear rớt từ monster chưa đủ. Nếu cần một base cụ thể để craft hoặc lên stat, vendor đáng check trước khi bỏ tiền mua trên trade.
+Vendor bán base item với stat cố định và stock refresh một phần mỗi khi character lên level — nguồn đáng tin cậy để tìm base item tốt khi gear rớt từ monster chưa đủ. Nếu cần một base cụ thể để craft hoặc lên stat, vendor đáng check trước khi bỏ tiền mua trên trade.
 
 Gambler khác hoàn toàn: bỏ gold nhận item ngẫu nhiên, rarity và stats đều không cố định. Đây là roll may rủi thuần túy, không có cách dự đoán kết quả. Gold tích lũy nhanh và rẻ hơn currency crafting, nên Gambler là nơi "thử vận" hợp lý khi dư gold và đang muốn tìm item mới cho một slot.
 
@@ -59,7 +67,7 @@ Gambler khác hoàn toàn: bỏ gold nhận item ngẫu nhiên, rarity và stats
 
 Gold rơi từ monster, chest, và đặc biệt từ item drop convert. Một phần lớn item rơi trong game — đặc biệt Normal item (trắng) — không thực sự xuất hiện là item vật lý mà được chuyển thành gold drop thay thế. Tỉ lệ convert này **nghịch với rarity**: Normal item chuyển thành gold nhiều nhất, Magic và Rare ít hơn, Unique gần như không bao giờ bị convert. Unique monster cũng có giới hạn cứng — không quá 50% drop của chúng có thể là gold.
 
-Trong thực tế điều này có nghĩa là bạn tích gold liên tục khi clear map mà không cần làm gì đặc biệt. Khi cần respec lớn và gold không đủ, cách nhanh nhất là clear thêm content bình thường — map có nhiều monster pack dày, area nhiều chest, hoặc content có item density cao. Gold theo về tự nhiên cùng với loot mà không cần farm theo cách đặc biệt nào.
+Tức là tích gold liên tục khi clear map mà không cần làm gì đặc biệt. Khi cần respec lớn và gold không đủ, cách nhanh nhất là clear thêm content bình thường — map có nhiều monster pack dày, area nhiều chest, hoặc content có item density cao. Gold theo về tự nhiên cùng với loot mà không cần farm theo cách đặc biệt nào.
 
 ## Relationships
 

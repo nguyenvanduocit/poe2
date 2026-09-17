@@ -5,7 +5,7 @@ title: "Charms: slot trên belt, cách lấy charges và trigger"
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -20,6 +20,14 @@ tags:
 ---
 
 # Charms: slot trên belt, cách lấy charges và trigger
+
+## TL;DR
+
+- Charm tự trigger khi điều kiện xảy ra — không bấm tay; đảm bảo đủ charges là xong.
+- Belt ilvl 1–29: 1 slot; ilvl 30–59: đến 2 slot; ilvl 60+: đến 3 slot (max 3 charm cùng lúc).
+- Charges nạp từ kill (rare = 5× power, unique = 20 power) và refill đầy ở Checkpoint/Well.
+- Ưu tiên Thawing Charm (freeze) và Staunching Charm (bleed) — hai ailment nguy hiểm nhất khi bị gây.
+- Charm magic có thể roll "Charges gained per Second" — tự nạp dần khi ít quái, hữu ích ở boss corridor.
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Charm"} là lớp phòng thủ chủ động thứ hai bên cạnh flask — nhưng khác flask ở chỗ bạn không bao giờ bấm tay kích hoạt nó. Charm tự nhận ra nguy hiểm và tự bật. Hiểu rõ cơ chế này giúp bạn chọn đúng charm cho từng vùng nội dung thay vì cứ trang bị theo cảm tính.
 
@@ -39,11 +47,11 @@ Belt không phải lúc nào cũng cho đủ charm slot. Số slot phụ thuộc
 
 Tối đa bạn có thể trang bị 3 charm cùng lúc, dù có bao nhiêu slot cũng không vượt qua con số này. Ngoài belt, quest :wiki-link{url="https://www.poe2wiki.net/wiki/Ancient_Vows"} thưởng thêm 1 charm slot — làm sớm khi gặp để có thêm chỗ. Một số passive node trên tree cũng cho thêm slot, nhưng đó là đầu tư endgame.
 
-Hệ quả thực tế khi leveling: belt rẻ tiền act 1 thường ilvl thấp nên chỉ có 1 slot. Khi lên act 3–4, tìm belt ilvl 30+ để mở slot thứ hai — thêm một charm trong campaign là thêm một lớp bảo vệ đáng giá.
+Belt rẻ tiền act 1 thường ilvl thấp nên chỉ có 1 slot. Khi lên act 3–4, tìm belt ilvl 30+ để mở slot thứ hai — thêm một charm trong campaign là thêm một lớp bảo vệ rõ rệt.
 
 ## Charges nạp từ kill và recharge ở Well
 
-Charm dùng charges để kích hoạt, và charges không tự nạp theo thời gian mặc định. Nguồn charges chính là kill quái — mỗi quái cấp cho charm một lượng charges bằng một nửa Power của nó. Quái magic đáng giá gấp đôi quái normal, rare đáng giá gấp 5 lần, unique luôn cho 20 Power. Một pack rare và magic đủ để nạp lại đáng kể.
+Charm dùng charges để kích hoạt, và charges không tự nạp theo thời gian mặc định. Nguồn charges chính là kill quái — mỗi quái cấp cho charm một lượng charges bằng một nửa Power của nó. Quái magic đáng giá gấp đôi quái normal, rare đáng giá gấp 5 lần, unique luôn cho 20 Power. Một pack rare và magic đủ nạp lại phần lớn charges.
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Well"} trong town và :wiki-link{url="https://www.poe2wiki.net/wiki/Checkpoint"} trong map đều nạp charm về đầy hoàn toàn khi kích hoạt — cùng cơ chế với flask.
 

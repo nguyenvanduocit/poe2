@@ -4,12 +4,22 @@ document_type: guide
 title: Tier list các chiến lược farm currency
 status: draft
 created: 2026-06-15
-updated: 2026-06-19
+updated: '2026-07-13'
 league: "0.5"
 patch: "0.5.3"
 ---
 
 # Tier list các chiến lược farm currency
+
+## TL;DR
+
+- Build mạnh chịu 200% delirium thì 200% Delirium Breach/Abyss là xương sống thu nhập; build chưa cứng thì Expedition logbook fishing là cửa S dễ nhất, boss rush là sàn vốn.
+- Nhóm S in tiền đều: 200% Delirium Breach, 200% Delirium Abyss, Ritual City, Expedition logbook fishing (thăng A→S sau chest rework 0.5.3).
+- Ritual City là MVP cả league nhờ khối lượng Omen; đáng bỏ tiền entry và một belt khỏe để cày.
+- Boss rush tụt S→A khi Simulacrum Splinter sụp từ ~4,21 xuống ~2,12 ex, profit còn 12-18 div/giờ cho build zoom.
+- Xếp hạng theo lãi, độ dễ và độ ổn định drop; farm sống bằng cú trúng hiếm như Wisp box, Trial of Chaos, Delirium Emotions bị dìm dù trần thưởng cao.
+- Essence rơi xuống D, cả bảng chỉ còn một loại quanh 1.5-2 div nên đừng dồn thời gian vào.
+- Giá trong bài là snapshot patch-day 0.5.3, re-check trước mỗi session dài vì kinh tế còn xoay.
 
 Endgame 0.5 mở ra gần hai chục cách farm currency khác nhau, và phần lớn thời gian bị phí là do chọn nhầm farm so với độ mạnh của build. Bài này xếp hạng toàn bộ chiến lược mình đã chạy hoặc test trong Runes of Aldur, kèm lý do từng vị trí, để biết nên cắm đầu vào đâu theo trạng thái build và khẩu vị rủi ro. Giá trong bài là ảnh chụp kinh tế patch-day 0.5.3 (2026-06-19, vừa drop) nên còn xoay vài ngày tới — cái cố định là *cơ chế* xếp hạng và các buff/nerf của patch, không phải con số tuyệt đối. Với một build mạnh kiểu [Tame Beast Companion Pack](/builds/huntress/0-5-spirit-walker-companion-pack) chịu được 200% Delirium thì nhóm S-tier raw currency mở thẳng; build yếu hơn thì Expedition logbook fishing và boss rush là cửa vào tốt nhất.
 

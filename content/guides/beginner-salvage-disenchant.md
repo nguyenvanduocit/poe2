@@ -5,7 +5,7 @@ title: "Salvage Bench và Disenchant: cách thu hồi currency từ item cũ"
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -20,7 +20,15 @@ tags:
 
 # Salvage Bench và Disenchant: cách thu hồi currency từ item cũ
 
-Item cũ không còn dùng không phải chỉ để bán lấy Gold. POE2 có hai cơ chế thu hồi currency từ equipment: salvage để lấy quality currency và Artificer's Shard, disenchant để lấy orb shard dựa trên rarity. Hiểu rõ cái nào dùng cho item nào tiết kiệm đáng kể crafting resource, đặc biệt trong giai đoạn campaign.
+## TL;DR
+
+- Salvage Bench (mở sau quest Finding the Forge, Act 1) cho quality currency theo loại item và Artificer's Shard theo số socket; gem và jewellery không salvage được.
+- Cứ **5% quality → 1× quality currency**; mỗi rune socket → **1× Artificer's Shard** (10 shard = 1 Artificer's Orb để thêm socket mới).
+- Rune trong socket bị hủy hoàn toàn khi salvage — gỡ rune trước bằng chuột phải → Remove Rune.
+- Disenchant = bán vào Disenchanter NPC: Magic → Transmutation Shard, Rare → Regal Shard, Unique → Chance Shard.
+- Item rare không có quality và không có socket → disenchant lấy Regal Shard tốt hơn bán Gold.
+
+Item cũ không còn dùng không phải chỉ để bán lấy Gold. POE2 có hai cơ chế thu hồi currency từ equipment: salvage để lấy quality currency và Artificer's Shard, disenchant để lấy orb shard dựa trên rarity. Hiểu rõ cái nào dùng cho item nào tiết kiệm rõ crafting resource, đặc biệt trong giai đoạn campaign.
 
 ## Salvage Bench mở sau quest Finding the Forge ở Act 1
 
@@ -47,7 +55,7 @@ Ba loại currency đầu (Whetstone, Etcher, Scrap) dùng để tăng quality c
 
 Cứ 5% quality thì nhận 1x quality currency. Item 20% quality cho 4x, item 15% quality cho 3x. Ngoài ra còn có xác suất nhận thêm 1x cho phần quality lẻ giữa các mốc 5% — ví dụ item 17% quality có thể cho 3x hoặc 4x.
 
-Ngoài quality currency, mỗi **rune socket** trên item cho thêm **1x :wiki-link{url="https://www.poe2wiki.net/wiki/Artificer%27s_Shard"}**. Tích 10 shard thành 1 :wiki-link{url="https://www.poe2wiki.net/wiki/Artificer%27s_Orb"}, dùng để thêm socket vào equipment. Đây là lý do item có socket luôn đáng salvage hơn bán vendor, kể cả khi quality bằng 0.
+Ngoài quality currency, mỗi **rune socket** trên item cho thêm **1x :wiki-link{url="https://www.poe2wiki.net/wiki/Artificer%27s_Shard"}**. Tích 10 shard thành 1 :wiki-link{url="https://www.poe2wiki.net/wiki/Artificer%27s_Orb"}, dùng để thêm socket vào equipment. Item có socket luôn đáng salvage hơn bán vendor, kể cả khi quality bằng 0.
 
 ## Rune trong socket bị phá hủy hoàn toàn khi salvage
 

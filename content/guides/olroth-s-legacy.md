@@ -5,7 +5,7 @@ title: Olroth's Legacy
 status: published
 author: duocnv
 created: '2026-05-10'
-updated: '2026-06-09'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.0
 sub_class: crafting
@@ -21,6 +21,14 @@ tags:
 ---
 
 # Olroth's Legacy
+
+## TL;DR
+
+- Áp lên unique Ezomyte hoặc Kalguuran: unique bị phá vĩnh viễn, một mod đặc trưng thành rune gắn vào item cùng class.
+- Phá chỉ extract MỘT mod — unique có 1 mod thống trị là target tốt; nhiều mod tốt ngang nhau là target tệ.
+- Mod convert sang rune đôi khi bị giảm value — tính ở mức "một phần mod gốc", không assume full 100%.
+- Target nổi bật: Svalinn (lucky block shield), Quill Rain (100% local AS không kéo theo less-damage), Keeper of the Arc (40% less damage helmet), Irongrasp (Iron Grip hoặc Iron Will keystone).
+- Class restriction tuyệt đối: rune từ bow chỉ về bow, từ shield chỉ về shield, không có exception.
 
 Olroth's Legacy là rune dùng một lần: áp nó lên một unique thuộc nhóm **Ezomyte** hoặc **Kalguuran**, unique đó bị phá huỷ vĩnh viễn, và một modifier đặc trưng của nó được đúc thành một socketable rune mang tên "Legacy of \<unique\>". Rune đó gắn vào item **cùng class** với unique gốc. Về mặt thiết kế, đây là cơ chế transplant mod — lấy một mod đỉnh ra khỏi unique có base rác, dán nó lên một base crafted tốt hơn nhiều. Patch 0.5.0 thêm hơn 60 loại rune theo cơ chế này, tức gần như mọi unique Ezomyte/Kalguuran trong game đều có một rune tương ứng.
 
@@ -42,7 +50,7 @@ Hệ quả kinh tế: unique thuộc loại này tăng giá league vì demand đ
 
 **Svalinn (shield).** Unique này chỉ có một mod thật sự là lý do tồn tại: *Chance to Block Damage is Lucky*. Lucky block tức là roll block chance hai lần và lấy lần tốt hơn — công thức effective là 1 − (1 − p)², nên base 50% block thành ~75% effective, base 60% thành ~84%. Phần còn lại của :wiki-link{url="https://www.poe2wiki.net/wiki/Svalinn"} là Crucible Tower Shield có 200-300% increased Armour và dấu You take 0-20% of damage from Blocked Hits — cả hai mod này phụ thuộc vào base shield, không phải mod đặc trưng. Phá Svalinn để lấy lucky block dán lên một shield thật (life + res + spell block đầy đủ) là một trong những defense trade-off có lợi nhất league cho bất kỳ build invest block cao nào. Build không đi block thì rune này không liên quan.
 
-**Quill Rain (bow).** :wiki-link{url="https://www.poe2wiki.net/wiki/Quill_Rain"} có 100% increased Attack Speed local — khi convert thành rune và gắn vào một bow base ngon, đây là tốc đánh local khổng lồ không phụ thuộc vào bất kỳ tree node hay passive nào. Quill Rain gốc đi kèm *40% less Attack Damage* — một modifier riêng, tách biệt với dòng attack speed. Vì Olroth's Legacy chỉ extract đúng một modifier, rune lấy được là 100% increased Attack Speed và không kéo theo dòng less-damage. Đây chính là lý do Quill Rain là target hấp dẫn: bạn lấy tốc đánh local khổng lồ và bỏ lại đúng cái downside định nghĩa unique gốc.
+**Quill Rain (bow).** :wiki-link{url="https://www.poe2wiki.net/wiki/Quill_Rain"} có 100% increased Attack Speed local — khi convert thành rune và gắn vào một bow base ngon, đây là tốc đánh local khổng lồ không phụ thuộc vào bất kỳ tree node hay passive nào. Quill Rain gốc đi kèm *40% less Attack Damage* — một modifier riêng, tách biệt với dòng attack speed. Vì Olroth's Legacy chỉ extract đúng một modifier, rune lấy được là 100% increased Attack Speed và không kéo theo dòng less-damage. Vì vậy Quill Rain là target hấp dẫn: bạn lấy tốc đánh local khổng lồ và bỏ lại đúng cái downside định nghĩa unique gốc.
 
 **Ironbound (bow).** Unique bow mới của 0.5, phân loại Ezomyte. Mod đặc trưng: *Arrows Return if they have Pierced a target which had Fully Broken Armour*. Một mũi tên trúng → pierced → arrow return = hit hai lần cùng enemy nếu armour của nó đã bị break hoàn toàn. :wiki-link{url="https://www.poe2wiki.net/wiki/Ironbound"} còn có +12% block chance và 3-5% increased block per 100 armour trên equipped armour — nên đây cũng là bow dành cho build đeo armour item để stack block (không phải bow thông thường). Rune extract ra mod arrow-return về một bow khác nghe mạnh, nhưng điều kiện "Fully Broken Armour" đòi build phải có nguồn armour break chủ động — không phải mọi bow build đều xử lý được. Pair tốt với support :wiki-link{url="https://www.poe2wiki.net/wiki/Heavy_Stun"} hoặc mod armour break trên quiver/passive.
 
@@ -58,15 +66,7 @@ Keystone rune không double với keystone trên tree. Allocate Iron Grip trên 
 
 Class restriction là tuyệt đối và không có exception. Rune từ two-handed weapon không về one-handed weapon cùng type, rune từ bow không về quiver, rune từ armour không về belt hay ring.
 
-## Lỗi hay gặp
-
-Mua unique để destroy rồi mới nhận ra gear đích không cùng class hoặc đã đầy rune socket là lỗi tốn tiền nhất. Xác nhận class và socket trước khi mua.
-
-Nhắm unique nhiều mod mạnh vì nghĩ "value cao" thì extract sẽ được nhiều. Không phải — phá chỉ ra một mod. Unique có 4 mod tốt ngang nhau là target tệ; unique có 1 mod thống trị là target tốt.
-
-Cắm rune legacy vào gear tạm rồi quên mất khi upgrade slot đó. Rune legendary không tự dịch chuyển — khi upgrade piece chứa rune, phải chủ động unequip và re-socket thủ công vào piece mới.
-
-Giả định mọi unique đều thuộc Ezomyte hoặc Kalguuran. Chỉ hai nhóm đó; unique từ civilisation khác không thuộc target list và Olroth's Legacy không áp dụng được.
+Rune không tự di chuyển khi nâng cấp gear — khi upgrade piece đang chứa rune, phải chủ động unequip và re-socket thủ công vào piece mới.
 
 ## Version History
 

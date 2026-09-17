@@ -103,7 +103,7 @@ Verify trong client trước khi cam kết: vào planner, mở cluster Deflectio
 
 ## Stat Priorities & Defenses
 
-Snapshot Lv96, poe.ninja model 2026-06-14 (khớp từng số với client). Chi tiết tracking ở [character note ThaoCamVienSaiGon](/characters/thao-cam-vien-sai-gon):
+Snapshot Lv96, poe.ninja model 2026-06-14 (khớp từng số với client). Số dưới đến từ character đã nghỉ, giữ lại vì đây là bộ số thật đo trên build này chứ không phải sim; snapshot cuối và phần đo support nằm ở [character note ThaoCamVienSaiGon](/characters/thao-cam-vien-sai-gon):
 
 - **Life / ES:** 1,885 / 1,929 · **Spirit:** 439 · **Mana:** 1,384
 - **Armour / Evasion / Deflection:** 1,941 / 8,625 (evade 48%) / 7,115 (deflect 43%)
@@ -241,7 +241,7 @@ Build cho người thích minion APM thấp: đàn tự đánh, mình giữ hai 
 
 ## Relationships
 
-- **related** [Character ThaoCamVienSaiGon](/characters/thao-cam-vien-sai-gon) — live snapshot tracking của chính character chạy build này.
+- **related** [Character ThaoCamVienSaiGon](/characters/thao-cam-vien-sai-gon) — character từng chạy build này, nay đã nghỉ; note giữ lại snapshot cuối cùng cộng bộ số A/B đo tay cho từng support của carry.
 - **related_mechanics** [Spirit Walker Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — pipeline đầy đủ: cơ chế tame + modifier retention, bảng reservation nền theo từng loại beast, bốn nguồn nhân damage con carry, săn rare beast ở đâu, nhồi modifier qua tablet stacking, chain boss bằng Rite of the Nameless.
 - **related_guides** [Spirit và spirit reservation](/guides/spirit-and-spirit-reservation) — quản spirit cho nguyên đàn, nguồn spirit và reservation efficiency.
 - **references** [Unique Items Mới & Meta Shift](/guides/0-5-new-unique-items) — Sylvan's Effigy, Morior Invictus, Atziri's Step và lứa companion item 0.5.

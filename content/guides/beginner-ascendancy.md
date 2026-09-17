@@ -5,7 +5,7 @@ title: "Ascendancy: chọn subclass và mở khoá như thế nào"
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -19,6 +19,14 @@ tags:
 ---
 
 # Ascendancy: chọn subclass và mở khoá như thế nào
+
+## TL;DR
+
+- Trial of the Sekhemas (Act 2) và Trial of Chaos (Act 3) mỗi cái cho 2 điểm ascendancy — làm ngay, power gap quá lớn để skip.
+- Token trial không mất khi thất bại — thử lại bao nhiêu lần cũng được.
+- Lần đầu thắng trial, Altar of Ascendancy hiện ra trong trial — chọn một trong ba ascendancy của class.
+- Campaign cho đủ 4 điểm; muốn đủ 8 cần làm thêm hai tier nữa ở endgame với token cao hơn.
+- Respec tốn công (làm lại trial + refund gold) — đọc build guide trước khi chọn, gần như là quyết định vĩnh viễn.
 
 Ascendancy là subclass mạnh hơn của từng class trong POE2. Khi ascend, bạn mở một cây passive nhỏ riêng với các node mạnh hơn nhiều so với passive tree thông thường — thường là cơ chế độc quyền định nghĩa luôn playstyle của build. Mở càng sớm càng tốt vì power gap giữa có và chưa có Ascendancy rất lớn.
 

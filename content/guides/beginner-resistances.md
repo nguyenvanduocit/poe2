@@ -5,7 +5,7 @@ title: Resistance và cơ chế cap 75%
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -21,7 +21,15 @@ tags:
 
 # Resistance và cơ chế cap 75%
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Resistance"} là cơ chế phòng thủ căn bản nhất trong POE2 — nó quyết định bao nhiêu phần trăm sát thương fire, cold, lightning, và chaos bạn thực sự nhận vào mỗi đòn. Đây cũng là lý do số một khiến người mới chết oan: resistance chưa cap, nên đòn bình thường của map cũng gây damage nhiều gấp hai đến bốn lần so với khi đã cap.
+## TL;DR
+
+- Cap mặc định **75%** cho cả bốn loại — trên 75% không có hiệu lực trừ khi có nguồn tăng maximum resistance.
+- Elemental resistance bị penalty tự động theo tiến trình: **−60% khi vào endgame (lv65+)** — cần tổng +135% elemental res từ gear để đứng đúng 75%.
+- Chaos resistance không bị penalty nhưng rất khó cap — không có rune chaos res, passive tree thiếu node, thường kẹt thấp hoặc âm.
+- Quest reward campaign tặng res miễn phí: boss Act 1–3 mỗi con +10 cold/light/fire, tattoo Act 4 mỗi loại +5%.
+- Map mod Elemental Weakness đẩy res dưới 75% dù đang cap — cần overcap để chịu được.
+
+:wiki-link{url="https://www.poe2wiki.net/wiki/Resistance"} là cơ chế phòng thủ căn bản nhất trong POE2 — nó quyết định bao nhiêu phần trăm sát thương fire, cold, lightning, và chaos thực sự nhận vào mỗi đòn. Đây cũng là lý do số một khiến người mới chết oan: resistance chưa cap, nên đòn bình thường của map cũng gây damage nhiều gấp hai đến bốn lần so với khi đã cap.
 
 ## Vì sao mỗi 1% resistance dưới cap đều quan trọng
 
@@ -44,11 +52,13 @@ Penalty không nhảy cóc từ −30% lên −60% — có hai bước trung gia
 
 Penalty chỉ áp dụng cho elemental — không áp dụng cho chaos resistance.
 
-## Chaos resistance luôn thấp và đây là lý do
+## Chaos resistance luôn thấp hơn elemental
 
 Chaos resistance không bị penalty như elemental. Nhưng đây không phải lý do để chủ quan — passive tree không có nhiều node chaos res, gear ít roll mod này, và quan trọng nhất là **rune (Verisium Runeforging) không có rune chaos resistance**, chỉ có elemental. Kết quả là dù đã đeo đủ slot gear, chaos resistance vẫn thường kẹt ở mức thấp hoặc âm.
 
-Ví dụ thực tế: ThaoCamVienSaiGon (Lv93 Spirit Walker) với gear endgame — fire 50 / cold 75 / light 75 / :wiki-link{url="https://www.poe2wiki.net/wiki/Chaos_Resistance"} 27. Chaos thiếu 48% so với cap, và mỗi đòn chaos damage đang nhận 73% thay vì 25%. Chaos damage hay xuất hiện dưới dạng poison pools, boss ability pha cuối, và corrupted map mod — thứ giết người chơi mà không báo trước. Belt là slot dễ roll chaos resistance nhất; amulet và ring cũng roll được. Đây là ba slot nên ưu tiên khi cần bù chaos.
+Ví dụ thực tế trên main hiện tại (OneMoreMinionMamy, Gemling Legionnaire Lv89): :wiki-link{url="https://www.poe2wiki.net/wiki/Chaos_Resistance"} đang cap 75, nghe như đã giải quyết xong. Nhưng tách nguồn ra thì thấy đúng vấn đề của bài này: tổng 84 điểm chaos res thì **67 điểm đến từ một mình :wiki-link{url="https://www.poe2wiki.net/wiki/Mageblood"}**, chỉ 17 điểm còn lại đến từ một dòng desecrated trên gloves. Tháo belt ra là chaos rơi về 17. Nói cách khác, cap được chaos ở đây không phải nhờ gom mod trên gear thường mà nhờ một cái belt mirror-tier — đúng bằng chứng cho chuyện chaos khó cap chứ không phải phản ví dụ.
+
+So sánh với ba kênh elemental cho thấy rõ hơn: chúng bắt đầu từ −60 rồi được kéo lên cap bằng gear thường (helm, body, boots, ring mỗi món một dòng res), còn chaos không có penalty −60 nhưng cũng gần như không có nguồn nào ngoài belt. Chaos damage hay xuất hiện dưới dạng poison pools, boss ability pha cuối, và corrupted map mod — thứ giết người chơi mà không báo trước. Belt là slot dễ roll chaos resistance nhất; amulet và ring cũng roll được. Đây là ba slot nên ưu tiên khi cần bù chaos.
 
 ## Tìm resistance ở đâu và coi chừng map mod
 
@@ -58,7 +68,7 @@ Ví dụ thực tế: ThaoCamVienSaiGon (Lv93 Spirit Walker) với gear endgame 
 
 **Quest reward** trong campaign tặng resistance cố định: giết Beira of the Rotten Pack (Act 1) +10% cold, Sisters of Garukhan (Act 2) +10% lightning, Blackjaw the Remnant (Act 3) +10% fire, và ba tattoo trong Act 4 mỗi loại +5%. Không bỏ qua những phần thưởng này — đây là resistance miễn phí không cần từ gear.
 
-Map mod :wiki-link{url="https://www.poe2wiki.net/wiki/Elemental_Weakness"} là thứ cần chú ý khi chạy endgame. Mod này giảm thêm elemental resistance của nhân vật, đẩy cả ba loại xuống dưới 75% ngay cả khi đang đứng đúng cap. Trước khi vào map có mod này, mở character sheet kiểm tra số trong ngoặc đơn — đó là uncapped resistance thật của bạn. Nếu số đó chỉ vừa đủ 75%, map Elemental Weakness sẽ đưa bạn xuống dưới cap. Cần có overcap (tổng resistance thực tế trên 75%) để bù lại.
+Map mod :wiki-link{url="https://www.poe2wiki.net/wiki/Elemental_Weakness"} là thứ cần chú ý khi chạy endgame. Mod này giảm thêm elemental resistance của nhân vật, đẩy cả ba loại xuống dưới 75% ngay cả khi đang đứng đúng cap. Trước khi vào map có mod này, mở character sheet kiểm tra số trong ngoặc đơn — đó là uncapped resistance thật. Nếu số đó chỉ vừa đủ 75%, map Elemental Weakness sẽ đẩy xuống dưới cap. Cần có overcap (tổng resistance thực tế trên 75%) để bù lại.
 
 ## Relationships
 

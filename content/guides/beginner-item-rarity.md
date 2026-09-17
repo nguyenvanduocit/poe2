@@ -5,7 +5,7 @@ title: "Độ hiếm item: Normal, Magic, Rare, Unique và prefix/suffix"
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -20,7 +20,15 @@ tags:
 
 # Độ hiếm item: Normal, Magic, Rare, Unique và prefix/suffix
 
-Mọi item nhặt được trong POE2 đều có một trong bốn mức rarity: Normal, Magic, Rare, hoặc Unique. Rarity không chỉ là màu sắc mà quyết định trực tiếp item có bao nhiêu modifier — và hiểu điều này là nền tảng để đọc gear, so sánh item, và biết khi nào đáng dùng orb craft.
+## TL;DR
+
+- Normal (xám) = không có modifier, dùng làm nguyên liệu craft. Magic (xanh) = tối đa 1 prefix + 1 suffix. Rare (vàng) = tối đa 3 prefix + 3 suffix.
+- Unique (cam) có bộ modifier cố định, không reroll được — mạnh vì cơ chế đặc thù mà Rare không bao giờ có.
+- Prefix/suffix là hai loại slot modifier: Exalted chỉ thêm khi còn slot trống, Annulment xóa ngẫu nhiên không phân biệt loại.
+- Magic và Rare item nhặt trên sàn đều unidentified — dùng Scroll of Wisdom để reveal stats.
+- Chaos Orb trong POE2 xóa một mod ngẫu nhiên và thêm một mod mới (không reroll toàn bộ như POE1).
+
+Mọi item nhặt được trong POE2 đều có một trong bốn mức rarity: Normal, Magic, Rare, hoặc Unique. Rarity quyết định trực tiếp item có bao nhiêu modifier — màu sắc chỉ là cách nhận dạng nhanh — và hiểu điều này giúp đọc gear, so sánh item, và biết khi nào đáng dùng orb craft.
 
 ## Normal item không có modifier nào
 
@@ -34,7 +42,7 @@ Magic item (màu xanh dương) có tối đa hai modifier: một prefix và mộ
 
 Khi dùng :wiki-link{url="https://www.poe2wiki.net/wiki/Orb_of_Transmutation"} lên Normal item, kết quả chỉ ra **một** modifier (prefix hoặc suffix). Muốn đủ hai mod, dùng thêm :wiki-link{url="https://www.poe2wiki.net/wiki/Orb_of_Augmentation"} — nó thêm modifier còn thiếu vào Magic item đang có đúng một mod.
 
-Magic item không dùng tốt trực tiếp như gear vì có quá ít modifier. Công dụng chính là làm bước đệm: khi đã có mod đúng ý trên Magic item, dùng :wiki-link{url="https://www.poe2wiki.net/wiki/Regal_Orb"} để nâng lên Rare — mods cũ giữ nguyên và một mod mới được thêm vào. Đây là cách craft Rare có kiểm soát hơn so với Alchemy.
+Magic item không dùng tốt trực tiếp như gear vì có quá ít modifier. Công dụng chính là làm bước đệm: khi đã có mod đúng ý trên Magic item, dùng :wiki-link{url="https://www.poe2wiki.net/wiki/Regal_Orb"} để nâng lên Rare — mods cũ giữ nguyên và một mod mới được thêm vào. Craft kiểu này cho kết quả kiểm soát hơn so với Alchemy.
 
 ## Prefix và suffix là gì
 
@@ -46,15 +54,15 @@ Hiểu prefix/suffix quan trọng khi dùng :wiki-link{url="https://www.poe2wiki
 
 Rare item (màu vàng) là loại gear chính của POE2 endgame. Tối đa có 6 modifier: 3 prefix và 3 suffix. Rare item nhặt trên sàn thường ra 4 hoặc 5 mod — chỉ khoảng 10% rare item rơi đủ 6 mod.
 
-Vì nhiều slot mod hơn, Rare item linh hoạt hơn nhiều so với Magic. Cùng một base type, Rare có thể gánh đủ life, resist, và stat cùng lúc. Đây là lý do mọi slot gear quan trọng (helm, body, gloves, boots, ring, amulet, belt) đều nhắm tới Rare ở endgame.
+Vì nhiều slot mod hơn, Rare item linh hoạt hơn nhiều so với Magic. Cùng một base type, Rare có thể gánh đủ life, resist, và stat cùng lúc. Mọi slot gear quan trọng (helm, body, gloves, boots, ring, amulet, belt) đều nhắm tới Rare ở endgame.
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Chaos_Orb"} trong POE2 xóa **một** mod ngẫu nhiên và thêm **một** mod mới vào Rare item — không reroll toàn bộ như POE1. :wiki-link{url="https://www.poe2wiki.net/wiki/Exalted_Orb"} thêm một mod mới khi item còn dưới 6 mod. Flask và charm không thể ở rarity Rare.
 
 ## Unique item có modifier cố định, không roll lại được
 
-Unique item (màu nâu/cam) dùng cùng base type với Normal item nhưng có tên riêng, artwork riêng, và bộ modifier cố định được thiết kế sẵn. Các mod trên Unique không thay đổi qua orb craft — không thể thêm, bớt, hay reroll modifier.
+Unique item (màu nâu/cam) dùng cùng base type với Normal item nhưng có tên riêng, artwork riêng, và bộ modifier cố định. Các mod trên Unique không thay đổi qua orb craft — không thể thêm, bớt, hay reroll modifier.
 
-Điều này làm Unique khác hoàn toàn với Rare. Rare item mạnh vì tổng hợp được đúng stats cần; Unique item mạnh vì cơ chế đặc thù mà Rare không bao giờ có được. Nhiều build-defining interaction trong POE2 đến từ Unique — ví dụ :wiki-link{url="https://www.poe2wiki.net/wiki/Sylvan%27s_Effigy"} mở trần số companion, hay :wiki-link{url="https://www.poe2wiki.net/wiki/The_Catha%27s_Balance"} feed flat damage vào companion dựa trên vũ khí tay chính.
+Rare item mạnh vì tổng hợp được đúng stats cần; Unique item mạnh vì cơ chế đặc thù mà Rare không bao giờ có được. Nhiều build-defining interaction trong POE2 đến từ Unique — ví dụ :wiki-link{url="https://www.poe2wiki.net/wiki/Sylvan%27s_Effigy"} mở trần số companion, hay :wiki-link{url="https://www.poe2wiki.net/wiki/The_Catha%27s_Balance"} feed flat damage vào companion dựa trên vũ khí tay chính.
 
 Một số Unique là drop-restricted — chỉ rơi từ nguồn cụ thể và không thể tạo bằng Orb of Chance.
 

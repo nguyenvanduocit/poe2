@@ -5,7 +5,7 @@ title: Sylvan's Effigy
 status: published
 author: duocnv
 created: '2026-05-25'
-updated: '2026-06-09'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 rarity: unique
@@ -31,7 +31,16 @@ tags:
 
 # Sylvan's Effigy
 
-Sylvan's Effigy là sceptre unique trên base :wiki-link{url="https://www.poe2wiki.net/wiki/Stoic_Sceptre"}, yêu cầu Level 62, drop từ The Market. Dòng định nghĩa item là "You can have any number of Companions of different types" — nó gỡ trần số loại companion, biến đây thành zoo enabler cốt lõi của [Spirit Walker](/guides/spirit-walker-companion-beast-hunt). Kèm theo là (50–75)% increased Spirit để nuôi ngân sách reservation, Companions deal (50–100)% increased damage lên Marked target, và hai skill cắm sẵn trong weapon là Azmerian Wolf và Discipline ở Level 18.
+## TL;DR
+
+- Sceptre unique base Stoic Sceptre, Level 62, drop từ The Market; base Int nên phải giữ Int floor cho gem companion.
+- Dòng định nghĩa "You can have any number of Companions of different types" gỡ trần số loại companion, mở thẳng hướng zoo.
+- (50–75)% increased Spirit nuôi ngân sách reservation để field thêm nhiều con khác loại.
+- Grant sẵn Level 18 Azmerian Wolf + Level 18 Discipline, không tốn gem slot ngoài.
+- Companions deal (50–100)% increased damage lên Marked target — cần Voltaic Mark, dòng additive nên uplift thấp khi đã stack nhiều increased.
+- Chiếm offhand nên main-hand vẫn cầm weapon flat phys cao bơm vào cả bầy qua The Catha's Balance; build một-companion-mạnh không cần item này.
+
+Sylvan's Effigy là sceptre unique trên base :wiki-link{url="https://www.poe2wiki.net/wiki/Stoic_Sceptre"}, yêu cầu Level 62, drop từ The Market. Dòng định nghĩa item là "You can have any number of Companions of different types" — nó gỡ trần số loại companion, biến đây thành item mở hướng zoo cho [Spirit Walker](/guides/spirit-walker-companion-beast-hunt). Kèm theo là (50–75)% increased Spirit để nuôi ngân sách reservation, Companions deal (50–100)% increased damage lên Marked target, và hai skill cắm sẵn trong weapon là Azmerian Wolf và Discipline ở Level 18.
 
 ## Item Stats
 
@@ -49,7 +58,7 @@ You can have any number of Companions of different types
 
 ## Vì sao item này mạnh
 
-Dòng quan trọng nhất là "You can have any number of Companions of different types". Bình thường character chỉ field được một số companion giới hạn; item cho phép giữ một con mỗi loại mà không khống chế số loại khác nhau. Điều này đã xác nhận trực tiếp trên character ThaoCamVienSaiGon (Lv90 Spirit Walker) ở league 0.5: với Sylvan's Effigy cầm offhand, character field đồng thời Diretusk Boar, Azmerian Wolf, Wild Protector (Bear), Mighty Silverfist và Wolf Pack — đội hình mà companion cap mặc định không cho phép nếu không có item. Việc còn lại chỉ là đủ Spirit để reserve từng con.
+Dòng quan trọng nhất là "You can have any number of Companions of different types". Bình thường character chỉ field được một số companion giới hạn; item cho phép giữ một con mỗi loại mà không khống chế số loại khác nhau. Điều này đã xác nhận trực tiếp trên character ThaoCamVienSaiGon (Lv90 Spirit Walker) ở league 0.5: với Sylvan's Effigy cầm offhand, character field đồng thời Diretusk Boar, Azmerian Wolf, Wild Protector (Bear), Mighty Silverfist và Wolf Pack — đội hình mà companion cap mặc định không cho phép nếu không có item. Phần còn lại chỉ là đủ Spirit để reserve từng con.
 
 (50–75)% increased Spirit nuôi đúng điều đó. Spirit là resource reservation, nên phần increased mở rộng ngân sách thẳng để field thêm companion. Granted Discipline ở Level 18 cộng thêm một lớp Energy Shield reservation, còn granted Azmerian Wolf ở Level 18 cho sẵn một companion wolf đánh theo cooldown burst — cả hai skill này có sẵn trong item, không tốn gem slot.
 
@@ -57,9 +66,9 @@ Dòng quan trọng nhất là "You can have any number of Companions of differen
 
 ## Cơ chế enable build
 
-Build zoo Spirit Walker với Sylvan's Effigy đi theo trục: stack Spirit (gear + tree + phần increased từ item) → field nhiều companion khác loại, mỗi con một role tank/dps/utility → Mark target → cả bầy nhận multiplier damage trong window đó. Azmerian Wolf và Discipline cắm sẵn bổ sung thêm burst và một lớp ES mà không tốn reservation gem ngoài.
+Build zoo Spirit Walker với Sylvan's Effigy đi theo hướng: stack Spirit (gear + tree + phần increased từ item) → field nhiều companion khác loại, mỗi con một role tank/dps/utility → Mark target → cả bầy nhận multiplier damage trong window đó. Azmerian Wolf và Discipline cắm sẵn bổ sung thêm burst và một lớp ES mà không tốn reservation gem ngoài.
 
-Vì Sylvan's Effigy chiếm offhand, main-hand vẫn là weapon thật chịu trách nhiệm flat phys cho :wiki-link{url="https://www.poe2wiki.net/wiki/The_Catha%27s_Balance"} The Catha's Balance — notable cho companion deal added attack damage bằng 60% main-hand weapon damage. Đây là lý do hybrid carry-sang-zoo giữ main-hand spear flat phys cao thay vì đổi sang một sceptre flat thấp: vũ khí mình cầm bơm thẳng vào mọi companion. Stoic Sceptre là base Int, nên item có Int requirement, và phần lớn gem companion cũng cần Int — build companion phải giữ một Int floor đủ để không gãy gem.
+Vì Sylvan's Effigy chiếm offhand, main-hand vẫn là weapon thật chịu trách nhiệm flat phys cho :wiki-link{url="https://www.poe2wiki.net/wiki/The_Catha%27s_Balance"} The Catha's Balance — notable cho companion deal added attack damage bằng 60% main-hand weapon damage. Vì vậy hybrid carry-sang-zoo giữ main-hand spear flat phys cao thay vì đổi sang một sceptre flat thấp: vũ khí mình cầm bơm thẳng vào mọi companion. Stoic Sceptre là base Int, nên item có Int requirement, và phần lớn gem companion cũng cần Int — build companion phải giữ một Int floor đủ để không gãy gem.
 
 Build single-strong-companion (dồn hết vào một con như Diretusk Boar) không cần item này. Sylvan's Effigy chỉ thật sự cần khi muốn field đồng thời nhiều loại companion khác nhau — đúng cái trần mà nó gỡ.
 
@@ -84,5 +93,5 @@ Item ra mắt cùng đợt ascendancy :wiki-link{url="https://www.poe2wiki.net/w
 
 ## Relationships
 
-- **synergizes_with** [Spirit Walker — Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — item gỡ trần số loại companion, trục chính của ascendancy Spirit Walker.
+- **synergizes_with** [Spirit Walker — Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — item gỡ trần số loại companion, hướng chính của ascendancy Spirit Walker.
 - **competes_with** [The Auspex](/guides/the-auspex) — Auspex ép single-minion, Sylvan's Effigy thưởng cả bầy companion — hai triết lý ngược nhau.

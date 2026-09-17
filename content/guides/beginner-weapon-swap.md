@@ -5,7 +5,7 @@ title: Weapon set và weapon swap trong POE2
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -20,6 +20,13 @@ tags:
 ---
 
 # Weapon set và weapon swap trong POE2
+
+## TL;DR
+
+- POE2 có hai weapon set — swap bằng phím X, instant, không delay.
+- Skill gem assign cho set nào thì chỉ active khi cầm đúng set đó; aura và persistent skill tiếp tục chạy ngay cả khi swap.
+- Spirit pool tính theo set đang active — hai set Spirit lệch nhau có thể tắt persistent skill khi swap.
+- Build companion và minion tránh swap weapon set giữa combat — swap làm companion despawn, khó resummon hết map.
 
 POE2 có hai weapon set độc lập — mỗi set cầm vũ khí riêng, gắn skill riêng, và swap qua lại bằng một nút. Người mới thường bỏ trống Set 2 hoàn toàn vì không biết nó tồn tại, hoặc biết nhưng không hiểu cách gắn gem vào. Cơ chế này không có trong POE1 và mở ra cả một lớp gameplay mà nhiều build phụ thuộc hoàn toàn vào nó.
 
@@ -41,7 +48,7 @@ Ví dụ thực tế: gắn **Blink** vào Set 1, gắn aura ở equipment của
 
 ## Persistent skill không tắt khi swap weapon set
 
-Đây là cơ chế quan trọng nhất của weapon swap mà người mới hay bỏ qua: **aura và persistent skill vẫn tiếp tục chạy ngay cả khi bạn swap sang set kia**.
+**Aura và persistent skill vẫn tiếp tục chạy ngay cả khi swap sang set kia** — đây là phần người mới hay bỏ qua nhất.
 
 Cắm **Discipline** hoặc một herald ở equipment thuộc Set 1, bật lên, rồi swap sang Set 2 — buff vẫn còn đó. Chỉ có active skill (skill bấm nút để dùng) mới cần đúng weapon set mới kích được; persistent skill chạy độc lập.
 

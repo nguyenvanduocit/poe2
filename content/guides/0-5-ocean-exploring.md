@@ -2,11 +2,11 @@
 template: templates/guide-template.md
 document_type: guide
 title: Ocean Exploring Grand Expedition Farm
-description: Farm Expedition 0.5.3 — roll/chọn đúng cái scale loot, chạy chain Power-first, gate Aldur's Saga vào section dày.
+description: Cheatsheet setup Ocean Exploring 0.5.3 — waystone, tablet, atlas, master, và cách chạy đảo thường vs đảo lớn.
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-07-01'
+updated: '2026-07-14'
 league: '0.5'
 patch: 0.5.3
 guide_type: endgame-content
@@ -30,69 +30,120 @@ tags:
 
 # Ocean Exploring Grand Expedition Farm
 
-Endgame Expedition của [Return of the Ancients](/guides/return-of-the-ancients), Tier S theo [farming tier list](/guides/0-5-farming-strategy-tier-list). Bốn việc: nuôi logbook ở pathing map, fish rumour mở section nhiều Grand Expedition, chạy Grand Expedition bằng T15+/8-mod, đốt Aldur's Saga khi section đủ dày. Build floor brutal — 90% evasion/DR vẫn chết trong remnant slot cao, build chưa cứng thì farm pathing rồi bán saga, chưa vội đốt.
+## TL;DR
 
-## Loot scale theo cái gì
+- Waystone roll đúng hai dòng: increased Rarity of Items found in this Area + increased Monster Effectiveness. Bỏ pack/quantity, runic count đến từ marker.
+- Đảo thường = nuôi logbook: waystone T15, tablet of Knowledge cắm tower, subtree Explosive, ép Desert. EV ~2-3 div, gần như free.
+- Đảo lớn = juice: đốt logbook mở ocean, tiền nằm ở mod trên logbook (5+ rune slot, runic marker, faction leader) + Aldur's Saga; waystone T16. EV 10-20 div, đỉnh 30+.
+- Tiền to nhất sau 0.5.3 là ground loot runic monster (Runic Modifier ×2), trên cả reward remnant và chest.
+- Nổ Power/rarity SỚM cho cả chain thừa hưởng; remnant 7-10 slot nổ CUỐI.
+- Aldur's Saga ~30 div chỉ đốt khi section ≥4 Grand Expedition (lý tưởng 5-6, open water).
+- Build chưa cứng: farm pathing + bán saga, chain ngắn 3-4 remnant, chạy Doryani.
 
-Sau 0.5.3 tiền to nhất là ground loot từ runic monster trong chain, rồi tới reward remnant slot cao và chest. Roll waystone và chọn tablet bám đúng mấy thứ này:
+Endgame Expedition của [Return of the Ancients](/guides/return-of-the-ancients), Tier S theo [farming tier list](/guides/0-5-farming-strategy-tier-list).
 
-- **Waystone Tier** quyết trần remnant slot, T15+ là đỉnh — để T15+/8-mod cho Grand Expedition.
-- **Rarity và monster effectiveness** trên waystone nhân ground loot lẫn chest. Chaos roll dồn về hai dòng này, né quantity/pack-size bằng cặp omen đảo nghĩa.
-- **Tablet** roll theo mục tiêu — dòng *increased Quantity of Expedition Logbooks dropped by Runic Monsters in Map* nuôi logbook, *increased number of Rare Expedition Monsters in Map* với *Expeditions in Map have +(1-2) Remnant* phình loot/reward, *increased quantity of Expedition Artifacts dropped by Monsters in Map* cho vendor. Bản **Irradiated** thêm slot mod nên đáng cho Grand Expedition juiced; lớp pathing nuôi logbook chạy tablet thường là đủ, không cần trả giá Irradiated. Hai node atlas generic nâng tablet lên Rare 4-mod, xem [sustain map endgame](/guides/0-5-endgame-mapping-sustain).
-- **Atlas node** cụm *Logbook Chance* (×8, mỗi node +5% Quantity logbook từ runic monster) là nền sustain; *Cultivate the Sea* ép ocean thành Desert để rarity đẩy runic monster lên Rare — càng nhiều runic rare càng nhiều logbook rơi; *Double or Nothing* cho 25% chance remnant thêm một Runic Modifier.
-- **Thứ tự nổ chain** (nổ Power sớm) scale loot nền mạnh nhất mà không tốn currency — xem phần dưới.
-- **Aldur's Saga** nâng sàn rune slot cả section khi section đủ dày.
+## Waystone roll gì
 
-Roll cụ thể từng mod, node atlas, Master loadout ở cheatsheet cuối bài.
+Mỗi dòng mod trên :wiki-link{url="https://www.poe2wiki.net/wiki/Waystone"} ở 0.5 đi kèm một downside cho quái cộng một upside thuộc năm nhóm: Item Rarity, Pack Size, Monster Rarity, Monster Effectiveness, Waystone Drop Chance. Với ocean thì chỉ hai nhóm chạm tới tiền expedition, nên chaos roll dồn về đúng hai dòng đó, giống nhau cho cả đảo thường lẫn đảo lớn:
 
-## Loop chạy nhanh
+- **increased Rarity of Items found in this Area** — ưu tiên số một. Sau 0.5.3 tiền lớn là ground loot của :wiki-link{url="https://www.poe2wiki.net/wiki/Runic_Monster"} (mỗi Runic Modifier nhân đôi drop), và Item Rarity của area nhân thẳng lên đống đó — không dòng nào đổi EV nhiều bằng.
+- **increased Monster Effectiveness** — nhân cả reward lẫn độ nguy hiểm của quái expedition. Nổ remnant vốn đã đẩy quái vừa mạnh vừa giàu hơn theo cùng một stat, dòng này chồng thêm sàn.
 
-1. **Pathing map** (T15, waystone rarity cao, corrupt lấy +1 mod): gắn Expedition tablet, chạy nhánh **Explosive** của subtree cho layout xấu vẫn nổ sạch, ép **Desert** qua Cultivate the Sea để rarity đẩy runic monster lên Rare. Nổ hết marker cờ đỏ đôi — runic monster là con duy nhất nhả logbook và rớt nhiều Verisium; gom cả Verisium Sentry vì rune của nó buff luôn quái expedition. Nhặt logbook, tablet, base i82.
-2. **Fish section**: ở Uncharted Waters, unequip rồi re-equip logbook để xáo lại clue và hé clue thứ tư ẩn. Tìm section nhiều Grand Expedition mới tiêu logbook; bookmark mỗi đảo ngon vì đại dương phình rất nhanh.
-3. **Grand Expedition** (T15+/8-mod corrupt, tablet Irradiated): chạy Jado khi build cứng, Doryani khi hay chết.
-4. **Trong map**: scout layout một vòng rồi nổ theo thứ tự dưới.
-5. **Cash out**: gom Verisium đổi Liquid Verisium ở Farrow, bán saga dư, Aldur's Legacy, alloy, Lineage Support. Loot to thì port town trước khi nối tiếp chain.
+Pack Size và Monster Rarity bỏ qua: số Runic Monster đến từ marker — tablet *of Ancient Fiends*, node atlas, và mod runic-marker trên chính logbook — chứ không đến từ pack size của area. Thêm pack chỉ thêm quái thường và thêm nguy hiểm cho bộ companion mỏng. Cặp Omen of Chaotic Rarity/Monsters ép reroll giữ rarity + effectiveness, loại quantity/pack.
 
-## Nổ chain thế nào
+Base T15 (area level 79). Cần thêm slot mod thì corrupt T15 → T16 hoặc dùng bản Irradiated — mỗi mod thêm là một dòng rarity/effectiveness nữa. Trần remnant slot của section scale theo Waystone Tier nên T15+ vừa mở trần loot vừa mở trần mod. Downside của waystone chỉ là mod tấn công/phòng thủ của quái, chọn dòng build tank được; brick thật nằm ở prefix của remnant (danh sách killer ở cheatsheet dưới), không phải ở waystone.
 
-Cơ chế nền: mọi remnant nổ ra hất toàn bộ modifier prefix lẫn suffix sang thứ khai quật bởi quả nổ đó và mọi quả sau. Thứ tự nổ quyết loot.
+## Tablet roll gì
 
-- **Remnant nhiều rune nhất (7-10) là cây cuối chain** — chỗ loot bung ra, để nổ sau cùng.
-- **Nổ Power/rarity/pack sớm** cho cả chain thừa hưởng: quái đông hơn, mạnh hơn, ground loot lên theo. Sau buff runic x2 ở 0.5.3, ground loot nền này hơn cả reward cuối remnant.
-- **Đọc prefix trước khi nối** vì vài dòng tắt hẳn build — immune đúng hệ damage, hits can't be evaded với evasion thuần, chaos pen khi chaos res chưa cap. Một prefix brick đầu chain brick cả đoạn sau.
-- **5+ slot luôn chạy**, 4 slot chỉ khi có rune tím, 3 slot skip.
+Tablet ở đây là :wiki-link{url="https://www.poe2wiki.net/wiki/Expedition_Precursor_Tablet"} cắm vào Lost Tower — nó thêm một Kalguuran Expedition vào mọi map trong bán kính tower (10 lần dùng). Đây là engine nuôi logbook, roll theo đúng dòng mod search được (affix name trong ngoặc):
 
-Đặt explosive xong đi về đầu chain rồi mới detonate; mỗi wave bật lên giết ngay, luôn di chuyển vì remnant bắn modifier vào người. Build chưa chắc tay thì chuỗi ngắn ba bốn quả, build gánh được thì kéo dài qua càng nhiều remnant reward càng tốt. Suffix nên nối, prefix phải né, triage theo slot, tablet/atlas/rumour mở cheatsheet (PiP nổi trên game):
+- **(15–30)% increased Quantity of Expedition Logbooks dropped by Runic Monsters in Map** (*of Knowledge*) — dòng số một, nguồn sustain logbook để có cái mà đốt ở ocean.
+- **(25–40)% increased number of Rare Expedition Monsters in Map** (*of Ancient Fiends*) — nhiều rare = nhiều runic marker = nhiều loot lẫn logbook.
+- **(15–30)% increased quantity of Expedition Artifacts dropped by Monsters in Map** (*of Verisium*) — tiền vendor, đổi ra Liquid Verisium ở Farrow.
+- **Expeditions in Map have +(1–2) Remnant** (*of the Writings*) — thêm chỗ reward + chỗ craft rune.
+- **(12–18)% increased Effect of Expedition Remnants in Map** (*of Relics*) — risk-reward, chỉ lấy khi build gánh nổi remnant mạnh.
+- **(15–30)% increased Expedition Explosive Radius / Placement Range in Map** (*of the Demolition / of the Detonator*) — QoL clear, lấy sau cùng.
+
+Bản 2 mod thường đủ nuôi logbook. Muốn juice mạnh thì Irradiated thêm một slot để ghép *of Knowledge* + *of Ancient Fiends* cùng lúc; nâng tablet lên 4 mod qua node Reverse Transcription + Partial Translation trên atlas — chi tiết ở [sustain map endgame](/guides/0-5-endgame-mapping-sustain).
+
+## Atlas passive spec gì
+
+Subtree Expedition = 8 point, spec một lần:
+
+- **Logbook Chance ×8** — mỗi node +5% Quantity logbook từ runic monster. Nền sustain.
+- **Cultivate the Sea** → chọn **Desert**: rarity đẩy runic monster lên Rare → nhiều logbook hơn.
+- **Steady Development** → fork: **Explosive** (layout xấu, clear nhanh) hoặc **Remnant** (thêm reward slot).
+- **Double or Nothing** → 25% remnant thêm 1 Runic Modifier.
+- **Buried Ambition** → Verisium Sentries; rune của Sentry + Remnant buff luôn quái expedition.
+- **The Quest Continues** → Grand Expedition tối đa 3 mod + +1 area level.
+- **Strategic Advantage** → Explosive chỉ chờ 50% quái chết; runic monster spawn thiếu 20% life.
+- **Calculated Investment** → chọn 1: 25% remnant tính như có Power Rune / +XP / +Quantity per runic mod.
+
+## Master chọn ai
+
+- **Jado** — build cứng. Chết 1 lần mất nguyên map + saga (Grand Expedition không respawn).
+- **Doryani** — hay chết: thêm 1 mạng, đổi bằng mất layer reroll remnant.
+
+## Đảo thường (nuôi logbook)
+
+- Setup: waystone T15 roll rarity + effectiveness, Expedition Precursor Tablet *of Knowledge* cắm tower, subtree nhánh Explosive, ép Desert.
+- Nổ hết marker cờ đỏ đôi — runic monster là con duy nhất nhả :wiki-link{url="https://www.poe2wiki.net/wiki/Expedition_Logbook"} và rớt nhiều Verisium. Gom cả Verisium Sentry.
+- Nhặt logbook, tablet, base i82.
+- Build chưa cứng: chain ngắn 3-4 remnant.
+- Cash out: Verisium → Liquid Verisium ở Farrow, bán logbook dư.
+
+## Đảo lớn (Grand Expedition juiced)
+
+Đốt logbook lên atlas mở ra Ocean Biome — cụm đảo Grand Expedition. Juice của section đến từ chính con logbook cộng Aldur's Saga, không phải từ tablet: logbook là một item rare, và affix của nó quyết định biome chứa gì.
+
+- **Mod trên logbook là juice thật:** Verisium Remnant có sàn 5/6/7 rune slot, *Area contains increased Runic Monster Markers*, Faction Leader (Medved / Vorana / Uhtred / Olroth), *Verisium Remnants are Lucky*, tăng Artifact. Đây là các clue đọc ở tab Rumour trước khi tiêu.
+- **Fish section trước:** ở Uncharted Waters, unequip rồi re-equip logbook để xáo clue + hé clue thứ tư ẩn. Bookmark mỗi đảo ngon — đại dương phình rất nhanh.
+- **Đốt Aldur's Saga:** right-click như omen trước khi tiêu logbook, phủ thêm mod cho vùng Grand Expedition vừa mở và nâng sàn rune slot cả section. Chỉ khi section **≥4** Grand Expedition (lý tưởng 5-6, ưu tiên open water). ~30 div/map — đừng đốt section mỏng hay đảo boss.
+- Từng đảo vẫn chạy bằng waystone T16 roll Monster Effectiveness + Rarity như trên; section juiced tự sinh lại saga từ remnant 7 slot.
+- Scout layout một vòng → nổ theo thứ tự chain. Loot to thì port town trước khi nối tiếp.
+
+## Nổ chain theo thứ tự nào
+
+- Remnant nhiều rune nhất (7-10) = nổ **CUỐI** (loot bung ở đó).
+- Nổ **Power/rarity/pack SỚM** → cả chain thừa hưởng.
+- **5+ slot** luôn chạy; **4 slot** chỉ khi có rune tím; **3 slot** skip.
+- Đọc prefix trước khi nối — brick build: immune đúng hệ damage, hits can't be evaded (evasion thuần), chaos pen khi chưa cap chaos res. 1 prefix brick đầu chain brick cả đoạn sau.
+- Đặt explosive → về đầu chain → detonate; mỗi wave giết ngay, luôn di chuyển.
+
+Bảng tra tablet/atlas/rumour + triage chain nổi trên game (PiP):
 
 ::expedition-cheatsheet
 ::
 
-## Đốt Aldur's Saga khi nào
+## Vòng boss săn Lineage Support
 
-Right-click như omen: logbook kế tiếp nâng sàn rune slot cho mọi Grand Expedition trong section. Chỉ đốt khi section có **tối thiểu bốn** Grand Expedition, lý tưởng 5-6, ưu tiên open water. Một map saga ~30 div nên đừng đốt lên section mỏng hay đảo boss. Section juiced sinh lại saga từ remnant 7 slot nên vòng tự gánh một phần chi phí; chạy T16 với tablet monster effectiveness.
-
-Vòng boss chạy riêng để săn Lineage Support — :wiki-link{url="https://www.poe2wiki.net/wiki/Vorana's_Siege"} ~16 div đáng nhất — hoặc Olroth's Crest of the Sun cho pinnacle The Aberration. Styrn ở Tomb of the Fallen Knight luôn rớt một logbook nên boss path không mất nhịp sustain.
+- Chạy riêng vòng boss để săn :wiki-link{url="https://www.poe2wiki.net/wiki/Vorana's_Siege"} ~16 div (đáng nhất) hoặc Olroth's Crest of the Sun cho pinnacle The Aberration.
+- Styrn ở Tomb of the Fallen Knight luôn rớt một logbook — boss path không mất nhịp sustain.
 
 ## Kinh tế
 
-Snapshot poe2scout 30/06, Divine Orb ≈ 480 ex. Tiền đến từ ground loot runic monster (lớn nhất sau 0.5.3), reward remnant slot cao, chest, và tầng saga. Money item: :wiki-link{url="https://www.poe2wiki.net/wiki/Aldur's_Saga"} ~30 div (thanh khoản dày), Aldur's Legacy ~200 div ở remnant 10 slot, Vorana's Siege ~16 div, Expedition Logbook ~1 div. Verisium đổi qua Liquid Verisium, ~5.000 ≈ 1 div.
+Snapshot poe2scout 30/06, Divine ≈ 480 ex.
 
-EV một map dao động mạnh: pathing/thường ~2-3 div, saga juiced ngon 10-20 div, đỉnh 30+, cá biệt vài trăm khi trúng remnant 10 slot. Variance hai chiều tàn: cụm 5-6 map saga xui dễ âm 40-50 div, cần ~100 map mới về trung bình. Pathing map gần như không chi phí và là mặc định nên chạy; remnant nhiều slot moi ra còn là đầu vào cho [vòng craft Verisium Runeforging](/farming/0-5-remnant-runeforging-profit-loop).
+- Money: :wiki-link{url="https://www.poe2wiki.net/wiki/Aldur's_Saga"} ~30 div (thanh khoản dày), Aldur's Legacy ~200 div (remnant 10 slot), Vorana's Siege ~16 div, Expedition Logbook ~1 div.
+- Verisium → Liquid Verisium ở Farrow, ~5.000 ≈ 1 div.
+- EV/map: pathing ~2-3 div; saga juiced 10-20 div, đỉnh 30+, cá biệt vài trăm (remnant 10 slot).
+- Variance tàn: cụm 5-6 map saga xui âm 40-50 div, cần ~100 map về trung bình.
+- Remnant nhiều slot moi ra là đầu vào cho [vòng craft Verisium](/farming/0-5-remnant-runeforging-profit-loop).
 
-## Rủi ro khi chạy
+## Rủi ro
 
-- **Build floor brutal.** Quái ra tới 14 mod, một số bất tử tới khi dọn sạch wave, remnant bắn modifier liên tục. Build chưa cứng skip đúng remnant đắt nhất, mất phần lớn EV tầng saga.
-- **Jado chết một lần mất sạch.** Phần lớn Grand Expedition không respawn, chết với Jado là mất nguyên map cộng saga ~30 div. Build chưa cứng chạy Doryani lấy thêm một mạng, chịu mất layer reroll remnant.
-- **Brick scorpion bất tử.** Con scorpion bắn minion ra chỗ không tới được nên điều kiện giết sạch minion không bao giờ đạt, kẹt cả wave; cắn build grenade/explosive mạnh nhất, build companion hoặc spell gần như miễn. Kẹt thật thì port section khác. Barren Atoll thì strongbox luôn lỗi, đừng nổ.
-- **Giá saga lắc trong ngày** (30 lên 36 div): re-check ngay trước mỗi lần mua, đừng tin giá hôm qua.
+- **Build floor brutal:** quái tới 14 mod, vài con bất tử tới khi dọn sạch wave. Chưa cứng thì skip remnant đắt nhất → mất phần lớn EV saga.
+- **Jado chết 1 lần = mất nguyên map + saga ~30 div** (không respawn). Chưa cứng chạy Doryani.
+- **Scorpion bất tử:** bắn minion ra chỗ không tới → điều kiện giết sạch minion không đạt, kẹt cả wave. Kẹt thì port section khác. Barren Atoll strongbox luôn lỗi — đừng nổ.
+- **Giá saga lắc trong ngày** (30 → 36 div) — re-check trước mỗi lần mua.
 
 ## Version History
 
 ### Patch 0.5.3 (19/06/2026)
 
-- Remnant tối đa scale theo Waystone Tier, đỉnh T15+. Chest rework (bỏ basic weapon/armour, thêm currency/unique/waystone dày cùng mystery/trinket high-rarity), cap explosive 20→15.
-- Runic Modifier reward buff x2, đưa ground loot từ rare thành nguồn thu chính.
-- Styrn luôn rớt một logbook. Fix remnant spawn quái xuyên tường (immortal scorpion và quái spawn trong khu kín chưa fix).
+- Remnant tối đa scale theo Waystone Tier, đỉnh T15+. Chest rework, cap explosive 20→15.
+- Runic Modifier reward buff x2 → ground loot thành nguồn thu chính.
+- Styrn luôn rớt một logbook. Fix remnant spawn quái xuyên tường (immortal scorpion chưa fix).
 
 ### Patch 0.5.0 (29/05/2026)
 

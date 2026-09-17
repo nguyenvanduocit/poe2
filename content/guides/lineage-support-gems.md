@@ -5,7 +5,7 @@ title: Lineage Support Gems
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.0
 tags:
@@ -19,6 +19,14 @@ tags:
 ---
 
 # Lineage Support Gems
+
+## TL;DR
+
+- 40+ Lineage support gem (24 mới ở 0.5.0) — mỗi cái viết lại luật một skill, không chỉ cộng damage.
+- Hai luật cứng: một copy mỗi Lineage support trên toàn build (trừ Solus Ipse), cùng category loại trừ nhau kể cả bản non-lineage.
+- Chỉ rớt — không craft được từ Uncut Support Gem; global pool (rẻ) vs boss-locked (đắt và biến động).
+- Sione's Temper (global drop) ~25 ex / ~0.19 div tại 10/06/2026; bộ Olroth và pinnacle gems đắt hơn nhiều.
+- Lineage support và Kalguuran support là hai hệ tách hẳn — Kalguuran support là 7 gem craft từ Remnant, không phải drop.
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Lineage_support_gem"} là một subcategory của support gem — gem mạnh hơn hẳn support thường, mỗi cái có một cơ chế riêng biến đổi hẳn cách dùng skill, kèm ràng buộc đi theo. Cách gọn nhất để hiểu: chúng là phiên bản unique item của support gem, mỗi gem mang tên một nhân vật huyền thoại POE (Sione, Esh, Tul, Olroth, Breachlord, Atziri…) và làm một việc độc nhất.
 
@@ -58,19 +66,13 @@ Hệ quả giá: gem global như Sione's Temper sàn vài chục ex, còn gem ch
 
 Sione's Temper là ví dụ issue PAT-9 nêu, và là minh hoạ tốt cho kiểu "viết lại skill". Tag của nó: Support, Lineage, Spell, Projectile. Effect: support projectile spell, cho spell một chance ngày càng cao bắn thêm nhiều projectile thành một vòng tròn, rồi reset chance khi nó bắn vòng đó. Một single-projectile spell được Sione's Temper biến thành một skill thỉnh thoảng dội ra cả vòng projectile bao quanh — đổi pattern bắn chứ không chỉ cộng damage.
 
-Nó rớt global nên giá sàn ~25 ex (~0.19 div) theo poe2scout ngày 10/06/2026, rẻ so với Lineage support khoá boss. Giá này dễ biến động: Lineage support là lớp cơ chế mới mở rộng, một khi cộng đồng tìm ra projectile spell nào nhân tốt với cơ chế vòng tròn của nó thì cầu kéo giá lên nhanh.
+Nó rớt global nên giá sàn ~25 ex (~0.19 div) theo poe2scout ngày 10/06/2026, rẻ so với Lineage support khoá boss. Giá này dễ biến động: Lineage support là lớp cơ chế mới mở rộng, một khi cộng đồng tìm ra projectile spell nào nhân tốt với cơ chế vòng tròn của nó thì cầu kéo giá lên nhanh. Roll cụ thể (chance khởi điểm, mức tăng mỗi lần, số projectile mỗi vòng) chưa có trên poedb tag page — đọc trong client hoặc poe2db trang riêng của gem để chốt con số trước khi đưa vào build math.
 
 ## Lineage support khác Kalguuran support thế nào
 
 Hai hệ này dễ gộp nhầm vì cùng xuất hiện quanh nội dung Kalguur của league, nhưng chúng tách bạch hoàn toàn.
 
 Lineage support là gem unique-tier mô tả ở trên: rớt từ boss hoặc global pool, không craft được, mang tên nhân vật huyền thoại. Kalguuran support là chuyện khác — đúng 7 cái (Concussive Runes, Fist of Kalguur, Healing Runes, Runeforged Blades, Runic Extraction, Runic Infusion, Scouring Flame), và chúng **craft ra từ** :wiki-link{url="https://www.poe2wiki.net/wiki/Remnant"} qua cơ chế league, không phải drop. Cạnh đó còn 23 Kalguuran skill cũng craft từ Remnant. Nói "Sione's Temper thuộc hệ Kalguuran" là gộp nhầm hai lớp: Sione's Temper là Lineage support (drop, tag Spell/Projectile), không liên quan gì tới Remnant hay Kalguuran craft.
-
-## Tổng kết
-
-Lineage support là lớp "unique item cho support gem" của POE2 — ra mắt 0.3.0, mở rộng mạnh ở 0.5.0 với 24 gem mới, mỗi gem viết lại một phần luật của skill. Hai luật phải nhớ: một copy mỗi gem trên toàn build (trừ Solus Ipse), và category loại trừ kể cả bản non-lineage. Chúng chỉ rớt — global cho gem rẻ như Sione's Temper, boss-locked cho gem chase đắt. Và chúng tách hẳn khỏi Kalguuran support craft-from-Remnant.
-
-Open question cho lúc vào sâu league: số roll cụ thể của Sione's Temper (chance khởi điểm, mức tăng mỗi lần, số projectile mỗi vòng) chưa trích được từ poedb tag page — đọc trong client hoặc poe2db trang riêng của gem để chốt con số trước khi đưa vào build math.
 
 ## Version History
 

@@ -5,7 +5,7 @@ title: "Currency cơ bản: mỗi orb làm gì"
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -19,6 +19,14 @@ tags:
 ---
 
 # Currency cơ bản: mỗi orb làm gì
+
+## TL;DR
+
+- Alchemy là orb dùng nhiều nhất thực tế: juice waystone trước mỗi map là thói quen cần có ngay từ sớm.
+- Chaos Orb trong POE2 đổi đúng một mod — không reroll toàn bộ như POE1; giữ để trade hiệu quả hơn craft bừa.
+- Divine Orb reroll giá trị số của mod đã có; cực hiếm, chỉ dùng khi chắc chắn giữ item đó lâu dài.
+- Chaos và Exalted là hai mệnh giá trade chính — người mới nên giữ để mua item thay vì craft.
+- Verisium Runeforging và Ancient Rune là hệ craft riêng của 0.5, độc lập hoàn toàn với orb thông thường.
 
 Currency trong POE2 vừa là tiền để trade vừa là vật liệu craft trực tiếp lên gear — không có đồng tiền riêng biệt. Biết từng orb làm gì giúp tránh tiêu nhầm thứ đáng giá và biết cái nào nên giữ để mua item tốt hơn là dùng craft.
 

@@ -5,7 +5,7 @@ title: "Ba pool tài nguyên: Life, Energy Shield và Mana"
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -22,11 +22,19 @@ tags:
 
 # Ba pool tài nguyên: Life, Energy Shield và Mana
 
-POE2 có ba pool tài nguyên riêng biệt — Life, Energy Shield, Mana — và cộng thêm Spirit là thứ nhiều người mới nhầm với Mana. Hiểu ba pool này quyết định bạn đọc tình huống chiến đấu như thế nào và chọn hướng phòng thủ nào khi xây build.
+## TL;DR
+
+- Life là giới hạn cứng: về 0 là chết. Hồi từ flask, regen, và leech — flask là nguồn chính trong combat.
+- Energy Shield hấp thụ damage trước Life, tự hồi sau 4 giây không nhận hit — không hồi được trong boss fight liên tục.
+- Bleeding và Poison bypass ES hoàn toàn; chaos damage đánh ES với hiệu quả gấp đôi — build ES cần chaos resistance.
+- Mana trả chi phí skill, tự regen 4%/giây. Spirit là pool riêng biệt dùng cho aura và minion — không phải Mana.
+- Hybrid Life+ES là điểm cân bằng tốt cho endgame — ES giảm áp lực flask, Life pool làm nền.
+
+POE2 có ba pool tài nguyên riêng biệt — Life, Energy Shield, Mana — và cộng thêm Spirit là thứ nhiều người mới nhầm với Mana. Hiểu ba pool này quyết định cách đọc tình huống chiến đấu và chọn hướng phòng thủ khi xây build.
 
 ## Life là pool nền, về 0 là game over
 
-Life là máu. Khi Life về 0, nhân vật chết. Không có cơ chế đặc biệt nào cứu bạn khi Life cạn — đây là giới hạn cứng duy nhất trong game.
+Life là máu. Khi Life về 0, nhân vật chết. Không có cơ chế đặc biệt nào cứu khi Life cạn — đây là giới hạn cứng duy nhất trong game.
 
 Life recover theo ba cách: dùng **life flask**, **life regeneration** từ passive và gear, hoặc **life leech** khi đánh trúng enemy. Flask là nguồn quan trọng nhất trong combat vì nó hồi ngay lập tức; regen và leech là hai lớp passive bù thêm. Khi vào town hoặc hideout, Life tự về đầy.
 
@@ -34,9 +42,9 @@ Khi Life xuống dưới 35% max, nhân vật được tính là ở trạng th�
 
 ## Energy Shield hấp thụ damage trước rồi tự hồi
 
-**Energy Shield** (ES) là lớp đệm nằm trên Life. Mọi hit đánh vào nhân vật trừ ES trước; chỉ khi ES cạn sạch thì Life mới bị ảnh hưởng. Build đẩy ES cao có thể hứng lượng lớn damage mà Life gần như không động — đây là lý do nhiều archetype trung-cao cấp chọn đường này.
+**Energy Shield** (ES) là lớp đệm nằm trên Life. Mọi hit đánh vào nhân vật trừ ES trước; chỉ khi ES cạn sạch thì Life mới bị ảnh hưởng. Build đẩy ES cao có thể hứng lượng lớn damage mà Life gần như không động — lý do nhiều archetype trung-cao cấp chọn đường này.
 
-Điểm khác biệt cốt lõi so với Life: ES **tự hồi mà không cần flask**. Sau 4 giây không nhận damage vào ES hoặc Life, ES bắt đầu tự recharge ở tốc độ 12.5% max ES mỗi giây. Bất kỳ hit nào làm giảm ES hoặc Life đều reset đồng hồ 4 giây từ đầu. Passive và gear có thể rút ngắn delay này xuống còn 2 giây khi đạt 100% faster start of Energy Shield Recharge — nhưng base là 4 giây, không phải 2.
+Điểm khác biệt so với Life: ES **tự hồi mà không cần flask**. Sau 4 giây không nhận damage vào ES hoặc Life, ES bắt đầu tự recharge ở tốc độ 12.5% max ES mỗi giây. Bất kỳ hit nào làm giảm ES hoặc Life đều reset đồng hồ 4 giây từ đầu. Passive và gear có thể rút ngắn delay này xuống còn 2 giây khi đạt 100% faster start of Energy Shield Recharge — nhưng base là 4 giây, không phải 2.
 
 Người mới hay mắc nhầm ở chỗ này: thấy ES tự hồi tưởng nó rất mạnh, nhưng trong boss fight liên tục nhận damage thì ES không bao giờ kịp hồi. ES phát huy giá trị nhất ở combat kiểu burst — nhận đòn lớn, né ra, chờ hồi, quay vào — không phải ở những đoạn đứng yên chịu đòn liên tục.
 

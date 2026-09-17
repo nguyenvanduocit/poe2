@@ -5,7 +5,7 @@ title: "Hoàn thành 8 challenge lấy Knight of Aldur"
 status: draft
 author: POE AIO
 created: '2026-05-27'
-updated: '2026-06-09'
+updated: '2026-07-13'
 game: poe2
 league: '0.5'
 patch: 0.5.0
@@ -22,7 +22,13 @@ tags:
 
 # Hoàn thành 8 challenge lấy Knight of Aldur
 
-> **Quick Summary:** Đây là challenge system đầu tiên của POE2. Tám challenge, cứ mỗi hai cái xong nhả một mảnh giáp Knight of Aldur, và mỗi challenge bất kỳ đều thêm một đốt vào Totem Pole hideout. Lộ trình này xếp tám cái theo độ khó thật, chỉ rõ cái nào tự xong trong map loop và cái nào phải chuẩn bị key + build đủ mạnh.
+## TL;DR
+
+- 8 challenge tổng — mỗi 2 cái hoàn thành nhả một mảnh giáp Knight of Aldur (Boots→Gloves→Body→Helmet), mỗi cái thêm một đốt vào Totem Pole hideout vĩnh viễn.
+- 6 trong 8 tự xong khi chơi campaign + endgame bình thường; chỉ The Cartographer và The Vanquisher cần chuẩn bị riêng.
+- The Cartographer: hạ Arbiter of Divinity 5 lần trong Fortress để auto-clear đủ Atlas point — nhanh hơn nhiều so với cày từng map.
+- The Vanquisher: hạ 3 pinnacle boss; Vessel of Kulemak phải đánh full strength — làm yếu boss thì challenge không tick.
+- Target 8/8: scope nhỏ, chi phí đi từ 6 lên 8 thấp nhưng Helmet chỉ rơi ở mốc 8.
 
 ## Tám challenge và bốn mốc reward
 
@@ -107,11 +113,7 @@ Cả ba pinnacle giờ đều có **quest version truy cập deterministic**, đ
 
 ## Atlas loop để compound mọi thứ
 
-Atlas 0.5 dùng Masters of the Atlas: mỗi map active một master trong ba người (Doryani, Hilda, Jado), nên xoay master theo challenge đang đẩy — để **Jado** active khi cày The Reliquarian cho unique drop, còn khi farm Fortress cho The Cartographer thì chọn master tối ưu sustain map. Atlas tree mới hơn 300 node và tablet cùng loại stack được, nên gộp tất cả vào một loop duy nhất: chạy map có Remnant để tick The Runeseeker và The Artisan, identify mọi unique cho The Reliquarian, cày Fortress + hạ Arbiter cho The Cartographer, và mở ba chuỗi league cho key pinnacle của The Vanquisher. Thứ tự hợp lý là để Cartographer và Vanquisher làm mốc cuối vì cả hai cần build đã trưởng thành — chi tiết node atlas nên lấy trước xem [guide sustain endgame](/guides/0-5-endgame-mapping-sustain).
-
-## Những lỗi cần tránh
-
-POE2 không có scarab, không có map roll kiểu POE1, không có voidstone — đừng adapt advice cũ. Vài chỗ dễ vướng cụ thể trong league này. Ép craft runeshape 7+ lúc build còn yếu sẽ chết giữa chuỗi wave và mất cả encounter, nên chờ tanky rồi mới đẩy độ dài cao. Với Vessel of Kulemak, nếu quen tay làm yếu boss để dễ thắng thì challenge không tick — phải đánh full strength. Với The Artisan, đừng spam một loại currency quen thuộc; challenge tính đủ loại nên phải xài hết cả 14 ingredient. League-specific Tablet giờ không còn rớt từ Simulacrum, Abyssal Depths hay Twisted Domain nữa, nên đừng farm những chỗ đó để kiếm tablet — source chúng từ map. Với The Hunter, dễ chạy lướt qua Khari Crossing mà bỏ sót arena của Akthi và Anundr. Và với The Ascendant, chọn đường Sekhemas hay Chaos *trước* khi đổ thời gian, vì đi nửa đường rồi quay sang đường kia là phí.
+Atlas 0.5 dùng Masters of the Atlas: mỗi map active một master trong ba người (Doryani, Hilda, Jado), nên xoay master theo challenge đang đẩy — để **Jado** active khi cày The Reliquarian cho unique drop, còn khi farm Fortress cho The Cartographer thì chọn master tối ưu sustain map. Atlas tree mới hơn 300 node và tablet cùng loại stack được, nên gộp tất cả vào một loop duy nhất: chạy map có Remnant để tick The Runeseeker và The Artisan, identify mọi unique cho The Reliquarian, cày Fortress + hạ Arbiter cho The Cartographer, và mở ba chuỗi league cho key pinnacle của The Vanquisher. Thứ tự hợp lý là để Cartographer và Vanquisher làm mốc cuối vì cả hai cần build đã trưởng thành — chi tiết node atlas nên lấy trước xem [guide sustain endgame](/guides/0-5-endgame-mapping-sustain). League-specific Tablet nguồn từ map, không phải từ Simulacrum, Abyssal Depths hay Twisted Domain — đừng farm những chỗ đó để gom tablet.
 
 ## Checklist sau mỗi session
 
@@ -122,10 +124,6 @@ POE2 không có scarab, không có map roll kiểu POE1, không có voidstone �
 - The Cartographer: số node main Atlas tree đã allocate, đã hạ Arbiter mấy trong năm lần.
 - The Vanquisher: đã mở chuỗi nào trong Delirium / Ritual / Abyss, đã có key pinnacle nào.
 - **Abort condition:** nếu một key pinnacle (đặc biệt repeatable version) đội giá quá cao so với quest version, dừng farm key đó và đi quest version deterministic.
-
-## Related Resources
-
-Lộ trình này giả định một character đã leo xong endgame với build và lớp phòng thủ ổn định. Cơ chế companion cho Spirit Walker xem doc riêng; còn đường full Atlas tree cho The Cartographer thì walkthrough atlas lo trọn.
 
 ## Relationships
 

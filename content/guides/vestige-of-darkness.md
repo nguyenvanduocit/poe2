@@ -5,7 +5,7 @@ title: Vestige of Darkness
 status: draft
 author: duocnv
 created: '2026-06-01'
-updated: '2026-06-01'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.0
 pob_coverage: PARTIAL
@@ -40,6 +40,15 @@ tags:
 
 # Vestige of Darkness
 
+## TL;DR
+
+- Unique Tenebrous Crown level 65, pinnacle drop. Không có trước giữa-cuối endgame — build-around từ league-start là sai timing.
+- Mod chủ lực: Physical damage từ hit đóng góp vào Chill Magnitude và Freeze Buildup — physical hit thuần vẫn chill và freeze mà không cần cold conversion.
+- Clear-speed/map item, không phải boss-killer: unique boss không shatter được, chill bị cắt 50% trên unique. Phải có damage profile riêng cho single-target.
+- Kết hợp bắt buộc: Polcirkeln (shatter-on-chill) để clear bằng chill; Herald of Ice để chain AoE. Scale physical hit damage + generic ailment modifier — đừng đầu tư "increased Cold Damage".
+- Giá snapshot 2026-05-31: ~143 Ex (≈2.81 div). Biến động ~36× trong một ngày — re-price sau 5–7 ngày trước khi mua.
+- Archetype tốt nhất: physical mace-slam Warrior (59 Str sẵn, 59 Int chỉ splash nhẹ).
+
 Vestige of Darkness là unique helmet duy nhất trên base :wiki-link{url="https://www.poe2wiki.net/wiki/Tenebrous_Crown"}, và dòng mod thứ ba của nó — `Physical damage from Hits Contributes to Chill Magnitude and Freeze Buildup` — cho mọi build đánh physical-hit clear pack bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Chill"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Freeze"} và :wiki-link{url="https://www.poe2wiki.net/wiki/Shatter"} mà không phải trả thuế cold conversion. Đây là helmet enabler cho archetype physical-mace Warrior dẫn đầu, nhưng phải đọc đúng nó là **clear-speed/map item**, không phải boss-killer: unique boss không shatter được, chill bị cắt nửa trên unique. Là lvl 65 pinnacle drop nên không build-around từ đầu league — nó là power spike giữa-cuối endgame. Cùng đợt unique 0.5 đáng đọc trong [Đợt Unique Mới và Meta Shift](/guides/0-5-new-unique-items).
 
 ## Item Stats
@@ -64,7 +73,7 @@ Một instance đã roll đọc được 173% inc AR/ES và +22 Str/Int — đ�
 
 ## Why This Item Is Powerful
 
-Dòng `Physical damage from Hits Contributes to Chill Magnitude and Freeze Buildup` là thứ định nghĩa cả item, và điểm cốt lõi là từ "Contributes" — **đây không phải conversion**. Mặc định ở 0.5, chỉ Cold damage từ một hit mới đóng góp vào Chill Magnitude và Freeze Buildup; mod này nhét thêm phần physical của mỗi hit vào cả hai phép tính. Cơ chế "contributes" gộp toàn bộ damage của các type liên quan khi tính ailment, khiến chính damage type đó trở nên có khả năng gây ailment — nghĩa là một hit **physical thuần** vẫn chill được và vẫn tích freeze được, không cần một điểm cold conversion nào.
+Dòng `Physical damage from Hits Contributes to Chill Magnitude and Freeze Buildup` là thứ định nghĩa cả item, và từ then chốt là "Contributes" — **đây không phải conversion**. Mặc định ở 0.5, chỉ Cold damage từ một hit mới đóng góp vào Chill Magnitude và Freeze Buildup; mod này nhét thêm phần physical của mỗi hit vào cả hai phép tính. Cơ chế "contributes" gộp toàn bộ damage của các type liên quan khi tính ailment, khiến chính damage type đó trở nên có khả năng gây ailment — nghĩa là một hit **physical thuần** vẫn chill được và vẫn tích freeze được, không cần một điểm cold conversion nào.
 
 Để hiểu vì sao điều này tăng tốc clear, phải tách ba ailment ra. Freeze là hit-buildup ailment: mỗi hit dưới ngưỡng minimum threshold cộng vào một Freeze Buildup counter, đạt ≥100% thì enemy bị freeze duration cố định — base 4 giây — rồi counter reset về 0, và freeze = action speed 0. Chill thì apply ngay nếu damage vượt threshold, luôn dính chứ không roll, nhưng phải tạo được ≥30% magnitude slow nếu không sẽ bị discard; magnitude scale theo damage-sau-mitigation so với ailment threshold của enemy, cap 50%, hoặc 70% nếu có Stormweaver Heavy Snows. Shatter là payoff cuối: enemy chết trong lúc đang Frozen sẽ Shatter — nổ tan xác, không để lại corpse để on-death/revive/detonate/desecrate ăn theo.
 
@@ -72,9 +81,9 @@ Mấu chốt số học nằm ở ailment threshold — mốc 100% buildup — v
 
 ## Build Enabler Mechanics
 
-Item này ép ra một profile build rất cụ thể: physical-hit, đánh quanh Presence, clear-speed bằng freeze + shatter explosion, thân tanky nhờ armour+ES cộng blind aura, chơi map. Build phải đạt 59 Str + 59 Int và chấp nhận đây là endgame chase. Ring slot gần như mặc định dành cho :wiki-link{url="https://www.poe2wiki.net/wiki/Polcirkeln"} để mở shatter-on-chill — chi tiết bên dưới.
+Item này ép ra một profile build rất cụ thể: physical-hit, đánh quanh Presence, clear-speed bằng freeze + shatter explosion, thân tanky nhờ armour+ES cộng blind aura, chơi map. Build phải đạt 59 Str + 59 Int và chấp nhận đây là endgame chase. Ring slot mặc định dành cho :wiki-link{url="https://www.poe2wiki.net/wiki/Polcirkeln"} để mở shatter-on-chill — chi tiết bên dưới.
 
-Hướng scale phải đi đúng trục. Mọi nguồn generic — `inc/more Freeze Buildup`, `inc/more Magnitude of Chill`, Freeze Duration, Slow Magnitude, và giảm enemy ailment-threshold — đều scale phần physical của mod #3; và tăng physical hit damage trực tiếp đẩy cả chill lẫn freeze lên. Ngược lại, `increased Cold Damage` **không** chạm tới phần physical này, nên build đầu tư vào physical + node generic ailment, tuyệt đối không đổ vào node cold-damage.
+Mọi nguồn generic — `inc/more Freeze Buildup`, `inc/more Magnitude of Chill`, Freeze Duration, Slow Magnitude, và giảm enemy ailment-threshold — đều scale phần physical của mod #3; và tăng physical hit damage trực tiếp đẩy cả chill lẫn freeze lên. Ngược lại, `increased Cold Damage` **không** chạm tới phần physical này, nên build đầu tư vào physical + node generic ailment, tuyệt đối không đổ vào node cold-damage.
 
 Về defense, bản thân helmet là một khối phòng thủ độc lập với damage: `%inc AR/ES` trên base str/int, `+str/int` để cover requirement của gear khác, cộng blind toàn bộ enemy trong Presence (giảm accuracy địch). Lớp chill/freeze cũng là defense vì địch chậm hoặc đứng yên. Nếu Runeforge lên Runemastered, item thêm Runic Ward 56 — nhưng đây không phải strict upgrade, xem phần Acquisition.
 
@@ -102,7 +111,7 @@ Adoption hiện tại gần như bằng không. poe.ninja đã index 60,147 char
 
 ### Patch 0.5.0 (Runes of Aldur — 2026-05-29)
 
-Item introduced. Mod values, base Tenebrous Crown, level requirement 65 đã verbatim-confirmed trên poe2db.tw; freeze/chill/shatter/threshold mechanics verified từng dòng từ wiki mirror. Còn nhiều thứ phải log khi vào league: (1) wendigo do helmet manifest deal damage type gì, lượng bao nhiêu, uptime ra sao, và "enemy power" định nghĩa thế nào — hiện chưa document được ở bất kỳ nguồn nào; (2) freeze buildup thực vs threshold lvl 82 boss sau khi áp rarity multiplier, tức bao nhiêu hit để freeze một T16 map boss thật; (3) PoB2 sim cho một physical mace/crossbow build có Vestige + Polcirkeln — flag `pob_coverage: PARTIAL` vì PoB2 fork chưa model phys→freeze-buildup contribution lẫn Runic Ward của 0.5; (4) re-price live qua /poe2scout sau 5–7 ngày khi supply settle; (5) xác nhận chính xác drop source từ The Bodach; (6) re-scrape `data/poedb/0.5.0/Vestige_of_Darkness.md` (hiện là stub pre-launch stale).
+Item introduced. Mod values, base Tenebrous Crown, level requirement 65 verbatim-confirmed trên poe2db.tw; freeze/chill/shatter/threshold mechanics verified từ wiki mirror.
 
 ## Related Items & Alternatives
 
@@ -113,4 +122,4 @@ Item introduced. Mod values, base Tenebrous Crown, level requirement 65 đã ver
 
 ## Relationships
 
-- **synergizes_with** [Đợt Unique Mới và Meta Shift](/guides/0-5-new-unique-items) — cùng đợt 42 unique 0.5, đây là item cắt ngang trục physical-ailment chưa được survey đó cover sâu
+- **synergizes_with** [Đợt Unique Mới và Meta Shift](/guides/0-5-new-unique-items) — cùng đợt 42 unique 0.5, đây là item nằm trong hướng physical-ailment chưa được survey đó cover sâu

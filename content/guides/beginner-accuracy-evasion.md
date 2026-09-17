@@ -5,7 +5,7 @@ title: "Accuracy và Evasion: tấn công có chắc trúng không?"
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -21,6 +21,14 @@ tags:
 
 # Accuracy và Evasion: tấn công có chắc trúng không?
 
+## TL;DR
+
+- Accuracy chỉ quan trọng với attack skill — spell và minion luôn trúng, không cần quan tâm.
+- +6 Accuracy per level, +6 Accuracy per Dex point — attack build cần Dex để equip gear và đẩy Accuracy.
+- Hit chance tính chung Accuracy người tấn công với Evasion của đích; cap 5–100%.
+- Evasion dùng entropy system: cứ đúng tỉ lệ thì 1 đòn trúng, không có chuỗi xui liên tiếp.
+- Bow build mất đến 90% Accuracy khi đứng xa hơn 9m — đầu tư Accuracy thêm để bù penalty.
+
 Attack build trong POE2 có một stat mà người mới thường bỏ qua hoàn toàn cho đến khi nhận ra mình đang miss 20-30% đòn: :wiki-link{url="https://www.poe2wiki.net/wiki/Accuracy_Rating"}. Thiếu Accuracy không làm damage giảm từ từ — nó tạo ra miss hoàn toàn, nghĩa là đòn đó tốn mana nhưng không gây ra bất kỳ damage nào, kể cả không trigger ailment hay on-hit effect.
 
 ## Accuracy chỉ quan trọng với attack, không phải spell
@@ -33,7 +41,7 @@ Chỉ khi dùng skill tag Attack — Whirling Slash, Spear Throw, Boneshatter, b
 
 Character gain +6 Accuracy Rating mỗi level. Lên lv 90 thì base Accuracy từ level đã là 540 — không nhiều, nhưng ổn định theo campaign.
 
-Nguồn scaling chính là :wiki-link{url="https://www.poe2wiki.net/wiki/Dexterity"}: mỗi điểm Dex cho +6 Accuracy Rating. Đây là lý do attack build cần Dex không chỉ để equip gear — mà Dex còn là axis trực tiếp đẩy Accuracy. Một character có 200 Dex thì được +1.200 Accuracy từ attribute, cộng với level và gear là đủ để hit chance gần cap trong hầu hết trường hợp.
+Nguồn scaling chính là :wiki-link{url="https://www.poe2wiki.net/wiki/Dexterity"}: mỗi điểm Dex cho +6 Accuracy Rating. Attack build cần Dex để equip gear — Dex còn trực tiếp đẩy Accuracy. Một character có 200 Dex thì được +1.200 Accuracy từ attribute, cộng với level và gear là đủ để hit chance gần cap trong hầu hết trường hợp.
 
 Ngoài Dex và level, Accuracy còn lên được từ flat roll trên gear (nhẫn Emerald Ring có Accuracy Rating là implicit), passive tree node, và support gem :wiki-link{url="https://www.poe2wiki.net/wiki/Heightened_Accuracy_I"} (50% more Accuracy Rating cho skill đó).
 
@@ -43,7 +51,7 @@ Accuracy của người tấn công không tự cho hit chance — nó được 
 
 **Chance to Hit = (Accuracy × 1.25 × 100) / (Accuracy + Evasion × 0.3)**
 
-Kết quả này bị cap ở 100% từ trên và floor ở 5% từ dưới. Không bao giờ guaranteed miss, cũng không thể vượt 100% trừ một số mechanic đặc biệt. Hệ quả thực tế: khi đánh quái có Evasion cao — thường là monster type agile như tên lính đơn hay boss dexterity-based — hit chance tụt xuống rõ rệt dù Accuracy build không thay đổi.
+Kết quả này bị cap ở 100% từ trên và floor ở 5% từ dưới. Không bao giờ guaranteed miss, cũng không thể vượt 100% trừ một số mechanic đặc biệt. Khi đánh quái có Evasion cao — thường là monster type agile như tên lính đơn hay boss dexterity-based — hit chance tụt xuống rõ rệt dù Accuracy build không thay đổi.
 
 Ví dụ đơn giản: tấn công với 1.000 Accuracy vào đích có 2.000 Evasion:
 - Tử số: 1.000 × 1.25 × 100 = 125.000
@@ -72,7 +80,7 @@ Với bow build, cách đơn giản nhất là đầu tư Accuracy nhiều hơn 
 
 Mở character sheet, nhìn chỉ số Chance to Hit hoặc kiểm tra Accuracy Rating. Con số Accuracy không nói gì nếu không biết Evasion của monster — nhưng rule of thumb: Accuracy Rating gấp đôi level của character là điểm an toàn cho hầu hết nội dung. Lv 80 thì muốn khoảng 1.600+ Accuracy Rating để hit chance ổn trước pack thường.
 
-Build thiếu Accuracy thường nhận ra theo cách tệ nhất: nhìn floating text thấy "Miss" xuất hiện nhiều trong combat, hoặc thấy single-target DPS thực tế thấp hơn paper DPS trong PoB đáng kể. Khi đó giải pháp đơn giản nhất là kiểm tra Dex — nếu Dex thấp vì gear không có, đó là cách rẻ nhất để đẩy Accuracy lên.
+Build thiếu Accuracy thường nhận ra theo cách tệ nhất: nhìn floating text thấy "Miss" xuất hiện nhiều trong combat, hoặc thấy single-target DPS thực tế thấp hơn paper DPS trong PoB rõ. Khi đó giải pháp đơn giản nhất là kiểm tra Dex — nếu Dex thấp vì gear không có, đó là cách rẻ nhất để đẩy Accuracy lên.
 
 ## Relationships
 

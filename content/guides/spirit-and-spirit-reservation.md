@@ -5,7 +5,7 @@ title: Spirit và Spirit Reservation
 status: published
 author: duocnv
 created: '2026-06-12'
-updated: '2026-06-12'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.3
 tags:
@@ -21,7 +21,17 @@ tags:
 
 # Spirit và Spirit Reservation
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Spirit"} là resource thứ ba cạnh Life và Mana: mọi persistent skill (minion, companion, aura, herald, persistent buff) chiếm một phần Spirit chừng nào còn bật. Character bắt đầu với 0 Spirit, quest cho tối đa 110 permanent, phần còn lại phải moi từ gear, passive, ascendancy và augment. Ledger 347 Spirit của ThaoCamVienSaiGon đang chạy all-on không dư một giọt, nên từng dòng mod dưới đây là thứ quyết định đàn companion thở bằng gì.
+## TL;DR
+
+- Công thức: Spirit Reserved = Base / (1 + tổng Reservation Efficiency/100); mọi % res eff cộng additive vào một pool, các multiplier less/more nhân ngoài công thức.
+- 110 Spirit permanent từ quest (ba Skull 30/30/40 + Uhtred's Boon 10); atlas tree không có node nào cho player Spirit.
+- Granted skill từ item hoặc ascendancy reserve 0 Spirit — lever mạnh nhất, mua 60–90 Spirit hiệu dụng bằng một item slot.
+- Matsya "50% less Spirit" là multiplier mạnh nhất game; A Solid Plan halve mọi persistent buff.
+- Minion gem đi ngược trực giác: level càng cao reservation càng rẻ (Brute 165→48 Spirit L1→L20), hai Skeletal Warrior đầu free — luôn level minion gem lên.
+- Sceptre King's + double-corrupt Intrinsic ≈ 225 Spirit một item; flat Spirit trên gear thường đắt hơn res eff cùng slot.
+- Ledger main hiện tại chạy 353 Spirit all-on cho nguyên đàn skeleton, không dư giọt nào.
+
+:wiki-link{url="https://www.poe2wiki.net/wiki/Spirit"} là resource thứ ba cạnh Life và Mana: mọi persistent skill (minion, companion, aura, herald, persistent buff) chiếm một phần Spirit chừng nào còn bật. Character bắt đầu với 0 Spirit, quest cho tối đa 110 permanent, phần còn lại phải moi từ gear, passive, ascendancy và augment. Ledger 353 Spirit của main hiện tại đang chạy all-on không dư một giọt, nên từng dòng mod dưới đây là thứ quyết định đàn minion thở bằng gì.
 
 ## Công thức reservation và bốn luật nền
 
@@ -157,30 +167,21 @@ Support gem can thiệp hai chiều. Giảm: :wiki-link{url="https://www.poe2wik
 11. **Beidat's Will**: +1 per 25 Life, đi kèm Vaal Pact / Enduring Elixirs để sống với Life pool bị reserve.
 12. **Weapon-set passive points**: 24 điểm mỗi set allocate node res eff khác nhau, pool Spirit tách theo set.
 
-## Áp vào ThaoCamVienSaiGon
+## Áp vào main hiện tại
 
-Ledger hiện tại 347 Spirit chạy all-on vừa khít, build chi tiết ở [Tame Beast Companion Pack](/builds/huntress/0-5-spirit-walker-companion-pack). Thứ tự múc theo lời-trên-giá:
+Ledger 353 Spirit của [OneMoreMinionMamy](/characters/one-more-minion-mamy) chạy all-on vừa khít cho đàn skeleton, build chi tiết ở [Gemling Unearth Skeleton Army](/builds/mercenary/0-5-gemling-unearth-skeleton-army). Tách nguồn ra thì cả 353 điểm truy được về đúng bốn chỗ cộng một dòng increased:
 
-**Làm ngay, gần như free:**
+- **Quest 100**: Freythorn 30 (Act 1), Azak Bog 30 (Act 3), Kriar Village 40 (Interlude 3) — đúng trần permanent mà quest cho.
+- **Cataclysm Crusher 131**: Shrine Sceptre với 31% increased Spirit local, nên con số 131 đọc thẳng trên item đã gồm phần increased rồi.
+- **Carrion Jack 58**: một dòng desecrated trên body.
+- **Brood Rosary 50**: dòng flat trên amulet.
 
-- **Easy Going + 2 small companion 8% bằng weapon-set-1 points**: build ở lì set 1 nên 24 điểm set-1 là điểm sống; +41pp res eff lên ~300 Spirit companion reservation, ước giải phóng 55–80 Spirit. Đã lấy Easy Going trên tree thì không instil trùng nó nữa.
-- **Idol of Grold vào socket Sylvan's Effigy** thay idol Attack Speed hiện tại. Body rune của Forgotten Warden đã mở Bonded cho Idol, 15% companion res eff ≈ 25–35 Spirit freed, idol đổi idol nên Idolatry không đổi.
-- **Check Uhtred's Boon**: nếu 347 chưa gồm nó thì +10 permanent chỉ tốn thời gian chạy nốt chain Grand Expedition.
+Cộng lại 339, rồi Profane Commander nhân 4% increased Spirit lên thành 353. Đây là ví dụ sạch cho luật "flat trước, increased sau": 4% chỉ đáng 14 Spirit vì nó nhân vào nền 339, nên trên slot rare một dòng flat 50 luôn thắng một dòng increased vài phần trăm.
 
-**Tầng kế, tốn currency:**
+Bốn nguồn đó cũng cho thấy chỗ dễ nhất còn lại: sceptre set 2 **Chimeric Song** đọc Spirit 166, cao hơn Cataclysm Crusher 131 tới 35 điểm, nhưng set 2 đang dormant (`useSecondWeaponSet` tắt) nên 166 đó không vào pool. Đổi sang set 2 thì được 35 Spirit và mất +3 Level of all Minion Skills cùng rune "Allies in your Presence deal 40% increased Damage" — gần như chắc chắn lỗ, ghi ra đây để khỏi cân lại lần sau.
 
-- **Abyss jewel hệ Kulemak**: +(40-60) flat cộng (6-10)% res eff trong một mod, thay 1 trong 5 Sapphire. Đổi lại Zekoa mất 21-25% crit damage từ viên bị thay, cân với DPS trước khi xuống tay.
-- **Mystic Alloy lên boots**: +(10-15) flat, bắn vào boots base mới đã roll đủ life/res/MS, đừng bắn vào Eagle League đang gánh res.
-- **Helm rune → Idol of Ralakesh hoặc Bear Idol Bonded**: res eff giữ nguyên hoặc nhỉnh hơn, xóa một non-Idol augment nên lấy lại 4% all ele res, đổi lại mất Minions 15% max Life.
+Phía reservation, bộ modifier efficiency đang chạy ngược nhau và cần đọc như một tổng: Lord of Horrors +12%, The Soul Meridian +10% (anoint), helm rune +8% — cộng lại +30% — nhưng **Gigantic Following −25%** ăn lại gần hết. Gigantic đổi chỗ đó lấy "Your Minions are Gigantic", nên nó là quyết định damage trả bằng spirit chứ không phải node miễn phí. Reservation từng skill thì đọc in-client hoặc từ PoB2 (skeleton là minion chuẩn nên PoB2 model được), đừng cộng nhẩm từ tooltip gem.
 
-**Situational, khai delta trước:**
-
-- **Anoint Gigantic Following ↔ Lord of Horrors**: swap sang Lord of Horrors là +37pp minion res eff (≈ 60–90 Spirit freed), nhưng mất Gigantic 20% more damage + 20% more life toàn đàn; build đã chốt giữ Gigantic và cắt Bramble Hulk thay vì nhả anoint.
-- **Divine Sylvan's Effigy** nếu roll % Spirit chưa max: mỗi 10pp ≈ +15-17 Spirit, nhưng Divine roll lại cả hai dòng.
-- **Soul Core of Azcapa vào Tyranny's Grip**: +15 flat nhưng chiếm socket rune phys đang nuôi Catha, và thêm một non-Idol augment.
-- **Gemcutter's Prism lên companion gem nào còn Q0**: 4 viên ra Q20 = 10% res eff, ~4-5 spirit mỗi con. Trio active đã Q20 sẵn; chỉ còn bản backup ở set 2 cần vá. Không bao giờ cần re-tame vì quality.
-
-**Bỏ qua:** Rune of the Blossom (+3 net ở Lv94), Vaal/double-corrupt Skull Corona (brick risk trên helm đã curate), Carved Majesty đặt body (+6-15 Spirit nhưng Limit 1 đã dành cho gloves lấy Onslaught).
 
 ## Cái không hoạt động
 
@@ -216,6 +217,8 @@ Trusted Kinship rework (bỏ 30% less Defences, thêm cặp 30% more / 20% less 
 ## Relationships
 
 - **related** [Spirit Walker companion beast hunt](/guides/spirit-walker-companion-beast-hunt) — Idolatry và hệ companion ăn trực tiếp vào ledger Spirit.
-- **related** [Tame Beast Companion Pack](/builds/huntress/0-5-spirit-walker-companion-pack) — build đang áp toàn bộ thứ tự múc ở trên.
+- **related_builds** [Gemling Unearth Skeleton Army](/builds/mercenary/0-5-gemling-unearth-skeleton-army) — build đang áp ledger 353 Spirit ở trên, kèm reservation từng skill.
+- **related** [OneMoreMinionMamy](/characters/one-more-minion-mamy) — character mang ledger đó, snapshot nguồn Spirit theo từng slot.
+- **related** [Tame Beast Companion Pack](/builds/huntress/0-5-spirit-walker-companion-pack) — bản companion, nơi Trusted Kinship và Idolatry đổi hẳn cách tính reservation.
 - **related** [Lineage Support Gems](/guides/lineage-support-gems) — Dialla's Desire và Atziri's Communion là hai lineage can thiệp reservation.
 - **related** [Cách chơi Ocean Exploring](/guides/0-5-ocean-exploring) — chain The Grand Expedition trả Uhtred's Boon +10 Spirit.

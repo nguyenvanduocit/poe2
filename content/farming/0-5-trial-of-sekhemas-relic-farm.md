@@ -4,7 +4,7 @@ document_type: farming-strategy
 title: Trial of the Sekhemas Relic và Cache Farm
 status: active
 created: '2026-06-16'
-updated: '2026-06-23'
+updated: '2026-07-14'
 strategy_tier: S
 investment_tier: Medium
 league: '0.5'
@@ -15,21 +15,32 @@ confidence_level: Medium
 
 # Trial of the Sekhemas Relic và Cache Farm
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/The_Trial_of_the_Sekhemas"} là dungeon roguelite bốn tầng ba mươi hai phòng, mở bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Djinn_Barya"} và chạy bằng thanh :wiki-link{url="https://www.poe2wiki.net/wiki/Honour"} thay cho máu thật. Tiền về hai tầng tách hẳn nhau: nền đều từ cache reward room sau mỗi boss tầng (currency, waystone, jewel, relic), và jackpot từ Zarokh tầng bốn (unique relic + Zarokh's Reliquary Key ~74 div). Tier S đáy — drop đều nhưng đòi build chuyên sống nổi ba mươi hai phòng ~10 phút/run; tính đến 2026-06-16, nền cache ~2-4 div/run, nền chưa tính jackpot là ~10-25 div/giờ.
+## TL;DR
 
-## Strategy Overview
+- Dungeon roguelite bốn tầng ba mươi hai phòng, mở bằng Djinn Barya, chạy bằng thanh Honour thay cho máu thật.
+- Tiền về hai tầng: nền đều từ cache reward room sau mỗi boss tầng (~2-4 div/run), jackpot từ Zarokh tầng bốn (Zarokh's Reliquary Key ~74 div).
+- Tier S đáy: drop đều nhưng đòi build chuyên sống nổi ~10 phút/run; nền chưa tính jackpot ~10-25 div/giờ (2026-06-16).
+- Relic altar ưu tiên Honour Resistance tới cap 75% > max Honour > cụm key > cụm relic > Sacred Water.
+- Djinn Barya area level 75+ mới đủ bốn tầng chạm Zarokh; mua theo lô lúc rẻ (vài ex tới <1 div).
+- Convert toàn bộ Sacred Water dư ở Keth Forge thành key mở thêm cache; đừng mở cửa tầng kế trước khi vét sạch phòng.
 
-Phần lớn giá trị không rải trên sàn từng phòng mà nằm trong **cache reward room** mở bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Bronze_Key"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Silver_Key"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Gold_Key"}. Cache nhả Arcanist currency, Cartographer waystone, jewel (Royal, Time-Lost, Grand Spectrum), relic, và gear. Tầng bốn cộng thêm Zarokh — boss duy nhất nhả unique relic và Zarokh's Reliquary Key.
+:wiki-link{url="https://www.poe2wiki.net/wiki/The_Trial_of_the_Sekhemas"} mở bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Djinn_Barya"} và chạy bằng thanh :wiki-link{url="https://www.poe2wiki.net/wiki/Honour"} thay cho máu thật. Tier S đáy, investment Medium — nền cache ~2-4 div/run, nền chưa tính jackpot ~10-25 div/giờ (2026-06-16).
 
-Honour pool bằng Life + :wiki-link{url="https://www.poe2wiki.net/wiki/Energy_Shield"} + :wiki-link{url="https://www.poe2wiki.net/wiki/Runic_Ward"} lúc bắt đầu run (cộng thêm Mana nếu chạy :wiki-link{url="https://www.poe2wiki.net/wiki/Mind_over_Matter"}); Honour về 0 là fail run ngay, không mất experience. Fail ở tầng ba là mất gần như toàn bộ giá trị đã tích vì tiền dồn về cuối. Build thủ tốt giữ được Honour thì dồn Sacred Water sang key ở Keth Forge cuối tầng; build thủ yếu phải đốt water hồi Honour nên ra ít cache hơn — cùng một run, build khỏe thắng kép.
+## Loot đến từ đâu
 
-## Setup
+- Phần lớn giá trị nằm trong **cache reward room** sau mỗi boss tầng, mở bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Bronze_Key"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Silver_Key"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Gold_Key"}. Cache nhả Arcanist currency, Cartographer waystone, jewel (Royal, Time-Lost, Grand Spectrum), relic, và gear.
+- Tầng bốn cộng thêm :wiki-link{url="https://www.poe2wiki.net/wiki/Zarokh,_the_Temporal"} — boss duy nhất nhả unique relic và Zarokh's Reliquary Key.
+- Honour pool = Life + :wiki-link{url="https://www.poe2wiki.net/wiki/Energy_Shield"} + :wiki-link{url="https://www.poe2wiki.net/wiki/Runic_Ward"} lúc bắt đầu run (cộng Mana nếu chạy :wiki-link{url="https://www.poe2wiki.net/wiki/Mind_over_Matter"}). Honour về 0 là fail run ngay, không mất experience. Fail ở tầng ba mất gần như toàn bộ giá trị đã tích vì tiền dồn về cuối.
+- Build thủ tốt giữ Honour thì dồn Sacred Water sang key ở Keth Forge cuối tầng; build thủ yếu phải đốt water hồi Honour nên ra ít cache hơn — cùng một run, build khỏe thắng kép.
 
-### Build Requirements
+## Build cần đạt gì
 
-Pool Honour scale thẳng theo Life + ES + Runic Ward — build dày EHP tự lợi; build CI ES cao cũng tốt. Cận chiến có thưởng ngầm **35% less Honour damage khi đứng sát quái**, nên melee và khoảng cách ngắn dễ sống hơn ranged. Mục tiêu: cap **Honour Resistance 75%** qua relic và EHP đủ để một đòn lỡ không xóa nửa thanh Honour. Zarokh tầng bốn đòi thêm movement speed — pha time-stop trừ Honour nặng (trước 0.3.0 là auto-fail) nếu không gom xong hourglass trước khi đồng hồ quay đủ vòng.
+- Pool Honour scale thẳng theo Life + ES + Runic Ward — build dày EHP tự lợi; build CI ES cao cũng tốt.
+- Cận chiến có thưởng ngầm **35% less Honour damage khi đứng sát quái**, nên melee và khoảng cách ngắn dễ sống hơn ranged.
+- Cap **Honour Resistance 75%** qua relic và EHP đủ để một đòn lỡ không xóa nửa thanh Honour.
+- Zarokh tầng bốn đòi thêm movement speed — pha time-stop trừ Honour nặng (trước 0.3.0 là auto-fail) nếu không gom xong hourglass trước khi đồng hồ quay đủ vòng.
 
-### Relic Altar
+## Relic altar cắm gì
 
 Altar mười tám ô, sáu ô mở sẵn, mười hai ô mở dần khi hoàn thành từng tầng. Relic cắm trước khi start mới tính; relic nhặt trong run để dành run sau. Ưu tiên mod theo thứ tự:
 
@@ -42,31 +53,27 @@ Altar mười tám ô, sáu ô mở sẵn, mười hai ô mở dần khi hoàn t
 
 Relic non-unique reforge ba-thành-một cùng base ở :wiki-link{url="https://www.poe2wiki.net/wiki/Reforging_Bench"} (Tapestry Relic không áp dụng), hoặc craft bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Orb_of_Augmentation"} và :wiki-link{url="https://www.poe2wiki.net/wiki/Orb_of_Annulment"} để ép dòng honour-res/key. Reforging Bench ở ngay entrance từ patch 0.5, làm được giữa các run không cần về town.
 
-### Keys
+## Key mở run
 
-Mở run bằng Djinn Barya area level 75+ cho đủ bốn tầng — key thấp hơn chốt trần thưởng ở tầng một tới ba, không chạm Zarokh. Key trade được, tính đến 2026-06-16 giá vài ex tới dưới 1 div. Mua theo lô lúc rẻ vì đó là chi phí đầu vào lớn duy nhất.
+- Mở bằng Djinn Barya area level 75+ cho đủ bốn tầng — key thấp hơn chốt trần thưởng ở tầng một tới ba, không chạm Zarokh.
+- Key trade được, tính đến 2026-06-16 giá vài ex tới dưới 1 div. Mua theo lô lúc rẻ vì đó là chi phí đầu vào lớn duy nhất.
 
-## Gameplay
+## Chạy run
 
-Coi thanh Honour là HP bar thật: đứng sát quái để ăn 35% less Honour damage, dodge-roll xuyên trap vì cả animation miễn nhiễm. Chọn đường trên trial map qua phòng cache và phòng key khi Honour còn khỏe; né phòng viền tím (afflicted) nếu tránh được. Boon ưu tiên ba nhóm: thủ (Lustrous Lacquer 50% more Defences, Fright Mask monster 20% less damage, Glowing Orb phao cứu mạng dưới 20% Life), hồi Honour (Earned Honour mỗi phòng xong, Adrenaline Vial 30% vào boss room), và key (Mirror of Fortune nhân đôi key kế tiếp).
+- Coi thanh Honour là HP bar thật: đứng sát quái để ăn 35% less Honour damage, dodge-roll xuyên trap vì cả animation miễn nhiễm.
+- Chọn đường trên trial map qua phòng cache và phòng key khi Honour còn khỏe; né phòng viền tím (afflicted) nếu tránh được.
+- Boon ưu tiên ba nhóm: thủ (Lustrous Lacquer 50% more Defences, Fright Mask monster 20% less damage, Glowing Orb phao cứu mạng dưới 20% Life), hồi Honour (Earned Honour mỗi phòng xong, Adrenaline Vial 30% vào boss room), và key (Mirror of Fortune nhân đôi key kế tiếp).
+- Boss mỗi tầng cố định: :wiki-link{url="https://www.poe2wiki.net/wiki/Rattlecage,_the_Earthbreaker"} tầng một né AoE mở màn; tầng hai Hadi + Rafiq phải đánh đều hai con hoặc kill con hai nhanh sau con một (để lâu hồi đầy máu, coi chừng nổ nguyên tố lúc mỗi con chết); :wiki-link{url="https://www.poe2wiki.net/wiki/Ashar,_the_Sand_Mother"} tầng ba lờ Balbala giục nhảy platform (bẫy) và tránh quicksand; Zarokh tầng bốn sprint gom hourglass trước khi đồng hồ quay đủ vòng.
+- Reward room sau mỗi boss: mở hết cache bằng key, **convert toàn bộ Sacred Water dư ở Keth Forge thành key** mở thêm cache, rồi ghé Balbala mua relic/boon. Đừng mở cửa tầng kế trước khi vét xong — mở cửa khóa luôn merchant phòng đó.
 
-Boss mỗi tầng cố định: :wiki-link{url="https://www.poe2wiki.net/wiki/Rattlecage,_the_Earthbreaker"} tầng một né AoE mở màn; tầng hai Hadi + Rafiq phải đánh đều hai con hoặc kill con hai nhanh sau con một (để lâu hồi đầy máu, coi chừng nổ nguyên tố lúc mỗi con chết); :wiki-link{url="https://www.poe2wiki.net/wiki/Ashar,_the_Sand_Mother"} tầng ba lờ Balbala giục nhảy platform (bẫy) và tránh quicksand; :wiki-link{url="https://www.poe2wiki.net/wiki/Zarokh,_the_Temporal"} tầng bốn sprint gom hourglass trước khi đồng hồ quay đủ vòng.
-
-Reward room sau mỗi boss: mở hết cache bằng key, **convert toàn bộ Sacred Water dư ở Keth Forge thành key** mở thêm cache, rồi ghé Balbala mua relic/boon. Đừng mở cửa tầng kế trước khi vét xong — mở cửa khóa luôn merchant phòng đó.
-
-## Loot Breakdown & Economic Analysis
+## Kinh tế
 
 Giá poe2scout ngày 2026-06-16, 1 div = 182 ex.
 
-Profit/run = (cache floor + relic resale + zarokh jackpot) − key cost − relic setup amortize.
-
-**Jewel cache — nền volume cao nhất nhưng đang nguội.** Cache nhả :wiki-link{url="https://www.poe2wiki.net/wiki/Time-Lost_Ruby"}, Timeless Jewel và :wiki-link{url="https://www.poe2wiki.net/wiki/Grand_Spectrum_(Ruby)"}. Giá 2026-06-16: Against the Darkness Time-Lost Diamond ~363 ex (~2 div, volume 3.476, Δ7d −31%), Undying Hate Timeless Jewel ~120 ex (~0,66 div, volume 4.512, Δ7d −51%), Heroic Tragedy Timeless Jewel ~55 ex (~0,3 div, volume 10.985), Grand Spectrum Ruby ~40 ex (~0,22 div, volume 1.638, Δ7d −64%). Volume cao bán được ngay, nhưng cả bốn rớt giá mạnh trong tuần.
-
-**Zarokh jackpot — leo giá nhưng thưa.** The Last Flame Incense Relic ~290.662 ex (~1.597 div, volume 46, Δ7d +137%). The Desperate Alliance Vase Relic ~1.503 ex (~8,3 div, volume 368). **Zarokh's Reliquary Key: Against the Darkness ~13.470 ex (~74 div, volume 7, Δ7d +87%)** — dùng key này mở lại Zarokh trong reliquary farm guaranteed unique relic + Time-Lost Diamond, và bản thân key trade được giá div. Cả ba volume thấp, phương sai khổng lồ.
-
-**Relic resale — tầng đệm.** Gom ba relic cùng base reforge thành một relic tốt hơn; dòng Honour Resistance cao hoặc cụm key bán được vài tới vài chục ex. Tự nuôi kho relic nên đầu tư setup gần như amortize về dài hạn.
-
-Một run bốn tầng stack key đủ cache ra nền **~2-4 div** (currency + waystone + jewel + relic reforge), tính đến 2026-06-16. Trừ Djinn Barya 75+ (vài ex tới <1 div), lãi ròng nền ~2-4 div/run. Build tune tốt xong ~8-12 phút (~5-7 run/giờ) → **~10-25 div/giờ chưa tính jackpot**; jackpot Zarokh kéo trung bình lên nhưng không đều.
+- **Jewel cache (nền volume cao nhất, đang nguội):** cache nhả :wiki-link{url="https://www.poe2wiki.net/wiki/Time-Lost_Ruby"}, Timeless Jewel và :wiki-link{url="https://www.poe2wiki.net/wiki/Grand_Spectrum_(Ruby)"}. Against the Darkness Time-Lost Diamond ~363 ex (~2 div, volume 3.476, Δ7d −31%), Undying Hate Timeless Jewel ~120 ex (~0,66 div, volume 4.512, Δ7d −51%), Heroic Tragedy Timeless Jewel ~55 ex (~0,3 div, volume 10.985), Grand Spectrum Ruby ~40 ex (~0,22 div, volume 1.638, Δ7d −64%). Volume cao bán được ngay, nhưng cả bốn rớt giá mạnh trong tuần.
+- **Zarokh jackpot (leo giá nhưng thưa):** The Last Flame Incense Relic ~290.662 ex (~1.597 div, volume 46, Δ7d +137%). The Desperate Alliance Vase Relic ~1.503 ex (~8,3 div, volume 368). Zarokh's Reliquary Key: Against the Darkness ~13.470 ex (~74 div, volume 7, Δ7d +87%) — dùng key này mở lại Zarokh trong reliquary farm guaranteed unique relic + Time-Lost Diamond, và bản thân key trade được giá div. Cả ba volume thấp, phương sai khổng lồ.
+- **Relic resale (tầng đệm):** gom ba relic cùng base reforge thành một relic tốt hơn; dòng Honour Resistance cao hoặc cụm key bán được vài tới vài chục ex. Tự nuôi kho relic nên đầu tư setup gần như amortize về dài hạn.
+- **EV/run:** một run bốn tầng stack key đủ cache ra nền ~2-4 div (currency + waystone + jewel + relic reforge). Trừ Djinn Barya 75+ (vài ex tới <1 div), lãi ròng nền ~2-4 div/run. Build tune tốt xong ~8-12 phút (~5-7 run/giờ) → ~10-25 div/giờ chưa tính jackpot; jackpot Zarokh kéo trung bình lên nhưng không đều.
 
 ## Failure Modes
 

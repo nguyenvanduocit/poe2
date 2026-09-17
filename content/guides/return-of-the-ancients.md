@@ -5,7 +5,7 @@ title: Return of the Ancients
 status: published
 author: duocnv
 created: '2026-05-22'
-updated: '2026-06-19'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.3
 tags:
@@ -19,6 +19,16 @@ tags:
 
 # Return of the Ancients
 
+## TL;DR
+
+- 0.5.0 là patch lớn cuối trước 1.0 (launch 29/05/2026): viết lại toàn bộ Endgame, live tới 0.5.3 (19/06/2026).
+- Runes of Aldur craft quanh Remnant 2-10 slot + Verisium Runeforging + Runic Ward (defense layer mới, chỉ kích khi tụt còn 1 life); 23 Kalguuran Skill và 7 Kalguuran Support craft thẳng từ Remnant.
+- Origins of Divinity: Fortress là nguồn DUY NHẤT cấp Atlas Point, tree hơn 300 node đủ allocate hết nên GGG bỏ luôn respec; giết Arbiter of Divinity năm lần là lối tắt lấy point.
+- Masters of the Atlas: ba Master Doryani/Hilda/Jado, 12 node mỗi người, chọn tối đa 4, đổi tự do trước mỗi map.
+- Hai ascendancy mới Spirit Walker (Huntress companion) + Martial Artist (Monk unarmed); lần đầu POE2 có challenge — 2/4/6/8 challenge cho mảnh giáp Knight of Aldur.
+- Meta minion đảo: Infernal Legion I/II halved và III bị bỏ; Tame Beast lên 84% more @ GL20; Leech, Vaal Pact, Trusted Kinship rework hoàn toàn.
+- Ba mid-league patch buff reward: Grand Expedition chest rework, Remnant scale tới T15+, Delirium Simulacrum 200%, kèm giảm damage boss/monster diện rộng.
+
 0.5.0 là patch lớn cuối cùng của Path of Exile 2 trước bản 1.0, launch ngày 29/05/2026. Đây không phải league gắn thêm vài cơ chế — toàn bộ Endgame bị viết lại: Atlas reset, sáu storyline endgame mới, hai ascendancy mới (Martial Artist cho Monk, Spirit Walker cho Huntress), và lần đầu tiên Path of Exile 2 có hệ challenge. Patch 0.5.1 drop 05/06/2026, bổ sung 24 Atlas Passive trên đỉnh cây, 40 Elemental Passive gần Jewel Socket vùng Sorceress/Witch/Druid, Lineage Support mới :wiki-link{url="https://www.poe2wiki.net/wiki/Atziri%27s_Communion"}, và fix loạt lỗi Fortress grant thiếu điểm. Patch 0.5.2 drop 12/06/2026 buff reward mid-league (Remnant T14+ cho inscription dày hơn, mỗi vùng Ocean đảm bảo Grand Expedition), kèm đợt giảm damage diện rộng cho boss/monster và làm lại Partial Translations của Jado. Patch 0.5.3 drop 19/06/2026 đẩy thẳng vòng investment endgame: Grand Expedition chest rework toàn bộ (bỏ basic weapon/armour, thêm Currency/Unique/Waystone dày hơn cùng mystery + trinket high-rarity), Remnant max count scale theo Waystone Tier với đỉnh T15+, cap explosive 20→15, Styrn luôn rớt Expedition Logbook, Runic Modifier reward x2, Transcendent Alloy quay lại Foci/Wand, Runeforging mất ít defence hơn 20%, Delirium Simulacrum 100%→200% (fix bug 0%→100% không chạy), fog scaling halved nhưng Delirium Tablet scale lại về cũ khi xài ba cái, Vessel of Kulemak có cửa drop Ancient bones, Tasgul/Vandroth/final Abyssal Trove luôn rớt Desecrated Currency, Close to the Surface buff. Riêng build minion: The Unborn Lich His Grave Command bỏ Spirit cost (đảo cơ chế reservation cũ), quality đổi sang +0-20% more Minion Life — alt Lich Elephant đáng đánh giá lại từ đầu. Changelog đầy đủ từng dòng nằm ở [Patch Notes 0.5.0](/guides/0-5-0-patch-notes) và [Patch Notes 0.5.2](/guides/0-5-2-patch-notes).
 
 ## Runes of Aldur: Remnant và hệ crafting Verisium
@@ -29,7 +39,7 @@ Cơ chế kéo theo toàn patch là **Runic Ward** — lớp defense hoàn toàn
 
 NPC Farrow mở dần bốn tầng craft xuyên campaign. Act 1 mở Verisium Runeforging. Act 2 mở **13 Alloy** — thay một modifier sẵn có, giống Perfect Essence. Act 3 mở **Unique Verisium Runeforging** — nâng base type của Unique Weapon/Armour rớt dưới level 55, cho weapon damage cao hơn và armour defence cao hơn kèm Runic Ward. Act 4 mở **13 Ancient Rune** đặc thù theo loại weapon. Ngoài ra Remnant craft được **13 Mythical** rune cho nhân vật level 15+, **3 Flux** đổi element của resistance, **15 Meta crafting rune**, hơn 60 rune tạo bằng cách phá hủy unique, và hơn 15 Runic Ward Rune chỉnh stat Runic Ward trực tiếp. Quan trọng cho build planning: **23 Kalguuran Skill** và **7 Kalguuran Support** craft thẳng từ Remnant — đây là lần đầu skill/support là drop từ league mechanic chứ không phải gem thường. Hai mươi ba skill đó gồm Animus Exchange, Conductive Runes, Detonate Living, Eternal March, Fragments of the Past, Frostflame Nova, Refutation, Repulsion, Skyfall, Triskelion Cascade, Voltaic Barrier, Wardbound Minions, và nhiều cái khác; bảy support gồm Fist of Kalguur, Healing Runes, Runeforged Blades, Runic Extraction, Runic Infusion, Scouring Flame, và Concussive Runes.
 
-Cơ chế Logbook cũ thay bằng **Ocean Exploring** — dùng logbook hé lộ một vùng đại dương đầy đảo, mỗi đảo là một Grand Expedition hoặc một Faction Leader. Từ 0.5.2, mỗi vùng đại dương logbook hé lộ đảm bảo có ít nhất một Grand Expedition, hết cảnh mở vùng trắng. Medved, Vorana và Uhtred gia nhập Olroth thành bốn Faction Leader; hạ Olroth cho chìa khóa tới Pinnacle Boss league. Hub area mới là **The Ruins of Kingsmarch**, phía đông nam điểm khởi đầu trên Atlas.
+Cơ chế Logbook cũ thay bằng **Ocean Exploring** — dùng logbook hé lộ một vùng đại dương đầy đảo, mỗi đảo là một Grand Expedition hoặc một Faction Leader. Từ 0.5.2, mỗi vùng đại dương logbook hé lộ đảm bảo có ít nhất một Grand Expedition, hết cảnh mở vùng trắng. Medved, Vorana và Uhtred gia nhập Olroth thành bốn Faction Leader; hạ Olroth cho key vào Pinnacle Boss league. Hub area mới là **The Ruins of Kingsmarch**, phía đông nam điểm khởi đầu trên Atlas.
 
 Path of Exile 2 lần đầu có challenge. Hoàn thành 2/4/6/8 challenge Runes of Aldur nhận các mảnh bộ giáp **Knight of Aldur** — reward chỉ tồn tại trong league này. Từ challenge đầu tiên trở đi mỗi challenge cho thêm một mảnh **Runes of Aldur Totem** ghi vĩnh viễn số challenge đã hoàn thành trong hideout.
 
@@ -39,7 +49,7 @@ Storyline **Origins of Divinity** dẫn người chơi vào một **Fortress** t
 
 Có lối tắt: thay vì cày hết map Fortress, giết **Arbiter of Divinity** năm lần sẽ tự hoàn thành các phần Fortress để lấy point. Patch 0.5.1 điều chỉnh thêm — Fortress Towers, Gateways, Enigma Chambers và Halls giờ cấp nhiều điểm hơn, và player đã hoàn thành những khu vực này trước 0.5.1 được cấp điểm bổ sung tự động khi đăng nhập.
 
-Map trong Fortress mang **Ancient Modifier** thêm hoặc chỉnh nội dung map; hơn 40 modifier loại này cũng xuất hiện trên map thường ngoài Fortress. Đường vào Fortress qua ba **Gateway map** với hai boss mới; Burning Monolith và Arbiter of Ash dời vào trong Fortress. Hai **Citadel map** mới rớt chìa khóa cho Arbiter of Divinity. Thêm 30 Endgame Map Area mới và stat mới **Monster Rarity** — ảnh hưởng cơ hội xuất hiện magic/rare monster và số modifier trên rare.
+Map trong Fortress mang **Ancient Modifier** thêm hoặc chỉnh nội dung map; hơn 40 modifier loại này cũng xuất hiện trên map thường ngoài Fortress. Đường vào Fortress qua ba **Gateway map** với hai boss mới; Burning Monolith và Arbiter of Ash dời vào trong Fortress. Hai **Citadel map** mới rớt key cho Arbiter of Divinity. Thêm 30 Endgame Map Area mới và stat mới **Monster Rarity** — ảnh hưởng cơ hội xuất hiện magic/rare monster và số modifier trên rare.
 
 Vài thay đổi cấu trúc Atlas đáng nhớ: các điểm trọng yếu cố định dễ tìm (hoàn thành chia sẻ với party), mọi league mechanic đều có quest dẫn tới tận pinnacle, mỗi pinnacle boss tách thành Quest version và Infinite Farm version. Tách hai phiên bản này đồng nghĩa Calamity Fragment (Primary/Secondary/Tertiary) không còn tồn tại.
 

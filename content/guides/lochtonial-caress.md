@@ -5,7 +5,7 @@ title: Lochtonial Caress
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 sub_class: items
@@ -21,7 +21,15 @@ tags:
 
 # Lochtonial Caress
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Lochtonial_Caress"} là unique :wiki-link{url="https://www.poe2wiki.net/wiki/Tempered_Mitts"} yêu cầu Level 16, 22 Str với mod dẫn đầu (10–15)% increased :wiki-link{url="https://www.poe2wiki.net/wiki/Skill_Speed"} — trục animation speed thống nhất của POE2, áp cho tất cả skill type mà không phân biệt attack hay spell hay minion. Kèm theo là mechanic chia :wiki-link{url="https://www.poe2wiki.net/wiki/Charges"} thụ động cho ally trong :wiki-link{url="https://www.poe2wiki.net/wiki/Presence"} mà không tiêu charge của bản thân. Item xuất hiện trong 13,4% sample top-XP của poe.ninja Runes of Aldur — con số nghịch lý vì glove yêu cầu Level 16 và drop được ở bất kỳ đâu trong The Market lại tồn tại đến endgame.
+## TL;DR
+
+- (10–15)% Skill Speed áp lên tất cả skill type — đòn tay, spell, bow, minion — không phân biệt.
+- Share Charges không tiêu charge của player; khác Conduit keystone vốn xóa charge trước khi phát ra.
+- Tradeoff duy nhất: (10–15)% reduced max Mana — attack build và companion build không cảm nhận, caster reservation nhiều mới bị ảnh hưởng.
+- Drop từ The Market, Level 16, phổ biến đến endgame vì rare gloves có Skill Speed tương đương rất hiếm.
+- Fists of Stone (biến thể Runic Recipe): bỏ Skill Speed, thêm evasion+ES per level và chance grant all 3 charge types on hit.
+
+:wiki-link{url="https://www.poe2wiki.net/wiki/Lochtonial_Caress"} là unique :wiki-link{url="https://www.poe2wiki.net/wiki/Tempered_Mitts"} yêu cầu Level 16, 22 Str với mod dẫn đầu (10–15)% increased :wiki-link{url="https://www.poe2wiki.net/wiki/Skill_Speed"} — nguồn animation speed thống nhất của POE2, áp cho tất cả skill type mà không phân biệt attack hay spell hay minion. Kèm theo là mechanic chia :wiki-link{url="https://www.poe2wiki.net/wiki/Charges"} thụ động cho ally trong :wiki-link{url="https://www.poe2wiki.net/wiki/Presence"} mà không tiêu charge của bản thân. Item xuất hiện trong 13,4% sample top-XP của poe.ninja Runes of Aldur — con số nghịch lý vì glove yêu cầu Level 16 và drop được ở bất kỳ đâu trong The Market lại tồn tại đến endgame.
 
 ## Chỉ số
 
@@ -43,11 +51,11 @@ Surrender to me, and I will grant you everything."
 
 ## Skill Speed từ glove Level 16 và lý do còn dùng ở endgame
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Skill_Speed"} trong POE2 là trục tốc độ duy nhất: nó ảnh hưởng đến thời gian thực hiện của tất cả skill — đòn tay, spell, bow, minion skill, trap. Không có skill nào nằm ngoài. 10–15% từ gloves Level 16 ăn thẳng vào cycle của mọi build không phân biệt class.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Skill_Speed"} trong POE2 là nguồn tốc độ duy nhất: nó ảnh hưởng đến thời gian thực hiện của tất cả skill — đòn tay, spell, bow, minion skill, trap. Không có skill nào nằm ngoài. 10–15% từ gloves Level 16 ăn thẳng vào cycle của mọi build không phân biệt class.
 
 Lý do item này tồn tại ở endgame là sự vắng mặt của lựa chọn thay thế rẻ hơn. Rare gloves cung cấp Skill Speed hiếm hơn nhiều so với rare rings hay amulets cung cấp damage cùng loại, và khi budget build đang ưu tiên weapon/amulet, Lochtonial Caress giữ slot tay "đủ dùng" mà không cần đầu tư. Kèm thêm +(40–60) maximum Life và +(15–25) Armour, profile defensive không bị trống.
 
-Tradeoff thực sự chỉ có một: (10–15)% reduced maximum Mana. Build attack thuần và build companion hầu như không cảm nhận; build caster reservation nhiều mới bị thu hẹp mana pool đáng kể. Nếu build đang chạy nhiều aura mana đồng thời và mana pool đã eo hẹp, đây là lý do để upgrade sớm hơn.
+Tradeoff thực sự chỉ có một: (10–15)% reduced maximum Mana. Build attack thuần và build companion hầu như không cảm nhận; build caster reservation nhiều mới bị thu hẹp mana pool rõ. Nếu build đang chạy nhiều aura mana đồng thời và mana pool đã eo hẹp, nên upgrade sớm hơn.
 
 ## Cơ chế chia charge không tiêu charge của mình
 
@@ -55,7 +63,7 @@ Tradeoff thực sự chỉ có một: (10–15)% reduced maximum Mana. Build att
 
 Với minion và companion build, đây là buff thụ động không cần action. Trong POE2, :wiki-link{url="https://www.poe2wiki.net/wiki/Charges"} không grant passive stat cho người giữ — chúng được consume bởi skill để kích hoạt hiệu ứng cụ thể. Nếu player giữ 3 :wiki-link{url="https://www.poe2wiki.net/wiki/Frenzy_Charge"}, companion trong Presence nhận được charge đó; companion skill nào consume Frenzy sẽ fire với hiệu ứng tương ứng của skill đó. Nguồn Frenzy Charge trên passive tree của Huntress hoặc Ranger thường đủ để duy trì 3–4 charge thường xuyên trong combat. Tương tự với :wiki-link{url="https://www.poe2wiki.net/wiki/Endurance_Charge"}: ally trong Presence nhận Endurance Charge, và skill consume Endurance sẽ kích hoạt effect tương ứng.
 
-Cần kiểm tra empirically: cơ chế share charge có áp lên Tame Beast companion (unique beast đã bắt qua Tame Beast) hay chỉ áp lên skeleton/spectre/summon standard? Wiki ghi "minions" đều được cover, nhưng companion Tame Beast có AI riêng và có thể xử lý buff stack khác. Khi vào league, log với ThaoCamVienSaiGon: charge count của Diretusk Boar và Azmerian Wolf có thay đổi theo charge của player không, share số lượng bằng nhau hay chỉ grant một loại, và companion skill nào trong đàn thực sự consume charge để kích hiệu ứng.
+Cần kiểm tra empirically: cơ chế share charge có áp lên Tame Beast companion (unique beast đã bắt qua Tame Beast) hay chỉ áp lên skeleton/spectre/summon standard? Wiki ghi "minions" đều được cover, nhưng companion Tame Beast có AI riêng và có thể xử lý buff stack khác. Phép đo cần một Spirit Walker đang field beast đã tame: đứng cạnh đàn, đọc charge count của từng con xem có thay đổi theo charge của player không, share số lượng bằng nhau hay chỉ grant một loại, và companion skill nào trong đàn thực sự consume charge để kích hiệu ứng. Main hiện tại chạy skeleton chứ không phải Tame Beast nên không đo được trên nó — phần này còn để ngỏ.
 
 ## Unique Runeforging và biến thể Fists of Stone
 

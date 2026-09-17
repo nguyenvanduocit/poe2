@@ -38,11 +38,20 @@ fields:
 Guide tutorial template. Voice: tiếng Việt, owner-voice, prose-first. Title KHÔNG kèm league/patch.
 Term game → :wiki-link{url="..."} lần đầu (POE2 → poe2wiki.net).
 
-RIGHT-SIZING: guide là tutorial tuần tự — required-core = Intro + các bước (Step-by-Step) + Tips/Pitfalls.
-CẮT section không cần, ĐỪNG pad. KHÔNG mở `## Quick Summary`/`## Overview` meta-summary ("guide này dạy gì,
-cho ai") — vào thẳng. Cross-link đặt ở `## Relationships`, KHÔNG mở `## Related Resources` trùng nó.
+Guide MỞ ĐẦU bằng `## TL;DR` (ngay sau H1) — 3-7 bullet plain-text gói đúng các quyết định + số then chốt
+để người đọc scan 10 giây. TL;DR KHÔNG phải mục lục ("phần 1 nói về X"): mỗi bullet là một kết luận hành động
+hoặc con số, không phải tên section. KHÔNG wiki-link trong bullet (body giữ first-mention link). Sau TL;DR mới
+tới intro + các bước.
+
+RIGHT-SIZING: guide là tutorial tuần tự — required-core = TL;DR + Intro + các bước (Step-by-Step) + Tips/Pitfalls.
+CẮT section không cần, ĐỪNG pad. Thân bài KHÔNG lặp lại nguyên văn bullet TL;DR — TL;DR tóm, body giải thích why.
+Cross-link đặt ở `## Relationships`, KHÔNG mở `## Related Resources` trùng nó.
 Heading: sentence-case tiếng Việt nói thẳng (vd `## Mở khoá atlas`), KHÔNG dash-subtitle `## X — Y`.
 -->
+
+## TL;DR
+
+- (3-7 bullet: quyết định + số then chốt, plain-text, owner-voice, KHÔNG wiki-link, KHÔNG mục lục section)
 
 (Intro 2-3 câu — không heading. Guide làm được gì cho người đọc + prerequisite (gear/build state) gói gọn vào đây, đừng mở section Overview riêng.)
 

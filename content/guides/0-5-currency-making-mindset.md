@@ -5,7 +5,7 @@ title: Tư duy kiếm currency
 status: draft
 author: duocnv
 created: '2026-06-18'
-updated: '2026-06-18'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.3
 guide_type: economy
@@ -20,6 +20,15 @@ tags:
 ---
 
 # Tư duy kiếm currency
+
+## TL;DR
+
+- Thứ cần tối ưu là lãi (doanh thu trừ chi phí đầu vào trừ ma sát thanh khoản), không phải loot; farm entry gần bằng không bán được ngay thường thắng farm juicy khó bán.
+- Ba vai trong chuỗi cung: Producer đổi giờ lấy drop, Refiner đổi vốn cộng kiến thức craft lấy giá cô đặc, Distributor đổi vốn cộng hiểu thị trường lấy spread. Tiền thật nằm ở leo từ Producer lên Refiner rồi Distributor.
+- Đứng vào nút thắt của value chain: chỗ cung bị content-gate hoặc cầu dày (Alloy và Ancient Rune ở 0.5) rồi thu phí qua mắt xích đó.
+- Thanh khoản là chi phí ẩn: output càng giống currency, bán theo lô, càng đáng hơn một cú unique jackpot phải rao cả tuần.
+- Phase league đổi luật: đầu league là giờ vàng Producer, giữa league là giờ vàng Refiner, cuối league chỉ đồ top-end còn giữ giá.
+- Phương sai phải khớp bankroll; luôn để vốn làm việc trong gear hoặc craft thay vì ôm currency chết trong stash; đo div mỗi giờ có bấm giờ rồi so với farm tốt nhất mình biết.
 
 Currency không phải thứ để "farm", nó là thứ để chuyển hoá. Mỗi giờ chơi mình đổ vào một input cố định — thời gian, vốn, hoặc quyền vào content — đẩy nó qua một nút thắt nào đó rồi lấy ra output, và lãi là phần chênh còn lại sau khi trừ chi phí. [Tier list các chiến lược farm](/guides/0-5-farming-strategy-tier-list) trả lời "hôm nay farm gì"; khung dưới đây trả lời câu sâu hơn: currency sinh ra như thế nào, mình đứng ở đâu trong dòng chảy đó, và làm sao tự xếp lại bảng khi giá trôi. Giá thì trôi mỗi tuần, mấy mô hình này thì không.
 

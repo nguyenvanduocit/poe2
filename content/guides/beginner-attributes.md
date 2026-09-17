@@ -5,7 +5,7 @@ title: "Ba chỉ số cơ bản: Strength, Dexterity, Intelligence"
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -19,13 +19,21 @@ tags:
 
 # Ba chỉ số cơ bản: Strength, Dexterity, Intelligence
 
+## TL;DR
+
+- Strength +2 Life/point, Dexterity +6 Accuracy/point, Intelligence +2 Mana/point — bonus tự động, không cần làm gì thêm.
+- Str = requirement gear Armour + melee weapon; Dex = gear Evasion + ranged weapon; Int = gear Energy Shield + spell weapon.
+- Thiếu attribute thì item highlight đỏ không equip được; gem thiếu attribute thì không active dù đã socket đúng chỗ.
+- Tháo item đang cho attribute có thể cascade — gear khác mất requirement rồi tự unequip theo, cẩn thận thứ tự tháo.
+- Ring và amulet là slot dễ lấy attribute nhất; Stellar Amulet implicit +(5-7) all Attributes.
+
 Mọi character trong POE2 đều có ba attribute: :wiki-link{url="https://www.poe2wiki.net/wiki/Strength"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Dexterity"}, và :wiki-link{url="https://www.poe2wiki.net/wiki/Intelligence"}. Ba con số này không chỉ là thematic flavour của class — chúng quyết định trực tiếp gear nào mặc được, gem nào dùng được, và cho bonus tự động theo từng point. Hiểu attribute từ sớm giúp tránh được tình huống quen thuộc với người mới: tìm được item xịn nhưng mặc không lên vì thiếu stat.
 
 ## Mỗi attribute tự động cho bonus gì
 
 Ba attribute đều cho bonus tự nhiên theo số point đang có — không cần làm gì thêm, game tự tính.
 
-Strength cho **+2 maximum :wiki-link{url="https://www.poe2wiki.net/wiki/Life"} mỗi point**. Character có 150 Str thì nhận thêm 300 Life từ stat này, hoàn toàn độc lập với Life pool từ gear hay passive tree. Đây là lý do melee build thường stack Str cao — mỗi node passive cho +10 Str thực ra cũng là Life node gián tiếp.
+Strength cho **+2 maximum :wiki-link{url="https://www.poe2wiki.net/wiki/Life"} mỗi point**. Character có 150 Str thì nhận thêm 300 Life từ stat này, hoàn toàn độc lập với Life pool từ gear hay passive tree. Melee build vì vậy thường stack Str cao — mỗi node passive cho +10 Str thực ra cũng là Life node gián tiếp.
 
 Dexterity cho **+6 :wiki-link{url="https://www.poe2wiki.net/wiki/Accuracy_Rating"} mỗi point**. Character cũng tự nhận **+6 Accuracy Rating mỗi level** — bonus này đến từ level up, không liên quan Dex.
 

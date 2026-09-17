@@ -5,7 +5,7 @@ title: "Parry, combo và WASD: cơ bản combat POE2"
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -21,11 +21,19 @@ tags:
 
 # Parry, combo và WASD: cơ bản combat POE2
 
+## TL;DR
+
+- WASD là di chuyển mặc định — không còn click-to-move như POE1; spacebar + hướng WASD để dodge roll tức thì đúng hướng.
+- Buckler grant Parry: block 100% từ phía trước trong tầm gần, phản đòn gây Parried debuff (50% more Attack Damage, 2 giây).
+- Armoured Shield grant Raise Shield: block 100% từ phía trước; release ngay sau block = Shield Bash gây Light Stun.
+- Evasion né toàn bộ hit từ mọi hướng (xác suất); Active Block chặn chắc chắn nhưng chỉ từ phía trước.
+- Monk tích Combo bằng cách strike liên tục — đủ threshold mới release finisher (Tempest Bell cần 4 combo).
+
 POE2 xây dựng lại combat từ gốc so với POE1. Không còn click chuột để di chuyển, không còn đứng yên hứng đòn rồi dựa vào flask. Mỗi class có cách đối phó đòn tấn công khác nhau — Buckler để Parry, Shield để giơ lên chặn, evasion để né hoàn toàn, dodge roll để thoát i-frame. Hiểu từng cái hoạt động khác nhau như thế nào là nền tảng để không chết oan trong endgame.
 
 ## WASD là cách điều khiển mặc định của POE2
 
-Trong POE1, di chuyển bằng click chuột trái vào điểm muốn đến. POE2 đổi sang WASD: bốn phím W/A/S/D điều khiển hướng di chuyển trực tiếp, chuột chỉ để nhắm kỹ năng và attack. Đây không phải tùy chọn — đây là cách game design thế giới di chuyển và né đòn.
+Trong POE1, di chuyển bằng click chuột trái vào điểm muốn đến. POE2 đổi sang WASD: bốn phím W/A/S/D điều khiển hướng di chuyển trực tiếp, chuột chỉ để nhắm kỹ năng và attack. WASD không phải tùy chọn — game thiết kế thế giới di chuyển và né đòn theo cơ chế này.
 
 Lý do thay đổi này quan trọng: với WASD, bạn di chuyển chính xác và liên tục trong khi vẫn nhắm kỹ năng về phía quái. Với click-to-move, mỗi lần click điểm đến mới mất một khoảnh khắc phản ứng. POE2 có boss telegraph rất rõ và window né đòn hẹp — mili-giây đó là sự khác biệt giữa sống và chết. Dodge roll cũng gắn chặt vào WASD: nhấn spacebar trong khi đang giữ hướng WASD thì roll đúng hướng đó tức thì, không cần click thêm. Chi tiết về i-frame và cách dùng dodge roll hiệu quả có ở [Dodge roll và combat trong POE2](/guides/beginner-dodge-roll).
 
@@ -39,9 +47,9 @@ Một giới hạn cần biết: trong lúc đang giữ Parry, di chuyển bị 
 
 ## Parried debuff mở ra combo follow-up cho Huntress
 
-Debuff :wiki-link{url="https://www.poe2wiki.net/wiki/Parried_Debuff"} tồn tại 2 giây và có hai effect: kẻ địch nhận 50% more Attack Damage, và không thể evade attack trong thời gian đó. Mọi attack nào hit vào kẻ địch đang mang debuff này đều được khuếch đại đáng kể.
+Debuff :wiki-link{url="https://www.poe2wiki.net/wiki/Parried_Debuff"} tồn tại 2 giây và có hai effect: kẻ địch nhận 50% more Attack Damage, và không thể evade attack trong thời gian đó. Mọi attack nào hit vào kẻ địch đang mang debuff này đều mạnh hơn hẳn.
 
-Điều làm cho Huntress có playstyle riêng biệt chính là vì một số skill spear được thiết kế để **consume** Parried debuff và gây effect bùng nổ. :wiki-link{url="https://www.poe2wiki.net/wiki/Disengage"} nhảy lùi và tạo shockwave khi consume Parried debuff, đồng thời grant một Frenzy Charge. :wiki-link{url="https://www.poe2wiki.net/wiki/Fangs_of_Frost"} khi đâm vào kẻ địch đang bị Parried sẽ gây thêm frost explosion và để lại Chilled Ground. Đây là lý do Huntress combat đọc như một chuỗi: Parry đòn → debuff xuất hiện → consume bằng spear follow-up để gây burst. Không phải kiểu đứng vào đánh liên tục, mà là đọc và phản.
+Huntress có playstyle riêng biệt vì một số skill spear **consume** Parried debuff để gây effect bùng nổ. :wiki-link{url="https://www.poe2wiki.net/wiki/Disengage"} nhảy lùi và tạo shockwave khi consume Parried debuff, đồng thời grant một Frenzy Charge. :wiki-link{url="https://www.poe2wiki.net/wiki/Fangs_of_Frost"} khi đâm vào kẻ địch đang bị Parried sẽ gây thêm frost explosion và để lại Chilled Ground. Huntress combat vì vậy đọc như một chuỗi: Parry đòn → debuff xuất hiện → consume bằng spear follow-up để gây burst. Không phải kiểu đứng vào đánh liên tục, mà là đọc và phản.
 
 ## Raise Shield block khác evasion ở bản chất hoạt động
 
@@ -55,7 +63,7 @@ Debuff :wiki-link{url="https://www.poe2wiki.net/wiki/Parried_Debuff"} tồn tạ
 
 Thông thường, Heavy Stun chỉ xảy ra với quái vật khi stun bar đầy — người chơi miễn nhiễm với Heavy Stun trong hầu hết tình huống. Nhưng khi đang active-block bằng Raise Shield hoặc Parry, người chơi bắt đầu tích lũy Heavy Stun buildup từ các hit bị chặn. Nếu chặn quá nhiều đòn mạnh liên tiếp mà stun bar đầy, nhân vật bị Heavy Stun và không làm gì được trong vài giây.
 
-Evasion có tác dụng ở đây: khi hit bị chặn cũng roll evasion thành công, hit đó không tạo Heavy Stun buildup — evasion không né được hit khi đang active-block, nhưng thay vào đó chuyển thành cơ hội tránh stun accumulation. Đây là lý do một số build kết hợp Buckler với evasion cao: vừa chặn đòn, vừa giảm nguy cơ bị Heavy Stun xuyên qua.
+Evasion có tác dụng ở đây: khi hit bị chặn cũng roll evasion thành công, hit đó không tạo Heavy Stun buildup — evasion không né được hit khi đang active-block, nhưng thay vào đó chuyển thành cơ hội tránh stun accumulation. Một số build vì vậy kết hợp Buckler với evasion cao: vừa chặn đòn, vừa giảm nguy cơ bị Heavy Stun xuyên qua.
 
 ## Combo là resource của Monk được build qua chuỗi strike
 

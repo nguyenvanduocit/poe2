@@ -6,7 +6,7 @@ mechanic_type: Atlas
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-19'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.3
 tags:
@@ -21,6 +21,15 @@ tags:
 ---
 
 # Atlas passive tree gồm những gì
+
+## TL;DR
+
+- Cày đủ Fortress là đủ point bật cả cây, không có respec, nên việc duy nhất cần lo là mở node nào trước lúc point còn ít.
+- Bốn nhóm đáng dồn point đầu tiên: waystone, rare monster, tablet, rồi content mình farm lặp lại nhiều nhất.
+- Ba Master (Hilda, Doryani, Jado) đổi 4-node tự do trước mỗi map không tốn point, nên mở cả ba sớm rồi tinh chỉnh theo từng map.
+- Mỗi league mechanic (Breach, Ritual, Delirium, Abyss, Fate of the Vaal) có subtree riêng; chỉ dồn point vào cái thật sự chạy.
+- City là chỗ juice đậm nhất nhờ ba notable History biến city thành biome thứ hai, ăn cả hai dải node cùng lúc.
+- Specialization gating khoá fracturing orb, exceptional item, precursor tablet sau node atlas: chưa lấy node thì không rớt bất kể farm bao nhiêu.
 
 0.5 đập cây atlas ra xây lại từ đầu: hơn 300 node ở bản 0.5.0, thêm 24 biome node ở 0.5.1 thành hơn 324, và point giờ chỉ ra từ map trong Fortress của storyline :wiki-link{url="https://www.poe2wiki.net/wiki/Origins_of_Divinity"}. Cày hết Fortress là đủ point bật cả cây nên GGG bỏ luôn respec — không refund, không cần refund. Điều đó đổi cách đọc cây: không còn câu hỏi "node nào đáng hi sinh node khác", chỉ còn "mở node nào trước" lúc point còn ít. Doc này là bản đồ nội dung của cây — mỗi nhánh chứa gì, ba master buff thế nào, và mỗi league subtree viết lại ra sao. Cách kiếm point xem [Mở khóa toàn bộ atlas endgame](/guides/0-5-atlas-unlock-walkthrough); thứ tự dồn point để sustain xem [Sustain map và setup atlas tree endgame](/guides/0-5-endgame-mapping-sustain).
 
@@ -112,10 +121,6 @@ Chạy :wiki-link{url="https://www.poe2wiki.net/wiki/Breach"} kiểu raw loot th
 Chạy :wiki-link{url="https://www.poe2wiki.net/wiki/Abyss"} thì chia theo đích: rarity cho hướng farm currency với Ulaman, monster effectiveness cho hướng omen với Amanamu. Cụm Rogue Exile là bắt buộc — exile và abyss đi cùng nhau, vừa thêm loot vừa nuôi nguồn jewel Heart of the Well mà subtree Abyss buff qua **Blessing of the Source**. Cả hai nhánh ghi ở [Abyss Ulaman và Amanamu farm](/farming/0-5-abyss-ulaman-amanamu-farm).
 
 Chạy :wiki-link{url="https://www.poe2wiki.net/wiki/Delirium"} thuần thì dồn vào boss node — delirium bản chất là boss rush, loot chính nằm ở boss chứ không ở đám quái fog.
-
-## Đọc cây thế nào cho đúng
-
-Cây atlas 0.5 không bắt đánh đổi giữa các node — cày đủ Fortress là bật hết — nên giá trị nằm ở thứ tự mở và ở việc hiểu node nào thật sự đổi nhịp farm. Bốn thứ đáng dồn point trước là waystone, rare monster, tablet và (khi đã chốt hướng) content mình lặp lại nhiều nhất. Masters of the Atlas đổi được trước mỗi map mà không tốn point, nên mở cả ba master sớm rồi tinh chỉnh 4-node theo từng map. Subtree league mechanic chỉ dồn vào cái mình thật sự chạy; specialization gating buộc một số content (fracturing orb, exceptional item) phải có node mới rớt, nên kiểm trước khi than sao không thấy drop.
 
 ## Version History
 

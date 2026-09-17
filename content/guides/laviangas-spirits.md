@@ -5,7 +5,7 @@ title: Lavianga's Spirits
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 sub_class: items
@@ -21,6 +21,14 @@ tags:
 ---
 
 # Lavianga's Spirits
+
+## TL;DR
+
+- Always-on mana recovery 18.5–27.75 mana/giây, không cần click, không tốn charge — flask tự loop mỗi 2 giây trong suốt combat.
+- Roll tốt nhất (70% reduced): 27.75 mana/giây; roll tệ nhất (80% reduced): 18.5 mana/giây. 20% quality đẩy lên 33.3 và 22.2 tương ứng.
+- Dành cho caster chạy nhiều aura reservation hoặc build spam spell tốc cao — không phải build có leech hay mana-on-kill.
+- Flask Duration passive KHÔNG tăng tổng lượng hồi — kéo dài chu kỳ 2 giây làm chậm tốc độ hồi mỗi giây.
+- Không tương thích với setup dùng on-use flask trigger vì không có "use" event.
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Lavianga%27s_Spirits"} là unique :wiki-link{url="https://www.poe2wiki.net/wiki/Gargantuan_Mana_Flask"} yêu cầu Level 49, định nghĩa bởi một dòng: "This Flask cannot be Used but applies its Effect constantly." Flask không có activation, không tốn charge, chỉ phục hồi mana liên tục trong suốt combat mà không cần micro. Phần lớn build trang bị nó là caster và build chạy nhiều aura reservation, cần mana sustain thụ động thay vì dựa vào flask chủ động.
 
@@ -57,7 +65,7 @@ Lượng mana phục hồi mỗi giây phụ thuộc vào roll của "(70–80)%
 - Best roll + 20% quality: 66.6 mana / 2s = **33.3 mana/sec**
 - Worst roll + 20% quality: 44.4 mana / 2s = **22.2 mana/sec**
 
-Có một điểm cần biết khi build: mod tăng Flask Duration (từ passive tree) **không tăng tổng mana phục hồi** — nó chỉ kéo dài chu kỳ 2 giây ra, làm tốc độ phục hồi mỗi giây giảm xuống trong khi tổng lượng mỗi chu kỳ không đổi. Ví dụ với +50% duration: chu kỳ kéo dài lên 3s, cùng 37–55.5 mana nhưng chia trên 3s → chỉ còn 12.3–18.5 mana/sec. Build nào tình cờ có nhiều flask duration modifier trên tree hoặc gear cần tính đến hiệu ứng này.
+Mod tăng Flask Duration (từ passive tree) **không tăng tổng mana phục hồi** — nó chỉ kéo dài chu kỳ 2 giây ra, làm tốc độ phục hồi mỗi giây giảm xuống trong khi tổng lượng mỗi chu kỳ không đổi. Ví dụ với +50% duration: chu kỳ kéo dài lên 3s, cùng 37–55.5 mana nhưng chia trên 3s → chỉ còn 12.3–18.5 mana/sec. Build nào tình cờ có nhiều flask duration modifier trên tree hoặc gear cần tính đến hiệu ứng này.
 
 ## Build nào cần nhất
 
@@ -65,7 +73,7 @@ Lavianga's Spirits đặc biệt có giá trị với build có chi phí mana ca
 
 **Caster chạy nhiều aura reservation:** Aura reservation cắt maximum mana, khiến pool còn lại mỏng hơn để chi cho skill cost. Khi pool mana bị bó như vậy, một hit burst mana cost dễ cạn pool và phải dừng cast. Flask always-on bù mana liên tục mà không đòi hỏi click giữa combat, tốt hơn hẳn so với flask mana thường — đặc biệt trong những encounter dài không có downtime để uống flask.
 
-**Skill có mana cost cao per cast:** Spell build spam tốc độ cao với cast speed lớn, hoặc skill hỗ trợ qua nhiều :wiki-link{url="https://www.poe2wiki.net/wiki/Support_Skill"} làm cost mỗi cast tăng lên đáng kể. 18.5–27.75 mana/sec thụ động giảm tải cho base mana regeneration (tỷ lệ % max mana) và passive tree.
+**Skill có mana cost cao per cast:** Spell build spam tốc độ cao với cast speed lớn, hoặc skill hỗ trợ qua nhiều :wiki-link{url="https://www.poe2wiki.net/wiki/Support_Skill"} làm cost mỗi cast tăng lên rõ. 18.5–27.75 mana/sec thụ động giảm tải cho base mana regeneration (tỷ lệ % max mana) và passive tree.
 
 Ngược lại, build không gặp vấn đề mana — ví dụ attack build dùng ít skill cost, hoặc build đã có nhiều "mana gained on kill" / "mana leech" — không cần flask này. Một flask mana thường roll tốt sẽ cho burst recovery cao hơn nhiều trong 2–4s active window khi cần, còn Lavianga's Spirits chỉ thắng ở chiều duy trì liên tục không cần micro.
 

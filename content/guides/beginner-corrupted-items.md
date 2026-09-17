@@ -5,7 +5,7 @@ title: "Corrupted item: tại sao không craft được và xử lý như thế 
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -20,13 +20,21 @@ tags:
 
 # Corrupted item: tại sao không craft được và xử lý như thế nào
 
+## TL;DR
+
+- "Corrupted" là tag vĩnh viễn — không thể xóa, không thể đảo ngược bằng bất cứ cách nào.
+- Mọi orb crafting thông thường (Chaos, Exalted, Divine, Annulment...) đều không dùng được; chỉ Rune socketing, salvage, và Uncut Gem cho gem vẫn hoạt động.
+- Vaal Orb tạo Corruption với 4 kết quả bằng nhau (25% mỗi cái): không đổi gì / reroll 1–3 mod / thêm enchant / thêm socket.
+- Corrupted item đeo và trade bình thường — penalty duy nhất là mất khả năng craft tiếp.
+- Corrupted Essence là crafting currency, không liên quan đến item state Corrupted — đừng nhầm.
+
 Nhặt được Rare có stats tốt nhưng thấy dòng chữ đỏ "Corrupted" bên dưới, thử dùng :wiki-link{url="https://www.poe2wiki.net/wiki/Chaos_Orb"} không được, thử :wiki-link{url="https://www.poe2wiki.net/wiki/Exalted_Orb"} cũng không — người mới thường nghĩ game bị lỗi hoặc item đó có vấn đề đặc biệt gì. Không phải lỗi. "Corrupted" là tag vĩnh viễn gắn lên item, khóa hầu hết orb crafting, và không thể bị xóa hay đảo ngược bằng bất cứ cách nào. Hiểu mechanic này từ sớm tránh được tình huống phí orb quý vào item không nhận.
 
 ## Tag Corrupted block hầu hết crafting nhưng không phải tất cả
 
 Khi item mang tag Corrupted, các orb crafting chính đều từ chối hoạt động: :wiki-link{url="https://www.poe2wiki.net/wiki/Orb_of_Transmutation"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Orb_of_Augmentation"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Regal_Orb"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Chaos_Orb"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Exalted_Orb"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Divine_Orb"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Orb_of_Annulment"} — tất cả đều không dùng được. Item đã ở trạng thái cuối về mặt crafting thông thường, không có đường quay lại.
 
-Tuy nhiên, có ba thứ vẫn hoạt động bình thường trên Corrupted item. Đầu tiên là :wiki-link{url="https://www.poe2wiki.net/wiki/Rune"} và soul core — socketing vào hoặc thay ra vẫn được, corruption không khóa socket slot. Đây là điểm quan trọng: nếu weapon tốt nhưng bị Corrupted, vẫn có thể lắp Rune phòng thủ hay stat vào bình thường. Thứ hai là salvage và disenchant tại salvage bench — hai action này không bị chặn, vẫn có thể phá item để lấy nguyên liệu nếu không cần giữ. Thứ ba, gem đang bị Corrupted vẫn được tăng gem level bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Uncut_gem"} — mức tăng đó giữ nguyên khi gem lên cấp tiếp theo.
+Tuy nhiên, có ba thứ vẫn hoạt động bình thường trên Corrupted item. Đầu tiên là :wiki-link{url="https://www.poe2wiki.net/wiki/Rune"} và soul core — socketing vào hoặc thay ra vẫn được, corruption không khóa socket slot — nếu weapon tốt nhưng bị Corrupted, vẫn có thể lắp Rune phòng thủ hay stat vào bình thường. Thứ hai là salvage và disenchant tại salvage bench — hai action này không bị chặn, vẫn có thể phá item để lấy nguyên liệu nếu không cần giữ. Thứ ba, gem đang bị Corrupted vẫn được tăng gem level bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Uncut_gem"} — mức tăng đó giữ nguyên khi gem lên cấp tiếp theo.
 
 ## Vaal Orb và bốn kết quả có thể
 

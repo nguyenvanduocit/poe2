@@ -5,7 +5,7 @@ title: "Waystone và Atlas: bước vào endgame mapping"
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -22,6 +22,14 @@ tags:
 
 # Waystone và Atlas: bước vào endgame mapping
 
+## TL;DR
+
+- Waystone là item tiêu hao một lần bỏ vào Map Device để mở map — cần identify trước khi dùng.
+- Tier 1–15 rớt từ monster; T16 không rớt trực tiếp — ghép 3 T15 cùng rarity tại Reforging Bench là cách chắc chắn nhất.
+- Roll Waystone lên magic (2 mod) hoặc rare (4 mod) trước khi activate — mod nhiều hơn thì Waystone rớt nhiều hơn.
+- Atlas passive tree lấy điểm duy nhất từ map trong Fortress — cày Fortress là việc đầu tiên khi vào endgame.
+- Precursor Tablet gắn vào tháp, buff tất cả map trong bán kính — tablet "increased quantity of Waystones" là nguồn sustain mạnh nhất đầu game.
+
 Khi xong campaign, game mở ra endgame — và phần lớn thời gian từ đó trở đi là chạy map. Map trong POE2 hoạt động qua **Waystone**: một item bỏ vào Map Device để mở cổng vào một khu vực endgame. Hiểu Waystone và Atlas passive tree là nền tảng để không bị "hết map" sau vài tiếng đầu.
 
 ## Waystone là gì và dùng như thế nào
@@ -30,7 +38,7 @@ Waystone là item tiêu hao dùng một lần. Bỏ nó vào **Map Device** (cá
 
 Waystone có tier từ 1 đến 16. Tier càng cao thì area level càng cao, quái càng mạnh, và loot càng tốt. Tier 1 bắt đầu ở area level 65, mỗi tier tăng thêm 1 level — T16 là area level 80. Waystone T16 đặc biệt: không rớt trực tiếp từ monster. Cách đáng tin nhất là ghép 3 T15 cùng rarity tại **Reforging Bench** để ra T16 chắc chắn. Dùng **Vaal Orb** (corruption) lên T15 cũng cho T16 nhưng kết quả ngẫu nhiên — tier có thể lên hoặc xuống 1, không đảm bảo.
 
-Waystone không mua được ở vendor với giá cố định — nó rớt từ monster trong map, từ boss, hoặc trade được từ người chơi khác. Đây là lý do sustain map là kỹ năng phải học: nếu Waystone rớt ít hơn lượng dùng thì kho cạn dần.
+Waystone không mua được ở vendor với giá cố định — nó rớt từ monster trong map, từ boss, hoặc trade được từ người chơi khác. Sustain map vì vậy là kỹ năng phải học: nếu Waystone rớt ít hơn lượng dùng thì kho cạn dần.
 
 Trước khi dùng Waystone, cần **identify** nó bằng **Orb of Identification**. Waystone chưa identify không activate được trong Map Device.
 
@@ -54,7 +62,7 @@ Quan trọng hơn là **Atlas passive tree** — một cây kỹ năng hoàn to�
 
 Vài giờ đầu vào endgame là lúc dễ kẹt nhất vì cái vòng tròn chưa tự nuôi được: chưa có Atlas point nên tree còn trống, tree trống thì Waystone drop ít, Waystone ít thì không chạy được nhiều map, ít map thì lấy point chậm. Phá vòng này cần hiểu hai thứ.
 
-Đầu tiên là **số mod của Waystone**. Waystone trơn (0 mod, chưa roll) drop rate rất thấp. Đẩy lên magic rồi rare là bước đầu tiên để Waystone rớt đủ nuôi vòng. Đây là lý do không nên chạy Waystone trơn dù build còn yếu — thà chạy map dễ hơn với Waystone nhiều mod còn hơn map khó với Waystone trơn.
+Đầu tiên là **số mod của Waystone**. Waystone trơn (0 mod, chưa roll) drop rate rất thấp. Đẩy lên magic rồi rare là bước đầu tiên để Waystone rớt đủ nuôi vòng — nên không chạy Waystone trơn dù build còn yếu, thà chạy map dễ hơn với Waystone nhiều mod còn hơn map khó với Waystone trơn.
 
 Thứ hai là **Precursor Tablet**. Tablet là item gắn vào tháp trên Atlas trước khi chạy map — nó buff tất cả map trong bán kính tháp đó. Tablet có mod "increased quantity of Waystones" là một trong những nguồn sustain mạnh nhất đầu game, cộng thẳng lên drop chance từ số mod. Hai tablet quantity trên cùng một khu là bước nhảy lớn từ "không đủ map" sang "dư map".
 

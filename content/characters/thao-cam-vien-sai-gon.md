@@ -2,10 +2,10 @@
 template: templates/character-progress-template.md
 document_type: character-progress
 title: ThaoCamVienSaiGon — Progress Tracker
-status: endgame
+status: retired
 author: duocnv
 created: '2026-06-14'
-updated: '2026-06-19'
+updated: '2026-07-16'
 character_name: ThaoCamVienSaiGon
 character_class: Huntress
 ascendancy: Spirit Walker
@@ -16,34 +16,45 @@ current_progress: t16-farming
 
 # ThaoCamVienSaiGon — Progress Tracker
 
-Huntress / Spirit Walker Lv96 chạy nguyên đàn companion :wiki-link{url="https://www.poe2wiki.net/wiki/Tame_Beast"} quanh đúng một con carry crit là Zekoa the Headcrusher. Build mới quay xe sang two-hand-in-one-hand: cầm :wiki-link{url="https://www.poe2wiki.net/wiki/Chober_Chaber"} một tay nhờ keystone :wiki-link{url="https://www.poe2wiki.net/wiki/Giant's_Blood"}, chừa tay kia cho :wiki-link{url="https://www.poe2wiki.net/wiki/Sylvan's_Effigy"} mở khóa số companion không giới hạn. Đang farm map T15 ổn định, việc còn lại là cap nốt cold res và lo năm điểm cuối Lv96-100 cho cụm Staunch Deflection mới được buff ở 0.5.3.
+**Char này đã nghỉ, main hiện tại là [OneMoreMinionMamy](/characters/one-more-minion-mamy).** Giữ note lại vì phần đo đạc bên dưới là kiến thức thật, không đào lại được: scope của aura đàn, và bộ số A/B đo tay cho từng support của Zekoa mà PoB2 không trả nổi.
+
+Huntress / Spirit Walker Lv97 chạy nguyên đàn companion :wiki-link{url="https://www.poe2wiki.net/wiki/Tame_Beast"} quanh đúng một con carry crit là Zekoa the Headcrusher. Vũ khí là :wiki-link{url="https://www.poe2wiki.net/wiki/Chober_Chaber"} cầm một tay nhờ keystone :wiki-link{url="https://www.poe2wiki.net/wiki/Giant's_Blood"}, tay kia cầm :wiki-link{url="https://www.poe2wiki.net/wiki/Sylvan's_Effigy"} để mở số companion không giới hạn. Engine crit là The Adorned cộng tám viên jewel "of Gripping" dồn hết vào Zekoa. Cơ chế archetype vẫn còn dùng được và nằm ở [build doc](/builds/huntress/0-5-spirit-walker-companion-pack).
+
+Lý do nghỉ char không phải vì build gãy. Bộ gear đắt đã được rút sang main mới: Mageblood rời trước 2026-07-15 03:26, còn Brood Rosary, Skull Corona và Havoc Goad sang muộn hơn trong cùng ngày. Cold −7 là kênh cuối chưa cap lúc dừng.
 
 ## Snapshot
 
-*Live fetch: 2026-06-14 — poe.ninja model snapshot, khớp từng số với client. PoB2 0.4 chưa model Tame Beast nên DPS tamed-beast đọc trong client; defense lấy từ model.*
+*Snapshot cuối khi còn chơi: 2026-07-13, poe.ninja model 33 (đã force refresh nên khớp client lúc đó). Số dưới là trạng thái char ở thời điểm dừng, không phải bây giờ — phần lớn gear đắt đã sang [OneMoreMinionMamy](/characters/one-more-minion-mamy) nên trang poe.ninja của char này giờ vẽ một bộ đồ không còn tồn tại. PoB2 không model Tame Beast nên DPS companion đọc trong client; defense lấy từ model là res/ES thật của player, vì aura đàn buff cho pack chứ không cho mình (xem section dưới).*
 
-- **Life / ES / Mana:** 1,885 / 1,929 / 1,384 — thêm Runic Ward 121
-- **Spirit:** 439
-- **Armour / Evasion / Deflection:** 1,941 (17% phys DR) / 8,625 (48% evade, max 95%) / 7,115 (43% deflect)
-- **Block:** 0% — Dunkelhalt buckler nằm ở weapon set 2 dormant (no-weapon-swap)
-- **EHP:** 19,432
-- **Max hit chịu được:** Phys 4,120 / Fire >10k / Cold >10k / Lightning >10k / Chaos >10k — phys là kênh mỏng nhất, mọi kênh element đều trên 10k
-- **Resistances:** Fire 72 / Cold 66 / Lightning 75 (overcap 31) / Chaos 72 — cold 66 là lỗ duy nhất dưới cap, lưu ý ba dòng Bonded trên Morior/sceptre là ShamanOnly nên chết trên Huntress (client xác nhận cold đứng yên 66 dù Morior ghi cold)
-- **Attributes:** Str 155 / Dex 147 / Int 339
+- **Life / ES / Mana:** 1,525 / 1,228 / 1,349
+- **Spirit:** 379
+- **Armour / Evasion / Deflection:** 0 / 10,057 (evade 52%, max 95%) / 4,203 (deflect 29%, max 95%). Bộ gear bỏ hẳn armour, thủ dồn vào evasion và deflection.
+- **EHP:** 22,771
+- **Max hit chịu được:** Cold **5,840** (thấp nhất) / Phys 6,248 / Fire 10,590 / Chaos 21,252 / Lightning 21,546. Cold là kênh one-shot còn lại vì res của nó vẫn âm.
+- **Resistances:** Fire **44** / Cold **−7** / Lightning **74** / Chaos **75** (overcap +20). Chaos và light cap, fire gần cap, cold là kênh duy nhất còn âm. Mageblood Bismuth + Amethyst gánh phần lớn res; cold còn âm vì Andvarius kèm −17% all elemental res.
+- **Item Rarity:** **171%** (Andvarius 89% + Mageblood Legacy of Gold)
+- **Attributes:** Str 144 / Dex 176 / Int 382
 - **Charges:** Endurance 3 / Frenzy 3 / Power 3
-- **Movement Speed:** 128%
-- **Carry + companion (PoB2 chưa model → DPS đọc client):** Zekoa the Headcrusher (carry), hai con granted Bear Wild Protector + Azmerian Wolf (~126.6k / 126.9k), Wolf Pack (17.6k), cộng đàn damage/utility (Fungal Wolf, Hyena Demon, Bramble Rhoa, Swarming Wasp) và hai con body-block (Quill Crab, Coconut Crab)
+- **Movement Speed:** 134%
+- **Carry + companion (PoB2 chưa model → DPS đọc client):** Zekoa the Headcrusher là carry, đàn granted Bear Wild Protector cộng Azmerian Wolf tự đẩy sub-DPS không tốn spirit, cộng đàn damage/utility và hai con body-block
 
-## Current Goals
+## Aura đàn và số phòng thủ thật
 
-Hai con granted vẫn tự đẩy DPS mà không tốn spirit, nên north star không phải kéo thêm DPS công khai mà là vá nốt phòng thủ. Phys max hit 4,120 là trần one-shot thấp nhất — mọi kênh element đều trên 10k nên không phải vấn đề. Cold 66 là lỗ res duy nhất dưới cap, vá rẻ bằng cold trên ring hoặc craft cold belt. Sau 0.5.3, Staunch Deflection thêm dòng Deflection Rating bằng 8% Evasion Rating (~+690 deflection trên eva 8,625) — cụm này cách path hiện tại 4 node, vừa khít với năm điểm cuối Lv96-100 và đúng cú vá thủ rẻ nhất hiện có. Mảng damage để dành cho Zekoa: cả engine crit của build dồn vào một con, mọi optimization crit-damage tiếp theo đều phải chảy về nó. Cách quản spirit cho nguyên đàn mình đã viết ở [spirit và reservation](/guides/spirit-and-spirit-reservation); roster cụ thể và lý do từng support nằm trong [build doc đầy đủ](/builds/huntress/0-5-spirit-walker-companion-pack).
+Đàn tamed hiện 8 con, mỗi con mang một bộ Monster Modifier, nhưng chỉ mod tên "... Aura" mới project ra ngoài con đó, và project cho **pack (Zekoa + đàn beast), không cho player**. Bằng chứng nằm ở chính text mod: nó ghi "+40% **Monster** Elemental Resistance" và "**monster allies** cannot take damage", đều scope theo monster ally, mà player không phải monster ally. Nên res/ES ở Snapshot là số thật của mình; aura chỉ làm đàn tanky và mạnh hơn để Zekoa sống lâu, đánh khỏe.
 
-## Priority Actions
+- **Bramble Ape** → Elemental Resistance Aura (+40% ele res cho đàn) — làm beast chịu ele tốt hơn, không đụng cold −7 của player.
+- **Fungal Wolf** → Energy Shield Aura (ES cho đàn)
+- **Quill Crab** → Haste Aura (attack/cast/move speed cho đàn, nuôi nhịp đánh Zekoa)
+- **Coconut Crab** → Extra Physical Damage Aura (phys cho đàn, đẩy damage Zekoa)
+- **Skittering Jellycrab** → Temporal Bubble (làm chậm enemy trong vùng)
+- **Swarming Wasp + Armoured Rhex** → Periodic Invulnerability Aura (đàn định kỳ bất tử) — hai con TRÙNG cùng aura, aura cùng loại thường không stack nên một slot đang phí.
+- **Zekoa (carry)** → không aura, chỉ Extra Crits (self).
 
-1. Cap cold 66→75: một dòng cold trên ring rare hoặc craft thêm cold lên belt là xong, đây là lỗ res rẻ nhất.
-2. Năm điểm cuối Lv96-100 đi cụm Staunch Deflection: 4 node detour (Deflection → Evasion Rating → Deflection → Staunch Deflection) cho +690 deflection rating, +2-3pp chance deflect tùy accuracy. Verify trong client là cluster đó thật sự cách path 4 node trước khi commit.
-3. Dày phys EHP: phys max hit 4,120 mỏng hơn hẳn element. Thêm armour, life-ES flat, hoặc dòng % phys taken as element san về kênh element vốn >10k.
-4. Đọc crit% và DPS thật của Zekoa trong client (PoB2 trả 0 cho Tame Beast) để biết The Adorned cộng đám jewel magic cộng minion crit damage bonus trên hai nhẫn (25%+22%) đã đủ chưa, hay còn cần thêm.
+Toàn bộ lớp aura chảy vào sức sống và damage của đàn, đúng vai "aura bot buff carry". Player vẫn dựa vào gear, evasion và deflection, nên **cold −7 là lỗ thật cần cap**, không có buff ẩn nào lấp. Muốn chắc 100% thì liếc character sheet in-client khi đủ đàn xem cold có nhích khỏi −7 không — nhưng theo text mod thì không. Item Rarity 171% là stat gear nên thật sẵn dù aura thế nào.
+
+## Trạng thái lúc dừng
+
+Char dừng ở thế đã ổn: sau đợt regear Mageblood cộng Andvarius, res chỉ còn cold −7 dưới cap (từ chỗ thủng cả ba kênh cold −53 / light 1 / fire 25), Item Rarity 171%, đàn granted tự đẩy DPS không tốn spirit. Còn dang dở đúng hai thứ: gom ~68 cold res để cap nốt kênh cuối, và đổi một trong hai con trùng Periodic Invulnerability Aura (Swarming Wasp với Armoured Rhex) cho hết phí slot. Cách quản spirit cho nguyên đàn nằm ở [spirit và reservation](/guides/spirit-and-spirit-reservation); roster cụ thể và lý do từng support nằm trong [build doc đầy đủ](/builds/huntress/0-5-spirit-walker-companion-pack).
 
 ## Skill Gems & Links
 
@@ -53,7 +64,7 @@ Bản fetch live 2026-06-16 ghi 15 nhóm skill đang cắm. Carry là :wiki-link
 - **Bear (Wild Protector, granted):** **Catha's Brilliance** + Rapid Attacks II + **Romira's Requital** + Magnified Area II + Hulking Minions. Romira's đặt ở đây vì Bear granted, chết tự hồi sinh nên lưới redirect không vắng lâu.
 - **Azmerian Wolf (granted):** Feeding Frenzy II + **Kurgal's Leash** + Muster + Loyalty + Rapid Attacks II. Một phím Command xả Eternal Hunt và kích Unholy Might 15s cho cả mình lẫn Wolf.
 - **Wolf Pack:** Minion Splash II + **Uruk's Smelting** + **Heft** + Muster + Feeding Frenzy II — engine clear kiêm nguồn full-break, Heft cho 30% more max phys hit damage.
-- **Fungal Wolf · Hyena Demon · Bramble Rhoa (damage):** mỗi con Rage III + Loyalty + Rapid Attacks II + Muster + Feeding Frenzy II — đủ rage, attack speed và hai multiplier minion damage, support free nên cứ để đập tối đa.
+- **Fungal Wolf · Bramble Ape · Skittering Jellycrab · Armoured Rhex (damage + aura):** mỗi con Rage III + Loyalty + Rapid Attacks II + Muster + Feeding Frenzy II — đủ rage, attack speed và hai multiplier minion damage, support free nên cứ để đập tối đa; đồng thời mỗi con phủ một aura pack (Fungal ES, Bramble Ape Elemental Resistance, Jellycrab Temporal Bubble, Rhex Periodic Invulnerability). Roster vừa đổi nên đọc support từng con in-client.
 - **Swarming Wasp:** Loyalty + Rapid Attacks II + Rage III + Muster + Feeding Frenzy II — đang chạy full damage support, đồng thời phát Periodic Invulnerability Aura làm lớp anti-wipe.
 - **Quill Crab · Coconut Crab (body-block):** Rage III + Loyalty + **Meat Shield II** + Last Gasp + Minion Mastery. Meat Shield đổi 40% less damage lấy 40% less taken nên hai con chỉ đứng phủ aura và chặn đường.
 - **Sniper's Mark:** Mark for Death II + **Cooldown Recovery II** + Eternal Mark + Charged Mark + **Second Wind III**. Hai cooldown gem giữ uptime mark cao vì Sylvan's Effigy chỉ phát +90% companion damage vs Marked khi mark còn sống.
@@ -61,54 +72,15 @@ Bản fetch live 2026-06-16 ghi 15 nhóm skill đang cắm. Carry là :wiki-link
 
 ## Gear Summary
 
-Bộ giáp mới xoay hết quanh hai unique craftable. **Chober Chaber** (Runeforged Leaden Greathammer) là vũ khí chính — wield một tay qua Giant's Blood, cho +4 level mọi minion skill và quan trọng hơn là dòng "Increases and Reductions to Minion Damage also affect you" để buff player dùng chung pool với companion. Off-hand **Sylvan's Effigy** mở "any number of Companions", grant luôn Discipline + Azmerian Wolf, cộng 90% companion damage vào target bị mark. Set 2 (Rapture Gnarl + Dunkelhalt) để dormant theo lối no-weapon-swap.
+Vũ khí vẫn là hai unique craftable. **Chober Chaber** (Runeforged Leaden Greathammer) cầm một tay qua Giant's Blood, cho +4 level mọi minion skill và quan trọng hơn là dòng "Increases and Reductions to Minion Damage also affect you" để player dùng chung pool buff với companion, cộng thêm +44 spirit và +103 mana. Off-hand **Sylvan's Effigy** mở "any number of Companions", grant Discipline cộng Azmerian Wolf, thêm 90% companion damage lên target bị mark và 75% inc spirit. Cả hai weapon set cắm y hệt nhau, chơi no-weapon-swap để tránh bug swap despawn cả đàn.
 
-Body là :wiki-link{url="https://www.poe2wiki.net/wiki/Morior_Invictus"} (Grand Regalia) — nguồn chính của đợt lên đời phòng thủ: 309% inc AES, +7 all attr / +11% chaos res / +13 spirit mỗi socket filled, cộng armour áp 10% sang chaos. Nhờ nó character giờ có 1,670 armour và chaos res 55, thay vì gần như bằng 0 như bản Forgotten Warden cũ. Lưu ý cạm bẫy: ba dòng Bonded trên Morior (+12 cold, +12 light, +8 chaos) là ShamanOnlyMods — Huntress không kích được, nên chúng là số 0; client xác nhận cold không nhận dòng Bonded đó. Đừng tính bonded vào res khi craft tiếp.
+Đợt regear mới nhất xoay bộ giáp sang farm rarity mà vẫn cứu được res. Belt :wiki-link{url="https://www.poe2wiki.net/wiki/Mageblood"} là item then chốt: bốn Mage's Legacy roll **Legacy of Gold ×2** (rarity), **Bismuth** (+45% all elemental res) và **Amethyst** (+45% chaos res), cộng dòng "50% increased effect per duplicate" nên hai Gold trùng kích thêm hiệu lực cho cả bộ legacy. Bismuth cộng Amethyst vá gần hết res đã sụp, Gold cho phần lớn Item Rarity, ba charm slot chờ Golden Charm. Ring2 :wiki-link{url="https://www.poe2wiki.net/wiki/Andvarius"} (Gold Ring) thêm 89% rarity (implicit 14 + explicit 75) và enchant +14% chaos, nhưng gánh downside **−17% all elemental res** — chính nó là lý do cold vẫn −7 dù đã có Bismuth. Ring1 **Maelström Finger** (Unset) giữ một skill slot cộng +44 Str / +44 Dex / +46 Int nuôi req Int của Chober, không cõng res. Boots **Havoc Goad** (Serpentscale) cho 35% MS, 92% eva, **+27% lightning res** và deflection bằng 18% eva.
 
-Engine crit nằm ở jewel: **The Adorned** Diamond nhân 108% effect cho 8 viên magic "of Gripping" (corrupted magic) — bảy viên Authoritative cho Minion Critical Damage Bonus cộng increased Damage, một viên Iconic cho Presence Area cộng crit damage. Cả tám đổ hết vào Zekoa, con companion duy nhất giữ mod Extra Crits; đổi lại không còn viên ES/mana phòng thủ nên ES rớt còn 1,667. Boots **Atziri's Step** cho 30% MS + deflection từ evasion. Amulet Empyrean Locket fractured +4 minion levels, anoint The Soul Meridian (ES recovery). Helm Skull Corona +2 minion levels giữ nguyên.
+Phần unique còn lại giữ nguyên. Body :wiki-link{url="https://www.poe2wiki.net/wiki/Forgotten_Warden"} cho evasion và ES (210% inc AES), +30 Dex, cộng lớp redirect chuyển 15% deflected damage sang companion, nhưng không armour lẫn chaos res. Helm **Skull Corona** giữ +2 minion levels cộng +37 fire, +21 light và một cục ES lớn. Gloves :wiki-link{url="https://www.poe2wiki.net/wiki/Eagle_Paw"} là unique evasion (+148 và 81% eva) kèm +63 life, 26% crit damage bonus, +33 light, desecrated +14 fire và chaos. Amulet **Brood Rosary** giữ fractured +4 minion levels, +50 spirit, +31 Str và anoint The Soul Meridian, nhưng implicit "-1 Suffix Modifier allowed" bóp chỗ suffix nên khó nhét thêm res.
 
-Hai nhẫn giờ đều là Unset (Corruption Finger + Morbid Circle), gánh minion damage cộng minion crit damage bonus cộng 2 skill slot — chi tiết ở section *Hai nhẫn Unset* bên dưới. Roster companion live và support từng con nằm ở section *Skill Gems & Links* ở trên; đọc mod beast cho đúng vì chỉ dòng có chữ "Aura" mới phủ ra cả đàn, còn Regenerates Life hay Armoured chỉ làm chính con đó dai. Cơ chế ascendancy và lý do bắt từng con ở [Spirit Walker companion beast hunt](/guides/spirit-walker-companion-beast-hunt).
+Engine crit nằm ở jewel và không đụng đợt regear. **The Adorned** Diamond nhân 108% effect cho tám viên magic "of Gripping" corrupted: bảy viên Authoritative cho ~8-11% minion damage cộng 21-24% Minion Crit Damage Bonus mỗi viên, một viên Iconic cho Presence Area cộng crit damage. Cả tám dồn vào Zekoa, con companion duy nhất giữ mod Extra Crits. **From Nothing** cho phép allocate cụm Blackflame Covenant ngoài tree. Phần damage giữ nguyên; đợt regear chỉ đổi belt/ring/boots nên kết quả là res được vá và rarity 171 mới thêm.
 
-**Biggest fix path:** vá lại res vừa thủng sau đợt đổi nhẫn — cold 0 và fire 57 là lỗ one-shot mới, kéo cả hai về cap bằng găng, belt và flask. DPS công khai đã dư từ hai con granted nên res là thứ gỡ trần one-shot T15 nhanh hơn bất kỳ điểm DPS nào.
-
-## Hai nhẫn Unset đổi xong, res phải dồn về găng và belt
-
-Cả hai slot nhẫn giờ là :wiki-link{url="https://www.poe2wiki.net/wiki/Unset_Ring"}: **Corruption Finger** (+51 life, +26 Dex, Minions deal 27% inc Damage, Minions +8% atk/cast speed, **Minions +25% Critical Damage Bonus**, +13 mana) và **Morbid Circle** (+96 life, +30 Str, 9-15 cold to attacks, Minions deal 25% inc Damage, Minions +10% atk/cast speed, **Minions +22% Critical Damage Bonus**). Đổi này được 2 skill slot, ~52% minion increased damage, ~47% minion crit damage bonus và +18% minion attack/cast speed dồn vào đàn, cộng Dex với Str gỡ kẹt attribute.
-
-Điểm phải nhớ cho lần craft sau: **ring CÓ roll được "Minions have increased Critical Damage Bonus"** — cả hai viên đang đeo đều có nó là dòng explicit, nên không cần ép dòng đó về jewel nữa; The Adorned với đám "of Gripping" vẫn gánh phần lớn crit damage bonus, ring chỉ là nguồn cộng thêm. Bù lại Unset không có res implicit và hai viên này không roll res, nên toàn bộ gánh nặng res phải nằm hết ở găng, belt, amulet và flask. Đợt craft găng + belt sau khi đổi nhẫn đã kéo res về Fire 72 / Cold 66 / Lightning 75 / Chaos 72 — cold 66 còn dưới cap 9 điểm là lỗ rẻ nhất phải vá tiếp.
-
-Hai chỗ res cõng được vẫn là găng và belt, đó là nơi phải dồn nốt cap cold:
-
-**Găng rare** thay Blood Talons, giữ base evasion để khỏi tụt eva. Đã có Fire 72 từ găng + belt + amulet hiện tại nên ưu tiên kế tiếp là dồn cold:
-- Prefix: +120–149 maximum Life
-- Prefix: % increased Evasion Rating
-- Suffix: +41–45% Cold Resistance (kênh duy nhất còn dưới cap)
-- Suffix: +41–45% Fire/Chaos Resistance làm overcap dự phòng ele-weakness
-
-**Belt** (Dusk Lock đang +53 cold/+54 light/+46 fire desecrated, 2 charm slot) — nếu craft tiếp thì ưu tiên thêm cold và flat Armour:
-- Suffix: +41–45% Cold Resistance (kéo cold lên cùng găng)
-- Prefix: flat Armour, đệ thêm phys EHP
-
-Sau khi đợt craft này xong: cold về 75 (lỗ duy nhất), fire 72 → ≥75 dự phòng ele-weakness, lightning vẫn cap overcap 31, chaos 72. Hai skill slot Unset giữ nguyên, ~47% minion crit damage bonus vẫn nằm trên nhẫn, deflection nguyên vẹn nhờ giữ Atziri's Step — và sau 0.5.3 còn được cộng thêm ~+690 nếu allocate cụm Staunch Deflection ở năm điểm cuối Lv96-100.
-
-## Link trade
-
-Search dưới sort giá tăng dần, click mở thẳng trong Chrome đã login. Floor là mốc khởi đầu, kéo min trên form khi mở. Jewel với gear lọc `securable` cho mua ngay; unique đắt như The Adorned và Uul-Netol's để `any` cho thấy cả hàng roll cao phải whisper.
-
-**Lên minion DPS, chỗ đổ tiền chính:**
-
-- [Uul-Netol's Embrace](https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22any%22%7D%2C%22name%22%3A%22Uul-Netol%27s%20Embrace%22%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D): Lineage support, cú nâng đơn lớn nhất, thay Supercritical lên ~1.12M, +15% so với 969,768 hiện tại
-- [Jewel "of Gripping" corrupted magic](https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22securable%22%7D%2C%22filters%22%3A%7B%22type_filters%22%3A%7B%22filters%22%3A%7B%22category%22%3A%7B%22option%22%3A%22jewel%22%7D%2C%22rarity%22%3A%7B%22option%22%3A%22magic%22%7D%7D%7D%2C%22misc_filters%22%3A%7B%22filters%22%3A%7B%22corrupted%22%3A%7B%22option%22%3A%22true%22%7D%7D%7D%7D%2C%22stats%22%3A%5B%7B%22type%22%3A%22and%22%2C%22filters%22%3A%5B%7B%22id%22%3A%22explicit.stat_1854213750%22%2C%22value%22%3A%7B%22min%22%3A22%7D%7D%2C%7B%22id%22%3A%22explicit.stat_1589917703%22%2C%22value%22%3A%7B%22min%22%3A18%7D%7D%5D%7D%5D%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D): engine jewel minion crit damage bonus cộng minion damage, The Adorned nhân ×108% mỗi viên, mua roll cao hơn đám đang đeo
-- [Jewel minion damage + minion asp, corrupted magic](https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22securable%22%7D%2C%22filters%22%3A%7B%22type_filters%22%3A%7B%22filters%22%3A%7B%22category%22%3A%7B%22option%22%3A%22jewel%22%7D%2C%22rarity%22%3A%7B%22option%22%3A%22magic%22%7D%7D%7D%2C%22misc_filters%22%3A%7B%22filters%22%3A%7B%22corrupted%22%3A%7B%22option%22%3A%22true%22%7D%7D%7D%7D%2C%22stats%22%3A%5B%7B%22type%22%3A%22and%22%2C%22filters%22%3A%5B%7B%22id%22%3A%22explicit.stat_1589917703%22%2C%22value%22%3A%7B%22min%22%3A12%7D%7D%2C%7B%22id%22%3A%22explicit.stat_3091578504%22%2C%22value%22%3A%7B%22min%22%3A3%7D%7D%5D%7D%5D%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D): "Authoritative of Orchestration", minion damage cộng attack/cast speed, The Adorned nhân ×108%; jewel tăng nhịp đánh Zekoa (aps đang 0.81/giây)
-- [The Adorned, % effect cao hơn 108](https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22any%22%7D%2C%22name%22%3A%22The%20Adorned%22%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D): scale cả 8 viên jewel cùng lúc
-- [Amulet minion + tamed companion + spirit](https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22securable%22%7D%2C%22filters%22%3A%7B%22type_filters%22%3A%7B%22filters%22%3A%7B%22category%22%3A%7B%22option%22%3A%22accessory.amulet%22%7D%7D%7D%7D%2C%22stats%22%3A%5B%7B%22type%22%3A%22and%22%2C%22filters%22%3A%5B%7B%22id%22%3A%22explicit.stat_2162097452%22%2C%22value%22%3A%7B%22min%22%3A3%7D%7D%2C%7B%22id%22%3A%22explicit.stat_448592698%22%2C%22value%22%3A%7B%22min%22%3A2%7D%7D%2C%7B%22id%22%3A%22explicit.stat_3981240776%22%2C%22value%22%3A%7B%22min%22%3A40%7D%7D%5D%7D%5D%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D): chỉ mua nếu beat Empyrean Locket +4 minion fractured đang đeo
-
-**Res dồn hết vào găng + belt:**
-
-- [Găng: Life 110+ / Dex 30+ / Fire 40+ / Cold 40+](https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22securable%22%7D%2C%22filters%22%3A%7B%22type_filters%22%3A%7B%22filters%22%3A%7B%22category%22%3A%7B%22option%22%3A%22armour.gloves%22%7D%7D%7D%7D%2C%22stats%22%3A%5B%7B%22type%22%3A%22and%22%2C%22filters%22%3A%5B%7B%22id%22%3A%22pseudo.pseudo_total_life%22%2C%22value%22%3A%7B%22min%22%3A110%7D%7D%2C%7B%22id%22%3A%22pseudo.pseudo_total_dexterity%22%2C%22value%22%3A%7B%22min%22%3A30%7D%7D%2C%7B%22id%22%3A%22pseudo.pseudo_total_fire_resistance%22%2C%22value%22%3A%7B%22min%22%3A40%7D%7D%2C%7B%22id%22%3A%22pseudo.pseudo_total_cold_resistance%22%2C%22value%22%3A%7B%22min%22%3A40%7D%7D%5D%7D%5D%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D): nhớ pick base Evasion
-- [Belt: Life 130+ / Str 30+ / Light 40+ / Chaos 20+](https://www.pathofexile.com/trade2/search/poe2/Runes%20of%20Aldur?q=%7B%22query%22%3A%7B%22status%22%3A%7B%22option%22%3A%22securable%22%7D%2C%22filters%22%3A%7B%22type_filters%22%3A%7B%22filters%22%3A%7B%22category%22%3A%7B%22option%22%3A%22accessory.belt%22%7D%7D%7D%7D%2C%22stats%22%3A%5B%7B%22type%22%3A%22and%22%2C%22filters%22%3A%5B%7B%22id%22%3A%22pseudo.pseudo_total_life%22%2C%22value%22%3A%7B%22min%22%3A130%7D%7D%2C%7B%22id%22%3A%22pseudo.pseudo_total_strength%22%2C%22value%22%3A%7B%22min%22%3A30%7D%7D%2C%7B%22id%22%3A%22pseudo.pseudo_total_lightning_resistance%22%2C%22value%22%3A%7B%22min%22%3A40%7D%7D%2C%7B%22id%22%3A%22pseudo.pseudo_total_chaos_resistance%22%2C%22value%22%3A%7B%22min%22%3A20%7D%7D%5D%7D%5D%7D%2C%22sort%22%3A%7B%22price%22%3A%22asc%22%7D%7D): thêm flat Armour cho phys EHP
-
-Giá live mỗi slot mình chưa rank. Mở tab pathofexile.com đã login rồi bật Playwriter, bảo lúc nào cần thì mình rank top-10 securable theo stat mục tiêu mỗi slot.
+**Biggest fix path còn lại:** cold −7 là kênh duy nhất dưới cap (max hit 5,840, thấp nhất). Aura Elemental Resistance của Bramble Ape buff cho đàn beast chứ không cho player (mod scope "monster allies"), nên cold không được lấp miễn phí. Gom ~68 cold từ node tree cold res hoặc một dòng cold trên slot rare còn lại (Maelström Finger Unset hoặc amulet). DPS công khai đã dư từ đàn granted.
 
 ## Tinh chỉnh gem cho Zekoa
 
@@ -134,28 +106,45 @@ Break engine phys của Zekoa nằm ngoài link của nó: **Uruk's Smelting c�
 
 Sniper's Mark mang **Second Wind III**: "twice as many Cooldown Uses" (cộng hồi chút life), Allow Type Cooldown nên ăn được Mark, và khác category với Cooldown Recovery II nên hai cái chạy cùng lúc. Lý do nó đáng ở đây: mark bị crit của Zekoa consume sau ~2-3 hit (~2.5s) rồi phải chờ hết cooldown ~4.6s mới mark lại, uptime nếu để trống chỉ quanh **54%**, mà Sylvan's Effigy cho **+90% companion damage vs Marked** cho *cả đàn* (Bear, Wolf ~135k mỗi con, Zekoa), nên mỗi giây mark tắt là cả đàn mất 90% damage lên boss. Hai charge của Second Wind cho mark lại ngay sau khi consume, không chờ cooldown, kéo uptime lên ~95%, quy ra trung bình bonus vs-Marked từ ~+49% lên ~+86%, tức **~+25% boss DPS cho nguyên đàn**. Đổi lại phải bấm mark thường xuyên hơn (mỗi ~2-3s khi thấy mark tắt). Muốn giữ APM thấp thì thay bằng **Mark of Siphoning II** (leech từ target Marked) làm lớp sustain, nhưng đó là phương án giữ tay, không phải tối ưu damage. Đọc uptime mark in-client một map để chốt 54% là đoán hay thật.
 
-Còn phải làm:
+Trạng thái slot năm lúc dừng: đang để Rage III, chưa kịp A/B với Supercritical (đo được 969,768) và chưa mua Uul-Netol's Embrace (dự kiến ~1.12M, +15%). Bốn slot còn lại đã chốt và không nên đụng nếu quay lại: **Muster · Feeding Frenzy II · Rapid Attacks II · Tangmazu's Thurible** — Muster ~49-56% more theo số Reviving type, Feeding Frenzy 30% more, Tangmazu's Gigantic cho 20% more damage cộng 20% more life cộng tank, Rapid Attacks nuôi cả cycle mark-crit lẫn break giáp.
 
-1. **So Rage III hiện tại với một engine damage ở slot năm:** Supercritical đo được 969,768 (đáng ~+12% nhờ +100% Critical Damage Bonus ăn ở 99% crit uptime), còn Rage III đổi lấy +30% more attack damage qua 30 rage. Đọc DPS tooltip in-client cả hai cách để biết nên giữ Rage III hay nhường slot cho Supercritical — số này PoB2 không trả.
-2. **Mua Uul-Netol's Embrace cho slot năm** → "gain 40% of Physical as Extra Chaos", dự kiến ~1.12M (+15% so với baseline Supercritical 969,768), chạy vô điều kiện không cần Command. Cú nâng đơn lớn nhất cho slot này — lắp xong so DPS tooltip để chốt.
-3. Giữ nguyên **Muster · Feeding Frenzy II · Rapid Attacks II · Tangmazu's Thurible** — bốn multiplier top (Muster ~49-56% more theo số Reviving type; Feeding Frenzy 30% more; Tangmazu's Gigantic = 20% more damage + 20% more life + tank; Rapid Attacks nuôi cả cycle mark-crit lẫn break giáp).
-4. **Gear: đừng thêm crit chance nữa** (crit đã 99% capped) — ưu tiên crit damage hoặc phòng thủ; hai nhẫn Unset đã gánh 25%+22% minion crit damage bonus, ES đang 1,667 nên một viên jewel ES/mana phòng thủ trở lại là cách rẻ nhất kéo EHP về.
+Rút ra cho mọi build companion crit sau này: crit chance của companion không có support nào cho, chỉ đến từ mod Extra Crits với gear và tree — nên khi crit đã capped thì mọi dòng crit chance trên gear là phí, đổi sang crit damage hoặc phòng thủ lời hơn.
 
 ## Gem các skill khác
 
 Soi nốt các group còn lại. Bear (Catha's + Romira's + Rapid Attacks + Magnified + Hulking) và Azmerian Wolf (Kurgal's = nguồn Unholy Might + Muster + Feeding Frenzy + Loyalty + Rapid Attacks) đều cân giữa sub-DPS granted với redirect và Lineage utility, không đụng. Phần còn lại:
 
-**Bốn con damage free cứ để đập tối đa.** Fungal Wolf, Hyena Demon, Bramble Rhoa và Swarming Wasp đều chạy Muster + Feeding Frenzy II + Rapid Attacks II (kèm Loyalty với Rage III) nên deal damage trực tiếp ngoài vai aura/utility; Swarming Wasp vừa đập vừa phát Periodic Invulnerability Aura làm lớp anti-wipe. Support không tốn spirit nên vắt kiệt, đúng tinh thần "spirit trả cho việc field con đó, damage support thì free". Đọc DPS từng con in-client để chốt vì PoB2 trả 0 cho Tame Beast.
+**Mấy con damage free cứ để đập tối đa.** Fungal Wolf, Bramble Ape, Skittering Jellycrab, Armoured Rhex và Swarming Wasp đều chạy Muster + Feeding Frenzy II + Rapid Attacks II (kèm Loyalty với Rage III) nên deal damage trực tiếp ngoài vai aura/utility; Swarming Wasp vừa đập vừa phát Periodic Invulnerability Aura làm lớp anti-wipe. Support không tốn spirit nên vắt kiệt, đúng tinh thần "spirit trả cho việc field con đó, damage support thì free". Đọc DPS từng con in-client để chốt vì PoB2 trả 0 cho Tame Beast.
 
 **Hai con body-block Quill Crab và Coconut Crab** ôm Meat Shield II + Last Gasp + Minion Mastery — đổi 40% less damage lấy 40% less taken, chỉ đứng phủ aura và chặn đường nên không tính DPS. Rage III trên chúng gần vô tác dụng vì không đánh, nhưng free nên kệ.
 
 Điểm cân nhắc damage: **Feeding Frenzy II cho +15% damage taken**. Con damage nào chết nhiều thì đổi *riêng* Feeding Frenzy II của nó sang **Meat Shield II** (−40% taken) cho nó sống dai, chịu mất ~26k DPS con đó. Muster với Rapid Attacks (không downside) thì luôn giữ; con nào sống ổn thì để nguyên, +30% damage đáng hơn.
 
-**Purity of Lightning giờ là res load-bearing, không phải spirit chết.** Nó granted free từ Chober Chaber nên không reserve spirit, mà sau khi res sụp lightning chỉ còn overcap 21 — gỡ nó là lightning rớt xuống dưới cap. Cứ giữ.
+**Purity of Lightning là res load-bearing, không phải spirit chết.** Nó granted free từ Chober Chaber nên không reserve spirit, mà light hiện chỉ 74 sát cap; gỡ nó là lightning rớt sâu dưới cap. Cứ giữ.
 
 **Discipline nên mang Healing Runes.** Aura granted này đang trống support — nhét Healing Runes: +10 spirit, rút 10% max Runic Ward mỗi 5s heal đàn 200% lượng ward mất, đúng máy sustain cho lưới redirect. Verify granted aura có nhận support không.
 
 ## Progress Log
+
+### 2026-07-16
+
+Nghỉ char, đổi main sang [OneMoreMinionMamy](/characters/one-more-minion-mamy) (Gemling Legionnaire, đàn skeleton cộng Unearth). Gear đắt rút sang char mới: Mageblood đi trước (snapshot char này lúc 2026-07-15 03:26 đã tụt belt về Hypnotic Cord), rồi Brood Rosary, Skull Corona và Havoc Goad sang trong ngày — snapshot 03:26 vẫn liệt kê ba món đó nhưng snapshot char mới lúc 21:49 đã có đủ. Trang poe.ninja của char này từ đây stale vĩnh viễn vì chỉ refresh khi bấm tay, nên đừng đọc nó như trạng thái thật.
+
+Chốt lại phần đo được để khỏi đào lại: aura của đàn scope theo "monster allies" nên buff pack chứ không buff player — đây là thứ suýt làm mình đọc nhầm res suốt nhiều tuần. Và bộ số A/B của Zekoa (Supercritical 969,768 so với Brutality 851,291) đo bằng tooltip in-client vì PoB2 trả 0 cho Tame Beast.
+
+### 2026-07-13
+
+Refresh live model qua nút "Refresh character" trên poe.ninja (model 33, updatedUtc 2026-07-13T12:27Z, khớp client). Đợt regear lớn cứu res và thêm rarity: belt Hypnotic Cord → **Mageblood** (Legacy of Gold ×2 + Bismuth +45% all ele res + Amethyst +45% chaos res, "50% effect per duplicate"), Ring1 Tempest Knuckle → **Maelström Finger** (Unset, +44/44/46 attribute + skill slot), Ring2 Morbid Circle → **Andvarius** (Gold Ring, 89% rarity, downside −17% all ele res + enchant +14% chaos), boots Atziri's Step → **Havoc Goad** (35% MS, +27% light res). Res lật từ ba kênh thủng (cold −53 / light 1 / fire 25 / chaos 14) sang **Fire 44 / Cold −7 / Light 74 / Chaos 75**. Chaos và light cap, chỉ còn cold −7 dưới cap. Item Rarity lên **171%** (Andvarius 89 + Mageblood Gold). Snapshot: Life 1,525 / ES 1,228 / Spirit 379 / EHP 22,771 / Eva 10,057 / Deflection 4,203.
+
+Soi companion aura từ export: 8 con tamed, chỉ mod "... Aura" project ra pack. **Bramble Ape = Elemental Resistance Aura +40% all ele res** (verified poedb), Fungal Wolf = Energy Shield Aura, Quill Crab = Haste Aura, Coconut Crab = Extra Physical Damage Aura, Skittering Jellycrab = Temporal Bubble, Swarming Wasp + Armoured Rhex = Periodic Invulnerability Aura (TRÙNG). Zekoa carry không aura. Roster đổi so với Jul 10: bỏ Hyena Demon + Bramble Rhoa, thêm Bramble Ape + Skittering Jellycrab + Armoured Rhex. Chốt hướng aura bằng mod text: Elemental Resistance Aura ghi "+40% **Monster** Elemental Resistance", Periodic Invulnerability ghi "**monster allies** cannot take damage" — cả hai scope theo monster ally, nên aura buff cho pack (Zekoa + beast) chứ KHÔNG cho player. Cold −7 là res thật của mình, phải cap nốt, đừng trông aura lấp. `breakdowns` poe.ninja cũng không chứa source aura/companion nào nên sheet chính là số player. Xác nhận cuối bằng cách liếc sheet in-client khi đủ đàn.
+
+### 2026-07-10
+
+Refresh live model qua nút "Refresh character" trên poe.ninja (model 26, updatedUtc 2026-07-10T16:14Z, khớp client từng số). Character đã regear sang hướng Item Rarity farm mà doc chưa ghi: body Morior → **Forgotten Warden**, amulet Empyrean Locket → **Brood Rosary**, Ring1 → **Tempest Knuckle** (Gold ring 27% rarity), belt → **Hypnotic Cord**, gloves → **Eagle Paw**. Chỉ Ring2 Morbid Circle (Unset), weapon Chober + Sylvan, helm Skull Corona, boots Atziri's Step giữ nguyên; jewel engine (The Adorned + 8 "of Gripping" + From Nothing) không đổi.
+
+Giá phải trả: bỏ Morior cùng mấy rare cõng res (Dusk Lock belt +53 cold, Blood Talons) làm res sụp cả ba — cold −53, light 1, fire 25, cold max hit chỉ 4,655. Snapshot mới: Life 1638 / ES 1448 / Spirit 379 / Armour 0 / Eva 11,097 / Deflection 9,155.
+
+Chạy gear-upgrade offline (PoB reproduce baseline khớp poe.ninja từng số nên tin được). Kết quả cứng: ba res thủng cộng lại −252 điểm, build unique-nặng chỉ còn hai nhẫn craftable nên gear đơn không cap nổi. Plan chốt (Plan A, giữ skill slot): hai nhẫn rare res — Ring1 cold+light+int+life (securable từ 8ex) + Ring2 **Unset** fire+cold+life (giữ skill slot, từ 24ex), tổng ~32-70ex, cap fire+light và kéo cold lên ~63-69, đóng nốt ~10 cold cộng 5 Int bằng node tree. Engine xác nhận either/or: giữ rarity trên nhẫn thì chỉ còn 2 slot res, không cap nổi cold −53, nên rarity phải dồn map-side (waystone + tablet + atlas, bucket Area nhân riêng) cộng Golden Charm. Đã sync toàn bộ doc cộng CLAUDE.md Current Context sang gear verified-live.
 
 ### 2026-06-19
 

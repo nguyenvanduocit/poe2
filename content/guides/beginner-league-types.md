@@ -5,7 +5,7 @@ title: "League, Standard, SSF và Hardcore: chọn loại nào để chơi"
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -21,6 +21,14 @@ tags:
 
 # League, Standard, SSF và Hardcore: chọn loại nào để chơi
 
+## TL;DR
+
+- Runes of Aldur là challenge league hiện tại, khoảng 3-4 tháng — nơi kinh tế sôi động nhất và có challenge rewards.
+- Standard tồn tại vĩnh viễn, không có mechanic league hiện tại, nhận character migrate khi league kết thúc.
+- SSF không trade không party, không nhận bonus drop rate bù lại — mode cho người muốn tự lực hoàn toàn.
+- Hardcore: chết không xóa character mà chuyển sang softcore cùng league — stash HC giữ nguyên, inventory theo character.
+- Người mới chọn softcore trade (mặc định) — trade thoải mái, không mất gì khi chết ngoài thời gian chạy lại.
+
 POE2 chia người chơi thành nhiều pool riêng biệt gọi là league. Character trong league nào chỉ giao dịch và party được với người trong league đó — không có cầu nối giữa các pool này. Biết sự khác biệt giữa các loại trước khi tạo character giúp tránh tình huống tạo nhầm rồi không trade được với bạn bè, hoặc không rõ tại sao content mình muốn chơi lại không xuất hiện.
 
 ## League tạm thời và Standard là hai thứ khác nhau hoàn toàn
@@ -35,7 +43,7 @@ Khi Runes of Aldur kết thúc, mọi character sẽ tự động migrate sang S
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Solo_self_found"} — gọi tắt là SSF — bật thêm một bộ ràng buộc lên character: không thể trade với người khác, không thể party với người lạ, không dùng được currency exchange để đổi orb. Gear và progression phải tự tìm hết — drop từ mob, craft từ item mình pick được.
 
-Điểm quan trọng là SSF không cho thêm drop rate hay bonus gì bù lại — đây là mode khó hơn về mặt progression vì thiếu đòn bẩy kinh tế. Người chọn SSF thường muốn trải nghiệm game thuần túy mà không phụ thuộc vào thị trường, hoặc tự set challenge cho bản thân.
+SSF không cho thêm drop rate hay bonus gì bù lại — mode này khó hơn về progression vì thiếu lợi thế từ trade. Người chọn SSF thường muốn trải nghiệm game thuần túy không phụ thuộc thị trường, hoặc tự set challenge cho bản thân.
 
 SSF không cố định vĩnh viễn. Có thể migrate character từ SSF sang trade league bất cứ lúc nào qua màn hình chọn character — nhưng ngược lại không được. Character đã trade một lần trong trade league không thể đưa về SSF.
 

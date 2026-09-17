@@ -39,6 +39,10 @@ fields:
 
 # [Item Name]
 
+## TL;DR
+
+- (3-7 bullet plain-text ngay sau H1: item cho archetype nào + power spike then chốt + số/breakpoint quan trọng + giá/acquisition gọn. Owner-voice tiếng Việt, KHÔNG wiki-link trong bullet, KHÔNG mục lục section.)
+
 One-paragraph overview: what the item is, what it does, and why it matters. Name the builds or archetypes that revolve around it.
 
 ## Item Stats

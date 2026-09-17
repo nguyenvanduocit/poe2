@@ -5,7 +5,7 @@ title: Liminal Coil
 status: published
 author: duocnv
 created: '2026-05-25'
-updated: '2026-06-09'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.0
 rarity: unique
@@ -30,7 +30,15 @@ tags:
 
 # Liminal Coil
 
-Liminal Coil là wand unique trên base :wiki-link{url="https://www.poe2wiki.net/wiki/Twisted_Wand"} Twisted Wand, drop từ The Market trong Ritual. Hai dòng cốt lõi là "Curses you inflict ignore Curse limit" cộng "Spell Hits Gain (23–31)% of Damage as Extra Chaos/Physical Damage per Curse on target" — curse vẫn debuff bình thường, nhưng giờ player chồng được nhiều curse khác loại lên cùng một target, và mỗi curse trên target cộng thêm một lớp extra damage vào spell hit. Đây là nền cho caster muốn vừa bóc res/slow target vừa scale damage theo số lượng curse.
+## TL;DR
+
+- Wand unique cho "Curses ignore Curse limit" + (23–31)% extra Chaos và Physical per Curse on target.
+- Với 3 curse khác nhau: 69–93% extra chaos và 69–93% extra physical từ riêng cơ chế này, trên top của spell damage gốc.
+- Roll tốt nhất: 31% per curse — chênh lệch từ sàn 23% là 35% per curse, đáng chase khi craft hoặc chọn copy.
+- Build cần nhiều curse source khác nhau — curse-on-hit support, multiple trigger skills, AoE curse.
+- Drop từ The Market trong Ritual — farming lặp encounter là con đường chắc chắn nhất.
+
+Liminal Coil là wand unique trên base :wiki-link{url="https://www.poe2wiki.net/wiki/Twisted_Wand"} Twisted Wand, drop từ The Market trong Ritual. Hai dòng chính là "Curses you inflict ignore Curse limit" cộng "Spell Hits Gain (23–31)% of Damage as Extra Chaos/Physical Damage per Curse on target" — curse vẫn debuff bình thường, nhưng giờ player chồng được nhiều curse khác loại lên cùng một target, và mỗi curse trên target cộng thêm một lớp extra damage vào spell hit. Đây là nền cho caster muốn vừa bóc res/slow target vừa scale damage theo số lượng curse.
 
 ## Item Stats
 
@@ -56,7 +64,7 @@ Mỗi curse trên target cộng (23–31)% extra chaos *và* (23–31)% extra ph
 
 Liminal Coil kéo caster theo hướng curse rộng, không phải curse sâu. Thay vì đổ điểm vào "increased curse effect" (scale debuff của một curse), player đầu tư vào càng nhiều curse source càng tốt để đẩy số curse trên target lên cao. Curse-on-hit support, trigger curse qua multiple skills, và AoE curse đều trở nên quan trọng vì mỗi curse type thêm vào = thêm một lớp (23–31)% extra damage.
 
-Bản thân wand cho (71–113)% increased Spell Damage và (7–13)% increased Cast Speed — baseline stat tốt cho caster, nhưng không đủ nếu bỏ qua curse count. Build ăn rõ nhất khi duy trì 3–4 curse khác nhau lên target trước khi bắt đầu spam spell, vì damage ramp lên tuyến tính theo từng curse. Không có penalty hay tradeoff nào khác ngoài yêu cầu phải đa dạng curse source — curse vẫn debuff bình thường nên investment vào curse effect vẫn có giá trị phụ.
+Bản thân wand cho (71–113)% increased Spell Damage và (7–13)% increased Cast Speed — baseline stat tốt cho caster, nhưng không đủ nếu bỏ qua curse count. Build ăn rõ nhất khi duy trì 3–4 curse khác nhau lên target trước khi bắt đầu spam spell, vì damage ramp lên đều theo từng curse. Không có penalty hay tradeoff nào khác ngoài yêu cầu phải đa dạng curse source — curse vẫn debuff bình thường nên investment vào curse effect vẫn có giá trị phụ.
 
 Build không phù hợp: caster muốn dùng một curse duy nhất, hoặc build không có cách apply curse nhanh (melee không có AoE curse reach, minion build không apply curse trực tiếp).
 
@@ -78,5 +86,5 @@ Item introduced.
 
 ## Relationships
 
-- **part_of** [Đợt Unique Mới và Meta Shift](/guides/0-5-new-unique-items) — trục curse-stacking của đợt unique 0.5
+- **part_of** [Đợt Unique Mới và Meta Shift](/guides/0-5-new-unique-items) — hướng curse-stacking của đợt unique 0.5
 - **synergizes_with** [Twisted Empyrean](/guides/twisted-empyrean) — cùng nhóm unique build-enabling 0.5

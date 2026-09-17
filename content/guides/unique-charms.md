@@ -5,7 +5,7 @@ title: Unique charms
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 sub_class: items
@@ -25,19 +25,27 @@ tags:
 
 # Unique charms
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Charm"} là loại trinket nằm trong charm slot trên belt, giữ một thanh charge, và tự kích hoạt theo điều kiện "Used when you become X" thay vì bấm tay như flask. Năm unique charm phủ gần hết charm slot trong meta 0.5.1: Nascent Hope, Beira's Anguish, Arakaali's Gift và The Fall of the Axe chặn bốn ailment nguy hiểm nhất — :wiki-link{url="https://www.poe2wiki.net/wiki/Freeze"} Freeze, :wiki-link{url="https://www.poe2wiki.net/wiki/Ignite"} Ignite, :wiki-link{url="https://www.poe2wiki.net/wiki/Poison"} Poison, :wiki-link{url="https://www.poe2wiki.net/wiki/Slow"} Slow — còn Rite of Passage là charm magic-find. Trong sample unique-charm của poe.ninja (mains top-XP), Nascent Hope đứng đầu ở 41,4% số character đeo unique charm, The Fall of the Axe 24,0%, Beira's Anguish 19,3%, Rite of Passage 11,2%, Arakaali's Gift 10,5% — bốn charm immunity gần như mặc định vì freeze/ignite/poison/slow là những disabler kết liễu nhanh nhất, và charm tự bật ngay khoảnh khắc dính ailment.
+## TL;DR
+
+- Charm tự kích hoạt ngay khi dính ailment — không bấm tay như flask. Phủ 3 giây immunity rồi tự refill.
+- Immunity đến từ base charm, không phải unique; payload phụ của unique là lý do thắng slot.
+- Slot ưu tiên: Nascent Hope (freeze khoá hành động, on-kill sustain 20–25%) cho slot một; The Fall of the Axe (Onslaught 20% Skill Speed) cho slot hai — vừa chống slow vừa buff tấn công.
+- Nascent Hope tiêu 40/40 mỗi proc (cạn sạch), có on-kill sustain để refill khi mapping. Arakaali's Gift và The Fall of the Axe tiêu 20/40, đỡ được hai proc.
+- Rite of Passage là charm magic-find (15% item rarity), không phải ailment immunity — trigger khi giết Rare/Unique, buff Azmeri Spirit possession ngẫu nhiên (10–20)s.
+
+:wiki-link{url="https://www.poe2wiki.net/wiki/Charm"} là loại trinket nằm trong charm slot trên belt, giữ một thanh charge, và tự kích hoạt theo điều kiện "Used when you become X" thay vì bấm tay như flask. Năm unique charm phủ gần hết charm slot trong meta 0.5.1: Nascent Hope, Beira's Anguish, Arakaali's Gift và The Fall of the Axe chặn bốn ailment nguy hiểm nhất — :wiki-link{url="https://www.poe2wiki.net/wiki/Freeze"} Freeze, :wiki-link{url="https://www.poe2wiki.net/wiki/Ignite"} Ignite, :wiki-link{url="https://www.poe2wiki.net/wiki/Poison"} Poison, :wiki-link{url="https://www.poe2wiki.net/wiki/Slow"} Slow — còn Rite of Passage là charm magic-find. Trong sample unique-charm của poe.ninja (mains top-XP), Nascent Hope đứng đầu ở 41,4% số character đeo unique charm, The Fall of the Axe 24,0%, Beira's Anguish 19,3%, Rite of Passage 11,2%, Arakaali's Gift 10,5% — bốn charm immunity đã thành mặc định vì freeze/ignite/poison/slow là những disabler kết liễu nhanh nhất, và charm tự bật ngay khoảnh khắc dính ailment.
 
 ## Charm nằm trong belt và tự kích theo điều kiện
 
-Charm chỉ giữ charge khi nằm trong charm slot trên belt — belt Vengeance Harness mình đang chạy mở 2 charm slot, đúng loại slot mấy charm này nhắm tới. Mỗi charm có một thanh charge tối đa (40 cho bốn charm immunity, 80 cho Golden Charm), và refill bằng cách giết quái hoặc nạp ở :wiki-link{url="https://www.poe2wiki.net/wiki/Wells"} Wells.
+Charm chỉ giữ charge khi nằm trong charm slot trên belt — belt :wiki-link{url="https://www.poe2wiki.net/wiki/Mageblood"} mình đang chạy mở 3 charm slot qua implicit "Has 3 Charm Slots", đúng loại slot mấy charm này nhắm tới. Mỗi charm có một thanh charge tối đa (40 cho bốn charm immunity, 80 cho Golden Charm), và refill bằng cách giết quái hoặc nạp ở :wiki-link{url="https://www.poe2wiki.net/wiki/Wells"} Wells.
 
-Cơ chế kích hoạt là điểm khác flask: thay vì bấm phím, charm tự dùng đúng lúc điều kiện trigger thỏa. Nascent Hope ghi "Used when you become Frozen" nên nó bật ngay khi mình bị Frozen; The Fall of the Axe ghi "Used when you are affected by a Slow" nên bật khi dính bất kỳ slow nào. Mỗi lần proc tiêu một lượng charge cố định ("Consumes X of Y Charges") rồi cấp effect trong thời lượng của charm — 3 giây cho bốn charm immunity, 1 giây cho Golden Charm.
+Cơ chế kích hoạt là điểm khác flask: thay vì bấm phím, charm tự dùng đúng lúc điều kiện trigger thỏa. Nascent Hope ghi "Used when you become Frozen" nên nó bật ngay khi mình bị Frozen; The Fall of the Axe ghi "Used when you are affected by a Slow" nên bật khi dính bất kỳ slow nào. Mỗi lần proc tiêu một lượng charge cố định ("Consumes X of Y Charges") rồi cho effect trong thời lượng của charm — 3 giây cho bốn charm immunity, 1 giây cho Golden Charm.
 
 Lượng charge tiêu mỗi lần proc quyết định nhịp sẵn sàng. Nascent Hope tiêu 40 of 40 nên một lần proc làm cạn sạch thanh charge, phải refill đầy mới có lần kế. Arakaali's Gift và The Fall of the Axe tiêu 20 of 40 nên đỡ được hai lần trước khi cạn. Rite of Passage tiêu 80 of 80, cạn hết mỗi lần dùng.
 
 ## Bốn charm chặn ailment lethal
 
-Bốn charm này dựng trên bốn base charm khác nhau, và đây là chỗ dễ hiểu sai: dòng immunity cộng dòng trigger là property của **base charm**, không phải của unique. Một :wiki-link{url="https://www.poe2wiki.net/wiki/Thawing_Charm"} Thawing Charm rare cũng cho Immune to Freeze và "Used when you become Frozen" y hệt Nascent Hope. Cái mà unique thêm vào chỉ là dòng phụ — sustain charge on-kill, Energy Shield recharge, ignited ground, cross-recovery, hay Onslaught. Nên giá trị của bản unique nằm ở payload phụ đó, không phải ở bản thân immunity.
+Bốn charm này đặt trên bốn base charm khác nhau, và đây là chỗ dễ hiểu sai: dòng immunity cộng dòng trigger là property của **base charm**, không phải của unique. Một :wiki-link{url="https://www.poe2wiki.net/wiki/Thawing_Charm"} Thawing Charm rare cũng cho Immune to Freeze và "Used when you become Frozen" y hệt Nascent Hope. Cái mà unique thêm vào chỉ là dòng phụ — sustain charge on-kill, Energy Shield recharge, ignited ground, cross-recovery, hay Onslaught. Nên giá trị của bản unique nằm ở payload phụ đó, không phải ở bản thân immunity.
 
 ### Nascent Hope
 
@@ -104,7 +112,7 @@ Used when you are affected by a Slow
 Grants Onslaught during effect
 ```
 
-Nó khác ba charm kia ở chỗ không phải "Immune to ailment" mà "Your speed is unaffected by Slows" — chill, temporal chains, chilled ground đều không cắt được tốc độ khi charm đang active. Dòng phụ "Grants Onslaught during effect" mới là thứ đẩy nó lên hạng hai ở 24,0%: :wiki-link{url="https://www.poe2wiki.net/wiki/Onslaught"} Onslaught cho 20% increased Skill Speed và 10% increased Movement Speed, nên đây vừa là chống slow vừa là buff tấn công thuần. Bị slow là chuyện xảy ra liên tục — mọi cold hit, mọi sàn debuff đều slow — nên charm gần như luôn active và Onslaught gần như có uptime cao. Đó là lý do một charm anti-slow lại được đeo nhiều hơn cả ignite lẫn poison immunity: nó trả về cả phòng thủ lẫn offensive trong cùng một slot.
+Nó khác ba charm kia ở chỗ không phải "Immune to ailment" mà "Your speed is unaffected by Slows" — chill, temporal chains, chilled ground đều không cắt được tốc độ khi charm đang active. Dòng phụ "Grants Onslaught during effect" mới là thứ đẩy nó lên hạng hai ở 24,0%: :wiki-link{url="https://www.poe2wiki.net/wiki/Onslaught"} Onslaught cho 20% increased Skill Speed và 10% increased Movement Speed, nên đây vừa là chống slow vừa là buff tấn công thuần. Bị slow là chuyện xảy ra liên tục — mọi cold hit, mọi sàn debuff đều slow — nên charm luôn active và Onslaught uptime cao, và một charm anti-slow lại được đeo nhiều hơn cả ignite lẫn poison immunity: nó cho lại cả phòng thủ lẫn offensive trong cùng một slot.
 
 ## Rite of Passage gánh magic-find
 
@@ -124,9 +132,9 @@ Possessed by Spirit Of The <random Azmeri Spirit> for (10–20) seconds on use
 
 Hai điểm vận hành đáng nhớ: nhiều bản Rite of Passage có thể dùng đồng thời miễn là khác Spirit effect, nên gom được nhiều buff possession khác loại cùng lúc; và 3 bản reforge ở :wiki-link{url="https://www.poe2wiki.net/wiki/Reforging_Bench"} Reforging Bench luôn ra Owl variant — đường nhắm tới variant cụ thể nếu muốn. Item drop-restricted: chỉ rơi từ quái bị Azmeri spirit possess, không chance được bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Orb_of_Chance"} Orb of Chance.
 
-## Vì sao charm immunity gần như mặc định trong meta
+## Vì sao charm immunity thành mặc định trong meta
 
-Belt mở charm slot, và slot đó gần như luôn nên dành cho ailment immunity vì freeze/ignite/poison/slow là nhóm disabler giết nhanh nhất — đặc biệt Freeze khoá toàn bộ hành động, một cú freeze giữa pack hay ngay trước boss slam là chết. Charm tự bật khoảnh khắc dính ailment nên nó biến một cú freeze có thể chết thành sự kiện gần như không hậu quả. Vì immunity đến từ base charm, mọi character serious đều muốn ít nhất một charm ailment-immunity trong slot; bản unique thắng slot nhờ payload phụ — on-kill sustain của Nascent Hope và Beira's Anguish giữ uptime khi mapping, Onslaught của The Fall of the Axe biến slot anti-slow thành buff offensive.
+Belt mở charm slot, và slot đó nên dành cho ailment immunity vì freeze/ignite/poison/slow là nhóm disabler giết nhanh nhất — đặc biệt Freeze khoá toàn bộ hành động, một cú freeze giữa pack hay ngay trước boss slam là chết. Charm tự bật khoảnh khắc dính ailment nên nó biến một cú freeze có thể chết thành sự kiện không hậu quả. Vì immunity đến từ base charm, mọi character serious đều muốn ít nhất một charm ailment-immunity trong slot; bản unique thắng slot nhờ payload phụ — on-kill sustain của Nascent Hope và Beira's Anguish giữ uptime khi mapping, Onslaught của The Fall of the Axe biến slot anti-slow thành buff offensive.
 
 Chọn charm nào thì theo ailment phổ biến nhất ở content đang chạy. Belt thường có 2 charm slot, nên ưu tiên hai ailment đáng sợ nhất với build mình: Nascent Hope cho slot đầu vì freeze khoá hành động, The Fall of the Axe cho slot hai vì nó cộng cả Onslaught. Về charge economy, Nascent Hope và Rite of Passage cạn full bar mỗi proc (40 of 40, 80 of 80) nên cần refill đầy trước lần kế — on-kill sustain của Nascent bù lại phần đó khi mapping. The Fall of the Axe và Arakaali's Gift tiêu nửa bar (20 of 40) nên đỡ được hai proc; chúng không có mod sustain bonus, nhưng vẫn nạp charge bằng cách giết quái như mọi charm.
 
@@ -148,7 +156,7 @@ Beira's Anguish đổi sang "Creates Ignited Ground for 4 seconds when used, Ign
 
 ### Patch 0.2.0f
 
-Mọi charm trừ Golden Charm bị halve maximum Charges và halve Charges per Use, làm chúng refill nhanh hơn. Đây là lý do các charm immunity giờ làm việc trên thang charge nhỏ (40), và Golden Charm vẫn đứng riêng ở 80.
+Mọi charm trừ Golden Charm bị halve maximum Charges và halve Charges per Use, làm chúng refill nhanh hơn. Các charm immunity giờ làm việc trên thang charge nhỏ (40), còn Golden Charm vẫn đứng riêng ở 80.
 
 ## Relationships
 

@@ -5,7 +5,7 @@ title: "Critical Hit: crit chance và crit damage bonus"
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -20,6 +20,14 @@ tags:
 ---
 
 # Critical Hit: crit chance và crit damage bonus
+
+## TL;DR
+
+- Crit mặc định deal 200% damage — gấp đôi hit thường, không cần đầu tư thêm gì.
+- Stat tăng crit damage trong POE2 gọi là Critical Damage Bonus, không phải "crit multiplier" như POE1.
+- Attack lấy base crit từ weapon (5–13% tùy loại); spell lấy base crit ghi trên skill gem — đổi weapon không ảnh hưởng spell crit.
+- "Increased Critical Hit Chance" cộng thẳng vào base, không nhân: base 7% + 100% increased = 14% final.
+- Bifurcated Critical roll crit hai lần — nếu cả hai thành công, Critical Damage Bonus áp hai lần, hit deal 300% damage.
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Critical_hit"} là một trong những axis damage scaling phổ biến nhất trong POE2 — gần như mọi build attack hay spell đều đụng đến crit ở mức độ nào đó. Nhưng hệ thống có một số điểm khác biệt rõ với POE1, đặc biệt là tên gọi và cách tính, khiến người chuyển qua dễ hiểu nhầm ngay từ đầu.
 
@@ -41,7 +49,7 @@ Critical Damage Bonus hoạt động như một multiplier độc lập hoàn to
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Attack"} dùng base crit chance từ **weapon** đang cầm. Mỗi loại martial weapon có base crit riêng ghi trên item — thông thường dao động khoảng 5% đến 13% tùy loại. Nếu không cầm vũ khí (unarmed), base crit mặc định là 5%.
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Spell"} lại khác: crit chance được ghi trực tiếp trên skill gem, không lấy từ weapon. Ví dụ Reap có base crit 14% ghi ngay trên gem — số này không thay đổi khi đổi weapon. Đây là lý do spell build không cần quan tâm đến crit chance của weapon, trong khi attack build phải chú ý base crit của vũ khí từ đầu khi chọn gear.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Spell"} lại khác: crit chance được ghi trực tiếp trên skill gem, không lấy từ weapon. Ví dụ Reap có base crit 14% ghi ngay trên gem — số này không thay đổi khi đổi weapon. Spell build vì vậy không cần quan tâm đến crit chance của weapon, trong khi attack build phải chú ý base crit của vũ khí từ đầu khi chọn gear.
 
 ## "Increased Critical Hit Chance" tính additive trên base
 

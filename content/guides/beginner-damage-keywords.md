@@ -5,7 +5,7 @@ title: "Các keyword damage quan trọng: Exposure, Penetration, Armour Break, C
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -20,6 +20,14 @@ tags:
 ---
 
 # Các keyword damage quan trọng: Exposure, Penetration, Armour Break, Culling
+
+## TL;DR
+
+- Exposure là debuff trên enemy — mọi nguồn damage (minion, companion, đồng đội) đều hưởng lợi. Penetration chỉ tính cho hit của chính mình.
+- Cùng loại Exposure không stack — chỉ cái mạnh nhất có hiệu lực.
+- Exposure hạ resistance thực trước, Penetration áp vào sau — hai cái stack được với nhau.
+- Armour Break tháo armour của enemy; khi về 0 (Fully Broken), enemy nhận thêm 20% increased physical damage trong 12 giây.
+- Culling Strike kiểm tra HP threshold trước khi damage áp: Normal 35%, Magic 20%, Rare 10%, Unique 5%.
 
 Bốn keyword này hay bị đọc nhầm với nhau — đặc biệt Exposure và Penetration, vì cả hai đều liên quan đến resistance của enemy. Hiểu đúng giúp chọn support gem và gear hợp lý hơn, thay vì lấy cái gì đó trông giống nhau mà thực ra hoạt động hoàn toàn khác.
 
@@ -37,7 +45,7 @@ Enemy rarity ảnh hưởng trực tiếp đến hiệu quả của Exposure: Ma
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Penetration"} không thay đổi resistance thực của enemy. Thay vào đó, khi tính damage từ hit của bạn, game coi resistance của enemy thấp hơn thực tế đúng bằng mức penetrate. Enemy vẫn giữ nguyên resistance cho mọi nguồn damage khác.
 
-Hệ quả thực tế: Penetration không giúp minion, companion, hay đồng đội. Nó chỉ là bonus của chính bạn, và chỉ áp dụng cho hit — không áp dụng cho damage over time. Nếu build chạy theo ailment như Ignite, Bleed, hay Poison, Penetration không scale phần DoT đó, chỉ scale damage của hit tạo ra ailment.
+Penetration không giúp minion, companion, hay đồng đội. Nó chỉ là bonus của chính bạn, và chỉ áp dụng cho hit — không áp dụng cho damage over time. Nếu build chạy theo ailment như Ignite, Bleed, hay Poison, Penetration không scale phần DoT đó, chỉ scale damage của hit tạo ra ailment.
 
 Giới hạn mặc định là không thể đẩy resistance về dưới 0% — tức là nếu enemy đang có 20% fire resistance, 30% Fire Penetration tính damage như thể enemy có 0%, không phải −10%. Một số unique item phá giới hạn này; :wiki-link{url="https://www.poe2wiki.net/wiki/Leopold's_Applause"} cho phép Penetrate xuống tới −50%.
 

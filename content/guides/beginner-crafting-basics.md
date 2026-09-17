@@ -5,7 +5,7 @@ title: "Crafting cơ bản: các orb chính, essence và omen"
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -19,6 +19,14 @@ tags:
 ---
 
 # Crafting cơ bản: các orb chính, essence và omen
+
+## TL;DR
+
+- Dây chuyền Normal→Magic→Rare: Transmutation → Augmentation (nếu cần) → Regal hoặc Alchemy.
+- Chaos Orb trong POE2 đổi đúng một mod ngẫu nhiên — không reroll toàn bộ như POE1.
+- Essence đảm bảo một mod cụ thể khi craft; Perfect/Corrupted Essence tinh chỉnh Rare item đã có.
+- Omen thay đổi hành vi của orb tiếp theo: Sinistral ép Exalted chỉ thêm prefix, Dextral Erasure ép Chaos chỉ xóa suffix.
+- Alteration, Scouring, Chromatic, Fusing không tồn tại trong POE2.
 
 Crafting trong POE2 xây trên hệ thống rarity — Normal, Magic, Rare — và mỗi rarity có bộ orb riêng để sửa chữa. Nắm được dây chuyền này từ đầu sẽ tránh được tình huống tiêu nhầm orb quý lên item không xứng đáng. Guide này tập trung vào góc nhìn craft: cơ chế từng orb hoạt động như thế nào, không phải giá trị trade của chúng.
 
@@ -46,7 +54,7 @@ Khi item đã là Rare và cần điều chỉnh, có ba orb chính.
 
 Essence bậc Lesser, thường, và Greater dùng lên Magic item, nâng nó lên Rare với guaranteed mod đó cộng thêm các mod ngẫu nhiên khác. Ví dụ: Essence of the Body đảm bảo +(85–99) maximum Life trên armour; Essence of Abrasion đảm bảo flat physical damage trên weapon; Essence of Sorcery đảm bảo % increased Spell Damage trên focus hoặc wand. Biết trước stat nào cần thì chọn đúng Essence thay vì spam Alchemy chờ may.
 
-Perfect Essence và Corrupted Essence hoạt động trên Rare item — xóa 1 mod ngẫu nhiên rồi thêm vào guaranteed mod tương ứng. Đây là cách tinh chỉnh Rare item đã có base tốt nhưng cần thay đúng 1 mod cụ thể, kết hợp được với Omen để kiểm soát mod nào bị xóa.
+Perfect Essence và Corrupted Essence hoạt động trên Rare item — xóa 1 mod ngẫu nhiên rồi thêm vào guaranteed mod tương ứng. Dùng để tinh chỉnh Rare item đã có base tốt nhưng cần thay đúng 1 mod cụ thể, kết hợp được với Omen để kiểm soát mod nào bị xóa.
 
 Essence bắt đầu rớt từ Act 1 qua encounter Essence — quái bị giam trong tinh thể xuất hiện ở nhiều khu vực. Đập ra lấy luôn, không cần đợi endgame.
 

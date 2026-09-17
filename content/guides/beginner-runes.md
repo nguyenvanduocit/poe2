@@ -5,7 +5,7 @@ title: "Rune và augment socket: cách socket stat vào gear"
 status: draft
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -20,6 +20,14 @@ tags:
 
 # Rune và augment socket: cách socket stat vào gear
 
+## TL;DR
+
+- Rune là augment cắm vào socket weapon/armour — effect thay đổi theo loại slot (weapon = damage; armour = defence); kèm lớp Bonded phụ.
+- Rune đã cắm không rút ra được — cắm rune mới tự động hủy rune cũ, không cần clear socket trước.
+- Ba tier: Lesser (không giới hạn level) → Regular (lv15) → Greater (lv30); ba rune cùng loại → upgrade ở Reforging Bench.
+- Item không có socket mặc định → dùng Artificer's Orb (ghép từ 10 Artificer's Shard tích từ salvage) để thêm.
+- Ezomyte Rune (socket gear), Aldur Rune (Remnant encounter) và Runic Ward (Verisium Runeforging) là ba hệ thống hoàn toàn riêng biệt.
+
 Rune là augment item cắm vào augment socket trên weapon và armour để thêm stat — một layer tăng sức mạnh hoàn toàn độc lập với prefix/suffix trên item. Nhiều player mang theo cả đống rune từ Act 1 mà không biết dùng, hoặc nhầm tưởng rằng phải đợi đến endgame mới cắm. Thực ra rune có thể và nên được cắm ngay từ khi nhặt được, ngay cả trên gear campaign tạm thời.
 
 ## Effect của rune thay đổi theo slot
@@ -32,9 +40,9 @@ Lấy :wiki-link{url="https://www.poe2wiki.net/wiki/Lesser_Iron_Rune"} làm ví 
 - Cắm vào **wand hoặc staff**: 20% increased Spell Damage
 - Cắm vào **armour** (body, helm, gloves, boots): 14% increased Armour, Evasion và Energy Shield
 
-Đây là lý do cùng một rune nhặt được có thể dùng hiệu quả cho cả melee lẫn caster lẫn tank — game tự nhận diện slot và áp effect phù hợp.
+Vì vậy cùng một rune nhặt được dùng hiệu quả cho cả melee lẫn caster lẫn tank — game tự nhận diện slot và áp effect phù hợp.
 
-Ngoài lớp chính, mỗi rune còn có lớp **Bonded** — effect phụ kích hoạt thêm khi item đó đang được trang bị. Ví dụ Iron Rune Bonded trên armour cho +10 life và +10 mana, còn Bonded trên martial weapon cho 20% increased effect of Fully Broken Armour. Lớp Bonded nhỏ hơn lớp chính nhưng cộng dồn đáng kể khi cắm nhiều slot.
+Ngoài lớp chính, mỗi rune còn có lớp **Bonded** — effect phụ kích hoạt thêm khi item đó đang được trang bị. Ví dụ Iron Rune Bonded trên armour cho +10 life và +10 mana, còn Bonded trên martial weapon cho 20% increased effect of Fully Broken Armour. Lớp Bonded nhỏ hơn lớp chính nhưng cộng dồn rõ khi cắm nhiều slot.
 
 Chọn rune nào cho slot nào xuất phát từ build priority. Nếu cần đẩy damage → Iron/Desert/Glacial/Storm Rune vào weapon. Nếu cần sống bền hơn → Desert/Glacial/Storm Rune (resistance) vào armour. Nếu cần leech → Body Rune vào weapon.
 

@@ -5,7 +5,7 @@ title: Đặc trưng từng class và ascendancy
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -19,6 +19,14 @@ tags:
 ---
 
 # Đặc trưng từng class và ascendancy
+
+## TL;DR
+
+- Tám class chơi được trong 0.5: Warrior, Ranger, Huntress, Witch, Sorceress, Mercenary, Monk, Druid — Marauder/Duelist/Shadow/Templar chưa mở.
+- Class quyết định điểm xuất phát trên passive tree và weapon chính; không khoá cứng build — mọi gem dùng được nếu đủ attribute.
+- Người mới dễ sống nhất: Warrior (tank đòn), Sorceress/Mercenary (tầm xa), Witch minion (đứng phía sau đàn).
+- Ascendancy mới 0.5: Spirit Walker (Huntress, companion beast) và Martial Artist (Monk, illusory bell + rune).
+- Chọn class theo playstyle muốn — sai class dễ chịu hơn sai ascendancy, vì ascendancy tốn công respec.
 
 POE2 0.5 cho chọn tám class chơi được, mỗi class gắn với một hoặc hai attribute và một loại vũ khí đặc trưng. Class quyết định bạn bắt đầu ở đâu trên passive tree, dùng vũ khí gì hợp lý nhất, và mở khoá được những ascendancy nào. Chọn đúng class hợp playstyle ngay từ đầu tiết kiệm rất nhiều điểm đi đường về sau.
 

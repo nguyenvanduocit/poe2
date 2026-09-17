@@ -5,7 +5,7 @@ title: Heart of the Well
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 sub_class: items
@@ -20,6 +20,14 @@ tags:
 ---
 
 # Heart of the Well
+
+## TL;DR
+
+- Heart of the Well drop từ Lichborn exile trong Abyss encounter — có 4 Desecrated slot chưa reveal (2 prefix + 2 suffix) từ pool 73 mod độc quyền.
+- Reveal tại Well of Souls: mỗi slot offer 3 option, chọn 1 — dùng Omen of Abyssal Echoes để reroll thêm một lần nếu cần.
+- Prefix đáng nhắm nhất: "Gain 9–15% of Damage as Extra Fire/Cold/Lightning/Chaos Damage" — phổ quát cho mọi build hit-based.
+- Reveal xong là commit, không desecrate lại được; không Orb of Chance được; kiếm copy mới nếu roll sai.
+- 49,5% character top-XP poe.ninja đeo nó — pool exclusive + reveal agency là lý do, không phải stat trực tiếp.
 
 Heart of the Well là unique :wiki-link{url="https://www.poe2wiki.net/wiki/Diamond"} jewel, Limited to 1, cắm vào một allocated jewel socket trên passive tree. Khác mọi unique jewel khác, item này không tới với mod cố định: nó luôn drop kèm bốn dòng :wiki-link{url="https://www.poe2wiki.net/wiki/Desecrated_Modifier"} chưa reveal — hai prefix và hai suffix — roll từ một pool 73 modifier riêng của chính item (35 prefix, 38 suffix). Pool này exclusive: phần lớn là mod không bao giờ roll được trên một rare jewel thường. Item drop-restricted, không :wiki-link{url="https://www.poe2wiki.net/wiki/Orb_of_Chance"} ra được, chỉ rớt từ Lichborn :wiki-link{url="https://www.poe2wiki.net/wiki/Rogue_exile"} trong :wiki-link{url="https://www.poe2wiki.net/wiki/Abyss"} encounter; ra mắt ở 0.3 và vẫn là core Abyss drop trong 0.5. Trong sample top-XP của poe.ninja league 0.5, đây là unique được slot nhiều nhất — 49,5% character đeo nó.
 
@@ -45,7 +53,7 @@ Bốn dòng `<Custom Desecrated prefix/suffix>` là đúng những gì nameplate
 
 Reveal làm tại :wiki-link{url="https://www.poe2wiki.net/wiki/Well_of_Souls"} ở Act 2, hoặc tại chính the Well of Souls trên Atlas (vị trí hiện ra sau khi hoàn thành Abyss encounter đầu tiên). Đây là cơ chế reveal chung của mọi Desecrated modifier áp lên bốn slot riêng của item: mỗi lần reveal một slot, game offer ba lựa chọn mod cho đúng loại slot đó, mình chọn một. Với Heart of the Well, ba lựa chọn đó luôn lấy từ pool 73-mod độc quyền của item — reveal prefix thì ba option đều là prefix trong pool, reveal suffix thì ba option đều là suffix.
 
-Điểm cốt lõi: đây không phải gamble mù. Chọn-một-trong-ba mỗi slot cho phép lái về dòng mình muốn. Còn lái xa hơn nữa bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Omen_of_Abyssal_Echoes"} — kích hoạt trong inventory trước khi reveal thì reroll được ba option đúng một lần, tức một slot có thể xem tới sáu mod trước khi chốt. Atlas passive :wiki-link{url="https://www.poe2wiki.net/wiki/Blessing_of_the_Source"} thêm chance để item drop với một dòng Desecrated thứ năm, nâng trần lên năm mod thay vì bốn.
+Reveal không phải gamble mù. Chọn-một-trong-ba mỗi slot cho phép lái về dòng mình muốn. Còn lái xa hơn nữa bằng :wiki-link{url="https://www.poe2wiki.net/wiki/Omen_of_Abyssal_Echoes"} — kích hoạt trong inventory trước khi reveal thì reroll được ba option đúng một lần, tức một slot có thể xem tới sáu mod trước khi chốt. Atlas passive :wiki-link{url="https://www.poe2wiki.net/wiki/Blessing_of_the_Source"} thêm chance để item drop với một dòng Desecrated thứ năm, nâng trần lên năm mod thay vì bốn.
 
 Một khi đã reveal, item coi như đã desecrate và không desecrate lại được — reveal là commit. Vì vậy thao tác thật sự khi cầm copy mới là: mang tới Well of Souls, reveal từng slot, ở mỗi slot ngắm ba option và chốt dòng hợp build, dùng Omen of Abyssal Echoes cho slot prefix quan trọng nếu ba option đầu không có gì đáng.
 
@@ -59,7 +67,7 @@ Trụ thứ hai là reveal agency. Vì mỗi slot cho chọn một trong ba, c�
 
 ## Mod nào đáng nhắm khi reveal
 
-Việc thật sự cần làm khi cầm item là biết ngắm dòng nào theo từng archetype, vì pool phủ nhiều trục khác nhau.
+Khi cầm item, cần biết ngắm dòng nào theo từng archetype, vì pool phủ nhiều hướng khác nhau.
 
 Build hit-based bất kỳ ngắm hai slot prefix vào extra-element: Fire/Cold/Lightning (9-15)% hoặc Chaos (7-13)%. Đây là target phổ quát nhất và là lý do chính item lên 49,5%. Build projectile ưu tiên (30-50)% chance to Pierce — pierce cho mũi tên/đạn xuyên qua nhiều enemy, đẩy clear thẳng lên. Build có body base defense lớn ngắm (40-60)% increased Armour/ES/Evasion from Equipped Body Armour, vì phần trăm này áp lên base body nên càng base to càng đáng. Build :wiki-link{url="https://www.poe2wiki.net/wiki/Spirit_Walker"} companion ngắm prefix "(15-25)% increased Damage while your :wiki-link{url="https://www.poe2wiki.net/wiki/Companion"} is in your :wiki-link{url="https://www.poe2wiki.net/wiki/Presence"}" — companion zoo đứng quanh player gần như luôn thoả điều kiện. Exclusion check: dòng này chết với build không field companion, ngược lại extra-element prefix vẫn ăn vì companion damage cũng là hit.
 

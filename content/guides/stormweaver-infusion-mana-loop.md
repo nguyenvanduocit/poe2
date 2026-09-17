@@ -5,7 +5,7 @@ title: Stormweaver Infusion Mana Loop
 status: draft
 author: duocnv
 created: '2026-05-28'
-updated: '2026-05-28'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.0
 pob_coverage: PARTIAL
@@ -25,19 +25,29 @@ tags:
 
 # Stormweaver Infusion Mana Loop
 
-Stormweaver Infusion Mana Loop là một engine sustain biến **Elemental Infusion** thành mana — character không chạy mana regen mà hồi mana bằng cách nhặt **Remnant** và consume **Power Charge**, đủ để spam :wiki-link{url="https://www.poe2wiki.net/wiki/Comet"} không nghỉ trên boss.[^1] Cơ chế dựng trên các node tree và Stormweaver ascendancy có từ 0.1–0.4, nhưng cả bộ chỉ thật sự đóng vòng ở 0.5.0 sau khi character tree được refund và tinh chỉnh — patch notes cấp free passive refund "due to the changes", nên mọi node mana phải đọc lại từ export 0.5.0 chứ không tin số 0.4.[^18] Hiện chưa character nào chạy live engine này ở 0.5 — đây là league-start plan của mas0ny1, người tự nói "this will be a learning experience" và "I'm hoping GGG does not see this and we don't get this nerfed before league start".[^1] Engine đáng phân tích ngay bây giờ vì nó là một trong những loop net-positive mana hiếm hoi không cần :wiki-link{url="https://www.poe2wiki.net/wiki/Archmage"}, và một mắt xích trong nó (Abiding Hex trong Cast on Critical) có thể bị xem là bug — quyết định chơi hay không phải chốt trong tuần league launch 2026-05-29.[^1][^19]
+## TL;DR
+
+- Engine sustain hồi mana bằng cách nhặt Remnant (3% max mana mỗi cái) và consume Power Charge (11% max mana mỗi charge), đủ để spam Comet không nghỉ mà không cần Archmage.
+- Hai path độc lập: Path A consume infusion mở slot rồi nhặt Remnant mới (+3%), Path B dùng Enfeeble + Abiding Hex để consume power charge (+11%).
+- Bất đối xứng cốt yếu: gain là %max mana còn cost là flat, nên kéo max mana cao nhất qua Mind Over Matter + hybrid life/mana; 1.5k mana cho net +161/chu kỳ, lên 3k mana thành +686.
+- Giữ Enfeeble level 1–3 (cost 41→178 theo level): level cao ăn hết lãi 165 mana mỗi cú curse.
+- Chỉ chạy tốt trên Stormweaver nhờ Refracted Infusion (nhặt một infusion gain thêm một infusion khác) + Storm's Recollection (mỗi Remnant tái xuất một lần).
+- Exploitable + patch-sensitive: chưa ai chạy live ở 0.5, Abiding Hex bị chính tác giả gọi là "could be a bug", và "50% less Mana Recovery Rate" của MoM chưa rõ có cắt các cú hồi 3%/11% không.
+- Defense mỏng, chỉ dựa freeze cả màn; boss kháng freeze hoặc cửa sổ Mana Tempest bắt đứng yên lột trần điểm yếu survivability.
+
+Stormweaver Infusion Mana Loop là một engine sustain biến **Elemental Infusion** thành mana: character không chạy mana regen mà hồi mana bằng cách nhặt **Remnant** và consume **Power Charge**, đủ để spam :wiki-link{url="https://www.poe2wiki.net/wiki/Comet"} không nghỉ trên boss.[^1] Cơ chế dựa trên các node tree và Stormweaver ascendancy có từ 0.1–0.4, nhưng cả bộ chỉ thật sự đóng vòng ở 0.5.0 sau khi character tree được refund và tinh chỉnh; patch notes cấp free passive refund "due to the changes", nên mọi node mana phải đọc lại từ export 0.5.0 chứ không tin số 0.4.[^18] Hiện chưa character nào chạy live engine này ở 0.5, đây là league-start plan của mas0ny1, người tự nói "this will be a learning experience" và "I'm hoping GGG does not see this and we don't get this nerfed before league start".[^1] Engine đáng phân tích ngay bây giờ vì nó là một trong những loop net-positive mana hiếm hoi không cần :wiki-link{url="https://www.poe2wiki.net/wiki/Archmage"}, và một mắt xích trong nó (Abiding Hex trong Cast on Critical) có thể bị xem là bug, nên quyết định chơi hay không phải chốt trong tuần league launch 2026-05-29.[^1][^19]
 
 ## Cơ chế hoạt động
 
-Trục đầu tiên cần tách bạch: **Elemental Infusion tự nó không cho mana**. Wiki ghi rõ "Elemental Infusions by themselves do nothing, making increased Remnant Effect useless on them".[^5] Một **Elemental Infusion** là buff sinh ra dưới dạng Remnant trên đất; đi qua nhặt Remnant mới cho buff, giữ tối đa 3 stack mỗi nguyên tố trong 20 giây hoặc tới khi bị một skill consume.[^5] Mana không đến từ việc *tiêu* infusion, mà đến từ việc *nhặt* Remnant. Đây là phân biệt nền tảng mà video gộp lại làm một, và nếu hiểu sai thì cả math chain bên dưới sẽ lệch.
+Điều đầu tiên cần tách bạch: **Elemental Infusion tự nó không cho mana**. Wiki ghi rõ "Elemental Infusions by themselves do nothing, making increased Remnant Effect useless on them".[^5] Một **Elemental Infusion** là buff sinh ra dưới dạng Remnant trên đất; đi qua nhặt Remnant mới cho buff, giữ tối đa 3 stack mỗi nguyên tố trong 20 giây hoặc tới khi bị một skill consume.[^5] Mana không đến từ việc *tiêu* infusion, mà đến từ việc *nhặt* Remnant. Phân biệt nền tảng này bị video gộp lại làm một, và nếu hiểu sai thì cả math chain bên dưới sẽ lệch.
 
 Vì thế engine chạy trên **hai path mana độc lập**, dù người chơi cảm giác như một vòng liền mạch.
 
 Path A là path nhặt Remnant. Một node trên tree 0.5.0 ghi verbatim "Recover 3% of Maximum Mana when you collect a Remnant", và node song sinh "Recover 3% of Maximum Life when you collect a Remnant".[^2] Mỗi Remnant nhặt vào trả 3% max mana và 3% max life. Vấn đề là slot luôn đầy (cap 3 mỗi nguyên tố), nên muốn nhặt cái mới thì phải *tiêu* cái cũ trước để mở chỗ. Cơ chế đóng vòng ở đây: ta consume infusion bằng các skill damage/utility, mỗi lần consume mở một slot, slot trống cho phép nhặt một Remnant mới từ đống đang nằm trên đất, và chính cú nhặt đó mới sinh 3% mana. Nguồn Remnant dồi dào nhờ :wiki-link{url="https://www.poe2wiki.net/wiki/Frost_Bomb"} (để lại Cold Infusion khi nổ),[^11] :wiki-link{url="https://www.poe2wiki.net/wiki/Siphon_Elements"} (5% chance mỗi nguyên tố spawn Remnant khi Freeze/Ignite/Shock),[^7] và Stormweaver notable **Storm's Recollection** cho "Remnants you create reappear once, 3 seconds after being collected" — tức mỗi Remnant được nhặt hai lần, double luôn lượng mana từ Path A.[^6]
 
-Path B là path Power Charge, và đây mới là mắt xích trả mana lớn nhất mỗi lần kích. Tree 0.5.0 có node "Gain a Power Charge when you consume an Elemental Infusion" — nghĩa là mỗi lần tiêu một infusion (việc ta vốn đã làm liên tục ở Path A) ta đồng thời nạp một power charge.[^3] Cụm bốn node "Recover 2% of maximum Mana when you consume a Power Charge" (ba node) cộng "Recover 5% of maximum Mana when you consume a Power Charge" (một node) gộp lại thành **11% max mana cho mỗi power charge bị consume**.[^2] Câu hỏi còn lại: làm sao consume power charge một cách chủ động và liên tục? Lời giải là :wiki-link{url="https://www.poe2wiki.net/wiki/Enfeeble"} cắm chung support :wiki-link{url="https://www.poe2wiki.net/wiki/Abiding_Hex"}. Abiding Hex ghi verbatim "Supported Skills consume a Power Charge on use".[^13] Nên mỗi lần Enfeeble được cast (qua Cast on Critical), nó ăn một power charge, kích cụm node trên, trả về 11% max mana. Nếu mana cost của Enfeeble thấp hơn 11% max mana thì mỗi cú curse là một khoản lãi mana ròng.[^1]
+Path B là path Power Charge, và đây mới là mắt xích trả mana lớn nhất mỗi lần kích. Tree 0.5.0 có node "Gain a Power Charge when you consume an Elemental Infusion": nghĩa là mỗi lần tiêu một infusion (việc ta vốn đã làm liên tục ở Path A) ta đồng thời nạp một power charge.[^3] Cụm bốn node "Recover 2% of maximum Mana when you consume a Power Charge" (ba node) cộng "Recover 5% of maximum Mana when you consume a Power Charge" (một node) gộp lại thành **11% max mana cho mỗi power charge bị consume**.[^2] Câu hỏi còn lại: làm sao consume power charge chủ động và liên tục? Lời giải là :wiki-link{url="https://www.poe2wiki.net/wiki/Enfeeble"} cắm chung support :wiki-link{url="https://www.poe2wiki.net/wiki/Abiding_Hex"}. Abiding Hex ghi verbatim "Supported Skills consume a Power Charge on use".[^13] Nên mỗi lần Enfeeble được cast (qua Cast on Critical), nó ăn một power charge, kích cụm node trên, hồi 11% max mana. Nếu mana cost của Enfeeble thấp hơn 11% max mana thì mỗi cú curse là một khoản lãi mana ròng.[^1]
 
-Khi cả hai path chạy cùng lúc, người chơi thấy mana bar gần như đứng yên ở mức đầy giữa boss fight trong khi Comet mưa xuống liên tục. mas0ny1 chỉ rõ ở footage rằng character không bị giới hạn bởi mana bar mà bởi số Comet bắn ra — nghĩa là khi loop đã đóng, hướng nâng cấp không phải thêm mana mà tăng damage của :wiki-link{url="https://www.poe2wiki.net/wiki/Spark"} để mỗi hit sinh nhiều energy hơn, kéo theo nhiều Comet hơn.[^1]
+Khi cả hai path chạy cùng lúc, người chơi thấy mana bar đứng yên ở mức đầy giữa boss fight trong khi Comet mưa xuống liên tục. mas0ny1 chỉ rõ ở footage rằng character không bị giới hạn bởi mana bar mà bởi số Comet bắn ra — nghĩa là khi loop đã đóng, hướng nâng cấp không phải thêm mana mà tăng damage của :wiki-link{url="https://www.poe2wiki.net/wiki/Spark"} để mỗi hit sinh nhiều energy hơn, kéo theo nhiều Comet hơn.[^1]
 
 ## Tính mana mỗi chu kỳ
 
@@ -52,11 +62,11 @@ Các con số dưới đây tính cho character mẫu 1.5k max mana, giả đị
 
 Phía chi phí là tổng mana cost phẳng (flat) của các skill trên, vì build không chơi Archmage nên cost không scale theo max mana. Sheet của mas0ny1 cho ra −364 mana/chu kỳ, để lại **net +161 mana/chu kỳ** ở 1.5k max mana.[^1]
 
-Insight quan trọng nhất nằm ở bất đối xứng giữa hai vế: vế gain là **phần trăm max mana** còn vế cost là **flat**. Nâng max mana lên gấp đôi (3k) thì gain thành +1050 trong khi cost vẫn ~−364, biến margin từ +161 thành +686. Đây là lý do build đi **Mind Over Matter** + hybrid life/mana và cố kéo max mana cao nhất có thể, chứ không phải vì tankiness đơn thuần.[^1][^16] Cùng logic giải thích vì sao Firestorm và Comet+Spell Cascade được ưu tiên: chúng ăn nhiều infusion nhất mỗi cast (tối đa 3), mở nhiều slot nhất, cho nhiều cú repick 3% nhất — chúng là nguồn mana chính của Path A chứ không phải nguồn damage chính.[^1][^10]
+Insight quan trọng nhất nằm ở bất đối xứng giữa hai vế: vế gain là **phần trăm max mana** còn vế cost là **flat**. Nâng max mana lên gấp đôi (3k) thì gain thành +1050 trong khi cost vẫn ~−364, biến margin từ +161 thành +686. Vì vậy build đi **Mind Over Matter** + hybrid life/mana và cố kéo max mana cao nhất có thể, chứ không phải vì tankiness đơn thuần.[^1][^16] Cùng logic giải thích vì sao Firestorm và Comet+Spell Cascade được ưu tiên: chúng ăn nhiều infusion nhất mỗi cast (tối đa 3), mở nhiều slot nhất, cho nhiều cú repick 3% nhất, nên chúng là nguồn mana chính của Path A chứ không phải nguồn damage chính.[^1][^10]
 
 ## Tương tác chính
 
-**Refracted Infusion** là multiplier nhân đôi tốc độ tích infusion: "When collecting an Elemental Infusion, gain another different Elemental Infusion".[^6] Mỗi Remnant nhặt vào cho thêm một infusion khác nguyên tố, nên dù chỉ Frost Bomb sinh Cold, người chơi vẫn nhanh chóng có đủ ba nguyên tố để Firestorm và Comet có cái mà consume. Cộng với Storm's Recollection (mỗi Remnant tái xuất một lần), tốc độ sinh infusion của Stormweaver vượt xa các ascendancy Sorceress khác — đây là lý do engine này gần như chỉ chạy được trên Stormweaver.[^6]
+**Refracted Infusion** là multiplier nhân đôi tốc độ tích infusion: "When collecting an Elemental Infusion, gain another different Elemental Infusion".[^6] Mỗi Remnant nhặt vào cho thêm một infusion khác nguyên tố, nên dù chỉ Frost Bomb sinh Cold, người chơi vẫn nhanh chóng có đủ ba nguyên tố để Firestorm và Comet có cái mà consume. Cộng với Storm's Recollection (mỗi Remnant tái xuất một lần), tốc độ sinh infusion của Stormweaver vượt xa các ascendancy Sorceress khác, nên engine này chỉ thực sự chạy được trên Stormweaver.[^6]
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Charge_Regulation"} là synergy kép với Path B. Buff gem này cho "(20-26)% more Critical Hit Chance while you have a Power Charge" và "Consumes one of each Charge every 10 seconds".[^15] Vì Path B đã sinh power charge liên tục (mỗi infusion consume = 1 charge), uptime của power charge gần 100%, nên crit bonus gần như permanent — và việc Charge Regulation định kỳ ăn charge mỗi 10 giây lại feed thêm cho cụm node 11% mana. Crit cao quan trọng vì engine endgame trigger Comet qua Cast on Critical bằng Spark.[^1]
 
@@ -72,13 +82,13 @@ Hai thứ hoàn toàn khác nhau cùng mang chữ "Remnant" trong 0.5, cực d�
 
 ## Mind Over Matter có thể cắt các cú hồi mana
 
-**Mind Over Matter** keystone cho "All Damage is taken from Mana before Life" nhưng đính kèm "50% less Mana Recovery Rate".[^16] Build dùng MoM để biến mana thành lớp EHP, nhưng dòng giảm 50% recovery rate là một biến chưa được mas0ny1 nhắc tới và có thể bào mòn cả math chain ở trên nếu nó áp lên các cú hồi 3%/11%. "Recovery Rate" trong POE2 chắc chắn cắt regen và leech; việc nó có cắt luôn instant recovery dạng "recover X% on event" hay không thì chưa có xác nhận in-game cho engine này. Nếu có áp, +525 gain/chu kỳ tụt còn ~+262, đủ để lật một số setup max-mana thấp từ net-positive sang net-negative. Đây là test target số một khi vào league, không phải kết luận — chỉ là lỗ hổng cần log.[^16][^1]
+**Mind Over Matter** keystone cho "All Damage is taken from Mana before Life" nhưng đính kèm "50% less Mana Recovery Rate".[^16] Build dùng MoM để biến mana thành lớp EHP, nhưng dòng giảm 50% recovery rate là một biến chưa được mas0ny1 nhắc tới và có thể bào mòn cả math chain ở trên nếu nó áp lên các cú hồi 3%/11%. "Recovery Rate" trong POE2 chắc chắn cắt regen và leech; việc nó có cắt luôn instant recovery dạng "recover X% on event" hay không thì chưa có xác nhận in-game cho engine này. Nếu có áp, +525 gain/chu kỳ tụt còn ~+262, đủ để lật một số setup max-mana thấp từ net-positive sang net-negative. Đó là test target số một khi vào league, không phải kết luận, chỉ là lỗ hổng cần log.[^16][^1]
 
 ## Hướng đầu tư
 
 Hướng đầu tư đúng thứ tự ưu tiên: kéo max mana, giữ power-charge uptime, rồi mới tới damage.
 
-Max mana là đòn bẩy lớn nhất vì gain là %max-mana còn cost phẳng — đầu tư mana không chỉ cho EHP qua MoM mà trực tiếp nới margin mana mỗi chu kỳ.[^1][^16] Trên ascendancy, lấy Refracted Infusion và Storm's Recollection sớm để dồn tốc độ sinh infusion; Storm's Recollection còn cho "Remnants can be collected from 50% further away", giúp hốt trọn cả ba Remnant từ một Frost Bomb spell-cascade khi đứng giữa.[^6] **Force of Will** của Stormweaver cấp "20% of Damage is taken from Mana before Life", một lớp MoM nhỏ miễn phí cộng dồn với keystone, đồng thời buff Arcane Surge theo mana thiếu hụt.[^6]
+Max mana là cú đẩy lớn nhất vì gain là %max-mana còn cost phẳng, nên đầu tư mana vừa cho EHP qua MoM vừa trực tiếp nới margin mana mỗi chu kỳ.[^1][^16] Trên ascendancy, lấy Refracted Infusion và Storm's Recollection sớm để dồn tốc độ sinh infusion; Storm's Recollection còn cho "Remnants can be collected from 50% further away", giúp hốt trọn cả ba Remnant từ một Frost Bomb spell-cascade khi đứng giữa.[^6] **Force of Will** của Stormweaver cấp "20% of Damage is taken from Mana before Life", một lớp MoM nhỏ miễn phí cộng dồn với keystone, đồng thời buff Arcane Surge theo mana thiếu hụt.[^6]
 
 Về gem, Enfeeble phải giữ **level thấp nhất có thể**. Cost của Enfeeble scale từ 41 mana ở level 1 lên 178 ở level 20.[^14] Vì lãi Path B cố định ở 11% max mana (165 mana ở 1.5k), Enfeeble level 1 (41 mana) cho net +124 mỗi cú, còn level 20 (178 mana) lại lỗ −13. mas0ny1 thừa nhận đã lỡ level Enfeeble lên cao và đó là sai lầm; engine muốn curse rẻ nhất, không phải curse mạnh nhất.[^1][^14] Cùng nguyên tắc áp cho Firestorm — giữ level thấp để cost rẻ hơn lượng mana nó mở khoá qua repick.[^1]
 
@@ -98,14 +108,6 @@ Lớp phòng thủ của build dựa nặng vào freeze toàn màn từ Cold-Inf
 
 Đừng đôn Enfeeble hay Firestorm lên level cao "cho mạnh". Vì hai gem này dùng để mở khoá mana chứ không phải làm nguồn damage, level cao chỉ làm cost vượt quá lượng mana chúng mở khoá, lật chu kỳ sang âm.[^1][^14]
 
-## Lỗi hay gặp
-
-**Sai: level Enfeeble cao cho curse mạnh. — Đúng: giữ Enfeeble level 1–3. — Lý do:** lãi Path B cố định 11% max mana; cost Enfeeble scale 41→178 mana theo level, nên level cao ăn hết lãi. Ở 1.5k mana, sai lệch giữa level 1 và level 20 là khoảng 137 mana mỗi cú curse — đủ lật cả loop âm nếu spam dày.[^1][^14]
-
-**Sai: dồn max mana sau cùng, ưu tiên damage trước. — Đúng: kéo max mana trước khi loop ổn định. — Lý do:** dưới ngưỡng max mana đủ, gain (%) không thắng nổi cost (flat), loop chưa đóng thì damage cao cũng vô dụng vì không có mana mà cast. mas0ny1 dùng Efficacy như "crutch gem" giai đoạn đầu chính vì chưa đủ max mana, và sẽ bỏ khi mana lên.[^1]
-
-**Sai: vào endgame vẫn dùng staff. — Đúng: chuyển wand + scepter ở T15 để đủ 190 spirit. — Lý do:** Cast on Critical setup endgame cần 190 spirit, mà wand cho phép cắm scepter (nguồn spirit lớn). Staff tốt cho damage early rush tới T15 nhưng không đủ spirit để fit Cast on Critical đầy đủ về sau — đi sai vũ khí giai đoạn này khiến phải reroll cả setup gem.[^1]
-
 ## Chi phí và giới hạn cơ chế
 
 Engine có vài khoản chi và cản trở cụ thể.
@@ -116,7 +118,7 @@ Về restriction cơ chế: Path B chỉ chạy nếu có power charge để con
 
 Về downside: Mind Over Matter đính "50% less Mana Recovery Rate", một cái giá có thể đắt hơn vẻ ngoài nếu nó áp lên chính các cú hồi mana của engine (xem mục caveat phía trên).[^16] Và lớp defense build rất mỏng — mas0ny1 mô tả gear test "very bad" và character "squishy", phòng thủ thực tế gần như chỉ là freeze cả màn, nên engine mana mạnh không bù được survivability ở các pha one-shot.[^1]
 
-Về patch gating: bản thân Abiding Hex trong Cast on Critical bị chính tác giả gọi là "could be considered a bug" — engine vẫn chạy được không cần Abiding Hex nhưng phải bù bằng pool mana lớn hơn hoặc mana cost efficiency cao hơn, tức margin hẹp lại đáng kể nếu mắt xích này bị vá.[^1]
+Về patch gating: bản thân Abiding Hex trong Cast on Critical bị chính tác giả gọi là "could be considered a bug": engine vẫn chạy được không cần Abiding Hex nhưng phải bù bằng pool mana lớn hơn hoặc mana cost efficiency cao hơn, tức margin hẹp lại rõ nếu mắt xích này bị vá.[^1]
 
 ## Đánh giá và câu hỏi còn mở
 

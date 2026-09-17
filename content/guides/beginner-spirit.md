@@ -5,7 +5,7 @@ title: "Spirit: tài nguyên reservation của POE2"
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 guide_type: fundamentals
@@ -20,6 +20,14 @@ tags:
 ---
 
 # Spirit: tài nguyên reservation của POE2
+
+## TL;DR
+
+- Spirit hoàn toàn tách biệt với Mana — aura, minion thường trực, persistent skill tiêu Spirit, không phải Mana.
+- Character mới tạo có **Spirit = 0** — phải chủ động lấy từ campaign và gear.
+- Campaign cho **100 Spirit** từ ba boss kill: +30 Act 1, +30 Act 3, +40 Interlude.
+- Spirit là trần cố định, không hồi — skill bật chiếm Spirit, tắt trả lại; không thể bật thêm khi hết trần.
+- Nguồn Spirit sau campaign: amulet prefix, body armour prefix, sceptre % increased — cần lên kế hoạch từ sớm nếu build chạy nhiều aura/companion.
 
 Spirit là resource dùng để duy trì aura, minion thường trực, và persistent skill — hoàn toàn tách biệt với Mana. Người mới từ POE1 thường nhầm hai thứ này với nhau, dẫn đến việc không hiểu tại sao skill không bật lên được dù Mana vẫn đầy.
 
@@ -51,7 +59,7 @@ Mỗi aura, minion thường trực, herald, hoặc buff loại persistent đề
 
 Lỗi hay gặp nhất là cố lắp hết tất cả persistent skill vào một lúc mà không kiểm tra Spirit tổng. Cách kiểm: mở Skills Panel, nhìn phần Spirit phía trên — con số bên trái là đang dùng, bên phải là tối đa. Khi trái vượt phải thì skill mới nhất không bật.
 
-Build muốn chạy nhiều aura và companion cùng lúc buộc phải đầu tư Spirit từ nhiều slot: amulet Spirit prefix + body armour Spirit prefix + sceptre % increased Spirit + ascendancy node. Đây là lý do Spirit là một trong những stat cần lên kế hoạch từ đầu khi thiết kế build, không phải thứ giải quyết sau.
+Build muốn chạy nhiều aura và companion cùng lúc buộc phải đầu tư Spirit từ nhiều slot: amulet Spirit prefix + body armour Spirit prefix + sceptre % increased Spirit + ascendancy node. Spirit là một trong những stat cần lên kế hoạch từ đầu khi thiết kế build, không phải thứ giải quyết sau.
 
 ## Relationships
 

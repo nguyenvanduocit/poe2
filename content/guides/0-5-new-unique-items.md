@@ -5,7 +5,7 @@ title: Unique Items Mới
 status: published
 author: duocnv
 created: '2026-05-25'
-updated: '2026-06-09'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.3
 tags:
@@ -17,7 +17,16 @@ tags:
 
 # Unique Items Mới
 
-0.5 bơm vào 42 unique item mới, phần lớn gắn vào ba trục cơ chế: companion (Spirit Walker), Remnant/Runic Ward (league mechanic), và mana-as-resource. Tất cả item port từ POE1 — Mageblood, bộ Berek, Loreweave, Geofri's Sanctuary, Facebreaker — đều được GGG re-design hoàn toàn. Tên giống, cơ chế khác, số phải đọc lại từ poedb.
+## TL;DR
+
+- 0.5 thêm 42 unique mới, phần lớn bám ba nhóm cơ chế: companion, Remnant/Runic Ward, và mana làm resource.
+- Mọi item port từ POE1 (Mageblood, bộ Berek, Loreweave, Geofri's Sanctuary, Facebreaker) đều bị re-design hẳn: tên giống nhưng cơ chế khác, phải đọc lại số từ poedb.
+- Sylvan's Effigy phá trần số companion với "any number of Companions" và là enabler không thay thế được của build nguyên đàn.
+- Forgotten Warden là body companion-tank không life không res, deflection tăng theo missing ES và đẩy 10-15% deflected damage sang companion trước.
+- Mageblood 0.5 không bật flask nữa mà chạy Mage's Legacy: bốn Legacy random, effect scale theo số Legacy trùng.
+- The Hollow Mask và Eventide Petals scale layer Remnant/Runic Ward; Twisted Empyrean và Liminal Coil là hướng mana-tank và curse-stack.
+
+0.5 bơm vào 42 unique item mới, phần lớn gắn vào ba nhóm cơ chế: companion (Spirit Walker), Remnant/Runic Ward (league mechanic), và mana-as-resource. Tất cả item port từ POE1 — Mageblood, bộ Berek, Loreweave, Geofri's Sanctuary, Facebreaker — đều được GGG re-design hoàn toàn. Tên giống, cơ chế khác, số phải đọc lại từ poedb.
 
 ## Companion items
 
@@ -29,17 +38,17 @@ tags:
 
 ## Remnant và Runic Ward
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/The_Hollow_Mask"} (Hewn Mask) được rework hoàn toàn cho 0.5 gắn với league mechanic Remnant. Hai dòng cốt lõi: "Remnants you create affect Allies in your Presence as well as you when collected" và 80–100% increased Reservation Efficiency of Remnant Skills. Dòng đầu biến Remnant harvesting thành team buff thay vì solo buff — party member đứng gần đều nhận hiệu ứng Remnant. Dòng sau cắt reservation cost của Remnant skills về dưới một nửa, cho phép cắm nhiều Remnant skill song song. Item đánh đổi bằng -10% to all Elemental Resistances và 15% additional Physical Damage Reduction (defensive layer bù phần res mất).
+:wiki-link{url="https://www.poe2wiki.net/wiki/The_Hollow_Mask"} (Hewn Mask) được rework hoàn toàn cho 0.5 gắn với league mechanic Remnant. Hai dòng chính: "Remnants you create affect Allies in your Presence as well as you when collected" và 80–100% increased Reservation Efficiency of Remnant Skills. Dòng đầu biến Remnant harvesting thành team buff thay vì solo buff — party member đứng gần đều nhận hiệu ứng Remnant. Dòng sau cắt reservation cost của Remnant skills về dưới một nửa, cho phép cắm nhiều Remnant skill song song. Item đánh đổi bằng -10% to all Elemental Resistances và 15% additional Physical Damage Reduction (defensive layer bù phần res mất).
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Eventide_Petals"} (Veridical Chain, Lv78) là amulet Kalguuran duy nhất trong đợt này scale trực tiếp layer Runic Ward. Implicit +30–40 to maximum Runic Ward cộng flat vào pool mà hầu hết build không có nhiều cách tăng — Runic Ward kích hoạt ở 1 Life nên +40 flat là buffer thực tế cho recovery khi chạm floor. Item cũng grants Level 18 Midnight Zenith và cho 30–50% increased Critical Hit Chance. Dòng Ice Crystals max life theo Cold Resistance là niche interaction không liên quan trục chính.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Eventide_Petals"} (Veridical Chain, Lv78) là amulet Kalguuran duy nhất trong đợt này scale trực tiếp layer Runic Ward. Implicit +30–40 to maximum Runic Ward cộng flat vào pool mà hầu hết build không có nhiều cách tăng — Runic Ward kích hoạt ở 1 Life nên +40 flat là buffer thực tế cho recovery khi chạm floor. Item cũng grants Level 18 Midnight Zenith và cho 30–50% increased Critical Hit Chance. Dòng Ice Crystals max life theo Cold Resistance là niche interaction không liên quan nhóm chính.
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/The_Unleashed"} (Revered Vestments, Lv65, 67 Str/67 Int) là body armour caster Runic Binding. Mods: (150–250)% increased Armour and Energy Shield, +(10–20) Strength and Intelligence, (15–25)% of Damage taken from Hits bypasses Energy Shield if Energy Shield is below half, "Gain 1 Runic Binding on Hit with Spells, no more than once every 0.5 seconds", "Lose all Runic Bindings when you Shapeshift to gain that much Unbound Potential". Runic Binding xây dần theo đòn spell hit; Shapeshift drain toàn bộ Binding đổi lấy Unbound Potential — đây là trục rotation cho caster Druid shapeshifter. Bypass ES khi below half là cái giá phải trả, không phải feature.
+:wiki-link{url="https://www.poe2wiki.net/wiki/The_Unleashed"} (Revered Vestments, Lv65, 67 Str/67 Int) là body armour caster Runic Binding. Mods: (150–250)% increased Armour and Energy Shield, +(10–20) Strength and Intelligence, (15–25)% of Damage taken from Hits bypasses Energy Shield if Energy Shield is below half, "Gain 1 Runic Binding on Hit with Spells, no more than once every 0.5 seconds", "Lose all Runic Bindings when you Shapeshift to gain that much Unbound Potential". Runic Binding xây dần theo đòn spell hit; Shapeshift drain toàn bộ Binding đổi lấy Unbound Potential — đây là hướng rotation cho caster Druid shapeshifter. Bypass ES khi below half là cái giá phải trả, không phải feature.
 
 Một điểm dễ nhầm về 0.5.1: bản patch sửa craft modifier của *Runemastered Revered Vestments* (dòng 10–15% damage bypasses ES if below half đổi thành 10–15% increased ES Recharge Rate). Đây là thay đổi cho bản Runemastered — phiên bản tạo ra bằng Verisium Runeforge — không ảnh hưởng unique The Unleashed gốc.
 
 ## Mana và caster
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Twisted_Empyrean"} (Aberrant Sledge) là mace mana-tank cold: 94% increased Physical Damage, Adds 166–372 Cold Damage, +319 maximum Mana, 10% of Damage is taken from Mana before Life, "Attacks with this Weapon have Added Cold Damage equal to 6–10% of maximum Mana", Convert 100% of Fire Damage with Mace Skills to Cold. Trục damage là mana pool trực tiếp đổ vào cold added damage — mana vừa là life buffer vừa là damage scaler. Mace Skills bị lock về cold hoàn toàn qua convert.
+:wiki-link{url="https://www.poe2wiki.net/wiki/Twisted_Empyrean"} (Aberrant Sledge) là mace mana-tank cold: 94% increased Physical Damage, Adds 166–372 Cold Damage, +319 maximum Mana, 10% of Damage is taken from Mana before Life, "Attacks with this Weapon have Added Cold Damage equal to 6–10% of maximum Mana", Convert 100% of Fire Damage with Mace Skills to Cold. Nguồn damage là mana pool trực tiếp đổ vào cold added damage — mana vừa là life buffer vừa là damage scaler. Mace Skills bị lock về cold hoàn toàn qua convert.
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Liminal_Coil"} (Twisted Wand, Lv65, 114 Int) là build-around wand cho curse-stacking. Mods: 71–113% increased Spell Damage, 7–13% increased Cast Speed, "Curses you inflict ignore Curse limit", Spell Hits Gain 23–31% of Damage as Extra Chaos Damage per Curse on target, Spell Hits Gain 23–31% of Damage as Extra Physical Damage per Curse on target. "Ignore Curse limit" cho phép chồng nhiều curse khác loại lên cùng target, và curse vẫn debuff bình thường — còn mỗi curse trên target cộng thêm 23–31% extra Chaos cùng 23–31% extra Physical vào spell hit. Ở roll sample (29% mỗi hướng), ba curse khác loại trên một enemy cho gần +87% extra Chaos và +87% extra Physical, cả hai từ spell hit nên ăn Spell Damage scaling.
 
@@ -75,14 +84,6 @@ Ba ring này là BiS cho build Wind Skills muốn lock ground type không cần 
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/Nightfall"} (Glacial Fortress, Lv78) là shield armour cold converter: 150–200% increased Armour, 10–20% increased Block chance, Cold Resistance, 10–20% of Fire damage taken as Cold, 10–20% of Lightning damage taken as Cold. Cả Fire lẫn Lightning đều convert một phần về Cold để một mình Cold res gánh. Yêu cầu Str rất cao (~249 ở sample) và grants Level 18 Soaring Midnight ngoài Raise Shield.
 
-## Lỗi hay gặp với port items
-
-Mua Mageblood vì nhớ flask mechanic POE1: belt này không bật flask, nhưng bốn Legacy grants có thể mạnh hơn nếu roll cụm Legacy tốt như Sulphur + Silver + Quicksilver.
-
-Đặt kỳ vọng vào Loreweave để push max-res build và bỏ qua Mana Flask → Guard và Poison→Chill contribution — hai dòng đó thay đổi build direction đáng kể nên phải tính trước khi equip.
-
-Mua một trong ba Berek ring chỉ vì res mà không chạy Wind Skills: trục Wind Skills interaction mới là main draw của cả ba ring, res chỉ là secondary.
-
 ## Version History
 
 ### Patch 0.5.3 (2026-06-19)
@@ -99,7 +100,7 @@ Sửa bug Spiraling Conspiracy của :wiki-link{url="https://www.poe2wiki.net/wi
 
 ## Relationships
 
-- **related_mechanics** [Spirit Walker — Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — Sylvan's Effigy và Forgotten Warden cắm thẳng vào trục companion
+- **related_mechanics** [Spirit Walker — Companion Beast Hunt](/guides/spirit-walker-companion-beast-hunt) — Sylvan's Effigy và Forgotten Warden cắm thẳng vào nhóm companion
 - **used_by** [Tame Beast Companion Pack Spirit Walker](/builds/huntress/0-5-spirit-walker-companion-pack) — Sylvan's Effigy là enabler không thay thế được của hướng nguyên đàn
 - **related_mechanics** [Infernal Legion Ignite Loop](/guides/infernal-legion-ignite-loop) — The Raven's Flock hỗ trợ minion build gồm cả setup IL; Gruelling Madness từ staff stack với ignite
 - **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — overview league 0.5 gồm Remnant/Runic Ward context cho The Hollow Mask và Eventide Petals

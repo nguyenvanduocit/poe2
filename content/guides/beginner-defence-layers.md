@@ -5,7 +5,7 @@ title: "Ba lớp phòng thủ vật lý: Armour, Evasion và Block"
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-19'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.3
 guide_type: fundamentals
@@ -22,6 +22,14 @@ tags:
 
 # Ba lớp phòng thủ vật lý: Armour, Evasion và Block
 
+## TL;DR
+
+- Armour giảm physical damage theo công thức phi tuyến: cần armour gấp 10 lần cú hit để giảm 50% — mạnh với pack nhỏ, gần vô dụng với boss slam lớn.
+- Evasion né hoàn toàn hoặc ăn nguyên full damage — mọi hit (physical, elemental, chaos) đều có thể né, nhưng damage over time xuyên qua.
+- Block chặn hoàn toàn nhưng giới hạn 50% chance và cần shield — stun vẫn xuyên qua.
+- Kết hợp hai lớp trở lên lấp khoảng trống của từng lớp đơn — gear POE2 có stat hybrid là bình thường, không phải lãng phí.
+- Runic Ward (0.5 Runeforging) là lớp thứ tư, kích hoạt như safety net khi life tụt về 1.
+
 POE2 không có một con số "giảm damage" duy nhất — thay vào đó, survival phụ thuộc vào ba lớp phòng thủ riêng biệt, mỗi lớp hoạt động theo nguyên lý khác nhau và che được điểm yếu của nhau. Hiểu ba lớp này giúp người mới tránh cái bẫy cổ điển: stack một thứ thật cao rồi chết vì lý do hoàn toàn khác.
 
 ## Armour giảm damage nhưng không đều nhau
@@ -34,9 +42,9 @@ Warrior và Titan là class tự nhiên nhất cho armour build vì có sẵn st
 
 ## Evasion né hoàn toàn hoặc ăn nguyên full damage
 
-:wiki-link{url="https://www.poe2wiki.net/wiki/Evasion"} cho xác suất né hoàn toàn một hit. Khi né thành công, bạn không nhận damage gì cả. Khi né thất bại, bạn ăn nguyên 100% damage — không có giảm giữa chừng. Đây là điểm quan trọng nhất về evasion: nó không có giá trị khi fail, và không có giá trị gì trước damage over time (poison, bleed không phải hit).
+:wiki-link{url="https://www.poe2wiki.net/wiki/Evasion"} cho xác suất né hoàn toàn một hit. Khi né thành công, không nhận damage gì cả. Khi né thất bại, ăn nguyên 100% damage — không có giảm giữa chừng. Evasion không có giá trị khi fail roll, và không có giá trị gì trước damage over time (poison, bleed không phải hit).
 
-Điểm mạnh của evasion là nó **không chỉ** chặn physical. Bất kỳ hit nào — physical, elemental, chaos — đều có thể được né. Thêm vào đó, evasion build trong 0.5 thường lấy thêm **Deflection** qua passive nodes gần khu vực Dexterity: một layer phụ cho cơ hội giảm 40% damage từ hit, kể cả các đòn boss có glow đỏ mà evasion không chặn được. Hai notable tiêu biểu chuyển Evasion Rating sang Deflection Rating là Wild Cat (12%) và Staunch Deflection (8% — patch 0.5.3 thêm dòng này) — một character 8,000 Evasion lấy cả hai nhận thêm 1,600 Deflection Rating từ tree mà không phải chiếm slot suffix trên gear. Hai layer này cộng lại thành lý do Ranger và Huntress class có thể sống sót ổn ngay cả khi có lúc roll hụt.
+Điểm mạnh của evasion: mọi hit đều có thể được né — physical, elemental, chaos như nhau. Thêm vào đó, evasion build trong 0.5 thường lấy thêm **Deflection** qua passive nodes gần khu vực Dexterity: một layer phụ cho cơ hội giảm 40% damage từ hit, kể cả các đòn boss có glow đỏ mà evasion không chặn được. Hai notable tiêu biểu chuyển Evasion Rating sang Deflection Rating là Wild Cat (12%) và Staunch Deflection (8% — patch 0.5.3 thêm dòng này) — một character 8,000 Evasion lấy cả hai nhận thêm 1,600 Deflection Rating từ tree mà không phải chiếm slot suffix trên gear. Hai layer này cộng lại thành lý do Ranger và Huntress class có thể sống sót ổn ngay cả khi có lúc roll hụt.
 
 Playstyle phù hợp: di chuyển liên tục, dùng dodge roll để tránh đòn lớn, không đứng trong đám quái hứng hit liên tiếp.
 
@@ -52,7 +60,7 @@ Shield cũng cho thêm armour và tạo foundation cho melee tank build. Playsty
 
 Armour mạnh với pack nhưng yếu với boss burst. Evasion hoàn toàn không có giá trị khi fail roll — và fail roll sẽ xảy ra. Block bị giới hạn 50%, đòn không block vẫn ăn full. Mỗi lớp đơn độc đều có một kịch bản nó gần như vô dụng.
 
-Kết hợp hai hoặc ba lớp lại thì gap đó đóng lại: armour giảm damage khi evasion fail, block chặn những đòn boss mà evasion không xử lý được, evasion giúp giảm số lần armour phải gánh. Đây là lý do gear trong POE2 thường có stat hybrid — body có cả armour lẫn evasion, hoặc passive tree cho cả hai là điều bình thường, không phải lãng phí.
+Kết hợp hai hoặc ba lớp lại thì gap đó đóng lại: armour giảm damage khi evasion fail, block chặn những đòn boss mà evasion không xử lý được, evasion giúp giảm số lần armour phải gánh. Gear trong POE2 thường có stat hybrid — body có cả armour lẫn evasion, hoặc passive tree cho cả hai là điều bình thường, không phải lãng phí.
 
 Một lớp nữa ra mắt trong 0.5 là **Runic Ward** từ Verisium Runeforging: kích hoạt như safety net khi life tụt về 1, hấp thụ damage thêm một nhịp trước khi chết. Chi tiết về cách hoạt động của nó có trong [Armour Defensive Scaling](/guides/armour-defensive-scaling).
 

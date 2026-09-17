@@ -5,7 +5,7 @@ title: The Taming
 status: published
 author: duocnv
 created: '2026-06-10'
-updated: '2026-06-10'
+updated: '2026-07-13'
 league: '0.5'
 patch: 0.5.1
 sub_class: items
@@ -21,6 +21,14 @@ tags:
 ---
 
 # The Taming
+
+## TL;DR
+
+- Prismatic Ring level 42, drop The Market. 10% implicit + 20% explicit all elemental res — một trong những res ring mạnh nhất ở slot này.
+- Damage bonus: (10–20)% increased Damage cho mỗi loại ailment trên enemy, tối đa 30–60% khi có đủ Ignite, Shock, Chill/Freeze cùng lúc.
+- Wind Skills (Twister) luôn nhận boost từ cả ba elemental ground — Ignited, Shocked, Chilled — đồng thời và thường trực, không cần ground thật.
+- Gộp hiệu ứng ba chiếc Berek's ring vào một slot, giải phóng ring slot kia cho stat khác.
+- Build thuần một nguyên tố hoặc không chạy Wind Skills không khai thác được ring; rare Prismatic Ring thường tốt hơn cho những build đó.
 
 :wiki-link{url="https://www.poe2wiki.net/wiki/The_Taming"} là unique :wiki-link{url="https://www.poe2wiki.net/wiki/Prismatic_Ring"} yêu cầu Level 42, drop từ The Market trong league 0.5. Ring có hai mechanic độc lập: (10–20)% increased Damage cho mỗi loại Elemental Ailment đang có trên enemy — tối đa ba loại theo thiết kế ring, nên tối đa 30–60% increased — và một cặp dòng Wind Skills biến toàn bộ elemental ground interaction thành triple buff thường trực không cần ground thật. Build chạy Twister Huntress với Wind Skills là user tự nhiên nhất vì gộp được hiệu ứng cả ba chiếc Berek ring vào một slot.
 
@@ -47,13 +55,13 @@ Alone and free."
 - Berek and the Untamed
 ```
 
-Ring giải quyết res đáng kể ở roll tốt nhất: 10% implicit + 20% explicit = 30% all elemental res từ một ring slot, đủ để thở khi build đang áp lực res.
+Ring giải quyết res rõ ở roll tốt nhất: 10% implicit + 20% explicit = 30% all elemental res từ một ring slot, đủ để thở khi build đang áp lực res.
 
 ## Damage tăng theo số loại ailment trên enemy
 
 Dòng "(10–20)% increased Damage for each type of Elemental Ailment on Enemy" scale theo số loại ailment khác nhau đang có mặt trên enemy, không phải số stack của từng ailment. Ba loại Elemental Ailment trong POE2 tương ứng ba nguyên tố: :wiki-link{url="https://www.poe2wiki.net/wiki/Ignite"} (fire), :wiki-link{url="https://www.poe2wiki.net/wiki/Chill"} và :wiki-link{url="https://www.poe2wiki.net/wiki/Freeze"} (cold), :wiki-link{url="https://www.poe2wiki.net/wiki/Shock"} (lightning). Có đủ cả ba loại trên enemy cùng lúc thì ring cho 3 × (10–20)% = 30–60% increased Damage tổng. Ring chỉ gọi tên ba loại ground — Ignited, Shocked, Chilled — gợi ý Chill và Freeze cùng tính là một loại cold và trần thực tế là ba loại; cần xác nhận in-game khi vào league.
 
-"Increased" ở đây là additive — cộng vào pool increased damage từ passive tree, gear, và flask cùng lúc. Build đã có lượng lớn increased damage tổng thì 30–60% thêm vào sẽ có hiệu quả biên thấp hơn con số tuyệt đối. Build ít nguồn increased khác như companion zoo hay flat phys support thì 60% increased từ ring slot là đòn bẩy rõ rệt.
+"Increased" ở đây là additive — cộng vào pool increased damage từ passive tree, gear, và flask cùng lúc. Build đã có lượng lớn increased damage tổng thì 30–60% thêm vào sẽ có hiệu quả biên thấp hơn con số tuyệt đối. Build ít nguồn increased khác như companion zoo hay flat phys support thì 60% increased từ ring slot là cú đẩy rõ rệt.
 
 Yêu cầu thực tế để đạt đủ ba loại là build phải apply được cả :wiki-link{url="https://www.poe2wiki.net/wiki/Ignite"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Shock"}, và :wiki-link{url="https://www.poe2wiki.net/wiki/Chill"} hay :wiki-link{url="https://www.poe2wiki.net/wiki/Freeze"} đồng thời. Build thuần một nguyên tố chỉ apply một loại ailment, chỉ nhận 10–20% increased Damage — không đủ để giữ ring slot.
 
@@ -87,6 +95,6 @@ The Taming được giới thiệu trong POE2 với hai mechanic Wind Skills m�
 
 ## Relationships
 
-- **related_mechanics** [Twister](/guides/twister) — skill chính hưởng lợi từ triple elemental ground boost của ring; cơ chế "Gain 50% as corresponding Type" là trục damage Twister trên elemental ground.
+- **related_mechanics** [Twister](/guides/twister) — skill chính hưởng lợi từ triple elemental ground boost của ring; cơ chế "Gain 50% as corresponding Type" là nguồn damage chính của Twister khi đứng trên elemental ground.
 - **related** [0.5 New Unique Items Overview](/guides/0-5-new-unique-items) — overview toàn bộ unique mới 0.5 bao gồm Berek's trio và context The Taming.
 - **related_mechanics** [Return of the Ancients](/guides/return-of-the-ancients) — league overview 0.5.0 giới thiệu The Market là drop source.
