@@ -1,6 +1,6 @@
 ---
 name: write-farming-tutorial
-description: Viết hoặc polish farming strategy doc trong content/farming/ theo phong cách maxroll-flavored + project owner voice (tiếng Việt, prose-first, số thật có timestamp). Trigger — "viết farming strategy", "draft farming doc", "tutorial farming", "write farming strategy", "farming guide cho <content>", "polish farming doc".
+description: Viết hoặc polish farming strategy doc trong content/farming/ theo phong cách CHEATSHEET + project owner voice (tiếng Việt, bullet-first, số thật có timestamp). Trigger — "viết farming strategy", "draft farming doc", "tutorial farming", "write farming strategy", "farming guide cho <content>", "polish farming doc".
 allowed-tools:
   - Read
   - Write
@@ -18,9 +18,9 @@ arguments:
 context: inline
 ---
 
-# write-farming-tutorial — Viết farming strategy kiểu maxroll, giọng owner Việt
+# write-farming-tutorial — Viết farming strategy dạng cheatsheet, giọng owner Việt
 
-Skill này viết tutorial farming strategy trong `content/farming/` theo **cấu trúc setup-first** mượn từ maxroll (Metric → Setup → Atlas → Gameplay → Loot → Risk → Alternatives → Reference), NHƯNG giọng văn giữ project rule: **tiếng Việt, owner voice, prose-first, số thật có timestamp**.
+Skill này viết farming strategy trong `content/farming/` dạng **cheatsheet bullet-first**: nhìn vào là setup theo, khỏi đọc nguyên lý. Body là bullet — bốn section roll-reference theo **bộ 4 lever** (Waystone · Tablet · Atlas Passive · Master) rồi một section cho mỗi run-case (thường / juiced). Giọng giữ project rule: **tiếng Việt, owner voice, số thật có timestamp**. Why nén thành một mệnh đề trên bullet, KHÔNG đoạn văn giảng cơ chế.
 
 ## Inputs
 
@@ -33,73 +33,61 @@ Skill này viết tutorial farming strategy trong `content/farming/` theo **cấ
 File `.md` trong `content/farming/` với:
 
 - Frontmatter khớp schema `content.config.ts` (build `bun run generate` fail nếu sai).
-- **Section right-sized** — required core (Intro + Strategy Overview + Loot Breakdown + Failure Modes + Quick Reference Card) + optional menu, không ép số section cố định (xem "Section structure").
-- Frontmatter `strategy_tier` / `investment_tier` / `confidence_level` + profit/hour (state inline có timestamp, KHÔNG phải frontmatter field) re-state ở intro paragraph (không lặp 2 chỗ same wording).
+- **Cheatsheet right-sized** — TL;DR + intro 1 câu + 4 lever section (bỏ lever không dùng) + 1 section/run-case + Kinh tế + Failure Modes + Version History + Relationships. CẮT cái không áp dụng, ĐỪNG pad (xem "Cấu trúc cheatsheet").
+- Frontmatter `strategy_tier` / `investment_tier` / `confidence_level` + profit/hour (state inline có timestamp, KHÔNG phải frontmatter field) re-state ở intro (không lặp 2 chỗ same wording).
 - Mọi số (profit, tablet cost, drop value) **có timestamp** ("tính đến 2026-06-05, Omen of Sinistral Erasure ~3 div/cái") — số không có timestamp = fabricate.
 - Mọi tablet / waystone / atlas keystone / unique / fragment / currency / Master → `:wiki-link{url="https://www.poe2wiki.net/wiki/..."}`.
 - 100% voice rule tuân thủ.
 
 ## Voice rules (project luôn win — restate top 8)
 
-1. **Owner voice** — viết như người tự chạy strategy này, đo profit, rút kinh nghiệm. CẤM "theo Fubgun/Empyrean…", "guide này tổng hợp từ…", "tóm lại". State as own: *"City biome grass ổn nhất vì pack size cao, ritual nuốt được nhiều monster hơn"* không *"City map được community recommend vì..."*.
-2. **Prose-first** — Atlas tree node, tablet loadout, Masters assignment: prose hoặc heading + bullet group, KHÔNG bảng nhiều cột (site stack-column UI vỡ layout). Tham khảo CLAUDE.md "Hạn chế dùng table".
-3. **Why-first cho mọi choice** — Mỗi tablet / atlas node / map choice kèm 1 câu lý do (mechanic interaction). Không "dùng Freedom of Faith" mà "dùng Freedom of Faith vì double số ritual altar trong map → nhiều favour hơn → nhiều reroll hơn = nhiều lần gamble belt hơn".
+1. **Owner voice** — viết như người tự chạy strategy này, đo profit, rút kinh nghiệm. CẤM "theo Fubgun/Empyrean…", "guide này tổng hợp từ…", "tóm lại". State as own: *"City biome grass ổn nhất vì pack size cao"* không *"City map được community recommend vì..."*.
+2. **Bullet-first, why nén một mệnh đề** — body là bullet scannable, KHÔNG đoạn văn giảng cơ chế. Reader nhìn vào copy setup, không cần đọc nguyên lý. Mỗi bullet gánh why bằng đúng MỘT mệnh đề khi cần (vd "runic monster là con duy nhất nhả logbook nên nổ hết marker") — KHÔNG cho mỗi lever một đoạn dài. KHÔNG bảng nhiều cột (site stack-column UI vỡ layout).
+3. **Setup-first, actionable** — mỗi lever section cho exact roll/node/choice để chạy lần đầu. Run-case section dẫn "pick lever variant nào" + trình tự chạy, KHÔNG giảng lại mod đã ở lever section.
 4. **Số có timestamp** — Profit, drop rate, tablet cost: kèm "tính đến YYYY-MM-DD" hoặc reference frontmatter `updated:`. Không có timestamp = invalidate trong 1 tuần.
-5. **Game term linking** — Mọi tablet / waystone / atlas keystone / fragment / unique / currency / Master → `:wiki-link{url="https://www.poe2wiki.net/wiki/Exact_Name"}`.
+5. **Game term linking** — Mọi tablet / waystone / atlas keystone / fragment / unique / currency / Master → `:wiki-link{url="https://www.poe2wiki.net/wiki/Exact_Name"}` (lần đầu mention, KHÔNG trong bullet TL;DR).
 
    ```md
-   Tablet loadout: :wiki-link{url="https://www.poe2wiki.net/wiki/Freedom_of_Faith"} +
-   :wiki-link{url="https://www.poe2wiki.net/wiki/Precursor_Tablet"}.
-   Drop chính: :wiki-link{url="https://www.poe2wiki.net/wiki/Divine_Orb"}, :wiki-link{url="https://www.poe2wiki.net/wiki/Mageblood"}.
+   Money: :wiki-link{url="https://www.poe2wiki.net/wiki/Aldur's_Saga"} ~30 div,
+   :wiki-link{url="https://www.poe2wiki.net/wiki/Divine_Orb"} nền giao dịch.
    ```
 
-6. **Rewrite fresh, đừng vá doc cũ — vault luôn ở thì hiện tại** — Khi update strategy đã tồn tại: viết LẠI nguyên bài theo meta/giá **hiện tại**, KHÔNG vá lẻ rồi chừa số/tablet/atlas đã outdate "để giữ lịch sử". Profit/giá stale thay thẳng (kèm timestamp mới); strategy đã chết theo patch (tablet removed, mod nerfed, content disabled) thì gỡ hẳn hoặc xoá doc, không archive trong body. Lịch sử chỉ ở `git log` — doc hiện tại chỉ chứa trạng thái đúng-bây-giờ. Bài xong phải đứng được như sinh ra hôm nay. Ref: CLAUDE.md `## Content Writing Voice` → "Rewrite fresh, đừng vá doc cũ".
+6. **Rewrite fresh, đừng vá doc cũ — vault luôn ở thì hiện tại** — Khi update strategy đã tồn tại: viết LẠI nguyên bài theo meta/giá **hiện tại**, KHÔNG vá lẻ rồi chừa số/tablet/atlas đã outdate "để giữ lịch sử". Profit/giá stale thay thẳng (kèm timestamp mới); strategy đã chết theo patch (tablet removed, mod nerfed, content disabled) thì gỡ hẳn hoặc xoá doc, không archive trong body. Lịch sử chỉ ở `git log` — doc hiện tại chỉ chứa trạng thái đúng-bây-giờ. Ref: CLAUDE.md `## Content Writing Voice` → "Rewrite fresh, đừng vá doc cũ".
 7. **Banned-lexicon — tra `templates/voice-lexicon-vi.md` TRƯỚC khi viết** — cấm calque «trục/đòn bẩy/cốt lõi/đáng kể/một cách + adj/trả về/vòng lặp», động từ «dựng/cấp/chèn» cho buff-stat, pivot AI «— đây là lý do/cách», «Hệ quả thực tế:», «Điều này có nghĩa là», mở đoạn «Đây là X» lặp; xưng hô «mình» hoặc câu vô chủ ngữ. Hook `content-voice-lint` bắt phần grep được — sửa sạch warning trước khi báo xong.
-8. **Kinh tế thông tin — mỗi số/cơ chế một chỗ, dẫn bằng cái quan trọng, không recap** — Profit math sống ở Loot Breakdown, mô tả cơ chế ở Strategy Overview; chỗ sau chỉ nhắc tên + dẫn ngược, KHÔNG giảng lại multiplier hay con số đã nêu. Mỗi section dẫn bằng 1-2 thứ quyết định reward (money node, key tablet, gate cơ chế), phần phụ gộp một câu — đừng cho mọi tablet/atlas node đoạn dài ngang nhau. Số không tựa vào một quyết định thì cắt. Quick Reference Card và Data & Testing chỉ giữ khi chứa thông tin CHƯA có ở thân bài; trùng thì BỎ. Self-test: số/cơ chế nào *giải thích* ở >1 chỗ → gộp còn một. Ref: CLAUDE.md `## Content Writing Voice` → "Kinh tế thông tin".
+8. **Kinh tế thông tin — mỗi số/cơ chế một chỗ, không recap** — mỗi lever/mod/số giải thích đúng MỘT lần ở section sở hữu nó (lever section sở hữu roll, Kinh tế sở hữu profit/EV); chỗ sau chỉ nhắc tên + dẫn ngược, KHÔNG giảng lại. Số không tựa vào một quyết định thì cắt. KHÔNG mở Quick Reference Card (4 lever section đã là phần scannable). Self-test: số/cơ chế nào *giải thích* ở >1 chỗ → gộp còn một. Ref: CLAUDE.md `## Content Writing Voice` → "Kinh tế thông tin".
 
-## Maxroll patterns we adopt
+## Bộ 4 lever — danh sách ĐÓNG (user 2026-07-03)
 
-- **Metric box trước intro** — Difficulty / Investment / Profitability / Management. Lấy từ frontmatter (`strategy_tier`, `investment_tier`, `confidence_level`); profit/hour state inline có timestamp (market-volatile, KHÔNG phải frontmatter field) — restate inline ở intro, không tạo box mới.
-- **Setup-first structure** — reader đọc Setup section là biết exact items + atlas tree để chạy lần đầu, không cần đọc Gameplay.
-- **Why-first concise** — mỗi map/tablet/atlas node 1 câu why.
-- **Concrete numbers** — input cost, output value, profit/map, time/map.
-- **Pro Tip inline bolded** — `**Pro Tip:** ...` thay vì callout box.
+POE2 chỉ có đúng **4 lever tối ưu**: **Masters of the Atlas · roll tablet · roll waystone · Atlas Passive Tree**. Bốn lever này = bốn section roll-reference trong cheatsheet (`## Waystone roll gì`, `## Tablet roll gì`, `## Atlas passive spec gì`, `## Master chọn ai`). Mọi nguồn tiền phải map về đúng một lever — draft mọc ra "lever thứ năm" (scarab/sextant/chisel không tồn tại) = red flag fabrication, dừng verify. Consumable đổ lên waystone (Liquid Emotion, omen) thuộc lever Waystone; fragment/key/splinter là vé vào content, không phải lever. Lever nào strategy không dùng thì BỎ section đó.
 
-## Lean default + cheatsheet defer (newest — user 2026-07-01)
+## Mod reference = dòng mod THẬT, đã verify
 
-Mặc định **viết LEAN**: một farming doc đọc gọn trong một màn hình prose scannable. Dẫn mỗi section bằng 1-2 thứ quyết định reward, gộp phần phụ một câu, số nào không neo một quyết định thì cắt. Style cũ — cho mỗi tablet/atlas node một đoạn dài ngang nhau rồi lặp lại list trong cả prose lẫn component — user gọi là "dài dòng khó đọc". Mục tiêu cắt ~60% so với style đó.
+Mỗi tablet/waystone/remnant mod phải viết **dòng mod đầy đủ** (exact searchable wording, vd "increased Quantity of Expedition Logbooks dropped by Runic Monsters in Map") — KHÔNG dùng affix nickname đơn lẻ ("of Knowledge", "of Ancient Fiends"); nickname không ra gì khi search in-game/trade. Trong cheatsheet PiP để dòng mod làm `text`, affix name xuống `note`. Và phải **verify mod còn tồn tại trong patch hiện tại** trước khi viết — đọc verbatim từ `data/poedb/<patch>/` (source #2) hoặc poe2db.tw live; ĐỪNG tin một mình wiki mirror (có thể stale một patch). Ví dụ thật: "of Runes / increased Runic Monster Markers" có trong wiki mirror nhưng KHÔNG có trong dump 0.5.0 → bỏ, không viết.
 
-**Cheatsheet-defer (khi doc nhúng PiP component).** Nhiều farming doc nhúng một cheatsheet PiP — `::expedition-cheatsheet`, `::omen-farm-cheatsheet`, `::ritual-cheatsheet` (`app/components/*Cheatsheet.vue`). Khi có component đó, **nó là nguồn DUY NHẤT cho mọi bảng tra**: roll tablet cụ thể, list mod/prefix né, triage theo slot, list node atlas, Master loadout, bảng clue→map. Prose KHÔNG được lặp lại bất kỳ list nào trong đó — prose chỉ giữ **why mỗi lever quan trọng, loop/flow, quyết định trong map, và economy**. Doc KHÔNG có component thì giữ exact mod dạng bullet scannable trong Setup (delirium style). Không bao giờ cả hai cùng giữ một list, không bao giờ thiếu cả hai. Có component thì BỎ luôn Quick Reference Card (component đã là phần scannable đó).
+## Cheatsheet PiP component (optional in-game overlay)
 
-**Mod reference = dòng mod THẬT, đã verify (cả prose lẫn cheatsheet data).** Mỗi tablet/waystone/remnant mod phải viết **dòng mod đầy đủ** (exact searchable wording, vd "increased Quantity of Expedition Logbooks dropped by Runic Monsters in Map") — KHÔNG dùng affix nickname đơn lẻ ("of Knowledge", "of Ancient Fiends"); nickname không ra gì khi search in-game/trade. Trong cheatsheet để dòng mod làm `text`, affix name xuống `note`. Và phải **verify mod còn tồn tại trong patch hiện tại** trước khi viết — đọc verbatim từ `data/poedb/<patch>/` (source #2) hoặc poe2db.tw live; ĐỪNG tin một mình wiki mirror (có thể stale một patch). Ví dụ thật: "of Runes / increased Runic Monster Markers" có trong wiki mirror nhưng KHÔNG có trong dump 0.5.0 → bỏ, không viết.
+Nhiều farming doc nhúng một cheatsheet PiP — `::expedition-cheatsheet`, `::omen-farm-cheatsheet`, `::ritual-cheatsheet` (`app/components/*Cheatsheet.vue`). Component đó là **overlay in-game mirror** nổi trên game để tra nhanh khi đang chạy — **text bullet trong 4 lever section vẫn là nguồn chính** để đọc/copy setup. Đặt component ở cuối phần execution (sau section nổ chain / thứ tự chạy). Có component → BỎ Quick Reference Card (bốn lever section đã là phần scannable đó).
 
-**Scaling lens lên đầu — `## Loot scale theo cái gì`.** Ngay sau intro, một section ngắn map mỗi nguồn tiền sang đúng cái lever roll/chọn để đẩy nó. **POE2 chỉ có đúng 4 lever tối ưu — danh sách ĐÓNG (user 2026-07-03): Masters of the Atlas · roll tablet · roll waystone · Atlas Passive Tree.** Scaling lens enumerate đủ và CHỈ trong bốn lever đó; consumable đổ lên waystone (Liquid Emotion, omen) thuộc lever roll waystone, fragment/key/splinter là vé vào content chứ không phải lever. Draft mọc ra "lever thứ năm" = fabrication, dừng lại verify. Mỗi bullet = tên lever + một mệnh đề why + dẫn ngược xuống cheatsheet cho số cụ thể. Reader biết phải **roll/chọn gì** trước khi đọc bất kỳ chi tiết nào — đây là phần user quan tâm nhất.
+## Cấu trúc cheatsheet — right-sized, CẮT cái không áp dụng
 
-Exemplar lean = `content/guides/0-5-ocean-exploring.md` (106 dòng). Pattern: intro (tier + build-floor) → `## Loot scale theo cái gì` → Loop → nổ chain (why) → đốt consumable khi nào → Kinh tế (EV + giá timestamp + variance) → `## Failure Modes` (hoặc Rủi ro) → cheatsheet embed → Version History gọn → Relationships. Exemplar không-component vẫn là `content/farming/0-5-delirium-boss-rush-farm.md`.
+**Right-sizing: CẮT lever/case không dùng, ĐỪNG pad, ĐỪNG lặp.** Section mỏng/độn hoặc trùng section khác = vi phạm. Heading sentence-case tiếng Việt nói thẳng ("## Waystone roll gì") — KHÔNG dash-subtitle. **Section REQUIRED `## Failure Modes` PHẢI giữ ĐÚNG literal đó** (validator key theo heading text).
 
-## Section structure — required core + optional menu, right-sized
+### Thứ tự section
 
-**Right-sizing: CẮT section không áp dụng, ĐỪNG pad, ĐỪNG lặp.** Section mỏng/độn hoặc trùng section khác = vi phạm. Heading sentence-case tiếng Việt HOẶC tên chuẩn — KHÔNG dash-subtitle. **Section REQUIRED `## Failure Modes` PHẢI giữ ĐÚNG literal đó** (validator key theo heading text); tự do heading tiếng Việt CHỈ cho section optional. **KHÔNG mở section Market Context riêng** (risk gói vào Failure Modes), **KHÔNG mở section recap** chỉ sắp xếp lại thân bài.
+1. **## TL;DR** — 3-7 bullet kết luận (case nào setup gì + EV + gate then chốt). Plain-text, owner-voice, KHÔNG wiki-link, KHÔNG mục lục section.
+2. **Intro (không heading)** — 1 câu: strategy là gì + tier + ai chạy. Restate metric inline ("Tier B, ~5-10 div/h tính đến YYYY-MM-DD").
+3. **## Waystone roll gì** — bullet: case thường / case juiced roll gì + nguyên tắc tier.
+4. **## Tablet roll gì** — bullet: mỗi mục tiêu → dòng mod thật searchable; Irradiated/unique khi nào.
+5. **## Atlas passive spec gì** — bullet: node subtree + tác dụng dòng ngắn (spec một lần).
+6. **## Master chọn ai** — bullet: master nào khi nào.
+7. **## [Run case thường]** và **## [Run case juiced]** — mỗi case: setup (dẫn lever variant) + loop + gate consumable + EV. Chỉ một case nếu strategy không phân nhánh.
+8. **## Nổ chain / thứ tự chạy** (optional) — bullet action thứ tự nổ/clear; cheatsheet PiP embed đặt ở đây.
+9. **## Kinh tế** — snapshot date + money item (wiki-link) + EV/map + variance.
+10. **## Failure Modes** — **validator-enforced `required: true`**, ≥3 bullet scenario gãy (build floor · one-shot/mất map · market saturation/patch nerf · sustain/brick). Xem **Failure Mode / Devil's Advocate** trong CLAUDE.md.
+11. **## Version History** (hoặc Changelog) — record patch gọn, một dòng/sự kiện.
+12. **## Relationships** — cross-link nội bộ, mỗi dòng `- **predicate** [Title](/route) — reason`. Mọi route phải xuất hiện ≥1 lần trong body.
 
-### Required core (luôn có)
-
-1. **Intro (không heading)** — 2-3 câu: strategy là gì + tier · core mechanism (content nào farm, drop nào make money) · ai nên chạy. Restate frontmatter metric inline ("Tier B, ~5-10 div/h tính đến YYYY-MM-DD").
-2. **## Strategy Overview** — tại sao strategy làm ra tiền trong meta hiện tại; key tablets/fragments/atlas nodes unlock profit + lý do.
-3. **## Loot Breakdown & Economic Analysis** — profit math: input cost X ex/map → output Y div/map → profit Z. **Số phải có timestamp** (snapshot file hoặc trade query date). Xem **Market Data Freshness** trong CLAUDE.md.
-4. **## Failure Modes** — **validator-enforced `required: true`**. Mở 1-2 câu market risk (price trend, saturation, patch nerf, league phase — honest về sustainability), rồi ≥3 scenario gãy: market saturation · sustain failure · build floor · patch nerf · time investment. Xem **Failure Mode / Devil's Advocate** trong CLAUDE.md.
-
-### Optional (include khi cần, omit khi không)
-
-- **## Loot scale theo cái gì** — scaling lens lên đầu (ngay sau intro): mỗi nguồn tiền → lever roll/chọn (Waystone Tier, rarity/monster-effectiveness, tablet suffix, atlas node, gate consumable). Tên lever + một mệnh đề why + dẫn ngược cheatsheet. Strongly recommended khi có cheatsheet component.
-- **Cheatsheet embed** — `::expedition-cheatsheet` / `::omen-farm-cheatsheet` / `::ritual-cheatsheet` (`::` đóng dòng riêng). Đặt cuối phần execution. Khi có nó → BỎ Quick Reference Card và mọi list lookup trong prose.
-- **## Setup** — `### Atlas Passive Tree` (cluster + mechanic subtree + Masters assignment) · `### Tablets & Map Device` (loadout + lý do; slot theo số mod waystone, 6-mod=3 slot; Tower = nguồn rớt không phải nơi cắm; `:wiki-link` mỗi tablet) · `### Waystone & Map Choice` · `### Build Requirements`.
-- **## Gameplay** — step-by-step trong map: activate gì trước, clear order, pick up gì, when to leave. Prose, không bullet 20 step.
-- **## Profit Optimization** — atlas node upgrade B→A, tablet roll min-max, bulk vs individual sale, fleet use.
-- **## Alternatives & Variations** — strategy cạnh tranh + when to switch.
-- **## Data & Testing** — evidence CHƯA nói inline: sample size, source link (poe2scout, /trade), market data recency. KHÔNG liệt kê lại verbatim mod/atlas node đã cite ở Setup.
-- **## Quick Reference Card** — Setup cost / Profit / Time / Waystone / Atlas nodes / Masters / Tablets / Fragments, definition list. CHỈ thêm khi card là chỗ DUY NHẤT chứa loạt số scannable này; thân bài đã nêu thì BỎ (đừng lặp toàn doc). Có cheatsheet component → BỎ hẳn, component đã là phần scannable.
-- **## Changelog** — `### YYYY-MM-DD` reverse-chrono.
-- **## Relationships** — cross-link nội bộ, mỗi dòng `- **predicate** [Title](/route) — reason`.
+Bỏ lever section nào strategy không dùng, gộp hai run-case thành một nếu không phân nhánh. Exemplar cheatsheet = `content/guides/0-5-ocean-exploring.md`.
 
 ## Pre-write checklist
 
@@ -110,7 +98,8 @@ Exemplar lean = `content/guides/0-5-ocean-exploring.md` (106 dòng). Pattern: in
    - Bulk / live listing → `/trade` qua playwriter page-context fetch (KHÔNG curl direct GGG API per CLAUDE.md).
    - Personal testing → user cung cấp sample size + map count.
    - Số chưa có → placeholder `<!-- TODO: profit data, run /trade -->`, flag.
-4. **Reference farming doc** — đọc 1-2 file `content/farming/` để align voice + spot existing `:wiki-link` usage.
+4. **Verify mod** — mỗi tablet/waystone/remnant mod đọc verbatim từ `data/poedb/<patch>/` hoặc poe2db.tw trước khi viết dòng mod.
+5. **Reference farming doc** — đọc `content/guides/0-5-ocean-exploring.md` (exemplar cheatsheet) + 1 farming doc để align voice + `:wiki-link` usage.
 
 ## Steps
 
@@ -120,32 +109,34 @@ Path → `test -f`. Topic → `ls content/farming/*<slug>*.md`. Không tìm th�
 **Success criteria**: File path absolute, frontmatter readable.
 
 ### 2. Đọc context
-Read target file. Đọc 1-2 farming doc khác. Đọc atlas tree mechanic doc nếu link.
+Read target file + exemplar `0-5-ocean-exploring.md`. Đọc atlas tree mechanic doc nếu link.
 
-**Success criteria**: Nắm tier, content type, key tablets.
+**Success criteria**: Nắm tier, content type, 4 lever áp dụng cho strategy này.
 
-### 3. Source data
-- Currency/item price → `/poe2scout` (price + volume + Δ7d + history) hoặc user cung cấp manually.
+### 3. Source + verify data
+- Currency/item price → `/poe2scout` (price + volume + Δ7d + history) hoặc user cung cấp.
 - Trade bulk / live listing → user run `/trade <query>`.
-- Personal experience → ask user sample size.
+- Mỗi mod → verify verbatim từ `data/poedb/<patch>/` hoặc poe2db.tw.
 
-**Success criteria**: Profit claim có ≥1 evidence với timestamp.
+**Success criteria**: Profit claim có ≥1 evidence với timestamp; mọi dòng mod verified.
 
-### 4. Outline 11 section
-Draft 1 dòng/section. **Human checkpoint** — user duyệt outline.
+### 4. Outline lever + case
+Draft 1 dòng/section: 4 lever nào dùng + mấy run-case. **Human checkpoint** — user duyệt outline.
 
 **Success criteria**: User approve.
 
-### 5. Viết prose
-Follow Voice rules + Section structure. Atlas tree section: prose + image link nếu có, KHÔNG list 50 node.
+### 5. Viết cheatsheet
+Follow Voice rules + Cấu trúc cheatsheet. Bullet-first, why nén một mệnh đề, exact mod searchable, KHÔNG bảng.
 
 **Rules** (CẤM):
 - "theo Fubgun", "doc này tổng hợp", "tóm lại"
+- Đoạn văn giảng cơ chế thay cho bullet
 - Số không có timestamp
-- Bảng (table) cho atlas tree / tablet list (site stack-column vỡ layout)
-- Game term không dùng `:wiki-link` ở lần đầu
+- Affix nickname đơn lẻ thay dòng mod thật
+- Bảng (table) cho atlas/tablet list; game term không dùng `:wiki-link` lần đầu
+- Quick Reference Card (trùng 4 lever section)
 
-**Success criteria**: required core + đúng các optional section cần — mỗi section ≥2 câu nội dung thật, không section độn; mọi số có timestamp; mọi game term dùng `:wiki-link`.
+**Success criteria**: Đúng lever section cần + run-case; mỗi bullet có nội dung thật; mọi số có timestamp; mọi game term `:wiki-link`; `## Failure Modes` + `## Relationships` literal.
 
 ### 6. Validate
 Frontmatter khớp schema `content.config.ts` — chạy `bun run generate` để verify.
@@ -153,6 +144,6 @@ Frontmatter khớp schema `content.config.ts` — chạy `bun run generate` đ�
 **Success criteria**: Exit 0.
 
 ### 7. Summary cho user
-Báo file path, H2 status, `:wiki-link` count, validate result. Gợi ý next: `/poe2scout` để fact-check số giá, `/heal-links` cho relationships, commit.
+Báo file path, H2 status, `:wiki-link` count, validate result. Gợi ý next: `/poe2scout` fact-check số giá, commit.
 
 **Success criteria**: User biết next step.

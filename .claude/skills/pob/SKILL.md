@@ -180,9 +180,17 @@ already computed) to `data/character-exports/export-<character>.json`.
 > await state.page.waitForTimeout(6000);
 > ```
 > Only works while the character stays public/connected on poe.ninja.
-> **Analyze 0.5 chars from the saved model JSON, not PoB2** — PoB2 0.4 can't yet model 0.5 Spirit
-> Walker / companion scaling (returns DPS 0). poe.ninja's `defensiveStats` + skill `damage` are the
-> trustworthy numbers until the PoB2 fork catches up (`pob_coverage: PARTIAL`).
+> **Whether PoB2 can model the build depends on the archetype — decide per build, not by blanket rule.**
+> Tame Beast / companion scaling still returns DPS 0, so those read from the model JSON + in-client
+> tooltip (`pob_coverage: PARTIAL`). Standard minions (skeletons, Unearth Bone Constructs, spectres) are
+> modelled fine — run the `pathOfBuildingExport` through PoB2 and quote a real DPS number. Either way
+> `defensiveStats` is the trustworthy defensive source, since poe.ninja computes it from live state.
+
+> **Known bug (T-058): the script aborts on a perfectly good response when `charModel.status == 4`.**
+> The error check greps the whole body for `"status":4`, but `status` is a field of `charModel` itself
+> (an actively-played char reads 3; a parked one reads 4) — so the fetch dies with a misleading
+> "poe.ninja returned an error" and never writes the export JSON. Until T-058 lands, pull that character
+> by calling the two endpoints directly (events SSE → `model/<id>`) instead of via the script.
 
 **B. Builds ladder (laddered characters only):**
 
@@ -190,6 +198,43 @@ already computed) to `data/character-exports/export-<character>.json`.
 .claude/skills/pob/scripts/scripts/fetch-poeninja.sh \
   "https://poe.ninja/poe2/builds/{league}/character/{account}/{character}" build-code.txt
 ```
+
+Unlike the profile surface, this one returns the model **unwrapped** (no `charModel` key) and does not
+save an export JSON — it only prints the PoB code. To diff a streamer build against your own, fetch the
+JSON yourself: `index-state` → `snapshotVersions[url==<league>]` → `.version` + `.snapshotName`, then
+`api/builds/<version>/character?account=<acct>&name=<char>&overview=<snapshotName>`.
+
+### Attributing any stat to its exact source (`breakdowns`)
+
+The model carries a `breakdowns` object that makes every number in `defensiveStats` **traceable to the
+item / passive / quest that produced it** — use this instead of eyeballing tooltips or adding mods by hand.
+
+- `breakdowns.sources` — array; each entry is `[kind, name]`, e.g. `[2, "Dusk Caress, Blacksteel Gauntlets"]`,
+  `[8, "Mageblood"]`, `[7, "Act 1: Clearfell"]` (quest), `[3, "PurityOfLightningPlayer"]` (aura),
+  `[1, "<passive node id>"]`. Resolve node ids against `data/passive-tree/<tag>/data.json`.
+- `breakdowns.stats["<n>"]` — `{base, inc, more, total, mods}`; each mod is `[type, value, sourceIdx]`
+  where `type 0` = flat and `type 1` = increased, and `sourceIdx` indexes into `sources`.
+- Stat keys are numeric and undocumented — **identify them by matching `total`/overcap against
+  `defensiveStats`** rather than assuming an ordering. `total` is post-cap, `base` is pre-cap, so
+  `base - total` is the overcap.
+
+Worked example (OneMoreMinionMamy, 2026-07-16): chaos res read `base=84 total=75`, whose mods resolved to
+`+17 ← gloves` and `+67 ← Mageblood` — proving Mageblood alone carried +67 to *all four* resistances
+(Bismuth 45 elemental / Amethyst 45 chaos, each ×1.5 from the duplicate-Legacy multiplier). The same method
+gave a complete Spirit ledger: `base=339` from quest +100 / sceptre +131 / body +58 / amulet +50, then
+`inc=4` from node 54814 = Profane Commander → 353. No guessing, no tooltip addition.
+
+> **Check `enableBondedMods` before counting a single rune line.** When it is `False`, every
+> `[ShamanOnlyMods|Bonded]:` mod on the gear is dead (Bonded only lives on Shaman/Druid) — an easy way to
+> over-count res/life by a wide margin. `defensiveStats` already excludes them; hand-reading the item text
+> does not. (OneMoreMinionMamy: 12 of 24 rune lines dead this way.)
+
+> **PoB minion display names are NOT in-game names — never copy them into content.** `Data/Minions.lua`
+> keys are canonical, its `name` fields are not: `minions["UnearthBoneConstruct"]` has `name = "Bone Crawler"`,
+> but the in-game gem text, the wiki, PoB's *own* skill description (`Data/Skills/act_int.lua`), and the whole
+> `content/` corpus all say **Bone Construct**. A doc that says "Bone Crawler" sends the reader searching for
+> something that does not exist. Cross-check any PoB-sourced entity name against the gem tab in the model JSON
+> or the wiki mirror before writing it down.
 
 > Live-equipment pull for POE2 now exists via `fetch-live.sh` (below) — it reads the pathofexile2.com
 > website's own internal-api through Playwriter, no OAuth. It returns EQUIPMENT ONLY though; passives/

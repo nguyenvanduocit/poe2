@@ -19,6 +19,14 @@ Verify names + dates against poe2scout each time a new league launches:
 from datetime import datetime
 
 LEAGUES = [
+    # GGG: https://www.pathofexile.com/forum/view-thread/4000430
+    # Launch: 2026-09-04 13:00 PDT (20:00 UTC); runs alongside Runes of Aldur.
+    {
+        "name": "Forbidden Rites",
+        "start": "2026-09-04",
+        "end": None,
+        "slug": "Forbidden Rites",
+    },
     # Runes of Aldur (0.5) — main SC POE2 league from 2026-05-29.
     {
         "name": "Runes of Aldur",

@@ -103,18 +103,20 @@ File `.md` trong `content/guides/` (hoặc `content/crafting/` cho craft walkthr
 
 **Heading**: viết **sentence-case tiếng Việt nói thẳng section làm gì** (theo natural-voice rule — vd `## Vì sao Heavy Belt là base đáng chance`, `## Toán break-even`). Tên archetype tiếng Anh (How It Works, Optimization…) bên dưới chỉ là nhãn để tác giả biết *loại* section — heading thật trong doc dùng tiếng Việt tự nhiên. CẤM dash-subtitle `## X — Y`. (English heading vẫn validate nếu thật sự hợp, nhưng default là tiếng Việt — validator chỉ cần H2 hợp lệ, không ép tên cụ thể.)
 
-### Required core (mọi doc đều có — tối thiểu 3)
+### Required core (mọi doc đều có — tối thiểu 4)
 
-1. **Intro paragraph (không heading)** — 2-4 câu: cơ chế là gì + visual/tooltip anchor · xuất hiện/đổi ở patch nào · ai/build đang dùng (named hoặc % poe.ninja) · (optional) vì sao quan tâm bây giờ. Câu nào không có nội dung thật thì bỏ, đừng độn cho đủ 4.
+1. **TL;DR (`## TL;DR` ngay sau H1)** — 3-7 bullet plain-text gói các quyết định + số then chốt để người đọc scan 10 giây. Mỗi bullet là một kết luận hành động hoặc một con số, KHÔNG phải tên section ("phần 1 nói về X" là sai). KHÔNG wiki-link trong bullet — body giữ first-mention link. Thân bài KHÔNG lặp nguyên văn bullet: TL;DR tóm cái gì/bao nhiêu, body giải thích why. Owner-voice, tuân banned-lexicon như mọi prose khác.
 
-2. **Một section giải thích cơ chế** (archetype *How It Works*) — spine của doc. Sequential narrative: trigger → player action → game response → outcome. Visual cue nếu có. Ground bằng số thật. Khi mechanic có ambiguity (skill mới chưa test, interaction chưa verify) → nhúng Hypothesis Trail:
+2. **Intro paragraph (không heading)** — 2-4 câu: cơ chế là gì + visual/tooltip anchor · xuất hiện/đổi ở patch nào · ai/build đang dùng (named hoặc % poe.ninja) · (optional) vì sao quan tâm bây giờ. Câu nào không có nội dung thật thì bỏ, đừng độn cho đủ 4.
+
+3. **Một section giải thích cơ chế** (archetype *How It Works*) — spine của doc. Sequential narrative: trigger → player action → game response → outcome. Visual cue nếu có. Ground bằng số thật. Khi mechanic có ambiguity (skill mới chưa test, interaction chưa verify) → nhúng Hypothesis Trail:
    ```
    Hypothesis: <X có thể work vì reference mechanic Y>
    Evidence: <footage / wiki text / PoB test / forum post>
    Kết luận: <khẳng định; chưa chắc thì nêu test-plan "log Z khi vào league" — KHÔNG nhãn HIGH/MEDIUM/LOW>
    ```
 
-3. **Một section takeaway đóng bài** (archetype *Verdict / Tổng kết*) — thêm phán xét mới (verdict label + open question khi doc có phán quyết, xem Voice rule 10), KHÔNG recap lại thân bài. Mechanic thuần giải thích thì đóng bằng "khi nào dùng / đáng không", không cần verdict label giả.
+4. **Một section takeaway đóng bài** (archetype *Verdict / Tổng kết*) — thêm phán xét mới (verdict label + open question khi doc có phán quyết, xem Voice rule 10), KHÔNG recap lại thân bài. Mechanic thuần giải thích thì đóng bằng "khi nào dùng / đáng không", không cần verdict label giả.
 
 ### Optional menu (chỉ thêm khi mechanic THẬT SỰ cần — mỗi cái có trigger dùng-khi/bỏ-khi)
 
@@ -165,7 +167,7 @@ Read target file. Đọc 1-2 mechanic doc cùng subfolder để align voice.
 **Success criteria**: ≥3 số chính xác sẵn sàng cite + 1 ví dụ từ character thật.
 
 ### 4. Outline section (right-sized)
-Chọn section từ required core (3) + optional menu — chỉ lấy section mechanic thật sự cần. Draft 1 dòng/section + heading tiếng Việt dự kiến. Mechanic atomic → dừng ở 3-5 section; league/skill phức tạp → mới nhiều hơn. **Human checkpoint** — user duyệt danh sách section trước khi viết (để bắt sớm nếu thừa/thiếu).
+Chọn section từ required core (4, gồm TL;DR) + optional menu — chỉ lấy section mechanic thật sự cần. Draft 1 dòng/section + heading tiếng Việt dự kiến. Mechanic atomic → dừng ở 3-5 section; league/skill phức tạp → mới nhiều hơn. **Human checkpoint** — user duyệt danh sách section trước khi viết (để bắt sớm nếu thừa/thiếu).
 
 **Success criteria**: User approve; không có section nào dự kiến <2 câu nội dung thật.
 
@@ -178,7 +180,7 @@ Follow Voice rules + Section structure. Cách hoạt động section dài 2-4 đ
 - Bullet rời rạc cho mechanic explanation (chuyển prose hoặc numbered narrative)
 - Game term không dùng `:wiki-link`
 
-**Success criteria**: required core (intro + cơ chế + takeaway) + đúng các optional section mechanic cần — mỗi section ≥2 câu nội dung thật, không section độn; ground bằng ≥1 số thật; mọi game term dùng `:wiki-link`.
+**Success criteria**: required core (TL;DR + intro + cơ chế + takeaway) + đúng các optional section mechanic cần — mỗi section ≥2 câu nội dung thật, không section độn; ground bằng ≥1 số thật; mọi game term dùng `:wiki-link`.
 
 ### 6a. Self-check (BẮT BUỘC trước Validate)
 
@@ -198,7 +200,7 @@ Follow Voice rules + Section structure. Cách hoạt động section dài 2-4 đ
 - [ ] Named adoption — có ≥1 named build/player HOẶC % poe.ninja (nếu mechanic có người dùng để dẫn).
 - [ ] Cost/restriction — setup nêu cost number + restriction (nếu doc đề xuất setup tốn currency/gated).
 
-**Gate 3 — Voice (luôn check):** numeric discipline (hype word kèm số) · entity full-name lần đầu · no filler · no dash-subtitle heading · no meta-summary ("theo wiki/Reddit", "doc này"). Grep nhanh: `mạnh|tốt|đáng kể|powerful|insane` mỗi match có số kèm.
+**Gate 3 — Voice (luôn check):** `## TL;DR` present ngay sau H1 (3-7 bullet, no wiki-link, không mục lục section, không lặp nguyên văn xuống body) · numeric discipline (hype word kèm số) · entity full-name lần đầu · no filler · no dash-subtitle heading · no meta-summary ("theo wiki/Reddit", "doc này"). Grep nhanh: `mạnh|tốt|đáng kể|powerful|insane` mỗi match có số kèm.
 
 Gate FAIL → loop back step 5 refine. KHÔNG bypass.
 

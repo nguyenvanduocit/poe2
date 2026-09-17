@@ -1,12 +1,12 @@
 #!/usr/bin/env bun
 //
-// Collapse `data/price-history/price-history.json` (~2.7 MB, time series) into
+// Collapse today's UTC snapshot in `data/price-history/daily/` into
 // `app/composables/data/prices.generated.ts` — a frozen lookup keyed by item
-// slug holding only the latest record per item for the current league.
+// slug holding only fresh records for the configured current league.
 //
 // Run automatically by `.github/workflows/collect-prices.yml` after the
-// Python collector commits new daily snapshots. Run manually with
-// `bun run build:prices` after editing price-history.json by hand.
+// Python collector writes a new daily snapshot. Run manually with
+// `bun .claude/skills/nuxt/scripts/build-prices/build.ts` after collection.
 //
 // Why generate a TS module instead of fetching JSON at runtime:
 //   - `public/` is gitignored in this repo, so we cannot ship a static JSON
@@ -14,7 +14,7 @@
 //   - The module is tree-shakeable and bundled per-page by Nuxt — no extra
 //     network hop, no hydration race.
 
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
+import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { toItemSlug } from '../../../../../app/utils/itemSlug'
 
@@ -28,18 +28,18 @@ interface RawRecord {
   price_chaos: number
   listings: number
   day_of_week: number
+  price_unit: 'exalted'
 }
 
 // File sits at .claude/skills/nuxt/scripts/build-prices/build.ts — 5 levels deep.
 const REPO_ROOT = resolve(import.meta.dir, '../../../../..')
-// `master.json` is the accumulated time series — collect.py merges each crawl
-// into it, deduping by (league, item, variant, type, date). Per-day raw
-// snapshots live under `data/price-history/daily/` for audit only.
-const SOURCE = resolve(REPO_ROOT, 'data/price-history/master.json')
+// Historical master records must not let a failed or wrong-league crawl
+// produce a successful build. Only today's daily snapshot can supply prices.
+const DAILY_DIR = resolve(REPO_ROOT, 'data/price-history/daily')
 const NUXT_CONFIG = resolve(REPO_ROOT, 'nuxt.config.ts')
 const OUTPUT = resolve(REPO_ROOT, 'app/composables/data/prices.generated.ts')
 
-// Pull `currentLeague` from `nuxt.config.ts` (`runtimeConfig.public.currentLeague`)
+// Pull `currentLeague` from `nuxt.config.ts` (`runtimeConfig.public.site.currentLeague`)
 // via regex so we never drift out of sync with the site config when league rolls.
 function readCurrentLeague(): string {
   const cfg = readFileSync(NUXT_CONFIG, 'utf8')
@@ -48,10 +48,30 @@ function readCurrentLeague(): string {
   return m[1]!
 }
 
+function readTodaySnapshot(league: string): RawRecord[] {
+  const today = new Date().toISOString().slice(0, 10)
+  const source = resolve(DAILY_DIR, `${today}.json`)
+  if (!existsSync(source)) {
+    throw new Error(`Missing today's UTC price snapshot: ${source}. Run collect.py before building prices.`)
+  }
+
+  const records = JSON.parse(readFileSync(source, 'utf8')) as RawRecord[]
+  if (!Array.isArray(records) || records.length === 0) {
+    throw new Error(`Empty or invalid price snapshot: ${source}`)
+  }
+  if (records.some(r => !r || r.league !== league || r.date !== today)) {
+    throw new Error(`Price snapshot ${source} must contain only league "${league}" records dated ${today}. Check currentLeague in nuxt.config.ts and run collect.py.`)
+  }
+  if (records.some(r => r.price_unit !== 'exalted' || typeof r.item !== 'string' || !r.item.trim()
+    || typeof r.type !== 'string' || !r.type.trim()
+    || !Number.isFinite(r.price_chaos) || r.price_chaos <= 0
+    || !Number.isFinite(r.listings) || r.listings < 0)) {
+    throw new Error('Invalid price record: expected positive exalted prices and nonnegative quantities')
+  }
+  return records
+}
+
 function pickLatestPerItem(records: RawRecord[], league: string) {
-  // For each item name, keep the record with max(date). Variants collapse —
-  // see types/poe-item.ts header for why uniques (which would need variant
-  // disambiguation) are out of scope for v1.
   const latest = new Map<string, RawRecord>()
   for (const r of records) {
     if (r.league !== league) continue
@@ -64,8 +84,7 @@ function pickLatestPerItem(records: RawRecord[], league: string) {
 function deriveDivineChaos(latest: Map<string, RawRecord>): number {
   const div = latest.get('Divine Orb')
   if (!div) {
-    console.warn(`⚠️  No Divine Orb record found — divine conversion will be disabled`)
-    return 0
+    throw new Error('Missing Divine Orb quote; refusing to disable currency conversion')
   }
   return div.price_chaos
 }
@@ -79,6 +98,10 @@ function emit(league: string, latest: Map<string, RawRecord>, divine: number): s
     ] as const)
     .sort(([a], [b]) => a.localeCompare(b))
 
+  if (new Set(entries.map(([slug]) => slug)).size !== entries.length) {
+    throw new Error('Item slug collision; refusing to silently overwrite a price')
+  }
+
   // One item per line — `JSON.stringify` per record handles every escape case
   // (quotes, backslashes, control chars) in item names safely while keeping
   // git diffs readable (each price change is exactly one line of churn).
@@ -87,7 +110,7 @@ function emit(league: string, latest: Map<string, RawRecord>, divine: number): s
     .join('\n')
 
   return `// AUTO-GENERATED by .claude/skills/nuxt/scripts/build-prices/build.ts — do not edit.
-// Run \`bun run build:prices\` to regenerate from data/price-history/price-history.json.
+// Run \`bun .claude/skills/nuxt/scripts/build-prices/build.ts\` after collecting today's prices.
 
 import type { PriceIndex } from '~/types/poe-item'
 
@@ -103,19 +126,19 @@ ${itemLines}
 
 function main() {
   const league = readCurrentLeague()
-  const raw = JSON.parse(readFileSync(SOURCE, 'utf8')) as RawRecord[]
+  const raw = readTodaySnapshot(league)
   const latest = pickLatestPerItem(raw, league)
   const divine = deriveDivineChaos(latest)
 
   if (latest.size === 0) {
-    throw new Error(`No records found for league "${league}" in ${SOURCE}. Check app.config.ts and run collect.py.`)
+    throw new Error(`No fresh records found for league "${league}". Check nuxt.config.ts and run collect.py.`)
   }
 
   const out = emit(league, latest, divine)
   mkdirSync(dirname(OUTPUT), { recursive: true })
   writeFileSync(OUTPUT, out)
   console.log(`✓ ${OUTPUT}`)
-  console.log(`  league=${league}  items=${latest.size}  divine=${divine}c`)
+  console.log(`  league=${league}  items=${latest.size}  divine=${divine}ex`)
 }
 
 main()
