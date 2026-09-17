@@ -2,10 +2,10 @@
 template: templates/character-progress-template.md
 document_type: character-progress
 title: OneMoreMinionMamy — Progress Tracker
-status: endgame
+status: retired
 author: duocnv
 created: '2026-07-16'
-updated: '2026-07-16'
+updated: '2026-09-17'
 character_name: OneMoreMinionMamy
 character_class: Mercenary
 ascendancy: Gemling Legionnaire
@@ -15,6 +15,8 @@ current_progress: t16-farming
 ---
 
 # OneMoreMinionMamy — Progress Tracker
+
+**Retired 2026-09-17.** Account đã bỏ char này để chuyển sang [i_hate_minion_fmfr](/characters/i-hate-minion-fmfr) (Frostbolt Mirror CI, không còn liên quan đến minion). File giữ nguyên làm log lịch sử của char và của phase minion-Unearth; snapshot dưới là snapshot cuối lúc còn chơi (Lv89, 2026-07-15), không phản ánh trạng thái account hiện tại.
 
 Mercenary / Gemling Legionnaire Lv89 chạy đàn skeleton cộng Bone Construct từ :wiki-link{url="https://www.poe2wiki.net/wiki/Unearth"}, cơ chế đầy đủ nằm ở [build doc](/builds/mercenary/0-5-gemling-unearth-skeleton-army). Char này thay ThaoCamVienSaiGon làm main và thừa hưởng luôn phần lớn gear đắt của nó. Res đã cap sạch cả bốn kênh nên việc còn lại chỉ có một: phys max hit 4,565 đang thấp hơn ba kênh elemental 3.4 lần, và đó là thứ giết mình chứ không phải thiếu damage.
 
@@ -69,6 +71,10 @@ Phần mới so với char cũ nằm ở hai tay: wand **Brood Edge** với +5 L
 
 ## Progress Log
 
+### 2026-09-17
+
+Retired. Account bỏ hướng minion, roll char mới [i_hate_minion_fmfr](/characters/i-hate-minion-fmfr) chạy Frostbolt Mirror CI. Không phải respec — char khác hoàn toàn, gear khác, tree khác. Snapshot dưới đóng băng ở Lv89 2026-07-15, mọi số về sau không cập nhật thêm.
+
 ### 2026-07-16
 
 Snapshot đầu tiên của char sau khi đổi main từ ThaoCamVienSaiGon. Gear đắt đã chuyển sang gần hết: Mageblood rời khỏi char cũ trước 2026-07-15 03:26 (snapshot char cũ lúc đó đã tụt về Hypnotic Cord), còn Brood Rosary, Skull Corona và Havoc Goad thì sang muộn hơn — snapshot char cũ 03:26 vẫn còn liệt kê chúng, snapshot char này lúc 21:49 đã có đủ. Nghĩa là trang poe.ninja của char cũ đang stale và không tự sửa được; nó vẫn vẽ một bộ gear không còn tồn tại.
@@ -77,6 +83,7 @@ So bộ số với build tham khảo cùng archetype thì hướng thủ đã t�
 
 ## Relationships
 
+- **references** [i_hate_minion_fmfr — Progress Tracker](/characters/i-hate-minion-fmfr) — char kế tiếp của account sau khi retire char này; Frostbolt CI, không liên quan minion.
 - **related_builds** [Gemling Unearth Skeleton Army](/builds/mercenary/0-5-gemling-unearth-skeleton-army) — build doc đầy đủ của chính character này: cơ chế, gem, tree, DPS, failure modes.
 - **references** [Prism of Belief](/guides/prism-of-belief) — jewel cho +3 Level of all Unearth Skills, một trong hai viên đang đeo.
 - **references** [+4 minion amulet](/crafting/0-5-plus4-minion-amulet) — cách craft Brood Rosary đang đeo, quality truncate nên phải đủ 40%.
