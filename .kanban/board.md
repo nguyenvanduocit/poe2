@@ -26,7 +26,7 @@
 
 ## Done
 
-- [T-061](tasks/T-061-poe2-price-tracking-cicd.md) POE2 price tracking CI/CD — high/M (pushed ad5827d; CI 34800813113 SUCCESS)
+- [T-061](tasks/T-061-poe2-price-tracking-cicd.md) POE2 price tracking CI/CD (Forbidden Rites) — high/M (pushed ad5827d; CI 34800813113 SUCCESS)
 
 - [T-057](tasks/T-057-guide-tldr-convention.md) TL;DR opener chuẩn cho guides + rollout content/guides/ — medium/L
 
