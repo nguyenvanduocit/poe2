@@ -1,8 +1,8 @@
-# CLAUDE.md — PoE 2 Workspace
+# AGENTS.md — PoE 2 Workspace
 
 **PoE 2 League Gameplay Workspace** — AI skills, content/notes, scripts cho Path of Exile 2 mỗi league/patch. POE1 sống ở sibling project `../poe1/` — workspace này KHÔNG handle POE1.
 
-Shared instructions (Current Context, Rules, Quantitative Reasoning, Content Folder Boundaries, Writing Voice, WikiLink) sống ở `../CLAUDE.md`. Claude Code auto-load file này TRƯỚC, rồi walk-up file parent.
+Shared instructions (Current Context, Rules, Quantitative Reasoning, Content Folder Boundaries, Writing Voice, WikiLink) sống ở `../AGENTS.md`. Codex auto-load file này TRƯỚC, rồi walk-up file parent.
 
 File này chỉ chứa **workspace-specific bindings**: slash command aliases, frontmatter convention, pointer scripts. Tất cả đều POE2 native — không cross-game.
 
@@ -34,7 +34,7 @@ Mọi command trong workspace này trỏ POE2. Không có command POE1 — muố
 ### Check character status
 
 ```
-.claude/skills/pob/scripts/scripts/analyze.sh "https://poe.ninja/poe2/builds/<league>/character/<account>/<charname>"
+.Codex/skills/pob/scripts/scripts/analyze.sh "https://poe.ninja/poe2/builds/<league>/character/<account>/<charname>"
   # hoặc mobalytics.gg/poe-2/builds/... hoặc pobb.in link
   → stats, gear, gems, keystones (xem skill /pob)
 ```
@@ -57,9 +57,9 @@ Lưu ý: POE2 hiện chủ yếu dùng poe.ninja snapshot / pobb.in / mobalytics
 ### Read forum (builds / feedback / threads)
 
 ```
-.claude/skills/poeforum/scripts/forum.sh list 2216           # POE2 Builds forum -> threads[] JSON
-.claude/skills/poeforum/scripts/forum.sh thread 3931901      # 1 page of posts -> posts[] JSON
-.claude/skills/poeforum/scripts/forum.sh thread 3931901 --all # every page (1.2s spacing)
+.Codex/skills/poeforum/scripts/forum.sh list 2216           # POE2 Builds forum -> threads[] JSON
+.Codex/skills/poeforum/scripts/forum.sh thread 3931901      # 1 page of posts -> posts[] JSON
+.Codex/skills/poeforum/scripts/forum.sh thread 3931901 --all # every page (1.2s spacing)
 ```
 
 - Anonymous read-only browser-UA curl trang forum public — KHÔNG auth, KHÔNG GGG API, KHÔNG playwriter (xem skill `/poeforum`). Forum id hay dùng: `2216` = POE2 Builds.
@@ -68,8 +68,8 @@ Lưu ý: POE2 hiện chủ yếu dùng poe.ninja snapshot / pobb.in / mobalytics
 ### Fetch release notes / patch notes
 
 ```
-.claude/skills/update-release-note/scripts/fetch.sh 3932540          # POE2 0.5.0 (thread id 3932540)
-.claude/skills/update-release-note/scripts/fetch.sh 3932540 0.5.0    # version explicit (hotfix)
+.Codex/skills/update-release-note/scripts/fetch.sh 3932540          # POE2 0.5.0 (thread id 3932540)
+.Codex/skills/update-release-note/scripts/fetch.sh 3932540 0.5.0    # version explicit (hotfix)
 ```
 
 - Fetch verbatim từ **official GGG forum thread** (canonical source #1), không phải wiki mirror. Xem skill `/update-release-note`.
@@ -110,7 +110,7 @@ discord https://discord.com/channels/645607528297922560/1143637598313652344
 
 ## Frontmatter Convention
 
-Áp dụng PoB Coverage Disclosure (xem `../CLAUDE.md ## Quantitative Reasoning`) với field tên neutral **`pob_coverage`** trong build note frontmatter:
+Áp dụng PoB Coverage Disclosure (xem `../AGENTS.md ## Quantitative Reasoning`) với field tên neutral **`pob_coverage`** trong build note frontmatter:
 
 ```yaml
 ---
@@ -139,7 +139,7 @@ Template (`guide-template.md`, `mechanic-template.md`, `item-template.md`) và s
 
 ## Data Paths
 
-Mọi data persistent sống dưới `data/` (xem `../CLAUDE.md ## Rules` cho canonical layout):
+Mọi data persistent sống dưới `data/` (xem `../AGENTS.md ## Rules` cho canonical layout):
 
 - `data/wiki/` — wiki mirror poe2wiki.net (goscrape)
 - `data/poedb/<patch>/` — database mirror poe2db.tw per patch

@@ -242,9 +242,9 @@ export default defineNuxtConfig({
         author: 'POE2 Vault',
         themeColor: '#d4ff00',
         logo: '/logo.png',
-        currentLeague: 'Runes of Aldur',
+        currentLeague: 'Forbidden Rites',
         currentPatch: '0.5.0',
-        ign: 'ThaoCamVienSaiGon',
+        ign: 'OneMoreMinionMamy',
         // Reader comments (andy-note-nuxt layer). Backed by the `poe-comments`
         // Firebase project wired via `nuxt-vuefire` above. `owners` is the email
         // allowlist the client uses to show Resolve; the deployed Firestore

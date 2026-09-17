@@ -6,6 +6,8 @@
     "build": "nuxt build",
     "build:wiki": "bun .claude/skills/nuxt/scripts/build-wiki-links/index.ts",
     "build:prices": "bun .claude/skills/nuxt/scripts/build-prices/build.ts",
+    "test:prices": "python3 -m unittest discover -s .claude/skills/price-forecast/scripts/tests && bun test ./.claude/skills/nuxt/scripts/build-prices/build.test.ts",
+    "typecheck:prices": "tsc --project tsconfig.prices.json",
     "dev": "nuxt dev",
     "dev:tunnel": "concurrently --kill-others --names nuxt,tunnel -c cyan,magenta \"nuxt dev --host --port 3000\" \"cloudflared tunnel --url http://localhost:3000\"",
     "host": "bun .claude/skills/lootfilter/scripts/host-filter.ts",
@@ -37,6 +39,7 @@
     "@takumi-rs/core": "^1.6.0",
     "concurrently": "^10.0.0",
     "tailwindcss": "^3",
+    "typescript": "5.9.3",
     "vite-plugin-ai-annotator": "^1.14.13"
   },
   "packageManager": "bun@1.3.14"

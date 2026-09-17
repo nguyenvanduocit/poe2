@@ -25,6 +25,9 @@ logs
 
 # Scraped reference site (538MB, not source code) — allow only app-owned assets
 public/*
+!public/pob/
+public/pob/*
+!public/pob/gemling-frostbolt-mirror-2026-09-15.txt
 !public/images/
 public/images/*
 !public/images/poe-ui/
